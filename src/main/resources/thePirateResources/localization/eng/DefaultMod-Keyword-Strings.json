@@ -1,0 +1,93 @@
+[
+  {
+    "PROPER_NAME": "Bleeding",
+    "NAMES": [
+      "bleeding",
+      "bleed"
+    ],
+    "DESCRIPTION": "The next time you would lose HP, take additional damage equal to Bleeding amount."
+  },
+  {
+    "PROPER_NAME": "Predatory",
+    "NAMES": [
+      "predatory",
+      "predator"
+    ],
+    "DESCRIPTION": "Can only spawn in card rewards if your deck contains the associated Lure card. When added to your deck, the corresponding Lure is removed."
+  },
+  {
+    "PROPER_NAME": "Lure",
+    "NAMES": [
+      "lure",
+      "lured",
+      "lures"
+    ],
+    "DESCRIPTION": "While this is in your deck, it's associated Predator card is added to the card reward pool. Lures are removed from the card reward pool while you have a Lure in your deck."
+  },
+  {
+    "PROPER_NAME": "Mysterious",
+    "NAMES": [
+      "mysterious"
+    ],
+    "DESCRIPTION": "This card cannot be upgraded outside of combat."
+  },
+  {
+    "PROPER_NAME": "Purge",
+    "NAMES": [
+      "purge",
+      "purged"
+    ],
+    "DESCRIPTION": "Permanently remove this card from your deck."
+  },
+  {
+    "PROPER_NAME": "Corrupt Artifact",
+    "NAMES": [
+      "corrupt artifact",
+      "corrupt_artifact",
+      "corruptartifact"
+    ],
+    "DESCRIPTION": "Prevents the next buff that would be applied to target."
+  },
+  {
+    "PROPER_NAME": "Dig",
+    "NAMES": [
+      "dig"
+    ],
+    "DESCRIPTION": "Return a card from your discard pile to your draw pile and upgrade it."
+  },
+  {
+    "PROPER_NAME": "Bury",
+    "NAMES": [
+      "bury",
+      "buries",
+      "buried"
+    ],
+    "DESCRIPTION": "Select a card from your draw pile and discard it."
+  },
+  {
+    "PROPER_NAME": "Ink",
+    "NAMES": [
+      "ink",
+      "inked"
+    ],
+    "DESCRIPTION": "The next time this enemy would deal damage, prevent damage equal to the ink value, deal that much damage to the enemy, and then remove that much ink."
+  },
+  {
+    "NAMES": [
+      "keyword",
+      "keywords"
+    ],
+    "DESCRIPTION": "Whenever you play a card, gain 1 dexterity this turn only."
+  },
+  {
+    "PROPER_NAME": "Multiword Keyword",
+    "NAMES": [
+      "Multiword Keyword",
+      "multiword_keyword",
+      "multiword_keywords",
+      "multikey",
+      "multikeyword"
+    ],
+    "DESCRIPTION": "Make sure the first element in the NAMES is the same as your PROPER_NAME. The rest is to match keywords like the single word keyword."
+  }
+]

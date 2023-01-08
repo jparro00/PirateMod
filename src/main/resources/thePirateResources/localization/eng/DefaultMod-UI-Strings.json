@@ -1,0 +1,21 @@
+{
+  "thePirate:PirateBayAction": {
+    "TEXT": [
+      "Choose a card to copy and put into your discard pile.",
+      "Choose ",
+      " cards to copy and put into your discard pile."
+    ]
+  },
+  "thePirate:BuryAction": {
+    "TEXT": [
+      "Choose a card to put into your discard pile.",
+      "choose ",
+      " cards to put into your discard pile."
+    ]
+  },
+  "thePirate:CannotPlay": {
+    "TEXT": [
+      "This card is unplayable."
+    ]
+  }
+}

@@ -1,0 +1,102 @@
+{
+        "thePirate:ThiefsAccomplicePower": {
+                "NAME": "Thief's Accomplice",
+                "DESCRIPTIONS": ["The next #b", " time you would lose gold, gain that much gold."," times you would lose gold, gain that much gold."]
+        },
+        "thePirate:TimeWarpPower": {
+                "NAME": "Time Warp",
+                "DESCRIPTIONS": ["At the start of turn, the last non-exhaust card you played the previous turn is returned to your hand."]
+        },
+        "thePirate:RedShirtPower": {
+                "NAME": "Red Shirt",
+                "DESCRIPTIONS": ["The next time you would lose HP, recieve that much Bleeding instead. NL NL #y*Bleeding: NL The next time you would lose HP, take additional damage equal to Bleeding amount."]
+        },
+        "thePirate:BleedingPower": {
+                "NAME": "Bleeding",
+                "DESCRIPTIONS": ["The next time you lose HP, take #b", " additional damage."," additional damage."]
+        },
+        "thePirate:CephalopodFormPower": {
+                "NAME": "Cephalopod Form",
+                "DESCRIPTIONS": ["When you play a card, apply #b", " Ink to all enemies."," Ink to all enemies."]
+        },
+        "thePirate:GainBlockNextTurnPower": {
+                "NAME": "Gain Block Next Turn",
+                "DESCRIPTIONS": ["Next turn, gain #b", " block."," block."]
+        },
+        "thePirate:ElectricEelPower": {
+                "NAME": "Electric Eel",
+                "DESCRIPTIONS": ["The first time you draw a card each turn, draw #b", " card."," cards."]
+        },
+        "thePirate:AusterityPower": {
+                "NAME": "Austerity",
+                "DESCRIPTIONS": ["Whenever you thepirate:Bury a card, draw #b", " card."," cards."]
+        },
+        "thePirate:HardenedBrinePower": {
+                "NAME": "Hardened Brine",
+                "DESCRIPTIONS": ["Whenever you use energy, gain #b", " block for each energy spent."," block for each energy spent."]
+        },
+        "thePirate:VolatileInkPower": {
+                "NAME": "Volatile Ink",
+                "DESCRIPTIONS": ["Ink is removed from enemies at the end of turn instead."]
+        },
+        "thePirate:StormSurgePower": {
+                "NAME": "Storm Surge",
+                "DESCRIPTIONS": ["Whenever you use energy, gain #b", " temporary Strength."," temporary Strength."]
+        },
+        "thePirate:TooMuchRumPower": {
+                "NAME": "Too Much Rum",
+                "DESCRIPTIONS": ["Whenever you Bury a card, Exhaust it and gain #b", " block."," block."]
+        },
+        "thePirate:ChemicalWarfarePower": {
+                "NAME": "Chemical Warfare",
+                "DESCRIPTIONS": ["Enemy takes 50% more damage from Ink  for the next #b", " round."," rounds."]
+        },
+        "thePirate:DavyJonesLockerPower": {
+                "NAME": "Davy Jones' Locker",
+                "DESCRIPTIONS": ["Purge the next #b", " card you play."," cards you play."]
+        },
+        "thePirate:CorruptArtifactPower": {
+                "NAME": "Corrupt Artifact",
+                "DESCRIPTIONS": ["Negates #b", " buff."," buffs."]
+        },
+        "thePirate:InkPower": {
+                "NAME": "Ink",
+                "DESCRIPTIONS": ["The next time this enemy would deal damage, prevent damage equal to the ink value, deal that much damage to the enemy, and then remove that much ink. ", "",""]
+        },
+        "thePirate:StartTurnBuryPower": {
+                "NAME": "Beach Crew",
+                "DESCRIPTIONS": ["At the start of turn, bury #b", " card.", " cards."]
+        },
+        "thePirate:FireAtWillPower": {
+                "NAME": "Fire At Will Power",
+                "DESCRIPTIONS": ["At the start of turn, the ", "#bst Cannonball you play costs 0.", "first #b Cannonballs you play cost 0."]
+        },
+        "thePirate:PirateFormPower": {
+                "NAME": "Pirate Form",
+                "DESCRIPTIONS": ["At the start of turn, thepirate:Bury and then thepirate:Dig ", "", ""]
+        },
+        "thePirate:SabateurPower": {
+                "NAME": "Sabotaged",
+                "DESCRIPTIONS": ["The next #b", " time this enemy would gain block, instead it doesn't.", " time this enemy would gain block, instead it doesn't."]
+        },
+        "thePirate:StartTurnDigPower": {
+                "NAME": "Dig",
+                "DESCRIPTIONS": ["At the start of your next", " turn, Dig.", " #b turns, Dig."]
+        },
+        "thePirate:CaptainsQuartersPower": {
+                "NAME": "Captain's Quarters",
+                "DESCRIPTIONS": ["The next #b", " time you play an Attack or Skill card this turn, it is played twice.", " times you play an Attack or Skill card this turn, it is played twice."]
+        },
+        "thePirate:FreeCannonballPower": {
+                "NAME": "Free Cannonball",
+                "DESCRIPTIONS": ["The next #b", " Cannonball you play this turn costs 0.", " Cannonballs you play this turn cost 0."]
+        },
+        "thePirate:CommonPower": {
+                "NAME": "Placeholder Power",
+                "DESCRIPTIONS": ["You applied #b", " keyword.", " keywords."]
+        },
+        "thePirate:RarePower": {
+                "NAME": "Placeholder Power",
+                "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
+        }
+}
