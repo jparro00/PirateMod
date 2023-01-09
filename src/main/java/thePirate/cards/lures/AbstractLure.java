@@ -42,6 +42,7 @@ public abstract class AbstractLure extends AbstractDynamicCard implements Purgab
         this.showPreview = showPreview;
         this.magicNumber = baseMagicNumber = magicNumber;
         isInnate = true;
+        tags.add(CardTags.HEALING);
     }
 
     @Override

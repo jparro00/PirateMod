@@ -22,6 +22,7 @@ public abstract class AbstractPredator extends AbstractDynamicCard implements Sp
         if(showPreview){
             cardsToPreview = getLure();
         }
+        tags.add(CardTags.HEALING);
     }
 
 
