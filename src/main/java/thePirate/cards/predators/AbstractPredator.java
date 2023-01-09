@@ -67,7 +67,7 @@ public abstract class AbstractPredator extends AbstractDynamicCard implements Sp
 
     @Override
     public boolean canSpawnShop(ArrayList<AbstractCard> currentShopCards) {
-        return canSpawn(currentShopCards);
+        return false;
     }
 
     public abstract AbstractLure getLure();
