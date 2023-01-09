@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
-import thePirate.actions.PurgeRemovablesAction;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.cards.lures.AbstractLure;
 
@@ -65,6 +64,10 @@ public abstract class AbstractPredator extends AbstractDynamicCard implements Sp
         return retVal;
     }
 
+    @Override
+    public boolean canSpawnShop(ArrayList<AbstractCard> currentShopCards) {
+        return canSpawn(currentShopCards);
+    }
 
     public abstract AbstractLure getLure();
 }

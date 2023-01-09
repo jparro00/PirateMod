@@ -59,6 +59,11 @@ public abstract class AbstractLure extends AbstractDynamicCard implements Purgab
         return canSpawn;
     }
 
+    @Override
+    public boolean canSpawnShop(ArrayList<AbstractCard> currentShopCards) {
+        return canSpawn(currentShopCards);
+    }
+
     public boolean canUpgrade(){
         return false;
     }
