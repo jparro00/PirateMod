@@ -9,7 +9,7 @@
   },
   "thePirate:DarkOffering": {
     "NAME": "Dark Offering",
-    "DESCRIPTION": "thepirate:Bury up to x cards and apply !M!*x thepirate:Ink to ALL enemies. NL Exhaust."
+    "DESCRIPTION": "thepirate:Bury up to x cards and apply !M!x thepirate:Ink to ALL enemies. NL Exhaust."
   },
   "thePirate:": {
     "NAME": "",
@@ -40,7 +40,7 @@
   },
   "thePirate:DarkPlans": {
     "NAME": "Dark Plans",
-    "DESCRIPTION": "Apply !M! ink to all enemies !SM! times. NL NL Can only be played if you have equal cards in draw and discard.",
+    "DESCRIPTION": "Apply !M!x!SM! thepirate:Ink to all enemies. NL NL Can only be played if you have equal cards in draw and discard.",
     "EXTENDED_DESCRIPTION": ["Can only be played if you have equal cards in draw and discard.."]
   },
   "thePirate:AttendToCache": {
