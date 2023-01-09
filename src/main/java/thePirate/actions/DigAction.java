@@ -38,7 +38,7 @@ public class DigAction extends AbstractGameAction {
     public void update() {
 
 
-        AbstractDungeon.actionManager.addToBottom(new MoveCardsAction(player.hand, player.discardPile, new Predicate<AbstractCard>() {
+        AbstractDungeon.actionManager.addToTop(new MoveCardsAction(player.hand, player.discardPile, new Predicate<AbstractCard>() {
             @Override
             public boolean test(AbstractCard card) {
                 return digCard == null || digCard.uuid.equals(card.uuid);

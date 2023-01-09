@@ -34,7 +34,7 @@ public class PurgeRemovablesAction extends AbstractGameAction {
 
     @Override
     public void update(){
-        DefaultMod.logger.info("enter PuregRemovablesAction.update()");
+        DefaultMod.logger.info("enter PurgeRemovablesAction.update()");
 
         //TODO: reevaluate at some point to decide if this cod makes sense
         AbstractPlayer p = AbstractDungeon.player;
@@ -69,9 +69,9 @@ public class PurgeRemovablesAction extends AbstractGameAction {
 
         //count deck upgrades
         for (AbstractCard c : p.masterDeck.group){
-            combatCount++;
+            masterDeckCount++;
             if (c.upgraded){
-                combatUpgradeCount++;
+                masterDeckUpgradeCount++;
             }
         }
 
