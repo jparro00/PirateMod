@@ -2,10 +2,9 @@ package thePirate.variables;
 
 import basemod.abstracts.DynamicVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import thePirate.cards.attacks.DarkExperiment;
 
-import static thePirate.DefaultMod.makeID;
+import static thePirate.PirateMod.makeID;
 
 public class DarkExperimentVariable extends DynamicVariable
 {   // Custom Dynamic Variables are what you do if you need your card text to display a cool, changing number that the base game doesn't provide.

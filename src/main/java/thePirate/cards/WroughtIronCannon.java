@@ -1,19 +1,15 @@
 package thePirate.cards;
 
-import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.cards.curses.Normality;
-import com.megacrit.cardcrawl.cards.curses.Pain;
-import com.megacrit.cardcrawl.cards.curses.Shame;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import thePirate.DefaultMod;
-import thePirate.characters.TheDefault;
+import thePirate.PirateMod;
+import thePirate.characters.ThePirate;
 import thePirate.powers.FreeCannonballPower;
 import thePirate.powers.RetainCannonballPower;
 
-import static thePirate.DefaultMod.makeCardPath;
+import static thePirate.PirateMod.makeCardPath;
 
 public class WroughtIronCannon extends AbstractCannonCard{
 
@@ -24,14 +20,14 @@ public class WroughtIronCannon extends AbstractCannonCard{
     private static final CardTarget TARGET = CardTarget.SELF;  //   since they don't change much.
     //TODO: need to figure out how to prevent this from triggering gremlin knob
     private static final CardType TYPE = CardType.SKILL;       //
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;
     public static final int vulnerableCount = 1;
     public int cannonballsRetainCount;
     private static final int COST = 0;
     // /STAT DECLARATION/
 
     // TEXT DECLARATION
-    public static final String ID = DefaultMod.makeID(WroughtIronCannon.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
+    public static final String ID = PirateMod.makeID(WroughtIronCannon.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
     public static final String IMG = makeCardPath("WroughtIronCannon.png", TYPE);
     // /TEXT DECLARATION/
 

@@ -9,7 +9,6 @@ import com.esotericsoftware.spine.AnimationState;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
@@ -19,30 +18,24 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
-import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import thePirate.DefaultMod;
+import thePirate.PirateMod;
 import thePirate.cards.*;
 import thePirate.cards.attacks.*;
-import thePirate.cards.powers.PirateForm;
 import thePirate.cards.skills.*;
-import thePirate.patches.cards.DamageInfoFieldPatch;
-import thePirate.relics.DefaultClickableRelic;
-import thePirate.relics.PlaceholderRelic;
-import thePirate.relics.PlaceholderRelic2;
 
 import java.util.ArrayList;
 
-import static thePirate.DefaultMod.*;
-import static thePirate.characters.TheDefault.Enums.COLOR_GRAY;
+import static thePirate.PirateMod.*;
+import static thePirate.characters.ThePirate.Enums.COLOR_GRAY;
 
 //Wiki-page https://github.com/daviscook477/BaseMod/wiki/Custom-Characters
 //and https://github.com/daviscook477/BaseMod/wiki/Migrating-to-5.0
 //All text (starting description and loadout, anything labeled TEXT[]) can be found in DefaultMod-character-Strings.json in the resources
 
-public class TheDefault extends CustomPlayer {
-    public static final Logger logger = LogManager.getLogger(DefaultMod.class.getName());
+public class ThePirate extends CustomPlayer {
+    public static final Logger logger = LogManager.getLogger(PirateMod.class.getName());
 
     // =============== CHARACTER ENUMERATORS =================
     // These are enums for your Characters color (both general color and for the card library) as well as
@@ -53,7 +46,7 @@ public class TheDefault extends CustomPlayer {
 
     public static class Enums {
         @SpireEnum
-        public static AbstractPlayer.PlayerClass THE_DEFAULT;
+        public static AbstractPlayer.PlayerClass THE_PIRATE;
         @SpireEnum(name = "DEFAULT_GRAY_COLOR") // These two HAVE to have the same absolutely identical name.
         public static AbstractCard.CardColor COLOR_GRAY;
         @SpireEnum(name = "DEFAULT_GRAY_COLOR") @SuppressWarnings("unused")
@@ -77,7 +70,7 @@ public class TheDefault extends CustomPlayer {
 
     // =============== STRINGS =================
 
-    private static final String ID = makeID("DefaultCharacter");
+    private static final String ID = makeID("PirateCharacter");
     private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ID);
     private static final String[] NAMES = characterStrings.NAMES;
     private static final String[] TEXT = characterStrings.TEXT;
@@ -106,7 +99,7 @@ public class TheDefault extends CustomPlayer {
 
     // =============== CHARACTER CLASS START =================
 
-    public TheDefault(String name, PlayerClass setClass) {
+    public ThePirate(String name, PlayerClass setClass) {
         super(name, setClass, orbTextures,
                 "thePirateResources/images/char/defaultCharacter/orb/vfx.png", null,
                 new SpriterAnimation(
@@ -244,7 +237,7 @@ public class TheDefault extends CustomPlayer {
     // Should return a color object to be used to color the trail of moving cards
     @Override
     public Color getCardTrailColor() {
-        return thePirate.DefaultMod.DEFAULT_GRAY;
+        return PirateMod.DEFAULT_GRAY;
     }
 
     // Should return a BitmapFont object that you can use to customize how your
@@ -275,20 +268,20 @@ public class TheDefault extends CustomPlayer {
     // Should return a new instance of your character, sending name as its name parameter.
     @Override
     public AbstractPlayer newInstance() {
-        return new TheDefault(name, chosenClass);
+        return new ThePirate(name, chosenClass);
     }
 
     // Should return a Color object to be used to color the miniature card images in run history.
     @Override
     public Color getCardRenderColor() {
-        return thePirate.DefaultMod.DEFAULT_GRAY;
+        return PirateMod.DEFAULT_GRAY;
     }
 
     // Should return a Color object to be used as screen tint effect when your
     // character attacks the heart.
     @Override
     public Color getSlashAttackColor() {
-        return thePirate.DefaultMod.DEFAULT_GRAY;
+        return PirateMod.DEFAULT_GRAY;
     }
 
     // Should return an AttackEffect array of any size greater than 0. These effects

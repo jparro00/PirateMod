@@ -4,13 +4,13 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.FrailPower;
-import thePirate.DefaultMod;
+import thePirate.PirateMod;
 import thePirate.cards.predators.ElectricEel;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static thePirate.DefaultMod.makeCardPath;
+import static thePirate.PirateMod.makeCardPath;
 
 public class LowerDefenses extends AbstractLure {
 
@@ -18,7 +18,7 @@ public class LowerDefenses extends AbstractLure {
     public static final int MAGIC = 1;
 
     public static final String SIMPLE_NAME = LowerDefenses.class.getSimpleName();
-    public static final String ID = DefaultMod.makeID(SIMPLE_NAME);
+    public static final String ID = PirateMod.makeID(SIMPLE_NAME);
     public static final String IMG = makeCardPath(SIMPLE_NAME + ".png", CardType.SKILL);
 
     public LowerDefenses(){

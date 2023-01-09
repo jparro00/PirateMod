@@ -2,12 +2,10 @@ package thePirate.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.GainPennyEffect;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
-import thePirate.DefaultMod;
+import thePirate.PirateMod;
 import thePirate.cards.attacks.HeatedShot;
 
 public class HeatedShotAction extends AbstractGameAction {
@@ -28,7 +26,7 @@ public class HeatedShotAction extends AbstractGameAction {
     @Override
     public void update() {
         if (this.duration == 0.1F && this.target != null) {
-            DefaultMod.logger.info("target.isDying: " + this.target.isDying);
+            PirateMod.logger.info("target.isDying: " + this.target.isDying);
             if(!this.target.isDying){
                 AbstractDungeon.effectList.add(new FlashAtkImgEffect(this.target.hb.cX, this.target.hb.cY, AttackEffect.BLUNT_HEAVY));
                 this.target.damage(this.info);

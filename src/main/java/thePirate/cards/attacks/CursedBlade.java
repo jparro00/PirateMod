@@ -1,19 +1,17 @@
 package thePirate.cards.attacks;
 
-import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import thePirate.DefaultMod;
+import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
-import thePirate.characters.TheDefault;
+import thePirate.characters.ThePirate;
 import thePirate.powers.CorruptArtifactPower;
 
-import static thePirate.DefaultMod.makeCardPath;
+import static thePirate.PirateMod.makeCardPath;
 
 public class CursedBlade extends AbstractDynamicCard {
 
@@ -22,7 +20,7 @@ public class CursedBlade extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
     private static final CardType TYPE = CardType.ATTACK;       //
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
     private static final int UPGRADED_COST = 1;
@@ -34,7 +32,7 @@ public class CursedBlade extends AbstractDynamicCard {
     // /STAT DECLARATION/
 
     // TEXT DECLARATION
-    public static final String ID = DefaultMod.makeID(CursedBlade.class.getSimpleName());
+    public static final String ID = PirateMod.makeID(CursedBlade.class.getSimpleName());
     public static final String IMG = makeCardPath("CursedBlade.png", TYPE);
     // /TEXT DECLARATION/
 

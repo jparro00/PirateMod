@@ -6,11 +6,11 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.StrengthPower;
-import thePirate.DefaultMod;
+import thePirate.PirateMod;
 import thePirate.util.TextureLoader;
 
-import static thePirate.DefaultMod.makeRelicOutlinePath;
-import static thePirate.DefaultMod.makeRelicPath;
+import static thePirate.PirateMod.makeRelicOutlinePath;
+import static thePirate.PirateMod.makeRelicPath;
 
 public class PlaceholderRelic2 extends CustomRelic {
     /*
@@ -20,7 +20,7 @@ public class PlaceholderRelic2 extends CustomRelic {
      */
 
     // ID, images, text.
-    public static final String ID = DefaultMod.makeID("PlaceholderRelic2");
+    public static final String ID = PirateMod.makeID("PlaceholderRelic2");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic2.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic2.png"));

@@ -4,12 +4,12 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import thePirate.DefaultMod;
+import thePirate.PirateMod;
 import thePirate.actions.ShotsInTheDarkAction;
 import thePirate.cards.AbstractDynamicCard;
-import thePirate.characters.TheDefault;
+import thePirate.characters.ThePirate;
 
-import static thePirate.DefaultMod.makeCardPath;
+import static thePirate.PirateMod.makeCardPath;
 
 public class ShotsInTheDark extends AbstractDynamicCard {
 
@@ -22,7 +22,7 @@ public class ShotsInTheDark extends AbstractDynamicCard {
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;  //   since they don't change much.
     private static final CardType TYPE = CardType.ATTACK;       //
     private static final int BASE_TIMES = 3;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
 
@@ -32,7 +32,7 @@ public class ShotsInTheDark extends AbstractDynamicCard {
     // /STAT DECLARATION/
 
     // TEXT DECLARATION
-    public static final String ID = DefaultMod.makeID(ShotsInTheDark.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
+    public static final String ID = PirateMod.makeID(ShotsInTheDark.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
     public static final String IMG = makeCardPath("ShotsInTheDark.png", TYPE);
     // /TEXT DECLARATION/
 

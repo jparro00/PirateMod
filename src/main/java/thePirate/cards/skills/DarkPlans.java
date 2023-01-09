@@ -6,12 +6,12 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import thePirate.DefaultMod;
+import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
-import thePirate.characters.TheDefault;
+import thePirate.characters.ThePirate;
 import thePirate.powers.InkPower;
 
-import static thePirate.DefaultMod.makeCardPath;
+import static thePirate.PirateMod.makeCardPath;
 
 public class DarkPlans extends AbstractDynamicCard {
 
@@ -20,7 +20,7 @@ public class DarkPlans extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.RARE; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;  //   since they don't change much.
     private static final CardType TYPE = CardType.SKILL;       //
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;
 
     private static final int COST = 0;
     private static final int UPGRADED_COST = 0;
@@ -32,7 +32,7 @@ public class DarkPlans extends AbstractDynamicCard {
     // /STAT DECLARATION/
 
     // TEXT DECLARATION
-    public static final String ID = DefaultMod.makeID(DarkPlans.class.getSimpleName());
+    public static final String ID = PirateMod.makeID(DarkPlans.class.getSimpleName());
     public static final String IMG = makeCardPath("DarkPlans.png", TYPE);
     // /TEXT DECLARATION/
 

@@ -1,32 +1,27 @@
 package thePirate.cards.attacks;
 
-import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.red.Bash;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
-import thePirate.DefaultMod;
+import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
-import thePirate.characters.TheDefault;
+import thePirate.characters.ThePirate;
 
 import java.util.Iterator;
-import java.util.List;
 
-import static thePirate.DefaultMod.makeCardPath;
+import static thePirate.PirateMod.makeCardPath;
 
 public class GiantBeak extends AbstractDynamicCard {
 
 
     // TEXT DECLARATION
 
-    public static final String ID = DefaultMod.makeID(GiantBeak.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
+    public static final String ID = PirateMod.makeID(GiantBeak.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
     public static final String IMG = makeCardPath("GiantBeak.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
 
@@ -39,7 +34,7 @@ public class GiantBeak extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
     private static final CardType TYPE = CardType.ATTACK;       //
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;
 
     private static final int COST = 2;
     private static final int UPGRADED_COST = 2;
@@ -59,7 +54,7 @@ public class GiantBeak extends AbstractDynamicCard {
 
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
-        DefaultMod.logger.info("enter calculateDamage");
+        PirateMod.logger.info("enter calculateDamage");
         int realBaseDamage = this.baseDamage;
         int artifactCount = 0;
         int vulnerableCount = 0;

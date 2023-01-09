@@ -2,20 +2,16 @@ package thePirate.cards.attacks;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.relics.Necronomicon;
-import thePirate.DefaultMod;
-import thePirate.cards.AbstractDynamicCard;
-import thePirate.characters.TheDefault;
+import thePirate.PirateMod;
+import thePirate.characters.ThePirate;
 
-import static thePirate.DefaultMod.makeCardPath;
+import static thePirate.PirateMod.makeCardPath;
 
 public class GrapeShot extends AbstractCannonBallCard {
 
@@ -24,7 +20,7 @@ public class GrapeShot extends AbstractCannonBallCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;  //   since they don't change much.
     private static final CardType TYPE = CardType.ATTACK;       //
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;
 
     private static final int COST = 2;
     private static final int UPGRADED_COST = 2;
@@ -37,7 +33,7 @@ public class GrapeShot extends AbstractCannonBallCard {
     // /STAT DECLARATION/
 
     // TEXT DECLARATION
-    public static final String ID = DefaultMod.makeID(GrapeShot.class.getSimpleName());
+    public static final String ID = PirateMod.makeID(GrapeShot.class.getSimpleName());
     public static final String IMG = makeCardPath("GrapeShot.png", TYPE);
     // /TEXT DECLARATION/
 
@@ -52,7 +48,7 @@ public class GrapeShot extends AbstractCannonBallCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int cardsPlayedThisTurn = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
-        DefaultMod.logger.info("cardsPlayedThisTurn: " + cardsPlayedThisTurn);
+        PirateMod.logger.info("cardsPlayedThisTurn: " + cardsPlayedThisTurn);
         //use(p,m,cardsPlayedThisTurn);
 
         AbstractMonster target = AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng);
@@ -76,7 +72,7 @@ public class GrapeShot extends AbstractCannonBallCard {
 
     public void use(AbstractPlayer p, AbstractMonster m, int numberOfUses){
         numberOfUses--;
-        DefaultMod.logger.info("numberOfUses: " + numberOfUses);
+        PirateMod.logger.info("numberOfUses: " + numberOfUses);
 
         AbstractMonster target = AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng);
         this.addToBot(new DamageAction(target, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));

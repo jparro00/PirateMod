@@ -13,16 +13,16 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
-import thePirate.DefaultMod;
+import thePirate.PirateMod;
 import thePirate.patches.characters.AbstractPlayerPatch;
 import thePirate.util.TextureLoader;
 
-import static thePirate.DefaultMod.makePowerPath;
+import static thePirate.PirateMod.makePowerPath;
 
 public class StormSurgePower extends AbstractPower implements CloneablePowerInterface, OnUseEnergy {
     public AbstractCreature source;
 
-    public static final String POWER_ID = DefaultMod.makeID("StormSurgePower");
+    public static final String POWER_ID = PirateMod.makeID("StormSurgePower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

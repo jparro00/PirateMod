@@ -1,19 +1,14 @@
 package thePirate.cards.powers;
 
-import basemod.AutoAdd;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import thePirate.DefaultMod;
+import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
-import thePirate.characters.TheDefault;
+import thePirate.characters.ThePirate;
 import thePirate.powers.CephalopodFormPower;
 
-import static thePirate.DefaultMod.makeCardPath;
+import static thePirate.PirateMod.makeCardPath;
 
 public class CephalopodForm extends AbstractDynamicCard {
 
@@ -23,7 +18,7 @@ public class CephalopodForm extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.RARE; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.SELF;  //   since they don't change much.
     private static final CardType TYPE = CardType.POWER;       //
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;
 
     private static final int COST = 3;
     private static final int UPGRADED_COST = 3;
@@ -33,7 +28,7 @@ public class CephalopodForm extends AbstractDynamicCard {
     // /STAT DECLARATION/
 
     // TEXT DECLARATION
-    public static final String ID = DefaultMod.makeID(CephalopodForm.class.getSimpleName());
+    public static final String ID = PirateMod.makeID(CephalopodForm.class.getSimpleName());
     public static final String IMG = makeCardPath("CephalopodForm.png", TYPE);
     // /TEXT DECLARATION/
 

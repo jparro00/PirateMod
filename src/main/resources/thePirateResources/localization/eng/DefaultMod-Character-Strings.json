@@ -1,13 +1,13 @@
 {
-  "thePirate:DefaultCharacter": {
+  "thePirate:PirateCharacter": {
     "NAMES": [
-      "The Default",
-      "the Default"
+      "The Pirate",
+      "the Pirate"
     ],
     "TEXT": [
-      "THE_DEFAULT exists and is valid. THE_DEFAULT wishes to T o uuuch# NL Second placeholder line of description text.",
-      "NL You TOUCH the heart.",
-      "Navigating an unlit street, you come across several hooded figures in the midst of some dark ritual. As you approach, they turn to you in eerie unison. The tallest among them bares fanged teeth and extends a long, pale hand towards you. NL ~\"Join~ ~us~ ~basic~ ~one,~ ~and~ ~feel~ ~the~ ~warmth~ ~of~ ~the~ ~Spire.\"~"
+      "The Pirate has come to the Spire in search of a better backstory. NL Some extra text.",
+      "NL You fish hook the heart.",
+      "Navigating an unlit street, you come across several hooded figures in the midst of some dark ritual. As you approach, they turn to you in eerie unison. The tallest among them bares fanged teeth and extends a long, pale hand towards you. NL ~\"Join~ ~us~ ~tentacled~ ~one,~ ~and~ ~feel~ ~the~ ~warmth~ ~of~ ~the~ ~Spire.\"~"
     ]
   }
 }

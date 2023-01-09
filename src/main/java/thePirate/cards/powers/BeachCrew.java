@@ -3,12 +3,12 @@ package thePirate.cards.powers;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import thePirate.DefaultMod;
+import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
-import thePirate.characters.TheDefault;
+import thePirate.characters.ThePirate;
 import thePirate.powers.StartTurnBuryPower;
 
-import static thePirate.DefaultMod.makeCardPath;
+import static thePirate.PirateMod.makeCardPath;
 
 public class BeachCrew extends AbstractDynamicCard {
 
@@ -18,7 +18,7 @@ public class BeachCrew extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.RARE; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.SELF;  //   since they don't change much.
     private static final CardType TYPE = CardType.POWER;       //
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
     private static final int UPGRADED_COST = 0;
@@ -28,7 +28,7 @@ public class BeachCrew extends AbstractDynamicCard {
     // /STAT DECLARATION/
 
     // TEXT DECLARATION
-    public static final String ID = DefaultMod.makeID(BeachCrew.class.getSimpleName());
+    public static final String ID = PirateMod.makeID(BeachCrew.class.getSimpleName());
     public static final String IMG = makeCardPath("BeachCrew.png", TYPE);
     // /TEXT DECLARATION/
 

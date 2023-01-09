@@ -2,7 +2,6 @@ package thePirate.cards;
 
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
-import thePirate.DefaultMod;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 

@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import thePirate.DefaultMod;
+import thePirate.PirateMod;
 
 import java.util.HashSet;
 import java.util.Iterator;
@@ -34,7 +34,7 @@ public class PurgeRemovablesAction extends AbstractGameAction {
 
     @Override
     public void update(){
-        DefaultMod.logger.info("enter PurgeRemovablesAction.update()");
+        PirateMod.logger.info("enter PurgeRemovablesAction.update()");
 
         //TODO: reevaluate at some point to decide if this cod makes sense
         AbstractPlayer p = AbstractDungeon.player;

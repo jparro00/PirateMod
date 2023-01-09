@@ -10,15 +10,15 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import thePirate.DefaultMod;
+import thePirate.PirateMod;
 import thePirate.util.TextureLoader;
 
-import static thePirate.DefaultMod.makePowerPath;
+import static thePirate.PirateMod.makePowerPath;
 
 public class SaboteurPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = DefaultMod.makeID("SabateurPower");
+    public static final String POWER_ID = PirateMod.makeID("SabateurPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -54,7 +54,7 @@ public class SaboteurPower extends AbstractPower implements CloneablePowerInterf
 
     @Override
     public void update(int slot){
-        DefaultMod.logger.info("update()");
+        PirateMod.logger.info("update()");
         if(appliedThisTurn && owner.currentBlock > monsterInitialBlock){
             this.addToBot(new LoseBlockAction(owner, AbstractDungeon.player, owner.currentBlock - monsterInitialBlock));
             this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID ));

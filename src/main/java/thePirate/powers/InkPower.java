@@ -3,7 +3,6 @@ package thePirate.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -16,19 +15,16 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
-import thePirate.DefaultMod;
-import thePirate.patches.cards.DamageInfoPatch;
+import thePirate.PirateMod;
 import thePirate.util.TextureLoader;
 
-import static thePirate.DefaultMod.makePowerPath;
+import static thePirate.PirateMod.makePowerPath;
 
 
 public class InkPower extends AbstractPower implements CloneablePowerInterface, OnAttackToChangeDamagePreBlock {
     public AbstractCreature source;
 
-    public static final String POWER_ID = DefaultMod.makeID("InkPower");
+    public static final String POWER_ID = PirateMod.makeID("InkPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -139,8 +135,8 @@ public class InkPower extends AbstractPower implements CloneablePowerInterface, 
 
     @Override
     public int onAttackToChangeDamagePreBlock(DamageInfo info, int damageAmount) {
-        DefaultMod.logger.info("enter onAttackToChangeDamagePreBlock()");
-        DefaultMod.logger.info("info.name: " + info.name);
+        PirateMod.logger.info("enter onAttackToChangeDamagePreBlock()");
+        PirateMod.logger.info("info.name: " + info.name);
         info.name = "test";
         AbstractPlayer player = AbstractDungeon.player;
 
@@ -158,27 +154,27 @@ public class InkPower extends AbstractPower implements CloneablePowerInterface, 
         if (damageAmount > 1 && player.hasPower("IntangiblePlayer"))
             damageAmount = 1;
 
-        DefaultMod.logger.info("damageAmount: " + damageAmount);
-        DefaultMod.logger.info("player block: " + playerBlock);
-        DefaultMod.logger.info("amount: " + tmpAmount);
-        DefaultMod.logger.info("originalAmount: " + originalAmount );
+        PirateMod.logger.info("damageAmount: " + damageAmount);
+        PirateMod.logger.info("player block: " + playerBlock);
+        PirateMod.logger.info("amount: " + tmpAmount);
+        PirateMod.logger.info("originalAmount: " + originalAmount );
 
 
 
         if(tmpAmount - damageAmount <= 0){
-            DefaultMod.logger.info("enter FIRST case");
+            PirateMod.logger.info("enter FIRST case");
             damageBack = tmpAmount;
             damageAmount -= tmpAmount;
             tmpAmount = 0;
-            DefaultMod.logger.info("damageAmount: " + damageAmount);
-            DefaultMod.logger.info("amount: " + tmpAmount);
+            PirateMod.logger.info("damageAmount: " + damageAmount);
+            PirateMod.logger.info("amount: " + tmpAmount);
         } else {
-            DefaultMod.logger.info("enter SECOND case");
+            PirateMod.logger.info("enter SECOND case");
             tmpAmount -= damageAmount;
             damageBack = originalAmount - tmpAmount;
             damageAmount = 0;
-            DefaultMod.logger.info("damageAmount: " + damageAmount);
-            DefaultMod.logger.info("amount: " + tmpAmount);
+            PirateMod.logger.info("damageAmount: " + damageAmount);
+            PirateMod.logger.info("amount: " + tmpAmount);
         }
 
 /*
@@ -202,7 +198,7 @@ public class InkPower extends AbstractPower implements CloneablePowerInterface, 
             this.addToTop(new ReducePowerAction(info.owner, info.owner, this.ID, originalAmount - tmpAmount));
         }
 
-        DefaultMod.logger.info("returning damageAmount: " + damageAmount);
+        PirateMod.logger.info("returning damageAmount: " + damageAmount);
         return damageAmount;
     }
 

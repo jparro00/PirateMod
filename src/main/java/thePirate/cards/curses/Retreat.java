@@ -9,21 +9,21 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
-import thePirate.DefaultMod;
+import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.cards.Purgable;
 import thePirate.cards.attacks.Overexert;
-import thePirate.characters.TheDefault;
+import thePirate.characters.ThePirate;
 import thePirate.actions.PurgeRemovablesAction;
 
-import static thePirate.DefaultMod.makeCardPath;
+import static thePirate.PirateMod.makeCardPath;
 
 public class Retreat extends AbstractDynamicCard implements Purgable {
 
 
     // TEXT DECLARATION
 
-    public static final String ID = DefaultMod.makeID(Retreat.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
+    public static final String ID = PirateMod.makeID(Retreat.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
     public static final String IMG = makeCardPath("Retreat.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
     private boolean purge;
@@ -38,7 +38,7 @@ public class Retreat extends AbstractDynamicCard implements Purgable {
     private static final CardRarity RARITY = CardRarity.SPECIAL; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.SELF;  //   since they don't change much.
     private static final CardType TYPE = CardType.CURSE;       //
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;

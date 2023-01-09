@@ -15,15 +15,15 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import thePirate.DefaultMod;
+import thePirate.PirateMod;
 import thePirate.patches.relics.BottledPlaceholderField;
 import thePirate.util.TextureLoader;
 
 import java.util.Iterator;
 import java.util.function.Predicate;
 
-import static thePirate.DefaultMod.makeRelicOutlinePath;
-import static thePirate.DefaultMod.makeRelicPath;
+import static thePirate.PirateMod.makeRelicOutlinePath;
+import static thePirate.PirateMod.makeRelicPath;
 
 public class BottledPlaceholderRelic extends CustomRelic implements CustomBottleRelic, CustomSavable<Integer> {
     // This file will show you how to use 2 things - (Mostly) The Custom Bottle Relic and the Custom Savable - they go hand in hand.
@@ -43,7 +43,7 @@ public class BottledPlaceholderRelic extends CustomRelic implements CustomBottle
 
 
     // ID, images, text.
-    public static final String ID = DefaultMod.makeID("BottledPlaceholderRelic");
+    public static final String ID = PirateMod.makeID("BottledPlaceholderRelic");
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("BottledPlaceholder.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("BottledPlaceholder.png"));
 

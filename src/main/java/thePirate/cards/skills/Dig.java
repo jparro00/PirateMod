@@ -3,19 +3,19 @@ package thePirate.cards.skills;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import thePirate.DefaultMod;
+import thePirate.PirateMod;
 import thePirate.actions.DigAction;
 import thePirate.cards.AbstractDynamicCard;
-import thePirate.characters.TheDefault;
+import thePirate.characters.ThePirate;
 
-import static thePirate.DefaultMod.makeCardPath;
+import static thePirate.PirateMod.makeCardPath;
 
 public class Dig extends AbstractDynamicCard {
 
 
     // TEXT DECLARATION
 
-    public static final String ID = DefaultMod.makeID(Dig.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
+    public static final String ID = PirateMod.makeID(Dig.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
     public static final String IMG = makeCardPath("Dig.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
 
@@ -28,7 +28,7 @@ public class Dig extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.SELF;  //   since they don't change much.
     private static final CardType TYPE = CardType.SKILL;       //
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;
     public static final int UPGRADE_DRAW = 1;
     public static final int BASE_DRAW = 0;
     public static final int BASE_DIG = 1;

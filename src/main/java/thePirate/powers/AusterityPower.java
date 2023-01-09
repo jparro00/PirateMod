@@ -11,17 +11,17 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import thePirate.DefaultMod;
+import thePirate.PirateMod;
 import thePirate.util.TextureLoader;
 
 import java.util.List;
 
-import static thePirate.DefaultMod.makePowerPath;
+import static thePirate.PirateMod.makePowerPath;
 
 public class AusterityPower extends AbstractPower implements CloneablePowerInterface, OnBury {
     public AbstractCreature source;
 
-    public static final String POWER_ID = DefaultMod.makeID("AusterityPower");
+    public static final String POWER_ID = PirateMod.makeID("AusterityPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

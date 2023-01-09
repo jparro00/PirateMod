@@ -10,10 +10,10 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import thePirate.DefaultMod;
+import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.cards.Purgable;
-import thePirate.characters.TheDefault;
+import thePirate.characters.ThePirate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +25,7 @@ public abstract class AbstractLure extends AbstractDynamicCard implements Purgab
 
     private static final CardTarget TARGET = CardTarget.NONE;  //   since they don't change much.
     private static final CardType TYPE = CardType.SKILL;       //
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;
 
     public boolean purge;
 
@@ -70,7 +70,7 @@ public abstract class AbstractLure extends AbstractDynamicCard implements Purgab
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        this.cantUseMessage = CardCrawlGame.languagePack.getUIString(DefaultMod.CANT_PLAY).TEXT[0];
+        this.cantUseMessage = CardCrawlGame.languagePack.getUIString(PirateMod.CANT_PLAY).TEXT[0];
         return false;
     }
 

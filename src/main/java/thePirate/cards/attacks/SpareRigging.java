@@ -4,20 +4,18 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
-import com.megacrit.cardcrawl.cards.blue.SweepingBeam;
-import com.megacrit.cardcrawl.cards.red.Cleave;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
-import thePirate.DefaultMod;
+import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.cards.Purgable;
-import thePirate.characters.TheDefault;
+import thePirate.characters.ThePirate;
 import thePirate.actions.PurgeRemovablesAction;
 
-import static thePirate.DefaultMod.makeCardPath;
+import static thePirate.PirateMod.makeCardPath;
 
 public class SpareRigging extends AbstractDynamicCard implements Purgable {
 
@@ -25,7 +23,7 @@ public class SpareRigging extends AbstractDynamicCard implements Purgable {
 
     // TEXT DECLARATION
 
-    public static final String ID = DefaultMod.makeID(SpareRigging.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
+    public static final String ID = PirateMod.makeID(SpareRigging.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
     //TODO: JP: replace this at some point with actual image
     public static final String IMG = makeCardPath("Attack.png");
     //public static final String IMG = makeCardPath("SpareRigging.png");
@@ -40,7 +38,7 @@ public class SpareRigging extends AbstractDynamicCard implements Purgable {
     private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;  //   since they don't change much.
     private static final CardType TYPE = CardType.ATTACK;       //
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
     private static final int UPGRADED_COST = 1;

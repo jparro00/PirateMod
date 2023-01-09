@@ -4,10 +4,8 @@ import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
-import thePirate.DefaultMod;
+import thePirate.PirateMod;
 
-import java.util.List;
-import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 public class MoveCardAction extends AbstractGameAction {
@@ -29,7 +27,7 @@ public class MoveCardAction extends AbstractGameAction {
         addToTop(new MoveCardsAction(destination, source, new Predicate<AbstractCard>() {
             @Override
             public boolean test(AbstractCard card) {
-                DefaultMod.logger.info("card is equal: " + card.equals(cardToMove));
+                PirateMod.logger.info("card is equal: " + card.equals(cardToMove));
                 return card.equals(cardToMove);
             }
         }));

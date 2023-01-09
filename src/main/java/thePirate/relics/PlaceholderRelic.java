@@ -3,11 +3,11 @@ package thePirate.relics;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import thePirate.DefaultMod;
+import thePirate.PirateMod;
 import thePirate.util.TextureLoader;
 
-import static thePirate.DefaultMod.makeRelicOutlinePath;
-import static thePirate.DefaultMod.makeRelicPath;
+import static thePirate.PirateMod.makeRelicOutlinePath;
+import static thePirate.PirateMod.makeRelicPath;
 
 public class PlaceholderRelic extends CustomRelic {
 
@@ -18,7 +18,7 @@ public class PlaceholderRelic extends CustomRelic {
      */
 
     // ID, images, text.
-    public static final String ID = DefaultMod.makeID("PlaceholderRelic");
+    public static final String ID = PirateMod.makeID("PlaceholderRelic");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));

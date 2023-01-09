@@ -7,16 +7,16 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import thePirate.DefaultMod;
+import thePirate.PirateMod;
 import thePirate.actions.DigAction;
 import thePirate.cards.lures.AbstractLure;
 import thePirate.cards.lures.WithdrawWeapons;
-import thePirate.characters.TheDefault;
+import thePirate.characters.ThePirate;
 import thePirate.powers.OnBury;
 
 import java.util.List;
 
-import static thePirate.DefaultMod.makeCardPath;
+import static thePirate.PirateMod.makeCardPath;
 
 public class AncientCrab extends AbstractPredator implements OnBury {
 
@@ -25,7 +25,7 @@ public class AncientCrab extends AbstractPredator implements OnBury {
     private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
     private static final CardType TYPE = CardType.ATTACK;       //
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
     private static final int UPGRADED_COST = 1;
@@ -37,7 +37,7 @@ public class AncientCrab extends AbstractPredator implements OnBury {
 
     // TEXT DECLARATION
     public static final String SIMPLE_NAME = AncientCrab.class.getSimpleName();
-    public static final String ID = DefaultMod.makeID(SIMPLE_NAME);
+    public static final String ID = PirateMod.makeID(SIMPLE_NAME);
     public static final String IMG = makeCardPath(SIMPLE_NAME + ".png", TYPE);
     // /TEXT DECLARATION/
 

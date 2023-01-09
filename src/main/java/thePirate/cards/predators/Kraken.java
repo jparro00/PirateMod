@@ -5,15 +5,15 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import thePirate.DefaultMod;
+import thePirate.PirateMod;
 import thePirate.cards.lures.AbstractLure;
 import thePirate.cards.lures.BatheInBlood;
-import thePirate.characters.TheDefault;
+import thePirate.characters.ThePirate;
 import thePirate.powers.InkPower;
 
 import java.util.Iterator;
 
-import static thePirate.DefaultMod.makeCardPath;
+import static thePirate.PirateMod.makeCardPath;
 
 public class Kraken extends AbstractPredator{
 
@@ -22,7 +22,7 @@ public class Kraken extends AbstractPredator{
     private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
     private static final CardType TYPE = CardType.SKILL;       //
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;
 
     private static final int COST = 2;
     private static final int UPGRADED_COST = 2;
@@ -34,7 +34,7 @@ public class Kraken extends AbstractPredator{
     // /STAT DECLARATION/
 
     // TEXT DECLARATION
-    public static final String ID = DefaultMod.makeID(Kraken.class.getSimpleName());
+    public static final String ID = PirateMod.makeID(Kraken.class.getSimpleName());
     public static final String IMG = makeCardPath("Kraken.png", TYPE);
     // /TEXT DECLARATION/
 

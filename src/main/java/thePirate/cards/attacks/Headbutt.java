@@ -1,21 +1,21 @@
 package thePirate.cards.attacks;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import thePirate.DefaultMod;
-import thePirate.characters.TheDefault;
+import thePirate.PirateMod;
+import thePirate.characters.ThePirate;
 
-import static thePirate.DefaultMod.makeCardPath;
+import static thePirate.PirateMod.makeCardPath;
 
 public class Headbutt extends com.megacrit.cardcrawl.cards.red.Headbutt {
 
     // STAT DECLARATION
 
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;
 
     // /STAT DECLARATION/
 
     // TEXT DECLARATION
-    public static final String ID = DefaultMod.makeID(Headbutt.class.getSimpleName());
+    public static final String ID = PirateMod.makeID(Headbutt.class.getSimpleName());
     // /TEXT DECLARATION/
 
     public Headbutt() {

@@ -4,8 +4,6 @@ import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.NonStackablePower;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -15,17 +13,16 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.DexterityPower;
-import thePirate.DefaultMod;
+import thePirate.PirateMod;
 import thePirate.actions.MoveCardAction;
 import thePirate.util.TextureLoader;
 
-import static thePirate.DefaultMod.makePowerPath;
+import static thePirate.PirateMod.makePowerPath;
 
 public class TimeWarpPower extends AbstractPower implements CloneablePowerInterface, NonStackablePower {
     public AbstractCreature source;
 
-    public static final String POWER_ID = DefaultMod.makeID(TimeWarpPower.class.getSimpleName());
+    public static final String POWER_ID = PirateMod.makeID(TimeWarpPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -66,10 +63,10 @@ public class TimeWarpPower extends AbstractPower implements CloneablePowerInterf
         if(lastCard != null){
             AbstractPlayer p = AbstractDungeon.player;
             if (p.discardPile.contains(lastCard)){
-                DefaultMod.logger.info("discard contains card");
+                PirateMod.logger.info("discard contains card");
                 addToTop(new DiscardToHandAction(lastCard));
             }else if (p.drawPile.contains(lastCard)){
-                DefaultMod.logger.info("draw contains card");
+                PirateMod.logger.info("draw contains card");
                 addToTop(new MoveCardAction(p.drawPile, p.hand, lastCard));
             }
             lastCard = null;
