@@ -145,7 +145,7 @@ public class InkPower extends AbstractPower implements CloneablePowerInterface, 
         AbstractPlayer player = AbstractDungeon.player;
 
         int output = info.output;
-        damageAmount = output;
+        //damageAmount = output;
 
         int playerBlock = AbstractDungeon.player.currentBlock;
         int damageBack = 0;

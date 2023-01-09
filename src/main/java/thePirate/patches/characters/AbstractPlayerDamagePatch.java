@@ -1,5 +1,7 @@
 package thePirate.patches.characters;
 
+import com.evacipated.cardcrawl.modthespire.lib.ByRef;
+import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -14,38 +16,21 @@ import thePirate.powers.OnAttackToChangeDamagePreBlock;
 )
 public class AbstractPlayerDamagePatch {
 
-    //Note... this is a really terrible way to do this
-    public static void Prefix(AbstractPlayer __instance, DamageInfo info){
-        DefaultMod.logger.info("enter patch Prefix()");
-        DefaultMod.logger.info("info.output: " + info.output);
-        DefaultMod.logger.info("info.base: " + info.base);
-        DefaultMod.logger.info("info.isModified: " + info.isModified);
+    @SpireInsertPatch(
+            loc=1741,
+            localvars={"damageAmount"}
+    )
+    public static void Insert(AbstractPlayer __instance, DamageInfo info, @ByRef int[] damageAmount){
 
-        info.output = DamageInfoFieldPatch.originalOutput.get(info);
-        int damageAmount = info.output;
-        DefaultMod.logger.info("damageAmount: " + damageAmount);
-
-
-        if (damageAmount < 0) {
-            damageAmount = 0;
-        }
-        System.out.println("string");
-
-
-        if (damageAmount > 1 && __instance.hasPower("IntangiblePlayer")) {
-            damageAmount = 1;
-        }
+        DefaultMod.logger.info("damageAmount before modification: " + damageAmount[0]);
         if(info.owner != null){
             for (AbstractPower power : info.owner.powers){
                 if(power instanceof OnAttackToChangeDamagePreBlock){
-                    damageAmount = ((OnAttackToChangeDamagePreBlock) power).onAttackToChangeDamagePreBlock(info, info.output);
-                    info.output = damageAmount;
-                    DefaultMod.logger.info("damageAmount after modification: " + damageAmount);
+                    damageAmount[0] = ((OnAttackToChangeDamagePreBlock) power).onAttackToChangeDamagePreBlock(info, damageAmount[0]);
+                    DefaultMod.logger.info("damageAmount after modification: " + damageAmount[0]);
                 }
             }
         }
-
-        DefaultMod.logger.info("Exit patch Prefix()");
 
     }
 }

@@ -49,7 +49,7 @@ public class Dig extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToTop(new DigAction(this.magicNumber));
+        this.addToBot(new DigAction(this.magicNumber));
         this.addToBot(new DrawCardAction(this.baseSecondMagic));
     }
 
