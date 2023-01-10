@@ -37,6 +37,7 @@ public class AttendToCache extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
         secondMagic = baseSecondMagic = SECOND_MAGIC;
+        exhaust = true;
     }
 
 
