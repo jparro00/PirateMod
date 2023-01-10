@@ -22,7 +22,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thePirate.cards.*;
 import thePirate.characters.ThePirate;
-import thePirate.potions.PlaceholderPotion;
 import thePirate.relics.*;
 import thePirate.util.IDCheckDontTouchPls;
 import thePirate.util.TextureLoader;
@@ -421,11 +420,12 @@ public class PirateMod implements
 
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
         BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), ThePirate.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), ThePirate.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new GunsmithsBible(), ThePirate.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new BronzeCannon(), ThePirate.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new SilverCannon(), ThePirate.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new GoldCannon(), ThePirate.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new PlatinumCannon(), ThePirate.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new GunsmithsBible(), ThePirate.Enums.COLOR_GRAY);
 
         // This adds a relic to the Shared pool. Every character can find this relic.
         BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);

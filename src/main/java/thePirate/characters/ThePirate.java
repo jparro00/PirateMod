@@ -24,10 +24,7 @@ import thePirate.PirateMod;
 import thePirate.cards.*;
 import thePirate.cards.attacks.*;
 import thePirate.cards.skills.*;
-import thePirate.relics.BronzeCannon;
-import thePirate.relics.GoldCannon;
-import thePirate.relics.PlatinumCannon;
-import thePirate.relics.SilverCannon;
+import thePirate.relics.*;
 
 import java.util.ArrayList;
 
@@ -196,7 +193,8 @@ public class ThePirate extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
 
 //        retVal.add(BronzeCannon.ID);
-        retVal.add(SilverCannon.ID);
+//        retVal.add(SilverCannon.ID);
+        retVal.add(GunsmithsBible.ID);
 //        retVal.add(GoldCannon.ID);
 //        retVal.add(PlatinumCannon.ID);
 /*

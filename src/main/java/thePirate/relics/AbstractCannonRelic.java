@@ -37,6 +37,7 @@ public abstract class AbstractCannonRelic extends CustomRelic {
         PirateMod.logger.info("enter AbstractCannonRelic.atBattleStartPreDraw()");
         flash();
         AbstractDungeon.player.hand.addToHand(new Cannon(getTarget()));
+        AbstractDungeon.player.hand.refreshHandLayout();
     }
 
     public abstract List<AbstractGameAction> onUseCannon(AbstractPlayer p, AbstractMonster m);
