@@ -16,7 +16,8 @@ import static thePirate.PirateMod.makePowerPath;
 
 public class FreeCannonballPower extends AbstractPower {
     public static final String POWER_ID = FreeCannonballPower.class.getSimpleName();
-    private static final PowerStrings powerStrings;
+    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
+    public static final String NAME = powerStrings.NAME;
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
@@ -24,14 +25,15 @@ public class FreeCannonballPower extends AbstractPower {
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
     public FreeCannonballPower(AbstractCreature owner, int amount) {
-        this.name = powerStrings.NAME;
-        this.ID = "FreeCannonballPower";
+        this.name = NAME;
+        this.ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
         this.updateDescription();
         // We load those txtures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
+        updateDescription();
     }
 
 
@@ -60,7 +62,4 @@ public class FreeCannonballPower extends AbstractPower {
         this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, FreeCannonballPower.POWER_ID));
     }
 
-    static {
-        powerStrings = CardCrawlGame.languagePack.getPowerStrings(FreeCannonballPower.POWER_ID);
-    }
 }

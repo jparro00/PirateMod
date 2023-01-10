@@ -1,13 +1,17 @@
 package thePirate.cards;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import thePirate.PirateMod;
 import thePirate.characters.ThePirate;
 import thePirate.powers.FreeCannonballPower;
 import thePirate.powers.RetainCannonballPower;
+import thePirate.relics.*;
 
 import static thePirate.PirateMod.makeCardPath;
 
@@ -39,25 +43,42 @@ public class Cannon extends AbstractCannonCard{
     }
 
     public Cannon() {
-        super(ID, IMG, COST, TYPE, COLOR, TARGET);
+        this(TARGET);
+    }
+
+    public Cannon(CardTarget target){
+        super(ID, IMG, COST, TYPE, COLOR, target);
         this.selfRetain = true;
         this.isInnate = true;
         this.exhaust = true;
         this.cannonballsRetainCount = 1;
+
     }
 
 
     @Override
     public void triggerOnEndOfTurnForPlayingCard() {
         AbstractPlayer p = AbstractDungeon.player;
-        this.addToTop(new ApplyPowerAction(p, p,new RetainCannonballPower(AbstractDungeon.player, 1),0,true));
+        this.addToTop(new ApplyPowerAction(p, p,new RetainCannonballPower(AbstractDungeon.player, 1),1,true));
+        if (p.hasRelic(SilverCannon.ID) || p.hasRelic(GoldCannon.ID) || p.hasRelic(PlatinumCannon.ID)){
+            this.addToTop(new ApplyPowerAction(p, p,new RetainCannonballPower(AbstractDungeon.player, 1),1,true));
+        }
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new FreeCannonballPower(p, 1), 1));
-        //TODO: add retain mechanic
+        PirateMod.logger.info("enter Cannon.use()");
+
+        for(AbstractRelic relic : p.relics){
+            if(relic instanceof AbstractCannonRelic){
+                AbstractCannonRelic cannonRelic = (AbstractCannonRelic)relic;
+                for (AbstractGameAction action : cannonRelic.onUseCannon(p,m)){
+                    PirateMod.logger.info("adding action " + action.getClass());
+                    addToBot(action);
+                }
+            }
+        }
     }
 
 

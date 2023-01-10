@@ -23,10 +23,7 @@ import org.apache.logging.log4j.Logger;
 import thePirate.cards.*;
 import thePirate.characters.ThePirate;
 import thePirate.potions.PlaceholderPotion;
-import thePirate.relics.BottledPlaceholderRelic;
-import thePirate.relics.DefaultClickableRelic;
-import thePirate.relics.PlaceholderRelic;
-import thePirate.relics.PlaceholderRelic2;
+import thePirate.relics.*;
 import thePirate.util.IDCheckDontTouchPls;
 import thePirate.util.TextureLoader;
 import thePirate.variables.DarkExperimentVariable;
@@ -401,7 +398,7 @@ public class PirateMod implements
         // Class Specific Potion. If you want your potion to not be class-specific,
         // just remove the player class at the end (in this case the "TheDefaultEnum.THE_DEFAULT".
         // Remember, you can press ctrl+P inside parentheses like addPotions)
-        BaseMod.addPotion(PlaceholderPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, PlaceholderPotion.POTION_ID, ThePirate.Enums.THE_PIRATE);
+//        BaseMod.addPotion(PlaceholderPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, PlaceholderPotion.POTION_ID, ThePirate.Enums.THE_PIRATE);
         
         logger.info("Done editing potions");
     }
@@ -423,10 +420,13 @@ public class PirateMod implements
         // in order to automatically differentiate which pool to add the relic too.
 
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
-        BaseMod.addRelicToCustomPool(new PlaceholderRelic(), ThePirate.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), ThePirate.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), ThePirate.Enums.COLOR_GRAY);
-        
+        BaseMod.addRelicToCustomPool(new BronzeCannon(), ThePirate.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new SilverCannon(), ThePirate.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new GoldCannon(), ThePirate.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new PlatinumCannon(), ThePirate.Enums.COLOR_GRAY);
+
         // This adds a relic to the Shared pool. Every character can find this relic.
         BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
         

@@ -24,6 +24,10 @@ import thePirate.PirateMod;
 import thePirate.cards.*;
 import thePirate.cards.attacks.*;
 import thePirate.cards.skills.*;
+import thePirate.relics.BronzeCannon;
+import thePirate.relics.GoldCannon;
+import thePirate.relics.PlatinumCannon;
+import thePirate.relics.SilverCannon;
 
 import java.util.ArrayList;
 
@@ -165,7 +169,6 @@ public class ThePirate extends CustomPlayer {
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
-        retVal.add(Cannon.ID);
         retVal.add(RoundShot.ID);
 /*
         retVal.add(DefaultCommonAttack.ID);
@@ -192,6 +195,10 @@ public class ThePirate extends CustomPlayer {
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
 
+//        retVal.add(BronzeCannon.ID);
+        retVal.add(SilverCannon.ID);
+//        retVal.add(GoldCannon.ID);
+//        retVal.add(PlatinumCannon.ID);
 /*
         retVal.add(PlaceholderRelic.ID);
         //retVal.add(PlaceholderRelic2.ID);
