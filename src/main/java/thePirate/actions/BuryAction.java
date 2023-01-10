@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import thePirate.PirateMod;
 import thePirate.cards.attacks.BeachBuddy;
 import thePirate.powers.OnBury;
 import thePirate.powers.TooMuchRumPower;
@@ -144,14 +145,6 @@ public class BuryAction extends AbstractGameAction {
         //exhaust cards if player has too much rum power
         if(isDone && cardsSelected != null && cardsSelected.size() > 0){
 
-
-            if(player.hasPower(TooMuchRumPower.POWER_ID)){
-                TooMuchRumPower power = (TooMuchRumPower)player.getPower(TooMuchRumPower.POWER_ID);
-                addToBot(new GainBlockAction(player, power.amount));
-                for (AbstractCard card : cardsSelected){
-                    player.discardPile.moveToExhaustPile(card);
-                }
-            }
 
             //run onBury for each card buried
             for (AbstractCard card : cardsSelected){

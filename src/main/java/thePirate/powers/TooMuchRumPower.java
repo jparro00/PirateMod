@@ -8,9 +8,11 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.FeelNoPainPower;
 import thePirate.PirateMod;
 import thePirate.util.TextureLoader;
 
@@ -68,12 +70,12 @@ public class TooMuchRumPower extends AbstractPower implements CloneablePowerInte
     @Override
     public void onBury(AbstractCard card) {
 
-        addToBot(new GainBlockAction(owner, amount));
+        addToBot(new GainBlockAction(owner, amount, Settings.FAST_MODE));
+//        addToBot(new GainBlockAction(owner, amount));
         ((AbstractPlayer)owner).discardPile.moveToExhaustPile(card);
     }
 
     @Override
     public void onBuryCards(List<AbstractCard> cards) {
-
     }
 }
