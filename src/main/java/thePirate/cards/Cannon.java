@@ -11,7 +11,7 @@ import thePirate.powers.RetainCannonballPower;
 
 import static thePirate.PirateMod.makeCardPath;
 
-public class WroughtIronCannon extends AbstractCannonCard{
+public class Cannon extends AbstractCannonCard{
 
 
 
@@ -27,8 +27,8 @@ public class WroughtIronCannon extends AbstractCannonCard{
     // /STAT DECLARATION/
 
     // TEXT DECLARATION
-    public static final String ID = PirateMod.makeID(WroughtIronCannon.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
-    public static final String IMG = makeCardPath("WroughtIronCannon.png", TYPE);
+    public static final String ID = PirateMod.makeID(Cannon.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
+    public static final String IMG = makeCardPath(Cannon.class.getSimpleName() + ".png", TYPE);
     // /TEXT DECLARATION/
 
     @Override
@@ -38,7 +38,7 @@ public class WroughtIronCannon extends AbstractCannonCard{
 
     }
 
-    public WroughtIronCannon() {
+    public Cannon() {
         super(ID, IMG, COST, TYPE, COLOR, TARGET);
         this.selfRetain = true;
         this.isInnate = true;
