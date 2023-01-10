@@ -40,7 +40,7 @@
   },
   "thePirate:DarkPlans": {
     "NAME": "Dark Plans",
-    "DESCRIPTION": "Apply !M!x!SM! thepirate:Ink to all enemies. NL NL Can only be played if you have equal cards in draw and discard.",
+    "DESCRIPTION": "Apply !M! x !SM! thepirate:Ink to all enemies. NL NL Can only be played if you have equal cards in draw and discard.",
     "EXTENDED_DESCRIPTION": ["Can only be played if you have equal cards in draw and discard.."]
   },
   "thePirate:AttendToCache": {
@@ -280,8 +280,8 @@
     "NAME": "Cutlass",
     "DESCRIPTION": "Deal !D! damage.  NL Put this card on top of your library and reduce it's damage by !M!."
   },
-  "thePirate:WroughtIronCannon": {
-    "NAME": "Wrought Iron Cannon",
+  "thePirate:Cannon": {
+    "NAME": "Cannon",
     "DESCRIPTION": "Retain.  Innate.  NL The next Cannonball you play this turn costs 0. NL Exhaust. NL While this is in your hand, retain 1 Cannonball this turn."
   },
   "thePirate:RoundShot": {
