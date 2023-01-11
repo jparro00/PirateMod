@@ -34,7 +34,7 @@ public class RoundShot extends AbstractCannonBallCard{
     private static final int COST = 2;
     private static final int UPGRADED_COST = 2;
 
-    private static final int DAMAGE = 10;
+    private static final int DAMAGE = 12;
     private static final int UPGRADE_PLUS_DMG = 4;
 
     // /STAT DECLARATION/
