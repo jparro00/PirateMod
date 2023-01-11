@@ -48,7 +48,7 @@ public class BronzeCannon extends AbstractCannonRelic {
     @Override
     public List<AbstractGameAction> onUseCannon(AbstractPlayer p, AbstractMonster m) {
         List<AbstractGameAction> actions = new ArrayList<>();
-        actions.add(new ApplyPowerAction(p, p, new FreeCannonballPower(p, FREE_CANNONBALL), FREE_CANNONBALL));
+        actions.add(new ApplyPowerAction(p, p, new FreeCannonballPower(FREE_CANNONBALL), FREE_CANNONBALL));
         flash();
         return actions;
     }
