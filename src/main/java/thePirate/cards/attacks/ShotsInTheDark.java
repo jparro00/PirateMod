@@ -21,7 +21,7 @@ public class ShotsInTheDark extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;  //   since they don't change much.
     private static final CardType TYPE = CardType.ATTACK;       //
-    private static final int BASE_TIMES = 3;
+    private static final int BASE_TIMES = 4;
     public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;
 
     private static final int COST = 1;

@@ -19,7 +19,7 @@ public class CausticInk extends AbstractDynamicCard {
     public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;
 
     private static final int COST = 3;
-    private static final int UPGRADED_COST = 3;
+    private static final int UPGRADED_COST = 2;
     private static final int MAGIC = 0;
     private static final int UPGRADED_MAGIC = 0;
     private static final int SECOND_MAGIC = 0;
@@ -36,7 +36,6 @@ public class CausticInk extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
         secondMagic = baseSecondMagic = SECOND_MAGIC;
-        isEthereal = true;
         exhaust = true;
     }
 

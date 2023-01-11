@@ -165,7 +165,6 @@ public class ThePirate extends CustomPlayer {
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
-        retVal.add(Defend.ID);
         retVal.add(RoundShot.ID);
 /*
         retVal.add(DefaultCommonAttack.ID);
