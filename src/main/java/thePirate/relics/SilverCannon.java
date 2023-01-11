@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import thePirate.PirateMod;
-import thePirate.powers.FreeCannonballPower;
+import thePirate.powers.PlayCannonballTwicePower;
 import thePirate.util.TextureLoader;
 
 import java.util.List;
@@ -31,7 +31,7 @@ public class SilverCannon extends BronzeCannon {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath(SilverCannon.class.getSimpleName() + ".png"));
 
     public static final int VULNERABLE = 1;
-    public static final int FREE_CANNONBALL = 1;
+    public static final int DOUBLE_CANNONBALL = 1;
 
     public SilverCannon() {
         this(ID, IMG, OUTLINE);
@@ -44,7 +44,7 @@ public class SilverCannon extends BronzeCannon {
     @Override
     public List<AbstractGameAction> onUseCannon(AbstractPlayer p, AbstractMonster m) {
         List<AbstractGameAction> actions = super.onUseCannon(p,m);
-        actions.add(new ApplyPowerAction(p, p, new FreeCannonballPower(p, FREE_CANNONBALL), 1));
+        actions.add(new ApplyPowerAction(p,p,new PlayCannonballTwicePower(DOUBLE_CANNONBALL), DOUBLE_CANNONBALL));
 
         //Don't add vulnerable if this is coming from PlatinumCannon, since that changes target to ALL_ENEMY
         if(m != null){

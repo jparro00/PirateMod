@@ -1,4 +1,8 @@
 {
+        "thePirate:PlayCannonballTwicePower": {
+                "NAME": "Double Cannonball",
+                "DESCRIPTIONS": ["The next #b", " Cannonball you play is played twice.", " Cannonballs you play are played twice."]
+        },
         "thePirate:ThiefsAccomplicePower": {
                 "NAME": "Thief's Accomplice",
                 "DESCRIPTIONS": ["The next #b", " time you would lose gold, gain that much gold."," times you would lose gold, gain that much gold."]

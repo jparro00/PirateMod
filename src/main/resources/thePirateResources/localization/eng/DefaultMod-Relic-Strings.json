@@ -10,28 +10,28 @@
     "NAME": "Bronze Cannon",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "At the start of combat, add a Cannon to your hand. NL #yCannon #ygains: NL The next Cannonball you play this turn cost 0."
+      "At the start of combat, add a Cannon to your hand. NL #yCannon #ygains: NL The next Cannonball you play this turn costs 0."
     ]
   },
   "thePirate:SilverCannon": {
     "NAME": "Silver Cannon",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "At the start of combat, add a Cannon to your hand. NL #yCannon #ygains: NL The next two Cannonballs you play this turn cost 0. NL Apply Vulnerable to target enemy."
+      "At the start of combat, add a Cannon to your hand. NL #yCannon #ygains: NL The next Cannonball you play this turn costs 0 and is played twice. NL Apply Vulnerable to target enemy."
     ]
   },
   "thePirate:GoldCannon": {
     "NAME": "Gold Cannon",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "At the start of combat, add a Cannon to your hand. NL #yCannon #ygains: NL The next two Cannonballs you play this turn cost 0. NL Apply Vulnerable to target enemy. NL Gain 2 Strength."
+      "At the start of combat, add a Cannon to your hand. NL #yCannon #ygains: NL The next Cannonball you play this turn costs 0 and is played twice. NL Apply Vulnerable to target enemy. NL Gain 2 Strength."
     ]
   },
   "thePirate:PlatinumCannon": {
     "NAME": "Platinum Cannon",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "At the start of combat, add a Cannon to your hand. NL #yCannon #ygains: NL The next two Cannonballs you play this turn cost 0. NL Apply Vulnerable and Weaken to all enemies. NL Gain 2 Strength. NL All enemies lose two Strength."
+      "At the start of combat, add a Cannon to your hand. NL #yCannon #ygains: NL The next Cannonball you play this turn costs 0 and is played twice. NL Apply Vulnerable and Weaken to all enemies. NL Gain 2 Strength. NL All enemies lose two Strength."
     ]
   },
   "thePirate:PlaceholderRelic": {
