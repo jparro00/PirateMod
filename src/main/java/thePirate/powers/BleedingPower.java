@@ -3,6 +3,8 @@ package thePirate.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.LoseHPAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -47,13 +49,13 @@ public class BleedingPower extends AbstractPower implements CloneablePowerInterf
     }
 
     @Override
-    public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
-        if (damageAmount > 0) {
-            damageAmount += amount;
-            this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
-        }
-        return damageAmount;
+    public void atEndOfTurn(boolean isPlayer) {
+        int halfAmount = (int)(Math.ceil((double)amount / 2));
+        addToBot(new ReducePowerAction(owner, owner,POWER_ID, halfAmount));
+        addToBot(new LoseHPAction(owner, owner, halfAmount));
+
     }
+
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
