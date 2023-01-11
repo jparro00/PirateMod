@@ -163,7 +163,7 @@
   },
   "thePirate:CausticInk": {
     "NAME": "Caustic Ink",
-    "DESCRIPTION": "Ethereal. NL Convert target enemy block into thepirate:Ink. NL Exhaust.",
+    "DESCRIPTION": "Convert target enemy block into thepirate:Ink. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Convert target enemy block into thepirate:Ink. NL Exhaust."
   },
   "thePirate:BeachCrew": {
