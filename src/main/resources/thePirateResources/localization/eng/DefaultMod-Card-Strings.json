@@ -282,7 +282,7 @@
   },
   "thePirate:Cannon": {
     "NAME": "Cannon",
-    "DESCRIPTION": "Retain.  Innate.  NL The next Cannonball you play this turn costs 0. NL Exhaust. NL While this is in your hand, retain 1 Cannonball this turn."
+    "DESCRIPTION": "Retain. Exhaust. NL While this is in your hand, retain 1 Cannonball this turn."
   },
   "thePirate:RoundShot": {
     "NAME": "Round Shot",
