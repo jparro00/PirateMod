@@ -54,7 +54,7 @@ public class SaboteurPower extends AbstractPower implements CloneablePowerInterf
 
     @Override
     public void update(int slot){
-        PirateMod.logger.info("update()");
+        //TODO: this is removing block immediately sometimes
         if(appliedThisTurn && owner.currentBlock > monsterInitialBlock){
             this.addToBot(new LoseBlockAction(owner, AbstractDungeon.player, owner.currentBlock - monsterInitialBlock));
             this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID ));
@@ -66,7 +66,6 @@ public class SaboteurPower extends AbstractPower implements CloneablePowerInterf
     }
     @Override
     public void onGainedBlock(float blockAmount) {
-
     }
 
     @Override
