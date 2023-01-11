@@ -3,8 +3,10 @@ package thePirate.util;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.Texture.TextureFilter;
 import com.badlogic.gdx.utils.GdxRuntimeException;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import thePirate.PirateMod;
 
 import java.util.HashMap;
 
@@ -34,6 +36,12 @@ public class TextureLoader {
         }
         return textures.get(textureString);
     }
+
+    public static Texture getPowerTexture(AbstractPower power, int pix){
+        Texture texture = TextureLoader.getTexture(PirateMod.makePowerPath(power.getClass().getSimpleName()+"_" + pix +".png"));
+        return texture;
+    }
+
 
     /**
      * Creates an instance of the texture, applies a linear filter to it, and places it in the HashMap

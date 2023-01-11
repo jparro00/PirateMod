@@ -28,8 +28,6 @@ public class CephalopodFormPower extends AbstractPower implements CloneablePower
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
     public CephalopodFormPower(final int amount) {
         name = NAME;
@@ -41,6 +39,8 @@ public class CephalopodFormPower extends AbstractPower implements CloneablePower
 
         type = PowerType.BUFF;
         isTurnBased = false;
+        Texture tex84 = TextureLoader.getPowerTexture(this, 84);
+        Texture tex32 = TextureLoader.getPowerTexture(this, 32);
 
         // We load those txtures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
