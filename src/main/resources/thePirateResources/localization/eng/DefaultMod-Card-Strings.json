@@ -249,8 +249,8 @@
     "DESCRIPTION": "This Turn, your next Attack or Skill is played twice.  NL Exhaust.",
     "UPGRADE_DESCRIPTION": "This Turn, your next Attack or Skill is played twice."
   },
-  "thePirate:SpareRigging": {
-    "NAME": "Spare Rigging",
+  "thePirate:MakeshiftSpear": {
+    "NAME": "Makeshift Spear",
     "DESCRIPTION": "Deal !D! damage to all enemies. NL When this card is upgraded, remove it from your deck instead.",
     "UPGRADE_DESCRIPTION": "When upgraded, immediately remove this card from your deck."
   },

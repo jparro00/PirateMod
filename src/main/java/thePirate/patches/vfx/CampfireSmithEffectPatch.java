@@ -6,14 +6,14 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.vfx.campfire.CampfireSmithEffect;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
-import thePirate.cards.attacks.SpareRigging;
+import thePirate.cards.attacks.MakeshiftSpear;
 
 @SpirePatch2(clz = CampfireSmithEffect.class, method = "update")
 public class CampfireSmithEffectPatch {
     @SpireInsertPatch(locator = Locator.class, localvars = {"c"})
     public static void onSmithPatch(AbstractCard c){
-        if(c instanceof SpareRigging){
-            ((SpareRigging) c).onSmith();
+        if(c instanceof MakeshiftSpear){
+            ((MakeshiftSpear) c).onSmith();
         }
     }
 

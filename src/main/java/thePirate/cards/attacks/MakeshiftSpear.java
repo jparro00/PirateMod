@@ -17,24 +17,11 @@ import thePirate.actions.PurgeRemovablesAction;
 
 import static thePirate.PirateMod.makeCardPath;
 
-public class SpareRigging extends AbstractDynamicCard implements Purgable {
+public class MakeshiftSpear extends AbstractDynamicCard implements Purgable {
 
     private boolean purge;
 
-    // TEXT DECLARATION
-
-    public static final String ID = PirateMod.makeID(SpareRigging.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
-    //TODO: JP: replace this at some point with actual image
-    public static final String IMG = makeCardPath("Attack.png");
-    //public static final String IMG = makeCardPath("SpareRigging.png");
-    // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
-
-
-    // /TEXT DECLARATION/
-
-
     // STAT DECLARATION
-
     private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;  //   since they don't change much.
     private static final CardType TYPE = CardType.ATTACK;       //
@@ -45,11 +32,14 @@ public class SpareRigging extends AbstractDynamicCard implements Purgable {
 
     private static final int DAMAGE = 9;
     private static final int UPGRADE_PLUS_DMG = 0;
-
     // /STAT DECLARATION/
 
+    // TEXT DECLARATION
+    public static final String ID = PirateMod.makeID(MakeshiftSpear.class.getSimpleName());
+    public static final String IMG = makeCardPath(MakeshiftSpear.class.getSimpleName() + ".png", TYPE);
+    // /TEXT DECLARATION/
 
-    public SpareRigging() {
+    public MakeshiftSpear() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
     }
