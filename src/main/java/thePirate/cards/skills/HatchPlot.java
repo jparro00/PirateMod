@@ -51,7 +51,7 @@ public class HatchPlot extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         String text = CardCrawlGame.languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0];
-        addToBot(new SelectCardsAction(p.discardPile.group, magicNumber, text, true, new Predicate<AbstractCard>() {
+        addToBot(new SelectCardsAction(p.discardPile.group, magicNumber, text, false, new Predicate<AbstractCard>() {
             @Override
             public boolean test(AbstractCard card) {
                 return card.canUse(p, null) && !cardID.equals(card.cardID);
