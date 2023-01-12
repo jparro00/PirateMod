@@ -1,4 +1,8 @@
 {
+  "thePirate:Headbutt": {
+    "NAME": "Headbutt",
+    "DESCRIPTION": "Deal !D! damage. NL Put a card from your discard pile on top of your draw pile."
+  },
   "thePirate:BolsterCrew": {
     "NAME": "Bolster Crew",
     "DESCRIPTION": "Gain !M! strength. NL Lose !SM! gold."
