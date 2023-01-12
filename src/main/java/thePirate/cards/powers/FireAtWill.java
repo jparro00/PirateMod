@@ -7,6 +7,7 @@ import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.characters.ThePirate;
 import thePirate.powers.FireAtWillPower;
+import thePirate.powers.FreeCannonballPower;
 
 import static thePirate.PirateMod.makeCardPath;
 
@@ -42,6 +43,7 @@ public class FireAtWill extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ApplyPowerAction(p, p, new FireAtWillPower(p, p, magicNumber),magicNumber));
+        addToBot(new ApplyPowerAction(p,p,new FreeCannonballPower(1), 1));
 
     }
 

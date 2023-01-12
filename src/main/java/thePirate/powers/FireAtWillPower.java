@@ -16,7 +16,7 @@ import static thePirate.PirateMod.makePowerPath;
 public class FireAtWillPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = PirateMod.makeID("FireAtWill");
+    public static final String POWER_ID = PirateMod.makeID(FireAtWillPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

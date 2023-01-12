@@ -20,8 +20,8 @@ public class StormSurge extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.POWER;       //
     public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;
 
-    private static final int COST = 2;
-    private static final int UPGRADED_COST = 1;
+    private static final int COST = 1;
+    private static final int UPGRADED_COST = 0;
     private static final int MAGIC = 1;
     private static final int UPGRADED_MAGIC = 0;
 

@@ -46,15 +46,11 @@ public class GainBlockNextTurnPower extends AbstractPower implements CloneablePo
         updateDescription();
     }
 
-    @Override
-    public void atEndOfTurn(boolean isPlayer) {
-        addToBot(new RemoveSpecificPowerAction(owner, owner, POWER_ID));
-
-    }
 
     @Override
     public void atStartOfTurn() {
         addToBot(new GainBlockAction(owner, amount));
+        addToBot(new RemoveSpecificPowerAction(owner, owner, POWER_ID));
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))

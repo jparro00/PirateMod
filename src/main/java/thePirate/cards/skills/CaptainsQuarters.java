@@ -55,6 +55,7 @@ public class CaptainsQuarters extends AbstractDynamicCard {
     @Override
     public void upgrade() {
         if (!upgraded) {
+            exhaust = false;
             upgradeName();
             upgradeBaseCost(UPGRADED_COST);
             upgradeDescription();

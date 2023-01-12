@@ -21,8 +21,8 @@ public class DarkExperiment extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.ATTACK;       //
     public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;
 
-    private static final int COST = 2;
-    private static final int UPGRADED_COST = 2;
+    private static final int COST = 1;
+    private static final int UPGRADED_COST = 1;
 
     private static final int DAMAGE = 10;
     private static final int UPGRADED_DMG = 0;
