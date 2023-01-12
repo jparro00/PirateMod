@@ -81,27 +81,11 @@ public class ThePirate extends CustomPlayer {
     // =============== /STRINGS/ =================
 
 
-    // =============== TEXTURES OF BIG ENERGY ORB ===============
-
-    public static final String[] orbTextures = {
-            "thePirateResources/images/char/defaultCharacter/orb/layer1.png",
-            "thePirateResources/images/char/defaultCharacter/orb/layer2.png",
-            "thePirateResources/images/char/defaultCharacter/orb/layer3.png",
-            "thePirateResources/images/char/defaultCharacter/orb/layer4.png",
-            "thePirateResources/images/char/defaultCharacter/orb/layer5.png",
-            "thePirateResources/images/char/defaultCharacter/orb/layer6.png",
-            "thePirateResources/images/char/defaultCharacter/orb/layer1d.png",
-            "thePirateResources/images/char/defaultCharacter/orb/layer2d.png",
-            "thePirateResources/images/char/defaultCharacter/orb/layer3d.png",
-            "thePirateResources/images/char/defaultCharacter/orb/layer4d.png",
-            "thePirateResources/images/char/defaultCharacter/orb/layer5d.png",};
-
-    // =============== /TEXTURES OF BIG ENERGY ORB/ ===============
 
     // =============== CHARACTER CLASS START =================
 
     public ThePirate(String name, PlayerClass setClass) {
-        super(name, setClass, orbTextures,
+        super(name, setClass, null,
                 "thePirateResources/images/char/defaultCharacter/orb/vfx.png", null,
                 new SpriterAnimation(
                         "thePirateResources/images/char/defaultCharacter/Spriter/theDefaultAnimation.scml"));
@@ -166,24 +150,6 @@ public class ThePirate extends CustomPlayer {
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(RoundShot.ID);
-/*
-        retVal.add(DefaultCommonAttack.ID);
-        retVal.add(PirateAttack.ID);
-        retVal.add(DefaultUncommonAttack.ID);
-        retVal.add(DefaultRareAttack.ID);
-
-        retVal.add(DefaultCommonSkill.ID);
-        retVal.add(DefaultUncommonSkill.ID);
-        retVal.add(DefaultRareSkill.ID);
-
-        retVal.add(DefaultCommonPower.ID);
-        retVal.add(DefaultUncommonPower.ID);
-        retVal.add(DefaultRarePower.ID);
-
-        retVal.add(DefaultAttackWithVariable.ID);
-        retVal.add(DefaultSecondMagicNumberSkill.ID);
-        retVal.add(OrbSkill.ID);
-*/
         return retVal;
     }
 
@@ -191,16 +157,8 @@ public class ThePirate extends CustomPlayer {
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
 
-//        retVal.add(BronzeCannon.ID);
-//        retVal.add(SilverCannon.ID);
         retVal.add(GunsmithsBible.ID);
-//        retVal.add(GoldCannon.ID);
-//        retVal.add(PlatinumCannon.ID);
 /*
-        retVal.add(PlaceholderRelic.ID);
-        //retVal.add(PlaceholderRelic2.ID);
-        retVal.add(DefaultClickableRelic.ID);
-
         // Mark relics as seen - makes it visible in the compendium immediately
         // If you don't have this it won't be visible in the compendium until you see them in game
         UnlockTracker.markRelicAsSeen(PlaceholderRelic.ID);
