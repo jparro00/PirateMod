@@ -13,7 +13,7 @@
       "predatory",
       "predator"
     ],
-    "DESCRIPTION": "Can only spawn in card rewards if your deck contains the associated Lure card. When added to your deck, the corresponding Lure is removed."
+    "DESCRIPTION": "Can only spawn in card rewards if your deck contains the associated #yLure card. Always spawns in non-boss card rewards that have at least 1 #yrare. When added to your deck, the corresponding #yLure is removed."
   },
   {
     "PROPER_NAME": "Lure",
@@ -22,7 +22,8 @@
       "lured",
       "lures"
     ],
-    "DESCRIPTION": "While this is in your deck, it's associated Predator card is added to the card reward pool. Lures are removed from the card reward pool while you have a Lure in your deck."
+    "DESCRIPTION": "While this is in your deck, it's associated #yPredator card is added to the card reward pool and will always spawn in non-boss card rewards that have at least 1 #yrare. When the corresponding #yPredator card is added to your deck, remove this."
+
   },
   {
     "PROPER_NAME": "Mysterious",

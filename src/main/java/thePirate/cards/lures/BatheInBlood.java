@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import thePirate.PirateMod;
+import thePirate.cards.predators.AbstractPredator;
 import thePirate.cards.predators.Kraken;
 
 import java.util.ArrayList;
@@ -36,6 +37,11 @@ public class BatheInBlood extends AbstractLure {
         List<AbstractPower> powers = new ArrayList<>();
         powers.add(new VulnerablePower(AbstractDungeon.player,magicNumber,false));
         return powers;
+    }
+
+    @Override
+    public AbstractPredator getPredator() {
+        return new Kraken();
     }
 
 }

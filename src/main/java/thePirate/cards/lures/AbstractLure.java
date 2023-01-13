@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.cards.Purgable;
+import thePirate.cards.predators.AbstractPredator;
 import thePirate.characters.ThePirate;
 
 import java.util.ArrayList;
@@ -117,4 +118,6 @@ public abstract class AbstractLure extends AbstractDynamicCard implements Purgab
     public void setQueuedForPurge(boolean queuedForPurge) {
         this.queuedForPurge = queuedForPurge;
     }
+
+    public abstract AbstractPredator getPredator();
 }

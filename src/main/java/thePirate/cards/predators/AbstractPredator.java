@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
+import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.cards.lures.AbstractLure;
 
@@ -25,6 +26,13 @@ public abstract class AbstractPredator extends AbstractDynamicCard implements Sp
         tags.add(CardTags.HEALING);
     }
 
+    @Override
+    public void onRewardListCreated(ArrayList<AbstractCard> rewardCards) {
+        PirateMod.logger.info("enter AbstractPredator.onRewardListCreated()");
+        if (canSpawn(rewardCards)){
+            rewardCards.add(new Kraken());
+        }
+    }
 
     @Override
     public void onObtainCard() {
@@ -54,6 +62,7 @@ public abstract class AbstractPredator extends AbstractDynamicCard implements Sp
 
     @Override
     public boolean canSpawn(ArrayList<AbstractCard> currentRewardCards){
+        PirateMod.logger.info("enter canSpawn()");
         boolean retVal = false;
         AbstractPlayer player = AbstractDungeon.player;
         for(AbstractCard card : player.hand.group){
