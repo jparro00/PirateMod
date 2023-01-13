@@ -91,9 +91,9 @@ public class GiantBeak extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false), this.magicNumber));
         int tmpDmg = this.damage;
-        if (!m.hasPower("Vulnerable")){
-            tmpDmg *= 1.5;
-        }
+//        if (!m.hasPower("Vulnerable")){
+//            tmpDmg *= 1.5;
+//        }
         this.addToBot(new DamageAction(m, new DamageInfo(p, tmpDmg, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
     }
 
