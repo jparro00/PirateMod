@@ -28,6 +28,7 @@ public abstract class AbstractLure extends AbstractDynamicCard implements Purgab
     public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;
 
     public boolean purge;
+    public boolean queuedForPurge;
 
     private static final int COST = -2;
     public boolean showPreview;
@@ -107,4 +108,13 @@ public abstract class AbstractLure extends AbstractDynamicCard implements Purgab
         return purge;
     }
 
+    @Override
+    public boolean queuedForPurge() {
+        return queuedForPurge;
+    }
+
+    @Override
+    public void setQueuedForPurge(boolean queuedForPurge) {
+        this.queuedForPurge = queuedForPurge;
+    }
 }

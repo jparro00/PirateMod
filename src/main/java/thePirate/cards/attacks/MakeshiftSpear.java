@@ -12,14 +12,16 @@ import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.cards.Purgable;
+import thePirate.cards.skills.Makeshift;
 import thePirate.characters.ThePirate;
 import thePirate.actions.PurgeRemovablesAction;
 
 import static thePirate.PirateMod.makeCardPath;
 
-public class MakeshiftSpear extends AbstractDynamicCard implements Purgable {
+public class MakeshiftSpear extends AbstractDynamicCard implements Makeshift {
 
     private boolean purge;
+    public boolean queuedForPurge;
 
     // STAT DECLARATION
     private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
@@ -58,6 +60,7 @@ public class MakeshiftSpear extends AbstractDynamicCard implements Purgable {
         AbstractDungeon.player.masterDeck.removeCard(this);
     }
 
+/*
     @Override
     public void update() {
         super.update();
@@ -69,10 +72,12 @@ public class MakeshiftSpear extends AbstractDynamicCard implements Purgable {
             this.addToBot(new PurgeRemovablesAction(this, true, true));
         }
     }
+*/
 
     // Upgraded stats.
     @Override
     public void upgrade() {
+        setPurge(true);
         upgradeName();
         upgradeDescription();
     }
@@ -86,5 +91,15 @@ public class MakeshiftSpear extends AbstractDynamicCard implements Purgable {
     @Override
     public boolean getPurge() {
         return purge;
+    }
+
+    @Override
+    public boolean queuedForPurge() {
+        return queuedForPurge;
+    }
+
+    @Override
+    public void setQueuedForPurge(boolean queuedForPurge) {
+        this.queuedForPurge = queuedForPurge;
     }
 }

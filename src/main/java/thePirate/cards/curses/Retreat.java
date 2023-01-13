@@ -27,6 +27,7 @@ public class Retreat extends AbstractDynamicCard implements Purgable {
     public static final String IMG = makeCardPath("Retreat.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
     private boolean purge;
+    public boolean queuedForPurge;
     private boolean previewCards;
 
 
@@ -80,7 +81,7 @@ public class Retreat extends AbstractDynamicCard implements Purgable {
         }
         this.addToTop(new AddCardToDeckAction(overexert));
         this.setPurge(true);
-        this.addToBot(new PurgeRemovablesAction(this, true));
+//        this.addToBot(new PurgeRemovablesAction(this, true));
     }
 
 
@@ -109,5 +110,14 @@ public class Retreat extends AbstractDynamicCard implements Purgable {
     @Override
     public boolean getPurge() {
         return this.purge;
+    }
+
+    @Override
+    public boolean queuedForPurge() {
+        return queuedForPurge;
+    }
+    @Override
+    public void setQueuedForPurge(boolean queuedForPurge) {
+        this.queuedForPurge = queuedForPurge;
     }
 }

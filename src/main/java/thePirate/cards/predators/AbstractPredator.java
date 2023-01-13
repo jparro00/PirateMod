@@ -34,9 +34,10 @@ public abstract class AbstractPredator extends AbstractDynamicCard implements Sp
         //remove all copies of the associated lure
         for (Iterator<AbstractCard> iter = player.masterDeck.group.iterator(); iter.hasNext(); ) {
             AbstractCard card = iter.next();
-            if(lure.cardID.equals(card.cardID)){
+            if(lure.cardID.equals(card.cardID) && card instanceof AbstractLure){
                 //iter.remove();
-                AbstractDungeon.effectList.add(new PurgeCardEffect(card));
+//                AbstractDungeon.effectsQueue.add(new PurgeCardEffect(card));
+                ((AbstractLure) card).setPurge(true);
 
             }
 

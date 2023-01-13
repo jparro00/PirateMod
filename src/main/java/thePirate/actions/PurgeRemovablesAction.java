@@ -34,9 +34,8 @@ public class PurgeRemovablesAction extends AbstractGameAction {
 
     @Override
     public void update(){
-        PirateMod.logger.info("enter PurgeRemovablesAction.update()");
 
-        //TODO: reevaluate at some point to decide if this cod makes sense
+        //TODO: reevaluate at some point to decide if this code makes sense
         AbstractPlayer p = AbstractDungeon.player;
         Set<AbstractCard> combatCards = new HashSet<>();
         combatCards.addAll(p.hand.group);
@@ -44,50 +43,14 @@ public class PurgeRemovablesAction extends AbstractGameAction {
         combatCards.addAll(p.exhaustPile.group);
         combatCards.addAll(p.drawPile.group);
 
-        int combatCount = 0;
-        int combatUpgradeCount = 0;
-        int masterDeckCount = 0;
-        int masterDeckUpgradeCount = 0;
-        boolean remove = true;
-        boolean removeUpgrade = card.upgraded;
-        //remove all cards that don't match ID
-        Iterator<AbstractCard> iter = combatCards.iterator();
-        while (iter.hasNext()){
-            AbstractCard c = iter.next();
-            if (!this.card.cardID.equals(c.cardID)){
-                iter.remove();
-            }
-        }
-
-        //count upgrades
-        for (AbstractCard c : combatCards){
-            combatCount++;
-            if (c.upgraded){
-                combatUpgradeCount++;
-            }
-        }
-
-        //count deck upgrades
-        for (AbstractCard c : p.masterDeck.group){
-            masterDeckCount++;
-            if (c.upgraded){
-                masterDeckUpgradeCount++;
-            }
-        }
-
-        if(this.card.upgraded && combatUpgradeCount > masterDeckUpgradeCount){
-            removeUpgrade = false;
-        }
-        // /
 
         CardGroup masterDeck = AbstractDungeon.player.masterDeck;
         Iterator<AbstractCard> iterator = masterDeck.group.iterator();
         AbstractCard cardToRemove = null;
         while (iterator.hasNext()){
             AbstractCard card = iterator.next();
-            if (card.cardID.equals(this.card.cardID) && card.upgraded == removeUpgrade){
+            if (card.uuid.equals(this.card.uuid)){
                 cardToRemove = card;
-                break;
             }
         }
 

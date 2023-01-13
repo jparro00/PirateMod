@@ -16,7 +16,7 @@ import thePirate.characters.ThePirate;
 
 import static thePirate.PirateMod.makeCardPath;
 
-public class StrangeBlade extends AbstractDynamicCard implements Mysterious, Purgable {
+public class StrangeBlade extends AbstractDynamicCard implements Mysterious{
 
     // STAT DECLARATION
 
@@ -32,7 +32,6 @@ public class StrangeBlade extends AbstractDynamicCard implements Mysterious, Pur
     private static final int UPGRADED_DMG = 0;
     public static final int MAGIC = 3;
 
-    public boolean purge;
 
     // /STAT DECLARATION/
 
@@ -84,13 +83,4 @@ public class StrangeBlade extends AbstractDynamicCard implements Mysterious, Pur
         }
     }
 
-    @Override
-    public void setPurge(boolean purge) {
-        this.purge = purge;
-    }
-
-    @Override
-    public boolean getPurge() {
-        return purge;
-    }
 }

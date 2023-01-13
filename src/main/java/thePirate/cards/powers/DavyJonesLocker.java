@@ -27,6 +27,7 @@ public class DavyJonesLocker extends AbstractDynamicCard implements Purgable {
     private static final int MAGIC = 1;
     private static final int UPGRADED_MAGIC = 1;
     private boolean purge;
+    public boolean queuedForPurge;
 
     // /STAT DECLARATION/
 
@@ -75,5 +76,15 @@ public class DavyJonesLocker extends AbstractDynamicCard implements Purgable {
     @Override
     public boolean getPurge() {
         return purge;
+    }
+
+    @Override
+    public boolean queuedForPurge() {
+        return queuedForPurge;
+    }
+
+    @Override
+    public void setQueuedForPurge(boolean queuedForPurge) {
+        this.queuedForPurge = queuedForPurge;
     }
 }

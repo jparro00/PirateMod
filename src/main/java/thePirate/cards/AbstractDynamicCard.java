@@ -1,7 +1,14 @@
 package thePirate.cards;
 
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
+import thePirate.PirateMod;
+import thePirate.actions.PurgeRemovablesAction;
+import thePirate.cards.skills.Makeshift;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 
@@ -31,6 +38,32 @@ public abstract class AbstractDynamicCard extends AbstractDefaultCard {
         upgradedDescription = cardStrings.UPGRADE_DESCRIPTION;
 
 
+    }
+
+    public boolean inPlayerCardGroup(){
+        AbstractPlayer player = AbstractDungeon.player;
+        return player != null &&
+            (
+                player.hand.contains(this) ||
+                player.discardPile.contains(this) ||
+                player.exhaustPile.contains(this) ||
+                player.limbo.contains(this)
+            );
+
+    }
+    @Override
+    public void update(){
+        if(this instanceof Purgable && ((Purgable) this).getPurge() && !((Purgable) this).queuedForPurge()){
+            AbstractPlayer player = AbstractDungeon.player;
+
+            //purge non-makeshift cards, and makeshift cards that are in the player deck or combat
+            if(!(this instanceof Makeshift) || (player != null && (player.masterDeck.contains(this) || inPlayerCardGroup()))) {
+                addToTop(new PurgeRemovablesAction(this, true, true));
+                ((Purgable) this).setQueuedForPurge(true);
+                AbstractDungeon.effectsQueue.add(new PurgeCardEffect(this));
+            }
+        }
+        super.update();
     }
 
     public void upgradeDescription(){

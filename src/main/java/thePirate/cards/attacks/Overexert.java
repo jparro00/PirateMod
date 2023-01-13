@@ -28,6 +28,7 @@ public class Overexert extends AbstractDynamicCard implements Purgable {
     public static final String IMG = makeCardPath("Overexert.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
     private boolean purge;
+    public boolean queuedForPurge;
     private boolean previewCards;
 
 
@@ -85,7 +86,7 @@ public class Overexert extends AbstractDynamicCard implements Purgable {
         //TODO: card not being removed if lethal.  Testing below
 //        this.addToBot(new PurgeRemovablesAction(this));
         //test:
-        this.addToTop(new PurgeRemovablesAction(this, true));
+//        this.addToTop(new PurgeRemovablesAction(this, true));
 
 
 
@@ -116,5 +117,15 @@ public class Overexert extends AbstractDynamicCard implements Purgable {
     @Override
     public boolean getPurge() {
         return this.purge;
+    }
+
+    @Override
+    public boolean queuedForPurge() {
+        return queuedForPurge;
+    }
+
+    @Override
+    public void setQueuedForPurge(boolean queuedForPurge) {
+        this.queuedForPurge = queuedForPurge;
     }
 }
