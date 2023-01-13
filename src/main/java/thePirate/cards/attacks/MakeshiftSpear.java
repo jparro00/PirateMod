@@ -1,9 +1,11 @@
 package thePirate.cards.attacks;
 
+import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.SpawnModificationCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -12,6 +14,7 @@ import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.events.exordium.ShiningLight;
 import com.megacrit.cardcrawl.events.shrines.Designer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.relics.MoltenEgg2;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
@@ -20,9 +23,11 @@ import thePirate.cards.AbstractDynamicCard;
 import thePirate.cards.Makeshift;
 import thePirate.characters.ThePirate;
 
+import java.util.ArrayList;
+
 import static thePirate.PirateMod.makeCardPath;
 
-public class MakeshiftSpear extends AbstractDynamicCard implements Makeshift {
+public class MakeshiftSpear extends AbstractDynamicCard implements Makeshift, SpawnModificationCard {
 
     private boolean purge;
     public boolean queuedForPurge;
@@ -50,12 +55,29 @@ public class MakeshiftSpear extends AbstractDynamicCard implements Makeshift {
         baseDamage = DAMAGE;
     }
 
+    @Override
+    public boolean canSpawnShop(ArrayList<AbstractCard> currentShopCards) {
+        //don't allow spawning if player has molten egg
+        return !AbstractDungeon.player.hasRelic(MoltenEgg2.ID);
+    }
+
+    @Override
+    public boolean canSpawn(ArrayList<AbstractCard> currentRewardCards) {
+        //don't allow spawning if player has molten egg
+        return !AbstractDungeon.player.hasRelic(MoltenEgg2.ID);
+    }
+
     //TODO: if there are any other makeshift cards, this needs to be generalized.  Also need to see how default methods work and if this
     //can be moved directly into the interface
     @Override
     public boolean canUpgrade() {
         boolean canUpgrade = true;
-        if(AbstractDungeon.getCurrRoom() != null){
+        //can't be randomly upgraded at combat reward screens
+        if (AbstractDungeon.screen.equals(AbstractDungeon.CurrentScreen.COMBAT_REWARD) ){
+            canUpgrade = false;
+        }
+        //don't allow upgrading in random events
+        else if(AbstractDungeon.getCurrRoom() != null){
             AbstractEvent event = AbstractDungeon.getCurrRoom().event;
             if(event instanceof Designer || event instanceof ShiningLight){
                 canUpgrade = false;
