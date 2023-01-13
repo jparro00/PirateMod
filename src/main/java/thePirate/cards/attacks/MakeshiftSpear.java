@@ -5,8 +5,14 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.events.AbstractEvent;
+import com.megacrit.cardcrawl.events.AbstractImageEvent;
+import com.megacrit.cardcrawl.events.exordium.ShiningLight;
+import com.megacrit.cardcrawl.events.shrines.Designer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 import thePirate.PirateMod;
@@ -44,6 +50,19 @@ public class MakeshiftSpear extends AbstractDynamicCard implements Makeshift {
         baseDamage = DAMAGE;
     }
 
+    //TODO: if there are any other makeshift cards, this needs to be generalized.  Also need to see how default methods work and if this
+    //can be moved directly into the interface
+    @Override
+    public boolean canUpgrade() {
+        boolean canUpgrade = true;
+        if(AbstractDungeon.getCurrRoom() != null){
+            AbstractEvent event = AbstractDungeon.getCurrRoom().event;
+            if(event instanceof Designer || event instanceof ShiningLight){
+                canUpgrade = false;
+            }
+        }
+        return canUpgrade;
+    }
 
     // Actions the card should do.
     @Override
