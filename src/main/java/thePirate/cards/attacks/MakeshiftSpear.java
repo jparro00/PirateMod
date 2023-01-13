@@ -11,10 +11,8 @@ import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
-import thePirate.cards.Purgable;
-import thePirate.cards.skills.Makeshift;
+import thePirate.cards.Makeshift;
 import thePirate.characters.ThePirate;
-import thePirate.actions.PurgeRemovablesAction;
 
 import static thePirate.PirateMod.makeCardPath;
 

@@ -42,6 +42,9 @@ public class AncientAlliances extends AbstractDynamicCard implements Mysterious 
         magicNumber = baseMagicNumber = MAGIC;
     }
 
+    public boolean canUpgrade() {
+        return Mysterious.canUpgrade();
+    }
 
     // Actions the card should do.
     @Override

@@ -53,6 +53,10 @@ public class DarkPlans extends AbstractDynamicCard implements Mysterious, OnBury
 
     }
 
+    public boolean canUpgrade() {
+        return Mysterious.canUpgrade();
+    }
+
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
 

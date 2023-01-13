@@ -2,13 +2,10 @@ package thePirate.cards;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
-import thePirate.PirateMod;
 import thePirate.actions.PurgeRemovablesAction;
-import thePirate.cards.skills.Makeshift;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 

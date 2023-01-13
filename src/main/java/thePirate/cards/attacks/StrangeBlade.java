@@ -6,8 +6,10 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.cards.Mysterious;
@@ -54,6 +56,10 @@ public class StrangeBlade extends AbstractDynamicCard implements Mysterious{
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         if(upgraded)
             this.addToBot(new DrawCardAction(magicNumber));
+    }
+
+    public boolean canUpgrade() {
+        return Mysterious.canUpgrade();
     }
 
     @Override

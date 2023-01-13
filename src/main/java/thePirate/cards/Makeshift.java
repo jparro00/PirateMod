@@ -1,4 +1,4 @@
-package thePirate.cards.skills;
+package thePirate.cards;
 
 import thePirate.cards.Purgable;
 
