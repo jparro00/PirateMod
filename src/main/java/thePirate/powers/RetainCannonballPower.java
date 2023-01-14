@@ -20,8 +20,6 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 
-import static thePirate.PirateMod.makePowerPath;
-
 public class RetainCannonballPower extends AbstractPower implements CloneablePowerInterface, InvisiblePower {
     public AbstractCreature source;
     public static final String POWER_ID = "RetainCannonballPower";

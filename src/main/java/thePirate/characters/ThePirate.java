@@ -2,7 +2,6 @@ package thePirate.characters;
 
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpineAnimation;
-import basemod.animations.SpriterAnimation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
@@ -22,10 +21,10 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thePirate.PirateMod;
-import thePirate.cards.*;
-import thePirate.cards.attacks.*;
-import thePirate.cards.skills.*;
-import thePirate.relics.*;
+import thePirate.cards.attacks.RoundShot;
+import thePirate.cards.attacks.Strike;
+import thePirate.cards.skills.Defend;
+import thePirate.relics.GunsmithsBible;
 
 import java.util.ArrayList;
 

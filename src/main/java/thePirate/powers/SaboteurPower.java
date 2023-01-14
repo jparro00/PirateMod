@@ -13,8 +13,6 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import thePirate.PirateMod;
 import thePirate.util.TextureLoader;
 
-import static thePirate.PirateMod.makePowerPath;
-
 public class SaboteurPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 

@@ -14,8 +14,6 @@ import thePirate.PirateMod;
 import thePirate.cards.powers.OnLoseGold;
 import thePirate.util.TextureLoader;
 
-import static thePirate.PirateMod.makePowerPath;
-
 public class ThiefsAccomplicePower extends AbstractPower implements CloneablePowerInterface, OnLoseGold {
     public AbstractCreature source;
 

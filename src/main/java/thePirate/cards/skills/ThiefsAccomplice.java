@@ -6,8 +6,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
-import thePirate.powers.ThiefsAccomplicePower;
 import thePirate.characters.ThePirate;
+import thePirate.powers.ThiefsAccomplicePower;
 
 import static thePirate.PirateMod.makeCardPath;
 

@@ -12,13 +12,10 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.FeelNoPainPower;
 import thePirate.PirateMod;
 import thePirate.util.TextureLoader;
 
 import java.util.List;
-
-import static thePirate.PirateMod.makePowerPath;
 
 public class TooMuchRumPower extends AbstractPower implements CloneablePowerInterface, OnBury {
     public AbstractCreature source;

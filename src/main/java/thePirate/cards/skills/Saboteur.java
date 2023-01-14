@@ -6,8 +6,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
-import thePirate.powers.SaboteurPower;
 import thePirate.characters.ThePirate;
+import thePirate.powers.SaboteurPower;
 
 import java.util.Iterator;
 

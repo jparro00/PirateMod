@@ -15,7 +15,6 @@ import thePirate.cards.AbstractDynamicCard;
 import thePirate.cards.Purgable;
 import thePirate.cards.curses.Retreat;
 import thePirate.characters.ThePirate;
-import thePirate.actions.PurgeRemovablesAction;
 
 import static thePirate.PirateMod.makeCardPath;
 

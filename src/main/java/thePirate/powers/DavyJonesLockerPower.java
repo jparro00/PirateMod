@@ -15,8 +15,6 @@ import thePirate.PirateMod;
 import thePirate.actions.PurgeRemovablesAction;
 import thePirate.util.TextureLoader;
 
-import static thePirate.PirateMod.makePowerPath;
-
 public class DavyJonesLockerPower extends AbstractPower implements CloneablePowerInterface{
     public AbstractCreature source;
 

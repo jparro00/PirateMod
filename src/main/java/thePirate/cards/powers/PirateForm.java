@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePirate.PirateMod;
 import thePirate.actions.PirateFormPower;
 import thePirate.cards.AbstractDynamicCard;
-import thePirate.characters.ThePirate;
 
 import static thePirate.PirateMod.makeCardPath;
 

@@ -1,6 +1,9 @@
 package thePirate;
 
-import basemod.*;
+import basemod.AutoAdd;
+import basemod.BaseMod;
+import basemod.ModLabeledToggleButton;
+import basemod.ModPanel;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
@@ -20,7 +23,7 @@ import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import thePirate.cards.*;
+import thePirate.cards.AbstractDefaultCard;
 import thePirate.characters.ThePirate;
 import thePirate.relics.*;
 import thePirate.util.IDCheckDontTouchPls;

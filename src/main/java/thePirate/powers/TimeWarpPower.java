@@ -17,8 +17,6 @@ import thePirate.PirateMod;
 import thePirate.actions.MoveCardAction;
 import thePirate.util.TextureLoader;
 
-import static thePirate.PirateMod.makePowerPath;
-
 public class TimeWarpPower extends AbstractPower implements CloneablePowerInterface, NonStackablePower {
     public AbstractCreature source;
 

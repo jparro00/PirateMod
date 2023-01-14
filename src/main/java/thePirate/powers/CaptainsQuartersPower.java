@@ -17,8 +17,6 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import thePirate.PirateMod;
 import thePirate.util.TextureLoader;
 
-import static thePirate.PirateMod.makePowerPath;
-
 //Gain 1 dex for the turn for each card played.
 
 public class CaptainsQuartersPower extends AbstractPower implements CloneablePowerInterface {

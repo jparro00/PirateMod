@@ -5,13 +5,14 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import thePirate.PirateMod;
 import thePirate.characters.ThePirate;
-import thePirate.powers.FreeCannonballPower;
 import thePirate.powers.RetainCannonballPower;
-import thePirate.relics.*;
+import thePirate.relics.AbstractCannonRelic;
+import thePirate.relics.GoldCannon;
+import thePirate.relics.PlatinumCannon;
+import thePirate.relics.SilverCannon;
 
 import static thePirate.PirateMod.makeCardPath;
 

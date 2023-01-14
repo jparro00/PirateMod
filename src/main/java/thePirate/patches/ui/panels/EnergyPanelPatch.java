@@ -6,8 +6,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import thePirate.PirateMod;
-import thePirate.powers.OnUseEnergy;
 import thePirate.patches.characters.AbstractPlayerPatch;
+import thePirate.powers.OnUseEnergy;
 
 import java.util.Iterator;
 
