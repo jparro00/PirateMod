@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePirate.PirateMod;
 import thePirate.characters.ThePirate;
 
+import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static thePirate.PirateMod.makeCardPath;
 
 public class GrapeShot extends AbstractCannonBallCard {
@@ -41,6 +42,7 @@ public class GrapeShot extends AbstractCannonBallCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         this.exhaust = true;
+        magicNumber = baseMagicNumber = 0;
     }
 
     public static int grapeshotsQueued(){
@@ -54,11 +56,21 @@ public class GrapeShot extends AbstractCannonBallCard {
         return grapeshotsQueued;
     }
 
+
+
+
+    @Override
+    public void applyPowers() {
+        baseMagicNumber = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
+        super.applyPowers();
+        rawDescription = languagePack.getCardStrings(ID).DESCRIPTION;
+        this.initializeDescription();
+    }
+
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int cardsPlayedThisTurn = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
-
 
         AbstractMonster target = AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng);
         this.addToBot(new DamageAction(target, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT, true));

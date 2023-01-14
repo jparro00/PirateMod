@@ -195,7 +195,7 @@
   },
   "thePirate:GrapeShot": {
     "NAME": "Grape Shot",
-    "DESCRIPTION": "Deal !D! damage to a random enemy.  Play a copy for every card played this turn (can't take damage while playing copies). NL Exhaust"
+    "DESCRIPTION": "Deal !D! damage to a random enemy. NL thepirate:Storm ( !M! ). NL Exhaust"
   },
   "thePirate:MomentousAttack": {
     "NAME": "Momentous Attack",

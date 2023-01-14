@@ -1,5 +1,12 @@
 [
   {
+    "PROPER_NAME": "Storm",
+    "NAMES": [
+      "storm"
+    ],
+    "DESCRIPTION": "Play a copy of this card for each previous card played this turn (you can't take damage while playing copies)."
+  },
+  {
     "PROPER_NAME": "Bleeding",
     "NAMES": [
       "bleeding",
