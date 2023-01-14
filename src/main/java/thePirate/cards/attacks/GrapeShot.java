@@ -41,7 +41,6 @@ public class GrapeShot extends AbstractCannonBallCard {
     public GrapeShot() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        this.exhaust = true;
         magicNumber = baseMagicNumber = 0;
     }
 
@@ -88,7 +87,6 @@ public class GrapeShot extends AbstractCannonBallCard {
                 AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, m, this.energyOnUse, true, true), true);
             }
         }
-        this.exhaust = true;
     }
 
     // Upgraded stats.

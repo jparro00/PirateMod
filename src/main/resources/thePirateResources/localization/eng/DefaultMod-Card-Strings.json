@@ -195,7 +195,7 @@
   },
   "thePirate:GrapeShot": {
     "NAME": "Grape Shot",
-    "DESCRIPTION": "Deal !D! damage to a random enemy. NL thepirate:Storm ( !M! ). NL Exhaust"
+    "DESCRIPTION": "Deal !D! damage to a random enemy. NL thepirate:Storm ( !M! )."
   },
   "thePirate:MomentousAttack": {
     "NAME": "Momentous Attack",
