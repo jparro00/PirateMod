@@ -60,7 +60,7 @@ public class Kraken extends AbstractPredator{
         while(var3.hasNext()) {
             mo = (AbstractMonster)var3.next();
             if (!mo.isDeadOrEscaped()) {
-                this.addToBot(new ApplyPowerAction(m,p,new InkPower(m,p,magicNumber),magicNumber));
+                this.addToBot(new ApplyPowerAction(mo,p,new InkPower(mo,p,magicNumber),magicNumber));
             }
         }
     }
