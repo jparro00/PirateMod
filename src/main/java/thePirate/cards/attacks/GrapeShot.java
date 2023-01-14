@@ -43,13 +43,22 @@ public class GrapeShot extends AbstractCannonBallCard {
         this.exhaust = true;
     }
 
+    public static int grapeshotsQueued(){
+        int grapeshotsQueued = 0;
+        for (CardQueueItem queueItem: AbstractDungeon.actionManager.cardQueue){
+            if (queueItem.card.cardID.equals(ID)){
+                grapeshotsQueued++;
+            }
+            PirateMod.logger.info("queueItem.card.cardID: " + queueItem.card.cardID);
+        }
+        return grapeshotsQueued;
+    }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int cardsPlayedThisTurn = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
-        PirateMod.logger.info("cardsPlayedThisTurn: " + cardsPlayedThisTurn);
-        //use(p,m,cardsPlayedThisTurn);
+
 
         AbstractMonster target = AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng);
         this.addToBot(new DamageAction(target, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT, true));
@@ -69,20 +78,6 @@ public class GrapeShot extends AbstractCannonBallCard {
         }
         this.exhaust = true;
     }
-
-    public void use(AbstractPlayer p, AbstractMonster m, int numberOfUses){
-        numberOfUses--;
-        PirateMod.logger.info("numberOfUses: " + numberOfUses);
-
-        AbstractMonster target = AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng);
-        this.addToBot(new DamageAction(target, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-
-        if(numberOfUses > 0){
-            use(p, m, numberOfUses);
-        }
-
-    }
-
 
     // Upgraded stats.
     @Override

@@ -2,12 +2,15 @@ package thePirate.patches.characters;
 
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
+import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
 import thePirate.PirateMod;
+import thePirate.cards.attacks.GrapeShot;
 import thePirate.powers.OnAttackToChangeDamagePreBlock;
 
 import java.util.ArrayList;
@@ -24,7 +27,7 @@ public class AbstractPlayerDamagePatch {
     )
     public static void Insert(AbstractPlayer __instance, DamageInfo info, @ByRef int[] damageAmount){
 
-        PirateMod.logger.info("damageAmount before modification: " + damageAmount[0]);
+        PirateMod.logger.info("enter AbstractPlayer.damage.Insert()");
         if(info.owner != null){
             for (AbstractPower power : info.owner.powers){
                 if(power instanceof OnAttackToChangeDamagePreBlock){
@@ -32,6 +35,20 @@ public class AbstractPlayerDamagePatch {
                     PirateMod.logger.info("damageAmount after modification: " + damageAmount[0]);
                 }
             }
+        }
+        PirateMod.logger.info("info.owner: " + info.owner);
+
+        //don't take damage while play grapeshot
+        if (AbstractDungeon.actionManager.cardQueue.size() > 0){
+            for (CardQueueItem queueItem: AbstractDungeon.actionManager.cardQueue){
+                if (queueItem.card.cardID.equals(GrapeShot.ID)){
+                    damageAmount[0] = 0;
+                    break;
+                }
+            }
+
+
+
         }
 
     }
