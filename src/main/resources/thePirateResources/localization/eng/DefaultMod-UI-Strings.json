@@ -1,4 +1,10 @@
 {
+  "thePirate:CardDescriptors": {
+    "TEXT": [
+      "Cannon",
+      "Cannonball"
+    ]
+  },
   "thePirate:PirateBayAction": {
     "TEXT": [
       "Choose a card to copy and put into your discard pile.",
