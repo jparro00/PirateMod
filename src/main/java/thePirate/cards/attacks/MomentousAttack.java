@@ -22,8 +22,9 @@ public class MomentousAttack extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.ATTACK;       //
     public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;
     private static final int COST = 2;
-    private static final int DAMAGE = 9;
-    public static final int ADDITIONAL_DAMAGE = 5;
+    private static final int DAMAGE = 5;
+    private static final int UPGRADE_DAMAGE = 1;
+    public static final int ADDITIONAL_DAMAGE = 7;
     public static final int UPGRADE_ADDITIONAL_DAMAGE = 2;
 
     // /STAT DECLARATION/
@@ -96,6 +97,7 @@ public class MomentousAttack extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeDamage(UPGRADE_DAMAGE);
             upgradeMagicNumber(UPGRADE_ADDITIONAL_DAMAGE);
             upgradeDescription();
         }
