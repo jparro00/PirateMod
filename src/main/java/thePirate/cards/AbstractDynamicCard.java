@@ -11,7 +11,6 @@ import thePirate.PirateMod;
 import thePirate.actions.PurgeRemovablesAction;
 import thePirate.cards.lures.AbstractLure;
 import thePirate.cards.predators.AbstractPredator;
-import thePirate.cards.predators.Kraken;
 
 import java.util.ArrayList;
 
