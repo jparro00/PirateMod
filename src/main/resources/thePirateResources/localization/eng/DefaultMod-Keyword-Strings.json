@@ -54,7 +54,7 @@
     "NAMES": [
       "dig"
     ],
-    "DESCRIPTION": "Return a card from your discard pile to your draw pile and upgrade it."
+    "DESCRIPTION": "Return a card from your discard pile to your hand and upgrade it."
   },
   {
     "PROPER_NAME": "Bury",

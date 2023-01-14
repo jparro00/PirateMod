@@ -45,6 +45,7 @@ public class Kraken extends AbstractPredator{
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET, showPreview);
         magicNumber = baseMagicNumber = MAGIC;
         secondMagic = baseSecondMagic = SECOND_MAGIC;
+        exhaust = true;
     }
 
 

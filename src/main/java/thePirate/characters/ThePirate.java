@@ -1,6 +1,7 @@
 package thePirate.characters;
 
 import basemod.abstracts.CustomPlayer;
+import basemod.animations.SpineAnimation;
 import basemod.animations.SpriterAnimation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -85,10 +86,15 @@ public class ThePirate extends CustomPlayer {
     // =============== CHARACTER CLASS START =================
 
     public ThePirate(String name, PlayerClass setClass) {
+        super(name, setClass, null, null, new SpineAnimation(
+                "thePirateResources/images/char/defaultCharacter/idle/skeleton.atlas",
+               "thePirateResources/images/char/defaultCharacter/idle/skeleton.json",1f ));
+/*
         super(name, setClass, null,
                 "thePirateResources/images/char/defaultCharacter/orb/vfx.png", null,
                 new SpriterAnimation(
                         "thePirateResources/images/char/defaultCharacter/Spriter/theDefaultAnimation.scml"));
+*/
 
 
         // =============== TEXTURES, ENERGY, LOADOUT =================  
@@ -109,7 +115,7 @@ public class ThePirate extends CustomPlayer {
                 THE_DEFAULT_SKELETON_ATLAS,
                 THE_DEFAULT_SKELETON_JSON,
                 1.0f);
-        AnimationState.TrackEntry e = state.setAnimation(0, "animation", true);
+        AnimationState.TrackEntry e = state.setAnimation(0, "animtion0", true);
         e.setTime(e.getEndTime() * MathUtils.random());
 
         // =============== /ANIMATIONS/ =================

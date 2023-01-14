@@ -27,7 +27,7 @@ public class HatchPlot extends AbstractDynamicCard {
     public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int UPGRADED_COST = 0;
+    private static final int UPGRADED_COST = 1;
     private static final int MAGIC = 1;
     private static final int UPGRADED_MAGIC = 0;
     private static final int SECOND_MAGIC = 0;
@@ -44,6 +44,7 @@ public class HatchPlot extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
         secondMagic = baseSecondMagic = SECOND_MAGIC;
+        exhaust = true;
     }
 
 
@@ -54,7 +55,8 @@ public class HatchPlot extends AbstractDynamicCard {
         addToBot(new SelectCardsAction(p.discardPile.group, magicNumber, text, false, new Predicate<AbstractCard>() {
             @Override
             public boolean test(AbstractCard card) {
-                return card.canUse(p, null) && !cardID.equals(card.cardID);
+                return !cardID.equals(card.cardID);
+//                return card.canUse(p, null) && !cardID.equals(card.cardID);
             }
         }, new Consumer<List<AbstractCard>>() {
             @Override
@@ -73,6 +75,7 @@ public class HatchPlot extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            exhaust = false;
             if (UPGRADED_COST != COST)
                 upgradeBaseCost(UPGRADED_COST);
             if (UPGRADED_MAGIC > 0)

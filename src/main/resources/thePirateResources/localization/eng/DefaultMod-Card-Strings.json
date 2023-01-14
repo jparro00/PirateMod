@@ -35,7 +35,8 @@
   },
   "thePirate:HatchPlot": {
     "NAME": "Hatch Plot",
-    "DESCRIPTION": "Play a card from your discard pile (cannot choose Hatch Plot).",
+    "DESCRIPTION": "Play a card from your discard pile (cannot choose Hatch Plot). NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Play a card from your discard pile (cannot choose Hatch Plot).",
     "EXTENDED_DESCRIPTION": ["Select a card to play from your discard pile"]
   },
   "thePirate:PirateBay": {
@@ -67,7 +68,7 @@
   },
   "thePirate:Kraken": {
     "NAME": "Kraken",
-    "DESCRIPTION": "Stun target enemy, then apply !M! thepirate:Ink to ALL enemies. NL thepirate:Predatory."
+    "DESCRIPTION": "Stun target enemy, then apply !M! thepirate:Ink to ALL enemies. NL thepirate:Predatory. Exhaust."
   },
   "thePirate:ElectricEel": {
     "NAME": "Electric Eel",
@@ -142,7 +143,7 @@
   },
   "thePirate:DarkExperiment": {
     "NAME": "Dark Experiment",
-    "DESCRIPTION": "Deal !D! damage and apply !M! thepirate:ink.  If Fatal, permanently increase thepirate:ink applied by !thePirate:DARK!. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage and apply !M! thepirate:ink.  If Fatal, permanently increase thepirate:ink applied by !M!. NL Exhaust."
   },
   "thePirate:DownWithTheShip": {
     "NAME": "Down with the Ship",
@@ -284,7 +285,7 @@
   },
   "thePirate:Cutlass": {
     "NAME": "Cutlass",
-    "DESCRIPTION": "Deal !D! damage.  NL Put this card on top of your library and reduce it's damage by !M!."
+    "DESCRIPTION": "Deal !D! damage.  NL Put this card on top of your draw pile and reduce it's damage by !M!."
   },
   "thePirate:Cannon": {
     "NAME": "Cannon",

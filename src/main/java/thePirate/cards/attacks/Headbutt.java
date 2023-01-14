@@ -21,7 +21,7 @@ public class Headbutt extends AbstractDynamicCard {
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;  //   since they don't change much.
     private static final CardType TYPE = CardType.ATTACK;       //
     public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     public static final String ID = PirateMod.makeID(Headbutt.class.getSimpleName());
     public static final String IMG = makeCardPath(Headbutt.class.getSimpleName()+".png", TYPE);
