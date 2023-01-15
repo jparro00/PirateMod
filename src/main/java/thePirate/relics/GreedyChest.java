@@ -34,7 +34,7 @@ public class GreedyChest extends CustomRelic {
     }
 
     public GreedyChest(){
-        super(ID, IMG,RelicTier.RARE, LandingSound.CLINK);
+        super(ID, IMG,OUTLINE,RelicTier.RARE, LandingSound.CLINK);
     }
 
 

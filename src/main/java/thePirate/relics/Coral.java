@@ -41,7 +41,7 @@ public class Coral extends CustomRelic {
     }
 
     public Coral(){
-        super(ID, IMG,RelicTier.UNCOMMON, LandingSound.CLINK);
+        super(ID, IMG,OUTLINE, RelicTier.UNCOMMON, LandingSound.FLAT);
     }
 
     public void update() {

@@ -1,4 +1,11 @@
 {
+  "thePirate:WritingReed": {
+    "NAME": "Writing Reed",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "At the start of battle, apply 5 thepirate:Ink to all enemies."
+    ]
+  },
   "thePirate:Coral": {
     "NAME": "Coral",
     "FLAVOR": "",
