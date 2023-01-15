@@ -1,4 +1,11 @@
 {
+  "thePirate:BottledCourage": {
+    "NAME": "Bottled Courage",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "The first time you Bury each turn, gain [E] ."
+    ]
+  },
   "thePirate:WritingReed": {
     "NAME": "Writing Reed",
     "FLAVOR": "",

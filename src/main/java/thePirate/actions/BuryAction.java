@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import thePirate.cards.attacks.BeachBuddy;
 import thePirate.powers.OnBury;
 
@@ -158,9 +159,16 @@ public class BuryAction extends AbstractGameAction {
                     ((OnBury)c).onBuryCards(cardsSelected);
                 }
             }
+            //run for powers
             for (AbstractPower playerPower : player.powers){
                 if(playerPower instanceof OnBury){
                     ((OnBury)playerPower).onBuryCards(cardsSelected);
+                }
+            }
+            //run for relics
+            for (AbstractRelic relic : player.relics){
+                if(relic instanceof OnBury){
+                    ((OnBury) relic).onBuryCards(cardsSelected);
                 }
             }
 
