@@ -25,7 +25,7 @@ public class GunsmithsBible extends CustomRelic implements ClickableRelic { // Y
     private boolean isPlayerTurn = false; // We should make sure the relic is only activateable during our turn, not the enemies'.
 
     public GunsmithsBible() {
-        super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.CLINK);
+        super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.CLINK);
 
         tips.clear();
         tips.add(new PowerTip(name, description));

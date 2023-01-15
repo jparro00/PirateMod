@@ -1,6 +1,14 @@
 {
-"thePirate:PlaceholderPotion": {
-        "NAME": "Placeholder Potion",
-        "DESCRIPTIONS": ["Gain ", " At the end of your turn, lose ", " Strength."]
-}
+        "thePirate:IslandPotion": {
+                "NAME": "IslandPotion",
+                "DESCRIPTIONS": ["thepirate:Bury, and then thepirate:Dig."]
+        },
+        "thePirate:InkPotion": {
+                "NAME": "Ink Potion",
+                "DESCRIPTIONS": ["Apply "," thepirate:Ink to target enemy."]
+        },
+        "thePirate:PlaceholderPotion": {
+                "NAME": "Placeholder Potion",
+                "DESCRIPTIONS": ["Gain ", " At the end of your turn, lose ", " Strength."]
+        }
 }

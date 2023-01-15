@@ -1,6 +1,20 @@
 {
+  "thePirate:ExoticDish": {
+    "NAME": "Exotic Dish",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "Whenever you apply Ink, apply 1 additional Ink."
+    ]
+  },
+  "thePirate:WoodenLeg": {
+    "NAME": "Wooden Leg",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "At the start of battle, Bury up to 3 cards."
+    ]
+  },
   "thePirate:BottledCourage": {
-    "NAME": "Bottled Courage",
+    "NAME": "Motivation",
     "FLAVOR": "",
     "DESCRIPTIONS": [
       "The first time you Bury each turn, gain [E] ."
@@ -14,7 +28,7 @@
     ]
   },
   "thePirate:Coral": {
-    "NAME": "Coral",
+    "NAME": "Inspirational Ornament",
     "FLAVOR": "",
     "DESCRIPTIONS": [
       "Upon pickup, choose 1 of 20 cards from the base characters to add to your deck.",
@@ -85,13 +99,13 @@
       "YOU ARE MINE!"
     ]
   },
-  "thePirate:BottledPlaceholderRelic": {
-    "NAME": "Bottled Placeholder",
+  "thePirate:BottledVoid": {
+    "NAME": "Bottled Void",
     "FLAVOR": "What is this?",
     "DESCRIPTIONS": [
-      "Choose a card. Whenever you take play any card, draw the chosen card.",
-      "Whenever you play a card, draw ",
-      ".",
+      "Choose a card. You cannot draw the chosen card in your opening hand at the start of battle.",
+      "You cannot draw ",
+      " in your opening hand at the start of battle.",
       "Select a card to bottle for "
     ]
   }

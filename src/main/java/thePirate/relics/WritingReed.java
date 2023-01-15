@@ -36,7 +36,7 @@ public class WritingReed extends CustomRelic {
     }
 
     public WritingReed(){
-        super(ID, IMG,OUTLINE,RelicTier.COMMON, LandingSound.FLAT);
+        super(ID, IMG,OUTLINE,RelicTier.UNCOMMON, LandingSound.FLAT);
     }
 
 
