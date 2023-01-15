@@ -301,11 +301,11 @@
   },
   "thePirate:Parry": {
     "NAME": "Parry",
-    "DESCRIPTION": "Gain !B! block. NL Gain !M! energy"
+    "DESCRIPTION": "Gain !B! block. NL Gain [E]"
   },
   "thePirate:Riposte": {
     "NAME": "Riposte",
-    "DESCRIPTION": "Deal !D! damage. NL Gain 1 energy"
+    "DESCRIPTION": "Deal !D! damage. NL Gain [E]"
   },
   "thePirate:DefaultCommonAttack": {
     "NAME": "Strike",

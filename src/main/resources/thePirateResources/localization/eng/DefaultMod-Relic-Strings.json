@@ -1,4 +1,19 @@
 {
+  "thePirate:Coral": {
+    "NAME": "Coral",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "Upon pickup, choose 1 of 20 cards from the base characters to add to your deck.",
+      "Choose a card to put add to your deck."
+    ]
+  },
+  "thePirate:GreedyChest": {
+    "NAME": "Greedy Chest",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "At the start of battle, gain 1 strength for every 100 #ygold you have."
+    ]
+  },
   "thePirate:GunsmithsBible": {
     "NAME": "Gunsmith's Bible",
     "FLAVOR": "",
