@@ -80,15 +80,15 @@ public class Overexert extends AbstractDynamicCard implements Purgable {
         if(this.upgraded){
             retreat.upgrade();
         }
-        this.addToTop(new AddCardToDeckAction(retreat));
-        this.setPurge(true);
-        //TODO: card not being removed if lethal.  Testing below
-//        this.addToBot(new PurgeRemovablesAction(this));
-        //test:
-//        this.addToTop(new PurgeRemovablesAction(this, true));
 
-
-
+        //check if the player has this overexert in master deck, and if so replace it with a retreat
+        for (AbstractCard card : p.masterDeck.group){
+            if (card.uuid.equals(this.uuid)){
+                this.addToTop(new AddCardToDeckAction(retreat));
+                this.setPurge(true);
+                break;
+            }
+        }
     }
 
 

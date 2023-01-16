@@ -54,9 +54,13 @@ public class WritingReed extends CustomRelic implements OnApplyPowerRelic {
         return true;
     }
 
+
+
     @Override
     public int onApplyPowerStacks(AbstractPower power, AbstractCreature target, AbstractCreature source, int stackAmount) {
+        PirateMod.logger.info("enter onApplyPowerStacks()");
         if (power instanceof InkPower){
+            power.amount += EXTRA_INK;
             stackAmount += EXTRA_INK;
             flash();
         }

@@ -52,8 +52,10 @@ public class Defend extends AbstractDynamicCard {
     // Upgraded stats.
     @Override
     public void upgrade() {
-        upgradeName();
-        upgradeBlock(3);
-        upgradeDescription();
+        if (!upgraded){
+            upgradeName();
+            upgradeBlock(3);
+            upgradeDescription();
+        }
     }
 }

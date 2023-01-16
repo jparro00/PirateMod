@@ -137,65 +137,60 @@ public class InkPower extends AbstractPower implements CloneablePowerInterface, 
     public int onAttackToChangeDamagePreBlock(DamageInfo info, int damageAmount) {
         PirateMod.logger.info("enter onAttackToChangeDamagePreBlock()");
         PirateMod.logger.info("info.name: " + info.name);
+        PirateMod.logger.info("info.type: " + info.type);
+        PirateMod.logger.info("info.owner: " + info.owner);
         info.name = "test";
-        AbstractPlayer player = AbstractDungeon.player;
+        if(info.type.equals(DamageInfo.DamageType.NORMAL)){
+            AbstractPlayer player = AbstractDungeon.player;
 
-        int output = info.output;
-        //damageAmount = output;
+            int output = info.output;
+            //damageAmount = output;
 
-        int playerBlock = AbstractDungeon.player.currentBlock;
-        int damageBack = 0;
-        int tmpAmount = amount;
-        int originalAmount = amount;
-
-
-        if (damageAmount < 0)
-            damageAmount = 0;
-        if (damageAmount > 1 && player.hasPower("IntangiblePlayer"))
-            damageAmount = 1;
-
-        PirateMod.logger.info("damageAmount: " + damageAmount);
-        PirateMod.logger.info("player block: " + playerBlock);
-        PirateMod.logger.info("amount: " + tmpAmount);
-        PirateMod.logger.info("originalAmount: " + originalAmount );
+            int playerBlock = AbstractDungeon.player.currentBlock;
+            int damageBack = 0;
+            int tmpAmount = amount;
+            int originalAmount = amount;
 
 
+            if (damageAmount < 0)
+                damageAmount = 0;
+            if (damageAmount > 1 && player.hasPower("IntangiblePlayer"))
+                damageAmount = 1;
 
-        if(tmpAmount - damageAmount <= 0){
-            PirateMod.logger.info("enter FIRST case");
-            damageBack = tmpAmount;
-            damageAmount -= tmpAmount;
-            tmpAmount = 0;
             PirateMod.logger.info("damageAmount: " + damageAmount);
+            PirateMod.logger.info("player block: " + playerBlock);
             PirateMod.logger.info("amount: " + tmpAmount);
-        } else {
-            PirateMod.logger.info("enter SECOND case");
-            tmpAmount -= damageAmount;
-            damageBack = originalAmount - tmpAmount;
-            damageAmount = 0;
-            PirateMod.logger.info("damageAmount: " + damageAmount);
-            PirateMod.logger.info("amount: " + tmpAmount);
-        }
+            PirateMod.logger.info("originalAmount: " + originalAmount );
 
-/*
-        if (damageAmount > 0){
-            damageAmount -= playerBlock;
 
-            DefaultMod.logger.info("enter reduce for block: " );
-            DefaultMod.logger.info("player block: " + playerBlock);
-            DefaultMod.logger.info("damageAmount: " + damageAmount);
-        }
-*/
 
-        if (owner.hasPower(ChemicalWarfarePower.POWER_ID)){
-            damageBack *= ChemicalWarfarePower.DAMAGE_MODIFIER;
-        }
+            if(tmpAmount - damageAmount <= 0){
+                PirateMod.logger.info("enter FIRST case");
+                damageBack = tmpAmount;
+                damageAmount -= tmpAmount;
+                tmpAmount = 0;
+                PirateMod.logger.info("damageAmount: " + damageAmount);
+                PirateMod.logger.info("amount: " + tmpAmount);
+            } else {
+                PirateMod.logger.info("enter SECOND case");
+                tmpAmount -= damageAmount;
+                damageBack = originalAmount - tmpAmount;
+                damageAmount = 0;
+                PirateMod.logger.info("damageAmount: " + damageAmount);
+                PirateMod.logger.info("amount: " + tmpAmount);
+            }
 
-        if (damageBack > 0)
-            this.addToTop(new DamageAction(info.owner, new DamageInfo(AbstractDungeon.player, damageBack, DamageInfo.DamageType.THORNS)));
+            if (owner.hasPower(ChemicalWarfarePower.POWER_ID)){
+                damageBack *= ChemicalWarfarePower.DAMAGE_MODIFIER;
+            }
 
-        if(tmpAmount != originalAmount && !AbstractDungeon.player.hasPower(VolatileInkPower.POWER_ID)){
-            this.addToTop(new ReducePowerAction(info.owner, info.owner, this.ID, originalAmount - tmpAmount));
+            if (damageBack > 0)
+                this.addToTop(new DamageAction(info.owner, new DamageInfo(AbstractDungeon.player, damageBack, DamageInfo.DamageType.THORNS)));
+
+            if(tmpAmount != originalAmount && !AbstractDungeon.player.hasPower(VolatileInkPower.POWER_ID)){
+                this.addToTop(new ReducePowerAction(info.owner, info.owner, this.ID, originalAmount - tmpAmount));
+            }
+
         }
 
         PirateMod.logger.info("returning damageAmount: " + damageAmount);
