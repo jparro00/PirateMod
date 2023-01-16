@@ -15,7 +15,7 @@ public class DarkExperimentVariable extends DynamicVariable
     @Override
     public String key()
     {
-        return makeID("DARK");
+        return makeID("DK");
     }
 
     // Checks whether the current value is different than the base one. 
@@ -23,7 +23,7 @@ public class DarkExperimentVariable extends DynamicVariable
     @Override
     public boolean isModified(AbstractCard card)
     {
-        return false;
+        return card.upgraded;
     }
    
     // The value the variable should display.
@@ -31,7 +31,11 @@ public class DarkExperimentVariable extends DynamicVariable
     @Override
     public int value(AbstractCard card)
     {
-        return DarkExperiment.MAGIC_INCREMENT_AMOUNT;
+        if (!card.upgraded){
+            return DarkExperiment.MAGIC_INCREMENT_AMOUNT;
+        }else {
+            return DarkExperiment.UPGRADED_INCREMENT_AMOUNT + DarkExperiment.MAGIC_INCREMENT_AMOUNT;
+        }
     }
     
     // The baseValue the variable should display.
@@ -45,7 +49,7 @@ public class DarkExperimentVariable extends DynamicVariable
     // If the card has it's damage upgraded, this variable will glow green on the upgrade selection screen as well.
     @Override
     public boolean upgraded(AbstractCard card)
-    {               
-       return false;
+    {
+        return card.upgraded;
     }
 }

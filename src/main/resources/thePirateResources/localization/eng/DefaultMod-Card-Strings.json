@@ -143,7 +143,7 @@
   },
   "thePirate:DarkExperiment": {
     "NAME": "Dark Experiment",
-    "DESCRIPTION": "Deal !D! damage and apply !M! thepirate:ink.  If Fatal, permanently increase thepirate:ink applied by !M!. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage and apply !M! thepirate:ink.  If Fatal, permanently increase thepirate:ink applied by this card by !SM! . NL Exhaust."
   },
   "thePirate:DownWithTheShip": {
     "NAME": "Down with the Ship",
@@ -178,7 +178,7 @@
   },
   "thePirate:FireAtWill": {
     "NAME": "Fire At Will",
-    "DESCRIPTION": "The first Cannonball you play each turn costs 0"
+    "DESCRIPTION": "The next Cannonball you play, and The first Cannonball you play each turn costs 0."
   },
   "thePirate:Saboteur": {
     "NAME": "Saboteur",

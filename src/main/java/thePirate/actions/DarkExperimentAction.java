@@ -39,7 +39,7 @@ public class DarkExperimentAction extends AbstractGameAction {
                     if (c.uuid.equals(this.uuid)) {
                         c.misc += this.increaseAmount;
                         c.applyPowers();
-                        c.baseMagicNumber = c.misc;
+                        c.baseMagicNumber = c.magicNumber = c.misc;
                         c.isMagicNumberModified = false;
                     }
                 }

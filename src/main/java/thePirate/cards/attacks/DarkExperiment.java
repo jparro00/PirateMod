@@ -1,6 +1,7 @@
 package thePirate.cards.attacks;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -27,8 +28,9 @@ public class DarkExperiment extends AbstractDynamicCard {
     private static final int DAMAGE = 10;
     private static final int UPGRADED_DMG = 0;
     public static final int  MAGIC = 4;
-    public static final int UPGRADED_MAGIC = 1;
+    public static final int UPGRADED_MAGIC = 0;
     public static final int MAGIC_INCREMENT_AMOUNT = 4;
+    public static final int UPGRADED_INCREMENT_AMOUNT = 1;
     public boolean modified;
 
     // /STAT DECLARATION/
@@ -41,6 +43,7 @@ public class DarkExperiment extends AbstractDynamicCard {
     public DarkExperiment() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.misc = baseMagicNumber = magicNumber = MAGIC;
+        secondMagic = baseSecondMagic = MAGIC_INCREMENT_AMOUNT;
         this.baseDamage = this.damage = DAMAGE;
         this.exhaust = true;
     }
@@ -50,15 +53,21 @@ public class DarkExperiment extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(m,p,new InkPower(m,p,magicNumber),magicNumber));
-        addToBot(new DarkExperimentAction(m,new DamageInfo(p,damage,damageTypeForTurn),MAGIC_INCREMENT_AMOUNT, this.uuid));
-
+        addToBot(new DarkExperimentAction(m,new DamageInfo(p,damage,damageTypeForTurn),secondMagic, this.uuid));
 
     }
 
     public void applyPowers() {
-        this.baseMagicNumber = this.misc;
+        baseMagicNumber = magicNumber = misc;
         super.applyPowers();
         this.initializeDescription();
+    }
+
+    @Override
+    public AbstractCard makeCopy() {
+        DarkExperiment darkExperiment = new DarkExperiment();
+        darkExperiment.baseMagicNumber = darkExperiment.magicNumber = darkExperiment.misc = this.magicNumber;
+        return darkExperiment;
     }
 
     // Upgraded stats.
@@ -72,6 +81,7 @@ public class DarkExperiment extends AbstractDynamicCard {
                 upgradeBaseCost(UPGRADED_COST);
             if(UPGRADED_MAGIC > 0)
                 upgradeMagicNumber(UPGRADED_MAGIC);
+            upgradeSecondMagic(UPGRADED_INCREMENT_AMOUNT);
             upgradeDescription();
         }
     }
