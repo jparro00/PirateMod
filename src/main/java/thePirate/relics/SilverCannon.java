@@ -5,12 +5,13 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import thePirate.PirateMod;
-import thePirate.powers.PlayCannonballTwicePower;
 import thePirate.util.TextureLoader;
 
+import java.util.Iterator;
 import java.util.List;
 
 import static thePirate.PirateMod.makeRelicOutlinePath;
@@ -44,18 +45,21 @@ public class SilverCannon extends BronzeCannon {
     @Override
     public List<AbstractGameAction> onUseCannon(AbstractPlayer p, AbstractMonster m) {
         List<AbstractGameAction> actions = super.onUseCannon(p,m);
-        actions.add(new ApplyPowerAction(p,p,new PlayCannonballTwicePower(DOUBLE_CANNONBALL), DOUBLE_CANNONBALL));
+        //trying out nerfing silver cannon's double cannonball effect
+//        actions.add(new ApplyPowerAction(p,p,new PlayCannonballTwicePower(DOUBLE_CANNONBALL), DOUBLE_CANNONBALL));
 
-        //Don't add vulnerable if this is coming from PlatinumCannon, since that changes target to ALL_ENEMY
-        if(m != null){
-            actions.add(new ApplyPowerAction(m,p,new VulnerablePower(m,VULNERABLE, false),VULNERABLE));
+        Iterator iterator = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();
+
+        while(iterator.hasNext()) {
+            AbstractMonster mo = (AbstractMonster)iterator.next();
+            addToBot(new ApplyPowerAction(mo, p, new VulnerablePower(mo, VULNERABLE, false), VULNERABLE));
         }
         return actions;
     }
 
     @Override
     public AbstractCard.CardTarget getTarget() {
-        return AbstractCard.CardTarget.ENEMY;
+        return AbstractCard.CardTarget.ALL_ENEMY;
     }
 
     // Description

@@ -50,7 +50,7 @@ public class GoldCannon extends SilverCannon{
 
     @Override
     public AbstractCard.CardTarget getTarget() {
-        return AbstractCard.CardTarget.ENEMY;
+        return AbstractCard.CardTarget.ALL_ENEMY;
     }
     // Description
     @Override
