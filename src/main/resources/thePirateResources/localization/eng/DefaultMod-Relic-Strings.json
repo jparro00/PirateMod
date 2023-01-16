@@ -1,6 +1,6 @@
 {
-  "thePirate:ExoticDish": {
-    "NAME": "Exotic Dish",
+  "thePirate:WritingReed": {
+    "NAME": "Writing Reed",
     "FLAVOR": "",
     "DESCRIPTIONS": [
       "Whenever you apply Ink, apply 1 additional Ink."
@@ -20,8 +20,8 @@
       "The first time you Bury each turn, gain [E] ."
     ]
   },
-  "thePirate:WritingReed": {
-    "NAME": "Writing Reed",
+  "thePirate:ExoticDish": {
+    "NAME": "Exotic Dish",
     "FLAVOR": "",
     "DESCRIPTIONS": [
       "At the start of battle, apply 5 thepirate:Ink to all enemies."

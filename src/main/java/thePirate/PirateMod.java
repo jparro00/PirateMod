@@ -437,10 +437,10 @@ public class PirateMod implements
         BaseMod.addRelicToCustomPool(new GunsmithsBible(), ThePirate.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new GreedyChest(), ThePirate.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new Coral(), ThePirate.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new WritingReed(), ThePirate.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new ExoticDish(), ThePirate.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new BottledCourage(), ThePirate.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new WoodenLeg(), ThePirate.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new ExoticDish(), ThePirate.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new WritingReed(), ThePirate.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new BottledVoid(), ThePirate.Enums.COLOR_GRAY);
 
         // This adds a relic to the Shared pool. Every character can find this relic.

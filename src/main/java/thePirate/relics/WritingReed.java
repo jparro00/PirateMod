@@ -2,10 +2,9 @@ package thePirate.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.evacipated.cardcrawl.mod.stslib.relics.OnApplyPowerRelic;
+import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import thePirate.PirateMod;
 import thePirate.powers.InkPower;
@@ -14,7 +13,7 @@ import thePirate.util.TextureLoader;
 import static thePirate.PirateMod.makeRelicOutlinePath;
 import static thePirate.PirateMod.makeRelicPath;
 
-public class WritingReed extends CustomRelic {
+public class WritingReed extends CustomRelic implements OnApplyPowerRelic {
 
     /*
      * https://github.com/daviscook477/BaseMod/wiki/Custom-Relics
@@ -27,25 +26,16 @@ public class WritingReed extends CustomRelic {
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath(WritingReed.class.getSimpleName() + ".png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath(WritingReed.class.getSimpleName() + ".png"));
-    public static final int INK = 5;
+    public static final int EXTRA_INK = 1;
 
-    public boolean isActive;
 
     public WritingReed(String setId, String imgName, RelicTier tier, LandingSound sfx) {
         super(setId, imgName, tier, sfx);
+
     }
 
     public WritingReed(){
-        super(ID, IMG,OUTLINE,RelicTier.UNCOMMON, LandingSound.FLAT);
-    }
-
-
-    public void atBattleStart() {
-        AbstractPlayer p = AbstractDungeon.player;
-        for(AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters){
-            this.addToBot(new ApplyPowerAction(mo, p, new InkPower(mo, p, INK), INK));
-        }
-        flash();
+        super(ID, IMG,OUTLINE, RelicTier.COMMON, LandingSound.FLAT);
     }
 
     // Description
@@ -59,4 +49,17 @@ public class WritingReed extends CustomRelic {
         return new WritingReed();
     }
 
+    @Override
+    public boolean onApplyPower(AbstractPower abstractPower, AbstractCreature abstractCreature, AbstractCreature abstractCreature1) {
+        return true;
+    }
+
+    @Override
+    public int onApplyPowerStacks(AbstractPower power, AbstractCreature target, AbstractCreature source, int stackAmount) {
+        if (power instanceof InkPower){
+            stackAmount += EXTRA_INK;
+            flash();
+        }
+        return stackAmount;
+    }
 }
