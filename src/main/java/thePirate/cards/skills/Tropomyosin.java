@@ -45,7 +45,7 @@ public class Tropomyosin extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, magicNumber),-magicNumber));
+        this.addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, magicNumber),magicNumber));
         this.addToBot(new ApplyPowerAction(m, p, new InkPower(m, p, secondMagic), secondMagic));
     }
 
