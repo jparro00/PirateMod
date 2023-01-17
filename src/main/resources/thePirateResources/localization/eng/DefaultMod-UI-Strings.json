@@ -2,7 +2,9 @@
   "thePirate:CardDescriptors": {
     "TEXT": [
       "Cannon",
-      "Cannonball"
+      "Cannonball",
+      "Lure",
+      "Predator"
     ]
   },
   "thePirate:PirateBayAction": {

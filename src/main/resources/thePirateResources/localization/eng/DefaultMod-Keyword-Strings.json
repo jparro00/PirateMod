@@ -1,5 +1,15 @@
 [
   {
+    "PROPER_NAME": "Stun",
+    "NAMES": [
+      "stun",
+      "Stun",
+      "stunned",
+      "Stunned"
+    ],
+    "DESCRIPTION": "Stunned enemies skip their turn."
+  },
+  {
     "PROPER_NAME": "Storm",
     "NAMES": [
       "storm"
@@ -20,7 +30,7 @@
       "predatory",
       "predator"
     ],
-    "DESCRIPTION": "Can only spawn in card rewards if your deck contains the associated #yLure card. Always spawns in non-boss card rewards that have at least 1 #yrare. When added to your deck, the corresponding #yLure is removed."
+    "DESCRIPTION": "If your deck contains the associated #yLure card, always spawns in non-boss card rewards that have at least 1 #yrare. Cannot spawn through any other method. NL When added to your deck, the corresponding #yLure is removed."
   },
   {
     "PROPER_NAME": "Lure",
@@ -29,7 +39,7 @@
       "lured",
       "lures"
     ],
-    "DESCRIPTION": "While this is in your deck, it's associated #yPredator card is added to the card reward pool and will always spawn in non-boss card rewards that have at least 1 #yrare. When the corresponding #yPredator card is added to your deck, remove this."
+    "DESCRIPTION": "While this is in your deck, it's associated #yPredator card will always spawn in non-boss card rewards that have at least 1 #yrare. NL When the corresponding #yPredator card is added to your deck, remove this from your deck. NL Can only spawn from combat card rewards."
 
   },
   {

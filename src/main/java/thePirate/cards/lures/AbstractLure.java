@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thePirate.PirateMod;
@@ -17,6 +18,7 @@ import thePirate.cards.predators.AbstractPredator;
 import thePirate.characters.ThePirate;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 
@@ -24,9 +26,11 @@ public abstract class AbstractLure extends AbstractDynamicCard implements Purgab
 
     // STAT DECLARATION
 
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(PirateMod.makeID("CardDescriptors"));
     private static final CardTarget TARGET = CardTarget.NONE;  //   since they don't change much.
     private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;
+    public static final CardRarity RARITY = CardRarity.SPECIAL;
 
     public boolean purge;
     public boolean queuedForPurge;
@@ -39,12 +43,37 @@ public abstract class AbstractLure extends AbstractDynamicCard implements Purgab
     // TEXT DECLARATION
     // /TEXT DECLARATION/
 
-    public AbstractLure(String id, String img, CardRarity rarity, int magicNumber, boolean showPreview) {
-        super(id, img, COST, TYPE, COLOR, rarity, TARGET);
+    public AbstractLure(String id, String img, int magicNumber, boolean showPreview) {
+        super(id, img, COST, TYPE, COLOR, RARITY, TARGET);
         this.showPreview = showPreview;
         this.magicNumber = baseMagicNumber = magicNumber;
         isInnate = true;
         tags.add(CardTags.HEALING);
+//        setDisplayRarity(CardRarity.UNCOMMON);
+    }
+
+    @Override
+    public List<String> getCardDescriptors() {
+        ArrayList<String> retVal = new ArrayList<>();
+        retVal.add(uiStrings.TEXT[2]);
+        return retVal;
+    }
+
+    public static List<AbstractLure> getSpawnableLures(){
+        List<AbstractLure> lures = new ArrayList<>();
+        lures.add(new BatheInBlood());
+        lures.add(new WithdrawWeapons());
+        lures.add(new LowerDefenses());
+
+        Iterator<AbstractLure> iterator = lures.iterator();
+        while (iterator.hasNext()){
+            AbstractLure lure = iterator.next();
+            //Note: we are passing null here, assuming the variable is never used in AbstractLure.canSpawn
+            if (!lure.canSpawn(null)){
+                iterator.remove();
+            }
+        }
+        return lures;
     }
 
     @Override
@@ -54,6 +83,14 @@ public abstract class AbstractLure extends AbstractDynamicCard implements Purgab
         if(player != null){
             for(AbstractCard card : player.masterDeck.group){
                 if(card instanceof AbstractLure){
+                    canSpawn = false;
+                    break;
+                }
+            }
+        }
+        if (canSpawn && currentRewardCards != null){
+            for (AbstractCard card : currentRewardCards){
+                if (!card.uuid.equals(this.uuid) && card instanceof AbstractLure){
                     canSpawn = false;
                     break;
                 }

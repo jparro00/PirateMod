@@ -15,7 +15,6 @@ import static thePirate.PirateMod.makeCardPath;
 
 public class LowerDefenses extends AbstractLure {
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     public static final int MAGIC = 1;
 
     public static final String SIMPLE_NAME = LowerDefenses.class.getSimpleName();
@@ -26,7 +25,7 @@ public class LowerDefenses extends AbstractLure {
         this(true);
     }
     public LowerDefenses(boolean showPreview) {
-        super(ID, IMG, RARITY, MAGIC, showPreview);
+        super(ID, IMG, MAGIC, showPreview);
         magicNumber = baseMagicNumber = MAGIC;
         if(showPreview)
             cardsToPreview = new ElectricEel(false);

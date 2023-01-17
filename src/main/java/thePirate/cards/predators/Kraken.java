@@ -19,7 +19,6 @@ public class Kraken extends AbstractPredator{
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
     private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;
@@ -42,7 +41,7 @@ public class Kraken extends AbstractPredator{
         this(true);
     }
     public Kraken(boolean showPreview) {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET, showPreview);
+        super(ID, IMG, COST, TYPE, COLOR, TARGET, showPreview);
         magicNumber = baseMagicNumber = MAGIC;
         secondMagic = baseSecondMagic = SECOND_MAGIC;
         exhaust = true;

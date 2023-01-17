@@ -15,7 +15,6 @@ import static thePirate.PirateMod.makeCardPath;
 
 public class BatheInBlood extends AbstractLure {
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     public static final int MAGIC = 1;
 
     public static final String SIMPLE_NAME = BatheInBlood.class.getSimpleName();
@@ -26,7 +25,7 @@ public class BatheInBlood extends AbstractLure {
         this(true);
     }
     public BatheInBlood(boolean showPreview) {
-        super(ID, IMG, RARITY, MAGIC, showPreview);
+        super(ID, IMG, MAGIC, showPreview);
         magicNumber = baseMagicNumber = MAGIC;
         if(showPreview)
             cardsToPreview = new Kraken(false);

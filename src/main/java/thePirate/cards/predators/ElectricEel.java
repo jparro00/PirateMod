@@ -16,7 +16,6 @@ public class ElectricEel extends AbstractPredator {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.SELF;  //   since they don't change much.
     private static final CardType TYPE = CardType.POWER;       //
     public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;
@@ -37,7 +36,7 @@ public class ElectricEel extends AbstractPredator {
         this(true);
     }
     public ElectricEel(boolean showPreview) {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET, showPreview);
+        super(ID, IMG, COST, TYPE, COLOR, TARGET, showPreview);
         magicNumber = baseMagicNumber = MAGIC;
     }
 

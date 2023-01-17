@@ -1,10 +1,11 @@
 package thePirate.cards.predators;
 
 import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.OnObtainCard;
-import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.SpawnModificationCard;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
@@ -12,25 +13,26 @@ import thePirate.cards.lures.AbstractLure;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
-public abstract class AbstractPredator extends AbstractDynamicCard implements SpawnModificationCard, OnObtainCard {
+public abstract class AbstractPredator extends AbstractDynamicCard implements OnObtainCard {
 
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(PirateMod.makeID("CardDescriptors"));
     public boolean showPreview;
-    public AbstractPredator(String id, String img, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean showPreview) {
-        super(id, img, cost, type, color, rarity, target);
+    public AbstractPredator(String id, String img, int cost, CardType type, CardColor color, CardTarget target, boolean showPreview) {
+        super(id, img, cost, type, color, CardRarity.SPECIAL, target);
         this.showPreview = showPreview;
         if(showPreview){
             cardsToPreview = getLure();
         }
         tags.add(CardTags.HEALING);
+//        setDisplayRarity(CardRarity.RARE);
     }
-
     @Override
-    public void onRewardListCreated(ArrayList<AbstractCard> rewardCards) {
-        PirateMod.logger.info("enter AbstractPredator.onRewardListCreated()");
-        if (canSpawn(rewardCards)){
-            rewardCards.add(new Kraken());
-        }
+    public List<String> getCardDescriptors() {
+        ArrayList<String> retVal = new ArrayList<>();
+        retVal.add(uiStrings.TEXT[3]);
+        return retVal;
     }
 
     @Override
@@ -57,26 +59,6 @@ public abstract class AbstractPredator extends AbstractDynamicCard implements Sp
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
 
 
-    }
-
-    @Override
-    public boolean canSpawn(ArrayList<AbstractCard> currentRewardCards){
-        PirateMod.logger.info("enter canSpawn()");
-        boolean retVal = false;
-        AbstractPlayer player = AbstractDungeon.player;
-        for(AbstractCard card : player.hand.group){
-
-            if (getLure().cardID.equals(card.cardID)){
-                retVal = true;
-                break;
-            }
-        }
-        return retVal;
-    }
-
-    @Override
-    public boolean canSpawnShop(ArrayList<AbstractCard> currentShopCards) {
-        return false;
     }
 
     public abstract AbstractLure getLure();

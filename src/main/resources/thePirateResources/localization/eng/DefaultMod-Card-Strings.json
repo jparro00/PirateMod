@@ -68,7 +68,7 @@
   },
   "thePirate:Kraken": {
     "NAME": "Kraken",
-    "DESCRIPTION": "Stun target enemy, then apply !M! thepirate:Ink to ALL enemies. NL thepirate:Predatory. Exhaust."
+    "DESCRIPTION": "thepirate:Stun target enemy, then apply !M! thepirate:Ink to ALL enemies. NL thepirate:Predatory. Exhaust."
   },
   "thePirate:ElectricEel": {
     "NAME": "Electric Eel",

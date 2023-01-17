@@ -15,7 +15,6 @@ import static thePirate.PirateMod.makeCardPath;
 
 public class WithdrawWeapons extends AbstractLure {
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     public static final int MAGIC = 1;
 
     public static final String SIMPLE_NAME = WithdrawWeapons.class.getSimpleName();
@@ -26,7 +25,7 @@ public class WithdrawWeapons extends AbstractLure {
         this(true);
     }
     public WithdrawWeapons(boolean showPreview) {
-        super(ID, IMG, RARITY, MAGIC, showPreview);
+        super(ID, IMG, MAGIC, showPreview);
         magicNumber = baseMagicNumber = MAGIC;
         if(showPreview)
             cardsToPreview = new AncientCrab(false);
