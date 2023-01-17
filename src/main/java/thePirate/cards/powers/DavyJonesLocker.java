@@ -39,6 +39,7 @@ public class DavyJonesLocker extends AbstractDynamicCard implements Purgable {
     public DavyJonesLocker() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
+        tags.add(CardTags.HEALING);
     }
 
 

@@ -31,7 +31,7 @@
   "thePirate:CephalopodForm": {
     "NAME": "Cephalopod Form",
     "DESCRIPTION": "Ethereal. NL Whenever you play a card, apply !M! thepirate:Ink to ALL enemies",
-    "UPGRADE_DESCRIPTION": "Ethereal. NL Whenever you play a card, apply !M! thepirate:Ink to ALL enemies"
+    "UPGRADE_DESCRIPTION": "Whenever you play a card, apply !M! thepirate:Ink to ALL enemies"
   },
   "thePirate:HatchPlot": {
     "NAME": "Hatch Plot",

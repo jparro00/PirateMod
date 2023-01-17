@@ -36,6 +36,7 @@ public class PirateBay extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
         secondMagic = baseSecondMagic = SECOND_MAGIC;
+        tags.add(CardTags.HEALING);
         exhaust = true;
     }
 

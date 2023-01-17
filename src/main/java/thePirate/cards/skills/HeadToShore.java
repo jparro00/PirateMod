@@ -45,10 +45,10 @@ public class HeadToShore extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new DiscardAction(p, p, 1, false));
-        this.addToBot(new ApplyPowerAction(p, p, new StartTurnDigPower(1),1));
         if (upgraded)
             addToBot(new DrawCardAction(1));
+        this.addToBot(new DiscardAction(p, p, 1, false));
+        this.addToBot(new ApplyPowerAction(p, p, new StartTurnDigPower(1),1));
     }
 
 
