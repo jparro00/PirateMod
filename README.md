@@ -16,9 +16,9 @@ The Pirate is a fully fleshed-out custom class with a primary focus on deck cont
  - Manipulate and control your deck through Bury and Dig mechanics, discarding cards from your draw pile and returning/upgrading cards from your discard pile
  - Lure powerful beasts to fight for you by putting debuff cards in your deck
  
- ## Character and Sample Card Art
+ ## Character Art
  ![DefaultCharacterPortraitBG](https://user-images.githubusercontent.com/11259046/213270515-c237610c-d218-4871-b9b0-c715f0361707.png)
- 
+ ## Sample Card Art 
  
 ![image](https://user-images.githubusercontent.com/11259046/213270916-90052c20-2d64-4f80-826f-bb30f44b6a30.png)
 
