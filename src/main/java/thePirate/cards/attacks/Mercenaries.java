@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePirate.PirateMod;
 import thePirate.actions.LoseGoldAction;
+import thePirate.actions.PayGoldAction;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.characters.ThePirate;
 
@@ -37,7 +38,7 @@ public class Mercenaries extends AbstractDynamicCard {
 
     private static final int DAMAGE = 20;
     private static final int UPGRADE_PLUS_DMG = 6;
-    public static final int GOLD_LOSS = 5;
+    public static final int GOLD_LOSS = 10;
 
     // /STAT DECLARATION/
 
@@ -55,6 +56,9 @@ public class Mercenaries extends AbstractDynamicCard {
         AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         this.addToTop(new LoseGoldAction(magicNumber));
+
+        addToTop(new PayGoldAction(magicNumber, m.hb));
+
     }
 
 

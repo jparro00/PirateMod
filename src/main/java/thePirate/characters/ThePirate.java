@@ -18,7 +18,6 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
-import com.megacrit.cardcrawl.monsters.exordium.Looter;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.ShopRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
@@ -30,6 +29,7 @@ import thePirate.cards.attacks.Strike;
 import thePirate.cards.skills.Defend;
 import thePirate.relics.BetterOnUseGold;
 import thePirate.relics.GunsmithsBible;
+import thePirate.relics.MoneyBag;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -287,7 +287,6 @@ public class ThePirate extends CustomPlayer {
     @Override
     public void loseGold(int goldAmount) {
         logger.info("enter ThePirate.loseGold(): " + goldAmount);
-        Looter
 
         Iterator var2;
         AbstractRelic r;
@@ -307,6 +306,14 @@ public class ThePirate extends CustomPlayer {
                 r = (AbstractRelic)var2.next();
                 if (r instanceof BetterOnUseGold){
                     ((BetterOnUseGold) r).onLoseGold(goldAmount);
+                }
+                if (r instanceof MoneyBag){
+                    int counter = r.counter;
+                    if (goldAmount <= counter){
+                        goldAmount = 0;
+                    }else{
+                        goldAmount -= counter;
+                    }
                 }
             }
 

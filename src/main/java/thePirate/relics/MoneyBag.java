@@ -2,11 +2,16 @@ package thePirate.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.GameActionManager;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.events.AbstractImageEvent;
+import com.megacrit.cardcrawl.events.city.Addict;
+import com.megacrit.cardcrawl.events.city.Beggar;
+import com.megacrit.cardcrawl.events.city.TheJoust;
+import com.megacrit.cardcrawl.events.exordium.Cleric;
+import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.relics.Girya;
 import thePirate.PirateMod;
-import thePirate.actions.DigAction;
+import thePirate.patches.vfx.PirateGainPennyEffect;
 import thePirate.util.TextureLoader;
 
 import static thePirate.PirateMod.makeRelicOutlinePath;
@@ -30,7 +35,7 @@ public class MoneyBag extends CustomRelic implements BetterOnUseGold{
 
 
     public MoneyBag(){
-        super(ID, IMG,OUTLINE,RelicTier.UNCOMMON, LandingSound.CLINK);
+        super(ID, IMG,OUTLINE,RelicTier.COMMON, LandingSound.CLINK);
         this.counter = 0;
     }
 
@@ -47,18 +52,37 @@ public class MoneyBag extends CustomRelic implements BetterOnUseGold{
 
     @Override
     public void onLoseGold(int gold) {
-        PirateMod.logger.info("enter onLoseGold()");
         counter -= gold;
         if (counter < 0)
             counter = 0;
+        flash();
 
     }
 
 
     @Override
     public void onSpendGold(int gold) {
-        PirateMod.logger.info("enter onSpendGold()");
         counter += gold;
+        Hitbox goldHb = AbstractDungeon.topPanel.goldHb;
+        for(int i = 0; i < gold; ++i) {
+            AbstractDungeon.effectList.add(new PirateGainPennyEffect(null, goldHb.cX, goldHb.cY, hb.cX, hb.cY, false));
+        }
+        flash();
+
+    }
+
+    public boolean isSpendGoldEvent(AbstractImageEvent event){
+        boolean spend = false;
+        if (
+                event instanceof Cleric ||
+                event instanceof Beggar ||
+                event instanceof TheJoust ||
+                event instanceof Addict
+        ){
+            spend = true;
+        }
+
+        return spend;
 
     }
 }
