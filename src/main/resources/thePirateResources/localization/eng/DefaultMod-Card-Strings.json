@@ -13,7 +13,8 @@
   },
   "thePirate:DarkOffering": {
     "NAME": "Dark Offering",
-    "DESCRIPTION": "thepirate:Bury up to x cards and apply !M!x thepirate:Ink to ALL enemies. NL Exhaust."
+    "DESCRIPTION": "thepirate:Bury up to x cards and apply !M!x thepirate:Ink to ALL enemies. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "thepirate:Bury up to x+1 cards and apply !M! x+1 thepirate:Ink to ALL enemies. NL Exhaust."
   },
   "thePirate:": {
     "NAME": "",

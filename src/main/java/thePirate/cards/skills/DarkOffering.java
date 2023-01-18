@@ -25,7 +25,7 @@ public class DarkOffering extends AbstractDynamicCard {
 
     private static final int COST = -1;
     private static final int MAGIC = 2;
-    private static final int UPGRADED_MAGIC = 1;
+    private static final int UPGRADED_MAGIC = 0;
 
     // /STAT DECLARATION/
 
