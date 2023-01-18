@@ -1,4 +1,25 @@
 {
+  "thePirate:MoneyBag": {
+    "NAME": "Money Bag",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "WHen you spend money, add it here.  When you lose gold, lose it from here first instead."
+    ]
+  },
+  "thePirate:ExperimentalCannon": {
+    "NAME": "Experimental Cannon",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "Replaces your #yCannon #yrelic. At the start of combat, add a Cannon to your hand. NL #yCannon #ygains: NL The next Cannonball you play this turn costs 0 and is played twice."
+    ]
+  },
+  "thePirate:NavigationDevice": {
+    "NAME": "Navigation Device",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "At the start of your second turn each combat, thepirate:Dig."
+    ]
+  },
   "thePirate:WritingReed": {
     "NAME": "Writing Reed",
     "FLAVOR": "",

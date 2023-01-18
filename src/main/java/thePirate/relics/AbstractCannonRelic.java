@@ -17,7 +17,10 @@ import java.util.List;
 public abstract class AbstractCannonRelic extends CustomRelic {
 
     public AbstractCannonRelic(String id, Texture img, Texture outline ) {
-        super(id, img,outline,RelicTier.SPECIAL,LandingSound.HEAVY);
+        this(id, img,outline,RelicTier.SPECIAL,LandingSound.HEAVY);
+    }
+    public AbstractCannonRelic(String id, Texture img,Texture outline ,RelicTier tier, LandingSound landingSound ) {
+        super(id, img,outline,tier,landingSound);
     }
 
 
@@ -27,6 +30,7 @@ public abstract class AbstractCannonRelic extends CustomRelic {
         if (CardCrawlGame.isInARun() && AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT){
             atBattleStartPreDraw();
         }
+
     }
 
     // Flash at the start of Battle.

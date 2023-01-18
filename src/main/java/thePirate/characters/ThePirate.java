@@ -13,10 +13,14 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.monsters.exordium.Looter;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rooms.ShopRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -24,9 +28,11 @@ import thePirate.PirateMod;
 import thePirate.cards.attacks.RoundShot;
 import thePirate.cards.attacks.Strike;
 import thePirate.cards.skills.Defend;
+import thePirate.relics.BetterOnUseGold;
 import thePirate.relics.GunsmithsBible;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import static thePirate.PirateMod.*;
 import static thePirate.characters.ThePirate.Enums.COLOR_GRAY;
@@ -278,4 +284,33 @@ public class ThePirate extends CustomPlayer {
         return TEXT[2];
     }
 
+    @Override
+    public void loseGold(int goldAmount) {
+        logger.info("enter ThePirate.loseGold(): " + goldAmount);
+        Looter
+
+        Iterator var2;
+        AbstractRelic r;
+        if (AbstractDungeon.getCurrRoom() instanceof ShopRoom) {
+            var2 = this.relics.iterator();
+
+            while(var2.hasNext()) {
+                r = (AbstractRelic)var2.next();
+                if (r instanceof BetterOnUseGold){
+                    ((BetterOnUseGold) r).onSpendGold(goldAmount);
+                }
+            }
+        }else {
+            var2 = this.relics.iterator();
+
+            while(var2.hasNext()) {
+                r = (AbstractRelic)var2.next();
+                if (r instanceof BetterOnUseGold){
+                    ((BetterOnUseGold) r).onLoseGold(goldAmount);
+                }
+            }
+
+        }
+        super.loseGold(goldAmount);
+    }
 }
