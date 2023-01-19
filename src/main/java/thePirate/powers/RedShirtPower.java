@@ -3,9 +3,8 @@ package thePirate.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.NonStackablePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -17,7 +16,7 @@ import thePirate.util.TextureLoader;
 
 import static thePirate.PirateMod.makePowerPath;
 
-public class RedShirtPower extends AbstractPower implements CloneablePowerInterface, NonStackablePower {
+public class RedShirtPower extends AbstractPower implements CloneablePowerInterface{
     public AbstractCreature source;
 
     public static final String POWER_ID = PirateMod.makeID(RedShirtPower.class.getSimpleName());
@@ -60,7 +59,7 @@ public class RedShirtPower extends AbstractPower implements CloneablePowerInterf
 
     @Override
     public void atEndOfRound() {
-        this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+        this.addToTop(new ReducePowerAction(this.owner, this.owner, POWER_ID, 1));
 
     }
 

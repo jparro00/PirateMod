@@ -42,7 +42,7 @@ public class RedShirt extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new RedShirtPower(magicNumber),0));
+        addToBot(new ApplyPowerAction(p,p,new RedShirtPower(magicNumber),magicNumber));
     }
 
 
