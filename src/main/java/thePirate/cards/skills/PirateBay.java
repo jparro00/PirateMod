@@ -1,5 +1,6 @@
 package thePirate.cards.skills;
 
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePirate.PirateMod;
@@ -19,11 +20,11 @@ public class PirateBay extends AbstractDynamicCard {
     public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int UPGRADED_COST = 0;
+    private static final int UPGRADED_COST = 1;
     private static final int MAGIC = 1;
     private static final int UPGRADED_MAGIC = 0;
-    private static final int SECOND_MAGIC = 0;
-    private static final int UPGRADED_SECOND_MAGIC = 0;
+    private static final int BLOCK = 7;
+    private static final int UPGRADED_BLOCK = 3;
 
     // /STAT DECLARATION/
 
@@ -35,7 +36,7 @@ public class PirateBay extends AbstractDynamicCard {
     public PirateBay() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
-        secondMagic = baseSecondMagic = SECOND_MAGIC;
+        block = baseBlock = BLOCK;
         tags.add(CardTags.HEALING);
         exhaust = true;
     }
@@ -44,6 +45,7 @@ public class PirateBay extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new GainBlockAction(p,block));
         addToBot(new PirateBayAction(magicNumber));
     }
 
@@ -57,8 +59,7 @@ public class PirateBay extends AbstractDynamicCard {
                 upgradeBaseCost(UPGRADED_COST);
             if (UPGRADED_MAGIC > 0)
                 upgradeMagicNumber(UPGRADED_MAGIC);
-            if (UPGRADED_SECOND_MAGIC > 0)
-                upgradeSecondMagic(UPGRADED_SECOND_MAGIC);
+            upgradeBlock(UPGRADED_BLOCK);
             upgradeDescription();
         }
     }

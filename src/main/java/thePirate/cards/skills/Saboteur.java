@@ -1,6 +1,7 @@
 package thePirate.cards.skills;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -28,6 +29,8 @@ public class Saboteur extends AbstractDynamicCard {
     private static final int UPGRADED_MAGIC = 0;
     private static final int SECOND_MAGIC = 0;
     private static final int UPGRADED_SECOND_MAGIC = 0;
+    public static final int BLOCK = 7;
+    public static final int UPGRADED_BLOCK = 2;
 
     // /STAT DECLARATION/
 
@@ -40,12 +43,14 @@ public class Saboteur extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
         secondMagic = baseSecondMagic = SECOND_MAGIC;
+        block = baseBlock = BLOCK;
     }
 
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new GainBlockAction(p, block));
         if(target == CardTarget.ALL_ENEMY){
             Iterator iter = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();
             while(iter.hasNext()) {
@@ -66,6 +71,7 @@ public class Saboteur extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeBlock(UPGRADED_BLOCK);
             if (UPGRADED_COST != COST)
                 upgradeBaseCost(UPGRADED_COST);
             if (UPGRADED_MAGIC > 0)

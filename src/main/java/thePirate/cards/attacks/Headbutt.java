@@ -15,7 +15,7 @@ import static thePirate.PirateMod.makeCardPath;
 
 
 public class Headbutt extends AbstractDynamicCard {
-    private static final CardRarity RARITY = CardRarity.UNCOMMON; //  Up to you, I like auto-complete on these
+    private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
     private static final CardType TYPE = CardType.ATTACK;       //
     public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;

@@ -16,11 +16,6 @@
     "DESCRIPTION": "thepirate:Bury up to x cards and apply !M!x thepirate:Ink to ALL enemies. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "thepirate:Bury up to x+1 cards and apply !M! x+1 thepirate:Ink to ALL enemies. NL Exhaust."
   },
-  "thePirate:": {
-    "NAME": "",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": "."
-  },
   "thePirate:TimeWarp": {
     "NAME": "Time Warp",
     "DESCRIPTION": "At the start of your turn, the last non-exhaust card you played the previous turn is returned to your hand."
@@ -42,7 +37,7 @@
   },
   "thePirate:PirateBay": {
     "NAME": "Pirate Bay",
-    "DESCRIPTION": "Create a copy of a card in your draw pile, then thepirate:Bury it. NL Exhaust."
+    "DESCRIPTION": "Gain !B! block. NL Create a copy of a card in your draw pile, then thepirate:Bury it. NL Exhaust."
   },
   "thePirate:DarkPlans": {
     "NAME": "Dark Plans",
@@ -183,8 +178,8 @@
   },
   "thePirate:Saboteur": {
     "NAME": "Saboteur",
-    "DESCRIPTION": "The next time target enemy would gain block, instead it doesn't",
-    "UPGRADE_DESCRIPTION": "The next time ALL enemies would gain block, instead they don't."
+    "DESCRIPTION": "Gain !B! block. NL The next time target enemy would gain block, instead it doesn't",
+    "UPGRADE_DESCRIPTION": "Gain !B! block. NL The next time ALL enemies would gain block, instead they don't."
   },
   "thePirate:Ransom": {
     "NAME": "Ransom",
