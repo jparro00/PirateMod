@@ -54,7 +54,6 @@ public class Menace extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeBaseCost(UPGRADED_COST);
-            exhaust = false;
             initializeDescription();
         }
     }
