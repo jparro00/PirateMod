@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
 import thePirate.PirateMod;
 import thePirate.powers.FreeCannonballPower;
 import thePirate.powers.PlayCannonballTwicePower;
@@ -41,7 +40,7 @@ public class ExperimentalCannon extends AbstractCannonRelic {
     @Override
     public void obtain() {
         for (int i = 0; i< AbstractDungeon.player.relics.size(); ++i) {
-            if (AbstractDungeon.player.relics.get(i) instanceof AbstractCannonRelic) {
+            if (AbstractDungeon.player.relics.get(i) instanceof AbstractCannonRelic || AbstractDungeon.player.relics.get(i) instanceof GunsmithsBible) {
                 this.instantObtain(AbstractDungeon.player, i, true);
                 break;
             }
@@ -49,14 +48,9 @@ public class ExperimentalCannon extends AbstractCannonRelic {
         super.onEquip();
     }
 
+    @Override
     public boolean canSpawn() {
-        boolean canSpawn = false;
-        for (AbstractRelic relic : AbstractDungeon.player.relics){
-            if (relic instanceof AbstractCannonRelic && !(relic instanceof ExperimentalCannon)){
-                canSpawn = true;
-            }
-        }
-        return canSpawn;
+        return AbstractDungeon.player.hasRelic(GunsmithsBible.ID) || AbstractDungeon.player.hasRelic(BronzeCannon.ID);
     }
 
 
