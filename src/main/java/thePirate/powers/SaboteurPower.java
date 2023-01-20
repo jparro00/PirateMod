@@ -3,6 +3,9 @@ package thePirate.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.evacipated.cardcrawl.mod.stslib.blockmods.AbstractBlockModifier;
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnCreateBlockInstancePower;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.LoseBlockAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -13,7 +16,9 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import thePirate.PirateMod;
 import thePirate.util.TextureLoader;
 
-public class SaboteurPower extends AbstractPower implements CloneablePowerInterface {
+import java.util.HashSet;
+
+public class SaboteurPower extends AbstractPower implements CloneablePowerInterface, OnCreateBlockInstancePower {
     public AbstractCreature source;
 
     public static final String POWER_ID = PirateMod.makeID("SabateurPower");
@@ -49,22 +54,6 @@ public class SaboteurPower extends AbstractPower implements CloneablePowerInterf
     }
 
     @Override
-    public void update(int slot){
-        //TODO: this is removing block immediately sometimes
-        if(appliedThisTurn && owner.currentBlock > monsterInitialBlock){
-            this.addToBot(new LoseBlockAction(owner, AbstractDungeon.player, owner.currentBlock - monsterInitialBlock));
-            this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID ));
-        }else if(owner.currentBlock >0) {
-            this.addToBot(new LoseBlockAction(owner, AbstractDungeon.player, owner.currentBlock));
-            this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID ));
-        }
-
-    }
-    @Override
-    public void onGainedBlock(float blockAmount) {
-    }
-
-    @Override
     public void atEndOfTurn(boolean isPlayer) {
         appliedThisTurn = false;
     }
@@ -82,5 +71,34 @@ public class SaboteurPower extends AbstractPower implements CloneablePowerInterf
     @Override
     public AbstractPower makeCopy() {
         return new SaboteurPower(owner, source, amount);
+    }
+
+    @Override
+    public void onCreateBlockInstance(HashSet<AbstractBlockModifier> hashSet, Object o) {
+        AbstractCreature owner = this.owner;
+        String powerId = this.ID;
+        boolean appliedThisTurn = this.appliedThisTurn;
+
+        addToBot(new AbstractGameAction() {
+            @Override
+            public void update() {
+                addToBot(new AbstractGameAction() {
+                    @Override
+                    public void update() {
+                        int blockToRemove = owner.currentBlock;
+                        if (appliedThisTurn){
+                            blockToRemove -= monsterInitialBlock;
+                        }
+                        if(blockToRemove > 0){
+                            this.addToBot(new LoseBlockAction(owner, AbstractDungeon.player, owner.currentBlock));
+                            this.addToBot(new RemoveSpecificPowerAction(owner, owner, powerId));
+                        }
+                        isDone = true;
+                    }
+                });
+                isDone = true;
+            }
+        });
+
     }
 }

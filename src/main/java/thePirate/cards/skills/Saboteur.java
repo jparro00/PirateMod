@@ -23,14 +23,14 @@ public class Saboteur extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;
 
-    private static final int COST = 1;
-    private static final int UPGRADED_COST = 1;
+    private static final int COST = 2;
+    private static final int UPGRADED_COST = 2;
     private static final int MAGIC = 0;
     private static final int UPGRADED_MAGIC = 0;
     private static final int SECOND_MAGIC = 0;
     private static final int UPGRADED_SECOND_MAGIC = 0;
-    public static final int BLOCK = 7;
-    public static final int UPGRADED_BLOCK = 2;
+    public static final int BLOCK = 12;
+    public static final int UPGRADED_BLOCK = 3;
 
     // /STAT DECLARATION/
 
