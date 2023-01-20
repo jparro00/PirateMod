@@ -39,7 +39,7 @@ public class GunsmithsBible extends CustomRelic implements ClickableRelic { // Y
             AbstractCannonRelic cannon;
             switch (AbstractDungeon.actNum){
                 case 1:
-                    cannon = new BronzeCannon();
+                    cannon = new BlackCannon();
                     break;
                 case 2:
                     cannon = new SilverCannon();
@@ -51,7 +51,7 @@ public class GunsmithsBible extends CustomRelic implements ClickableRelic { // Y
                     cannon = new PlatinumCannon();
                     break;
                 default:
-                    cannon = new BronzeCannon();
+                    cannon = new BlackCannon();
             }
 
 

@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
 import thePirate.PirateMod;
-import thePirate.cards.attacks.GrapeShot;
+import thePirate.cards.AbstractDynamicCard;
 import thePirate.powers.OnAttackToChangeDamagePreBlock;
 
 import java.util.ArrayList;
@@ -41,9 +41,11 @@ public class AbstractPlayerDamagePatch {
         //don't take damage while play grapeshot
         if (AbstractDungeon.actionManager.cardQueue.size() > 0){
             for (CardQueueItem queueItem: AbstractDungeon.actionManager.cardQueue){
-                if (queueItem.card.cardID.equals(GrapeShot.ID)){
-                    damageAmount[0] = 0;
-                    break;
+                if (queueItem.card instanceof AbstractDynamicCard) {
+                    if (((AbstractDynamicCard) queueItem.card).storm) {
+                        damageAmount[0] = 0;
+                        break;
+                    }
                 }
             }
 

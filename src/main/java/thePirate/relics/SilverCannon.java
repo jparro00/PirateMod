@@ -17,7 +17,7 @@ import java.util.List;
 import static thePirate.PirateMod.makeRelicOutlinePath;
 import static thePirate.PirateMod.makeRelicPath;
 
-public class SilverCannon extends BronzeCannon {
+public class SilverCannon extends BlackCannon {
 
     /*
      * https://github.com/daviscook477/BaseMod/wiki/Custom-Relics

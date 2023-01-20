@@ -16,7 +16,7 @@ import java.util.List;
 import static thePirate.PirateMod.makeRelicOutlinePath;
 import static thePirate.PirateMod.makeRelicPath;
 
-public class BronzeCannon extends AbstractCannonRelic {
+public class BlackCannon extends AbstractCannonRelic {
 
     /*
      * https://github.com/daviscook477/BaseMod/wiki/Custom-Relics
@@ -25,17 +25,17 @@ public class BronzeCannon extends AbstractCannonRelic {
      */
 
     // ID, images, text.
-    public static final String ID = PirateMod.makeID(BronzeCannon.class.getSimpleName());
+    public static final String ID = PirateMod.makeID(BlackCannon.class.getSimpleName());
 
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath(BronzeCannon.class.getSimpleName() + ".png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath(BronzeCannon.class.getSimpleName() + ".png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath(BlackCannon.class.getSimpleName() + ".png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath(BlackCannon.class.getSimpleName() + ".png"));
     public static final int FREE_CANNONBALL = 1;
 
-    public BronzeCannon() {
+    public BlackCannon() {
         this(ID, IMG, OUTLINE);
     }
 
-    public BronzeCannon(String id, Texture img, Texture outline){
+    public BlackCannon(String id, Texture img, Texture outline){
         super(id, img, outline);
 
     }

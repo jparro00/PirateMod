@@ -50,7 +50,7 @@ public class ExperimentalCannon extends AbstractCannonRelic {
 
     @Override
     public boolean canSpawn() {
-        return AbstractDungeon.player.hasRelic(GunsmithsBible.ID) || AbstractDungeon.player.hasRelic(BronzeCannon.ID);
+        return AbstractDungeon.player.hasRelic(GunsmithsBible.ID) || AbstractDungeon.player.hasRelic(BlackCannon.ID);
     }
 
 
