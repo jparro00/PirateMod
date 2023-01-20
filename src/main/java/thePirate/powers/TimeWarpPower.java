@@ -4,6 +4,7 @@ import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.NonStackablePower;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -13,6 +14,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import thePirate.PirateMod;
 import thePirate.actions.MoveCardAction;
 import thePirate.util.TextureLoader;
@@ -25,6 +27,7 @@ public class TimeWarpPower extends AbstractPower implements CloneablePowerInterf
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     public AbstractCard lastCard;
+    public int lastCardXCost;
 
 
     public TimeWarpPower(final int amount) {
@@ -51,21 +54,47 @@ public class TimeWarpPower extends AbstractPower implements CloneablePowerInterf
     public void onUseCard(final AbstractCard card, final UseCardAction action) {
         if (!card.exhaust){
             lastCard = card;
+            if (card.costForTurn == -1) {
+                lastCardXCost = EnergyPanel.getCurrentEnergy();
+            }
         }
     }
 
     @Override
     public void atStartOfTurn() {
         if(lastCard != null){
+            PirateMod.logger.info("lastCard.cardID: " + lastCard.cardID);
             AbstractPlayer p = AbstractDungeon.player;
-            if (p.discardPile.contains(lastCard)){
-                PirateMod.logger.info("discard contains card");
-                addToTop(new DiscardToHandAction(lastCard));
-            }else if (p.drawPile.contains(lastCard)){
-                PirateMod.logger.info("draw contains card");
-                addToTop(new MoveCardAction(p.drawPile, p.hand, lastCard));
+            boolean foundCard = false;
+            for (AbstractCard card : p.discardPile.group){
+                if (card.uuid.equals(lastCard.uuid)){
+                    foundCard = true;
+                    lastCard = card;
+                    PirateMod.logger.info("discard contains card");
+                    addToTop(new DiscardToHandAction(lastCard));
+                    break;
+                }
+            }
+            if (!foundCard){
+                for (AbstractCard card : p.drawPile.group){
+                    if (card.uuid.equals(lastCard.uuid)){
+                        foundCard = true;
+                        lastCard = card;
+                        PirateMod.logger.info("draw contains card");
+                        addToTop(new MoveCardAction(p.drawPile, p.hand, lastCard));
+                        break;
+                    }
+                }
+            }
+            if (foundCard){
+                if (lastCardXCost > 0){
+                    addToBot(new GainEnergyAction(lastCardXCost));
+                }else {
+                    addToBot(new GainEnergyAction(lastCard.costForTurn));
+                }
             }
             lastCard = null;
+            lastCardXCost = 0;
         }
     }
 

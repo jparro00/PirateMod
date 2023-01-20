@@ -22,7 +22,7 @@
   },
   "thePirate:TimeWarp": {
     "NAME": "Time Warp",
-    "DESCRIPTION": "At the start of your turn, the last non-exhaust card you played the previous turn is returned to your hand."
+    "DESCRIPTION": "At the start of turn, return the last non-exhaust card you played the previous turn to your hand. NL Gain [E] equal to its cost."
   },
   "thePirate:RedShirt": {
     "NAME": "Red Shirt",
