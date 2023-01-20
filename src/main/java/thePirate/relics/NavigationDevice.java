@@ -2,11 +2,7 @@ package thePirate.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;
-import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import thePirate.PirateMod;
 import thePirate.actions.DigAction;
@@ -30,6 +26,7 @@ public class NavigationDevice extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath(NavigationDevice.class.getSimpleName() + ".png"));
 
     public boolean isActive;
+    public boolean battleStart;
 
     public NavigationDevice(String setId, String imgName, RelicTier tier, LandingSound sfx) {
         super(setId, imgName, tier, sfx);
@@ -39,11 +36,19 @@ public class NavigationDevice extends CustomRelic {
         super(ID, IMG,OUTLINE,RelicTier.UNCOMMON, LandingSound.CLINK);
     }
 
+    @Override
+    public void atBattleStart(){
+        battleStart = true;
+
+    }
 
     @Override
     public void atTurnStart() {
-        if(GameActionManager.turn == 1)
+        if(!battleStart && GameActionManager.turn == 1)
             addToBot(new DigAction(1, false));
+        if (battleStart){
+            battleStart = false;
+        }
     }
 
     // Description
