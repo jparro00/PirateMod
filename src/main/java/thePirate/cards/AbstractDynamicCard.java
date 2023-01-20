@@ -2,10 +2,13 @@ package thePirate.cards;
 
 import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.SpawnModificationCard;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import thePirate.PirateMod;
 import thePirate.actions.PurgeRemovablesAction;
@@ -28,6 +31,8 @@ public abstract class AbstractDynamicCard extends AbstractDefaultCard implements
     // Been added to the default card rather than creating a new Dynamic one, but was done so to deliberately.
     private CardStrings cardStrings;
     public String upgradedDescription;
+    public boolean stormPending;
+    public boolean storm;
 
     public AbstractDynamicCard(final String id,
                                final String img,
@@ -54,6 +59,26 @@ public abstract class AbstractDynamicCard extends AbstractDefaultCard implements
                 player.limbo.contains(this)
             );
 
+    }
+
+    public void storm(AbstractPlayer p, AbstractMonster m){
+        if (storm){
+            int cardsPlayedThisTurn = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
+            if(!this.stormPending){
+                for (int i = 0; i < cardsPlayedThisTurn - 1; i++){
+                    AbstractDynamicCard tmp = (AbstractDynamicCard)this.makeSameInstanceOf();
+                    tmp.exhaust = false;
+                    tmp.stormPending = true;
+                    tmp.current_x = ((AbstractCard)this).current_x;
+                    tmp.current_y = ((AbstractCard)this).current_y;
+                    tmp.target_x = (float) Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
+                    tmp.target_y = (float)Settings.HEIGHT / 2.0F;
+                    tmp.applyPowers();
+                    tmp.purgeOnUse = true;
+                    AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, m, ((AbstractCard)this).energyOnUse, true, true), true);
+                }
+            }
+        }
     }
 
     private boolean predatorChecked;

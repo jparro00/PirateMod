@@ -2,16 +2,13 @@ package thePirate.cards.attacks;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePirate.PirateMod;
 import thePirate.characters.ThePirate;
 
-import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static thePirate.PirateMod.makeCardPath;
 
 public class GrapeShot extends AbstractCannonBallCard {
@@ -29,8 +26,6 @@ public class GrapeShot extends AbstractCannonBallCard {
     private static final int DAMAGE = 2;
     private static final int UPGRADE_PLUS_DMG = 1;
 
-    private boolean usePending;
-
     // /STAT DECLARATION/
 
     // TEXT DECLARATION
@@ -42,52 +37,19 @@ public class GrapeShot extends AbstractCannonBallCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = 0;
-    }
-
-    public static int grapeshotsQueued(){
-        int grapeshotsQueued = 0;
-        for (CardQueueItem queueItem: AbstractDungeon.actionManager.cardQueue){
-            if (queueItem.card.cardID.equals(ID)){
-                grapeshotsQueued++;
-            }
-            PirateMod.logger.info("queueItem.card.cardID: " + queueItem.card.cardID);
-        }
-        return grapeshotsQueued;
-    }
-
-
-
-
-    @Override
-    public void applyPowers() {
-        baseMagicNumber = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
-        super.applyPowers();
-        rawDescription = languagePack.getCardStrings(ID).DESCRIPTION;
-        this.initializeDescription();
+        storm = true;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int cardsPlayedThisTurn = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
 
         AbstractMonster target = AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng);
         this.addToBot(new DamageAction(target, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT, true));
-        if(!usePending){
-            for (int i = 0; i < cardsPlayedThisTurn - 1; i++){
-                GrapeShot tmp = (GrapeShot)this.makeSameInstanceOf();
-                tmp.exhaust = false;
-                tmp.usePending = true;
-                tmp.current_x = current_x;
-                tmp.current_y = current_y;
-                tmp.target_x = (float) Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
-                tmp.target_y = (float)Settings.HEIGHT / 2.0F;
-                tmp.applyPowers();
-                tmp.purgeOnUse = true;
-                AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, m, this.energyOnUse, true, true), true);
-            }
-        }
+        storm(p,m);
     }
+
+
 
     // Upgraded stats.
     @Override
@@ -101,4 +63,5 @@ public class GrapeShot extends AbstractCannonBallCard {
             upgradeDescription();
         }
     }
+
 }

@@ -1,4 +1,8 @@
 {
+  "thePirate:Cyclone": {
+    "NAME": "Cyclone",
+    "DESCRIPTION": "Gain !B! block. NL thepirate:Storm ( !STORM! ). NL Exhaust."
+  },
   "thePirate:Headbutt": {
     "NAME": "Headbutt",
     "DESCRIPTION": "Deal !D! damage. NL Put a card from your discard pile on top of your draw pile."
@@ -191,7 +195,7 @@
   },
   "thePirate:GrapeShot": {
     "NAME": "Grape Shot",
-    "DESCRIPTION": "Deal !D! damage to a random enemy. NL thepirate:Storm ( !M! )."
+    "DESCRIPTION": "Deal !D! damage to a random enemy. NL thepirate:Storm ( !STORM! )."
   },
   "thePirate:MomentousAttack": {
     "NAME": "Momentous Attack",

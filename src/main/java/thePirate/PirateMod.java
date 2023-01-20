@@ -31,9 +31,9 @@ import thePirate.potions.IslandPotion;
 import thePirate.relics.*;
 import thePirate.util.IDCheckDontTouchPls;
 import thePirate.util.TextureLoader;
-import thePirate.variables.DarkExperimentVariable;
 import thePirate.variables.DefaultCustomVariable;
 import thePirate.variables.DefaultSecondMagicNumber;
+import thePirate.variables.StormVariable;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -471,7 +471,7 @@ public class PirateMod implements
         // Add the Custom Dynamic variables
         BaseMod.addDynamicVariable(new DefaultCustomVariable());
         BaseMod.addDynamicVariable(new DefaultSecondMagicNumber());
-        BaseMod.addDynamicVariable(new DarkExperimentVariable());
+        BaseMod.addDynamicVariable(new StormVariable());
 
         logger.info("Adding cards");
         // Add the cards
