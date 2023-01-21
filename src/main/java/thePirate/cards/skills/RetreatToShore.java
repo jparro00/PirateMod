@@ -44,7 +44,7 @@ public class RetreatToShore extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p,block));
-        addToBot(new BuryAction(magicNumber, false));
+        addToBot(new BuryAction(magicNumber, true));
     }
 
 
