@@ -397,8 +397,8 @@ public class PirateMod implements
     
     // ================ ADD POTIONS ===================
 
-    public static void addPotion(AbstractDynamicPotion potion){
-        BaseMod.addPotion(potion.getClass(),potion.getColor(AbstractDynamicPotion.COLOR.LIQUID),potion.getColor(AbstractDynamicPotion.COLOR.HYBRID),potion.getColor(AbstractDynamicPotion.COLOR.SPOTS), potion.ID);
+    public static void addPiratePotion(AbstractDynamicPotion potion){
+        BaseMod.addPotion(potion.getClass(),potion.getColor(AbstractDynamicPotion.COLOR.LIQUID),potion.getColor(AbstractDynamicPotion.COLOR.HYBRID),potion.getColor(AbstractDynamicPotion.COLOR.SPOTS), potion.ID, ThePirate.Enums.THE_PIRATE);
     }
     public void receiveEditPotions() {
         logger.info("Beginning to edit potions");
@@ -407,8 +407,8 @@ public class PirateMod implements
         // just remove the player class at the end (in this case the "TheDefaultEnum.THE_DEFAULT".
         // Remember, you can press ctrl+P inside parentheses like addPotions)
 //        BaseMod.addPotion(PlaceholderPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, PlaceholderPotion.POTION_ID, ThePirate.Enums.THE_PIRATE);
-        addPotion(new InkPotion());
-        addPotion(new IslandPotion());
+        addPiratePotion(new InkPotion());
+        addPiratePotion(new IslandPotion());
 
         logger.info("Done editing potions");
     }
