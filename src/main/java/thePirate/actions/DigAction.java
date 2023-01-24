@@ -6,7 +6,9 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import thePirate.cards.OnDig;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
@@ -37,6 +39,7 @@ public class DigAction extends AbstractGameAction {
     @Override
     public void update() {
 
+        List<AbstractCard> cardsSelected = new ArrayList<>();
 
         AbstractDungeon.actionManager.addToTop(new MoveCardsAction(player.hand, player.discardPile, new Predicate<AbstractCard>() {
             @Override
@@ -48,10 +51,28 @@ public class DigAction extends AbstractGameAction {
             public void accept(List<AbstractCard> abstractCards) {
                 for(AbstractCard c : abstractCards){
                     c.upgrade();
+                    cardsSelected.add(c);
+                }
+
+                //adding onBury logic to Consumer
+                if (cardsSelected.size() > 0){
+                    List<AbstractCard> combatCards = new ArrayList<>();
+                    combatCards.addAll(player.hand.group);
+                    combatCards.addAll(player.discardPile.group);
+                    combatCards.addAll(player.drawPile.group);
+
+                    for (AbstractCard c : combatCards) {
+                        if (c instanceof OnDig){
+                            ((OnDig) c).onDig(cardsSelected);
+                        }
+                    }
                 }
 
             }
         }));
+
+
+
         this.isDone = true;
 
     }

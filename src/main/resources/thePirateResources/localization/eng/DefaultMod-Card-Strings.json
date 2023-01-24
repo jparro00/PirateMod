@@ -1,4 +1,45 @@
 {
+  "thePirate:UnstableFormula": {
+    "NAME": "Unstable Formula",
+    "DESCRIPTION": "At the start of turn, Apply thepirate:Ink to ALL enemies equal to their current thepirate:Ink."
+  },
+  "thePirate:Jettison": {
+    "NAME": "Jettison",
+    "DESCRIPTION": "thepirate:Bury !M! cards. NL Gain temporary Strength equal to their cost, and !SM! Strength for each non-playable card thepirate:Buried."
+  },
+  "thePirate:GeneticSplice": {
+    "NAME": "Genetic Splice",
+    "DESCRIPTION": "Remove all thepirate:Ink from target enemy. NL Gain 1 Dexterity for every !M! thepirate:Ink removed. NL Gain !B! block."
+  },
+  "thePirate:ScoutAhead": {
+    "NAME": "Scout Ahead",
+    "DESCRIPTION": "Next turn, thepirate:Dig X times. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Next turn, thepirate:Dig X+1 times. NL Exhaust."
+  },
+  "thePirate:PinDown": {
+    "NAME": "Pin Down",
+    "DESCRIPTION": "Apply !M! Weak to target enemy. NL Add a *Shovel *Blade to your hand."
+  },
+  "thePirate:ShovelBlade": {
+    "NAME": "Shovel Blade",
+    "DESCRIPTION": "Retain. NL thepirate:Dig. NL Exhaust."
+  },
+  "thePirate:EvasiveManeuver": {
+    "NAME": "Evasive Maneuver",
+    "DESCRIPTION": "Apply !M! thepirate:Ink to target enemy."
+  },
+  "thePirate:ChainShot": {
+    "NAME": "Chain Shot",
+    "DESCRIPTION": "Deal !D! damage. NL Target enemy loses !M! Strength."
+  },
+  "thePirate:Sandblast": {
+    "NAME": "Sandblast",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak and Vulnerable. NL Costs 1 [E] less for each card thepirate:Buried this turn."
+  },
+  "thePirate:SeaTurtles": {
+    "NAME": "Sea Turtles",
+    "DESCRIPTION": "thepirate:Mysterious. NL Deal !D! damage. NL When you thepirate:Bury this, thepirate:Bury a copy. When you thepirate:Dig this, put a copy in your draw pile. NL Exhaust."
+  },
   "thePirate:Cyclone": {
     "NAME": "Cyclone",
     "DESCRIPTION": "Gain !B! block. NL thepirate:Storm ( !STORM! ). NL Exhaust."
@@ -45,8 +86,8 @@
   },
   "thePirate:DarkPlans": {
     "NAME": "Dark Plans",
-    "DESCRIPTION": "Unplayable. thepirate:Mysterious. NL Apply !M! thepirate:Ink to all enemies for each time this has been burried ( !SM! ).",
-    "UPGRADE_DESCRIPTION": "thepirate:Mysterious. NL Apply !M! thepirate:Ink to all enemies for each time this has been burried ( !SM! ).",
+    "DESCRIPTION": "Unplayable. thepirate:Mysterious. NL Apply !M! thepirate:Ink to all enemies for each time this has been thepirate:Buried ( !SM! ).",
+    "UPGRADE_DESCRIPTION": "thepirate:Mysterious. NL Apply !M! thepirate:Ink to all enemies for each time this has been thepirate:Buried ( !SM! ).",
     "EXTENDED_DESCRIPTION": ["Unplayable unless upgraded."]
   },
   "thePirate:AttendToCache": {
@@ -147,7 +188,7 @@
   },
   "thePirate:DownWithTheShip": {
     "NAME": "Down with the Ship",
-    "DESCRIPTION": "Bury all but 1 card from your draw pile, then deal !D! damage for each card buried. NL Exhaust."
+    "DESCRIPTION": "Bury all but 1 card from your draw pile, then deal !D! damage for each card thepirate:Buried. NL Exhaust."
   },
   "thePirate:CursedBlade": {
     "NAME": "Cursed Blade",
