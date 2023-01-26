@@ -71,7 +71,7 @@ public class GiantBeak extends AbstractDynamicCard {
 
         }
 
-        if (vulnerableCount <= 0 && artifactCount < magicNumber){
+        if (vulnerableCount <= 0 && artifactCount < 1){
             AbstractPower vulnerable = new VulnerablePower(mo, 1, false);
             mo.powers.add(vulnerable);
             super.calculateCardDamage(mo);
