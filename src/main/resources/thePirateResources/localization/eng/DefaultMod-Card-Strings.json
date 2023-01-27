@@ -271,7 +271,7 @@
   },
   "thePirate:Retreat": {
     "NAME": "Retreat",
-    "DESCRIPTION": "Gain !M! Vulnerable and !SM! Weak. NL Permanently replace this card with an Overexert. NL thepirate:Purge.",
+    "DESCRIPTION": "Gain !M! Vulnerable. NL Permanently replace this card with an Overexert. NL thepirate:Purge.",
     "UPGRADE_DESCRIPTION": "Gain !M! Vulnerable. NL Permanently replace this card with an [#76ec00]Overexert+[]. NL thepirate:Purge."
   },
   "thePirate:InkShot": {
