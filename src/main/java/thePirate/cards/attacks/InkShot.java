@@ -47,6 +47,7 @@ public class InkShot extends AbstractCannonBallCard {
         baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = BASE_INK;
         this.isMultiDamage = true;
+        exhaust = true;
     }
 
 

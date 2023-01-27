@@ -40,6 +40,7 @@ public class ChainShot extends AbstractCannonBallCard{
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = MAGIC;
+        exhaust = true;
     }
 
 

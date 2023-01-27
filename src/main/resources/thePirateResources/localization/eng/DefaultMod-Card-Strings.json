@@ -47,7 +47,7 @@
   },
   "thePirate:ChainShot": {
     "NAME": "Chain Shot",
-    "DESCRIPTION": "Deal !D! damage. NL Target enemy loses !M! Strength."
+    "DESCRIPTION": "Deal !D! damage. NL Target enemy loses !M! Strength. NL Exhaust."
   },
   "thePirate:Sandblast": {
     "NAME": "Sandblast",
@@ -253,7 +253,7 @@
   },
   "thePirate:GrapeShot": {
     "NAME": "Grape Shot",
-    "DESCRIPTION": "Deal !D! damage to a random enemy. NL thepirate:Storm ( !STORM! )."
+    "DESCRIPTION": "Deal !D! damage to a random enemy. NL thepirate:Storm ( !STORM! ). NL Exhaust."
   },
   "thePirate:MomentousAttack": {
     "NAME": "Momentous Attack",
@@ -276,7 +276,7 @@
   },
   "thePirate:InkShot": {
     "NAME": "Ink Shot",
-    "DESCRIPTION": "Deal !D! damage and apply !M! thepirate:Ink to ALL enemies."
+    "DESCRIPTION": "Deal !D! damage and apply !M! thepirate:Ink to ALL enemies. NL Exhaust."
   },
   "thePirate:Mercenaries": {
     "NAME": "Mercenaries",
