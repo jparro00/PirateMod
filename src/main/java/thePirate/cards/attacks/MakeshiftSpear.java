@@ -38,7 +38,7 @@ public class MakeshiftSpear extends AbstractDynamicCard implements Makeshift, Sp
     private static final int COST = 1;
     private static final int UPGRADED_COST = 1;
 
-    private static final int DAMAGE = 9;
+    private static final int DAMAGE = 8;
     private static final int UPGRADE_PLUS_DMG = 0;
     // /STAT DECLARATION/
 

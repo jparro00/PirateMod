@@ -68,7 +68,7 @@ public class Reload extends AbstractDynamicCard {
     @Override
     public void upgrade() {
         if (!upgraded) {
-            this.retain = true;
+            selfRetain = true;
             upgradeName();
             upgradeBaseCost(UPGRADED_COST);
             upgradeBlock(UPGRADED_BLOCK);
