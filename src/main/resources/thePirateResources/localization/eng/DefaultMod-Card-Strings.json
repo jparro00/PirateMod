@@ -325,8 +325,8 @@
   },
   "thePirate:Reload": {
     "NAME": "Reload",
-    "DESCRIPTION": "Return a Cannon or a Cannonball from your exhaust pile to your hand.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Return a Cannon or a Cannonball from your exhaust pile to your hand."
+    "DESCRIPTION": "Gain !B! block. NL Return a Cannon or a Cannonball from your exhaust pile to your hand.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Gain !B! block. NL Return a Cannon or a Cannonball from your exhaust pile to your hand."
   },
   "thePirate:Defend": {
     "NAME": "Defend",

@@ -27,6 +27,7 @@ import thePirate.PirateMod;
 import thePirate.cards.attacks.RoundShot;
 import thePirate.cards.attacks.Strike;
 import thePirate.cards.skills.Defend;
+import thePirate.cards.skills.Reload;
 import thePirate.relics.BetterOnUseGold;
 import thePirate.relics.GunsmithsBible;
 import thePirate.relics.MoneyBag;
@@ -161,6 +162,8 @@ public class ThePirate extends CustomPlayer {
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(RoundShot.ID);
+        retVal.add(Reload.ID);
+
         return retVal;
     }
 

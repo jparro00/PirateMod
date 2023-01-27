@@ -1,16 +1,16 @@
 {
   "thePirate:Button": {
     "NAME": "Button",
-    "FLAVOR": "",
+    "FLAVOR": "Click Me!",
     "DESCRIPTIONS": [
-      "Click Me!"
+      "Used for dev only, can't show up in a run."
     ]
   },
   "thePirate:WoodenCompass": {
     "NAME": "Wooden Compass",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "Whenever you thepirateBury a card, deal 5 damage to a random enemy."
+      "Whenever you thepirate:Bury a card, deal 5 damage to a random enemy."
     ]
   },
   "thePirate:MoneyBag": {
