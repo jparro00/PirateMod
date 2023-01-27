@@ -64,7 +64,7 @@ public class CausticInk extends AbstractDynamicCard {
                 upgradeMagicNumber(UPGRADED_MAGIC);
             if (UPGRADED_SECOND_MAGIC > 0)
                 upgradeSecondMagic(UPGRADED_SECOND_MAGIC);
-            retain = true;
+            selfRetain = true;
             upgradeDescription();
         }
     }
