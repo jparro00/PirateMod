@@ -114,7 +114,7 @@
   },
   "thePirate:RetreatToShore": {
     "NAME": "Retreat to Shore",
-    "DESCRIPTION": "Gain !B! Block. NL thepirate:Bury !M! card."
+    "DESCRIPTION": "Gain !B! Block. NL thepirate:Bury !M! cards."
   },
   "thePirate:BraceForImpact": {
     "NAME": "Brace For Impact",
@@ -209,7 +209,7 @@
   },
   "thePirate:CursedBlade": {
     "NAME": "Cursed Blade",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! thepirate:CorruptArtifact"
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! thepirate:Corrupt_Artifact"
   },
   "thePirate:StrangeBlade": {
     "NAME": "Strange Blade",
