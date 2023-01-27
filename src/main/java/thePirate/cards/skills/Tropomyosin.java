@@ -8,6 +8,7 @@ import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.characters.ThePirate;
 import thePirate.powers.InkPower;
+import thePirate.powers.TropomyosinPower;
 
 import static thePirate.PirateMod.makeCardPath;
 
@@ -22,8 +23,8 @@ public class Tropomyosin extends AbstractDynamicCard {
 
     private static final int COST = 1;
     private static final int UPGRADED_COST = 1;
-    public static final int STRENGTH = -1;
-    public static final int UPGRADE_STRENGTH = -1;
+    public static final int STRENGTH = 1;
+    public static final int UPGRADE_STRENGTH = 1;
     public static final int INK = 2;
     public static final int UPGRADE_INK = 2;
 
@@ -45,8 +46,9 @@ public class Tropomyosin extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, magicNumber),magicNumber));
+        this.addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -magicNumber),-magicNumber));
         this.addToBot(new ApplyPowerAction(m, p, new InkPower(m, p, secondMagic), secondMagic));
+        addToBot(new ApplyPowerAction(m,p,new TropomyosinPower(m),0));
     }
 
 

@@ -1,4 +1,8 @@
 {
+        "thePirate:TropomyosinPower": {
+                "NAME": "Tropomyosin",
+                "DESCRIPTIONS": ["thepirate:Ink is removed from enemies at the end of turn instead."]
+        },
         "thePirate:UnstableFormulaPower": {
                 "NAME": "Unstable Formula Power",
                 "DESCRIPTIONS": ["At the start turn, apply thepirate:Ink to ALL enemies equal to ", " their current thepirate:Ink.", "X their current thepirate:Ink."]

@@ -249,7 +249,7 @@
   },
   "thePirate:Tropomyosin": {
     "NAME": "Tropomyosin",
-    "DESCRIPTION": "Target enemy loses !M! strength and gains !SM! thepirate:Ink. NL Exhaust."
+    "DESCRIPTION": "Target enemy loses !M! strength and gains !SM! thepirate:Ink. NL This turn, thepirate:Ink is removed at end of turn instead. NL Exhaust."
   },
   "thePirate:GrapeShot": {
     "NAME": "Grape Shot",

@@ -52,99 +52,12 @@ public class InkPower extends AbstractPower implements CloneablePowerInterface, 
         updateDescription();
     }
 
-
-/*    @Override
-    public int onAttackToChangeDamage(DamageInfo info, int damageAmount){
-
-        AbstractPlayer player = AbstractDungeon.player;
-        int output = info.output;
-        damageAmount = output;
-        int playerBlock = AbstractDungeon.player.currentBlock;
-        int damageBack = 0;
-        int originalAmount = amount;
-
-
-        if (damageAmount < 0)
-            damageAmount = 0;
-        if (damageAmount > 1 && player.hasPower("IntangiblePlayer"))
-            damageAmount = 1;
-
-        if(amount - damageAmount <= 0){
-            damageBack = amount;
-            damageAmount -= amount;
-            amount = 0;
-        } else {
-            amount -= damageAmount;
-            damageBack = originalAmount - amount;
-            damageAmount = 0;
-        }
-
-        if (damageAmount > 0){
-            damageAmount -= playerBlock;
-        }
-
-        if (owner.hasPower(ChemicalWarfarePower.POWER_ID)){
-            damageBack *= ChemicalWarfarePower.DAMAGE_MODIFIER;
-        }
-
-        if (damageBack > 0)
-            this.addToBot(new DamageAction(info.owner, new DamageInfo(AbstractDungeon.player, damageBack, DamageInfo.DamageType.THORNS)));
-
-        if(amount != originalAmount && !AbstractDungeon.player.hasPower(VolatileInkPower.POWER_ID)){
-            this.addToTop(new ReducePowerAction(info.owner, info.owner, this.ID, originalAmount - amount));
-        }
-
-        return damageAmount;
-
-*//* old code
-        DefaultMod.logger.info("enter onAttackToChangeDamage()");
-        DefaultMod.logger.info("damageAmount: " + damageAmount);
-        DefaultMod.logger.info("player block: " + AbstractDungeon.player.currentBlock);
-
-        DefaultMod.logger.info("base: " + info.base);
-        DefaultMod.logger.info("output: " + info.output);
-        DefaultMod.logger.info("isModified: " + info.isModified);
-        int damageBack;
-        int damageBlocked;
-        int amountLeft;
-        int baseDamage = damageAmount;
-        if(amount - baseDamage <= 0){
-            damageBack = damageBlocked = amount;
-            amountLeft = 0;
-        }else{
-            damageBack = damageBlocked = baseDamage;
-            amountLeft = amount - baseDamage;
-        }
-        DefaultMod.logger.info("before check damageBack = " + damageBack);
-        if (owner.hasPower(ChemicalWarfarePower.POWER_ID)){
-            DefaultMod.logger.info("damageBack = " + damageBack);
-            damageBack *= ChemicalWarfarePower.DAMAGE_MODIFIER;
-            DefaultMod.logger.info("after chemical warfare damageBack = " + damageBack);
-        }
-
-
-        this.addToBot(new DamageAction(info.owner, new DamageInfo(AbstractDungeon.player, damageBack, DamageInfo.DamageType.THORNS)));
-        if(!AbstractDungeon.player.hasPower(VolatileInkPower.POWER_ID)){
-            this.addToTop(new ReducePowerAction(info.owner, info.owner, this.ID, amount - amountLeft));
-        }
-        return damageAmount - damageBlocked;
-*//*
-
-
-    }*/
-
     @Override
     public int onAttackToChangeDamagePreBlock(DamageInfo info, int damageAmount) {
-        PirateMod.logger.info("enter onAttackToChangeDamagePreBlock()");
-        PirateMod.logger.info("info.name: " + info.name);
-        PirateMod.logger.info("info.type: " + info.type);
-        PirateMod.logger.info("info.owner: " + info.owner);
-        info.name = "test";
         if(info.type.equals(DamageInfo.DamageType.NORMAL)){
             AbstractPlayer player = AbstractDungeon.player;
 
             int output = info.output;
-            //damageAmount = output;
 
             int playerBlock = AbstractDungeon.player.currentBlock;
             int damageBack = 0;
@@ -157,27 +70,14 @@ public class InkPower extends AbstractPower implements CloneablePowerInterface, 
             if (damageAmount > 1 && player.hasPower("IntangiblePlayer"))
                 damageAmount = 1;
 
-            PirateMod.logger.info("damageAmount: " + damageAmount);
-            PirateMod.logger.info("player block: " + playerBlock);
-            PirateMod.logger.info("amount: " + tmpAmount);
-            PirateMod.logger.info("originalAmount: " + originalAmount );
-
-
-
             if(tmpAmount - damageAmount <= 0){
-                PirateMod.logger.info("enter FIRST case");
                 damageBack = tmpAmount;
                 damageAmount -= tmpAmount;
                 tmpAmount = 0;
-                PirateMod.logger.info("damageAmount: " + damageAmount);
-                PirateMod.logger.info("amount: " + tmpAmount);
             } else {
-                PirateMod.logger.info("enter SECOND case");
                 tmpAmount -= damageAmount;
                 damageBack = originalAmount - tmpAmount;
                 damageAmount = 0;
-                PirateMod.logger.info("damageAmount: " + damageAmount);
-                PirateMod.logger.info("amount: " + tmpAmount);
             }
 
             if (owner.hasPower(ChemicalWarfarePower.POWER_ID)){
@@ -187,13 +87,12 @@ public class InkPower extends AbstractPower implements CloneablePowerInterface, 
             if (damageBack > 0)
                 this.addToTop(new DamageAction(info.owner, new DamageInfo(AbstractDungeon.player, damageBack, DamageInfo.DamageType.THORNS)));
 
-            if(tmpAmount != originalAmount && !AbstractDungeon.player.hasPower(VolatileInkPower.POWER_ID)){
+            if(tmpAmount != originalAmount && !AbstractDungeon.player.hasPower(VolatileInkPower.POWER_ID) && !owner.hasPower(TropomyosinPower.POWER_ID)){
                 this.addToTop(new ReducePowerAction(info.owner, info.owner, this.ID, originalAmount - tmpAmount));
             }
 
         }
 
-        PirateMod.logger.info("returning damageAmount: " + damageAmount);
         return damageAmount;
     }
 
@@ -210,7 +109,7 @@ public class InkPower extends AbstractPower implements CloneablePowerInterface, 
 
     @Override
     public void atEndOfRound() {
-        if(AbstractDungeon.player.hasPower(VolatileInkPower.POWER_ID)){
+        if(AbstractDungeon.player.hasPower(VolatileInkPower.POWER_ID) || owner.hasPower(TropomyosinPower.POWER_ID)){
             this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
         }
 
