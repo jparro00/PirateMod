@@ -67,8 +67,7 @@ public class GeneticSplice extends AbstractDynamicCard {
             upgradeName();
             if (UPGRADED_COST != COST)
                 upgradeBaseCost(UPGRADED_COST);
-            if (UPGRADED_MAGIC > 0)
-                upgradeMagicNumber(UPGRADED_MAGIC);
+            upgradeMagicNumber(UPGRADED_MAGIC);
             if (UPGRADED_BLOCK > 0)
                 upgradeBlock(UPGRADED_BLOCK);
 

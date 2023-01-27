@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePirate.PirateMod;
 import thePirate.actions.BuryAction;
 import thePirate.cards.AbstractDynamicCard;
-import thePirate.cards.Mysterious;
 import thePirate.cards.OnDig;
 import thePirate.characters.ThePirate;
 import thePirate.powers.OnBury;
@@ -19,7 +18,7 @@ import java.util.List;
 
 import static thePirate.PirateMod.makeCardPath;
 
-public class SeaTurtles extends AbstractDynamicCard implements Mysterious, OnBury, OnDig {
+public class SeaTurtles extends AbstractDynamicCard implements OnBury, OnDig {
 
     // STAT DECLARATION
 

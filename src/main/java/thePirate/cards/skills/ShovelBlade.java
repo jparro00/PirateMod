@@ -21,7 +21,7 @@ public class ShovelBlade extends AbstractDynamicCard {
     private static final int COST = 0;
     private static final int UPGRADED_COST = 0;
     private static final int MAGIC = 1;
-    private static final int UPGRADED_MAGIC = 0;
+    private static final int UPGRADED_MAGIC = 1;
     private static final int SECOND_MAGIC = 0;
     private static final int UPGRADED_SECOND_MAGIC = 0;
 

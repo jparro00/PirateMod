@@ -1,4 +1,18 @@
 {
+  "thePirate:Button": {
+    "NAME": "Button",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "Click Me!"
+    ]
+  },
+  "thePirate:WoodenCompass": {
+    "NAME": "Wooden Compass",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "Whenever you thepirateBury a card, deal 5 damage to a random enemy."
+    ]
+  },
   "thePirate:MoneyBag": {
     "NAME": "Money Bag",
     "FLAVOR": "",
@@ -34,7 +48,7 @@
       "At the start of battle, Bury up to 3 cards."
     ]
   },
-  "thePirate:BottledCourage": {
+  "thePirate:Motivation": {
     "NAME": "Motivation",
     "FLAVOR": "",
     "DESCRIPTIONS": [

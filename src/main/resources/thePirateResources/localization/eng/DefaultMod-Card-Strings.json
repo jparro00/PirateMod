@@ -1,4 +1,20 @@
 {
+  "thePirate:Retaliation": {
+    "NAME": "Retaliation",
+    "DESCRIPTION": "If enemy intends to attack, deal damage equal to enemy intent (damage !D! X !M! )."
+  },
+  "thePirate:GhostOfBlackbeard": {
+    "NAME": "Ghost of Blackbeard",
+    "DESCRIPTION": "Deal !D! damage. NL Costs 1 [E] more for each card thepirate:Buried this combat."
+  },
+  "thePirate:BoardingParty": {
+    "NAME": "Boarding Party",
+    "DESCRIPTION": "Deal !D! damage. NL Bury all non-Attack cards in your draw pile."
+  },
+  "thePirate:DeathKnell": {
+    "NAME": "Death Knell",
+    "DESCRIPTION": "Trigger the start of battle and start of turn effects of target Relic (doesn't work with all Relics)."
+  },
   "thePirate:UnstableFormula": {
     "NAME": "Unstable Formula",
     "DESCRIPTION": "At the start of turn, Apply thepirate:Ink to ALL enemies equal to their current thepirate:Ink."
@@ -22,7 +38,8 @@
   },
   "thePirate:ShovelBlade": {
     "NAME": "Shovel Blade",
-    "DESCRIPTION": "Retain. NL thepirate:Dig. NL Exhaust."
+    "DESCRIPTION": "Retain. NL thepirate:Dig. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL thepirate:Dig twice. NL Exhaust."
   },
   "thePirate:EvasiveManeuver": {
     "NAME": "Evasive Maneuver",
@@ -38,7 +55,7 @@
   },
   "thePirate:SeaTurtles": {
     "NAME": "Sea Turtles",
-    "DESCRIPTION": "thepirate:Mysterious. NL Deal !D! damage. NL When you thepirate:Bury this, thepirate:Bury a copy. When you thepirate:Dig this, put a copy in your draw pile. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL When you thepirate:Bury this, thepirate:Bury a copy. When you thepirate:Dig this, put a copy in your draw pile. NL Exhaust."
   },
   "thePirate:Cyclone": {
     "NAME": "Cyclone",
@@ -210,8 +227,8 @@
   },
   "thePirate:CausticInk": {
     "NAME": "Caustic Ink",
-    "DESCRIPTION": "Convert target enemy block into thepirate:Ink. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Convert target enemy block into thepirate:Ink. NL Exhaust."
+    "DESCRIPTION": "Target enemy loses block, thepirate:Artifacts, and 2 Strength. NL Apply thepirate:Ink equal to block lost. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain NL Target enemy loses block, thepirate:Artifacts, and 2 Strength. NL Apply thepirate:Ink equal to block lost. NL Exhaust."
   },
   "thePirate:BeachCrew": {
     "NAME": "Beach Crew",

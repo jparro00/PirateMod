@@ -1,5 +1,12 @@
 [
   {
+    "PROPER_NAME": "Artifacts",
+    "NAMES": [
+      "artifacts"
+    ],
+    "DESCRIPTION": "Negates the next debuff."
+  },
+  {
     "PROPER_NAME": "Stun",
     "NAMES": [
       "stun",

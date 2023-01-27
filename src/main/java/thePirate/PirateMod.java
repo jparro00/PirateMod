@@ -11,6 +11,7 @@ import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
+import com.evacipated.cardcrawl.mod.stslib.patches.CustomTargeting;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
@@ -24,6 +25,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thePirate.cards.AbstractDefaultCard;
+import thePirate.cards.targeting.RelicTargeting;
 import thePirate.characters.ThePirate;
 import thePirate.potions.AbstractDynamicPotion;
 import thePirate.potions.InkPotion;
@@ -384,6 +386,8 @@ public class PirateMod implements
         BaseMod.addEvent(eventParams);
 */
 
+        CustomTargeting.registerCustomTargeting(RelicTargeting.RELIC, new RelicTargeting());
+
         // =============== /EVENTS/ =================
         logger.info("Done loading badge Image and mod options");
     }
@@ -433,13 +437,15 @@ public class PirateMod implements
         BaseMod.addRelicToCustomPool(new GreedyChest(), ThePirate.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new Coral(), ThePirate.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new ExoticDish(), ThePirate.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new BottledCourage(), ThePirate.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new Motivation(), ThePirate.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new WoodenLeg(), ThePirate.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new WritingReed(), ThePirate.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new BottledVoid(), ThePirate.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new NavigationDevice(), ThePirate.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new ExperimentalCannon(), ThePirate.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new MoneyBag(), ThePirate.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new WoodenCompass(), ThePirate.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new ButtonRelic(), ThePirate.Enums.COLOR_GRAY);
 
         // This adds a relic to the Shared pool. Every character can find this relic.
         BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
