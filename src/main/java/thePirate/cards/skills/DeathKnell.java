@@ -1,6 +1,5 @@
 package thePirate.cards.skills;
 
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -35,25 +34,7 @@ public class DeathKnell extends AbstractDynamicCard {
     public DeathKnell() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         exhaust = true;
-/*
-        List<String> relicList = new ArrayList<>();
-        relicList.addAll(AbstractDungeon.bossRelicPool);
-        relicList.addAll(AbstractDungeon.commonRelicPool);
-        relicList.addAll(AbstractDungeon.uncommonRelicPool);
-        relicList.addAll(AbstractDungeon.rareRelicPool);
-        relicList.addAll(AbstractDungeon.shopRelicPool);
-        for (String relicKey : relicList){
-            AbstractRelic relic = RelicLibrary.getRelic(relicKey).makeCopy();
-            printCode(relic);
-        }
-*/
     }
-/*
-    public static void printCode(AbstractRelic relic){
-        PirateMod.logger.info("case " + relic.getClass().getSimpleName() +".ID:\r\n canTarget = true;\r\nbreak;\r\n");
-    }
-*/
-
 
     // Actions the card should do.
     @Override
@@ -70,7 +51,6 @@ public class DeathKnell extends AbstractDynamicCard {
             target.onVictory();
             target.flash();
         }
-        addToBot(new MakeTempCardInHandAction(makeCopy(), 1));
 
     }
 
