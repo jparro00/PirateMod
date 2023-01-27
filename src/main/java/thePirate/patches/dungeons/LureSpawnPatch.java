@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.random.Random;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
 import thePirate.cards.lures.AbstractLure;
+import thePirate.characters.ThePirate;
 
 import java.util.ArrayList;
 
@@ -31,10 +32,13 @@ public class LureSpawnPatch {
         )
         public static SpireReturn<AbstractCard> Insert(AbstractCard.CardRarity rarity){
 
-            CardGroup tmp = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
-            tmp.group.addAll(AbstractDungeon.uncommonCardPool.group);
-            tmp.group.addAll(AbstractLure.getSpawnableLures());
-            return SpireReturn.Return(tmp.getRandomCard(true));
+            if (AbstractDungeon.player != null && AbstractDungeon.player instanceof ThePirate){
+                CardGroup tmp = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
+                tmp.group.addAll(AbstractDungeon.uncommonCardPool.group);
+                tmp.group.addAll(AbstractLure.getSpawnableLures());
+                return SpireReturn.Return(tmp.getRandomCard(true));
+            }
+            return SpireReturn.Continue();
 
         }
 
@@ -54,10 +58,13 @@ public class LureSpawnPatch {
         )
         public static SpireReturn<AbstractCard> Insert(AbstractCard.CardRarity rarity, Random rng){
 
-            CardGroup tmp = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
-            tmp.group.addAll(AbstractDungeon.uncommonCardPool.group);
-            tmp.group.addAll(AbstractLure.getSpawnableLures());
-            return SpireReturn.Return(tmp.getRandomCard(rng));
+            if (AbstractDungeon.player != null && AbstractDungeon.player instanceof ThePirate) {
+                CardGroup tmp = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
+                tmp.group.addAll(AbstractDungeon.uncommonCardPool.group);
+                tmp.group.addAll(AbstractLure.getSpawnableLures());
+                return SpireReturn.Return(tmp.getRandomCard(rng));
+            }
+            return SpireReturn.Continue();
 
         }
 

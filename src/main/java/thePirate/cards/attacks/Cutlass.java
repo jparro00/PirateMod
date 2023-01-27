@@ -69,7 +69,6 @@ public class Cutlass extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeBaseCost(UPGRADED_COST);
             upgradeMagicNumber(UPGRADE_DAMAGE_DEBUF);
             initializeDescription();
         }

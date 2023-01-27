@@ -1,5 +1,12 @@
 [
   {
+    "PROPER_NAME": "Artifacts",
+    "NAMES": [
+      "artifacts"
+    ],
+    "DESCRIPTION": "Negates the next debuff."
+  },
+  {
     "PROPER_NAME": "Stun",
     "NAMES": [
       "stun",
@@ -69,7 +76,8 @@
   {
     "PROPER_NAME": "Dig",
     "NAMES": [
-      "dig"
+      "dig",
+      "dug"
     ],
     "DESCRIPTION": "Return a card from your discard pile to your hand and upgrade it."
   },

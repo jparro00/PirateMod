@@ -14,7 +14,7 @@ import java.util.List;
 import static thePirate.PirateMod.makeRelicOutlinePath;
 import static thePirate.PirateMod.makeRelicPath;
 
-public class BottledCourage extends CustomRelic implements OnBury {
+public class Motivation extends CustomRelic implements OnBury {
 
     /*
      * https://github.com/daviscook477/BaseMod/wiki/Custom-Relics
@@ -23,15 +23,15 @@ public class BottledCourage extends CustomRelic implements OnBury {
      */
 
     // ID, images, text.
-    public static final String ID = PirateMod.makeID(BottledCourage.class.getSimpleName());
+    public static final String ID = PirateMod.makeID(Motivation.class.getSimpleName());
 
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath(BottledCourage.class.getSimpleName() + ".png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath(BottledCourage.class.getSimpleName() + ".png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath(Motivation.class.getSimpleName() + ".png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath(Motivation.class.getSimpleName() + ".png"));
     private boolean cardsSelected = true;
     public int cardsBurried;
 
 
-    public BottledCourage(String setId, String imgName, RelicTier tier, LandingSound sfx) {
+    public Motivation(String setId, String imgName, RelicTier tier, LandingSound sfx) {
         super(setId, imgName, tier, sfx);
         cardsBurried = 0;
     }
@@ -42,7 +42,7 @@ public class BottledCourage extends CustomRelic implements OnBury {
         pulse = true;
     }
 
-    public BottledCourage(){
+    public Motivation(){
         super(ID, IMG,OUTLINE, RelicTier.BOSS, LandingSound.FLAT);
     }
 
@@ -54,7 +54,7 @@ public class BottledCourage extends CustomRelic implements OnBury {
 
     @Override
     public AbstractRelic makeCopy() {
-        return new BottledCourage();
+        return new Motivation();
     }
 
     @Override
