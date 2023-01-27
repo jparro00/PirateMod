@@ -39,8 +39,8 @@ public class GiantBeak extends AbstractDynamicCard {
     private static final int COST = 2;
     private static final int UPGRADED_COST = 2;
 
-    private static final int DAMAGE = 10;
-    private static final int UPGRADE_PLUS_DMG = 2;
+    private static final int DAMAGE = 11;
+    private static final int UPGRADE_PLUS_DMG = 3;
     public static final int AMOUNT = 1;
 
     // /STAT DECLARATION/

@@ -67,7 +67,7 @@
   },
   "thePirate:BolsterCrew": {
     "NAME": "Bolster Crew",
-    "DESCRIPTION": "Gain !M! strength. NL Lose !SM! gold."
+    "DESCRIPTION": "Ethereal. NL Gain !M! strength. NL The first time you play this each combat, lose !SM! gold."
   },
   "thePirate:ThiefsAccomplice": {
     "NAME": "Thief's Accomplice",
@@ -223,7 +223,7 @@
   },
   "thePirate:SorcererAttack": {
     "NAME": "Sorcerer Attack",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! thepirate:Corrupt_Artifact. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Apply thepirate:Corrupt_Artifact to target enemy !M! times. NL Exhaust."
   },
   "thePirate:CausticInk": {
     "NAME": "Caustic Ink",
@@ -280,7 +280,7 @@
   },
   "thePirate:Mercenaries": {
     "NAME": "Mercenaries",
-    "DESCRIPTION": "Deal !D! damage.  Lose !M! gold."
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage.  The first time you play this each combat, lose !M! gold."
   },
   "thePirate:Menace": {
     "NAME": "Menace",
