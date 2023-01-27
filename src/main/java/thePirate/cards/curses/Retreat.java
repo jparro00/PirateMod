@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.powers.WeakPower;
 import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.cards.Purgable;
@@ -43,9 +42,10 @@ public class Retreat extends AbstractDynamicCard implements Purgable {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     private static final int COST = 1;
-    public static final int BASE_VULNERABLE = 2;
+    public static final int UPGRADED_COST = 0;
+    public static final int BASE_VULNERABLE = 1;
     public static final int BASE_WEAK = 1;
-    public static final int UPGRADED_VULNERABLE = -1;
+    public static final int UPGRADED_VULNERABLE = 0;
     public static final int UPGRADED_WEAK = -1;
 
     // /STAT DECLARATION/
@@ -70,9 +70,9 @@ public class Retreat extends AbstractDynamicCard implements Purgable {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ApplyPowerAction(p, p, new VulnerablePower(p, magicNumber, false)));
-        if(secondMagic > 0){
-            this.addToBot(new ApplyPowerAction(p, p, new WeakPower(p, secondMagic, false)));
-        }
+//        if(secondMagic > 0){
+//            this.addToBot(new ApplyPowerAction(p, p, new WeakPower(p, secondMagic, false)));
+//        }
 
         AbstractCard overexert = new Overexert();
         if(this.upgraded){
@@ -93,10 +93,11 @@ public class Retreat extends AbstractDynamicCard implements Purgable {
                 overexert.upgrade();
                 cardsToPreview = overexert;
             }
+            upgradeBaseCost(UPGRADED_COST);
             upgradeName();
             rawDescription = UPGRADE_DESCRIPTION;
-            upgradeMagicNumber(UPGRADED_VULNERABLE);
-            upgradeSecondMagic(UPGRADED_WEAK);
+//            upgradeMagicNumber(UPGRADED_VULNERABLE);
+//            upgradeSecondMagic(UPGRADED_WEAK);
             initializeDescription();
         }
     }
