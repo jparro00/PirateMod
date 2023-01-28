@@ -1,7 +1,8 @@
 {
   "thePirate:Retaliation": {
     "NAME": "Retaliation",
-    "DESCRIPTION": "If enemy intends to attack, deal damage equal to enemy intent (damage !D! X !M! )."
+    "DESCRIPTION": "If enemy intends to attack, deal damage equal to enemy intent.",
+    "EXTENDED_DESCRIPTION": ["If enemy intends to attack, deal damage equal to enemy intent (damage !D! X !M! ).","If enemy intends to attack, deal damage equal to enemy intent (damage !D! )."]
   },
   "thePirate:GhostOfBlackbeard": {
     "NAME": "Ghost of Blackbeard",
