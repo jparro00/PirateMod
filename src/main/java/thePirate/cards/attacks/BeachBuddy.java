@@ -68,7 +68,7 @@ public class BeachBuddy extends AbstractDynamicCard implements OnBury {
     @Override
     public void onBury(AbstractCard card) {
         if(AbstractDungeon.player.discardPile.contains(this)){
-            this.addToBot(new DiscardToHandAction(this));
+            this.addToTop(new DiscardToHandAction(this));
         }
 
     }

@@ -29,7 +29,7 @@
         },
         "thePirate:BleedingPower": {
                 "NAME": "Bleeding",
-                "DESCRIPTIONS": ["The next time you lose HP, take #b", " additional damage."," additional damage."]
+                "DESCRIPTION": ["At the end of your turn, take damage equal to half your #yBleeding (round up), and then reduce your #yBleeding by that amount."]
         },
         "thePirate:CephalopodFormPower": {
                 "NAME": "Cephalopod Form",

@@ -35,7 +35,7 @@
   },
   "thePirate:PinDown": {
     "NAME": "Pin Down",
-    "DESCRIPTION": "Apply !M! Weak to target enemy. NL Add a *Shovel *Blade to your hand."
+    "DESCRIPTION": "Apply !M! Weak to target enemy. NL Shuffle a *Shovel *Blade to your draw pile."
   },
   "thePirate:ShovelBlade": {
     "NAME": "Shovel Blade",
