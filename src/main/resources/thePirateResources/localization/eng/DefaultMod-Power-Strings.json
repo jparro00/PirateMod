@@ -1,4 +1,16 @@
 {
+        "thePirate:TropomyosinPower": {
+                "NAME": "Tropomyosin",
+                "DESCRIPTIONS": ["thepirate:Ink is removed from enemies at the end of turn instead."]
+        },
+        "thePirate:UnstableFormulaPower": {
+                "NAME": "Unstable Formula Power",
+                "DESCRIPTIONS": ["At the start turn, apply thepirate:Ink to ALL enemies equal to ", " their current thepirate:Ink.", "X their current thepirate:Ink."]
+        },
+        "thePirate:ScoutAheadPower": {
+                "NAME": "Scout Ahead",
+                "DESCRIPTIONS": ["At the start of next turn, thepirate:Dig up to #b", " time.", " times."]
+        },
         "thePirate:PlayCannonballTwicePower": {
                 "NAME": "Double Cannonball",
                 "DESCRIPTIONS": ["The next #b", " Cannonball you play is played twice.", " Cannonballs you play are played twice."]

@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import thePirate.cards.attacks.BeachBuddy;
 import thePirate.powers.OnBury;
+import thePirate.util.CardUtil;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -154,7 +155,7 @@ public class BuryAction extends AbstractGameAction {
             }
 
             //run onBuryCards once for all cards
-            for (AbstractCard c : player.discardPile.group){
+            for (AbstractCard c : CardUtil.getCombatCards(false, false)){
                 if (c instanceof OnBury){
                     ((OnBury)c).onBuryCards(cardsSelected);
                 }

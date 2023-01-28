@@ -38,15 +38,17 @@ public class Mercenaries extends AbstractDynamicCard {
 
     private static final int DAMAGE = 20;
     private static final int UPGRADE_PLUS_DMG = 6;
-    public static final int GOLD_LOSS = 10;
+    public static final int GOLD_LOSS = 15;
 
     // /STAT DECLARATION/
+    public boolean usedThisCombat;
 
 
     public Mercenaries() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         this.magicNumber = this.baseMagicNumber = GOLD_LOSS;
+        isEthereal = true;
     }
 
 
@@ -55,10 +57,11 @@ public class Mercenaries extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        this.addToTop(new LoseGoldAction(magicNumber));
-
-        addToTop(new PayGoldAction(magicNumber, m.hb));
-
+        if (!usedThisCombat){
+            addToTop(new LoseGoldAction(magicNumber));
+            addToTop(new PayGoldAction(magicNumber, m.hb));
+        }
+        usedThisCombat = true;
     }
 
 

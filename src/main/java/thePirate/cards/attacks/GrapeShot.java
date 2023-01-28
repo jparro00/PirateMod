@@ -38,6 +38,7 @@ public class GrapeShot extends AbstractCannonBallCard {
         baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = 0;
         storm = true;
+        exhaust = true;
     }
 
     // Actions the card should do.

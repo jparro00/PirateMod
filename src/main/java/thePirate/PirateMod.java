@@ -11,6 +11,7 @@ import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
+import com.evacipated.cardcrawl.mod.stslib.patches.CustomTargeting;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
@@ -24,6 +25,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thePirate.cards.AbstractDefaultCard;
+import thePirate.cards.targeting.RelicTargeting;
 import thePirate.characters.ThePirate;
 import thePirate.potions.AbstractDynamicPotion;
 import thePirate.potions.InkPotion;
@@ -90,20 +92,15 @@ public class PirateMod implements
     public static boolean enablePlaceholder = true; // The boolean we'll be setting on/off (true/false)
 
     //This is for the in-game mod settings panel.
-    private static final String MODNAME = "Default Mod";
-    private static final String AUTHOR = "Gremious"; // And pretty soon - You!
-    private static final String DESCRIPTION = "A base for Slay the Spire to start your own mod from, feat. the Default.";
+    private static final String MODNAME = "Pirate Mod";
+    private static final String AUTHOR = "Ithilian"; // And pretty soon - You!
+    private static final String DESCRIPTION = "The Pirate is a fully fleshed-out custom class with a primary focus on deck control and mechanic synergies rather than raw power.";
     
     // =============== INPUT TEXTURE LOCATION =================
     
     // Colors (RGB)
     // Character Color
-    public static final Color DEFAULT_GRAY = CardHelper.getColor(27.8f, 25.9f, 36.1f);
-    
-    // Potion Colors in RGB
-    public static final Color PLACEHOLDER_POTION_LIQUID = CardHelper.getColor(209.0f, 53.0f, 18.0f); // Orange-ish Red
-    public static final Color PLACEHOLDER_POTION_HYBRID = CardHelper.getColor(255.0f, 230.0f, 230.0f); // Near White
-    public static final Color PLACEHOLDER_POTION_SPOTS = CardHelper.getColor(100.0f, 25.0f, 10.0f); // Super Dark Red/Brown
+    public static final Color PIRATE_PURPLE = CardHelper.getColor(27.8f, 25.9f, 36.1f);
     
     // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
     // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
@@ -235,8 +232,8 @@ public class PirateMod implements
         
         logger.info("Creating the color " + ThePirate.Enums.COLOR_GRAY.toString());
         
-        BaseMod.addColor(ThePirate.Enums.COLOR_GRAY, DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY,
-                DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY,
+        BaseMod.addColor(ThePirate.Enums.COLOR_GRAY, PIRATE_PURPLE, PIRATE_PURPLE, PIRATE_PURPLE,
+                PIRATE_PURPLE, PIRATE_PURPLE, PIRATE_PURPLE, PIRATE_PURPLE,
                 ATTACK_DEFAULT_GRAY, SKILL_DEFAULT_GRAY, POWER_DEFAULT_GRAY, ENERGY_ORB_DEFAULT_GRAY,
                 ATTACK_DEFAULT_GRAY_PORTRAIT, SKILL_DEFAULT_GRAY_PORTRAIT, POWER_DEFAULT_GRAY_PORTRAIT,
                 ENERGY_ORB_DEFAULT_GRAY_PORTRAIT, CARD_ENERGY_ORB);
@@ -389,6 +386,8 @@ public class PirateMod implements
         BaseMod.addEvent(eventParams);
 */
 
+        CustomTargeting.registerCustomTargeting(RelicTargeting.RELIC, new RelicTargeting());
+
         // =============== /EVENTS/ =================
         logger.info("Done loading badge Image and mod options");
     }
@@ -397,8 +396,8 @@ public class PirateMod implements
     
     // ================ ADD POTIONS ===================
 
-    public static void addPotion(AbstractDynamicPotion potion){
-        BaseMod.addPotion(potion.getClass(),potion.getColor(AbstractDynamicPotion.COLOR.LIQUID),potion.getColor(AbstractDynamicPotion.COLOR.HYBRID),potion.getColor(AbstractDynamicPotion.COLOR.SPOTS), potion.ID);
+    public static void addPiratePotion(AbstractDynamicPotion potion){
+        BaseMod.addPotion(potion.getClass(),potion.getColor(AbstractDynamicPotion.COLOR.LIQUID),potion.getColor(AbstractDynamicPotion.COLOR.HYBRID),potion.getColor(AbstractDynamicPotion.COLOR.SPOTS), potion.ID, ThePirate.Enums.THE_PIRATE);
     }
     public void receiveEditPotions() {
         logger.info("Beginning to edit potions");
@@ -407,8 +406,8 @@ public class PirateMod implements
         // just remove the player class at the end (in this case the "TheDefaultEnum.THE_DEFAULT".
         // Remember, you can press ctrl+P inside parentheses like addPotions)
 //        BaseMod.addPotion(PlaceholderPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, PlaceholderPotion.POTION_ID, ThePirate.Enums.THE_PIRATE);
-        addPotion(new InkPotion());
-        addPotion(new IslandPotion());
+        addPiratePotion(new InkPotion());
+        addPiratePotion(new IslandPotion());
 
         logger.info("Done editing potions");
     }
@@ -438,13 +437,15 @@ public class PirateMod implements
         BaseMod.addRelicToCustomPool(new GreedyChest(), ThePirate.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new Coral(), ThePirate.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new ExoticDish(), ThePirate.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new BottledCourage(), ThePirate.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new Motivation(), ThePirate.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new WoodenLeg(), ThePirate.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new WritingReed(), ThePirate.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new BottledVoid(), ThePirate.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new NavigationDevice(), ThePirate.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new ExperimentalCannon(), ThePirate.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new MoneyBag(), ThePirate.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new WoodenCompass(), ThePirate.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new ButtonRelic(), ThePirate.Enums.COLOR_GRAY);
 
         // This adds a relic to the Shared pool. Every character can find this relic.
         BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);

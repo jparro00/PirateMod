@@ -25,10 +25,11 @@ public class BolsterCrew extends AbstractDynamicCard {
     private static final int UPGRADED_COST = 1;
     private static final int MAGIC = 3;
     private static final int UPGRADED_MAGIC = 1;
-    private static final int SECOND_MAGIC = 10;
+    private static final int SECOND_MAGIC = 20;
     private static final int UPGRADED_SECOND_MAGIC = 0;
 
     // /STAT DECLARATION/
+    public boolean usedThisCombat;
 
     // TEXT DECLARATION
     public static final String ID = PirateMod.makeID(BolsterCrew.class.getSimpleName());
@@ -39,6 +40,7 @@ public class BolsterCrew extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
         secondMagic = baseSecondMagic = SECOND_MAGIC;
+        isEthereal = true;
     }
 
 
@@ -46,8 +48,11 @@ public class BolsterCrew extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber), magicNumber));
-        addToBot(new LoseGoldAction(secondMagic));
-        addToTop(new PayGoldAction(secondMagic,hb));
+        if (!usedThisCombat){
+            addToBot(new LoseGoldAction(secondMagic));
+            addToTop(new PayGoldAction(secondMagic,hb));
+        }
+        usedThisCombat = true;
     }
 
 
@@ -65,4 +70,5 @@ public class BolsterCrew extends AbstractDynamicCard {
             upgradeDescription();
         }
     }
+
 }

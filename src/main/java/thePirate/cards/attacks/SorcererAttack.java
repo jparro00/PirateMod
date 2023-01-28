@@ -27,7 +27,7 @@ public class SorcererAttack extends AbstractDynamicCard {
 
     private static final int DAMAGE = 11;
     private static final int UPGRADE_PLUS_DMG = 4;
-    public static final int MAGIC = 1;
+    public static final int MAGIC = 3;
     public static final int UPGRADE_MAGIC = 0;
 
     // /STAT DECLARATION/
@@ -50,7 +50,9 @@ public class SorcererAttack extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
-        this.addToBot(new ApplyPowerAction(m,p,new CorruptArtifactPower(m,p,magicNumber),magicNumber));
+        for (int i = 0; i < magicNumber; i++){
+            this.addToBot(new ApplyPowerAction(m,p,new CorruptArtifactPower(m,p,1),1));
+        }
     }
 
 

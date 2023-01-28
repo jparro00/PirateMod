@@ -1,6 +1,7 @@
 package thePirate.cards.skills;
 
 import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -30,26 +31,29 @@ public class Reload extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON; //  Up to you, I like auto-complete on these
+    private static final CardRarity RARITY = CardRarity.BASIC; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.SELF;  //   since they don't change much.
     private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
     private static final int UPGRADED_COST = 1;
+    public static final int BLOCK = 6;
+    public static final int UPGRADED_BLOCK = 2;
 
     // /STAT DECLARATION/
 
 
     public Reload() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        block = baseBlock = BLOCK;
     }
 
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        //this.addToBot(new ReloadAction(false));
+        addToBot(new GainBlockAction(p,block));
         this.addToBot(new MoveCardsAction(AbstractDungeon.player.hand, AbstractDungeon.player.exhaustPile, new Predicate<AbstractCard>() {
             @Override
             public boolean test(AbstractCard card) {
@@ -64,9 +68,10 @@ public class Reload extends AbstractDynamicCard {
     @Override
     public void upgrade() {
         if (!upgraded) {
-            this.retain = true;
+            selfRetain = true;
             upgradeName();
             upgradeBaseCost(UPGRADED_COST);
+            upgradeBlock(UPGRADED_BLOCK);
             upgradeDescription();
         }
     }

@@ -1,7 +1,11 @@
 package thePirate.cards.skills;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.ArtifactPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import thePirate.PirateMod;
 import thePirate.actions.ConvertBlockToInkAction;
 import thePirate.cards.AbstractDynamicCard;
@@ -18,9 +22,9 @@ public class CausticInk extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;
 
-    private static final int COST = 3;
+    private static final int COST = 2;
     private static final int UPGRADED_COST = 2;
-    private static final int MAGIC = 0;
+    private static final int MAGIC = 2;
     private static final int UPGRADED_MAGIC = 0;
     private static final int SECOND_MAGIC = 0;
     private static final int UPGRADED_SECOND_MAGIC = 0;
@@ -29,7 +33,7 @@ public class CausticInk extends AbstractDynamicCard {
 
     // TEXT DECLARATION
     public static final String ID = PirateMod.makeID(CausticInk.class.getSimpleName());
-    public static final String IMG = makeCardPath("CausticInk.png", TYPE);
+    public static final String IMG = makeCardPath(CausticInk.class.getSimpleName() + ".png", TYPE);
     // /TEXT DECLARATION/
 
     public CausticInk() {
@@ -43,6 +47,8 @@ public class CausticInk extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new RemoveSpecificPowerAction(m,p, ArtifactPower.POWER_ID));
+        addToBot(new ApplyPowerAction(m,p,new StrengthPower(m,-magicNumber), -magicNumber));
         this.addToBot(new ConvertBlockToInkAction(m));
     }
 
@@ -58,7 +64,7 @@ public class CausticInk extends AbstractDynamicCard {
                 upgradeMagicNumber(UPGRADED_MAGIC);
             if (UPGRADED_SECOND_MAGIC > 0)
                 upgradeSecondMagic(UPGRADED_SECOND_MAGIC);
-            isEthereal = false;
+            selfRetain = true;
             upgradeDescription();
         }
     }

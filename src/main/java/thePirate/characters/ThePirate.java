@@ -27,6 +27,7 @@ import thePirate.PirateMod;
 import thePirate.cards.attacks.RoundShot;
 import thePirate.cards.attacks.Strike;
 import thePirate.cards.skills.Defend;
+import thePirate.cards.skills.Reload;
 import thePirate.relics.BetterOnUseGold;
 import thePirate.relics.GunsmithsBible;
 import thePirate.relics.MoneyBag;
@@ -161,6 +162,8 @@ public class ThePirate extends CustomPlayer {
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(RoundShot.ID);
+        retVal.add(Reload.ID);
+
         return retVal;
     }
 
@@ -198,7 +201,7 @@ public class ThePirate extends CustomPlayer {
     // Ascension 14 or higher. (ironclad loses 5, defect and silent lose 4 hp respectively)
     @Override
     public int getAscensionMaxHPLoss() {
-        return 0;
+        return 4;
     }
 
     // Should return the card color enum to be associated with your character.
@@ -210,7 +213,7 @@ public class ThePirate extends CustomPlayer {
     // Should return a color object to be used to color the trail of moving cards
     @Override
     public Color getCardTrailColor() {
-        return PirateMod.DEFAULT_GRAY;
+        return PirateMod.PIRATE_PURPLE.cpy();
     }
 
     // Should return a BitmapFont object that you can use to customize how your
@@ -247,14 +250,14 @@ public class ThePirate extends CustomPlayer {
     // Should return a Color object to be used to color the miniature card images in run history.
     @Override
     public Color getCardRenderColor() {
-        return PirateMod.DEFAULT_GRAY;
+        return PirateMod.PIRATE_PURPLE.cpy();
     }
 
     // Should return a Color object to be used as screen tint effect when your
     // character attacks the heart.
     @Override
     public Color getSlashAttackColor() {
-        return PirateMod.DEFAULT_GRAY;
+        return PirateMod.PIRATE_PURPLE.cpy();
     }
 
     // Should return an AttackEffect array of any size greater than 0. These effects
