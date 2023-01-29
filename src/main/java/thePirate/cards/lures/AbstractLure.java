@@ -1,7 +1,5 @@
 package thePirate.cards.lures;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.SpawnModificationCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DiscardSpecificCardAction;
@@ -13,6 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import thePirate.ImageMaster;
 import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.cards.Purgable;
@@ -27,9 +26,6 @@ import java.util.List;
 public abstract class AbstractLure extends AbstractDynamicCard implements Purgable, SpawnModificationCard {
 
     // STAT DECLARATION
-    public static final TextureAtlas cardUiAtlas = new TextureAtlas(Gdx.files.internal(PirateMod.getModID() + "Resources/images/cardui/cardui.atlas"));
-    public static final TextureAtlas.AtlasRegion FRAME_SMALL_REGION = cardUiAtlas.findRegion("512/frame_skill_uncommon");
-    public static final TextureAtlas.AtlasRegion FRAME_LARGE_REGION = cardUiAtlas.findRegion("1024/frame_skill_uncommon");
 
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(PirateMod.makeID("CardDescriptors"));
     private static final CardTarget TARGET = CardTarget.NONE;  //   since they don't change much.
@@ -55,8 +51,8 @@ public abstract class AbstractLure extends AbstractDynamicCard implements Purgab
         isInnate = true;
         tags.add(CardTags.HEALING);
         setDisplayRarity(CardRarity.UNCOMMON);
-        this.frameSmallRegion = FRAME_SMALL_REGION;
-        this.frameLargeRegion = FRAME_LARGE_REGION;
+        this.frameSmallRegion = ImageMaster.FRAME_SMALL_LURE_REGION;
+        this.frameLargeRegion = ImageMaster.FRAME_LARGE_LURE_REGION;
     }
 
     @Override

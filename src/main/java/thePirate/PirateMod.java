@@ -128,7 +128,8 @@ public class PirateMod implements
     public static final String THE_DEFAULT_SHOULDER_1 = "thePirateResources/images/char/defaultCharacter/shoulder.png";
     public static final String THE_DEFAULT_SHOULDER_2 = "thePirateResources/images/char/defaultCharacter/shoulder2.png";
     public static final String THE_DEFAULT_CORPSE = "thePirateResources/images/char/defaultCharacter/corpse.png";
-    
+
+
     //Mod Badge - A small icon that appears in the mod settings menu next to your mod.
     public static final String BADGE_IMAGE = "thePirateResources/images/Badge.png";
     
@@ -331,7 +332,8 @@ public class PirateMod implements
     @Override
     public void receivePostInitialize() {
         logger.info("Loading badge image and mod options");
-        
+        thePirate.ImageMaster.initialize();
+
         // Load the Mod Badge
         Texture badgeTexture = TextureLoader.getTexture(BADGE_IMAGE);
         
