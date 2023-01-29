@@ -65,7 +65,7 @@
         },
         "thePirate:ChemicalWarfarePower": {
                 "NAME": "Chemical Warfare",
-                "DESCRIPTIONS": ["Enemy takes 50% more damage from Ink  for the next #b", " round."," rounds."]
+                "DESCRIPTIONS": ["Enemy takes 50% more damage from Ink."]
         },
         "thePirate:DavyJonesLockerPower": {
                 "NAME": "Davy Jones' Locker",
