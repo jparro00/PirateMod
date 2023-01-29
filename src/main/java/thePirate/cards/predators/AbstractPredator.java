@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import thePirate.ImageMaster;
 import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.cards.lures.AbstractLure;
@@ -27,34 +26,13 @@ public abstract class AbstractPredator extends AbstractDynamicCard implements On
             cardsToPreview = getLure();
         }
         tags.add(CardTags.HEALING);
-        setCardBorder();
-//        setDisplayRarity(CardRarity.RARE);
+        PirateMod.setCustomCardBorder(this);
     }
     @Override
     public List<String> getCardDescriptors() {
         ArrayList<String> retVal = new ArrayList<>();
         retVal.add(uiStrings.TEXT[3]);
         return retVal;
-    }
-
-    public void setCardBorder(){
-        bannerLargeRegion = ImageMaster.BANNER_LARGE_REGION;
-        bannerSmallRegion = ImageMaster.BANNER_SMALL_REGION;
-        switch (type){
-            case SKILL:
-                frameSmallRegion = ImageMaster.FRAME_SMALL_SKILL_REGION;
-                frameLargeRegion = ImageMaster.FRAME_LARGE_SKILL_REGION;
-                break;
-            case ATTACK:
-                frameSmallRegion = ImageMaster.FRAME_SMALL_ATTACK_REGION;
-                frameLargeRegion = ImageMaster.FRAME_LARGE_ATTACK_REGION;
-                break;
-            case POWER:
-                frameSmallRegion = ImageMaster.FRAME_SMALL_POWER_REGION;
-                frameLargeRegion = ImageMaster.FRAME_LARGE_POWER_REGION;
-                break;
-            default:
-        }
     }
 
     @Override

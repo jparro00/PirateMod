@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import thePirate.ImageMaster;
 import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.cards.Purgable;
@@ -51,8 +50,7 @@ public abstract class AbstractLure extends AbstractDynamicCard implements Purgab
         isInnate = true;
         tags.add(CardTags.HEALING);
         setDisplayRarity(CardRarity.UNCOMMON);
-        this.frameSmallRegion = ImageMaster.FRAME_SMALL_LURE_REGION;
-        this.frameLargeRegion = ImageMaster.FRAME_LARGE_LURE_REGION;
+        PirateMod.setCustomCardBorder(this);
     }
 
     @Override

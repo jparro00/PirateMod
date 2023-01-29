@@ -4,12 +4,14 @@ import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
+import basemod.abstracts.CustomCard;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.mod.stslib.patches.CustomTargeting;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
@@ -25,6 +27,8 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thePirate.cards.AbstractDefaultCard;
+import thePirate.cards.lures.AbstractLure;
+import thePirate.cards.predators.AbstractPredator;
 import thePirate.cards.targeting.RelicTargeting;
 import thePirate.characters.ThePirate;
 import thePirate.potions.AbstractDynamicPotion;
@@ -121,7 +125,21 @@ public class PirateMod implements
     private static final String SKILL_DEFAULT_GRAY_PORTRAIT = "thePirateResources/images/1024/bg_skill_default_gray.png";
     private static final String POWER_DEFAULT_GRAY_PORTRAIT = "thePirateResources/images/1024/bg_power_default_gray.png";
     private static final String ENERGY_ORB_DEFAULT_GRAY_PORTRAIT = "thePirateResources/images/1024/card_default_gray_orb.png";
-    
+
+    //Custom card frames
+
+    public static TextureAtlas.AtlasRegion FRAME_SMALL_LURE_REGION;// = cardUiAtlas.findRegion("512_lure_frame");
+    public static TextureAtlas.AtlasRegion FRAME_LARGE_LURE_REGION;// = cardUiAtlas.findRegion("1024_lure_frame");
+    public static TextureAtlas.AtlasRegion FRAME_SMALL_ATTACK_REGION;// = cardUiAtlas.findRegion("512_predator_attack_frame");
+    public static TextureAtlas.AtlasRegion FRAME_LARGE_ATTACK_REGION;// = cardUiAtlas.findRegion("1024_predator_attack_frame");
+    public static TextureAtlas.AtlasRegion BANNER_SMALL_REGION;// = cardUiAtlas.findRegion("512_banner_predator");
+    public static TextureAtlas.AtlasRegion BANNER_LARGE_REGION;//= cardUiAtlas.findRegion("1024_banner_predator");
+    public static TextureAtlas.AtlasRegion FRAME_SMALL_SKILL_REGION;// = cardUiAtlas.findRegion("512_predator_skill_frame");
+    public static TextureAtlas.AtlasRegion FRAME_LARGE_SKILL_REGION;// = cardUiAtlas.findRegion("1024_predator_skill_frame");
+    public static TextureAtlas.AtlasRegion FRAME_SMALL_POWER_REGION;// = cardUiAtlas.findRegion("512_predator_power_frame");
+    public static TextureAtlas.AtlasRegion FRAME_LARGE_POWER_REGION;// = cardUiAtlas.findRegion("1024_predator_power_frame");
+    public static TextureAtlas cardUiAtlas;
+
     // Character assets
     private static final String THE_DEFAULT_BUTTON = "thePirateResources/images/charSelect/DefaultCharacterButton.png";
     private static final String THE_DEFAULT_PORTRAIT = "thePirateResources/images/charSelect/DefaultCharacterPortraitBG.png";
@@ -300,8 +318,51 @@ public class PirateMod implements
     }// NO
     
     // ====== YOU CAN EDIT AGAIN ======
-    
-    
+
+    public static void initializeAtlas() {
+        cardUiAtlas = new TextureAtlas(Gdx.files.internal(PirateMod.getModID() + "Resources/images/cardui/customCardUi.atlas"));
+        FRAME_SMALL_LURE_REGION = cardUiAtlas.findRegion("512_lure_frame");
+        FRAME_LARGE_LURE_REGION = cardUiAtlas.findRegion("1024_lure_frame");
+        FRAME_SMALL_ATTACK_REGION = cardUiAtlas.findRegion("512_predator_attack_frame");
+        FRAME_LARGE_ATTACK_REGION = cardUiAtlas.findRegion("1024_predator_attack_frame");
+        BANNER_SMALL_REGION = cardUiAtlas.findRegion("512_banner_predator");
+        BANNER_LARGE_REGION= cardUiAtlas.findRegion("1024_banner_predator");
+        FRAME_SMALL_SKILL_REGION = cardUiAtlas.findRegion("512_predator_skill_frame");
+        FRAME_LARGE_SKILL_REGION = cardUiAtlas.findRegion("1024_predator_skill_frame");
+        FRAME_SMALL_POWER_REGION = cardUiAtlas.findRegion("512_predator_power_frame");
+        FRAME_LARGE_POWER_REGION = cardUiAtlas.findRegion("1024_predator_power_frame");
+
+    }
+
+    public static void setCustomCardBorder(CustomCard card){
+        if (cardUiAtlas == null){
+            initializeAtlas();
+        }
+
+        if(card instanceof AbstractPredator){
+            card.bannerLargeRegion = BANNER_LARGE_REGION;
+            card.bannerSmallRegion = BANNER_SMALL_REGION;
+            switch (card.type){
+                case SKILL:
+                    card.frameSmallRegion = FRAME_SMALL_SKILL_REGION;
+                    card.frameLargeRegion = FRAME_LARGE_SKILL_REGION;
+                    break;
+                case ATTACK:
+                    card.frameSmallRegion = FRAME_SMALL_ATTACK_REGION;
+                    card.frameLargeRegion = FRAME_LARGE_ATTACK_REGION;
+                    break;
+                case POWER:
+                    card.frameSmallRegion = FRAME_SMALL_POWER_REGION;
+                    card.frameLargeRegion = FRAME_LARGE_POWER_REGION;
+                    break;
+                default:
+            }
+        } else if (card instanceof AbstractLure) {
+            card.frameSmallRegion = FRAME_SMALL_LURE_REGION;
+            card.frameLargeRegion = FRAME_LARGE_LURE_REGION;
+        }
+    }
+
     public static void initialize() {
         logger.info("========================= Initializing Default Mod. Hi. =========================");
         PirateMod defaultmod = new PirateMod();
@@ -328,11 +389,9 @@ public class PirateMod implements
     
     
     // =============== POST-INITIALIZE =================
-    
     @Override
     public void receivePostInitialize() {
         logger.info("Loading badge image and mod options");
-        thePirate.ImageMaster.initialize();
 
         // Load the Mod Badge
         Texture badgeTexture = TextureLoader.getTexture(BADGE_IMAGE);
