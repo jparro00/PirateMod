@@ -5,9 +5,9 @@
     <!--The author name(s) as they appear in MTS and any other comments are in your ModTheSpire.json-->
     <groupId>piratemod</groupId>
     <artifactId>PirateMod</artifactId> <!--Keep a note of this one: this is the ID used in the "auto add cards" method-->
-    <name>Pirate Mod</name>
-    <version>0.0.1</version>
-    <description>A default base to start your own mod from.</description>
+    <name>The Abyssal</name>
+    <version>0.3.2</version>
+    <description>Adds The Abyssal as a new playable character.</description>
 
     <distributionManagement>
         <repository>
