@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -34,6 +35,7 @@ import thePirate.relics.MoneyBag;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 import static thePirate.PirateMod.*;
 import static thePirate.characters.ThePirate.Enums.COLOR_GRAY;
@@ -269,6 +271,15 @@ public class ThePirate extends CustomPlayer {
                 AbstractGameAction.AttackEffect.BLUNT_HEAVY,
                 AbstractGameAction.AttackEffect.BLUNT_HEAVY,
                 AbstractGameAction.AttackEffect.BLUNT_HEAVY};
+    }
+
+    @Override
+    public List<CutscenePanel> getCutscenePanels() {
+        List<CutscenePanel> panels = new ArrayList();
+        panels.add(new CutscenePanel(PirateMod.getModID() + "Resources/images/scenes/pirate1.png", "BLUNT_HEAVY"));
+        panels.add(new CutscenePanel(PirateMod.getModID() + "Resources/images/scenes/pirate2.png"));
+        panels.add(new CutscenePanel(PirateMod.getModID() + "Resources/images/scenes/pirate3.png"));
+        return panels;
     }
 
     // Should return a string containing what text is shown when your character is

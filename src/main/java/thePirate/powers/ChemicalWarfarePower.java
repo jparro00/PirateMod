@@ -3,8 +3,6 @@ package thePirate.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -12,7 +10,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import thePirate.PirateMod;
 import thePirate.util.TextureLoader;
 
-public class ChemicalWarfarePower extends AbstractPower implements CloneablePowerInterface {
+public class ChemicalWarfarePower extends AbstractPower implements CloneablePowerInterface{
     public AbstractCreature source;
 
     public static final String POWER_ID = PirateMod.makeID("ChemicalWarfarePower");
@@ -41,23 +39,10 @@ public class ChemicalWarfarePower extends AbstractPower implements CloneablePowe
         updateDescription();
     }
 
-    public void atEndOfRound() {
-        if (this.amount == 0) {
-            this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, ChemicalWarfarePower.POWER_ID));
-        } else {
-            this.addToBot(new ReducePowerAction(this.owner, this.owner, ChemicalWarfarePower.POWER_ID, 1));
-        }
-
-    }
-
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
-        if (amount == 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
-        } else if (amount > 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
-        }
+        description = DESCRIPTIONS[0];
     }
 
     @Override

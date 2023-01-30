@@ -1,0 +1,82 @@
+
+predatorCardUi.png
+size: 1024,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1024_banner_predator
+  rotate: false
+  xy: 1, 1211
+  size: 648, 153
+  orig: 1024, 1024
+  offset: 191, 741
+  index: -1
+512_banner_predator
+  rotate: false
+  xy: 539, 373
+  size: 324, 77
+  orig: 512, 512
+  offset: 94, 378
+  index: -1
+512_predator_attack_frame
+  rotate: false
+  xy: 651, 1
+  size: 262, 185
+  orig: 512, 512
+  offset: 125, 219
+  index: -1
+1024_predator_attack_frame
+  rotate: false
+  xy: 1, 472
+  size: 523, 369
+  orig: 1024, 1024
+  offset: 253, 442
+  index: -1
+1024_predator_power_frame
+  rotate: false
+  xy: 1, 1
+  size: 536, 469
+  orig: 1024, 1024
+  offset: 246, 448
+  index: -1
+1024_predator_skill_frame
+  rotate: false
+  xy: 1, 843
+  size: 527, 366
+  orig: 1024, 1024
+  offset: 247, 445
+  index: -1
+512_predator_power_frame
+  rotate: false
+  xy: 526, 472
+  size: 269, 238
+  orig: 512, 512
+  offset: 121, 222
+  index: -1
+512_predator_skill_frame
+  rotate: false
+  xy: 651, 188
+  size: 263, 183
+  orig: 512, 512
+  offset: 125, 222
+  index: -1
+
+lureCardUi.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1024_lure_frame
+  rotate: false
+  xy: 1, 1
+  size: 521, 362
+  orig: 1024, 1024
+  offset: 251, 449
+  index: -1
+512_lure_frame
+  rotate: false
+  xy: 524, 1
+  size: 261, 181
+  orig: 512, 512
+  offset: 124, 222
+  index: -1

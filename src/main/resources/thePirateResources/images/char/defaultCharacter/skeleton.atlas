@@ -1,13 +1,174 @@
 
 skeleton.png
-size: 1024,1024
+size: 512,512
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
-Pirate_scaled
+Pirate_Sprite/Left_Arm
+  rotate: false
+  xy: 105, 462
+  size: 48, 44
+  orig: 48, 44
+  offset: 0, 0
+  index: -1
+Pirate_Sprite/Coat_Left
+  rotate: false
+  xy: 150, 91
+  size: 72, 125
+  orig: 72, 125
+  offset: 0, 0
+  index: -1
+Pirate_Sprite/Coat_Middle
+  rotate: false
+  xy: 92, 183
+  size: 31, 31
+  orig: 31, 31
+  offset: 0, 0
+  index: -1
+Pirate_Sprite/Bucket_Back
+  rotate: false
+  xy: 251, 167
+  size: 130, 31
+  orig: 130, 31
+  offset: 0, 0
+  index: -1
+Pirate_Sprite/Cost_Right_a
+  rotate: false
+  xy: 174, 267
+  size: 33, 41
+  orig: 33, 41
+  offset: 0, 0
+  index: -1
+Pirate_Sprite/Right_Leg
+  rotate: false
+  xy: 366, 1
+  size: 48, 103
+  orig: 48, 103
+  offset: 0, 0
+  index: -1
+Pirate_Sprite/Left_Leg
+  rotate: false
+  xy: 416, 1
+  size: 42, 105
+  orig: 42, 105
+  offset: 0, 0
+  index: -1
+Pirate_Sprite/Shirt_Bottom
+  rotate: false
+  xy: 366, 108
+  size: 75, 57
+  orig: 75, 57
+  offset: 0, 0
+  index: -1
+Pirate_Sprite/Pole
+  rotate: false
+  xy: 224, 91
+  size: 25, 339
+  orig: 25, 339
+  offset: 0, 0
+  index: -1
+Pirate_Sprite/Bucket_Front
   rotate: false
   xy: 1, 1
-  size: 625, 866
-  orig: 625, 866
+  size: 147, 124
+  orig: 147, 124
+  offset: 0, 0
+  index: -1
+Pirate_Sprite/Head_copy
+  rotate: false
+  xy: 150, 1
+  size: 133, 88
+  orig: 133, 88
+  offset: 0, 0
+  index: -1
+Pirate_Sprite/Torso
+  rotate: false
+  xy: 92, 218
+  size: 80, 97
+  orig: 80, 97
+  offset: 0, 0
+  index: -1
+Pirate_Sprite/Blet
+  rotate: false
+  xy: 443, 108
+  size: 54, 36
+  orig: 54, 36
+  offset: 0, 0
+  index: -1
+Pirate_Sprite/Coat_Right
+  rotate: false
+  xy: 285, 1
+  size: 79, 128
+  orig: 79, 128
+  offset: 0, 0
+  index: -1
+Pirate_Sprite/Right_Arm
+  rotate: false
+  xy: 174, 218
+  size: 40, 47
+  orig: 40, 47
+  offset: 0, 0
+  index: -1
+Pirate_Sprite/Right_Forearm
+  rotate: false
+  xy: 92, 127
+  size: 55, 54
+  orig: 55, 54
+  offset: 0, 0
+  index: -1
+Pirate_Sprite/Sword
+  rotate: false
+  xy: 1, 303
+  size: 72, 87
+  orig: 72, 87
+  offset: 0, 0
+  index: -1
+Pirate_Sprite/Right_Hand
+  rotate: false
+  xy: 183, 432
+  size: 80, 57
+  orig: 80, 57
+  offset: 0, 0
+  index: -1
+Pirate_Sprite/Tentacle_1
+  rotate: false
+  xy: 1, 127
+  size: 89, 97
+  orig: 89, 97
+  offset: 0, 0
+  index: -1
+Pirate_Sprite/Tentacle_3a
+  rotate: false
+  xy: 1, 393
+  size: 100, 65
+  orig: 100, 65
+  offset: 0, 0
+  index: -1
+Pirate_Sprite/Tentacle_5
+  rotate: false
+  xy: 103, 393
+  size: 78, 67
+  orig: 78, 67
+  offset: 0, 0
+  index: -1
+Pirate_Sprite/Tentacle_4
+  rotate: false
+  xy: 1, 462
+  size: 102, 41
+  orig: 102, 41
+  offset: 0, 0
+  index: -1
+Pirate_Sprite/Flag
+  rotate: false
+  xy: 92, 317
+  size: 89, 74
+  orig: 89, 74
+  offset: 0, 0
+  index: -1
+Pirate_Sprite/Tentacle_2
+  rotate: false
+  xy: 1, 226
+  size: 87, 75
+  orig: 87, 75
   offset: 0, 0
   index: -1

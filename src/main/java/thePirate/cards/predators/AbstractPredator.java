@@ -26,7 +26,7 @@ public abstract class AbstractPredator extends AbstractDynamicCard implements On
             cardsToPreview = getLure();
         }
         tags.add(CardTags.HEALING);
-//        setDisplayRarity(CardRarity.RARE);
+        PirateMod.setCustomCardBorder(this);
     }
     @Override
     public List<String> getCardDescriptors() {

@@ -10,6 +10,7 @@ import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.characters.ThePirate;
 
+import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static thePirate.PirateMod.makeCardPath;
 
 public class Retaliation extends AbstractDynamicCard {
@@ -27,6 +28,8 @@ public class Retaliation extends AbstractDynamicCard {
     private static final int DAMAGE = 0;
     private static final int UPGRADED_DMG = 0;
 
+    private AbstractMonster targetMonster;
+
     // /STAT DECLARATION/
 
     // TEXT DECLARATION
@@ -42,12 +45,33 @@ public class Retaliation extends AbstractDynamicCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        if (m == null){
+            targetMonster = null;
+            rawDescription = languagePack.getCardStrings(ID).DESCRIPTION;
+            initializeDescription();
+        }
         return m != null && m.getIntentBaseDmg() >= 0;
     }
 
     @Override
     public void calculateCardDamage(AbstractMonster m) {
         PirateMod.logger.info("enter calculateCardDamage()");;
+
+        //update description with damage amount based on enemy intent
+        if (m != targetMonster){
+            targetMonster = m;
+            if (m.getIntentBaseDmg() >=0){
+                int multiAmt = ReflectionHacks.getPrivate(m, AbstractMonster.class, "intentMultiAmt");
+                if (multiAmt > 0){
+                    rawDescription = languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0];
+                }else {
+                    rawDescription = languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[1];
+                }
+            }else {
+                rawDescription = languagePack.getCardStrings(ID).DESCRIPTION;
+            }
+            initializeDescription();
+        }
         if(m != null && m.getIntentBaseDmg() >= 0) {
             baseDamage = m.getIntentBaseDmg();
             isDamageModified = true;
@@ -102,6 +126,11 @@ public class Retaliation extends AbstractDynamicCard {
             }
 
         }
+
+        //null out targetMonster so description is correct in discard pile
+        targetMonster = null;
+        rawDescription = languagePack.getCardStrings(ID).DESCRIPTION;
+        initializeDescription();
     }
 
 

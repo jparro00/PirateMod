@@ -1,3 +1,5 @@
 # Project exclude paths
 /target/
 /.idea/
+/src/main/resources/thePirateResources/images/char/defaultCharacter/Armature.png
+/src/main/resources/thePirateResources/images/char/defaultCharacter/corpse - Copy.png

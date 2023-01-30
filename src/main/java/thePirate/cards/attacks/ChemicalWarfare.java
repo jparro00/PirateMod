@@ -27,8 +27,8 @@ public class ChemicalWarfare extends AbstractDynamicCard {
 
     private static final int DAMAGE = 8;
     private static final int UPGRADED_DMG = 3;
-    public static final int MAGIC = 2;
-    public static final int UPGRADED_MAGIC = 1;
+    public static final int MAGIC = 1;
+    public static final int UPGRADED_MAGIC = 0;
 
     // /STAT DECLARATION/
 
@@ -49,7 +49,7 @@ public class ChemicalWarfare extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        addToBot(new ApplyPowerAction(m,p,new ChemicalWarfarePower(m,p,magicNumber),magicNumber));
+        addToBot(new ApplyPowerAction(m,p,new ChemicalWarfarePower(m,p,magicNumber),0));
 
     }
 
