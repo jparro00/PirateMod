@@ -1,12 +1,12 @@
-# PirateMod
+# The Abyssal
 A sea-born sorcerer brought in with the tide.  
 
-The Pirate is a fully fleshed-out custom class with a primary focus on deck control and mechanic synergies rather than raw power.
+The Abyssal is a fully fleshed-out custom class with a primary focus on deck control and mechanic synergies rather than raw power.
 
 ## Features of the Class
- - 69 cards, with all-new artwork
- - custom character sprite
- - 11 new relics
+ - 80+ cards, with all-new artwork
+ - custom animated character sprite
+ - 1s+ new relics
  - 2 new potions
  
  ## Mechanics
@@ -19,7 +19,7 @@ The Pirate is a fully fleshed-out custom class with a primary focus on deck cont
  ## Character Art
  ![DefaultCharacterPortraitBG](https://user-images.githubusercontent.com/11259046/213270515-c237610c-d218-4871-b9b0-c715f0361707.png)
  ## Sample Card Art 
- 
+
 ![image](https://user-images.githubusercontent.com/11259046/213270916-90052c20-2d64-4f80-826f-bb30f44b6a30.png)
 
 
