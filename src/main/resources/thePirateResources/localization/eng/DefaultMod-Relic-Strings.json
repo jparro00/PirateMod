@@ -17,7 +17,7 @@
     "NAME": "Money Bag",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "When you spend money, add it here.  When you lose gold, lose it from here first instead."
+      "When you spend #ygold, add it here.  When you lose #ygold, lose it from here first instead."
     ]
   },
   "thePirate:ExperimentalCannon": {
@@ -74,7 +74,7 @@
     "NAME": "Greedy Chest",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "At the start of battle, gain 1 strength for every 100 #ygold you have."
+      "At the start of battle, gain 1 #yStrength for every 100 #ygold you have."
     ]
   },
   "thePirate:GunsmithsBible": {
