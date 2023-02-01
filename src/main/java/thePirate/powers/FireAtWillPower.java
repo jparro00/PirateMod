@@ -43,7 +43,7 @@ public class FireAtWillPower extends AbstractPower implements CloneablePowerInte
 
     @Override
     public void atStartOfTurn() {
-        this.addToBot(new ApplyPowerAction(owner, owner,new FreeCannonballPower(1),1));
+        this.addToBot(new ApplyPowerAction(owner, owner,new FreeCannonballPower(amount),amount));
 
     }
 
