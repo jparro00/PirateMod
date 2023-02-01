@@ -32,7 +32,7 @@ public class ShotsInTheDarkAction extends AbstractGameAction {
                 this.target.damage(this.info);
 
             }
-            if ((((AbstractMonster)this.target).isDying || this.target.currentHealth <= 0)) {
+            if ((((AbstractMonster)this.target).isDying || this.target.currentHealth <= 0) || target.halfDead) {
                 card.use(AbstractDungeon.player, (AbstractMonster)this.target);
             }
 

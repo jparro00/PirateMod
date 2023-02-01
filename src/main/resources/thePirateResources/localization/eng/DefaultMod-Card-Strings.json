@@ -68,7 +68,7 @@
   },
   "thePirate:BolsterCrew": {
     "NAME": "Bolster Crew",
-    "DESCRIPTION": "Ethereal. NL Gain !M! strength. NL The first time you play this each combat, lose !SM! gold."
+    "DESCRIPTION": "Ethereal. NL Gain !M! Strength. NL The first time you play this each combat, lose !SM! gold."
   },
   "thePirate:ThiefsAccomplice": {
     "NAME": "Thief's Accomplice",
@@ -81,7 +81,7 @@
   },
   "thePirate:TimeWarp": {
     "NAME": "Time Warp",
-    "DESCRIPTION": "At the start of turn, return the last non-exhaust card you played the previous turn to your hand. NL Gain [E] equal to its cost."
+    "DESCRIPTION": "At the start of turn, return the last non- Exhaust card you played the previous turn to your hand. NL Gain [E] equal to its cost."
   },
   "thePirate:RedShirt": {
     "NAME": "Red Shirt",
@@ -106,7 +106,7 @@
     "NAME": "Dark Plans",
     "DESCRIPTION": "Unplayable. thepirate:Mysterious. NL Apply !M! thepirate:Ink to all enemies for each time this has been thepirate:Buried ( !SM! ).",
     "UPGRADE_DESCRIPTION": "thepirate:Mysterious. NL Apply !M! thepirate:Ink to all enemies for each time this has been thepirate:Buried ( !SM! ).",
-    "EXTENDED_DESCRIPTION": ["Unplayable unless upgraded."]
+    "EXTENDED_DESCRIPTION": ["Unplayable unless Upgraded."]
   },
   "thePirate:AttendToCache": {
     "NAME": "Attend to Cache",
@@ -169,7 +169,7 @@
   },
   "thePirate:StormSurge": {
     "NAME": "Storm Surge",
-    "DESCRIPTION": "Whenever you use energy, gain 1 temporary strength."
+    "DESCRIPTION": "Whenever you use energy, gain 1 temporary Strength."
   },
   "thePirate:TooMuchRum": {
     "NAME": "Too Much Rum",
@@ -198,11 +198,11 @@
   },
   "thePirate:InkBlast": {
     "NAME": "Ink Blast",
-    "DESCRIPTION": "Deal !D! damage and apply !M! thepirate:ink."
+    "DESCRIPTION": "Deal !D! damage and apply !M! thepirate:Ink."
   },
   "thePirate:DarkExperiment": {
     "NAME": "Dark Experiment",
-    "DESCRIPTION": "Deal !D! damage and apply !M! thepirate:ink.  If Fatal, permanently increase thepirate:ink applied by this card by !SM! . NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage and apply !M! thepirate:Ink.  If Fatal, permanently increase thepirate:Ink applied by this card by !SM! . NL Exhaust."
   },
   "thePirate:DownWithTheShip": {
     "NAME": "Down with the Ship",
@@ -250,7 +250,7 @@
   },
   "thePirate:Tropomyosin": {
     "NAME": "Tropomyosin",
-    "DESCRIPTION": "Target enemy loses !M! strength and gains !SM! thepirate:Ink. NL This turn, thepirate:Ink is removed at end of turn instead. NL Exhaust."
+    "DESCRIPTION": "Target enemy loses !M! Strength and gains !SM! thepirate:Ink. NL This turn, thepirate:Ink is removed at end of turn instead. NL Exhaust."
   },
   "thePirate:GrapeShot": {
     "NAME": "Grape Shot",
@@ -258,7 +258,7 @@
   },
   "thePirate:MomentousAttack": {
     "NAME": "Momentous Attack",
-    "DESCRIPTION": "Deal !D! Damage. NL Deals !M! additional damage for each energy spent this turn"
+    "DESCRIPTION": "Deal !D! damage. NL Deals !M! additional damage for each energy spent this turn"
   },
   "thePirate:PirateForm": {
     "NAME": "Pirate Form",
@@ -317,8 +317,8 @@
   },
   "thePirate:MakeshiftSpear": {
     "NAME": "Makeshift Spear",
-    "DESCRIPTION": "Deal !D! damage to all enemies. NL When this card is upgraded, remove it from your deck instead.",
-    "UPGRADE_DESCRIPTION": "When upgraded, immediately remove this card from your deck."
+    "DESCRIPTION": "Deal !D! damage to all enemies. NL When this card is Upgraded, remove it from your deck instead.",
+    "UPGRADE_DESCRIPTION": "When Upgraded, immediately remove this card from your deck."
   },
   "thePirate:SwabTheDeck": {
     "NAME": "Swab The Deck",
@@ -326,8 +326,8 @@
   },
   "thePirate:Reload": {
     "NAME": "Reload",
-    "DESCRIPTION": "Gain !B! Block. NL Return a Cannon or a Cannonball from your exhaust pile to your hand.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Gain !B! Block. NL Return a Cannon or a Cannonball from your exhaust pile to your hand."
+    "DESCRIPTION": "Gain !B! Block. NL Return a Cannon or a Cannonball from your Exhaust pile to your hand.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Gain !B! Block. NL Return a Cannon or a Cannonball from your Exhaust pile to your hand."
   },
   "thePirate:Defend": {
     "NAME": "Defend",
@@ -348,7 +348,7 @@
   },
   "thePirate:Cannon": {
     "NAME": "Cannon",
-    "DESCRIPTION": "Retain. Exhaust. NL While this is in your hand, retain 1 Cannonball this turn."
+    "DESCRIPTION": "Retain. Exhaust. NL While this is in your hand, Retain 1 Cannonball this turn."
   },
   "thePirate:RoundShot": {
     "NAME": "Round Shot",

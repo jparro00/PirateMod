@@ -56,7 +56,7 @@ public class HeatedShot extends AbstractCannonBallCard {
         AbstractMonster target = null;
         List<AbstractMonster> monsterList = AbstractDungeon.getCurrRoom().monsters.monsters;
         for(AbstractMonster monster : monsterList){
-            if(!monster.isDead && !monster.isDying){
+            if(!monster.isDead && !monster.isDying && !(monster.currentHealth <=0) && !monster.halfDead){
                 target = monster;
                 break;
             }

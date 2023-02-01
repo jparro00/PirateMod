@@ -27,11 +27,13 @@ public class HeatedShotAction extends AbstractGameAction {
     public void update() {
         if (this.duration == 0.1F && this.target != null) {
             PirateMod.logger.info("target.isDying: " + this.target.isDying);
-            if(!this.target.isDying){
+            PirateMod.logger.info("target.isDead: " + target.isDead);
+            PirateMod.logger.info("target.currentHealth: " + target.currentHealth);
+            if(!target.isDying){
                 AbstractDungeon.effectList.add(new FlashAtkImgEffect(this.target.hb.cX, this.target.hb.cY, AttackEffect.BLUNT_HEAVY));
                 this.target.damage(this.info);
             }
-            if ((((AbstractMonster)this.target).isDying || this.target.currentHealth <= 0)) {
+            if ((((AbstractMonster)this.target).isDying || this.target.currentHealth <= 0) || target.halfDead) {
                 card.use(AbstractDungeon.player, (AbstractMonster)this.target);
             }
 
