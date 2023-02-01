@@ -5,7 +5,6 @@ import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import thePirate.PirateMod;
 import thePirate.util.TextureLoader;
 
@@ -35,7 +34,7 @@ public class GunsmithsBible extends CustomRelic implements ClickableRelic { // Y
     @Override
     public void onRightClick() {// On right click
 
-        if (AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) { // Only if you're in combat
+        if (AbstractDungeon.getCurrRoom() != null) { // Only if you're in combat
             AbstractCannonRelic cannon;
             switch (AbstractDungeon.actNum){
                 case 1:
