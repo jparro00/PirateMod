@@ -4,7 +4,7 @@
                 "DESCRIPTIONS": ["#yInk is removed from enemies at the end of turn instead."]
         },
         "thePirate:UnstableFormulaPower": {
-                "NAME": "Unstable Formula Power",
+                "NAME": "Unstable Formula",
                 "DESCRIPTIONS": ["At the start turn, apply #yInk to ALL enemies equal to ", " their current #yInk.", "X their current #yInk."]
         },
         "thePirate:ScoutAheadPower": {
