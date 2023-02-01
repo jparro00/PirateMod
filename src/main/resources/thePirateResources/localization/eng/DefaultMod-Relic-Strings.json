@@ -10,14 +10,14 @@
     "NAME": "Wooden Compass",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "Whenever you thepirate:Bury a card, deal 5 damage to a random enemy."
+      "Whenever you #ythepirate:Bury a card, deal 5 damage to a random enemy."
     ]
   },
   "thePirate:MoneyBag": {
     "NAME": "Money Bag",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "WHen you spend money, add it here.  When you lose gold, lose it from here first instead."
+      "When you spend money, add it here.  When you lose gold, lose it from here first instead."
     ]
   },
   "thePirate:ExperimentalCannon": {
@@ -31,35 +31,35 @@
     "NAME": "Navigation Device",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "At the start of your second turn each combat, thepirate:Dig."
+      "At the start of your second turn each combat, #ythepirate:Dig."
     ]
   },
   "thePirate:WritingReed": {
     "NAME": "Writing Reed",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "Whenever you apply Ink, apply 1 additional Ink."
+      "Whenever you apply #ythepirate:Ink, apply 1 additional #ythepirate:Ink."
     ]
   },
   "thePirate:WoodenLeg": {
     "NAME": "Wooden Leg",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "At the start of battle, Bury up to 3 cards."
+      "At the start of battle, #ythepirate:Bury up to 3 cards."
     ]
   },
   "thePirate:Motivation": {
     "NAME": "Motivation",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "The first time you Bury each turn, gain [E] ."
+      "The first time you #ythepirate:Bury each turn, gain [E] ."
     ]
   },
   "thePirate:ExoticDish": {
     "NAME": "Exotic Dish",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "At the start of battle, apply 5 thepirate:Ink to all enemies."
+      "At the start of battle, apply 5 #ythepirate:Ink to all enemies."
     ]
   },
   "thePirate:Coral": {
@@ -81,7 +81,7 @@
     "NAME": "Gunsmith's Bible",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "Right click to permanently replace this with a Cannon relic. NL #yCannon #yRelic: At the start of combat, add a Cannon card into your hand. NL Take this relic now, or choose to defer it until a later act and get a more powerful Cannon relic.  Based on the act in which you take this relic, your Cannon card gains (cumulative): NL #yAct #y1:  NL The next Cannonball you play this turn costs 0. NL #yAct #y2: NL Apply Vulnerable to ALL enemies. NL #yAct #y3:  NL Gain 2 Strength. NL #yAct #y4: NL Apply Vulnerable and Weaken to all enemies.  NL All enemies lose two Strength."
+      "Right click to permanently replace this with a Cannon relic. NL #yCannon #yRelic: At the start of combat, add a Cannon card into your hand. NL Take this relic now, or choose to defer it until a later act and get a more powerful Cannon relic.  Based on the act in which you take this relic, your Cannon card gains (cumulative): NL #yAct #y1:  NL The next Cannonball you play this turn costs 0. NL #yAct #y2: NL Apply Vulnerable to ALL enemies. NL #yAct #y3:  NL Gain 2 Strength. NL #yAct #y4: NL Weaken all enemies.  NL All enemies lose two Strength."
     ]
   },
   "thePirate:BlackCannon": {

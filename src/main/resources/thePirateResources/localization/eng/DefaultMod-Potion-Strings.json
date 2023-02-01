@@ -1,11 +1,11 @@
 {
         "thePirate:IslandPotion": {
                 "NAME": "IslandPotion",
-                "DESCRIPTIONS": ["thepirate:Bury, and then thepirate:Dig."]
+                "DESCRIPTIONS": ["#yBury, and then #yDig."]
         },
         "thePirate:InkPotion": {
                 "NAME": "Ink Potion",
-                "DESCRIPTIONS": ["Apply "," thepirate:Ink to target enemy."]
+                "DESCRIPTIONS": ["Apply "," #yInk to target enemy."]
         },
         "thePirate:PlaceholderPotion": {
                 "NAME": "Placeholder Potion",

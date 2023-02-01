@@ -39,6 +39,11 @@ public class MoneyBag extends CustomRelic implements BetterOnUseGold{
         this.counter = 0;
     }
 
+    @Override
+    public boolean canSpawn() {
+        return AbstractDungeon.actNum <= 4;
+    }
+
     // Description
     @Override
     public String getUpdatedDescription() {

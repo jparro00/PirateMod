@@ -21,8 +21,8 @@ public class BraceForImpact extends AbstractDynamicCard {
 
     private static final int COST = 1;
     private static final int UPGRADED_COST = 1;
-    private static final int MAGIC = 10;
-    private static final int UPGRADED_MAGIC = 3;
+    private static final int BLOCK = 10;
+    private static final int UPGRADED_BLOCK = 3;
     private static final int SECOND_MAGIC = 0;
     private static final int UPGRADED_SECOND_MAGIC = 0;
 
@@ -35,7 +35,7 @@ public class BraceForImpact extends AbstractDynamicCard {
 
     public BraceForImpact() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = MAGIC;
+        block = baseBlock = BLOCK;
         secondMagic = baseSecondMagic = SECOND_MAGIC;
     }
 
@@ -43,7 +43,7 @@ public class BraceForImpact extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p, new GainBlockNextTurnPower(magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(p,p, new GainBlockNextTurnPower(block), block));
     }
 
 
@@ -54,8 +54,8 @@ public class BraceForImpact extends AbstractDynamicCard {
             upgradeName();
             if (UPGRADED_COST != COST)
                 upgradeBaseCost(UPGRADED_COST);
-            if (UPGRADED_MAGIC > 0)
-                upgradeMagicNumber(UPGRADED_MAGIC);
+            if (UPGRADED_BLOCK != 0)
+                upgradeBlock(UPGRADED_BLOCK);
             if (UPGRADED_SECOND_MAGIC > 0)
                 upgradeSecondMagic(UPGRADED_SECOND_MAGIC);
             upgradeDescription();

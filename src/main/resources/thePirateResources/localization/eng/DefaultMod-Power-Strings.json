@@ -1,15 +1,15 @@
 {
         "thePirate:TropomyosinPower": {
                 "NAME": "Tropomyosin",
-                "DESCRIPTIONS": ["thepirate:Ink is removed from enemies at the end of turn instead."]
+                "DESCRIPTIONS": ["#yInk is removed from enemies at the end of turn instead."]
         },
         "thePirate:UnstableFormulaPower": {
-                "NAME": "Unstable Formula Power",
-                "DESCRIPTIONS": ["At the start turn, apply thepirate:Ink to ALL enemies equal to ", " their current thepirate:Ink.", "X their current thepirate:Ink."]
+                "NAME": "Unstable Formula",
+                "DESCRIPTIONS": ["At the start turn, apply #yInk to ALL enemies equal to ", " their current #yInk.", "X their current #yInk."]
         },
         "thePirate:ScoutAheadPower": {
                 "NAME": "Scout Ahead",
-                "DESCRIPTIONS": ["At the start of next turn, thepirate:Dig up to #b", " time.", " times."]
+                "DESCRIPTIONS": ["At the start of next turn, #yDig up to #b", " time.", " times."]
         },
         "thePirate:PlayCannonballTwicePower": {
                 "NAME": "Double Cannonball",
@@ -25,11 +25,11 @@
         },
         "thePirate:RedShirtPower": {
                 "NAME": "Red Shirt",
-                "DESCRIPTIONS": ["The next time you would lose HP, recieve that much Bleeding instead. NL NL #y*Bleeding: NL The next time you would lose HP, take additional damage equal to Bleeding amount."]
+                "DESCRIPTIONS": ["The next time you would lose HP, receive that much Bleeding instead. NL NL #y*Bleeding: NL The next time you would lose HP, take additional damage equal to Bleeding amount."]
         },
         "thePirate:BleedingPower": {
                 "NAME": "Bleeding",
-                "DESCRIPTION": ["At the end of your turn, take damage equal to half your #yBleeding (round up), and then reduce your #yBleeding by that amount."]
+                "DESCRIPTIONS": ["At the end of your turn, lose HP equal to half your #yBleeding (round up), and then reduce your #yBleeding by that amount."]
         },
         "thePirate:CephalopodFormPower": {
                 "NAME": "Cephalopod Form",
@@ -45,7 +45,7 @@
         },
         "thePirate:AusterityPower": {
                 "NAME": "Austerity",
-                "DESCRIPTIONS": ["Whenever you thepirate:Bury a card, draw #b", " card."," cards."]
+                "DESCRIPTIONS": ["Whenever you #yBury a card, draw #b", " card."," cards."]
         },
         "thePirate:HardenedBrinePower": {
                 "NAME": "Hardened Brine",
@@ -89,7 +89,7 @@
         },
         "thePirate:PirateFormPower": {
                 "NAME": "Pirate Form",
-                "DESCRIPTIONS": ["At the start of turn, thepirate:Bury and then thepirate:Dig ", "", ""]
+                "DESCRIPTIONS": ["At the start of turn, #yBury and then #yDig ", "", ""]
         },
         "thePirate:SabateurPower": {
                 "NAME": "Sabotaged",
