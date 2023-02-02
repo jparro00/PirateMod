@@ -6,7 +6,7 @@ The Abyssal is a fully fleshed-out custom class with a primary focus on deck con
 ## Features of the Class
  - 80+ cards, with all-new artwork
  - custom animated character sprite
- - 1s+ new relics
+ - 11+ new relics
  - 2 new potions
  
  ## Mechanics
