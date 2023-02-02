@@ -29,7 +29,7 @@
       "bleeding",
       "bleed"
     ],
-    "DESCRIPTION": "At the end of your turn, take damage equal to half your #yBleeding (round up), and then reduce your #yBleeding by that amount."
+    "DESCRIPTION": "At the end of your turn, lose HP equal to half your #yBleeding (round up), and then reduce your #yBleeding by that amount."
   },
   {
     "PROPER_NAME": "Predatory",
