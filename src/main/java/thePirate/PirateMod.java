@@ -19,10 +19,12 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -35,6 +37,7 @@ import thePirate.potions.AbstractDynamicPotion;
 import thePirate.potions.InkPotion;
 import thePirate.potions.IslandPotion;
 import thePirate.relics.*;
+import thePirate.tutorials.PirateTutorial;
 import thePirate.util.IDCheckDontTouchPls;
 import thePirate.util.TextureLoader;
 import thePirate.variables.DefaultCustomVariable;
@@ -82,7 +85,8 @@ public class PirateMod implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
-        PostInitializeSubscriber {
+        PostInitializeSubscriber,
+        OnStartBattleSubscriber{
     // Make sure to implement the subscribers *you* are using (read basemod wiki). Editing cards? EditCardsSubscriber.
     // Making relics? EditRelicsSubscriber. etc., etc., for a full list and how to make your own, visit the basemod wiki.
     public static final Logger logger = LogManager.getLogger(PirateMod.class.getName());
@@ -94,6 +98,7 @@ public class PirateMod implements
     public static Properties theDefaultDefaultSettings = new Properties();
     public static final String ENABLE_PLACEHOLDER_SETTINGS = "enablePlaceholder";
     public static boolean enablePlaceholder = true; // The boolean we'll be setting on/off (true/false)
+    public static ModLabeledToggleButton skipTutorials;
 
     //This is for the in-game mod settings panel.
     private static final String MODNAME = "Pirate Mod";
@@ -399,8 +404,7 @@ public class PirateMod implements
         // Create the Mod Menu
         ModPanel settingsPanel = new ModPanel();
         
-        // Create the on/off button:
-        ModLabeledToggleButton enableNormalsButton = new ModLabeledToggleButton("This button doesn't do anything unless it makes you happy to click things.",
+            skipTutorials = new ModLabeledToggleButton("Skip Tutorials",
                 350.0f, 700.0f, Settings.CREAM_COLOR, FontHelper.charDescFont, // Position (trial and error it), color, font
                 enablePlaceholder, // Boolean it uses
                 settingsPanel, // The mod panel in which this button will be in
@@ -418,7 +422,7 @@ public class PirateMod implements
             }
         });
         
-        settingsPanel.addUIElement(enableNormalsButton); // Add the button to the settings panel. Button is a go.
+        settingsPanel.addUIElement(skipTutorials); // Add the button to the settings panel. Button is a go.
         
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
 
@@ -603,6 +607,10 @@ public class PirateMod implements
         BaseMod.loadCustomStringsFile(UIStrings.class,
                 getModID() + "Resources/localization/eng/DefaultMod-UI-Strings.json");
 
+        // TutorialStrings
+        BaseMod.loadCustomStringsFile(TutorialStrings.class,
+                getModID() + "Resources/localization/eng/DefaultMod-Tutorial-Strings.json");
+
         logger.info("Done edittting strings");
     }
     
@@ -638,5 +646,14 @@ public class PirateMod implements
     // in order to avoid conflicts if any other mod uses the same ID.
     public static String makeID(String idText) {
         return getModID() + ":" + idText;
+    }
+
+    @Override
+    public void receiveOnBattleStart(AbstractRoom abstractRoom) {
+        if (!skipTutorials.toggle.enabled){
+            AbstractDungeon.ftue = new PirateTutorial();
+            skipTutorials.toggle.toggle();
+
+        }
     }
 }

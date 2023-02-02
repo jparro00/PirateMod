@@ -28,6 +28,8 @@ public class GunsmithsBible extends CustomRelic implements ClickableRelic { // Y
 
         tips.clear();
         tips.add(new PowerTip(name, description));
+        flavorText = DESCRIPTIONS[1];
+        tips.add(new PowerTip(DESCRIPTIONS[2], DESCRIPTIONS[3]));
     }
 
 

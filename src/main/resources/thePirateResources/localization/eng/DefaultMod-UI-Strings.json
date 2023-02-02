@@ -1,4 +1,9 @@
 {
+  "thePirate:Options": {
+    "TEXT": [
+      "Skip Tutorials"
+    ]
+  },
   "thePirate:CardDescriptors": {
     "TEXT": [
       "Cannon",
