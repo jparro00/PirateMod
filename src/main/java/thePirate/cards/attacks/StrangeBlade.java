@@ -5,14 +5,12 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.cards.Mysterious;
 import thePirate.characters.ThePirate;
 
-import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static thePirate.PirateMod.makeCardPath;
 
 public class StrangeBlade extends AbstractDynamicCard implements Mysterious{
@@ -57,20 +55,6 @@ public class StrangeBlade extends AbstractDynamicCard implements Mysterious{
 
     public boolean canUpgrade() {
         return Mysterious.canUpgrade();
-    }
-
-    @Override
-    public void update() {
-        super.update();
-        AbstractPlayer p = AbstractDungeon.player;
-        if(p != null && upgraded && p.masterDeck.contains(this)){
-            upgraded = false;
-            name = languagePack.getCardStrings(ID).NAME;
-
-            initializeTitle();
-            rawDescription = languagePack.getCardStrings(ID).DESCRIPTION;
-            initializeDescription();
-        }
     }
 
     // Upgraded stats.
