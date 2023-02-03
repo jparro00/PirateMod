@@ -49,7 +49,7 @@ public class DavyJonesLockerPower extends AbstractPower implements CloneablePowe
     @Override
     public void onUseCard(final AbstractCard card, final UseCardAction action) {
 
-        this.addToBot(new PurgeRemovablesAction(card, true));
+        this.addToTop(new PurgeRemovablesAction(card, true));
 
         if (this.amount <= 0) {
             this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, ID));

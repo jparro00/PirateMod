@@ -174,4 +174,13 @@ public abstract class AbstractDynamicCard extends AbstractDefaultCard implements
         }
         initializeDescription();
     }
+
+    @Override
+    public AbstractCard makeStatEquivalentCopy() {
+        AbstractDynamicCard card = (AbstractDynamicCard)super.makeStatEquivalentCopy();
+        card.secondMagic = secondMagic;
+        card.upgradedSecondMagic = upgradedSecondMagic;
+        return card;
+    }
+
 }
