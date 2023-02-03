@@ -13,11 +13,13 @@ public class CardCounterPatches {
     }
     public static int cardsBuriedThisTurn;
     public static int cardsBuriedThisCombat;
+    public static int energyUsedThisTurn;
 
     @SpirePatch2(clz = GameActionManager.class, method = "clear")
     public static class ResetCounters {
         @SpirePrefixPatch
         public static void reset() {
+            energyUsedThisTurn = 0;
             cardsBuriedThisTurn = 0;
             cardsBuriedThisCombat = 0;
         }
@@ -28,6 +30,7 @@ public class CardCounterPatches {
         @SpireInsertPatch(locator = Locator.class)
         public static void reset() {
             cardsBuriedThisTurn = 0;
+            energyUsedThisTurn = 0;
         }
 
         public static class Locator extends SpireInsertLocator {

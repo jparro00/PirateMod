@@ -5,8 +5,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
-import thePirate.PirateMod;
-import thePirate.patches.characters.AbstractPlayerPatch;
+import thePirate.patches.actions.CardCounterPatches;
 import thePirate.powers.OnUseEnergy;
 
 import java.util.Iterator;
@@ -30,10 +29,9 @@ public class EnergyPanelPatch {
 
         //set energyUsed
         if(p != null){
-            PirateMod.logger.info("using " + e + " energy");
-            int energyUsedThisTurn = AbstractPlayerPatch.energyUsedThisTurn.get(p);
+            int energyUsedThisTurn = CardCounterPatches.energyUsedThisTurn;
             energyUsedThisTurn += e;
-            AbstractPlayerPatch.energyUsedThisTurn.set(p, energyUsedThisTurn);
+            CardCounterPatches.energyUsedThisTurn = energyUsedThisTurn;
         }
     }
 
