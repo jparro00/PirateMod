@@ -1,6 +1,7 @@
 package thePirate.cards.lures;
 
 import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.SpawnModificationCard;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DiscardSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -118,13 +119,33 @@ public abstract class AbstractLure extends AbstractDynamicCard implements Purgab
 
     @Override
     public void triggerWhenDrawn() {
+        AbstractCard thisCard = this;
         AbstractPlayer player = AbstractDungeon.player;
         List<AbstractPower> powers = applyDebuffs(AbstractDungeon.player);
         for (AbstractPower power : powers){
             addToBot(new ApplyPowerAction(player,player,power, power.amount));
         }
-        addToBot(new DrawCardAction(1));
         addToTop(new DiscardSpecificCardAction(this, AbstractDungeon.player.hand));
+        addToBot(new AbstractGameAction() {
+            @Override
+            public void update() {
+                //don't allow te lure to draw itself over and over
+                PirateMod.logger.info("player.drawPile.size(): " + player.drawPile.size());
+                PirateMod.logger.info("player.discardPile.size(): " + player.discardPile.size());
+                PirateMod.logger.info("player.discardPile.contains(thisCard): " + player.discardPile.contains(thisCard));
+                for (AbstractCard card : player.discardPile.group){
+                    PirateMod.logger.info("card.cardID: " + card.cardID);
+                    PirateMod.logger.info("card.uuid: " + card.uuid);
+                }
+                if (player.drawPile.isEmpty() && player.discardPile.size() ==1 && player.discardPile.contains(thisCard)){
+                    PirateMod.logger.info("enter condition");
+
+                }else {
+                    addToTop(new DrawCardAction(1));
+                }
+                isDone = true;
+            }
+        });
     }
 
     @Override
