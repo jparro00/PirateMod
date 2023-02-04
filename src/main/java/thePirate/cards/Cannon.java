@@ -10,9 +10,6 @@ import thePirate.PirateMod;
 import thePirate.characters.ThePirate;
 import thePirate.powers.RetainCannonballPower;
 import thePirate.relics.AbstractCannonRelic;
-import thePirate.relics.GoldCannon;
-import thePirate.relics.PlatinumCannon;
-import thePirate.relics.SilverCannon;
 
 import static thePirate.PirateMod.makeCardPath;
 
@@ -61,9 +58,6 @@ public class Cannon extends AbstractCannonCard{
     public void triggerOnEndOfTurnForPlayingCard() {
         AbstractPlayer p = AbstractDungeon.player;
         this.addToTop(new ApplyPowerAction(p, p,new RetainCannonballPower(AbstractDungeon.player, 1),1,true));
-        if (p.hasRelic(SilverCannon.ID) || p.hasRelic(GoldCannon.ID) || p.hasRelic(PlatinumCannon.ID)){
-            this.addToTop(new ApplyPowerAction(p, p,new RetainCannonballPower(AbstractDungeon.player, 1),1,true));
-        }
     }
 
     // Actions the card should do.
