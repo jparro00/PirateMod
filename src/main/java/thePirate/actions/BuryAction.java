@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import thePirate.cards.attacks.BeachBuddy;
+import thePirate.patches.actions.CardCounterPatches;
 import thePirate.powers.OnBury;
 import thePirate.util.CardUtil;
 
@@ -172,6 +173,9 @@ public class BuryAction extends AbstractGameAction {
                     ((OnBury) relic).onBuryCards(cardsSelected);
                 }
             }
+
+            //Increment cards buried this turn/combat
+            CardCounterPatches.incrementBury(cardsSelected.size());
 
 
         }

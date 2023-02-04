@@ -79,7 +79,7 @@ public class SeaTurtles extends AbstractDynamicCard implements OnBury, OnDig {
         for (AbstractCard card : cards){
             if (card.uuid.equals(this.uuid)){
                 if (!((SeaTurtles)card).justBurried){
-                    SeaTurtles seaTurtles = (SeaTurtles) this.makeCopy();
+                    SeaTurtles seaTurtles = (SeaTurtles) this.makeStatEquivalentCopy();
                     seaTurtles.justBurried = true;
                     AbstractDungeon.player.drawPile.addToRandomSpot(seaTurtles);
                     addToTop(new BuryAction(seaTurtles));

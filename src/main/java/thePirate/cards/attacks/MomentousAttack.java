@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.characters.ThePirate;
-import thePirate.patches.characters.AbstractPlayerPatch;
+import thePirate.patches.actions.CardCounterPatches;
 
 import static thePirate.PirateMod.makeCardPath;
 
@@ -50,7 +50,7 @@ public class MomentousAttack extends AbstractDynamicCard {
         AbstractPlayer p = AbstractDungeon.player;
         int additionalDamage = 0;
         if(p != null){
-            additionalDamage = AbstractPlayerPatch.energyUsedThisTurn.get(p) * magicNumber;
+            additionalDamage = CardCounterPatches.energyUsedThisTurn * magicNumber;
         }
         this.baseDamage += additionalDamage;
         super.applyPowers();
@@ -65,23 +65,13 @@ public class MomentousAttack extends AbstractDynamicCard {
         AbstractPlayer p = AbstractDungeon.player;
         int additionalDamage = 0;
         if(p != null){
-            additionalDamage = AbstractPlayerPatch.energyUsedThisTurn.get(p) * magicNumber;
+            additionalDamage = CardCounterPatches.energyUsedThisTurn * magicNumber;
         }
 
         this.baseDamage += additionalDamage;
         super.calculateCardDamage(mo);
         this.baseDamage = realBaseDamage;
         this.isDamageModified = this.damage != this.baseDamage;
-    }
-
-    @Override
-    public void atTurnStart() {
-        PirateMod.logger.info("enter atTurnStart");
-        AbstractPlayer p = AbstractDungeon.player;
-        if(p != null){
-            PirateMod.logger.info("resetting energyUsed this turn to 0");
-            AbstractPlayerPatch.energyUsedThisTurn.set(p, 0);
-        }
     }
 
     // Actions the card should do.

@@ -52,7 +52,7 @@ public class FreeCannonballPower extends AbstractPower {
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card instanceof AbstractCannonBallCard && this.amount > 0) {
+        if (card instanceof AbstractCannonBallCard && !((AbstractCannonBallCard) card).stormPending && this.amount > 0) {
             this.flash();
             --this.amount;
             if (this.amount == 0) {

@@ -3,12 +3,16 @@ package thePirate.cards.attacks;
 import basemod.ReflectionHacks;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.characters.ThePirate;
+
+import java.util.Iterator;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static thePirate.PirateMod.makeCardPath;
@@ -45,17 +49,39 @@ public class Retaliation extends AbstractDynamicCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        boolean canUse = false;
         if (m == null){
             targetMonster = null;
             rawDescription = languagePack.getCardStrings(ID).DESCRIPTION;
             initializeDescription();
+            for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters){
+                if(mo.getIntentBaseDmg() >= 0){
+                    canUse = true;
+                    break;
+                }
+            }
+        }else {
+            canUse = m.getIntentBaseDmg() >= 0;
         }
-        return m != null && m.getIntentBaseDmg() >= 0;
+        return canUse;
+    }
+
+    public void triggerOnGlowCheck() {
+        this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        Iterator var1 = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();
+
+        while(var1.hasNext()) {
+            AbstractMonster m = (AbstractMonster)var1.next();
+            if(m.getIntentBaseDmg() >= 0){
+                this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+                break;
+            }
+        }
+
     }
 
     @Override
     public void calculateCardDamage(AbstractMonster m) {
-        PirateMod.logger.info("enter calculateCardDamage()");;
 
         //update description with damage amount based on enemy intent
         if (m != targetMonster){
@@ -91,13 +117,7 @@ public class Retaliation extends AbstractDynamicCard {
                 }
 
             }
-            PirateMod.logger.info("damage: " + damage);
-            PirateMod.logger.info("isDamageModified: " + isDamageModified);
             super.calculateCardDamage(m);
-            PirateMod.logger.info("after calculateCardDamage()");
-            PirateMod.logger.info("damage: " + damage);
-            PirateMod.logger.info("isDamageModified: " + isDamageModified);
-            PirateMod.logger.info("exit calculateCardDamage()");;
         }else {
             baseDamage = 0;
             isDamageModified = false;
@@ -110,16 +130,6 @@ public class Retaliation extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        PirateMod.logger.info("m.getIntentBaseDmg(): " + m.getIntentBaseDmg());
-        PirateMod.logger.info("m.getIntentDmg(): " + m.getIntentDmg());
-        PirateMod.logger.info("damage: " + damage);
-        PirateMod.logger.info("isDamageModified: " + isDamageModified);
-        PirateMod.logger.info("baseDamage: " + baseDamage);
-/*
-        damage = m.getIntentBaseDmg();
-        isDamageModified = true;
-*/
-//        applyPowers();
         if(m != null && m.getIntentBaseDmg() >= 0){
             for (int i = 0; i < magicNumber; i++){
                 addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));

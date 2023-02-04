@@ -14,7 +14,6 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import thePirate.PirateMod;
-import thePirate.patches.characters.AbstractPlayerPatch;
 import thePirate.util.TextureLoader;
 
 import static thePirate.PirateMod.makePowerPath;
@@ -56,14 +55,6 @@ public class StormSurgePower extends AbstractPower implements CloneablePowerInte
 
     }
 
-
-    @Override
-    public void atStartOfTurn() {
-        if(owner != null){
-            AbstractPlayerPatch.energyUsedThisTurn.set(owner, 0);
-        }
-    }
-
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
@@ -82,8 +73,8 @@ public class StormSurgePower extends AbstractPower implements CloneablePowerInte
     @Override
     public void onUseEnergy(int e) {
         for(int i = 0; i < e; i++){
-            this.addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, 1), 1));
-            this.addToBot(new ApplyPowerAction(owner, owner, new LoseStrengthPower(owner, 1), 1));
+            this.addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, amount), amount));
+            this.addToBot(new ApplyPowerAction(owner, owner, new LoseStrengthPower(owner, amount), amount));
         }
 
     }

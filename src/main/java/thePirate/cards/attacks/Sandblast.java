@@ -3,7 +3,6 @@ package thePirate.cards.attacks;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -12,13 +11,11 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.characters.ThePirate;
-import thePirate.powers.OnBury;
-
-import java.util.List;
+import thePirate.patches.actions.CardCounterPatches;
 
 import static thePirate.PirateMod.makeCardPath;
 
-public class Sandblast extends AbstractDynamicCard implements OnBury {
+public class Sandblast extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
@@ -36,7 +33,6 @@ public class Sandblast extends AbstractDynamicCard implements OnBury {
     public static final int MAGIC = 2;
     public static final int UPGRADED_MAGIC = 1;
 
-    public int burriedCards;
 
     // /STAT DECLARATION/
 
@@ -53,12 +49,11 @@ public class Sandblast extends AbstractDynamicCard implements OnBury {
 
     @Override
     public void applyPowers() {
-        setCostForTurn(cost - burriedCards);
+        setCostForTurn(cost - CardCounterPatches.cardsBuriedThisTurn);
         super.applyPowers();
     }
 
     public void atTurnStart() {
-        burriedCards = 0;
         this.resetAttributes();
         this.applyPowers();
     }
@@ -88,13 +83,4 @@ public class Sandblast extends AbstractDynamicCard implements OnBury {
         }
     }
 
-    @Override
-    public void onBury(AbstractCard card) {
-
-    }
-
-    @Override
-    public void onBuryCards(List<AbstractCard> cards) {
-        burriedCards += cards.size();
-    }
 }
