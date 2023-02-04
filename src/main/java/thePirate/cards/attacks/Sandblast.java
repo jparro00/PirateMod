@@ -3,6 +3,7 @@ package thePirate.cards.attacks;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -12,10 +13,13 @@ import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.characters.ThePirate;
 import thePirate.patches.actions.CardCounterPatches;
+import thePirate.powers.OnBury;
+
+import java.util.List;
 
 import static thePirate.PirateMod.makeCardPath;
 
-public class Sandblast extends AbstractDynamicCard {
+public class Sandblast extends AbstractDynamicCard implements OnBury {
 
     // STAT DECLARATION
 
@@ -45,12 +49,7 @@ public class Sandblast extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = MAGIC;
-    }
-
-    @Override
-    public void applyPowers() {
         setCostForTurn(cost - CardCounterPatches.cardsBuriedThisTurn);
-        super.applyPowers();
     }
 
     public void atTurnStart() {
@@ -83,4 +82,16 @@ public class Sandblast extends AbstractDynamicCard {
         }
     }
 
+    @Override
+    public void onBury(AbstractCard card) {
+
+    }
+
+    @Override
+    public void onBuryCards(List<AbstractCard> cards) {
+        setCostForTurn(costForTurn - cards.size());
+        if (costForTurn < 0){
+            costForTurn = 0;
+        }
+    }
 }
