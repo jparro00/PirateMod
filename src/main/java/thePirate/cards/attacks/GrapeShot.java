@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePirate.PirateMod;
 import thePirate.characters.ThePirate;
 
+import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static thePirate.PirateMod.makeCardPath;
 
 public class GrapeShot extends AbstractCannonBallCard {
@@ -50,7 +51,16 @@ public class GrapeShot extends AbstractCannonBallCard {
         storm(p,m);
     }
 
-
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        if(AbstractDungeon.actionManager.cardsPlayedThisTurn.size() > 0){
+            rawDescription = languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0];
+        }else {
+            rawDescription = languagePack.getCardStrings(ID).DESCRIPTION;
+        }
+        initializeDescription();
+    }
 
     // Upgraded stats.
     @Override

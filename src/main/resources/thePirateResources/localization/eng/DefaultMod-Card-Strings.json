@@ -26,7 +26,7 @@
   },
   "thePirate:GeneticSplice": {
     "NAME": "Genetic Splice",
-    "DESCRIPTION": "Remove all thepirate:Ink from target enemy. NL Gain 1 Dexterity for every !M! thepirate:Ink removed. NL Gain !B! Block."
+    "DESCRIPTION": "Remove all thepirate:Ink from enemy. NL Gain 1 Dexterity for every !M! thepirate:Ink removed. NL Gain !B! Block."
   },
   "thePirate:ScoutAhead": {
     "NAME": "Scout Ahead",
@@ -35,7 +35,7 @@
   },
   "thePirate:PinDown": {
     "NAME": "Pin Down",
-    "DESCRIPTION": "Apply !M! Weak to target enemy. NL Shuffle a *Shovel *Blade to your draw pile."
+    "DESCRIPTION": "Apply !M! Weak. NL Shuffle a *Shovel *Blade to your draw pile."
   },
   "thePirate:ShovelBlade": {
     "NAME": "Shovel Blade",
@@ -44,11 +44,11 @@
   },
   "thePirate:EvasiveManeuver": {
     "NAME": "Evasive Maneuver",
-    "DESCRIPTION": "Apply !M! thepirate:Ink to target enemy."
+    "DESCRIPTION": "Apply !M! thepirate:Ink."
   },
   "thePirate:ChainShot": {
     "NAME": "Chain Shot",
-    "DESCRIPTION": "Deal !D! damage. NL Target enemy loses !M! Strength this turn. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Enemy loses !M! Strength this turn. NL Exhaust."
   },
   "thePirate:Sandblast": {
     "NAME": "Sandblast",
@@ -60,7 +60,8 @@
   },
   "thePirate:Cyclone": {
     "NAME": "Cyclone",
-    "DESCRIPTION": "Gain !B! Block. NL thepirate:Storm ( !STORM! ). NL Exhaust."
+    "DESCRIPTION": "Gain !B! Block. NL thepirate:Storm. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": ["Gain !B! Block. NL thepirate:Storm ( !STORM! ). NL Exhaust."]
   },
   "thePirate:Headbutt": {
     "NAME": "Headbutt",
@@ -127,7 +128,7 @@
   },
   "thePirate:Kraken": {
     "NAME": "Kraken",
-    "DESCRIPTION": "thepirate:Stun target enemy, then apply !M! thepirate:Ink to ALL enemies. NL thepirate:Predatory. Exhaust."
+    "DESCRIPTION": "thepirate:Stun enemy, then apply !M! thepirate:Ink to ALL enemies. NL thepirate:Predatory. Exhaust."
   },
   "thePirate:ElectricEel": {
     "NAME": "Electric Eel",
@@ -165,7 +166,7 @@
   },
   "thePirate:VolatileInk": {
     "NAME": "Volatile Ink",
-    "DESCRIPTION": "thepirate:Ink is removed from enemies at the end of turn instead."
+    "DESCRIPTION": "Gain thepirate:Volatile_Ink."
   },
   "thePirate:StormSurge": {
     "NAME": "Storm Surge",
@@ -177,15 +178,15 @@
   },
   "thePirate:Subdue": {
     "NAME": "Subdue",
-    "DESCRIPTION": "Deal !D! damage. NL Deals additional damage equal to thepirate:Ink on target."
+    "DESCRIPTION": "Deal !D! damage. NL Deals additional damage equal to thepirate:Ink on enemy."
   },
   "thePirate:ChemicalWarfare": {
     "NAME": "Chemical Warfare",
-    "DESCRIPTION": "Deal !D! damage. NL Target takes 50% more damage from thepirate:Ink."
+    "DESCRIPTION": "Deal !D! damage. NL Enemy takes 50% more damage from thepirate:Ink."
   },
   "thePirate:FlexibleLimb": {
     "NAME": "Flexible Limb",
-    "DESCRIPTION": "Deal !D! damage. NL If target is thepirate:Inked, gain [E] and draw 1 card"
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy has thepirate:Ink, gain [E] and draw 1 card"
   },
   "thePirate:BeachBuddy": {
     "NAME": "Beach Buddy",
@@ -224,12 +225,12 @@
   },
   "thePirate:SorcererAttack": {
     "NAME": "Sorcerer Attack",
-    "DESCRIPTION": "Deal !D! damage. NL Apply thepirate:Corrupt_Artifact to target enemy !M! times. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Apply thepirate:Corrupt_Artifact to enemy !M! times. NL Exhaust."
   },
   "thePirate:CausticInk": {
     "NAME": "Caustic Ink",
-    "DESCRIPTION": "Target enemy loses Block, thepirate:Artifacts, and 2 Strength. NL Apply thepirate:Ink equal to Block lost. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain NL Target enemy loses Block, thepirate:Artifacts, and 2 Strength. NL Apply thepirate:Ink equal to Block lost. NL Exhaust."
+    "DESCRIPTION": "Enemy loses Block, thepirate:Artifacts, and 2 Strength. NL Apply thepirate:Ink equal to Block lost. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain NL Enemy loses Block, thepirate:Artifacts, and 2 Strength. NL Apply thepirate:Ink equal to Block lost. NL Exhaust."
   },
   "thePirate:BeachCrew": {
     "NAME": "Beach Crew",
@@ -241,7 +242,7 @@
   },
   "thePirate:Saboteur": {
     "NAME": "Saboteur",
-    "DESCRIPTION": "Gain !B! Block. NL The next time target enemy would gain Block, instead it doesn't",
+    "DESCRIPTION": "Gain !B! Block. NL The next time enemy would gain Block, instead it doesn't",
     "UPGRADE_DESCRIPTION": "Gain !B! Block. NL The next time ALL enemies would gain Block, instead they don't."
   },
   "thePirate:Ransom": {
@@ -250,11 +251,12 @@
   },
   "thePirate:Tropomyosin": {
     "NAME": "Tropomyosin",
-    "DESCRIPTION": "Target enemy loses !M! Strength and gains !SM! thepirate:Ink. NL This turn, thepirate:Ink is removed at end of turn instead. NL Exhaust."
+    "DESCRIPTION": "Enemy loses !M! Strength and gains !SM! thepirate:Ink. NL Apply thepirate:Volatile_Ink to enemy for 1 turn. NL Exhaust."
   },
   "thePirate:GrapeShot": {
     "NAME": "Grape Shot",
-    "DESCRIPTION": "Deal !D! damage to a random enemy. NL thepirate:Storm ( !STORM! ). NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage to a random enemy. NL thepirate:Storm. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": ["Deal !D! damage to a random enemy. NL thepirate:Storm ( !STORM! ). NL Exhaust."]
   },
   "thePirate:MomentousAttack": {
     "NAME": "Momentous Attack",
@@ -285,8 +287,7 @@
   },
   "thePirate:Menace": {
     "NAME": "Menace",
-    "DESCRIPTION": "Double all debuffs on target enemy. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Double all debuffs on target enemy."
+    "DESCRIPTION": "Double all debuffs on enemy. NL Exhaust."
   },
   "thePirate:HeadToShore": {
     "NAME": "Head to Shore",
