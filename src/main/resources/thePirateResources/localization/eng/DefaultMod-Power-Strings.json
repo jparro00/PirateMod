@@ -41,7 +41,7 @@
         },
         "thePirate:ElectricEelPower": {
                 "NAME": "Electric Eel",
-                "DESCRIPTIONS": ["The first time you draw a card each turn, draw #b", " card."," cards."]
+                "DESCRIPTIONS": ["The first time you draw a card each turn, gain #b", " energy."," energy."]
         },
         "thePirate:AusterityPower": {
                 "NAME": "Austerity",
@@ -77,7 +77,7 @@
         },
         "thePirate:InkPower": {
                 "NAME": "Ink",
-                "DESCRIPTIONS": ["The next time this enemy would deal damage, prevent damage equal to the ink value, deal that much damage to the enemy, and then remove that much ink. ", "",""]
+                "DESCRIPTIONS": ["The next time this enemy would deal damage, prevent damage equal to the ink value, deal that much damage to the enemy, and then remove that much ink."]
         },
         "thePirate:StartTurnBuryPower": {
                 "NAME": "Beach Crew",

@@ -132,7 +132,7 @@
   },
   "thePirate:ElectricEel": {
     "NAME": "Electric Eel",
-    "DESCRIPTION": "The first time you draw a card each turn, gain 1 energy. NL thepirate:Predatory."
+    "DESCRIPTION": "The first time you draw a card each turn, gain 1 [E]. NL thepirate:Predatory."
   },
   "thePirate:LowerDefenses": {
     "NAME": "Lower Defenses",
@@ -247,7 +247,7 @@
   },
   "thePirate:Ransom": {
     "NAME": "Ransom",
-    "DESCRIPTION": "thepirate:Bury a card.  Gain energy equal to it's cost"
+    "DESCRIPTION": "thepirate:Bury a card.  Gain energy equal to its cost"
   },
   "thePirate:Tropomyosin": {
     "NAME": "Tropomyosin",
