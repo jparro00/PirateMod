@@ -341,7 +341,7 @@
   },
   "thePirate:GiantBeak": {
     "NAME": "Giant Beak",
-    "DESCRIPTION": "Apply !M! Vulnerable and Deal !D! damage.",
+    "DESCRIPTION": "Apply !M! Vulnerable, then deal !D! damage.",
     "EXTENDED_DESCRIPTION": ["Tip", "Giant Beak applies #yVulnerable before dealing damage.  Hover over enemy to see the calculated damage that will be applied after #yVulnerable."]
   },
   "thePirate:Cutlass": {
