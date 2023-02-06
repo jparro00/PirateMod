@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import thePirate.actions.InvisibleRemovePowerAction;
 import thePirate.cards.attacks.AbstractCannonBallCard;
 import thePirate.util.TextureLoader;
 
@@ -47,10 +48,17 @@ public class RetainCannonballPower extends AbstractPower implements CloneablePow
 
     public void atEndOfTurn(boolean isPlayer) {
         this.flash();
+        String text = "";
+        if (amount == 1){
+            text = powerStrings.DESCRIPTIONS[0]+ powerStrings.DESCRIPTIONS[1];
+        }else {
+            text = powerStrings.DESCRIPTIONS[0]+ amount + powerStrings.DESCRIPTIONS[2];
+        }
         if (isPlayer && !AbstractDungeon.player.hand.isEmpty() && !AbstractDungeon.player.hasRelic("Runic Pyramid") && !AbstractDungeon.player.hasPower("Equilibrium")) {
-            this.addToBot(new SelectCardsAction(AbstractDungeon.player.hand.group, this.amount, "Choose a Cannonball to retain", false, new Predicate<AbstractCard>() {
+            this.addToBot(new SelectCardsAction(AbstractDungeon.player.hand.group, this.amount, text, false, new Predicate<AbstractCard>() {
                 @Override
                 public boolean test(AbstractCard abstractCard) {
+                    abstractCard.stopGlowing();
                     return abstractCard instanceof AbstractCannonBallCard;
                 }
             }, new Consumer<List<AbstractCard>>() {
@@ -65,18 +73,12 @@ public class RetainCannonballPower extends AbstractPower implements CloneablePow
         }
 
         if (AbstractDungeon.player.hasPower(POWER_ID)) {
-            this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+            addToBot(new InvisibleRemovePowerAction(owner, owner, POWER_ID));
         }
 
     }
 
     public void updateDescription() {
-        if (this.amount == 1) {
-            this.description = powerStrings.DESCRIPTIONS[0];
-        } else {
-            this.description = powerStrings.DESCRIPTIONS[1] + this.amount + powerStrings.DESCRIPTIONS[2];
-        }
-
     }
 
     public AbstractPower makeCopy() {
@@ -84,6 +86,6 @@ public class RetainCannonballPower extends AbstractPower implements CloneablePow
     }
 
     static {
-        powerStrings = CardCrawlGame.languagePack.getPowerStrings("RetainCannonballPower");
+        powerStrings = CardCrawlGame.languagePack.getPowerStrings("thePirate:RetainCannonballPower");
     }
 }

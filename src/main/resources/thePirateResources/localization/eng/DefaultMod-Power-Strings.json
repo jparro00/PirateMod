@@ -3,6 +3,10 @@
                 "NAME": "Tropomyosin",
                 "DESCRIPTIONS": ["#yInk is removed from enemies at the end of turn instead."]
         },
+        "thePirate:RetainCannonballPower": {
+                "NAME": "Retain Cannonball",
+                "DESCRIPTIONS": ["Choose ", "a Cannonball to Retain.", " Cannonballs to Retain."]
+        },
         "thePirate:UnstableFormulaPower": {
                 "NAME": "Unstable Formula",
                 "DESCRIPTIONS": ["At the start turn, apply #yInk to ALL enemies equal to ", " their current #yInk.", "X their current #yInk."]

@@ -33,13 +33,6 @@ public class Cannon extends AbstractCannonCard{
     public static final String IMG = makeCardPath(Cannon.class.getSimpleName() + ".png", TYPE);
     // /TEXT DECLARATION/
 
-    @Override
-    public void triggerOnEndOfPlayerTurn(){
-        this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new RetainCannonballPower(AbstractDungeon.player, this.cannonballsRetainCount), this.cannonballsRetainCount));
-        super.triggerOnEndOfPlayerTurn();
-
-    }
-
     public Cannon() {
         this(TARGET);
     }
@@ -57,19 +50,19 @@ public class Cannon extends AbstractCannonCard{
     @Override
     public void triggerOnEndOfTurnForPlayingCard() {
         AbstractPlayer p = AbstractDungeon.player;
-        this.addToTop(new ApplyPowerAction(p, p,new RetainCannonballPower(AbstractDungeon.player, 1),1,true));
+        this.addToTop(new ApplyPowerAction(p, p,new RetainCannonballPower(AbstractDungeon.player, cannonballsRetainCount),cannonballsRetainCount,true));
     }
+
+
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        PirateMod.logger.info("enter Cannon.use()");
 
         for(AbstractRelic relic : p.relics){
             if(relic instanceof AbstractCannonRelic){
                 AbstractCannonRelic cannonRelic = (AbstractCannonRelic)relic;
                 for (AbstractGameAction action : cannonRelic.onUseCannon(p,m)){
-                    PirateMod.logger.info("adding action " + action.getClass());
                     addToBot(action);
                 }
             }
