@@ -1,5 +1,6 @@
 package thePirate.cards.attacks;
 
+import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -12,8 +13,11 @@ import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.characters.ThePirate;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
+import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static thePirate.PirateMod.makeCardPath;
 
 public class GiantBeak extends AbstractDynamicCard {
@@ -53,8 +57,16 @@ public class GiantBeak extends AbstractDynamicCard {
     }
 
     @Override
+    public List<TooltipInfo> getCustomTooltips() {
+        String title = rawDescription = languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0];
+        String desc = rawDescription = languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[1];
+        List<TooltipInfo> toolTips = new ArrayList<>();
+        toolTips.add(new TooltipInfo(title, desc));
+        return toolTips;
+    }
+
+    @Override
     public void calculateCardDamage(AbstractMonster mo) {
-        PirateMod.logger.info("enter calculateDamage");
         int realBaseDamage = this.baseDamage;
         int artifactCount = 0;
         int vulnerableCount = 0;
