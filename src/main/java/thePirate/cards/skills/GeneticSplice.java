@@ -40,6 +40,7 @@ public class GeneticSplice extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
         block = baseBlock = BLOCK;
+        exhaust = true;
     }
 
 
