@@ -30,7 +30,7 @@ public class TropomyosinPower extends AbstractPower implements CloneablePowerInt
         this.amount = 1;
         this.source = AbstractDungeon.player;
 
-        type = PowerType.BUFF;
+        type = PowerType.DEBUFF;
         isTurnBased = false;
         Texture tex84 = TextureLoader.getPowerTexture(this, 84);
         Texture tex32 = TextureLoader.getPowerTexture(this, 32);
