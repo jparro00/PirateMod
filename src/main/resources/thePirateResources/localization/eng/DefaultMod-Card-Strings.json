@@ -14,7 +14,7 @@
   },
   "thePirate:DeathKnell": {
     "NAME": "Death Knell",
-    "DESCRIPTION": "Trigger the start of battle and start of turn effects of target Relic (doesn't work with all Relics)."
+    "DESCRIPTION": "Trigger the start of battle and start of turn effects of target Relic (doesn't work with all Relics). NL Exhaust."
   },
   "thePirate:UnstableFormula": {
     "NAME": "Unstable Formula",
