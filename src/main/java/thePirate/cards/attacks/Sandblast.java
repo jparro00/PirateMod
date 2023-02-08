@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
+import thePirate.cards.OnShuffle;
 import thePirate.characters.ThePirate;
 import thePirate.patches.actions.CardCounterPatches;
 import thePirate.powers.OnBury;
@@ -19,7 +20,7 @@ import java.util.List;
 
 import static thePirate.PirateMod.makeCardPath;
 
-public class Sandblast extends AbstractDynamicCard implements OnBury {
+public class Sandblast extends AbstractDynamicCard implements OnBury, OnShuffle {
 
     // STAT DECLARATION
 
@@ -88,10 +89,49 @@ public class Sandblast extends AbstractDynamicCard implements OnBury {
     }
 
     @Override
+    public void onMoveToDiscard() {
+        setCostForTurn(cost - CardCounterPatches.cardsBuriedThisTurn);
+    }
+    @Override
+    public void triggerWhenDrawn() {
+        super.triggerWhenDrawn();
+        setCostForTurn(cost - CardCounterPatches.cardsBuriedThisTurn);
+    }
+
+
+    @Override
     public void onBuryCards(List<AbstractCard> cards) {
-        setCostForTurn(costForTurn - cards.size());
-        if (costForTurn < 0){
-            costForTurn = 0;
-        }
+        AbstractCard thisCard = this;
+        addToBot(new AbstractGameAction() {
+            @Override
+            public void update() {
+                setCostForTurn(thisCard.costForTurn - cards.size());
+                if (thisCard.costForTurn < 0){
+                    thisCard.costForTurn = 0;
+                }
+                isDone = true;
+            }
+        });
+    }
+
+/*
+    @Override
+    public void applyPowers() {
+        setCostForTurn(cost - CardCounterPatches.cardsBuriedThisTurn);
+        super.applyPowers();
+    }
+*/
+
+    @Override
+    public void onShuffle() {
+        AbstractCard thisCard = this;
+        addToBot(new AbstractGameAction() {
+            @Override
+            public void update() {
+                setCostForTurn(thisCard.cost - CardCounterPatches.cardsBuriedThisTurn);
+                isDone = true;
+            }
+        });
+
     }
 }
