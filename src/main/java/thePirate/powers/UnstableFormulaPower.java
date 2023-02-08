@@ -3,14 +3,13 @@ package thePirate.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thePirate.PirateMod;
+import thePirate.actions.UnstableFormulaAction;
 import thePirate.util.TextureLoader;
 
 public class UnstableFormulaPower extends AbstractPower implements CloneablePowerInterface {
@@ -44,17 +43,7 @@ public class UnstableFormulaPower extends AbstractPower implements CloneablePowe
 
     @Override
     public void atStartOfTurnPostDraw() {
-        boolean flash = false;
-        for(AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters){
-            AbstractPower power = mo.getPower(InkPower.POWER_ID);
-            if (power != null && power.amount > 0){
-                int newAmount = power.amount * this.amount;
-                addToBot(new ApplyPowerAction(mo,owner,new InkPower(mo, owner,newAmount)));
-                flash = true;
-            }
-        }
-        if (flash)
-            flash();
+        addToBot(new UnstableFormulaAction(owner,this,amount));
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))

@@ -118,7 +118,7 @@ public class InkPower extends AbstractPower implements CloneablePowerInterface, 
 
 
     @Override
-    public void atEndOfRound() {
+    public void atEndOfTurn(boolean isPlayer) {
         if(AbstractDungeon.player.hasPower(VolatileInkPower.POWER_ID) || owner.hasPower(TropomyosinPower.POWER_ID)){
             this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
         }
