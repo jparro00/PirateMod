@@ -58,9 +58,9 @@ public class GiantBeak extends AbstractDynamicCard {
 
     @Override
     public List<TooltipInfo> getCustomTooltips() {
-        String title = rawDescription = languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0];
-        String desc = rawDescription = languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[1];
         List<TooltipInfo> toolTips = new ArrayList<>();
+        String title = languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0];
+        String desc = languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[1];
         toolTips.add(new TooltipInfo(title, desc));
         return toolTips;
     }
