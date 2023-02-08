@@ -48,6 +48,9 @@ public class InkPower extends AbstractPower implements CloneablePowerInterface, 
         // We load those txtures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
+        if (this.amount >= 999) {
+            this.amount = 999;
+        }
 
         updateDescription();
     }
@@ -101,6 +104,13 @@ public class InkPower extends AbstractPower implements CloneablePowerInterface, 
 
     }
 
+    @Override
+    public void stackPower(int stackAmount) {
+        super.stackPower(stackAmount);
+        if (this.amount >= 999) {
+            this.amount = 999;
+        }
+    }
     // Note: If you want to apply an effect when a power is being applied you have 3 options:
     //onInitialApplication is "When THIS power is first applied for the very first time only."
     //onApplyPower is "When the owner applies a power to something else (only used by Sadistic Nature)."
@@ -108,7 +118,7 @@ public class InkPower extends AbstractPower implements CloneablePowerInterface, 
 
 
     @Override
-    public void atEndOfRound() {
+    public void atEndOfTurn(boolean isPlayer) {
         if(AbstractDungeon.player.hasPower(VolatileInkPower.POWER_ID) || owner.hasPower(TropomyosinPower.POWER_ID)){
             this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
         }
@@ -118,11 +128,7 @@ public class InkPower extends AbstractPower implements CloneablePowerInterface, 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
-        if (amount == 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
-        } else if (amount > 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
-        }
+        description = DESCRIPTIONS[0];
     }
 
     @Override

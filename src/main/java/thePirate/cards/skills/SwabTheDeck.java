@@ -42,6 +42,21 @@ public class SwabTheDeck extends AbstractDynamicCard {
         this.block = this.baseBlock = BLOCK;
         this.magicNumber = this.baseMagicNumber = EXTRA_BLOCK;
     }
+    @Override
+    public void applyPowers() {
+
+        //put magic number in the block variable to modify with dex
+        int tmpBaseBlock = baseBlock;
+        baseBlock = baseMagicNumber;
+        super.applyPowers();
+        this.isMagicNumberModified = this.isBlockModified;
+        magicNumber = block;
+
+        //recalculate block
+        baseBlock = tmpBaseBlock;
+        super.applyPowers();
+
+    }
 
 
     // Actions the card should do.

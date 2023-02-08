@@ -1,4 +1,9 @@
 {
+  "thePirate:DownWithTheShipAction": {
+    "TEXT": [
+      "Select a card to put on top of you draw pile and Bury the rest."
+    ]
+  },
   "thePirate:Options": {
     "TEXT": [
       "Skip Tutorials"

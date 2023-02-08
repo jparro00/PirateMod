@@ -2,11 +2,13 @@ package thePirate.cards.skills;
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.characters.ThePirate;
 
+import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static thePirate.PirateMod.makeCardPath;
 
 public class Cyclone extends AbstractDynamicCard {
@@ -37,14 +39,16 @@ public class Cyclone extends AbstractDynamicCard {
         storm = true;
     }
 
-/*
     @Override
     public void applyPowers() {
         super.applyPowers();
-        rawDescription = languagePack.getCardStrings(ID).DESCRIPTION;
-        this.initializeDescription();
+        if(AbstractDungeon.actionManager.cardsPlayedThisTurn.size() > 0){
+            rawDescription = languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0];
+        }else {
+            rawDescription = languagePack.getCardStrings(ID).DESCRIPTION;
+        }
+        initializeDescription();
     }
-*/
 
     // Actions the card should do.
     @Override

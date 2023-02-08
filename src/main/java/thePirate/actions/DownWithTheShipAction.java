@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
@@ -19,6 +20,7 @@ public class DownWithTheShipAction extends AbstractGameAction {
 
     private DamageInfo info;
     private float startingDuration;
+    public static final String[] TEXT;
 
     public DownWithTheShipAction(AbstractCreature target, DamageInfo info) {
         this.info = info;
@@ -32,6 +34,7 @@ public class DownWithTheShipAction extends AbstractGameAction {
     public void update() {
         AbstractPlayer player = AbstractDungeon.player;
         int count = player.drawPile.size() - 1;
+        String text = TEXT[0];
 
         int i;
         for(i = 0; i < count; ++i) {
@@ -40,7 +43,7 @@ public class DownWithTheShipAction extends AbstractGameAction {
         }
 
         if(player.drawPile.size() > 0){
-            addToTop(new SelectCardsAction(player.drawPile.group, 1, "Select a card to put on top of you draw pile", false, new Predicate<AbstractCard>() {
+            addToTop(new SelectCardsAction(player.drawPile.group, 1, text, false, new Predicate<AbstractCard>() {
                 @Override
                 public boolean test(AbstractCard card) {
                     return true;
@@ -62,5 +65,8 @@ public class DownWithTheShipAction extends AbstractGameAction {
     }
 
 
+    static {
+        TEXT = CardCrawlGame.languagePack.getUIString("thePirate:DownWithTheShipAction").TEXT;
+    }
 
 }

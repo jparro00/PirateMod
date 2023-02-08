@@ -1,5 +1,14 @@
 [
   {
+    "PROPER_NAME": "Volatile Ink",
+    "NAMES": [
+      "volatile ink",
+      "volatile_ink",
+      "volatilenk"
+    ],
+    "DESCRIPTION": "#yInk is removed from enemies at the end of turn instead of during damage (benefits multi-attacks)."
+  },
+  {
     "PROPER_NAME": "Artifacts",
     "NAMES": [
       "artifacts"

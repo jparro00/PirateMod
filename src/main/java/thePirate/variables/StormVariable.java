@@ -28,7 +28,7 @@ public class StormVariable extends DynamicVariable
     @Override
     public int value(AbstractCard card)
     {
-        return AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
+        return AbstractDungeon.actionManager.cardsPlayedThisTurn.size() + 1;
     }
     
     // The baseValue the variable should display.
@@ -36,7 +36,7 @@ public class StormVariable extends DynamicVariable
     @Override
     public int baseValue(AbstractCard card)
     {
-        return 0;
+        return 1;
     }
     
     // If the card has it's damage upgraded, this variable will glow green on the upgrade selection screen as well.
