@@ -43,7 +43,7 @@ public class ScoutAheadPower extends AbstractPower implements CloneablePowerInte
 
     @Override
     public void atStartOfTurnPostDraw() {
-        addToBot(new DigAction(amount, true));
+        addToTop(new DigAction(amount, true));
         addToBot(new RemoveSpecificPowerAction(owner, owner, POWER_ID));
         flash();
     }
