@@ -68,6 +68,7 @@ public class Retaliation extends AbstractDynamicCard {
     }
 */
 
+    @Override
     public void triggerOnGlowCheck() {
         this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         Iterator var1 = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();
