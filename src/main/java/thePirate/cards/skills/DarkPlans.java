@@ -26,7 +26,7 @@ public class DarkPlans extends AbstractDynamicCard implements Mysterious, OnBury
     private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;
 
-    private static final int COST = 0;
+    private static final int COST = -2;
     private static final int UPGRADED_COST = 0;
     private static final int MAGIC = 10;
     private static final int UPGRADED_MAGIC = 0;
@@ -47,7 +47,7 @@ public class DarkPlans extends AbstractDynamicCard implements Mysterious, OnBury
 
     public void triggerOnGlowCheck() {
         this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        if (canUse(AbstractDungeon.player, null)) {
+        if (canUse(AbstractDungeon.player, null) && secondMagic > 0) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         }
 

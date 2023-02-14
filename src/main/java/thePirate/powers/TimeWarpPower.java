@@ -3,7 +3,6 @@ package thePirate.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.NonStackablePower;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -19,7 +18,7 @@ import thePirate.PirateMod;
 import thePirate.actions.MoveCardAction;
 import thePirate.util.TextureLoader;
 
-public class TimeWarpPower extends AbstractPower implements CloneablePowerInterface, NonStackablePower {
+public class TimeWarpPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
     public static final String POWER_ID = PirateMod.makeID(TimeWarpPower.class.getSimpleName());
@@ -35,7 +34,8 @@ public class TimeWarpPower extends AbstractPower implements CloneablePowerInterf
         ID = POWER_ID;
 
         this.owner = AbstractDungeon.player;
-        this.amount = amount;
+//        this.amount = amount;
+        this.amount = -1;
         this.source = AbstractDungeon.player;
 
         type = PowerType.BUFF;

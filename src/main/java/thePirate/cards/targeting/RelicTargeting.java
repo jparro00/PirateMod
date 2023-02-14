@@ -96,6 +96,7 @@ public class RelicTargeting extends TargetingHandler<AbstractRelic> {
             case MutagenicStrength.ID:
             case Necronomicon.ID:
             case RedMask.ID:
+            case WarpedTongs.ID:
                 //had to hardcode these...
             case "thePirate:BlackCannon":
             case "thePirate:SilverCannon":

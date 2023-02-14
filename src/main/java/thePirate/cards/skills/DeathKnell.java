@@ -1,10 +1,12 @@
 package thePirate.cards.skills;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.relics.CaptainsWheel;
-import com.megacrit.cardcrawl.relics.HornCleat;
+import com.megacrit.cardcrawl.relics.*;
 import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.cards.targeting.RelicTargeting;
@@ -57,18 +59,59 @@ public class DeathKnell extends AbstractDynamicCard {
     public boolean specialCase(AbstractRelic relic){
         boolean specialCase = false;
         if (relic instanceof HornCleat){
-            relic.grayscale = false;
-            relic.atTurnStart();
-            relic.atBattleStart();
-            relic.atTurnStart();
+            addToBot(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    relic.grayscale = false;
+                    relic.atBattleStart();
+                    relic.atTurnStart();
+                    isDone = true;
+                }
+            });
             specialCase = true;
         }
         else if (relic instanceof CaptainsWheel){
-            relic.grayscale = false;
-            relic.atTurnStart();
-            relic.atBattleStart();
-            relic.atTurnStart();
+            addToBot(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    relic.grayscale = false;
+                    relic.atBattleStart();
+                    relic.atTurnStart();
+                    isDone = true;
+                }
+            });
             specialCase = true;
+        }
+        else if (relic instanceof AncientTeaSet){
+            addToTop(new GainEnergyAction(2));
+            addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, relic));
+            specialCase = true;
+        }
+        else if (relic instanceof CoffeeDripper ||
+                    relic instanceof PhilosopherStone ||
+                    relic instanceof CursedKey ||
+                    relic instanceof Sozu ||
+                    relic instanceof FusionHammer ||
+                    relic instanceof BustedCrown ||
+                    relic instanceof SlaversCollar ||
+                    relic instanceof Ectoplasm ||
+                    relic instanceof RunicDome
+            ){
+            addToTop(new GainEnergyAction(1));
+            specialCase = true;
+        }
+        else if (relic instanceof VelvetChoker){
+            addToBot(new AbstractGameAction() {
+                @Override
+                public void update() {
+
+                    addToTop(new GainEnergyAction(1));
+                    relic.counter = 1;
+                    relic.flash();
+                    isDone = true;
+                }
+            });
+
         }
         return specialCase;
 
