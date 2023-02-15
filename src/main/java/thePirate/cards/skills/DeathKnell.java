@@ -1,6 +1,7 @@
 package thePirate.cards.skills;
 
 import basemod.ReflectionHacks;
+import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
@@ -15,6 +16,10 @@ import thePirate.cards.AbstractDynamicCard;
 import thePirate.cards.targeting.RelicTargeting;
 import thePirate.characters.ThePirate;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static thePirate.PirateMod.makeCardPath;
 
 public class DeathKnell extends AbstractDynamicCard {
@@ -39,6 +44,15 @@ public class DeathKnell extends AbstractDynamicCard {
     public DeathKnell() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         exhaust = true;
+    }
+
+    @Override
+    public List<TooltipInfo> getCustomTooltips() {
+        List<TooltipInfo> toolTips = new ArrayList<>();
+        String title = languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0];
+        String desc = languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[1];
+        toolTips.add(new TooltipInfo(title, desc));
+        return toolTips;
     }
 
     // Actions the card should do.

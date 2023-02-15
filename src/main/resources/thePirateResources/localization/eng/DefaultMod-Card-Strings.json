@@ -14,7 +14,8 @@
   },
   "thePirate:DeathKnell": {
     "NAME": "Death Knell",
-    "DESCRIPTION": "Trigger the start of battle and start of turn effects of target Relic (doesn't work with all Relics). NL Exhaust."
+    "DESCRIPTION": "Trigger the start of combat and start of turn effects of target Relic. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": ["Tip", "Works with relics that do things at the beginning of combat (e.g., reset counters, apply buffs/defbuffs) and/or at the beginning of turn (e.g., dealing damage to enemies, incrementing counters)."]
   },
   "thePirate:UnstableFormula": {
     "NAME": "Unstable Formula",
