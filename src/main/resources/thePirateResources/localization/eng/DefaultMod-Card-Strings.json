@@ -310,7 +310,7 @@
   },
   "thePirate:HeatedShot": {
     "NAME": "Heated Shot",
-    "DESCRIPTION": "Deal !D! damage to the leftmost enemy. NL On kill, play this card again. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage to the leftmost enemy. NL If this kills an enemy, play this card again. NL Exhaust."
   },
   "thePirate:CaptainsQuarters": {
     "NAME": "Captain's Quarters",

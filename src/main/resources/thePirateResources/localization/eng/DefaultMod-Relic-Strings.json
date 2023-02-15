@@ -91,28 +91,28 @@
     "NAME": "Black Cannon Trinket",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "At the start of combat, add a Cannon to your hand. NL #yCannon #ygains: NL The next Cannonball you play this turn costs 0."
+      "At the start of combat, add a Cannon to your hand. NL #yCannon #ygains: NL The next Cannonball you play this turn costs #b0."
     ]
   },
   "thePirate:SilverCannon": {
     "NAME": "Silver Cannon Trinket",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "At the start of combat, add a Cannon to your hand. NL #yCannon #ygains: NL The next Cannonball you play this turn costs 0.  NL Apply Vulnerable to all enemies."
+      "At the start of combat, add a Cannon to your hand. NL #yCannon #ygains: NL The next Cannonball you play this turn costs #b0.  NL Apply #yVulnerable to ALL enemies."
     ]
   },
   "thePirate:GoldCannon": {
     "NAME": "Gold Cannon Trinket",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "At the start of combat, add a Cannon to your hand. NL #yCannon #ygains: NL The next Cannonball you play this turn costs 0.  NL Apply Vulnerable to all enemies. NL Gain 2 Strength."
+      "At the start of combat, add a Cannon to your hand. NL #yCannon #ygains: NL The next Cannonball you play this turn costs #b0.  NL Apply #yVulnerable to ALL enemies. NL Gain #b2 #yStrength."
     ]
   },
   "thePirate:PlatinumCannon": {
     "NAME": "Platinum Cannon Trinket",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "At the start of combat, add a Cannon to your hand. NL #yCannon #ygains: NL The next Cannonball you play this turn costs 0.  NL Apply Vulnerable and Weaken to all enemies. NL Gain 2 Strength. NL All enemies lose two Strength."
+      "At the start of combat, add a Cannon to your hand. NL #yCannon #ygains: NL The next Cannonball you play this turn costs #b0.  NL Apply #yVulnerable and #yWeak to ALL enemies. NL Gain #b2 #yStrength. NL All enemies lose #b2 #yStrength."
     ]
   },
   "thePirate:PlaceholderRelic": {
