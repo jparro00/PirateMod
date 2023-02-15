@@ -1,8 +1,11 @@
 package thePirate.cards.skills;
 
+import basemod.ReflectionHacks;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -54,6 +57,20 @@ public class DeathKnell extends AbstractDynamicCard {
             target.flash();
         }
 
+    }
+
+    @Override
+    public void render(SpriteBatch sb) {
+        if (ReflectionHacks.getPrivate(this, AbstractCard.class,"hovered")){
+            if(AbstractDungeon.player != null && !AbstractDungeon.player.inSingleTargetMode){
+                for (AbstractRelic relic : AbstractDungeon.player.relics){
+                    if (RelicTargeting.canTarget(relic)){
+                        RelicTargeting.renderReticle(relic, sb);
+                    }
+                }
+            }
+        }
+        super.render(sb);
     }
 
     public boolean specialCase(AbstractRelic relic){
