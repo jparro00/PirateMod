@@ -17,7 +17,7 @@
     "NAME": "Money Bag",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "When you spend #ygold, add it here.  When you lose #ygold, lose it from here first instead."
+      "When you spend #ygold at shops, add it here.  When you lose #ygold, lose it from here first instead."
     ]
   },
   "thePirate:ExperimentalCannon": {

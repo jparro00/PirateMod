@@ -78,8 +78,8 @@
   },
   "thePirate:DarkOffering": {
     "NAME": "Dark Offering",
-    "DESCRIPTION": "thepirate:Bury up to x cards and apply !M!x thepirate:Ink to ALL enemies. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "thepirate:Bury up to x+1 cards and apply !M! x+1 thepirate:Ink to ALL enemies. NL Exhaust."
+    "DESCRIPTION": "thepirate:Bury up to X cards and apply !M!X thepirate:Ink to ALL enemies. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "thepirate:Bury up to X+1 cards and apply !M! X+1 thepirate:Ink to ALL enemies. NL Exhaust."
   },
   "thePirate:TimeWarp": {
     "NAME": "Time Warp",
@@ -91,8 +91,8 @@
   },
   "thePirate:CephalopodForm": {
     "NAME": "Cephalopod Form",
-    "DESCRIPTION": "Ethereal. NL Whenever you play a card, apply !M! thepirate:Ink to ALL enemies",
-    "UPGRADE_DESCRIPTION": "Whenever you play a card, apply !M! thepirate:Ink to ALL enemies"
+    "DESCRIPTION": "Ethereal. NL Whenever you play a card, apply !M! thepirate:Ink to ALL enemies.",
+    "UPGRADE_DESCRIPTION": "Whenever you play a card, apply !M! thepirate:Ink to ALL enemies."
   },
   "thePirate:HatchPlot": {
     "NAME": "Hatch Plot",
@@ -159,7 +159,7 @@
   },
   "thePirate:Austerity": {
     "NAME": "Austerity",
-    "DESCRIPTION": "Whenever you thepirate:Bury a card, draw !M! card"
+    "DESCRIPTION": "Whenever you thepirate:Bury a card, draw !M! card."
   },
   "thePirate:HardenedBrine": {
     "NAME": "Hardened Brine",
@@ -175,7 +175,7 @@
   },
   "thePirate:TooMuchRum": {
     "NAME": "Too Much Rum",
-    "DESCRIPTION": "When you thepirate:Bury a card, Exhaust it and gain !M! Block"
+    "DESCRIPTION": "When you thepirate:Bury a card, Exhaust it and gain !M! Block."
   },
   "thePirate:Subdue": {
     "NAME": "Subdue",
@@ -187,7 +187,7 @@
   },
   "thePirate:FlexibleLimb": {
     "NAME": "Flexible Limb",
-    "DESCRIPTION": "Deal !D! damage. NL If the enemy has thepirate:Ink, gain [E] and draw 1 card"
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy has thepirate:Ink, gain [E] and draw 1 card."
   },
   "thePirate:BeachBuddy": {
     "NAME": "Beach Buddy",
@@ -196,7 +196,7 @@
   "thePirate:AncientAlliances": {
     "NAME": "Ancient Alliances",
     "DESCRIPTION": "thepirate:Mysterious. NL Deal !D! damage.",
-    "UPGRADE_DESCRIPTION": "thepirate:Mysterious. NL Deal !D! damage. NL Gain !M! [E]"
+    "UPGRADE_DESCRIPTION": "thepirate:Mysterious. NL Deal !D! damage. NL Gain !M! [E]."
   },
   "thePirate:InkBlast": {
     "NAME": "Ink Blast",
@@ -212,7 +212,7 @@
   },
   "thePirate:CursedBlade": {
     "NAME": "Cursed Blade",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! thepirate:Corrupt_Artifact"
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! thepirate:Corrupt_Artifact."
   },
   "thePirate:StrangeBlade": {
     "NAME": "Strange Blade",
@@ -243,7 +243,7 @@
   },
   "thePirate:Saboteur": {
     "NAME": "Saboteur",
-    "DESCRIPTION": "Gain !B! Block. NL The next time enemy would gain Block, instead it doesn't",
+    "DESCRIPTION": "Gain !B! Block. NL The next time enemy would gain Block, instead it doesn't.",
     "UPGRADE_DESCRIPTION": "Gain !B! Block. NL The next time ALL enemies would gain Block, instead they don't."
   },
   "thePirate:Ransom": {
@@ -261,7 +261,7 @@
   },
   "thePirate:MomentousAttack": {
     "NAME": "Momentous Attack",
-    "DESCRIPTION": "Deal !D! damage. NL Deals !M! additional damage for each energy spent this turn"
+    "DESCRIPTION": "Deal !D! damage. NL Deals !M! additional damage for each energy spent this turn."
   },
   "thePirate:PirateForm": {
     "NAME": "Pirate Form",
@@ -270,7 +270,7 @@
   },
   "thePirate:Overexert": {
     "NAME": "Overexert",
-    "DESCRIPTION": "Deal !D! damage.  Permanently replace this card with a Retreat. NL thepirate:Purge",
+    "DESCRIPTION": "Deal !D! damage.  Permanently replace this card with a Retreat. NL thepirate:Purge.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage.  Permanently replace this card with a [#76ec00]Retreat+[]. NL thepirate:Purge."
   },
   "thePirate:Retreat": {
@@ -363,11 +363,11 @@
   },
   "thePirate:Parry": {
     "NAME": "Parry",
-    "DESCRIPTION": "Gain !B! Block. NL Gain [E]"
+    "DESCRIPTION": "Gain !B! Block. NL Gain [E]."
   },
   "thePirate:Riposte": {
     "NAME": "Riposte",
-    "DESCRIPTION": "Deal !D! damage. NL Gain [E]"
+    "DESCRIPTION": "Deal !D! damage. NL Gain [E]."
   },
   "thePirate:DefaultCommonAttack": {
     "NAME": "Strike",
