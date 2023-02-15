@@ -83,7 +83,8 @@
   },
   "thePirate:TimeWarp": {
     "NAME": "Time Warp",
-    "DESCRIPTION": "At the start of turn, return the last non- Exhaust card you played the previous turn to your hand. NL Gain [E] equal to its cost."
+    "DESCRIPTION": "At the start of turn, return the last non- Exhaust card you played the previous turn to your hand. NL Gain [E] equal to its cost.",
+    "EXTENDED_DESCRIPTION": ["Tip", "Cannot return played powers to your hand. NL Does not stack."]
   },
   "thePirate:RedShirt": {
     "NAME": "Red Shirt",
@@ -106,9 +107,9 @@
   },
   "thePirate:DarkPlans": {
     "NAME": "Dark Plans",
-    "DESCRIPTION": "Unplayable. thepirate:Mysterious. NL Apply !M! thepirate:Ink to ALL enemies for each time this was thepirate:Buried ( !SM! ).",
-    "UPGRADE_DESCRIPTION": "thepirate:Mysterious. NL Apply !M! thepirate:Ink to ALL enemies for each time this was thepirate:Buried ( !SM! ).",
-    "EXTENDED_DESCRIPTION": ["Unplayable unless Upgraded."]
+    "DESCRIPTION": "Unplayable. thepirate:Mysterious. NL Apply !M! thepirate:Ink to ALL enemies for each time this was thepirate:Buried",
+    "UPGRADE_DESCRIPTION": "thepirate:Mysterious. NL Apply !M! thepirate:Ink to ALL enemies for each time this was thepirate:Buried",
+    "EXTENDED_DESCRIPTION": ["Unplayable unless Upgraded.", "."," ( !SM! )."]
   },
   "thePirate:AttendToCache": {
     "NAME": "Attend to Cache",
@@ -355,7 +356,7 @@
   },
   "thePirate:RoundShot": {
     "NAME": "Round Shot",
-    "DESCRIPTION": "Deal !D! damage. Exhaust"
+    "DESCRIPTION": "Deal !D! damage. NL Exhaust"
   },
   "thePirate:Strike": {
     "NAME": "Strike",

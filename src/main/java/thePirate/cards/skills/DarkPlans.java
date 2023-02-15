@@ -3,7 +3,6 @@ package thePirate.cards.skills;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePirate.PirateMod;
@@ -15,6 +14,7 @@ import thePirate.powers.OnBury;
 
 import java.util.List;
 
+import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static thePirate.PirateMod.makeCardPath;
 
 public class DarkPlans extends AbstractDynamicCard implements Mysterious, OnBury {
@@ -37,6 +37,8 @@ public class DarkPlans extends AbstractDynamicCard implements Mysterious, OnBury
     // TEXT DECLARATION
     public static final String ID = PirateMod.makeID(DarkPlans.class.getSimpleName());
     public static final String IMG = makeCardPath("DarkPlans.png", TYPE);
+    public static final String DESCRIPTION = languagePack.getCardStrings(PirateMod.makeID(DarkPlans.class.getSimpleName())).DESCRIPTION;
+    public static final String[] EXTENDED_DESCRIPTION = languagePack.getCardStrings(PirateMod.makeID(DarkPlans.class.getSimpleName())).EXTENDED_DESCRIPTION;
     // /TEXT DECLARATION/
 
     public DarkPlans() {
@@ -65,7 +67,7 @@ public class DarkPlans extends AbstractDynamicCard implements Mysterious, OnBury
             return false;
 //        } else if(!(p.drawPile.size() == p.discardPile.size())) {
         } else if (!upgraded){
-            this.cantUseMessage = CardCrawlGame.languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0];
+            this.cantUseMessage = languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0];
             return false;
         } else {
             return canUse;
@@ -83,7 +85,6 @@ public class DarkPlans extends AbstractDynamicCard implements Mysterious, OnBury
 
     }
 
-
     // Upgraded stats.
     @Override
     public void upgrade() {
@@ -98,18 +99,31 @@ public class DarkPlans extends AbstractDynamicCard implements Mysterious, OnBury
     }
 
     @Override
+    public void upgradeDescription(){
+        if(upgradedDescription != null){
+            if(secondMagic > 0){
+                rawDescription = upgradedDescription + EXTENDED_DESCRIPTION[2];
+            }else {
+                rawDescription = upgradedDescription + EXTENDED_DESCRIPTION[1];
+            }
+        }
+        initializeDescription();
+    }
+    @Override
     public void onBury(AbstractCard card) {
-        PirateMod.logger.info("enter onBury()");
         if (card.equals(this)){
-            PirateMod.logger.info("upgrading from single card");
             upgradeSecondMagic(1);
+            if(secondMagic > 0){
+                rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[2];
+            }else {
+                rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[1];
+            }
+            initializeDescription();
         }
 
     }
 
     @Override
     public void onBuryCards(List<AbstractCard> cards) {
-        PirateMod.logger.info("enter onBuryCards()");
-
     }
 }

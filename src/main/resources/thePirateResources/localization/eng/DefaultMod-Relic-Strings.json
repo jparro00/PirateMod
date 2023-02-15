@@ -10,7 +10,7 @@
     "NAME": "Wooden Compass",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "Whenever you #ythepirate:Bury a card, deal 5 damage to a random enemy."
+      "Whenever you #ythepirate:Bury a card, deal #b5 damage to a random enemy."
     ]
   },
   "thePirate:MoneyBag": {
@@ -24,7 +24,7 @@
     "NAME": "Experimental Cannon",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "Replaces your #yCannon #yrelic (or #yGunsmith's #yBible). At the start of combat, add a Cannon to your hand. NL #yCannon #ygains: NL The next Cannonball you play this turn costs 0 and is played twice."
+      "Replaces your #yCannon #yrelic (or #yGunsmith's #yBible ). NL At the start of combat, add a Cannon to your hand. NL #yCannon #ygains: NL The next Cannonball you play this turn costs #b0 and is played twice."
     ]
   },
   "thePirate:NavigationDevice": {
@@ -38,14 +38,14 @@
     "NAME": "Writing Reed",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "Whenever you apply #ythepirate:Ink, apply 1 additional #ythepirate:Ink."
+      "Whenever you apply #ythepirate:Ink, apply #b1 additional #ythepirate:Ink."
     ]
   },
   "thePirate:WoodenLeg": {
     "NAME": "Wooden Leg",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "At the start of battle, #ythepirate:Bury up to 3 cards."
+      "At the start of battle, #ythepirate:Bury up to #b3 cards."
     ]
   },
   "thePirate:Motivation": {
@@ -59,14 +59,14 @@
     "NAME": "Exotic Dish",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "At the start of battle, apply 5 #ythepirate:Ink to all enemies."
+      "At the start of battle, apply #b5 #ythepirate:Ink to ALL enemies."
     ]
   },
   "thePirate:Coral": {
     "NAME": "Inspirational Ornament",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "Upon pickup, choose 1 of 20 cards from the base characters to add to your deck.",
+      "Upon pickup, choose #b1 of #b20 cards from the base characters to add to your deck.",
       "Choose a card to add to your deck."
     ]
   },
@@ -74,7 +74,7 @@
     "NAME": "Greedy Chest",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "At the start of battle, gain 1 #yStrength for every 100 #ygold you have."
+      "At the start of battle, gain #b1 #yStrength for every #b100 #ygold you have."
     ]
   },
   "thePirate:GunsmithsBible": {
@@ -84,7 +84,7 @@
       "Right click to permanently replace this with a #yCannon #yTrinket Relic, based on your current #yAct.",
       "Waiting until later Acts grants progressively stronger Cannon Trinket Relics.",
       "Cannon Trinket Relics:",
-      "#yCannon card gains (cumulative): NL #yBlack #yCannon #y(Act #y1):  NL The next Cannonball you play this turn costs 0. NL #ySilver #yCannon #y(Act #y2): NL ...and NL Apply Vulnerable to ALL enemies. NL #yGold #yCannon #y(Act #y3):  NL ...and NL Gain 2 Strength. NL #yPlatinum #yCannon #y(Act #y4): NL ...and NL Weaken all enemies.  NL All enemies lose two Strength."
+      "#yCannon card gains (cumulative): NL #yBlack #yCannon #y(Act #y1):  NL The next Cannonball you play this turn costs #b0. NL #ySilver #yCannon #y(Act #y2): NL ...and NL Apply #yVulnerable to ALL enemies. NL #yGold #yCannon #y(Act #y3):  NL ...and NL Gain #b2 #yStrength. NL #yPlatinum #yCannon #y(Act #y4): NL ...and NL #yWeak ALL enemies.  NL All enemies lose #b2 #yStrength."
     ]
   },
   "thePirate:BlackCannon": {
