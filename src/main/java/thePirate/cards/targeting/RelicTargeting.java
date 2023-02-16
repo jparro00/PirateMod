@@ -51,7 +51,7 @@ public class RelicTargeting extends TargetingHandler<AbstractRelic> {
     }
 
 
-    public boolean canTarget(AbstractRelic relic){
+    public static boolean canTarget(AbstractRelic relic){
         boolean canTarget = false;
         switch (relic.relicId){
             case VelvetChoker.ID:
@@ -116,7 +116,7 @@ public class RelicTargeting extends TargetingHandler<AbstractRelic> {
     }
 
 
-    private void renderReticleCorner(AbstractRelic relic, SpriteBatch sb, float x, float y, boolean flipX, boolean flipY) {
+    private static void renderReticleCorner(AbstractRelic relic, SpriteBatch sb, float x, float y, boolean flipX, boolean flipY) {
         Color reticleColor = new Color(1.0F, 1.0F, 1.0F, 0.0F);
         Color reticleShadowColor = new Color(0.0F, 0.0F, 0.0F, 0.0F);
         float reticleAlpha = 1.0F;
@@ -130,7 +130,7 @@ public class RelicTargeting extends TargetingHandler<AbstractRelic> {
         sb.draw(ImageMaster.RETICLE_CORNER, relic.hb.cX + x - 18.0F, relic.hb.cY + y - 18.0F, 18.0F, 18.0F, 36.0F, 36.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 36, 36, flipX, flipY);
     }
 
-    public void renderReticle(AbstractRelic relic, SpriteBatch sb) {
+    public static void renderReticle(AbstractRelic relic, SpriteBatch sb) {
         float reticleOffset = 0.0f;
         renderReticleCorner(relic, sb, -relic.hb.width / 2.0F + reticleOffset, relic.hb.height / 2.0F - reticleOffset, false, false);
         renderReticleCorner(relic, sb, relic.hb.width / 2.0F - reticleOffset, relic.hb.height / 2.0F - reticleOffset, true, false);
