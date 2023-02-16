@@ -8,7 +8,11 @@ import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.PowerTip;
+import com.megacrit.cardcrawl.helpers.TipHelper;
+import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.*;
 import thePirate.PirateMod;
@@ -80,6 +84,25 @@ public class DeathKnell extends AbstractDynamicCard {
                 for (AbstractRelic relic : AbstractDungeon.player.relics){
                     if (RelicTargeting.canTarget(relic)){
                         RelicTargeting.renderReticle(relic, sb);
+                    }
+                }
+            }
+            else if (AbstractDungeon.player.inSingleTargetMode){
+                ArrayList<PowerTip> tmpTips;
+                for (AbstractRelic relic : AbstractDungeon.player.relics){
+                    if (relic.hb.hovered && RelicTargeting.canTarget(relic)){
+                        tmpTips = new ArrayList<>();
+                        String header = languagePack.getCardStrings(relic.getClass().getSimpleName()).NAME;
+                        String body = languagePack.getCardStrings(relic.getClass().getSimpleName()).DESCRIPTION;
+                        tmpTips.add(new PowerTip(header,body));
+                        float x = (float) InputHelper.mX + 120.0f * Settings.scale;
+                        float y = (float) InputHelper.mY - 60.0f * Settings.scale;
+                        if (InputHelper.mX > (1920 * Settings.scale / 2)){
+                            x = (float) InputHelper.mX - 320.0f * Settings.scale;
+                        }
+                        ReflectionHacks.RStaticMethod method = (ReflectionHacks.RStaticMethod)ReflectionHacks.privateStaticMethod(TipHelper.class, "renderPowerTips", float.class, float.class, SpriteBatch.class, ArrayList.class);
+                        ((ReflectionHacks.RMethod) ReflectionHacks.privateStaticMethod(TipHelper.class, "renderPowerTips", float.class, float.class, SpriteBatch.class, ArrayList.class))
+                                .invoke(null, x,y,sb,tmpTips);
                     }
                 }
             }

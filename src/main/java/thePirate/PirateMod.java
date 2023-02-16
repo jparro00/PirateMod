@@ -611,7 +611,11 @@ public class PirateMod implements
         BaseMod.loadCustomStringsFile(TutorialStrings.class,
                 getModID() + "Resources/localization/eng/DefaultMod-Tutorial-Strings.json");
 
-        logger.info("Done edittting strings");
+        // Custom Strings for DeathKnell
+        BaseMod.loadCustomStringsFile(CardStrings.class,
+                getModID() + "Resources/localization/eng/DeathKnell-Relic-Strings.json");
+
+        logger.info("Done editing strings");
     }
     
     // ================ /LOAD THE TEXT/ ===================
