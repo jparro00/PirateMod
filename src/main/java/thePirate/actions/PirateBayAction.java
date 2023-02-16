@@ -44,7 +44,7 @@ public class PirateBayAction extends AbstractGameAction {
                 @Override
                 public void accept(List<AbstractCard> abstractCards) {
                     for (AbstractCard card : abstractCards){
-                        AbstractCard newCard = card.makeCopy();
+                        AbstractCard newCard = card.makeStatEquivalentCopy();
                         if(card.upgraded)
                             newCard.upgrade();
                         player.drawPile.addToRandomSpot(newCard);

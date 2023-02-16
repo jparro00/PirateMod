@@ -29,7 +29,7 @@
         },
         "thePirate:RedShirtPower": {
                 "NAME": "Red Shirt",
-                "DESCRIPTIONS": ["The next time you would lose HP, receive that much Bleeding instead. NL NL #y*Bleeding: NL The next time you would lose HP, take additional damage equal to Bleeding amount."]
+                "DESCRIPTIONS": ["The next time you would lose HP, receive that much Bleeding instead."]
         },
         "thePirate:BleedingPower": {
                 "NAME": "Bleeding",

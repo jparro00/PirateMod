@@ -3,9 +3,7 @@ package thePirate.cards.skills;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.DexterityPower;
 import thePirate.PirateMod;
 import thePirate.actions.GeneticSpliceAction;
 import thePirate.cards.AbstractDynamicCard;
@@ -52,8 +50,6 @@ public class GeneticSplice extends AbstractDynamicCard {
             @Override
             public void update() {
                 applyPowers();
-                if (AbstractDungeon.player.getPower(DexterityPower.POWER_ID) != null)
-                    PirateMod.logger.info("AbstractDungeon.player.getPower(DexterityPower.POWER_ID).amount: " + AbstractDungeon.player.getPower(DexterityPower.POWER_ID).amount);
                 addToBot(new GainBlockAction(p,block));
                 isDone = true;
             }

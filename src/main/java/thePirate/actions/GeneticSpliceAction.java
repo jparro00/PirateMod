@@ -29,7 +29,9 @@ public class GeneticSpliceAction extends AbstractGameAction {
             int dexToGain = targetInk / divisor;
             AbstractPlayer p = AbstractDungeon.player;
 
-            addToTop(new ApplyPowerAction(p,p,new DexterityPower(p,dexToGain),dexToGain));
+            if (dexToGain > 0){
+                addToTop(new ApplyPowerAction(p,p,new DexterityPower(p,dexToGain),dexToGain));
+            }
             addToTop(new RemoveSpecificPowerAction(target,p,InkPower.POWER_ID));
 
         }

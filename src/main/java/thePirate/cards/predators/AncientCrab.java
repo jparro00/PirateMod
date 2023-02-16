@@ -72,8 +72,8 @@ public class AncientCrab extends AbstractPredator implements OnBury {
     @Override
     public void onBury(AbstractCard card) {
         if(this.equals(card)){
-            addToBot(new DiscardToHandAction(this));
-            addToBot(new DigAction(1,false));
+            addToTop(new DigAction(1,false));
+            addToTop(new DiscardToHandAction(this));
         }
 
     }

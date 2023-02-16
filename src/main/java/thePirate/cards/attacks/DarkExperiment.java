@@ -1,9 +1,12 @@
 package thePirate.cards.attacks;
 
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePirate.PirateMod;
 import thePirate.actions.DarkExperimentAction;
@@ -52,8 +55,8 @@ public class DarkExperiment extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(m,p,new InkPower(m,p,magicNumber),magicNumber));
         addToBot(new DarkExperimentAction(m,new DamageInfo(p,damage,damageTypeForTurn),secondMagic, this.uuid));
+        addToBot(new ApplyPowerAction(m,p,new InkPower(m,p,magicNumber),magicNumber));
 
     }
 
@@ -83,6 +86,17 @@ public class DarkExperiment extends AbstractDynamicCard {
                 upgradeMagicNumber(UPGRADED_MAGIC);
             upgradeSecondMagic(UPGRADED_INCREMENT_AMOUNT);
             upgradeDescription();
+        }
+    }
+    @SpirePatch2(clz = CardLibrary.class, method = "getCopy", paramtypez = { String.class, int.class, int.class })
+    public static class DarkExperimentPatch {
+        @SpirePostfixPatch
+        public static void fixDescription(AbstractCard __result, String key, int upgradeTime, int misc) {
+            if (__result instanceof DarkExperiment) {
+                DarkExperiment c = (DarkExperiment) __result;
+                c.magicNumber = c.baseMagicNumber = c.misc;
+                c.initializeDescription();
+            }
         }
     }
 }

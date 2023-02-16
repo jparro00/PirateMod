@@ -4,7 +4,7 @@ package thePirate.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsAction;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandAction;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.InvisiblePower;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -55,10 +55,10 @@ public class RetainCannonballPower extends AbstractPower implements CloneablePow
             text = powerStrings.DESCRIPTIONS[0]+ amount + powerStrings.DESCRIPTIONS[2];
         }
         if (isPlayer && !AbstractDungeon.player.hand.isEmpty() && !AbstractDungeon.player.hasRelic("Runic Pyramid") && !AbstractDungeon.player.hasPower("Equilibrium")) {
-            this.addToBot(new SelectCardsAction(AbstractDungeon.player.hand.group, this.amount, text, false, new Predicate<AbstractCard>() {
+            addToBot(new SelectCardsInHandAction(amount,text,false,false, new Predicate<AbstractCard>() {
                 @Override
                 public boolean test(AbstractCard abstractCard) {
-                    abstractCard.stopGlowing();
+//                    abstractCard.stopGlowing();
                     return abstractCard instanceof AbstractCannonBallCard;
                 }
             }, new Consumer<List<AbstractCard>>() {

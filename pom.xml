@@ -6,7 +6,7 @@
     <groupId>piratemod</groupId>
     <artifactId>PirateMod</artifactId> <!--Keep a note of this one: this is the ID used in the "auto add cards" method-->
     <name>The Abyssal</name>
-    <version>0.5.1</version>
+    <version>0.5.4</version>
     <description>Adds The Abyssal as a new playable character.</description>
 
     <distributionManagement>
@@ -22,7 +22,7 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <SlayTheSpire.version>01-23-2019</SlayTheSpire.version>
+        <SlayTheSpire.version>12-18-2022</SlayTheSpire.version>
         <ModTheSpire.version>3.8.0</ModTheSpire.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!--CHANGE THIS TO YOUR STEAM INSTALLATION-->

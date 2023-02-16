@@ -47,6 +47,7 @@ public class Retaliation extends AbstractDynamicCard {
         magicNumber = baseMagicNumber = 1;
     }
 
+/*
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         boolean canUse = false;
@@ -65,14 +66,16 @@ public class Retaliation extends AbstractDynamicCard {
         }
         return canUse;
     }
+*/
 
+    @Override
     public void triggerOnGlowCheck() {
         this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         Iterator var1 = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();
 
         while(var1.hasNext()) {
             AbstractMonster m = (AbstractMonster)var1.next();
-            if(m.getIntentBaseDmg() >= 0){
+            if(!m.isDeadOrEscaped() && m.getIntentBaseDmg() >= 0 ){
                 this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
                 break;
             }
@@ -130,7 +133,7 @@ public class Retaliation extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if(m != null && m.getIntentBaseDmg() >= 0){
+        if(m != null){
             for (int i = 0; i < magicNumber; i++){
                 addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
             }

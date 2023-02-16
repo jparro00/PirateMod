@@ -1,6 +1,7 @@
 package thePirate.cards.skills;
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -58,6 +59,14 @@ public class SwabTheDeck extends AbstractDynamicCard {
 
     }
 
+    @Override
+    public void triggerOnGlowCheck() {
+        this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        if (AbstractDungeon.actionManager.cardsPlayedThisTurn.size() == 0) {
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+        }
+
+    }
 
     // Actions the card should do.
     @Override

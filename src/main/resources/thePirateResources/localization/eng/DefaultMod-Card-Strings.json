@@ -105,8 +105,8 @@
   },
   "thePirate:DarkPlans": {
     "NAME": "Dark Plans",
-    "DESCRIPTION": "Unplayable. thepirate:Mysterious. NL Apply !M! thepirate:Ink to all enemies for each time this has been thepirate:Buried ( !SM! ).",
-    "UPGRADE_DESCRIPTION": "thepirate:Mysterious. NL Apply !M! thepirate:Ink to all enemies for each time this has been thepirate:Buried ( !SM! ).",
+    "DESCRIPTION": "Unplayable. thepirate:Mysterious. NL Apply !M! thepirate:Ink to ALL enemies for each time this was thepirate:Buried ( !SM! ).",
+    "UPGRADE_DESCRIPTION": "thepirate:Mysterious. NL Apply !M! thepirate:Ink to ALL enemies for each time this was thepirate:Buried ( !SM! ).",
     "EXTENDED_DESCRIPTION": ["Unplayable unless Upgraded."]
   },
   "thePirate:AttendToCache": {
