@@ -192,7 +192,7 @@ public class DeathKnell extends AbstractDynamicCard {
 
     public static boolean inPlay(){
         boolean inPlay = false;
-        if(AbstractDungeon.getCurrRoom().phase.equals(AbstractRoom.RoomPhase.COMPLETE)){
+        if((AbstractDungeon.getCurrRoom().phase.equals(AbstractRoom.RoomPhase.COMPLETE)) || (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.COMBAT_REWARD && AbstractDungeon.isScreenUp)){
 
             if (AbstractDungeon.cardRewardScreen != null && AbstractDungeon.cardRewardScreen.rewardGroup != null) {
                 for (AbstractCard card : AbstractDungeon.cardRewardScreen.rewardGroup) {
