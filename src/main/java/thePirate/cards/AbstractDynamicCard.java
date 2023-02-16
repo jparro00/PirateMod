@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
-import thePirate.PirateMod;
 import thePirate.actions.PurgeRemovablesAction;
 import thePirate.cards.lures.AbstractLure;
 import thePirate.cards.predators.AbstractPredator;
@@ -116,7 +115,6 @@ public abstract class AbstractDynamicCard extends AbstractDefaultCard implements
     }
     @Override
     public void onRewardListCreated(ArrayList<AbstractCard> rewardCards) {
-        PirateMod.logger.info("enter AbstractPredator.onRewardListCreated()");
         boolean hasRare = false;
         boolean lastRare = false;
         boolean hasPredator = false;
@@ -141,13 +139,11 @@ public abstract class AbstractDynamicCard extends AbstractDefaultCard implements
             for (AbstractCard card : AbstractDungeon.player.masterDeck.group){
                 if (card instanceof AbstractLure){
                     lure = (AbstractLure) card;
-                    PirateMod.logger.info("lure.cardID: " + lure.cardID);
                     break;
                 }
             }
 
             if(lure != null){
-                PirateMod.logger.info("returning " + lure.getPredator().cardID);
                 rewardCards.set(0, lure.getPredator());
             }
         }

@@ -130,16 +130,9 @@ public abstract class AbstractLure extends AbstractDynamicCard implements Purgab
             @Override
             public void update() {
                 //don't allow te lure to draw itself over and over
-                PirateMod.logger.info("player.drawPile.size(): " + player.drawPile.size());
-                PirateMod.logger.info("player.discardPile.size(): " + player.discardPile.size());
-                PirateMod.logger.info("player.discardPile.contains(thisCard): " + player.discardPile.contains(thisCard));
                 for (AbstractCard card : player.discardPile.group){
-                    PirateMod.logger.info("card.cardID: " + card.cardID);
-                    PirateMod.logger.info("card.uuid: " + card.uuid);
                 }
                 if (player.drawPile.isEmpty() && player.discardPile.size() ==1 && player.discardPile.contains(thisCard)){
-                    PirateMod.logger.info("enter condition");
-
                 }else {
                     addToTop(new DrawCardAction(1));
                 }

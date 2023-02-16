@@ -3,6 +3,9 @@ package thePirate.cards.skills;
 import basemod.ReflectionHacks;
 import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
@@ -15,10 +18,12 @@ import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.*;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.cards.targeting.RelicTargeting;
 import thePirate.characters.ThePirate;
+import thePirate.util.CardUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -103,6 +108,7 @@ public class DeathKnell extends AbstractDynamicCard {
                         ReflectionHacks.RStaticMethod method = (ReflectionHacks.RStaticMethod)ReflectionHacks.privateStaticMethod(TipHelper.class, "renderPowerTips", float.class, float.class, SpriteBatch.class, ArrayList.class);
                         ((ReflectionHacks.RMethod) ReflectionHacks.privateStaticMethod(TipHelper.class, "renderPowerTips", float.class, float.class, SpriteBatch.class, ArrayList.class))
                                 .invoke(null, x,y,sb,tmpTips);
+                        break;
                     }
                 }
             }
@@ -180,6 +186,62 @@ public class DeathKnell extends AbstractDynamicCard {
             if (UPGRADED_COST != COST)
                 upgradeBaseCost(UPGRADED_COST);
             upgradeDescription();
+        }
+    }
+
+
+    public static boolean inPlay(){
+        boolean inPlay = false;
+        if(AbstractDungeon.getCurrRoom().phase.equals(AbstractRoom.RoomPhase.COMPLETE)){
+
+            if (AbstractDungeon.cardRewardScreen != null && AbstractDungeon.cardRewardScreen.rewardGroup != null) {
+                for (AbstractCard card : AbstractDungeon.cardRewardScreen.rewardGroup) {
+                    if (card instanceof DeathKnell) {
+                        inPlay = true;
+                        break;
+                    }
+                }
+            }
+        }
+        if(!inPlay){
+            for (AbstractCard card : CardUtil.getCombatCards(true,false)){
+                if (card instanceof DeathKnell){
+                    inPlay = true;
+                    break;
+                }
+            }
+        }
+        return inPlay;
+    }
+
+    @SpirePatch2(clz = AbstractRelic.class, method = "renderTip", paramtypez = { SpriteBatch.class})
+    public static class DeathKnellPatch{
+
+        private static ArrayList<PowerTip> originalTips;
+
+        private static boolean addedTip = false;
+        @SpirePrefixPatch
+        public static void addDeathKnellTip(AbstractRelic __instance, SpriteBatch sb) {
+            AbstractRelic ab;
+
+        if (RelicTargeting.canTarget(__instance) && DeathKnell.inPlay()){
+            addedTip = true;
+            String header = languagePack.getCardStrings(__instance.getClass().getSimpleName()).NAME;
+            String body = languagePack.getCardStrings(__instance.getClass().getSimpleName()).DESCRIPTION;
+            originalTips = __instance.tips;
+            __instance.tips = (ArrayList<PowerTip>)__instance.tips.clone();
+            __instance.tips.add(new PowerTip(header,body));
+
+            }
+        }
+
+        @SpirePostfixPatch
+        public static void Postfix(AbstractRelic __instance, SpriteBatch sb) {
+            if (addedTip) {
+                __instance.tips = originalTips;
+                addedTip = false;
+            }
+
         }
     }
 }
