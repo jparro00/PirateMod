@@ -192,24 +192,29 @@ public class DeathKnell extends AbstractDynamicCard {
 
     public static boolean inPlay(){
         boolean inPlay = false;
-        if((AbstractDungeon.getCurrRoom().phase.equals(AbstractRoom.RoomPhase.COMPLETE)) || (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.COMBAT_REWARD && AbstractDungeon.isScreenUp)){
+        try{
+            if((AbstractDungeon.getCurrRoom().phase.equals(AbstractRoom.RoomPhase.COMPLETE)) || (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.COMBAT_REWARD && AbstractDungeon.isScreenUp)){
 
-            if (AbstractDungeon.cardRewardScreen != null && AbstractDungeon.cardRewardScreen.rewardGroup != null) {
-                for (AbstractCard card : AbstractDungeon.cardRewardScreen.rewardGroup) {
-                    if (card instanceof DeathKnell) {
+                if (AbstractDungeon.cardRewardScreen != null && AbstractDungeon.cardRewardScreen.rewardGroup != null) {
+                    for (AbstractCard card : AbstractDungeon.cardRewardScreen.rewardGroup) {
+                        if (card instanceof DeathKnell) {
+                            inPlay = true;
+                            break;
+                        }
+                    }
+                }
+            }
+            if(!inPlay){
+                for (AbstractCard card : CardUtil.getCombatCards(true,false)){
+                    if (card instanceof DeathKnell){
                         inPlay = true;
                         break;
                     }
                 }
             }
-        }
-        if(!inPlay){
-            for (AbstractCard card : CardUtil.getCombatCards(true,false)){
-                if (card instanceof DeathKnell){
-                    inPlay = true;
-                    break;
-                }
-            }
+
+        }catch (NullPointerException npe){
+
         }
         return inPlay;
     }
