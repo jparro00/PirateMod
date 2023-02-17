@@ -25,7 +25,7 @@
         },
         "thePirate:TimeWarpPower": {
                 "NAME": "Time Warp",
-                "DESCRIPTIONS": ["At the start of turn, the last non-exhaust card you played the previous turn is returned to your hand. Gain [E] equal to its cost."]
+                "DESCRIPTIONS": ["At the start of turn, the first non-exhaust card you played the previous turn is returned to your hand. Gain [E] equal to its cost."]
         },
         "thePirate:RedShirtPower": {
                 "NAME": "Red Shirt",

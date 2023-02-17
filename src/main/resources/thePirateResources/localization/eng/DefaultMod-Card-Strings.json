@@ -70,7 +70,8 @@
   },
   "thePirate:BolsterCrew": {
     "NAME": "Bolster Crew",
-    "DESCRIPTION": "Ethereal. NL Gain !M! Strength. NL The first time you play this each combat, lose !SM! gold."
+    "DESCRIPTION": "thepirate:Mysterious. NL Gain !M! Strength. NL The first time you play this each combat, lose !SM! gold.",
+    "UPGRADE_DESCRIPTION": "thepirate:Mysterious. NL Gain !M! Strength."
   },
   "thePirate:ThiefsAccomplice": {
     "NAME": "Thief's Accomplice",
@@ -83,7 +84,7 @@
   },
   "thePirate:TimeWarp": {
     "NAME": "Time Warp",
-    "DESCRIPTION": "At the start of turn, return the last non- Exhaust card you played the previous turn to your hand. NL Gain [E] equal to its cost.",
+    "DESCRIPTION": "At the start of turn, return the first non- Exhaust card you played the previous turn to your hand. NL Gain [E] equal to its cost.",
     "EXTENDED_DESCRIPTION": ["Tip", "Cannot return played powers to your hand. NL Does not stack."]
   },
   "thePirate:RedShirt": {

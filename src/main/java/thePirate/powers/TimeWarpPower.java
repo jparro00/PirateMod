@@ -25,7 +25,7 @@ public class TimeWarpPower extends AbstractPower implements CloneablePowerInterf
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    public AbstractCard lastCard;
+    public AbstractCard firstCard;
     public int lastCardXCost;
 
 
@@ -52,8 +52,8 @@ public class TimeWarpPower extends AbstractPower implements CloneablePowerInterf
 
     @Override
     public void onUseCard(final AbstractCard card, final UseCardAction action) {
-        if (!card.exhaust){
-            lastCard = card;
+        if (firstCard == null && !card.exhaust){
+            firstCard = card;
             if (card.costForTurn == -1) {
                 lastCardXCost = EnergyPanel.getCurrentEnergy();
             }
@@ -62,26 +62,26 @@ public class TimeWarpPower extends AbstractPower implements CloneablePowerInterf
 
     @Override
     public void atStartOfTurn() {
-        if(lastCard != null){
-            PirateMod.logger.info("lastCard.cardID: " + lastCard.cardID);
+        if(firstCard != null){
+            PirateMod.logger.info("lastCard.cardID: " + firstCard.cardID);
             AbstractPlayer p = AbstractDungeon.player;
             boolean foundCard = false;
             for (AbstractCard card : p.discardPile.group){
-                if (card.uuid.equals(lastCard.uuid)){
+                if (card.uuid.equals(firstCard.uuid)){
                     foundCard = true;
-                    lastCard = card;
+                    firstCard = card;
                     PirateMod.logger.info("discard contains card");
-                    addToTop(new DiscardToHandAction(lastCard));
+                    addToTop(new DiscardToHandAction(firstCard));
                     break;
                 }
             }
             if (!foundCard){
                 for (AbstractCard card : p.drawPile.group){
-                    if (card.uuid.equals(lastCard.uuid)){
+                    if (card.uuid.equals(firstCard.uuid)){
                         foundCard = true;
-                        lastCard = card;
+                        firstCard = card;
                         PirateMod.logger.info("draw contains card");
-                        addToTop(new MoveCardAction(p.drawPile, p.hand, lastCard));
+                        addToTop(new MoveCardAction(p.drawPile, p.hand, firstCard));
                         break;
                     }
                 }
@@ -90,10 +90,10 @@ public class TimeWarpPower extends AbstractPower implements CloneablePowerInterf
                 if (lastCardXCost > 0){
                     addToBot(new GainEnergyAction(lastCardXCost));
                 }else {
-                    addToBot(new GainEnergyAction(lastCard.costForTurn));
+                    addToBot(new GainEnergyAction(firstCard.costForTurn));
                 }
             }
-            lastCard = null;
+            firstCard = null;
             lastCardXCost = 0;
         }
     }
