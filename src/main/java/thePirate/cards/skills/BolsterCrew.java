@@ -55,6 +55,10 @@ public class BolsterCrew extends AbstractDynamicCard implements Mysterious {
         usedThisCombat = true;
     }
 
+    @Override
+    public boolean canUpgrade() {
+        return Mysterious.canUpgrade();
+    }
 
     // Upgraded stats.
     @Override
