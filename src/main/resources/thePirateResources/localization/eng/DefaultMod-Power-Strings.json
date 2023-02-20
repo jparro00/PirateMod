@@ -101,7 +101,7 @@
         },
         "thePirate:StartTurnDigPower": {
                 "NAME": "Dig",
-                "DESCRIPTIONS": ["At the start of your next", " turn, #yDig.", " #b turns, #yDig."]
+                "DESCRIPTIONS": ["At the start of next turn, #yDig up to #b", " time.", " times."]
         },
         "thePirate:CaptainsQuartersPower": {
                 "NAME": "Captain's Quarters",
