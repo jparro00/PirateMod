@@ -135,7 +135,8 @@
   },
   "thePirate:ElectricEel": {
     "NAME": "Electric Eel",
-    "DESCRIPTION": "The first time you draw a card each turn, gain 1 [E]. NL thepirate:Predatory."
+    "DESCRIPTION": "Draw !SM! card and NL gain [E]. NL When you thepirate:Bury this, play it. NL thepirate:Predatory.",
+    "UPGRADE_DESCRIPTION": "Draw !SM! card and NL gain [E] [E]. NL When you thepirate:Bury this, play it. NL thepirate:Predatory."
   },
   "thePirate:LowerDefenses": {
     "NAME": "Lower Defenses",

@@ -19,12 +19,12 @@ public class ChemicalWarfarePower extends AbstractPower implements CloneablePowe
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     public static final float DAMAGE_MODIFIER = 1.5F;
 
-    public ChemicalWarfarePower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
+    public ChemicalWarfarePower(final AbstractCreature owner, final AbstractCreature source) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
-        this.amount = amount;
+        this.amount = -1;
         this.source = source;
 
         type = PowerType.DEBUFF;
@@ -47,6 +47,6 @@ public class ChemicalWarfarePower extends AbstractPower implements CloneablePowe
 
     @Override
     public AbstractPower makeCopy() {
-        return new ChemicalWarfarePower(owner, source, amount);
+        return new ChemicalWarfarePower(owner, source);
     }
 }
