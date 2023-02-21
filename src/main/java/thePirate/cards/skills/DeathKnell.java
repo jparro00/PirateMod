@@ -92,7 +92,7 @@ public class DeathKnell extends AbstractDynamicCard {
                     }
                 }
             }
-            else if (AbstractDungeon.player.inSingleTargetMode){
+            else if (AbstractDungeon.player != null && AbstractDungeon.player.inSingleTargetMode){
                 ArrayList<PowerTip> tmpTips;
                 for (AbstractRelic relic : AbstractDungeon.player.relics){
                     if (relic.hb.hovered && RelicTargeting.canTarget(relic)){
