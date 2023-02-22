@@ -3,14 +3,8 @@ package thePirate.relics;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
-import com.megacrit.cardcrawl.cards.red.Shockwave;
-import com.megacrit.cardcrawl.cards.red.SpotWeakness;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import thePirate.PirateMod;
-import thePirate.cards.attacks.Retaliation;
 import thePirate.util.TextureLoader;
 
 import static thePirate.PirateMod.makeRelicOutlinePath;
@@ -43,16 +37,11 @@ public class ButtonRelic extends CustomRelic implements ClickableRelic { // You 
 
     @Override
     public void onRightClick() {// On right click
-        AbstractPlayer player = AbstractDungeon.player;
-        if (player != null){
-            player.hand.addToHand(new Retaliation());
-            player.hand.addToHand(new Retaliation());
-            player.hand.addToHand(new Retaliation());
-            player.hand.addToHand(new SpotWeakness());
-            player.hand.addToHand(new Shockwave());
-            addToBot(new GainEnergyAction(100));
-
+/*
+        for (String r : AbstractDungeon.commonRelicPool){
+            AbstractRelic relic = CardCrawlGame.get
         }
+*/
     }
     
     // Description

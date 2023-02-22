@@ -44,8 +44,8 @@ public class AttendToCache extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new BuryAction(secondMagic, false));
-        addToBot(new DigAction(magicNumber, false));
+        addToBot(new BuryAction(secondMagic, true));
+        addToBot(new DigAction(magicNumber, true));
     }
 
 

@@ -99,7 +99,7 @@ public abstract class AbstractDynamicCard extends AbstractDefaultCard implements
             }
         }
 
-        if (!hasPredator && hasRare && hasNonRare){
+        if (!hasPredator && hasRare && (hasNonRare || this.rarity != CardRarity.RARE)){
             for (AbstractCard card : AbstractDungeon.player.masterDeck.group){
                 if (card instanceof AbstractLure){
                     lure = (AbstractLure) card;
