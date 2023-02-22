@@ -45,6 +45,9 @@ public class DigAction extends AbstractGameAction {
         String text;
         AbstractPlayer player = this.player;
 
+        if (numberOfCards + player.hand.size() > 10){
+            numberOfCards = 10 - player.hand.size();
+        }
         if (numberOfCards > 1){
             text = TEXT[1] + this.numberOfCards + TEXT[2];
         }else {
