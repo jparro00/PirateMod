@@ -12,7 +12,6 @@ import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.cards.Purgable;
 import thePirate.cards.attacks.Overexert;
-import thePirate.characters.ThePirate;
 
 import static thePirate.PirateMod.makeCardPath;
 
@@ -37,7 +36,7 @@ public class Retreat extends AbstractDynamicCard implements Purgable {
     private static final CardRarity RARITY = CardRarity.SPECIAL; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.SELF;  //   since they don't change much.
     private static final CardType TYPE = CardType.CURSE;       //
-    public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = CardColor.CURSE;
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
