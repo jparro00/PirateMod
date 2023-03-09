@@ -6,7 +6,7 @@
     <groupId>piratemod</groupId>
     <artifactId>PirateMod</artifactId> <!--Keep a note of this one: this is the ID used in the "auto add cards" method-->
     <name>The Abyssal</name>
-    <version>0.7.2</version>
+    <version>0.8.0</version>
     <description>Adds The Abyssal as a new playable character.</description>
 
     <distributionManagement>
