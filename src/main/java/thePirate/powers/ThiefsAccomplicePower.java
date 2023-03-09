@@ -3,15 +3,18 @@ package thePirate.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainGoldAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thePirate.PirateMod;
 import thePirate.cards.powers.OnLoseGold;
+import thePirate.patches.vfx.PirateGainPennyEffect;
 import thePirate.util.TextureLoader;
 
 public class ThiefsAccomplicePower extends AbstractPower implements CloneablePowerInterface, OnLoseGold {
@@ -49,8 +52,21 @@ public class ThiefsAccomplicePower extends AbstractPower implements CloneablePow
         if(gold > owner.gold){
             gold = owner.gold;
         }
+        int thisGold = gold;
         addToTop(new GainGoldAction(gold));
         addToTop(new ReducePowerAction(owner, owner, POWER_ID,1));
+
+        Hitbox goldHb = AbstractDungeon.topPanel.goldHb;
+        addToBot(new AbstractGameAction() {
+            @Override
+            public void update() {
+                for(int i = 0; i < thisGold; ++i) {
+                    AbstractDungeon.effectList.add(new PirateGainPennyEffect(null, owner.hb.cX, owner.hb.cY, goldHb.cX, goldHb.cY, false));
+                }
+                isDone = true;
+
+            }
+        });
     }
 
 
