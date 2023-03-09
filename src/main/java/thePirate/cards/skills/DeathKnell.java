@@ -7,6 +7,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -161,17 +162,15 @@ public class DeathKnell extends AbstractDynamicCard {
             specialCase = true;
         }
         else if (relic instanceof VelvetChoker){
-            addToBot(new AbstractGameAction() {
-                @Override
-                public void update() {
-
-                    addToTop(new GainEnergyAction(1));
-                    relic.counter = 1;
-                    relic.flash();
-                    isDone = true;
-                }
-            });
-
+            addToTop(new GainEnergyAction(1));
+            relic.counter = 0;
+            relic.flash();
+            specialCase = true;
+        }
+        else if (relic instanceof SneckoEye){
+            relic.atPreBattle();
+            addToBot(new DrawCardAction(2));
+            specialCase = true;
         }
         return specialCase;
 

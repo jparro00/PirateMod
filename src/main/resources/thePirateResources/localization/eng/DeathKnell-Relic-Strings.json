@@ -1,7 +1,7 @@
 {
 	"VelvetChoker": {
 		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Gain [E] ."
+		"DESCRIPTION": "Gain [E] and reset this relic's counter to #b0."
 	},
 	"SneckoEye": {
 		"NAME": "Death Knell Effect:",

@@ -89,7 +89,7 @@
         },
         "thePirate:FireAtWillPower": {
                 "NAME": "Fire At Will Power",
-                "DESCRIPTIONS": ["At the start of turn, the #b", "st Cannonball you play costs 0.", "first #b Cannonballs you play cost 0."]
+                "DESCRIPTIONS": ["At the start of turn, the #b", "st Cannonball you play costs #b0.", "At the start of turn, the first #b" ," Cannonballs you play cost #b0."]
         },
         "thePirate:PirateFormPower": {
                 "NAME": "Pirate Form",
