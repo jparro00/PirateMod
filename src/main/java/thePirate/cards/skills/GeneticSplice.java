@@ -22,7 +22,7 @@ public class GeneticSplice extends AbstractDynamicCard {
 
     private static final int COST = 1;
     private static final int UPGRADED_COST = 1;
-    private static final int MAGIC = 3;
+    private static final int MAGIC = 4;
     private static final int UPGRADED_MAGIC = -1;
     public static final int BLOCK = 6;
     private static final int UPGRADED_BLOCK = 0;

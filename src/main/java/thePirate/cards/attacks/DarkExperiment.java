@@ -5,6 +5,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.colorless.TheBomb;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -32,7 +33,7 @@ public class DarkExperiment extends AbstractDynamicCard {
     private static final int UPGRADED_DMG = 4;
     public static final int  MAGIC = 4;
     public static final int UPGRADED_MAGIC = 0;
-    public static final int MAGIC_INCREMENT_AMOUNT = 4;
+    public static final int MAGIC_INCREMENT_AMOUNT = 3;
     public static final int UPGRADED_INCREMENT_AMOUNT = 0;
     public boolean modified;
 
@@ -44,6 +45,7 @@ public class DarkExperiment extends AbstractDynamicCard {
     // /TEXT DECLARATION/
 
     public DarkExperiment() {
+        TheBomb
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.misc = baseMagicNumber = magicNumber = MAGIC;
         secondMagic = baseSecondMagic = MAGIC_INCREMENT_AMOUNT;

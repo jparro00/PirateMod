@@ -3,9 +3,11 @@ package thePirate.cards.attacks;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.ArtifactPower;
 import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.characters.ThePirate;
@@ -27,7 +29,7 @@ public class SorcererAttack extends AbstractDynamicCard {
 
     private static final int DAMAGE = 11;
     private static final int UPGRADE_PLUS_DMG = 4;
-    public static final int MAGIC = 3;
+    public static final int MAGIC = 1;
     public static final int UPGRADE_MAGIC = 0;
 
     // /STAT DECLARATION/
@@ -50,6 +52,9 @@ public class SorcererAttack extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
+        if (m.hasPower(ArtifactPower.POWER_ID)){
+            addToBot(new RemoveSpecificPowerAction(m,p,ArtifactPower.POWER_ID));
+        }
         for (int i = 0; i < magicNumber; i++){
             this.addToBot(new ApplyPowerAction(m,p,new CorruptArtifactPower(m,p,1),1));
         }
