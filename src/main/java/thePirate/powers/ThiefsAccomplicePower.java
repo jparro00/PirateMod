@@ -49,8 +49,8 @@ public class ThiefsAccomplicePower extends AbstractPower implements CloneablePow
         if(gold > owner.gold){
             gold = owner.gold;
         }
-        addToBot(new GainGoldAction(gold));
-        addToBot(new ReducePowerAction(owner, owner, POWER_ID,1));
+        addToTop(new GainGoldAction(gold));
+        addToTop(new ReducePowerAction(owner, owner, POWER_ID,1));
     }
 
 
