@@ -110,13 +110,5 @@
         "thePirate:FreeCannonballPower": {
                 "NAME": "Free Cannonball",
                 "DESCRIPTIONS": ["The next #b", " Cannonball you play this turn costs 0.", " Cannonballs you play this turn cost 0."]
-        },
-        "thePirate:CommonPower": {
-                "NAME": "Placeholder Power",
-                "DESCRIPTIONS": ["You applied #b", " keyword.", " keywords."]
-        },
-        "thePirate:RarePower": {
-                "NAME": "Placeholder Power",
-                "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
         }
 }

@@ -6,9 +6,5 @@
         "thePirate:InkPotion": {
                 "NAME": "Ink Potion",
                 "DESCRIPTIONS": ["Apply "," #yInk to target enemy."]
-        },
-        "thePirate:PlaceholderPotion": {
-                "NAME": "Placeholder Potion",
-                "DESCRIPTIONS": ["Gain ", " At the end of your turn, lose ", " Strength."]
         }
 }

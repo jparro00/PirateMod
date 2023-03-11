@@ -106,23 +106,5 @@
       "inked"
     ],
     "DESCRIPTION": "The next time this enemy would deal damage, prevent damage equal to the ink value, deal that much damage to the enemy, and then remove that much ink."
-  },
-  {
-    "NAMES": [
-      "keyword",
-      "keywords"
-    ],
-    "DESCRIPTION": "Whenever you play a card, gain 1 dexterity this turn only."
-  },
-  {
-    "PROPER_NAME": "Multiword Keyword",
-    "NAMES": [
-      "Multiword Keyword",
-      "multiword_keyword",
-      "multiword_keywords",
-      "multikey",
-      "multikeyword"
-    ],
-    "DESCRIPTION": "Make sure the first element in the NAMES is the same as your PROPER_NAME. The rest is to match keywords like the single word keyword."
   }
 ]

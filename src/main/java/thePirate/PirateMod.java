@@ -5,7 +5,6 @@ import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
 import basemod.abstracts.CustomCard;
-import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
@@ -40,7 +39,6 @@ import thePirate.relics.*;
 import thePirate.tutorials.PirateTutorial;
 import thePirate.util.IDCheckDontTouchPls;
 import thePirate.util.TextureLoader;
-import thePirate.variables.DefaultCustomVariable;
 import thePirate.variables.DefaultSecondMagicNumber;
 import thePirate.variables.StormVariable;
 
@@ -513,7 +511,7 @@ public class PirateMod implements
 //        BaseMod.addRelicToCustomPool(new ButtonRelic(), ThePirate.Enums.COLOR_GRAY);
 
         // This adds a relic to the Shared pool. Every character can find this relic.
-        BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
+//        BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
         
         // Mark relics as seen - makes it visible in the compendium immediately
         // If you don't have this it won't be visible in the compendium until you see them in game
@@ -535,7 +533,6 @@ public class PirateMod implements
         // Add the Custom Dynamic Variables
         logger.info("Add variables");
         // Add the Custom Dynamic variables
-        BaseMod.addDynamicVariable(new DefaultCustomVariable());
         BaseMod.addDynamicVariable(new DefaultSecondMagicNumber());
         BaseMod.addDynamicVariable(new StormVariable());
 
@@ -587,10 +584,12 @@ public class PirateMod implements
         BaseMod.loadCustomStringsFile(RelicStrings.class,
                 getModID() + "Resources/localization/eng/DefaultMod-Relic-Strings.json");
         
+/*
         // Event Strings
         BaseMod.loadCustomStringsFile(EventStrings.class,
                 getModID() + "Resources/localization/eng/DefaultMod-Event-Strings.json");
-        
+*/
+
         // PotionStrings
         BaseMod.loadCustomStringsFile(PotionStrings.class,
                 getModID() + "Resources/localization/eng/DefaultMod-Potion-Strings.json");
@@ -599,9 +598,11 @@ public class PirateMod implements
         BaseMod.loadCustomStringsFile(CharacterStrings.class,
                 getModID() + "Resources/localization/eng/DefaultMod-Character-Strings.json");
         
+/*
         // OrbStrings
         BaseMod.loadCustomStringsFile(OrbStrings.class,
                 getModID() + "Resources/localization/eng/DefaultMod-Orb-Strings.json");
+*/
 
         // UIStrings
         BaseMod.loadCustomStringsFile(UIStrings.class,
