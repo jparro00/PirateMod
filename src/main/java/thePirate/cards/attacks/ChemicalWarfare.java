@@ -49,7 +49,7 @@ public class ChemicalWarfare extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        addToBot(new ApplyPowerAction(m,p,new ChemicalWarfarePower(m,p,magicNumber),0));
+        addToBot(new ApplyPowerAction(m,p,new ChemicalWarfarePower(m,p),0));
 
     }
 

@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.characters.ThePirate;
-import thePirate.powers.ScoutAheadPower;
+import thePirate.powers.StartTurnDigPower;
 
 import static thePirate.PirateMod.makeCardPath;
 
@@ -61,7 +61,7 @@ public class ScoutAhead extends AbstractDynamicCard {
         }
 
         if (effect > 0) {
-            addToBot(new ApplyPowerAction(p,p,new ScoutAheadPower(effect),effect));
+            addToBot(new ApplyPowerAction(p,p,new StartTurnDigPower(effect),effect));
             if (!this.freeToPlayOnce) {
                 p.energy.use(EnergyPanel.totalCount);
             }

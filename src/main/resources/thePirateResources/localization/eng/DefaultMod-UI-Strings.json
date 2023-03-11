@@ -1,4 +1,11 @@
 {
+  "thePirate:DigAction": {
+    "TEXT": [
+      "Choose a card to upgrade put into your hand.",
+      "Choose up to ",
+      " cards to upgrade and put into your hand."
+    ]
+  },
   "thePirate:DownWithTheShipAction": {
     "TEXT": [
       "Select a card to put on top of you draw pile and Bury the rest."
@@ -27,7 +34,7 @@
   "thePirate:BuryAction": {
     "TEXT": [
       "Choose a card to put into your discard pile.",
-      "choose ",
+      "Choose ",
       " cards to put into your discard pile."
     ]
   },

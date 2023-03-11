@@ -65,13 +65,12 @@ public class MakeshiftSpear extends AbstractDynamicCard implements Makeshift, Sp
         return !AbstractDungeon.player.hasRelic(MoltenEgg2.ID);
     }
 
-    //TODO: if there are any other makeshift cards, this needs to be generalized.  Also need to see how default methods work and if this
-    //can be moved directly into the interface
+    //TODO: if there are any other makeshift cards, this needs to be generalized.
     @Override
     public boolean canUpgrade() {
         boolean canUpgrade = true;
         //can't be randomly upgraded at combat reward screens
-        if (AbstractDungeon.screen.equals(AbstractDungeon.CurrentScreen.COMBAT_REWARD) ){
+        if  (AbstractDungeon.currMapNode == null || AbstractDungeon.CurrentScreen.COMBAT_REWARD.equals(AbstractDungeon.screen)){
             canUpgrade = false;
         }
         //don't allow upgrading in random events

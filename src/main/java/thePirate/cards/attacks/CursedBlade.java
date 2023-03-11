@@ -26,7 +26,7 @@ public class CursedBlade extends AbstractDynamicCard {
     private static final int UPGRADED_COST = 1;
 
     private static final int DAMAGE = 12;
-    private static final int UPGRADED_DMG = 3;
+    private static final int UPGRADED_DMG = 5;
     public static final int MAGIC = 1;
 
     // /STAT DECLARATION/

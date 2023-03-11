@@ -54,11 +54,8 @@ public class Kraken extends AbstractPredator{
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new StunMonsterAction(m,p, secondMagic));
-        Iterator var3 = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();
-        AbstractMonster mo;
-        while(var3.hasNext()) {
-            mo = (AbstractMonster)var3.next();
-            if (!mo.isDeadOrEscaped()) {
+        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters){
+            if (!mo.isDeadOrEscaped() && !mo.equals(m)) {
                 this.addToBot(new ApplyPowerAction(mo,p,new InkPower(mo,p,magicNumber),magicNumber));
             }
         }

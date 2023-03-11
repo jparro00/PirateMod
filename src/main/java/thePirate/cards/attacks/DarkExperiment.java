@@ -29,11 +29,11 @@ public class DarkExperiment extends AbstractDynamicCard {
     private static final int UPGRADED_COST = 1;
 
     private static final int DAMAGE = 10;
-    private static final int UPGRADED_DMG = 0;
+    private static final int UPGRADED_DMG = 4;
     public static final int  MAGIC = 4;
     public static final int UPGRADED_MAGIC = 0;
-    public static final int MAGIC_INCREMENT_AMOUNT = 4;
-    public static final int UPGRADED_INCREMENT_AMOUNT = 1;
+    public static final int MAGIC_INCREMENT_AMOUNT = 3;
+    public static final int UPGRADED_INCREMENT_AMOUNT = 0;
     public boolean modified;
 
     // /STAT DECLARATION/
@@ -84,7 +84,7 @@ public class DarkExperiment extends AbstractDynamicCard {
                 upgradeBaseCost(UPGRADED_COST);
             if(UPGRADED_MAGIC > 0)
                 upgradeMagicNumber(UPGRADED_MAGIC);
-            upgradeSecondMagic(UPGRADED_INCREMENT_AMOUNT);
+//            upgradeSecondMagic(UPGRADED_INCREMENT_AMOUNT);
             upgradeDescription();
         }
     }

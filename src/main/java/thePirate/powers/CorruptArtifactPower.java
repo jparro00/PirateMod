@@ -1,18 +1,24 @@
 package thePirate.powers;
 
+import basemod.ReflectionHacks;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.InvisiblePower;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnReceivePowerPower;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.*;
 import thePirate.PirateMod;
 import thePirate.util.TextureLoader;
+
+import java.util.Iterator;
 
 import static thePirate.PirateMod.makePowerPath;
 
@@ -77,6 +83,32 @@ public class CorruptArtifactPower extends AbstractPower implements CloneablePowe
     public boolean onReceivePower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
         if(PowerType.BUFF.equals(power.type) && !(power instanceof InvisiblePower)){
             onSpecificTrigger();
+            outer: if (power instanceof StrengthPower){
+                Iterator<AbstractGameAction> iterator = AbstractDungeon.actionManager.actions.iterator();
+                while (iterator.hasNext()){
+                    AbstractGameAction action = iterator.next();
+                    if (action instanceof ApplyPowerAction) {
+                        ApplyPowerAction applyPowerAction = (ApplyPowerAction)action;
+                        if(ReflectionHacks.getPrivate(applyPowerAction, ApplyPowerAction.class, "powerToApply") instanceof LoseStrengthPower){
+                            iterator.remove();
+                            break outer;
+                        }
+                    }
+                }
+            }
+            outer: if (power instanceof DexterityPower){
+                Iterator<AbstractGameAction> iterator = AbstractDungeon.actionManager.actions.iterator();
+                while (iterator.hasNext()){
+                    AbstractGameAction action = iterator.next();
+                    if (action instanceof ApplyPowerAction) {
+                        ApplyPowerAction applyPowerAction = (ApplyPowerAction)action;
+                        if(ReflectionHacks.getPrivate(applyPowerAction, ApplyPowerAction.class, "powerToApply") instanceof LoseDexterityPower){
+                            iterator.remove();
+                            break outer;
+                        }
+                    }
+                }
+            }
             return false;
         }
         return true;

@@ -70,7 +70,8 @@
   },
   "thePirate:BolsterCrew": {
     "NAME": "Bolster Crew",
-    "DESCRIPTION": "Ethereal. NL Gain !M! Strength. NL The first time you play this each combat, lose !SM! gold."
+    "DESCRIPTION": "thepirate:Mysterious. NL Gain !M! Strength. NL The first time you play this each combat, lose !SM! gold.",
+    "UPGRADE_DESCRIPTION": "thepirate:Mysterious. NL Gain !M! Strength."
   },
   "thePirate:ThiefsAccomplice": {
     "NAME": "Thief's Accomplice",
@@ -83,7 +84,7 @@
   },
   "thePirate:TimeWarp": {
     "NAME": "Time Warp",
-    "DESCRIPTION": "At the start of turn, return the last non- Exhaust card you played the previous turn to your hand. NL Gain [E] equal to its cost.",
+    "DESCRIPTION": "At the start of turn, return the first non- Exhaust card you played the previous turn to your hand. NL Gain [E] equal to its cost.",
     "EXTENDED_DESCRIPTION": ["Tip", "Cannot return played powers to your hand. NL Does not stack."]
   },
   "thePirate:RedShirt": {
@@ -130,11 +131,12 @@
   },
   "thePirate:Kraken": {
     "NAME": "Kraken",
-    "DESCRIPTION": "thepirate:Stun enemy, then apply !M! thepirate:Ink to ALL enemies. NL thepirate:Predatory. Exhaust."
+    "DESCRIPTION": "thepirate:Stun enemy. NL Apply !M! thepirate:Ink to all OTHER enemies. NL thepirate:Predatory. NL Exhaust."
   },
   "thePirate:ElectricEel": {
     "NAME": "Electric Eel",
-    "DESCRIPTION": "The first time you draw a card each turn, gain 1 [E]. NL thepirate:Predatory."
+    "DESCRIPTION": "Draw !SM! card and NL gain [E]. NL When you thepirate:Bury this, play it. NL thepirate:Predatory.",
+    "UPGRADE_DESCRIPTION": "Draw !SM! card and NL gain [E] [E]. NL When you thepirate:Bury this, play it. NL thepirate:Predatory."
   },
   "thePirate:LowerDefenses": {
     "NAME": "Lower Defenses",
@@ -227,7 +229,7 @@
   },
   "thePirate:SorcererAttack": {
     "NAME": "Sorcerer Attack",
-    "DESCRIPTION": "Deal !D! damage. NL Apply thepirate:Corrupt_Artifact to enemy !M! times. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Remove all Artifact and Apply !M! thepirate:Corrupt_Artifact. NL Exhaust."
   },
   "thePirate:CausticInk": {
     "NAME": "Caustic Ink",
@@ -276,8 +278,8 @@
   },
   "thePirate:Retreat": {
     "NAME": "Retreat",
-    "DESCRIPTION": "Gain !M! Vulnerable. NL Permanently replace this card with an Overexert. NL thepirate:Purge.",
-    "UPGRADE_DESCRIPTION": "Gain !M! Vulnerable. NL Permanently replace this card with an [#76ec00]Overexert+[]. NL thepirate:Purge."
+    "DESCRIPTION": "Gain !M! Vulnerable. NL Permanently replace this card with an Overexert. NL When you thepirate:Bury this, play it. NL thepirate:Purge.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Vulnerable. NL Permanently replace this card with an [#76ec00]Overexert+[]. NL When you thepirate:Bury this, play it. NL thepirate:Purge."
   },
   "thePirate:InkShot": {
     "NAME": "Ink Shot",

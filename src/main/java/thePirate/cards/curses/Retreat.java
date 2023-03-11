@@ -5,18 +5,22 @@ import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import thePirate.PirateMod;
+import thePirate.actions.PlayCardAction;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.cards.Purgable;
 import thePirate.cards.attacks.Overexert;
-import thePirate.characters.ThePirate;
+import thePirate.powers.OnBury;
+
+import java.util.List;
 
 import static thePirate.PirateMod.makeCardPath;
 
-public class Retreat extends AbstractDynamicCard implements Purgable {
+public class Retreat extends AbstractDynamicCard implements Purgable, OnBury {
 
 
     // TEXT DECLARATION
@@ -37,7 +41,7 @@ public class Retreat extends AbstractDynamicCard implements Purgable {
     private static final CardRarity RARITY = CardRarity.SPECIAL; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.SELF;  //   since they don't change much.
     private static final CardType TYPE = CardType.CURSE;       //
-    public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = CardColor.CURSE;
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
@@ -119,5 +123,17 @@ public class Retreat extends AbstractDynamicCard implements Purgable {
     @Override
     public void setQueuedForPurge(boolean queuedForPurge) {
         this.queuedForPurge = queuedForPurge;
+    }
+
+    @Override
+    public void onBury(AbstractCard card) {
+        if(this.equals(card)){
+            addToTop(new PlayCardAction(AbstractDungeon.player.discardPile,this,null,false));
+        }
+    }
+
+    @Override
+    public void onBuryCards(List<AbstractCard> cards) {
+
     }
 }

@@ -25,7 +25,7 @@
         },
         "thePirate:TimeWarpPower": {
                 "NAME": "Time Warp",
-                "DESCRIPTIONS": ["At the start of turn, the last non-exhaust card you played the previous turn is returned to your hand. Gain [E] equal to its cost."]
+                "DESCRIPTIONS": ["At the start of turn, the first non-exhaust card you played the previous turn is returned to your hand. Gain [E] equal to its cost."]
         },
         "thePirate:RedShirtPower": {
                 "NAME": "Red Shirt",
@@ -89,7 +89,7 @@
         },
         "thePirate:FireAtWillPower": {
                 "NAME": "Fire At Will Power",
-                "DESCRIPTIONS": ["At the start of turn, the #b", "st Cannonball you play costs 0.", "first #b Cannonballs you play cost 0."]
+                "DESCRIPTIONS": ["At the start of turn, the #b", "st Cannonball you play costs #b0.", "At the start of turn, the first #b" ," Cannonballs you play cost #b0."]
         },
         "thePirate:PirateFormPower": {
                 "NAME": "Pirate Form",
@@ -101,7 +101,7 @@
         },
         "thePirate:StartTurnDigPower": {
                 "NAME": "Dig",
-                "DESCRIPTIONS": ["At the start of your next", " turn, #yDig.", " #b turns, #yDig."]
+                "DESCRIPTIONS": ["At the start of next turn, #yDig up to #b", " time.", " times."]
         },
         "thePirate:CaptainsQuartersPower": {
                 "NAME": "Captain's Quarters",
