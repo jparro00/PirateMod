@@ -1,0 +1,210 @@
+{
+	"VelvetChoker": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Gain [E] and reset this relic's counter to #b0."
+	},
+	"SneckoEye": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Draw #b2 cards.  If you are not #yConfused, gain #yConfused."
+	},
+	"BagOfPreparation": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Draw #b2 cards."
+	},
+	"BronzeScales": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Gain #b3 #yThorns."
+	},
+	"BloodVial": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Gain #b2 HP."
+	},
+	"BagOfMarbles": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Apply #yVulnerable to ALL enemies."
+	},
+	"Vajra": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Gain #b1 #y Strength."
+	},
+	"Anchor": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Gain #b10 #yBlock."
+	},
+	"HappyFlower": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Increment this counter by #b1."
+	},
+	"OddlySmoothStone": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Gain #b1 #yDexterity."
+	},
+	"MercuryHourglass": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Deal #b3 damage to ALL enemies."
+	},
+	"HornCleat": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Reset this relic's counter to #b1 (if it has already been used, reactivate it)"
+	},
+	"DuVuDoll": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Gain #b1 #yStrength for each #rCurse in your Deck."
+	},
+	"FossilizedHelix": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Gain #b1 #yBuffer charge."
+	},
+	"Girya": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Gain #b1 #yStrength for each time you have #yLifted."
+	},
+	"IncenseBurner": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Increment this counter by #b1."
+	},
+	"Pocketwatch": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Reset this relic's counter to #b1."
+	},
+	"CaptainsWheel": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Reset this relic's counter to #b1 (if it has already been used, reactivate it)"
+	},
+	"GamblingChip": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Discard any number of cards, then draw that many cards."
+	},
+	"ThreadAndNeedle": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Gain #b4 #yPlated #yArmor."
+	},
+	"ClockworkSouvenir": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Gain #b1 #yArtifact."
+	},
+	"Toolbox": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Choos #b1 of #b3 random Colorless cards and add the chosen card into your hand."
+	},
+	"Sling": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "If this is an Elite fight, gain #b2 #yStrength."
+	},
+	"Akabeko": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "The next #yAttack you play this combat deals #b8 additional damage."
+	},
+	"CentennialPuzzle": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "The next time you lose HP this combat, draw #b3 cards."
+	},
+	"Pantograph": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "If this is a Boss fight, heal #b25 HP."
+	},
+	"CoffeeDripper": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Gain [E] ."
+	},
+	"SlaversCollar": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Gain [E] ."
+	},
+	"RunicDome": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Gain [E] ."
+	},
+	"FusionHammer": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Gain [E] ."
+	},
+	"PhilosopherStone": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Gain [E] ."
+	},
+	"BustedCrown": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Gain [E] ."
+	},
+	"Ectoplasm": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Gain [E] ."
+	},
+	"Sozu": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Gain [E] ."
+	},
+	"CursedKey": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Gain [E] ."
+	},
+	"Lantern": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Gain [E] ."
+	},
+	"AncientTeaSet": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Gain [E] [E] ."
+	},
+	"CultistMask": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "This turn, you feel more talkative."
+	},
+	"Enchiridion": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Add a random #yPower card into your hand.  It costs #b0 for this turn."
+	},
+	"MutagenicStrength": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Gain #b3 #yStrength."
+	},
+	"Necronomicon": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "The next #yAttack you play this turn that costs #b2 or more is played twice."
+	},
+	"RedMask": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Apply #yWeak to ALL enemies."
+	},
+	"WarpedTongs": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Upgrade a random card in your hand."
+	},
+	"BlackCannon": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Add a #yCannon to your hand."
+	},
+	"SilverCannon": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Add a #yCannon to your hand."
+	},
+	"GoldCannon": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Add a #yCannon to your hand."
+	},
+	"PlatinumCannon": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Add a #yCannon to your hand."
+	},
+	"Motivation": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "The next time you #yBury a card this turn, gain [E] ."
+	},
+	"GreedyChest": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Gain #b1 #yStrength for every #b100 #ygold you have."
+	},
+	"ExperimentalCannon": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Add a #yCannon to your hand."
+	},
+	"ExoticDish": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Apply #b5 #yInk to ALL enemies."
+	},
+	"WoodenLeg": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "#yBury #b3 cards."
+	}
+}

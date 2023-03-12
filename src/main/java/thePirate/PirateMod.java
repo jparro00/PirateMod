@@ -102,7 +102,10 @@ public class PirateMod implements
     private static final String MODNAME = "Pirate Mod";
     private static final String AUTHOR = "Ithilian"; // And pretty soon - You!
     private static final String DESCRIPTION = "The Pirate is a fully fleshed-out custom class with a primary focus on deck control and mechanic synergies rather than raw power.";
-    
+
+    public static Settings.GameLanguage[] SupportedLanguages;
+    public static String[] SupportedLanguagesStrings;
+
     // =============== INPUT TEXTURE LOCATION =================
     
     // Colors (RGB)
@@ -563,60 +566,53 @@ public class PirateMod implements
     }
     
     // ================ /ADD CARDS/ ===================
-    
-    
+
+
+    public static String assetPath(String path) {
+        return getModID() + "Resources/" + path;
+    }
+    private String makeLocalizationPath(Settings.GameLanguage language, String filename) {
+        String langPath = this.getLangString();
+        return assetPath("localization/" + langPath + "/" + filename + ".json");
+    }
+
+    private String getLangString() {
+        Settings.GameLanguage[] var1 = SupportedLanguages;
+        int var2 = var1.length;
+
+        for(int var3 = 0; var3 < var2; ++var3) {
+            Settings.GameLanguage lang = var1[var3];
+            if (lang.equals(Settings.language)) {
+                return Settings.language.name().toLowerCase();
+            }
+        }
+
+        return "eng";
+    }
+
     // ================ LOAD THE TEXT ===================
-    
+
+    private void loadLocalization(Settings.GameLanguage language, Class<?> stringType) {
+        BaseMod.loadCustomStringsFile(stringType, this.makeLocalizationPath(language, stringType.getSimpleName()));
+    }
+
+    private void loadLocalization(Settings.GameLanguage language) {
+        loadLocalization(language, CardStrings.class);
+        loadLocalization(language, PowerStrings.class);
+        loadLocalization(language, RelicStrings.class);
+        loadLocalization(language, PotionStrings.class);
+        loadLocalization(language, CharacterStrings.class);
+        loadLocalization(language, UIStrings.class);
+        loadLocalization(language, TutorialStrings.class);
+        //Special case for DeathKell strings
+        BaseMod.loadCustomStringsFile(CardStrings.class, makeLocalizationPath(language, "DeathKnellStrings"));
+    }
     @Override
     public void receiveEditStrings() {
-        logger.info("You seeing this?");
-        logger.info("Beginning to edit strings for mod with ID: " + getModID());
-        
-        // CardStrings
-        BaseMod.loadCustomStringsFile(CardStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Card-Strings.json");
-        
-        // PowerStrings
-        BaseMod.loadCustomStringsFile(PowerStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Power-Strings.json");
-        
-        // RelicStrings
-        BaseMod.loadCustomStringsFile(RelicStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Relic-Strings.json");
-        
-/*
-        // Event Strings
-        BaseMod.loadCustomStringsFile(EventStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Event-Strings.json");
-*/
-
-        // PotionStrings
-        BaseMod.loadCustomStringsFile(PotionStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Potion-Strings.json");
-        
-        // CharacterStrings
-        BaseMod.loadCustomStringsFile(CharacterStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Character-Strings.json");
-        
-/*
-        // OrbStrings
-        BaseMod.loadCustomStringsFile(OrbStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Orb-Strings.json");
-*/
-
-        // UIStrings
-        BaseMod.loadCustomStringsFile(UIStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-UI-Strings.json");
-
-        // TutorialStrings
-        BaseMod.loadCustomStringsFile(TutorialStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Tutorial-Strings.json");
-
-        // Custom Strings for DeathKnell
-        BaseMod.loadCustomStringsFile(CardStrings.class,
-                getModID() + "Resources/localization/eng/DeathKnell-Relic-Strings.json");
-
-        logger.info("Done editing strings");
+        loadLocalization(Settings.GameLanguage.ENG);
+        if (Settings.language != Settings.GameLanguage.ENG) {
+            loadLocalization(Settings.language);
+        }
     }
     
     // ================ /LOAD THE TEXT/ ===================
@@ -632,9 +628,10 @@ public class PirateMod implements
         // If you're using multiword keywords, the first element in your NAMES array in your keywords-strings.json has to be the same as the PROPER_NAME.
         // That is, in Card-Strings.json you would have #yA_Long_Keyword (#y highlights the keyword in yellow).
         // In Keyword-Strings.json you would have PROPER_NAME as A Long Keyword and the first element in NAMES be a long keyword, and the second element be a_long_keyword
-        
+
+        String lang = this.getLangString();
         Gson gson = new Gson();
-        String json = Gdx.files.internal(getModID() + "Resources/localization/eng/DefaultMod-Keyword-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String json = Gdx.files.internal(assetPath("localization/" + lang + "/KeywordStrings.json")).readString(String.valueOf(StandardCharsets.UTF_8));
         com.evacipated.cardcrawl.mod.stslib.Keyword[] keywords = gson.fromJson(json, com.evacipated.cardcrawl.mod.stslib.Keyword[].class);
         
         if (keywords != null) {
@@ -660,5 +657,9 @@ public class PirateMod implements
             skipTutorials.toggle.toggle();
 
         }
+    }
+    static {
+        SupportedLanguages = new Settings.GameLanguage[]{Settings.GameLanguage.ENG, Settings.GameLanguage.RUS};
+        SupportedLanguagesStrings = new String[]{"English", "Russian"};
     }
 }
