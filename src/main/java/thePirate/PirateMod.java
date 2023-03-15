@@ -206,7 +206,10 @@ public class PirateMod implements
     public static String makePowerPath(String resourcePath) {
         return getModID() + "Resources/images/powers/" + resourcePath;
     }
-    
+    public static String makeScreenPath(String resourcePath) {
+        return getModID() + "Resources/images/screens/" + resourcePath;
+    }
+
     public static String makeEventPath(String resourcePath) {
         return getModID() + "Resources/images/events/" + resourcePath;
     }

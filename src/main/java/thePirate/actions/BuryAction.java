@@ -31,7 +31,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
-import static thePirate.PirateMod.makePowerPath;
+import static thePirate.PirateMod.makeScreenPath;
 
 public class BuryAction extends AbstractGameAction {
     public static final String[] TEXT;
@@ -39,7 +39,7 @@ public class BuryAction extends AbstractGameAction {
     private int numberOfCards;
     private boolean optional;
 
-    private static final Texture buryLabel= TextureLoader.getTexture(makePowerPath("Bury_badge.png"));
+    private static final Texture buryLabel= TextureLoader.getTexture(makeScreenPath("bury_screen_icon.png"));
 
     public List<AbstractCard> cardsSelected;
 

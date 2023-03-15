@@ -24,7 +24,7 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 
-import static thePirate.PirateMod.makePowerPath;
+import static thePirate.PirateMod.makeScreenPath;
 
 public class DigAction extends AbstractGameAction {
 
@@ -33,7 +33,7 @@ public class DigAction extends AbstractGameAction {
     private int numberOfCards;
     private boolean optional;
     public AbstractCard digCard;
-    private static final Texture digLabel= TextureLoader.getTexture(makePowerPath("Dig_badge.png"));
+    private static final Texture digLabel= TextureLoader.getTexture(makeScreenPath("dig_screen_icon.png"));
 
     public DigAction(AbstractCard digCard,int numberOfCards, boolean optional) {
         this.digCard = digCard;
@@ -130,7 +130,7 @@ public class DigAction extends AbstractGameAction {
                 Color color = sb.getColor();
                 sb.setColor(Color.WHITE);
                 float derp = Interpolation.swingOut.apply(1.0F, 1.1F, MathUtils.cosDeg((float)(System.currentTimeMillis() / 4L % 360L)) / 12.0F);
-                sb.draw(digLabel, (float)Settings.WIDTH - 64 - 512, (float) Settings.HEIGHT / 2.0F + 128.0F, 0F, 0F, 256.0F, 256.0F, Settings.scale * derp, Settings.scale * derp, 0.0F, 0, 0, 256, 256, false, false);
+                sb.draw(digLabel, (float)Settings.WIDTH - 64 - 512, (float) Settings.HEIGHT / 2.0F + 64.0F, 0F, 0F, 256.0F, 256.0F, Settings.scale * derp, Settings.scale * derp, 0.0F, 0, 0, 256, 256, false, false);
                 sb.setColor(color);
             }
         }
