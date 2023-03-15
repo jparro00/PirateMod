@@ -7,7 +7,7 @@ import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsAction;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -124,7 +124,7 @@ public class DigAction extends AbstractGameAction {
     public static class DigIconPatch {
 
         public static boolean isDig;
-        @SpirePrefixPatch
+        @SpirePostfixPatch
         public static void renderDigIcon(GridCardSelectScreen __instance, SpriteBatch sb) {
             if (!PeekButton.isPeeking && isDig){
                 Color color = sb.getColor();
