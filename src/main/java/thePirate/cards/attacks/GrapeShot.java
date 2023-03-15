@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePirate.PirateMod;
+import thePirate.actions.PirateSFXAction;
 import thePirate.characters.ThePirate;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
@@ -47,6 +48,7 @@ public class GrapeShot extends AbstractCannonBallCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractMonster target = AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng);
+        this.addToBot(new PirateSFXAction("CANNON_FIRE"));
         this.addToBot(new DamageAction(target, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT, true));
         storm(p,m);
     }

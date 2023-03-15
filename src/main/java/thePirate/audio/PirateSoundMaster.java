@@ -22,6 +22,9 @@ public class PirateSoundMaster extends SoundMaster {
         long startTime = System.currentTimeMillis();
         Settings.SOUND_VOLUME = Settings.soundPref.getFloat("Sound Volume", 0.5F);
         this.map.put("CANNON_HIT_SHIP", load("cannon_hit_ship_short.ogg"));
+        this.map.put("CANNON_FIRE", load("cannon_fire.ogg"));
+        this.map.put("CHAINS", load("chains_crashing.ogg"));
+        this.map.put("INK_SPLAT_CANNON", load("ink_splat.ogg"));
 
         PirateMod.logger.info("Sound Effect Volume: " + Settings.SOUND_VOLUME);
         PirateMod.logger.info("Loaded " + this.map.size() + " Sound Effects");

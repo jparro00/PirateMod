@@ -1,12 +1,16 @@
 package thePirate.cards.attacks;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.GhostlyFireEffect;
+import com.megacrit.cardcrawl.vfx.combat.FireballEffect;
 import thePirate.PirateMod;
 import thePirate.actions.HeatedShotAction;
+import thePirate.actions.PirateSFXAction;
 import thePirate.characters.ThePirate;
 
 import java.util.List;
@@ -62,8 +66,13 @@ public class HeatedShot extends AbstractCannonBallCard {
             }
         }
 
+        if (target != null && !target.isDeadOrEscaped()){
+            this.addToBot(new PirateSFXAction("CANNON_HIT_SHIP"));
+            this.addToBot(new VFXAction(p, new FireballEffect(AbstractDungeon.player.hb.x,AbstractDungeon.player.hb.y,target.hb.x,target.hb.y), 0.01F));
+            AbstractDungeon.effectsQueue.add(new GhostlyFireEffect(target.hb_x, target.hb_y));
+        }
         //this.addToBot(new DamageAction(target, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        this.addToBot(new HeatedShotAction(target, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY, this));
+        this.addToBot(new HeatedShotAction(target, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE, this));
 
     }
 

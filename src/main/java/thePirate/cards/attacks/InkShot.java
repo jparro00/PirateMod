@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePirate.PirateMod;
+import thePirate.actions.PirateSFXAction;
 import thePirate.characters.ThePirate;
 import thePirate.powers.InkPower;
 
@@ -56,6 +57,8 @@ public class InkShot extends AbstractCannonBallCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
 
+        this.addToBot(new PirateSFXAction("CANNON_FIRE"));
+        this.addToBot(new PirateSFXAction("INK_SPLAT_CANNON"));
         for(AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters){
             this.addToBot(new ApplyPowerAction(mo, p, new InkPower(mo, p, magicNumber), magicNumber));
         }
