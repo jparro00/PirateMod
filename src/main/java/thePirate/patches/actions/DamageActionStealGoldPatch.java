@@ -5,10 +5,12 @@ import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
 import thePirate.patches.vfx.PirateGainPennyEffect;
+import thePirate.relics.BetterOnUseGold;
 import thePirate.relics.MoneyBag;
 
 import java.util.ArrayList;
@@ -47,8 +49,15 @@ public class DamageActionStealGoldPatch {
                         AbstractDungeon.effectList.add(new PirateGainPennyEffect(__instance.source, r.hb.cX, r.hb.cY, __instance.source.hb.cX, __instance.source.hb.cY, false));
                     }
                     break;
+                }else if (r instanceof BetterOnUseGold){
+                    ((BetterOnUseGold) r).onLoseGold(___goldAmount[0]);
                 }
 
+            }
+            for (AbstractPower power : ((AbstractPlayer) __instance.target).powers){
+                if (power instanceof BetterOnUseGold){
+                    ((BetterOnUseGold) power).onLoseGold(___goldAmount[0]);
+                }
             }
 
         }

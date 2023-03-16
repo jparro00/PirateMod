@@ -22,6 +22,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.ShopRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
@@ -367,6 +368,14 @@ public class ThePirate extends CustomPlayer {
                         goldAmount = 0;
                     }else{
                         goldAmount -= counter;
+                    }
+                }
+            }
+            if (powers != null){
+                for (AbstractPower power : powers){
+                    if (power instanceof BetterOnUseGold){
+                        ((BetterOnUseGold) power).onLoseGold(goldAmount);
+
                     }
                 }
             }
