@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePirate.PirateMod;
 import thePirate.actions.MenaceAction;
+import thePirate.actions.PirateSFXAction;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.characters.ThePirate;
 
@@ -44,6 +45,7 @@ public class Menace extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new PirateSFXAction("MONKEY_3"));
         this.addToBot(new MenaceAction(p, m));
     }
 

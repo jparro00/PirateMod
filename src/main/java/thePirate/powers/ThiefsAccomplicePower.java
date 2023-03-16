@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thePirate.PirateMod;
+import thePirate.actions.PirateSFXAction;
 import thePirate.patches.vfx.PirateGainPennyEffect;
 import thePirate.relics.BetterOnUseGold;
 import thePirate.util.TextureLoader;
@@ -56,6 +57,7 @@ public class ThiefsAccomplicePower extends AbstractPower implements CloneablePow
             int thisGold = gold;
             addToTop(new GainGoldAction(gold));
             addToTop(new ReducePowerAction(owner, owner, POWER_ID,1));
+            addToTop(new PirateSFXAction("MONKEY_1"));
 
             Hitbox goldHb = AbstractDungeon.topPanel.goldHb;
             addToBot(new AbstractGameAction() {

@@ -25,6 +25,9 @@ public class PirateSoundMaster extends SoundMaster {
         this.map.put("CANNON_FIRE", load("cannon_fire.ogg"));
         this.map.put("CHAINS", load("chains_crashing.ogg"));
         this.map.put("INK_SPLAT_CANNON", load("ink_splat.ogg"));
+        this.map.put("MONKEY_1", load("monkey_sound_1.ogg"));
+        this.map.put("MONKEY_2", load("monkey_sound_2.ogg"));
+        this.map.put("MONKEY_3", load("monkey_sound_3.ogg"));
 
         PirateMod.logger.info("Sound Effect Volume: " + Settings.SOUND_VOLUME);
         PirateMod.logger.info("Loaded " + this.map.size() + " Sound Effects");
