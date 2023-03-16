@@ -21,6 +21,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.relics.RunicDome;
 import com.megacrit.cardcrawl.vfx.BobEffect;
 import thePirate.PirateMod;
 import thePirate.util.TextureLoader;
@@ -112,7 +113,9 @@ public class InkPower extends AbstractPower implements CloneablePowerInterface, 
     @Override
     public void renderIcons(SpriteBatch sb, float x, float y, Color c) {
         super.renderIcons(sb, x, y, c);
-        renderInkIntent(sb);
+        if (!AbstractDungeon.player.hasRelic(RunicDome.ID)){
+            renderInkIntent(sb);
+        }
     }
 
     public void renderInkIntent(SpriteBatch sb){
