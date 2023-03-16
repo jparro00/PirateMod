@@ -2,8 +2,10 @@ package thePirate.characters;
 
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpineAnimation;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
@@ -19,12 +21,14 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.ShopRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thePirate.PirateMod;
+import thePirate.cards.attacks.AbstractCannonBallCard;
 import thePirate.cards.attacks.RoundShot;
 import thePirate.cards.attacks.Strike;
 import thePirate.cards.skills.Defend;
@@ -89,7 +93,7 @@ public class ThePirate extends CustomPlayer {
 
     // =============== /STRINGS/ =================
 
-
+    private boolean isCannonAnimation;
 
     // =============== CHARACTER CLASS START =================
 
@@ -183,6 +187,42 @@ public class ThePirate extends CustomPlayer {
 */
 
         return retVal;
+    }
+
+    @Override
+    public void useCard(AbstractCard c, AbstractMonster monster, int energyOnUse) {
+        if (c instanceof AbstractCannonBallCard){
+            isCannonAnimation = true;
+        }
+        else {
+            isCannonAnimation = false;
+        }
+        super.useCard(c, monster, energyOnUse);
+    }
+
+    @Override
+    protected void updateFastAttackAnimation() {
+        if (isCannonAnimation){
+            this.animationTimer -= Gdx.graphics.getDeltaTime();
+            float targetPos = 90.0F * Settings.scale;
+            if (!this.isPlayer) {
+                targetPos = -targetPos;
+            }
+
+            if (this.animationTimer > 0.5F) {
+                this.animX = -(Interpolation.exp5In.apply(0.0F, targetPos, (1.0F - this.animationTimer / 1.0F) * 2.0F));
+            } else if (this.animationTimer < 0.0F) {
+                this.animationTimer = 0.0F;
+                this.animX = 0.0F;
+            } else {
+                this.animX = -(Interpolation.fade.apply(0.0F, targetPos, (this.animationTimer / 1.0F * 2.0F)));
+            }
+        }
+        else {
+            super.updateFastAttackAnimation();
+        }
+
+
     }
 
     // character Select screen effect
