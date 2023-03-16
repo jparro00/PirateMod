@@ -203,6 +203,10 @@
 		"NAME": "Death Knell Effect:",
 		"DESCRIPTION": "Apply #b5 #yInk to ALL enemies."
 	},
+	"NavigationDevice": {
+		"NAME": "Death Knell Effect:",
+		"DESCRIPTION": "Reset this relic's counter to #b1 (if it has already been used, reactivate it)"
+	},
 	"WoodenLeg": {
 		"NAME": "Death Knell Effect:",
 		"DESCRIPTION": "#yBury #b3 cards."

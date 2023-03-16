@@ -107,6 +107,7 @@ public class RelicTargeting extends TargetingHandler<AbstractRelic> {
             case "thePirate:ExperimentalCannon":
             case "thePirate:ExoticDish":
             case "thePirate:WoodenLeg":
+            case "thePirate:NavigationDevice":
                 canTarget = true;
                 break;
             default:
