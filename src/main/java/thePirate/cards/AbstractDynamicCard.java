@@ -61,21 +61,20 @@ public abstract class AbstractDynamicCard extends AbstractDefaultCard implements
     }
 
     public void storm(AbstractPlayer p, AbstractMonster m){
-        if (storm){
+        if (storm && !stormPending){
             int cardsPlayedThisTurn = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
-            if(!this.stormPending){
-                for (int i = 0; i < cardsPlayedThisTurn - 1; i++){
-                    AbstractDynamicCard tmp = (AbstractDynamicCard)this.makeSameInstanceOf();
-                    tmp.exhaust = false;
-                    tmp.stormPending = true;
-                    tmp.current_x = ((AbstractCard)this).current_x;
-                    tmp.current_y = ((AbstractCard)this).current_y;
-                    tmp.target_x = (float) Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
-                    tmp.target_y = (float)Settings.HEIGHT / 2.0F;
-                    tmp.applyPowers();
-                    tmp.purgeOnUse = true;
-                    AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, m, ((AbstractCard)this).energyOnUse, true, true), true);
-                }
+            cardsPlayedThisTurn += AbstractDungeon.actionManager.cardQueue.size() - 1;
+            for (int i = 0; i < cardsPlayedThisTurn - 1; i++){
+                AbstractDynamicCard tmp = (AbstractDynamicCard)this.makeSameInstanceOf();
+                tmp.exhaust = false;
+                tmp.stormPending = true;
+                tmp.current_x = ((AbstractCard)this).current_x;
+                tmp.current_y = ((AbstractCard)this).current_y;
+                tmp.target_x = (float) Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
+                tmp.target_y = (float)Settings.HEIGHT / 2.0F;
+                tmp.applyPowers();
+                tmp.purgeOnUse = true;
+                AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, m, ((AbstractCard)this).energyOnUse, true, true), false);
             }
         }
     }
