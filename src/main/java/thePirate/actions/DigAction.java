@@ -53,7 +53,7 @@ public class DigAction extends AbstractGameAction {
 
     public void queueDigIcon(){
         DigIconPatch.isDig= true;
-        addToBot(new AbstractGameAction() {
+        addToTop(new AbstractGameAction() {
             @Override
             public void update() {
                 DigIconPatch.isDig = false;

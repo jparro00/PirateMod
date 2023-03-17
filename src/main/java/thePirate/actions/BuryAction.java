@@ -74,7 +74,7 @@ public class BuryAction extends AbstractGameAction {
 
     public void queueBuryIcon(){
         BuryIconPatch.isBury = true;
-        addToBot(new AbstractGameAction() {
+        addToTop(new AbstractGameAction() {
             @Override
             public void update() {
                 BuryIconPatch.isBury = false;
