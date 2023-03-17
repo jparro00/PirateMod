@@ -1,0 +1,128 @@
+{
+  "thePirate:Button": {
+    "NAME": "Button",
+    "FLAVOR": "Click Me!",
+    "DESCRIPTIONS": [
+      "Used for dev only, can't show up in a run."
+    ]
+  },
+  "thePirate:WoodenCompass": {
+    "NAME": "Wooden Compass",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "Whenever you #ythepirate:Bury a card, deal #b5 damage to a random enemy."
+    ]
+  },
+  "thePirate:MoneyBag": {
+    "NAME": "Money Bag",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "When you spend #ygold at shops, add it here.  When you lose #ygold, lose it from here first instead."
+    ]
+  },
+  "thePirate:ExperimentalCannon": {
+    "NAME": "Experimental Cannon",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "Replaces your #yCannon #yrelic (or #yGunsmith's #yBible ). NL At the start of combat, add a Cannon to your hand. NL #yCannon #ygains: NL The next Cannonball you play this turn costs #b0 and is played twice."
+    ]
+  },
+  "thePirate:NavigationDevice": {
+    "NAME": "Navigation Device",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "At the start of your 2nd turn, #ythepirate:Dig."
+    ]
+  },
+  "thePirate:WritingReed": {
+    "NAME": "Writing Reed",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "Whenever you apply #ythepirate:Ink, apply #b1 additional #ythepirate:Ink."
+    ]
+  },
+  "thePirate:WoodenLeg": {
+    "NAME": "Wooden Leg",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "At the start of battle, #ythepirate:Bury up to #b3 cards."
+    ]
+  },
+  "thePirate:Motivation": {
+    "NAME": "Motivation",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "The first time you #ythepirate:Bury each turn, gain [E] ."
+    ]
+  },
+  "thePirate:ExoticDish": {
+    "NAME": "Exotic Dish",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "At the start of battle, apply #b5 #ythepirate:Ink to ALL enemies."
+    ]
+  },
+  "thePirate:Coral": {
+    "NAME": "Inspirational Ornament",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "Upon pickup, choose #b1 of #b20 cards from the base characters to add to your deck.",
+      "Choose a card to add to your deck."
+    ]
+  },
+  "thePirate:GreedyChest": {
+    "NAME": "Greedy Chest",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "At the start of battle, gain #b1 #yStrength for every #b100 #ygold you have."
+    ]
+  },
+  "thePirate:GunsmithsBible": {
+    "NAME": "Gunsmith's Bible",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "Right click to permanently replace this with a #yCannon #yTrinket Relic, based on your current #yAct.",
+      "Waiting until later Acts grants progressively stronger Cannon Trinket Relics.",
+      "Cannon Trinket Relics:",
+      "#yCannon card gains (cumulative): NL #yBlack #yCannon #y(Act #y1):  NL The next Cannonball you play this turn costs #b0. NL #ySilver #yCannon #y(Act #y2): NL ...and NL Apply #yVulnerable to ALL enemies. NL #yGold #yCannon #y(Act #y3):  NL ...and NL Gain #b2 #yStrength. NL #yPlatinum #yCannon #y(Act #y4): NL ...and NL #yWeak ALL enemies.  NL All enemies lose #b2 #yStrength."
+    ]
+  },
+  "thePirate:BlackCannon": {
+    "NAME": "Black Cannon Trinket",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "At the start of combat, add a Cannon to your hand. NL #yCannon #ygains: NL The next Cannonball you play this turn costs #b0."
+    ]
+  },
+  "thePirate:SilverCannon": {
+    "NAME": "Silver Cannon Trinket",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "At the start of combat, add a Cannon to your hand. NL #yCannon #ygains: NL The next Cannonball you play this turn costs #b0.  NL Apply #yVulnerable to ALL enemies."
+    ]
+  },
+  "thePirate:GoldCannon": {
+    "NAME": "Gold Cannon Trinket",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "At the start of combat, add a Cannon to your hand. NL #yCannon #ygains: NL The next Cannonball you play this turn costs #b0.  NL Apply #yVulnerable to ALL enemies. NL Gain #b2 #yStrength."
+    ]
+  },
+  "thePirate:PlatinumCannon": {
+    "NAME": "Platinum Cannon Trinket",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "At the start of combat, add a Cannon to your hand. NL #yCannon #ygains: NL The next Cannonball you play this turn costs #b0.  NL Apply #yVulnerable and #yWeak to ALL enemies. NL Gain #b2 #yStrength. NL All enemies lose #b2 #yStrength."
+    ]
+  },
+  "thePirate:BottledVoid": {
+    "NAME": "Bottled Void",
+    "FLAVOR": "What is this?",
+    "DESCRIPTIONS": [
+      "Choose a card. You cannot draw the chosen card in your opening hand at the start of battle.",
+      "You cannot draw ",
+      " in your opening hand at the start of battle.",
+      "Select a card to bottle for "
+    ]
+  }
+}

@@ -1,0 +1,375 @@
+{
+  "thePirate:Retaliation": {
+    "NAME": "Retaliation",
+    "DESCRIPTION": "If enemy intends to attack, deal damage equal to enemy intent.",
+    "EXTENDED_DESCRIPTION": ["If enemy intends to attack, deal damage equal to enemy intent (damage !D! X !M! ).","If enemy intends to attack, deal damage equal to enemy intent (damage !D! )."]
+  },
+  "thePirate:GhostOfBlackbeard": {
+    "NAME": "Ghost of Blackbeard",
+    "DESCRIPTION": "Deal !D! damage. NL Costs 1 [E] more for each card thepirate:Buried this combat."
+  },
+  "thePirate:BoardingParty": {
+    "NAME": "Boarding Party",
+    "DESCRIPTION": "Deal !D! damage. NL Bury all non-Attack cards in your draw pile."
+  },
+  "thePirate:DeathKnell": {
+    "NAME": "Death Knell",
+    "DESCRIPTION": "Trigger the start of combat and start of turn effects of target Relic. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": ["Tip", "Works with relics that do things at the beginning of combat (e.g., reset counters, apply buffs/defbuffs) and/or at the beginning of turn (e.g., dealing damage to enemies, incrementing counters)."]
+  },
+  "thePirate:UnstableFormula": {
+    "NAME": "Unstable Formula",
+    "DESCRIPTION": "At the start of turn, Apply thepirate:Ink to ALL enemies equal to their current thepirate:Ink."
+  },
+  "thePirate:Jettison": {
+    "NAME": "Jettison",
+    "DESCRIPTION": "thepirate:Bury !M! cards. NL Gain temporary Strength equal to their cost, and !SM! Strength for each non-playable card thepirate:Buried."
+  },
+  "thePirate:GeneticSplice": {
+    "NAME": "Genetic Splice",
+    "DESCRIPTION": "Remove all thepirate:Ink from enemy. NL Gain 1 Dexterity for every !M! thepirate:Ink removed. NL Gain !B! Block. NL Exhaust."
+  },
+  "thePirate:ScoutAhead": {
+    "NAME": "Scout Ahead",
+    "DESCRIPTION": "Next turn, thepirate:Dig X times. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Next turn, thepirate:Dig X+1 times. NL Exhaust."
+  },
+  "thePirate:PinDown": {
+    "NAME": "Pin Down",
+    "DESCRIPTION": "Apply !M! Weak. NL Shuffle a *Shovel *Blade to your draw pile."
+  },
+  "thePirate:ShovelBlade": {
+    "NAME": "Shovel Blade",
+    "DESCRIPTION": "Retain. NL thepirate:Dig. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL thepirate:Dig twice. NL Exhaust."
+  },
+  "thePirate:EvasiveManeuver": {
+    "NAME": "Evasive Maneuver",
+    "DESCRIPTION": "Apply !M! thepirate:Ink."
+  },
+  "thePirate:ChainShot": {
+    "NAME": "Chain Shot",
+    "DESCRIPTION": "Deal !D! damage. NL Enemy loses !M! Strength this turn. NL Exhaust."
+  },
+  "thePirate:Sandblast": {
+    "NAME": "Sandblast",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak and Vulnerable. NL Costs 1 [E] less for each card thepirate:Buried this turn."
+  },
+  "thePirate:SeaTurtles": {
+    "NAME": "Sea Turtles",
+    "DESCRIPTION": "Deal !D! damage. NL When you thepirate:Bury this, thepirate:Bury a copy. When you thepirate:Dig this, put a copy in your draw pile. NL Exhaust."
+  },
+  "thePirate:Cyclone": {
+    "NAME": "Cyclone",
+    "DESCRIPTION": "Gain !B! Block. NL thepirate:Storm. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": ["Gain !B! Block. NL thepirate:Storm ( !STORM! ). NL Exhaust."]
+  },
+  "thePirate:Headbutt": {
+    "NAME": "Headbutt",
+    "DESCRIPTION": "Deal !D! damage. NL Put a card from your discard pile on top of your draw pile."
+  },
+  "thePirate:BolsterCrew": {
+    "NAME": "Bolster Crew",
+    "DESCRIPTION": "thepirate:Mysterious. NL Gain !M! Strength. NL The first time you play this each combat, lose !SM! gold.",
+    "UPGRADE_DESCRIPTION": "thepirate:Mysterious. NL Gain !M! Strength."
+  },
+  "thePirate:ThiefsAccomplice": {
+    "NAME": "Thief's Accomplice",
+    "DESCRIPTION": "Gain !B! Block. NL The next time you lose gold, gain that much gold."
+  },
+  "thePirate:DarkOffering": {
+    "NAME": "Dark Offering",
+    "DESCRIPTION": "thepirate:Bury up to X cards and apply !M!X thepirate:Ink to ALL enemies. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "thepirate:Bury up to X+1 cards and apply !M! X+1 thepirate:Ink to ALL enemies. NL Exhaust."
+  },
+  "thePirate:TimeWarp": {
+    "NAME": "Time Warp",
+    "DESCRIPTION": "At the start of turn, return the first non- Exhaust card you played the previous turn to your hand. NL Gain [E] equal to its cost.",
+    "EXTENDED_DESCRIPTION": ["Tip", "Cannot return played powers to your hand. NL Does not stack."]
+  },
+  "thePirate:RedShirt": {
+    "NAME": "Red Shirt",
+    "DESCRIPTION": "When you would lose any HP this turn, receive that much thepirate:Bleeding instead. NL Exhaust."
+  },
+  "thePirate:CephalopodForm": {
+    "NAME": "Cephalopod Form",
+    "DESCRIPTION": "Ethereal. NL Whenever you play a card, apply !M! thepirate:Ink to ALL enemies.",
+    "UPGRADE_DESCRIPTION": "Whenever you play a card, apply !M! thepirate:Ink to ALL enemies."
+  },
+  "thePirate:HatchPlot": {
+    "NAME": "Hatch Plot",
+    "DESCRIPTION": "Play a card from your discard pile (cannot choose Hatch Plot). NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Play a card from your discard pile (cannot choose Hatch Plot).",
+    "EXTENDED_DESCRIPTION": ["Select a card to play from your discard pile"]
+  },
+  "thePirate:PirateBay": {
+    "NAME": "Pirate Bay",
+    "DESCRIPTION": "Gain !B! Block. NL Create a copy of a card in your draw pile, then thepirate:Bury it. NL Exhaust."
+  },
+  "thePirate:DarkPlans": {
+    "NAME": "Dark Plans",
+    "DESCRIPTION": "Unplayable. thepirate:Mysterious. NL Apply !M! thepirate:Ink to ALL enemies for each time this was thepirate:Buried",
+    "UPGRADE_DESCRIPTION": "thepirate:Mysterious. NL Apply !M! thepirate:Ink to ALL enemies for each time this was thepirate:Buried",
+    "EXTENDED_DESCRIPTION": ["Unplayable unless Upgraded.", "."," ( !SM! )."]
+  },
+  "thePirate:AttendToCache": {
+    "NAME": "Attend to Cache",
+    "DESCRIPTION": "thepirate:Bury a card, then thepirate:Dig. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "thepirate:Bury a card, then thepirate:Dig !M! times. NL Exhaust."
+  },
+  "thePirate:RetreatToShore": {
+    "NAME": "Retreat to Shore",
+    "DESCRIPTION": "Gain !B! Block. NL thepirate:Bury !M! cards."
+  },
+  "thePirate:BraceForImpact": {
+    "NAME": "Brace For Impact",
+    "DESCRIPTION": "Next turn, gain !B! Block."
+  },
+  "thePirate:AncientCrab": {
+    "NAME": "Ancient Crab",
+    "DESCRIPTION": "Deal !D! damage. NL When thepirate:Buried, return this to your hand and then thepirate:Dig. NL thepirate:Predatory."
+  },
+  "thePirate:Kraken": {
+    "NAME": "Kraken",
+    "DESCRIPTION": "thepirate:Stun enemy. NL Apply !M! thepirate:Ink to all OTHER enemies. NL thepirate:Predatory. NL Exhaust."
+  },
+  "thePirate:ElectricEel": {
+    "NAME": "Electric Eel",
+    "DESCRIPTION": "Draw !SM! card and NL gain [E]. NL When you thepirate:Bury this, play it. NL thepirate:Predatory.",
+    "UPGRADE_DESCRIPTION": "Draw !SM! card and NL gain [E] [E]. NL When you thepirate:Bury this, play it. NL thepirate:Predatory."
+  },
+  "thePirate:LowerDefenses": {
+    "NAME": "Lower Defenses",
+    "DESCRIPTION": "thepirate:Lure. NL Innate. Unplayable. NL On draw, gain !M! Frail, discard this, and draw a card."
+  },
+  "thePirate:WithdrawWeapons": {
+    "NAME": "Withdraw Weapons",
+    "DESCRIPTION": "thepirate:Lure. NL Innate. Unplayable. NL On draw, gain !M! Weak, discard this, and draw a card."
+  },
+  "thePirate:BatheInBlood": {
+    "NAME": "Bathe in Blood",
+    "DESCRIPTION": "thepirate:Lure. NL Innate. Unplayable. NL On draw, gain !M! Vulnerable, discard this, and draw a card."
+  },
+  "thePirate:AncientMap": {
+    "NAME": "Ancient Map",
+    "DESCRIPTION": "Unplayable. NL When you thepirate:Bury this card, draw !M! cards.",
+    "EXTENDED_DESCRIPTION": ["This card is unplayable","",""]
+  },
+  "thePirate:AncientJewel": {
+    "NAME": "Ancient Jewel",
+    "DESCRIPTION": "Unplayable. NL When you thepirate:Bury this card, gain !M! [E].",
+    "EXTENDED_DESCRIPTION": ["This card is unplayable","",""]
+  },
+  "thePirate:Austerity": {
+    "NAME": "Austerity",
+    "DESCRIPTION": "Whenever you thepirate:Bury a card, draw !M! card."
+  },
+  "thePirate:HardenedBrine": {
+    "NAME": "Hardened Brine",
+    "DESCRIPTION": "Whenever you use energy, gain 1 Block for each energy spent."
+  },
+  "thePirate:VolatileInk": {
+    "NAME": "Volatile Ink",
+    "DESCRIPTION": "Gain thepirate:Volatile_Ink."
+  },
+  "thePirate:StormSurge": {
+    "NAME": "Storm Surge",
+    "DESCRIPTION": "Whenever you use energy, gain 1 temporary Strength."
+  },
+  "thePirate:TooMuchRum": {
+    "NAME": "Too Much Rum",
+    "DESCRIPTION": "When you thepirate:Bury a card, Exhaust it and gain !M! Block."
+  },
+  "thePirate:Subdue": {
+    "NAME": "Subdue",
+    "DESCRIPTION": "Deal !D! damage. NL Deals additional damage equal to thepirate:Ink on enemy."
+  },
+  "thePirate:ChemicalWarfare": {
+    "NAME": "Chemical Warfare",
+    "DESCRIPTION": "Deal !D! damage. NL Enemy takes 50% more damage from thepirate:Ink."
+  },
+  "thePirate:FlexibleLimb": {
+    "NAME": "Flexible Limb",
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy has thepirate:Ink, gain [E] and draw 1 card."
+  },
+  "thePirate:BeachBuddy": {
+    "NAME": "Beach Buddy",
+    "DESCRIPTION": "Deal !D! damage. NL Whenever you thepirate:Bury, return this from the discard pile to your Hand."
+  },
+  "thePirate:AncientAlliances": {
+    "NAME": "Ancient Alliances",
+    "DESCRIPTION": "thepirate:Mysterious. NL Deal !D! damage.",
+    "UPGRADE_DESCRIPTION": "thepirate:Mysterious. NL Deal !D! damage. NL Gain !M! [E]."
+  },
+  "thePirate:InkBlast": {
+    "NAME": "Ink Blast",
+    "DESCRIPTION": "Deal !D! damage and apply !M! thepirate:Ink."
+  },
+  "thePirate:DarkExperiment": {
+    "NAME": "Dark Experiment",
+    "DESCRIPTION": "Deal !D! damage and apply !M! thepirate:Ink.  If Fatal, permanently increase thepirate:Ink applied by this card by !SM! . NL Exhaust."
+  },
+  "thePirate:DownWithTheShip": {
+    "NAME": "Down with the Ship",
+    "DESCRIPTION": "Bury all but 1 card from your draw pile, then deal !D! damage for each card thepirate:Buried. NL Exhaust."
+  },
+  "thePirate:CursedBlade": {
+    "NAME": "Cursed Blade",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! thepirate:Corrupt_Artifact."
+  },
+  "thePirate:StrangeBlade": {
+    "NAME": "Strange Blade",
+    "DESCRIPTION": "thepirate:Mysterious. NL Deal !D! damage.",
+    "UPGRADE_DESCRIPTION": "thepirate:Mysterious. NL Deal !D! damage. NL Draw !M! cards."
+  },
+  "thePirate:DavyJonesLocker": {
+    "NAME": "Davy Jones' Locker",
+    "DESCRIPTION": "thepirate:Purge this and the next card you play.",
+    "UPGRADE_DESCRIPTION": "thepirate:Purge this and the next card you play. NL Gain a Davy Jones' Locker to your deck."
+  },
+  "thePirate:SorcererAttack": {
+    "NAME": "Sorcerer Attack",
+    "DESCRIPTION": "Deal !D! damage. NL Remove all Artifact and Apply !M! thepirate:Corrupt_Artifact. NL Exhaust."
+  },
+  "thePirate:CausticInk": {
+    "NAME": "Caustic Ink",
+    "DESCRIPTION": "Enemy loses Block, thepirate:Artifacts, and 2 Strength. NL Apply thepirate:Ink equal to Block lost. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain NL Enemy loses Block, thepirate:Artifacts, and 2 Strength. NL Apply thepirate:Ink equal to Block lost. NL Exhaust."
+  },
+  "thePirate:BeachCrew": {
+    "NAME": "Beach Crew",
+    "DESCRIPTION": "At the start of your turn, you may thepirate:Bury a card."
+  },
+  "thePirate:FireAtWill": {
+    "NAME": "Fire At Will",
+    "DESCRIPTION": "The next Cannonball you play, and The first Cannonball you play each turn costs 0."
+  },
+  "thePirate:Saboteur": {
+    "NAME": "Saboteur",
+    "DESCRIPTION": "Gain !B! Block. NL The next time enemy would gain Block, instead it doesn't.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL The next time ALL enemies would gain Block, instead they don't."
+  },
+  "thePirate:Ransom": {
+    "NAME": "Ransom",
+    "DESCRIPTION": "thepirate:Bury a card.  Gain energy equal to its cost"
+  },
+  "thePirate:Tropomyosin": {
+    "NAME": "Tropomyosin",
+    "DESCRIPTION": "Enemy loses !M! Strength and gains !SM! thepirate:Ink. NL Apply thepirate:Volatile_Ink to enemy for 1 turn. NL Exhaust."
+  },
+  "thePirate:GrapeShot": {
+    "NAME": "Grape Shot",
+    "DESCRIPTION": "Deal !D! damage to a random enemy. NL thepirate:Storm. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": ["Deal !D! damage to a random enemy. NL thepirate:Storm ( !STORM! ). NL Exhaust."]
+  },
+  "thePirate:MomentousAttack": {
+    "NAME": "Momentous Attack",
+    "DESCRIPTION": "Deal !D! damage. NL Deals !M! additional damage for each energy spent this turn."
+  },
+  "thePirate:PirateForm": {
+    "NAME": "Pirate Form",
+    "DESCRIPTION": "Ethereal. NL At the start of your turn, thepirate:Bury and then thepirate:Dig.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, thepirate:Bury and then thepirate:Dig."
+  },
+  "thePirate:Overexert": {
+    "NAME": "Overexert",
+    "DESCRIPTION": "Deal !D! damage.  Permanently replace this card with a Retreat. NL thepirate:Purge.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage.  Permanently replace this card with a [#76ec00]Retreat+[]. NL thepirate:Purge."
+  },
+  "thePirate:Retreat": {
+    "NAME": "Retreat",
+    "DESCRIPTION": "Gain !M! Vulnerable. NL Permanently replace this card with an Overexert. NL When you thepirate:Bury this, play it. NL thepirate:Purge.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Vulnerable. NL Permanently replace this card with an [#76ec00]Overexert+[]. NL When you thepirate:Bury this, play it. NL thepirate:Purge."
+  },
+  "thePirate:InkShot": {
+    "NAME": "Ink Shot",
+    "DESCRIPTION": "Deal !D! damage and apply !M! thepirate:Ink to ALL enemies. NL Exhaust."
+  },
+  "thePirate:Mercenaries": {
+    "NAME": "Mercenaries",
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage.  The first time you play this each combat, lose !M! gold."
+  },
+  "thePirate:Menace": {
+    "NAME": "Menace",
+    "DESCRIPTION": "Double all debuffs on enemy. NL Exhaust."
+  },
+  "thePirate:HeadToShore": {
+    "NAME": "Head to Shore",
+    "DESCRIPTION": "Discard a card.  NL At the start of your next turn, thepirate:Dig.",
+    "UPGRADE_DESCRIPTION": "Draw a card and Discard a card.  NL At the start of your next turn, thepirate:Dig."
+  },
+  "thePirate:Dig": {
+    "NAME": "Dig",
+    "DESCRIPTION": "thepirate:Dig.",
+    "UPGRADE_DESCRIPTION": "thepirate:Dig. NL Draw !SM! card."
+  },
+  "thePirate:TrustyShovel": {
+    "NAME": "Trusty Shovel",
+    "DESCRIPTION": "Deal !D! damage.  NL thepirate:Bury !M! card."
+  },
+  "thePirate:ShotsInTheDark": {
+    "NAME": "Shots in the Dark",
+    "DESCRIPTION": "Deal !D! damage to a random enemy !M! times.  NL If this kills an enemy, play this card again."
+  },
+  "thePirate:HeatedShot": {
+    "NAME": "Heated Shot",
+    "DESCRIPTION": "Deal !D! damage to the leftmost enemy. NL If this kills an enemy, play this card again. NL Exhaust."
+  },
+  "thePirate:CaptainsQuarters": {
+    "NAME": "Captain's Quarters",
+    "DESCRIPTION": "This Turn, your next Attack or Skill is played twice.  NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "This Turn, your next Attack or Skill is played twice."
+  },
+  "thePirate:MakeshiftSpear": {
+    "NAME": "Makeshift Spear",
+    "DESCRIPTION": "Deal !D! damage to all enemies. NL When this card is Upgraded, remove it from your deck instead.",
+    "UPGRADE_DESCRIPTION": "When Upgraded, immediately remove this card from your deck."
+  },
+  "thePirate:SwabTheDeck": {
+    "NAME": "Swab The Deck",
+    "DESCRIPTION": "Gain !B! Block.  If this is the first card you played this turn gain !M! additional Block."
+  },
+  "thePirate:Reload": {
+    "NAME": "Reload",
+    "DESCRIPTION": "Gain !B! Block. NL Return a Cannon or a Cannonball from your Exhaust pile to your hand.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Gain !B! Block. NL Return a Cannon or a Cannonball from your Exhaust pile to your hand."
+  },
+  "thePirate:Defend": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "thePirate:Bury": {
+    "NAME": "Bury",
+    "DESCRIPTION": "thepirate:Bury !M! card. NL Draw !SM! card.",
+    "UPGRADE_DESCRIPTION": "thepirate:Bury !M! card. NL Draw !SM! cards."
+  },
+  "thePirate:GiantBeak": {
+    "NAME": "Giant Beak",
+    "DESCRIPTION": "Apply !M! Vulnerable, then deal !D! damage.",
+    "EXTENDED_DESCRIPTION": ["Tip", "Giant Beak applies #yVulnerable before dealing damage.  Hover over enemy to see the calculated damage that will be applied after #yVulnerable."]
+  },
+  "thePirate:Cutlass": {
+    "NAME": "Cutlass",
+    "DESCRIPTION": "Deal !D! damage.  NL Put this card on top of your draw pile and reduce it's damage by !M!."
+  },
+  "thePirate:Cannon": {
+    "NAME": "Cannon",
+    "DESCRIPTION": "Retain. Exhaust. NL While this is in your hand, Retain 1 Cannonball this turn."
+  },
+  "thePirate:RoundShot": {
+    "NAME": "Round Shot",
+    "DESCRIPTION": "Deal !D! damage. NL Exhaust"
+  },
+  "thePirate:Strike": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "thePirate:Parry": {
+    "NAME": "Parry",
+    "DESCRIPTION": "Gain !B! Block. NL Gain [E]."
+  },
+  "thePirate:Riposte": {
+    "NAME": "Riposte",
+    "DESCRIPTION": "Deal !D! damage. NL Gain [E]."
+  }
+}
