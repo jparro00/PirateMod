@@ -1,10 +1,10 @@
 {
         "thePirate:IslandPotion": {
-                "NAME": "Island Potion",
-                "DESCRIPTIONS": ["#yBury, and then #yDig."]
+                "NAME": "Островное Пойло",
+                "DESCRIPTIONS": ["#yЗакопайте и #yВыкопайте."]
         },
         "thePirate:InkPotion": {
-                "NAME": "Ink Potion",
-                "DESCRIPTIONS": ["Apply "," #yInk to target enemy."]
+                "NAME": "Банка Чернил",
+                "DESCRIPTIONS": ["Накладывает "," #yЧернил."]
         }
 }
