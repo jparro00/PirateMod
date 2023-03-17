@@ -230,7 +230,7 @@ public class BuryAction extends AbstractGameAction {
                 Color color = sb.getColor();
                 sb.setColor(Color.WHITE);
                 float derp = Interpolation.swingOut.apply(1.0F, 1.1F, MathUtils.cosDeg((float)(System.currentTimeMillis() / 4L % 360L)) / 12.0F);
-                sb.draw(buryLabel, 64, (float) Settings.HEIGHT / 2.0F + 128.0F, 0F, 0F, 256.0F, 256.0F, Settings.scale * derp, Settings.scale * derp, 0.0F, 0, 0, 256, 256, false, false);
+                sb.draw(buryLabel, (32 * Settings.scale), (float) Settings.HEIGHT / 2.0F + (64 * Settings.scale), 0F, 0F, 256.0F, 256.0F, Settings.scale * derp, Settings.scale * derp, 0.0F, 0, 0, 256, 256, false, false);
                 sb.setColor(color);
             }
         }
