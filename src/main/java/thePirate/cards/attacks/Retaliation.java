@@ -1,6 +1,7 @@
 package thePirate.cards.attacks;
 
 import basemod.ReflectionHacks;
+import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -8,11 +9,14 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.IntangiblePower;
 import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.characters.ThePirate;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static thePirate.PirateMod.makeCardPath;
@@ -84,12 +88,26 @@ public class Retaliation extends AbstractDynamicCard {
     }
 
     @Override
+    public List<TooltipInfo> getCustomTooltips() {
+        List<TooltipInfo> toolTips = new ArrayList<>();
+        String title = languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[2];
+        String desc = languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[3];
+        toolTips.add(new TooltipInfo(title, desc));
+        return toolTips;
+    }
+
+    @Override
+    public void applyPowers() {
+        calculateCardDamage(null);
+    }
+
+    @Override
     public void calculateCardDamage(AbstractMonster m) {
 
         //update description with damage amount based on enemy intent
         if (m != targetMonster){
             targetMonster = m;
-            if (m.getIntentBaseDmg() >=0){
+            if (m != null && m.getIntentBaseDmg() >=0){
                 int multiAmt = ReflectionHacks.getPrivate(m, AbstractMonster.class, "intentMultiAmt");
                 if (multiAmt > 0){
                     rawDescription = languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0];
@@ -103,24 +121,25 @@ public class Retaliation extends AbstractDynamicCard {
         }
         if(m != null && m.getIntentBaseDmg() >= 0) {
             baseDamage = m.getIntentBaseDmg();
-            isDamageModified = true;
 
-            if(m != null && m.getIntentBaseDmg() >= 0){
-                int multiAmt = ReflectionHacks.getPrivate(m, AbstractMonster.class, "intentMultiAmt");
-                if (multiAmt > 0) {
-                    baseMagicNumber = multiAmt;
-                    magicNumber = baseMagicNumber;
-                    upgradedMagicNumber = true;
-//                    initializeDescription();
-                }else {
-                    baseMagicNumber = 1;
-                    magicNumber = baseMagicNumber;
-                    upgradedMagicNumber = false;
-//                    initializeDescription();
-                }
-
+            int multiAmt = ReflectionHacks.getPrivate(m, AbstractMonster.class, "intentMultiAmt");
+            if (multiAmt > 0) {
+                baseMagicNumber = multiAmt;
+                magicNumber = baseMagicNumber;
+                upgradedMagicNumber = true;
+            }else {
+                baseMagicNumber = 1;
+                magicNumber = baseMagicNumber;
+                upgradedMagicNumber = false;
             }
-            super.calculateCardDamage(m);
+
+            damage = m.getIntentDmg();
+            //special case for intangible
+            if (m.hasPower(IntangiblePower.POWER_ID)){
+                damage = 1;
+            }
+            isDamageModified = baseDamage != damage;
+
         }else {
             baseDamage = 0;
             isDamageModified = false;

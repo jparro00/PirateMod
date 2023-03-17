@@ -27,6 +27,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import thePirate.audio.PirateSoundMaster;
 import thePirate.cards.AbstractDefaultCard;
 import thePirate.cards.lures.AbstractLure;
 import thePirate.cards.predators.AbstractPredator;
@@ -89,6 +90,7 @@ public class PirateMod implements
     // Making relics? EditRelicsSubscriber. etc., etc., for a full list and how to make your own, visit the basemod wiki.
     public static final Logger logger = LogManager.getLogger(PirateMod.class.getName());
     private static String modID;
+    public static PirateSoundMaster sound;
 
     public static final String CANT_PLAY = "thePirate:CannotPlay";
 
@@ -209,7 +211,10 @@ public class PirateMod implements
     public static String makePowerPath(String resourcePath) {
         return getModID() + "Resources/images/powers/" + resourcePath;
     }
-    
+    public static String makeScreenPath(String resourcePath) {
+        return getModID() + "Resources/images/screens/" + resourcePath;
+    }
+
     public static String makeEventPath(String resourcePath) {
         return getModID() + "Resources/images/events/" + resourcePath;
     }
@@ -424,6 +429,7 @@ public class PirateMod implements
         });
         
         settingsPanel.addUIElement(skipTutorials); // Add the button to the settings panel. Button is a go.
+        sound = new PirateSoundMaster();
         
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
 

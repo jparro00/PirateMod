@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePirate.PirateMod;
+import thePirate.actions.PirateSFXAction;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.characters.ThePirate;
 import thePirate.powers.SaboteurPower;
@@ -50,6 +51,7 @@ public class Saboteur extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new PirateSFXAction("MONKEY_2"));
         addToBot(new GainBlockAction(p, block));
         if(target == CardTarget.ALL_ENEMY){
             Iterator iter = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();

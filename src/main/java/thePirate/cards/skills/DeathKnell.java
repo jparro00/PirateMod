@@ -24,6 +24,7 @@ import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.cards.targeting.RelicTargeting;
 import thePirate.characters.ThePirate;
+import thePirate.relics.NavigationDevice;
 import thePirate.util.CardUtil;
 
 import java.util.ArrayList;
@@ -132,6 +133,18 @@ public class DeathKnell extends AbstractDynamicCard {
             specialCase = true;
         }
         else if (relic instanceof CaptainsWheel){
+            addToBot(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    relic.grayscale = false;
+                    relic.atBattleStart();
+                    relic.atTurnStart();
+                    isDone = true;
+                }
+            });
+            specialCase = true;
+        }
+        else if (relic instanceof NavigationDevice){
             addToBot(new AbstractGameAction() {
                 @Override
                 public void update() {

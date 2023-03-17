@@ -1,7 +1,10 @@
 package thePirate.powers;
 
+import basemod.ReflectionHacks;
 import basemod.interfaces.CloneablePowerInterface;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
@@ -12,9 +15,14 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.relics.RunicDome;
+import com.megacrit.cardcrawl.vfx.BobEffect;
 import thePirate.PirateMod;
 import thePirate.util.TextureLoader;
 
@@ -28,11 +36,13 @@ public class InkPower extends AbstractPower implements CloneablePowerInterface, 
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    public BobEffect bobEffect;
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath(InkPower.class.getSimpleName()+"_84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath(InkPower.class.getSimpleName()+"_32.png"));
+    private static final Texture purpleArrow = TextureLoader.getTexture(makePowerPath("ink_intent.png"));
 
     public InkPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
@@ -41,6 +51,7 @@ public class InkPower extends AbstractPower implements CloneablePowerInterface, 
         this.owner = owner;
         this.amount = amount;
         this.source = source;
+        this.bobEffect = new BobEffect(5,2);
 
         type = PowerType.DEBUFF;
         isTurnBased = false;
@@ -98,6 +109,74 @@ public class InkPower extends AbstractPower implements CloneablePowerInterface, 
 
         return damageAmount;
     }
+
+    @Override
+    public void renderIcons(SpriteBatch sb, float x, float y, Color c) {
+        super.renderIcons(sb, x, y, c);
+        if (!AbstractDungeon.player.hasRelic(RunicDome.ID)){
+            renderInkIntent(sb);
+        }
+    }
+
+    public void renderInkIntent(SpriteBatch sb){
+        sb.setColor(Color.WHITE);
+        AbstractMonster m = (AbstractMonster)owner;
+        int intentDmg = (Integer)ReflectionHacks.getPrivate(m,AbstractMonster.class,"intentDmg");
+        Color color = ReflectionHacks.getPrivate(m,AbstractMonster.class,"intentColor");
+        sb.setColor(color);
+        if (m.getIntentBaseDmg() > 0 && !m.isDeadOrEscaped()){
+            int blockedDmg;
+            int passThroughDmg;
+            int dmg = intentDmg;
+            if (m.hasPower(TropomyosinPower.POWER_ID) || AbstractDungeon.player.hasPower(VolatileInkPower.POWER_ID)){
+                if ((Boolean)ReflectionHacks.getPrivate(m,AbstractMonster.class,"isMultiDmg")){
+                    int intentMultiDmg = (Integer)ReflectionHacks.getPrivate(m,AbstractMonster.class,"intentMultiAmt");
+                    if (dmg >= amount){
+                        blockedDmg = amount;
+                    }
+                    else {
+                        blockedDmg = dmg;
+                    }
+                    blockedDmg *= intentMultiDmg;
+
+                    passThroughDmg = (dmg - amount) * intentMultiDmg;
+                    if (passThroughDmg < 0)
+                        passThroughDmg = 0;
+                }else {
+                    passThroughDmg = dmg - amount;
+                    if (passThroughDmg < 0)
+                        passThroughDmg = 0;
+                    if (dmg >= amount){
+                        blockedDmg = amount;
+                    }
+                    else {
+                        blockedDmg = dmg;
+                    }
+                }
+
+            }else{
+                if ((Boolean)ReflectionHacks.getPrivate(m,AbstractMonster.class,"isMultiDmg")){
+                    int intentMultiDmg = (Integer)ReflectionHacks.getPrivate(m,AbstractMonster.class,"intentMultiAmt");
+                    dmg = intentMultiDmg * intentDmg;
+                }
+                passThroughDmg = dmg - amount;
+                if (passThroughDmg < 0)
+                    passThroughDmg = 0;
+                if (dmg >= amount){
+                    blockedDmg = amount;
+                }
+                else {
+                    blockedDmg = dmg;
+                }
+            }
+
+            bobEffect.update();
+            sb.draw(purpleArrow, m.intentHb.cX - (64.0F*3), m.intentHb.cY - 64.0F + bobEffect.y, 64.0F, 64.0F, 128.0F, 128.0F, Settings.scale, Settings.scale, 0, 0, 0, 128, 128, false, false);
+            FontHelper.renderFontLeftTopAligned(sb, FontHelper.topPanelInfoFont, Integer.toString(passThroughDmg),m.intentHb.cX - (30.0F+64) * Settings.scale, m.intentHb.cY + bobEffect.y - 12.0F * Settings.scale, color);
+            FontHelper.renderFontLeftTopAligned(sb, FontHelper.topPanelInfoFont, Integer.toString(blockedDmg),m.intentHb.cX - (48) * Settings.scale, m.intentHb.cY + bobEffect.y + 30.0F * Settings.scale, color);
+        }
+    }
+
 
     @Override
     public void onUseCard(final AbstractCard card, final UseCardAction action) {

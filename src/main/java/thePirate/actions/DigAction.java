@@ -1,18 +1,30 @@
 package thePirate.actions;
 
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Interpolation;
+import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsAction;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.screens.select.GridCardSelectScreen;
+import com.megacrit.cardcrawl.ui.buttons.PeekButton;
 import thePirate.cards.OnDig;
+import thePirate.util.TextureLoader;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
+
+import static thePirate.PirateMod.makeScreenPath;
 
 public class DigAction extends AbstractGameAction {
 
@@ -21,6 +33,7 @@ public class DigAction extends AbstractGameAction {
     private int numberOfCards;
     private boolean optional;
     public AbstractCard digCard;
+    private static final Texture digLabel= TextureLoader.getTexture(makeScreenPath("dig_screen_icon.png"));
 
     public DigAction(AbstractCard digCard,int numberOfCards, boolean optional) {
         this.digCard = digCard;
@@ -38,8 +51,19 @@ public class DigAction extends AbstractGameAction {
         this(numberOfCards, false);
     }
 
+    public void queueDigIcon(){
+        DigIconPatch.isDig= true;
+        addToTop(new AbstractGameAction() {
+            @Override
+            public void update() {
+                DigIconPatch.isDig = false;
+                isDone = true;
+            }
+        });
+    }
     @Override
     public void update() {
+        queueDigIcon();
 
         List < AbstractCard > cardsSelected = new ArrayList<>();
         String text;
@@ -94,6 +118,22 @@ public class DigAction extends AbstractGameAction {
 
     static {
         TEXT = CardCrawlGame.languagePack.getUIString("thePirate:DigAction").TEXT;
+    }
+
+    @SpirePatch2(clz = GridCardSelectScreen.class, method = "render", paramtypez = { SpriteBatch.class})
+    public static class DigIconPatch {
+
+        public static boolean isDig;
+        @SpirePostfixPatch
+        public static void renderDigIcon(GridCardSelectScreen __instance, SpriteBatch sb) {
+            if (!PeekButton.isPeeking && isDig){
+                Color color = sb.getColor();
+                sb.setColor(Color.WHITE);
+                float derp = Interpolation.swingOut.apply(1.0F, 1.1F, MathUtils.cosDeg((float)(System.currentTimeMillis() / 4L % 360L)) / 12.0F);
+                sb.draw(digLabel, (float)Settings.WIDTH - (32 * Settings.scale) - (256 * Settings.scale), (float) Settings.HEIGHT / 2.0F + (32 * Settings.scale), 0F, 0F, 256.0F, 256.0F, Settings.scale * derp, Settings.scale * derp, 0.0F, 0, 0, 256, 256, false, false);
+                sb.setColor(color);
+            }
+        }
     }
 
 }

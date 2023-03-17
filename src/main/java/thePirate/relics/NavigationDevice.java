@@ -2,7 +2,8 @@ package thePirate.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.GameActionManager;
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import thePirate.PirateMod;
 import thePirate.actions.DigAction;
@@ -37,18 +38,30 @@ public class NavigationDevice extends CustomRelic {
     }
 
     @Override
-    public void atBattleStart(){
-        battleStart = true;
-
+    public void atBattleStart() {
+        this.counter = 0;
+        this.grayscale = false;
     }
 
     @Override
     public void atTurnStart() {
-        if(!battleStart && GameActionManager.turn == 1)
-            addToBot(new DigAction(1, false));
-        if (battleStart){
-            battleStart = false;
+        if (!this.grayscale) {
+            ++this.counter;
         }
+
+        if (this.counter == 2) {
+            flash();
+            addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+            addToBot(new DigAction(1, false));
+            counter = -1;
+            grayscale = true;
+        }
+
+    }
+    @Override
+    public void onVictory() {
+        this.counter = -1;
+        this.grayscale = false;
     }
 
     // Description
