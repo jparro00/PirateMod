@@ -58,11 +58,11 @@ public class Saboteur extends AbstractDynamicCard {
             while(iter.hasNext()) {
                 AbstractMonster mo = (AbstractMonster)iter.next();
                 if (!mo.isDeadOrEscaped()) {
-                    this.addToBot(new ApplyPowerAction(mo, p, new SaboteurPower(mo, p, 1),0));
+                    this.addToBot(new ApplyPowerAction(mo, p, new SaboteurPower(mo, p, 1),1));
                 }
             }
         }else {
-            this.addToBot(new ApplyPowerAction(m, p, new SaboteurPower(m, p, 1),0));
+            this.addToBot(new ApplyPowerAction(m, p, new SaboteurPower(m, p, 1),1));
         }
 
     }
