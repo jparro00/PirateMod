@@ -1,114 +1,114 @@
 {
         "thePirate:TropomyosinPower": {
-                "NAME": "Tropomyosin",
-                "DESCRIPTIONS": ["#yInk is removed from enemies at the end of turn instead."]
+                "NAME": "Тропомиозин",
+                "DESCRIPTIONS": ["#yЧернила с врага снимаются в конце хода, а не после первой атаки."]
         },
         "thePirate:RetainCannonballPower": {
-                "NAME": "Retain Cannonball",
-                "DESCRIPTIONS": ["Choose ", "a Cannonball to Retain.", " Cannonballs to Retain."]
+                "NAME": "Оставить Пушечное Ядро",
+                "DESCRIPTIONS": ["Выберите ", " Пушечное Ядро и #yОставьте его.", " Пушечных Ядер и #yОставьте их."]
         },
         "thePirate:UnstableFormulaPower": {
-                "NAME": "Unstable Formula",
-                "DESCRIPTIONS": ["At the start turn, apply #yInk to ALL enemies equal to ", " their current #yInk.", "X their current #yInk."]
+                "NAME": "Нестабильная Формула",
+                "DESCRIPTIONS": ["Наложите на врагов #yЧернила, равные ", "Х их текущим #yЧернилам в начале вашего хода.", "Х их текущим #yЧернилам в начале вашего хода."]
         },
         "thePirate:ScoutAheadPower": {
-                "NAME": "Scout Ahead",
-                "DESCRIPTIONS": ["At the start of next turn, #yDig up to #b", " time.", " times."]
+                "NAME": "Разведка",
+                "DESCRIPTIONS": ["#yВыкопайте до #b", " карты в начале каждого вашего хода.", " карт в начале каждого вашего хода."]
         },
         "thePirate:PlayCannonballTwicePower": {
-                "NAME": "Double Cannonball",
-                "DESCRIPTIONS": ["The next #b", " Cannonball you play is played twice.", " Cannonballs you play are played twice."]
+                "NAME": "Двойное Ядро",
+                "DESCRIPTIONS": ["#b", " следующее Пушечное Ядро разыгрывается дважды.", " следующих Пушечных Ядер разыгрываются дважды."]
         },
         "thePirate:ThiefsAccomplicePower": {
-                "NAME": "Thief's Accomplice",
-                "DESCRIPTIONS": ["The next #b", " time you would lose #ygold, gain that much #ygold."," times you would lose #ygold, gain that much #ygold."]
+                "NAME": "Сообщник Вора",
+                "DESCRIPTIONS": ["#b", " следующий раз при потере #yзолота, получите столько же #yзолота."," следующих раз при потере #yзолота, получите столько же #yзолота".]
         },
         "thePirate:TimeWarpPower": {
-                "NAME": "Time Warp",
-                "DESCRIPTIONS": ["At the start of turn, the first non-exhaust card you played the previous turn is returned to your hand. Gain [E] equal to its cost."]
+                "NAME": "Искривление Времени",
+                "DESCRIPTIONS": ["Первая несжигаемая карта, что вы разыграли в прошлом ходу, кладётся в руку в начале хода. Даёт [E] ,равное её цене."]
         },
         "thePirate:RedShirtPower": {
-                "NAME": "Red Shirt",
-                "DESCRIPTIONS": ["The next time you would lose HP, receive that much Bleeding instead."]
+                "NAME": "Красная Рубаха",
+                "DESCRIPTIONS": ["При следующей потере ОЗ, вместо этого получите равное потере #Кровотечение."]
         },
         "thePirate:BleedingPower": {
-                "NAME": "Bleeding",
-                "DESCRIPTIONS": ["At the end of your turn, lose HP equal to half your #yBleeding (round up), and then reduce your #yBleeding by that amount."]
+                "NAME": "Кровотечение",
+                "DESCRIPTIONS": ["Потеряйте ОЗ, равное половине #yКровотечения (округляется вверх) и потеряйте столько же #yКровотечения в конце вашего хода."]
         },
         "thePirate:CephalopodFormPower": {
-                "NAME": "Cephalopod Form",
-                "DESCRIPTIONS": ["When you play a card, apply #b", " Ink to all enemies."," Ink to all enemies."]
+                "NAME": "Облик Головоногого",
+                "DESCRIPTIONS": ["Когда вы разыгрываете карту, накладывает #b", " #Чернил на ВСЕХ врагов."," #Чернил на ВСЕХ врагов."]
         },
         "thePirate:GainBlockNextTurnPower": {
-                "NAME": "Gain Block Next Turn",
-                "DESCRIPTIONS": ["Next turn, gain #b", " #yBlock."," #yBlock."]
+                "NAME": "Даёт Защиту на следующий ход",
+                "DESCRIPTIONS": ["Даёт #b", " #yЗащиты в следующем ходу."," #yЗащиты в следующем ходу."]
         },
         "thePirate:ElectricEelPower": {
-                "NAME": "Electric Eel",
-                "DESCRIPTIONS": ["The first time you draw a card each turn, gain #b", " [E] ."," [E] ."]
+                "NAME": "Электрический Угорь",
+                "DESCRIPTIONS": ["Когда вы берёте карту в первый раз за ход, даёт #b", " [E] ."," [E] ."]
         },
         "thePirate:AusterityPower": {
-                "NAME": "Austerity",
-                "DESCRIPTIONS": ["Whenever you #yBury a card, draw #b", " card."," cards."]
+                "NAME": "Строгость",
+                "DESCRIPTIONS": ["Когда вы #yЗакапываете карту, вы берёте #b", " карту."," карты."]
         },
         "thePirate:HardenedBrinePower": {
-                "NAME": "Hardened Brine",
-                "DESCRIPTIONS": ["Whenever you use energy, gain #b", " #yBlock for each energy spent."," #yBlock for each energy spent."]
+                "NAME": "Застывший Рассол",
+                "DESCRIPTIONS": ["Когда вы тратите [E] , даёт #b", " #yЗащиты за каждую потраченную."," #yЗащиты за каждую потраченную."]
         },
         "thePirate:VolatileInkPower": {
-                "NAME": "Volatile Ink",
-                "DESCRIPTIONS": ["Ink is removed from enemies at the end of turn instead."]
+                "NAME": "Испаряющиеся Чернила",
+                "DESCRIPTIONS": ["#yЧернила снимаются с врага в конце хода (а не после первой его атаки)."]
         },
         "thePirate:StormSurgePower": {
-                "NAME": "Storm Surge",
-                "DESCRIPTIONS": ["Whenever you use energy, gain #b", " temporary #yStrength."," temporary #yStrength."]
+                "NAME": "Штормовая Волна",
+                "DESCRIPTIONS": ["Когда вы тратите [E] , даёт #b", " временной #yСилы."," временной #yСилы."]
         },
         "thePirate:TooMuchRumPower": {
-                "NAME": "Too Much Rum",
-                "DESCRIPTIONS": ["Whenever you #yBury a card, #yExhaust it and gain #b", " #yBlock."," #yBlock."]
+                "NAME": "Слишком Много Рома",
+                "DESCRIPTIONS": ["Когда вы #yЗакапываете карту, она #yСжигается и даёт #b", " #yЗащиты."," #yЗащиты."]
         },
         "thePirate:ChemicalWarfarePower": {
-                "NAME": "Chemical Warfare",
-                "DESCRIPTIONS": ["Enemy takes 50% more damage from Ink."]
+                "NAME": "Химическое Оружие",
+                "DESCRIPTIONS": ["Враги получают на 50% больше урона от #yЧернил."]
         },
         "thePirate:DavyJonesLockerPower": {
-                "NAME": "Davy Jones' Locker",
-                "DESCRIPTIONS": ["Purge the next #b", " card you play."," cards you play."]
+                "NAME": "Рундук Дэви Джонса",
+                "DESCRIPTIONS": ["Изгоните #b", " следующую сыгранную карту."," следующих сыгранных карт."]
         },
         "thePirate:CorruptArtifactPower": {
-                "NAME": "Corrupt Artifact",
-                "DESCRIPTIONS": ["Negates #b", " buff."," buffs."]
+                "NAME": "Проклятый Артефакт",
+                "DESCRIPTIONS": ["Отменяет #b", " положительный эффект."," положительных эффекта."]
         },
         "thePirate:InkPower": {
-                "NAME": "Ink",
-                "DESCRIPTIONS": ["The next time this enemy would deal damage, prevent damage equal to the #yInk value, deal that much damage to the enemy, and then remove that much #yInk."]
+                "NAME": "Чернила",
+                "DESCRIPTIONS": ["В следующий раз при нанесении урона по вам, цель вместо этого нанесёт урон себе, равный количеству #yЧернил, затем потеряет столько же #yЧернила."]
         },
         "thePirate:StartTurnBuryPower": {
-                "NAME": "Beach Crew",
-                "DESCRIPTIONS": ["At the start of turn, bury #b", " card.", " cards."]
+                "NAME": "Пляжная Команда",
+                "DESCRIPTIONS": ["Закопайте #b", " карту в начале хода.", " карты в начале хода."]
         },
         "thePirate:FireAtWillPower": {
-                "NAME": "Fire At Will Power",
-                "DESCRIPTIONS": ["At the start of turn, the #b", "st Cannonball you play costs #b0.", "At the start of turn, the first #b" ," Cannonballs you play cost #b0."]
+                "NAME": "Огонь По Желанию",
+                "DESCRIPTIONS": ["#b", "ое Пушечное Ядро вы разыгрывайте в этом ходу стоит #b0.", "Первые #b" ," Пушечных Ядра вы разыгрываете в этом ходу стоят #b0."]
         },
         "thePirate:PirateFormPower": {
-                "NAME": "Pirate Form",
-                "DESCRIPTIONS": ["At the start of turn, #yBury and then #yDig ", "", ""]
+                "NAME": "Облик Пирата",
+                "DESCRIPTIONS": ["#yЗакопайте и #yВыкопайте в начале каждого вашего хода ", "", ""]
         },
         "thePirate:SabateurPower": {
-                "NAME": "Sabotaged",
-                "DESCRIPTIONS": ["The next #b", " time this enemy would gain #yBlock, instead it doesn't.", " time this enemy would gain #yBlock, instead it doesn't."]
+                "NAME": "Саботирован",
+                "DESCRIPTIONS": ["#b", " следующий раз этот враг не получит #yЗащиту от намерения.", " следующих раза этот враг не получит #yЗащиту от намерения."]
         },
         "thePirate:StartTurnDigPower": {
-                "NAME": "Dig",
-                "DESCRIPTIONS": ["At the start of next turn, #yDig up to #b", " time.", " times."]
+                "NAME": "Выкопать",
+                "DESCRIPTIONS": ["#yВыкопайте до #b", " карты в начале каждого вашего хода.", " карт в начале каждого вашего хода."]
         },
         "thePirate:CaptainsQuartersPower": {
-                "NAME": "Captain's Quarters",
-                "DESCRIPTIONS": ["The next #b", " time you play an Attack or Skill card this turn, it is played twice.", " times you play an Attack or Skill card this turn, it is played twice."]
+                "NAME": "Каюта Капитана",
+                "DESCRIPTIONS": ["#b", " следующий раз вы разыгрываете Атаку или Навык в этом ходу, разыграете их дважды.", " следующих раза вы разыгрываете Атаку или Навык в этом ходу, разыграете их дважды."]
         },
         "thePirate:FreeCannonballPower": {
-                "NAME": "Free Cannonball",
-                "DESCRIPTIONS": ["The next #b", " Cannonball you play this turn costs 0.", " Cannonballs you play this turn cost 0."]
+                "NAME": "Свободное Ядро",
+                "DESCRIPTIONS": ["#b", " следующее Пушечное ЯДро вы разыгрываете в этом ходу стоит 0.", " следующих Пушечных Ядер вы разыгрываете в этом ходу стоят 0."]
         }
 }
