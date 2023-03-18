@@ -1,128 +1,128 @@
 {
   "thePirate:Button": {
-    "NAME": "Button",
-    "FLAVOR": "Click Me!",
+    "NAME": "Кнопка",
+    "FLAVOR": "Нажми меня!",
     "DESCRIPTIONS": [
-      "Used for dev only, can't show up in a run."
+      "Если вы это видите. то вы взломали мод."
     ]
   },
   "thePirate:WoodenCompass": {
-    "NAME": "Wooden Compass",
+    "NAME": "Деревянный компас",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "Whenever you #ythepirate:Bury a card, deal #b5 damage to a random enemy."
+      "Когда вы #ythepirate:Закапываете карту, наносит #b5 урона случ. врагу."
     ]
   },
   "thePirate:MoneyBag": {
-    "NAME": "Money Bag",
+    "NAME": "Мешок денег",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "When you spend #ygold at shops, add it here.  When you lose #ygold, lose it from here first instead."
+      "Когда вы тратите #yзолото у Торговца, добавьте его количество сюда. Когда вы теряете #yзолото, вы сначала тратите его из этого мешка."
     ]
   },
   "thePirate:ExperimentalCannon": {
-    "NAME": "Experimental Cannon",
+    "NAME": "Экспериментальная пушка",
     "FLAVOR": "",
     "DESCRIPTIONS": [
       "Replaces your #yCannon #yrelic (or #yGunsmith's #yBible ). NL At the start of combat, add a Cannon to your hand. NL #yCannon #ygains: NL The next Cannonball you play this turn costs #b0 and is played twice."
     ]
   },
   "thePirate:NavigationDevice": {
-    "NAME": "Navigation Device",
+    "NAME": "Навигационное устройство",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "At the start of your 2nd turn, #ythepirate:Dig."
+      "#ythepirate:Выкопайте в начале вашего второго хода в бою."
     ]
   },
   "thePirate:WritingReed": {
-    "NAME": "Writing Reed",
+    "NAME": "Каламос",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "Whenever you apply #ythepirate:Ink, apply #b1 additional #ythepirate:Ink."
+      "Накладывет ещё #b1 #ythepirate:Чернила, когда вы накладываете #ythepirate:Чернила."
     ]
   },
   "thePirate:WoodenLeg": {
-    "NAME": "Wooden Leg",
+    "NAME": "Деревянная нога",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "At the start of battle, #ythepirate:Bury up to #b3 cards."
+      "#ythepirate:Закопайте до #b3 карт в начале боя."
     ]
   },
   "thePirate:Motivation": {
-    "NAME": "Motivation",
+    "NAME": "Мотиватор",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "The first time you #ythepirate:Bury each turn, gain [E] ."
+      "Когда вы #ythepirate:Закапываете в первый раз за ход, даёт [E] ."
     ]
   },
   "thePirate:ExoticDish": {
-    "NAME": "Exotic Dish",
+    "NAME": "Экзотическое блюдо",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "At the start of battle, apply #b5 #ythepirate:Ink to ALL enemies."
+      "Накладывает #b5 #ythepirate:Чернил на ВСЕХ врагов в начале боя."
     ]
   },
   "thePirate:Coral": {
-    "NAME": "Inspirational Ornament",
+    "NAME": "Вдохновляющий орнамент",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "Upon pickup, choose #b1 of #b20 cards from the base characters to add to your deck.",
-      "Choose a card to add to your deck."
+      "При получении выберите #b1 из #b20 карт оригинальных героев Шпиля и добавьте её в колоду.",
+      "Выберите карту для добавления в колоду."
     ]
   },
   "thePirate:GreedyChest": {
-    "NAME": "Greedy Chest",
+    "NAME": "Сундук жадины",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "At the start of battle, gain #b1 #yStrength for every #b100 #ygold you have."
+      "Даёт #b1 #yСилы за каждые имеющиеся #b100 #yзолота в начале боя."
     ]
   },
   "thePirate:GunsmithsBible": {
-    "NAME": "Gunsmith's Bible",
+    "NAME": "Библия Оружейника",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "Right click to permanently replace this with a #yCannon #yTrinket Relic, based on your current #yAct.",
-      "Waiting until later Acts grants progressively stronger Cannon Trinket Relics.",
-      "Cannon Trinket Relics:",
-      "#yCannon card gains (cumulative): NL #yBlack #yCannon #y(Act #y1):  NL The next Cannonball you play this turn costs #b0. NL #ySilver #yCannon #y(Act #y2): NL ...and NL Apply #yVulnerable to ALL enemies. NL #yGold #yCannon #y(Act #y3):  NL ...and NL Gain #b2 #yStrength. NL #yPlatinum #yCannon #y(Act #y4): NL ...and NL #yWeak ALL enemies.  NL All enemies lose #b2 #yStrength."
+      "Правый клик мыши для замены этой реликвии на #yПушку-#yБезделушку, соответствующую номеру #yАкта.",
+      "Выжидание следующих Актов позволит получить куда более сильную реликвию Пушки.",
+      "Реликвия Пушка-Безделушка:",
+      "#Эффект yКарты Пушки (складывается): NL #yЧёрная #yПушка #y(Акт #y1):  NL Следующее Пушечное Ядро вы играете в этом ходу стоит #b0. NL #yСеребрянная #yПушка #y(Act #y2): NL ...и Наложите #yУязвимость на ВСЕХ врагов. NL #yЗолотая #yПушка #y(Акт #y3):  NL ...и Даёт #b2 #yСилы. NL #yПлатиновая #yПушка #y(Акт #y4): NL ...и ВСЕ враги теряют #b2 #yСилы."
     ]
   },
   "thePirate:BlackCannon": {
-    "NAME": "Black Cannon Trinket",
+    "NAME": "Чёрная пушка-безделушка",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "At the start of combat, add a Cannon to your hand. NL #yCannon #ygains: NL The next Cannonball you play this turn costs #b0."
+      "Добавляет в руку карту #yПушка в начале каждого боя. NL #yЭффект #yПушки: NL Следующее Пушечное Ядро вы играете в этом ходу стоит #b0."
     ]
   },
   "thePirate:SilverCannon": {
-    "NAME": "Silver Cannon Trinket",
+    "NAME": "Серебрянная пушка-безделушка",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "At the start of combat, add a Cannon to your hand. NL #yCannon #ygains: NL The next Cannonball you play this turn costs #b0.  NL Apply #yVulnerable to ALL enemies."
+      "Добавляет в руку карту #yПушка в начале каждого боя. NL #yЭффект #yПушки: NL Следующее Пушечное Ядро вы играете в этом ходу стоит #b0. NL Наложите #yУязвимость на ВСЕХ врагов."
     ]
   },
   "thePirate:GoldCannon": {
-    "NAME": "Gold Cannon Trinket",
+    "NAME": "Золотая пушка-безделушка",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "At the start of combat, add a Cannon to your hand. NL #yCannon #ygains: NL The next Cannonball you play this turn costs #b0.  NL Apply #yVulnerable to ALL enemies. NL Gain #b2 #yStrength."
+      "Добавляет в руку карту #yПушка в начале каждого боя. NL #yЭффект #yПушки: NL Следующее Пушечное Ядро вы играете в этом ходу стоит #b0. NL Наложите #yУязвимость на ВСЕХ врагов. NL Даёт #b2 #yСилы."
     ]
   },
   "thePirate:PlatinumCannon": {
-    "NAME": "Platinum Cannon Trinket",
+    "NAME": "Платиновая пушка-безделушка",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "At the start of combat, add a Cannon to your hand. NL #yCannon #ygains: NL The next Cannonball you play this turn costs #b0.  NL Apply #yVulnerable and #yWeak to ALL enemies. NL Gain #b2 #yStrength. NL All enemies lose #b2 #yStrength."
+      "Добавляет в руку карту #yПушка в начале каждого боя. NL #yЭффект #yПушки: NL Следующее Пушечное Ядро вы играете в этом ходу стоит #b0. NL Наложите #yУязвимость на ВСЕХ врагов. NL Даёт #b2 #yСилы. NL ВСЕ враги теряют #b2 #yСилы."
     ]
   },
   "thePirate:BottledVoid": {
-    "NAME": "Bottled Void",
-    "FLAVOR": "What is this?",
+    "NAME": "Закупоренная Пустота",
+    "FLAVOR": "А это что ещё такое?",
     "DESCRIPTIONS": [
-      "Choose a card. You cannot draw the chosen card in your opening hand at the start of battle.",
-      "You cannot draw ",
-      " in your opening hand at the start of battle.",
-      "Select a card to bottle for "
+      "При получении вы выберете карту. Выбранная карта никогда не берётся в вашу руку в начале боя.",
+      "Вы не можете взять ",
+      " в руку в начале боя.",
+      "Выберите карту для закупоривания "
     ]
   }
 }
