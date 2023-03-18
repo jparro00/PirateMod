@@ -52,7 +52,7 @@
     "NAME": "Мотиватор",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "Когда вы #ythepirate:Закапываете в первый раз за ход, даёт [E] ."
+      "Вы получаете [E] за первое #ythepirate:Закапывание карты в ходу."
     ]
   },
   "thePirate:ExoticDish": {
