@@ -1,210 +1,214 @@
 {
 	"VelvetChoker": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Gain [E] and reset this relic's counter to #b0."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Даёт [E] и сбрасывает счётчик этой реликвии на #b0."
 	},
 	"SneckoEye": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Draw #b2 cards.  If you are not #yConfused, gain #yConfused."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Вы берёте #b2 карты. Если вы не в #yЗамешательстве, накладывает на вас #yЗамешательство."
 	},
 	"BagOfPreparation": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Draw #b2 cards."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Вы берёте #b2 карты."
 	},
 	"BronzeScales": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Gain #b3 #yThorns."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Даёт #b3 #yШипов."
 	},
 	"BloodVial": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Gain #b2 HP."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Даёт #b2 ОЗ."
 	},
 	"BagOfMarbles": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Apply #yVulnerable to ALL enemies."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Накладывает #yУязвимость на ВСЕХ врагов."
 	},
 	"Vajra": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Gain #b1 #y Strength."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Даёт #b1 #yСилы."
 	},
 	"Anchor": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Gain #b10 #yBlock."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Даёт #b10 #yЗащиты."
 	},
 	"HappyFlower": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Increment this counter by #b1."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Увеличивает свой счётчик на #b1."
 	},
 	"OddlySmoothStone": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Gain #b1 #yDexterity."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Даёт #b1 #yЛовкости."
 	},
 	"MercuryHourglass": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Deal #b3 damage to ALL enemies."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Наносит #b3 урона ВСЕМ врагам."
 	},
 	"HornCleat": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Reset this relic's counter to #b1 (if it has already been used, reactivate it)"
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Сбрасывает счётчик реликвии до #b1 (реактивирует, если уже была использована)."
 	},
 	"DuVuDoll": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Gain #b1 #yStrength for each #rCurse in your Deck."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Даёт #b1 #yСилы за каждое #rПроклятие в вашей колоде."
 	},
 	"FossilizedHelix": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Gain #b1 #yBuffer charge."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Предотвращает следующую потерю ОЗ в бою."
 	},
 	"Girya": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Gain #b1 #yStrength for each time you have #yLifted."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Даёт #yСилы, равное значению счётчика."
 	},
 	"IncenseBurner": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Increment this counter by #b1."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Увеличивает свой счётчик на #b1."
 	},
 	"Pocketwatch": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Reset this relic's counter to #b1."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Сбрасывает счётчик реликвии до #b1."
 	},
 	"CaptainsWheel": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Reset this relic's counter to #b1 (if it has already been used, reactivate it)"
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Сбрасывает счётчик реликвии до #b1 (реактивирует, если уже была использована)."
 	},
 	"GamblingChip": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Discard any number of cards, then draw that many cards."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Вы сбрасываете любое количество карт, а затем берёте столько же."
 	},
 	"ThreadAndNeedle": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Gain #b4 #yPlated #yArmor."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Даёт #b4 #yПанциря."
 	},
 	"ClockworkSouvenir": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Gain #b1 #yArtifact."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Даёт #b1 #yАртефакт."
 	},
 	"Toolbox": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Choos #b1 of #b3 random Colorless cards and add the chosen card into your hand."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Выберите #b1 из #b3 случайных Бесцветных карт и добавьте эту карту в руку."
 	},
 	"Sling": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "If this is an Elite fight, gain #b2 #yStrength."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Если вы боретесь с Элитой, даёт #b2 #yСилы."
 	},
 	"Akabeko": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "The next #yAttack you play this combat deals #b8 additional damage."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Следующая разыгранная #yАтака наносит на #b8 больше урона."
 	},
 	"CentennialPuzzle": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "The next time you lose HP this combat, draw #b3 cards."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "При следующей потере ОЗ в этом бою, вы берёте #b3 карты."
 	},
 	"Pantograph": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "If this is a Boss fight, heal #b25 HP."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Если вы боретесь с Боссом, восстанавливает #b25 ОЗ."
 	},
 	"CoffeeDripper": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Gain [E] ."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Даёт [E] ."
 	},
 	"SlaversCollar": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Gain [E] ."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Даёт [E] ."
 	},
 	"RunicDome": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Gain [E] ."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Даёт [E] ."
 	},
 	"FusionHammer": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Gain [E] ."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Даёт [E] ."
 	},
 	"PhilosopherStone": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Gain [E] ."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Даёт [E] ."
 	},
 	"BustedCrown": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Gain [E] ."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Даёт [E] ."
 	},
 	"Ectoplasm": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Gain [E] ."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Даёт [E] ."
 	},
 	"Sozu": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Gain [E] ."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Даёт [E] ."
 	},
 	"CursedKey": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Gain [E] ."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Даёт [E] ."
 	},
 	"Lantern": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Gain [E] ."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Даёт [E] ."
 	},
 	"AncientTeaSet": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Gain [E] [E] ."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Даёт [E] [E] ."
 	},
 	"CultistMask": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "This turn, you feel more talkative."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Вы на редкость болтливы в этом ходу."
 	},
 	"Enchiridion": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Add a random #yPower card into your hand.  It costs #b0 for this turn."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Добавляет в руку случайный #yТалант. Он стоит #b0 до конца хода."
 	},
 	"MutagenicStrength": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Gain #b3 #yStrength."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Даёт #b3 #yСилы."
 	},
 	"Necronomicon": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "The next #yAttack you play this turn that costs #b2 or more is played twice."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Следующая #yАтака в этом ходу с ценой не менее #b2 разыгрывается дважды."
 	},
 	"RedMask": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Apply #yWeak to ALL enemies."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Накладывает #yСлабость на ВСЕХ врагов."
 	},
 	"WarpedTongs": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Upgrade a random card in your hand."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Улучшает случайную карту в руке."
 	},
 	"BlackCannon": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Add a #yCannon to your hand."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Добавляет в руку карту #yПушка."
 	},
 	"SilverCannon": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Add a #yCannon to your hand."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Добавляет в руку карту #yПушка."
 	},
 	"GoldCannon": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Add a #yCannon to your hand."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Добавляет в руку карту #yПушка."
 	},
 	"PlatinumCannon": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Add a #yCannon to your hand."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Добавляет в руку карту #yПушка."
 	},
 	"Motivation": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "The next time you #yBury a card this turn, gain [E] ."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Вы получаете [E] за первую #yЗакопанную карту в этом ходу."
 	},
 	"GreedyChest": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Gain #b1 #yStrength for every #b100 #ygold you have."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Даёт #b1 #yСилы за каждые имеющиеся #b100 #yзолота."
 	},
 	"ExperimentalCannon": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Add a #yCannon to your hand."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Добавляет в руку карту #yПушка."
 	},
 	"ExoticDish": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Apply #b5 #yInk to ALL enemies."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Накладывает #b5 #yЧернил на ВСЕХ врагов."
+	},
+	"NavigationDevice": {
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "Сбрасывает счётчик реликвии до #b1 (реактивирует, если уже была использована)."
 	},
 	"WoodenLeg": {
-		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "#yBury #b3 cards."
+		"NAME": "Эффект Звона Колоколов:",
+		"DESCRIPTION": "#yЗакопайте #b3 карты."
 	}
 }
