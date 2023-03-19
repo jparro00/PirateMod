@@ -171,7 +171,7 @@ public class InkPower extends AbstractPower implements CloneablePowerInterface, 
             }
 
             bobEffect.update();
-            sb.draw(purpleArrow, m.intentHb.cX - (64.0F*3), m.intentHb.cY - 64.0F + bobEffect.y, 64.0F, 64.0F, 128.0F, 128.0F, Settings.scale, Settings.scale, 0, 0, 0, 128, 128, false, false);
+            sb.draw(purpleArrow, m.intentHb.cX - (128 * Settings.scale), m.intentHb.cY - (64 * Settings.scale) + bobEffect.y, 0F, 0F, 128.0F, 128.0F, Settings.scale, Settings.scale, 0, 0, 0, 128, 128, false, false);
             FontHelper.renderFontLeftTopAligned(sb, FontHelper.topPanelInfoFont, Integer.toString(passThroughDmg),m.intentHb.cX - (30.0F+64) * Settings.scale, m.intentHb.cY + bobEffect.y - 12.0F * Settings.scale, color);
             FontHelper.renderFontLeftTopAligned(sb, FontHelper.topPanelInfoFont, Integer.toString(blockedDmg),m.intentHb.cX - (48) * Settings.scale, m.intentHb.cY + bobEffect.y + 30.0F * Settings.scale, color);
         }

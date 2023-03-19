@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thePirate.PirateMod;
+import thePirate.cards.Purgable;
 import thePirate.util.TextureLoader;
 
 //Gain 1 dex for the turn for each card played.
@@ -52,8 +53,7 @@ public class CaptainsQuartersPower extends AbstractPower implements CloneablePow
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (!card.purgeOnUse && (card.type == AbstractCard.CardType.ATTACK || card.type == AbstractCard.CardType.SKILL) &&
-                this.amount > 0) {
+        if ((!card.purgeOnUse || card instanceof Purgable) && (card.type == AbstractCard.CardType.SKILL || card.type == AbstractCard.CardType.ATTACK) && this.amount > 0) {
             this.flash();
             AbstractMonster m = null;
             if (action.target != null) {
@@ -74,7 +74,7 @@ public class CaptainsQuartersPower extends AbstractPower implements CloneablePow
             AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, m, card.energyOnUse, true, true), true);
             --this.amount;
             if (this.amount == 0) {
-                this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+                this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
             }
         }
 
