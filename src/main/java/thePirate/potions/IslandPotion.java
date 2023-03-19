@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.PowerTip;
-import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
@@ -41,8 +40,9 @@ public class IslandPotion extends AbstractDynamicPotion{
         
         // Initialize the on-hover name + description
         tips.add(new PowerTip(name, description));
-        tips.add(new PowerTip(TipHelper.capitalize("Bury"), BaseMod.getKeywordDescription(PirateMod.getModID().toLowerCase() + ":bury")));
-        tips.add(new PowerTip(TipHelper.capitalize("Dig"), BaseMod.getKeywordDescription(PirateMod.getModID().toLowerCase() + ":dig")));
+//        tips.add(new PowerTip(BaseMod.getKeywordProper(PirateMod.getModID().toLowerCase()+":ink"), BaseMod.getKeywordDescription(PirateMod.getModID().toLowerCase() + ":ink")));
+        tips.add(new PowerTip(BaseMod.getKeywordProper(PirateMod.getModID().toLowerCase()+":bury") , BaseMod.getKeywordDescription(PirateMod.getModID().toLowerCase() + ":bury")));
+        tips.add(new PowerTip(BaseMod.getKeywordProper(PirateMod.getModID().toLowerCase()+":dig") , BaseMod.getKeywordDescription(PirateMod.getModID().toLowerCase() + ":dig")));
 
     }
 

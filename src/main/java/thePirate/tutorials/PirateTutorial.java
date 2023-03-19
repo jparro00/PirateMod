@@ -38,7 +38,18 @@ public class PirateTutorial extends FtueTip {
     private static String txt3;
     private int closeScreen;
 
-    public PirateTutorial() {
+    public PirateTutorial(Settings.GameLanguage language) {
+        if (language != null && language != Settings.GameLanguage.ENG && PirateMod.supportsLanguage(language)){
+            String lang = language.name().toLowerCase();
+            try{
+                img1 = ImageMaster.loadImage(PirateMod.getModID()+"Resources/images/ui/tip/"+lang+"/pirate_t1.png");
+                img2 = ImageMaster.loadImage(PirateMod.getModID()+"Resources/images/ui/tip/"+lang+"/pirate_t2.png");
+                img3 = ImageMaster.loadImage(PirateMod.getModID()+"Resources/images/ui/tip/"+lang+"/pirate_t3.png");
+            }catch (Exception e){
+                PirateMod.logger.info("failed to load localized tutorial images for " + lang);
+                PirateMod.logger.info("encountered exeption: " + e);
+            }
+        }
         txt1 = txt[0];
         txt2 = txt[1];
         txt3 = txt[2];

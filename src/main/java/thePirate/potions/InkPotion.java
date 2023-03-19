@@ -7,9 +7,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
-import com.megacrit.cardcrawl.helpers.GameDictionary;
 import com.megacrit.cardcrawl.helpers.PowerTip;
-import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
@@ -44,13 +42,7 @@ public class InkPotion extends AbstractDynamicPotion{
 
         // Initialize the on-hover name + description
         tips.add(new PowerTip(name, description));
-        String test1 = GameDictionary.keywords.get(PirateMod.getModID().toLowerCase()+":ink");
-        String test2 = GameDictionary.keywords.get(PirateMod.getModID().toLowerCase()+"Ink");
-        String test3 = GameDictionary.keywords.get("Ink");
-        PirateMod.logger.info("test1: " + test1);
-        PirateMod.logger.info("test2: " + test2);
-        PirateMod.logger.info("test3: " + test3);
-        tips.add(new PowerTip(TipHelper.capitalize("Ink"), BaseMod.getKeywordDescription(PirateMod.getModID().toLowerCase() + ":ink")));
+        tips.add(new PowerTip(BaseMod.getKeywordProper(PirateMod.getModID().toLowerCase()+":ink"), BaseMod.getKeywordDescription(PirateMod.getModID().toLowerCase() + ":ink")));
 
     }
 

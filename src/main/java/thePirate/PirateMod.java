@@ -659,10 +659,19 @@ public class PirateMod implements
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
         if (!skipTutorials.toggle.enabled){
-            AbstractDungeon.ftue = new PirateTutorial();
+            AbstractDungeon.ftue = new PirateTutorial(Settings.language);
             skipTutorials.toggle.toggle();
 
         }
+    }
+    public static boolean supportsLanguage(Settings.GameLanguage language){
+        for(int i = 0; i < SupportedLanguages.length; i++) {
+            Settings.GameLanguage lang = SupportedLanguages[i];
+            if (lang.equals(language)) {
+                return true;
+            }
+        }
+        return false;
     }
     static {
         SupportedLanguages = new Settings.GameLanguage[]{Settings.GameLanguage.ENG, Settings.GameLanguage.RUS};
