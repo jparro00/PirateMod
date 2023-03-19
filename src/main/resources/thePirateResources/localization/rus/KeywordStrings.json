@@ -112,6 +112,6 @@
       "чернила",
       "чернил"
     ],
-    "DESCRIPTION": "The next time this enemy would deal damage, prevent damage equal to the ink value, deal that much damage to the enemy, and then remove that much ink."
+    "DESCRIPTION": "В следующий раз при нанесении урона по вам, цель вместо этого нанесёт урон себе, равный количеству #yЧернил, затем потеряет столько же #yЧернил."
   }
 ]
