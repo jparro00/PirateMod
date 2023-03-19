@@ -1,375 +1,375 @@
 {
   "thePirate:Retaliation": {
-    "NAME": "Retaliation",
-    "DESCRIPTION": "If enemy intends to attack, deal damage equal to enemy intent.",
-    "EXTENDED_DESCRIPTION": ["If enemy intends to attack, deal damage equal to enemy intent (damage !D! X !M! ).","If enemy intends to attack, deal damage equal to enemy intent (damage !D! )."]
+    "NAME": "Возмездие",
+    "DESCRIPTION": "Если враг планирует атаковать, наносит урон, равный урону их намерения.",
+    "EXTENDED_DESCRIPTION": ["Если враг планирует атаковать, наносит урон, равный урону их намерения. (!D! X !M! урона).","Если враг планирует атаковать, наносит урон, равный урону их намерения. (!D! урона)."]
   },
   "thePirate:GhostOfBlackbeard": {
-    "NAME": "Ghost of Blackbeard",
-    "DESCRIPTION": "Deal !D! damage. NL Costs 1 [E] more for each card thepirate:Buried this combat."
+    "NAME": "Призрак Чёрной Бороды",
+    "DESCRIPTION": "Наносит !D! урона. NL Стоит на 1 [E] больше за каждую карту, thepirate:Закопанную в этом бою."
   },
   "thePirate:BoardingParty": {
-    "NAME": "Boarding Party",
-    "DESCRIPTION": "Deal !D! damage. NL Bury all non-Attack cards in your draw pile."
+    "NAME": "Команда абордажа",
+    "DESCRIPTION": "Наносит !D! урона. NL Вы thepirate:Закапываете все карты не-Атаки из вашей стопки добора."
   },
   "thePirate:DeathKnell": {
-    "NAME": "Death Knell",
-    "DESCRIPTION": "Trigger the start of combat and start of turn effects of target Relic. NL Exhaust.",
-    "EXTENDED_DESCRIPTION": ["Tip", "Works with relics that do things at the beginning of combat (e.g., reset counters, apply buffs/defbuffs) and/or at the beginning of turn (e.g., dealing damage to enemies, incrementing counters)."]
+    "NAME": "Звон колоколов",
+    "DESCRIPTION": "Реактивирует реликвию, связанную с началом боя или началом хода. NL Сжигается.",
+    "EXTENDED_DESCRIPTION": ["Подсказка", "Внимательно прочитайте описание реактивации реликвии. Оно может отличаться от её оригинального."]
   },
   "thePirate:UnstableFormula": {
-    "NAME": "Unstable Formula",
-    "DESCRIPTION": "At the start of turn, Apply thepirate:Ink to ALL enemies equal to their current thepirate:Ink."
+    "NAME": "Нестабильная формула",
+    "DESCRIPTION": "Накладывает thepirate:Чернила на ВСЕХ врагов, равные текущим thepirate:Чернилам на них в начале каждого вашего хода."
   },
   "thePirate:Jettison": {
-    "NAME": "Jettison",
-    "DESCRIPTION": "thepirate:Bury !M! cards. NL Gain temporary Strength equal to their cost, and !SM! Strength for each non-playable card thepirate:Buried."
+    "NAME": "Сброс за борт",
+    "DESCRIPTION": "Вы thepirate:Закапываете !M! карты. NL Даёт временную Силу. равную их стоимости, и !SM! Силу за каждую thepirate:Закопанную Неиграбельную карту."
   },
   "thePirate:GeneticSplice": {
-    "NAME": "Genetic Splice",
-    "DESCRIPTION": "Remove all thepirate:Ink from enemy. NL Gain 1 Dexterity for every !M! thepirate:Ink removed. NL Gain !B! Block. NL Exhaust."
+    "NAME": "Сращивание генов",
+    "DESCRIPTION": "Снимите thepirate:Чернила с врага. NL Даёт 1 Ловкости за каждые !M! снятых thepirate:Чернил. NL Даёт !B! Защиты. NL Сжигается."
   },
   "thePirate:ScoutAhead": {
-    "NAME": "Scout Ahead",
-    "DESCRIPTION": "Next turn, thepirate:Dig X times. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Next turn, thepirate:Dig X+1 times. NL Exhaust."
+    "NAME": "Разведка",
+    "DESCRIPTION": "Вы thepirate:Выкапываете до X карт в начале следующего хода. NL Сжигается.",
+    "UPGRADE_DESCRIPTION": "Вы thepirate:Выкапываете до X+1 карт в начале следующего хода. NL Сжигается."
   },
   "thePirate:PinDown": {
-    "NAME": "Pin Down",
-    "DESCRIPTION": "Apply !M! Weak. NL Shuffle a *Shovel *Blade to your draw pile."
+    "NAME": "Придавить",
+    "DESCRIPTION": "Накладывает !M! Слабости. NL Добавляет *Лезвие *лопаты в стопку добора."
   },
   "thePirate:ShovelBlade": {
-    "NAME": "Shovel Blade",
-    "DESCRIPTION": "Retain. NL thepirate:Dig. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. NL thepirate:Dig twice. NL Exhaust."
+    "NAME": "Лезвие лопаты",
+    "DESCRIPTION": "Оставляется. NL Вы thepirate:Выкапываете 1 карту. NL Сжигается.",
+    "UPGRADE_DESCRIPTION": "Оставляется. NL Вы thepirate:Выкапываете 2 карты. NL Сжигается."
   },
   "thePirate:EvasiveManeuver": {
-    "NAME": "Evasive Maneuver",
-    "DESCRIPTION": "Apply !M! thepirate:Ink."
+    "NAME": "Манёвр уклонения",
+    "DESCRIPTION": "Накладывает !M! thepirate:Чернил."
   },
   "thePirate:ChainShot": {
-    "NAME": "Chain Shot",
-    "DESCRIPTION": "Deal !D! damage. NL Enemy loses !M! Strength this turn. NL Exhaust."
+    "NAME": "Цепное ядро",
+    "DESCRIPTION": "Наносит !D! урона. NL Враг теряет !M! Силы в этом ходу. NL Сжигается."
   },
   "thePirate:Sandblast": {
-    "NAME": "Sandblast",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak and Vulnerable. NL Costs 1 [E] less for each card thepirate:Buried this turn."
+    "NAME": "Поток песка",
+    "DESCRIPTION": "Наносит !D! урона. NL Накладывает !M! Слабости и Уязвимости. NL Стоит на 1 [E] меньше за каждую thepirate:Закопанную в этом ходу карту."
   },
   "thePirate:SeaTurtles": {
-    "NAME": "Sea Turtles",
-    "DESCRIPTION": "Deal !D! damage. NL When you thepirate:Bury this, thepirate:Bury a copy. When you thepirate:Dig this, put a copy in your draw pile. NL Exhaust."
+    "NAME": "Морские черепахи",
+    "DESCRIPTION": "Наносит !D! урона. NL Когда вы thepirate:Закапываете эту карту, thepirate:Закопайте её копию. Когда вы thepirate:Выкапываете эту карту, положите её копию в колоду добора. NL Сжигается."
   },
   "thePirate:Cyclone": {
-    "NAME": "Cyclone",
-    "DESCRIPTION": "Gain !B! Block. NL thepirate:Storm. NL Exhaust.",
-    "EXTENDED_DESCRIPTION": ["Gain !B! Block. NL thepirate:Storm ( !STORM! ). NL Exhaust."]
+    "NAME": "Циклон",
+    "DESCRIPTION": "Даёт !B! Защиты. NL thepirate:Шторм. NL Сжигается.",
+    "EXTENDED_DESCRIPTION": ["Даёт !B! Защиты. NL thepirate:Шторм ( !STORM! ). NL Сжигается."]
   },
   "thePirate:Headbutt": {
-    "NAME": "Headbutt",
-    "DESCRIPTION": "Deal !D! damage. NL Put a card from your discard pile on top of your draw pile."
+    "NAME": "Таран",
+    "DESCRIPTION": "Наносит !D! урона. NL Вы кладёте карту из стопки сброса на верх стопки добора."
   },
   "thePirate:BolsterCrew": {
-    "NAME": "Bolster Crew",
-    "DESCRIPTION": "thepirate:Mysterious. NL Gain !M! Strength. NL The first time you play this each combat, lose !SM! gold.",
-    "UPGRADE_DESCRIPTION": "thepirate:Mysterious. NL Gain !M! Strength."
+    "NAME": "Резервный экипаж",
+    "DESCRIPTION": "thepirate:Мистическая. NL Даёт !M! Силы. NL Когда вы разыгрываете эту карту впервые в бою, вы теряете !M! золота.",
+    "UPGRADE_DESCRIPTION": "thepirate:Мистическая. NL Даёт !M! Силы."
   },
   "thePirate:ThiefsAccomplice": {
-    "NAME": "Thief's Accomplice",
-    "DESCRIPTION": "Gain !B! Block. NL The next time you lose gold, gain that much gold."
+    "NAME": "Сообщник вора",
+    "DESCRIPTION": "Даёт !B! Защиты. NL При следующей потере золота, получите золото, равное потерянному."
   },
   "thePirate:DarkOffering": {
-    "NAME": "Dark Offering",
-    "DESCRIPTION": "thepirate:Bury up to X cards and apply !M!X thepirate:Ink to ALL enemies. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "thepirate:Bury up to X+1 cards and apply !M! X+1 thepirate:Ink to ALL enemies. NL Exhaust."
+    "NAME": "Тёмный обмен",
+    "DESCRIPTION": "Вы thepirate:Закапываете до X карт. Накладывает !M! *X thepirate:Чернил на ВСЕХ врагов. NL Сжигается.",
+    "UPGRADE_DESCRIPTION": "Вы thepirate:Закапываете до X+1 карт. Накладывает !M! *(X+1) thepirate:Чернил на ВСЕХ врагов. NL Сжигается."
   },
   "thePirate:TimeWarp": {
-    "NAME": "Time Warp",
-    "DESCRIPTION": "At the start of turn, return the first non- Exhaust card you played the previous turn to your hand. NL Gain [E] equal to its cost.",
-    "EXTENDED_DESCRIPTION": ["Tip", "Cannot return played powers to your hand. NL Does not stack."]
+    "NAME": "Искривление времени",
+    "DESCRIPTION": "В начале вашего хода положите первую разыгранную на прошлом ходу карту (которая не Сжигается) в руку. NL Даёт [E] ,равную её стоимости.",
+    "EXTENDED_DESCRIPTION": ["Подсказка", "Не действует на разыгранные Таланты. NL Эффект не складывается."]
   },
   "thePirate:RedShirt": {
-    "NAME": "Red Shirt",
-    "DESCRIPTION": "When you would lose any HP this turn, receive that much thepirate:Bleeding instead. NL Exhaust."
+    "NAME": "Красная рубаха",
+    "DESCRIPTION": "При следующей потере ОЗ, вместо этого получите равное потере thepirate:Кровотечение. NL Сжигается."
   },
   "thePirate:CephalopodForm": {
-    "NAME": "Cephalopod Form",
-    "DESCRIPTION": "Ethereal. NL Whenever you play a card, apply !M! thepirate:Ink to ALL enemies.",
-    "UPGRADE_DESCRIPTION": "Whenever you play a card, apply !M! thepirate:Ink to ALL enemies."
+    "NAME": "Облик головоногого",
+    "DESCRIPTION": "Эфирная. NL Когда вы разыгрываете карту, накладывает !M! thepirate:Чернил на ВСЕХ врагов.",
+    "UPGRADE_DESCRIPTION": "Когда вы разыгрываете карту, накладывает !M! thepirate:Чернил на ВСЕХ врагов."
   },
   "thePirate:HatchPlot": {
-    "NAME": "Hatch Plot",
-    "DESCRIPTION": "Play a card from your discard pile (cannot choose Hatch Plot). NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Play a card from your discard pile (cannot choose Hatch Plot).",
-    "EXTENDED_DESCRIPTION": ["Select a card to play from your discard pile"]
+    "NAME": "Заговор",
+    "DESCRIPTION": "Вы разыгрываете карту из стопки сброса. Таким образом нельзя разыграть другой *Заговор. NL Сжигается.",
+    "UPGRADE_DESCRIPTION": "Вы разыгрываете карту из стопки сброса. Таким образом нельзя разыграть другой *Заговор.",
+    "EXTENDED_DESCRIPTION": ["Выберите карту из стопки сброса, чтобы разыграть её."]
   },
   "thePirate:PirateBay": {
-    "NAME": "Pirate Bay",
-    "DESCRIPTION": "Gain !B! Block. NL Create a copy of a card in your draw pile, then thepirate:Bury it. NL Exhaust."
+    "NAME": "Пиратская бухта",
+    "DESCRIPTION": "Даёт !B! Защиты. NL Положите копию этой карты в стопку добора, затем thepirate:Закопайте её. NL Сжигается."
   },
   "thePirate:DarkPlans": {
-    "NAME": "Dark Plans",
-    "DESCRIPTION": "Unplayable. thepirate:Mysterious. NL Apply !M! thepirate:Ink to ALL enemies for each time this was thepirate:Buried",
-    "UPGRADE_DESCRIPTION": "thepirate:Mysterious. NL Apply !M! thepirate:Ink to ALL enemies for each time this was thepirate:Buried",
-    "EXTENDED_DESCRIPTION": ["Unplayable unless Upgraded.", "."," ( !SM! )."]
+    "NAME": "Тёмные намерения",
+    "DESCRIPTION": "Неиграбельная. thepirate:Мистическая. NL Накладывает !M! thepirate:Чернил на ВСЕХ врагов за каждый раз, когда эта карта была thepirate:Закопана",
+    "UPGRADE_DESCRIPTION": "thepirate:Мистическая. NL Накладывает !M! thepirate:Чернил на ВСЕХ врагов за каждый раз, когда эта карта была thepirate:Закопана",
+    "EXTENDED_DESCRIPTION": ["Неиграбельная, пока не *Улучшена.", "."," ( !SM! )."]
   },
   "thePirate:AttendToCache": {
-    "NAME": "Attend to Cache",
-    "DESCRIPTION": "thepirate:Bury a card, then thepirate:Dig. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "thepirate:Bury a card, then thepirate:Dig !M! times. NL Exhaust."
+    "NAME": "Слежка за тайником",
+    "DESCRIPTION": "Вы thepirate:Закапываете карту и thepirate:Выкапываете карту. NL Сжигается.",
+    "UPGRADE_DESCRIPTION": "Вы thepirate:Закапываете карту и thepirate:Выкапываете !M! карт. NL Сжигается."
   },
   "thePirate:RetreatToShore": {
-    "NAME": "Retreat to Shore",
-    "DESCRIPTION": "Gain !B! Block. NL thepirate:Bury !M! cards."
+    "NAME": "Сход на берег",
+    "DESCRIPTION": "Даёт !B! Защиты. NL Вы thepirate:Закапываете !M! карт."
   },
   "thePirate:BraceForImpact": {
-    "NAME": "Brace For Impact",
-    "DESCRIPTION": "Next turn, gain !B! Block."
+    "NAME": "Неизбежный бой",
+    "DESCRIPTION": "Даёт !B! Защиты в следующем вашем ходу."
   },
   "thePirate:AncientCrab": {
-    "NAME": "Ancient Crab",
-    "DESCRIPTION": "Deal !D! damage. NL When thepirate:Buried, return this to your hand and then thepirate:Dig. NL thepirate:Predatory."
+    "NAME": "Древний краб",
+    "DESCRIPTION": "Наносит !D! урона. NL Если thepirate:Закапывается, верните эту карту в руку и затем thepirate:Выкопайте одну карту. NL thepirate:Хищная."
   },
   "thePirate:Kraken": {
-    "NAME": "Kraken",
-    "DESCRIPTION": "thepirate:Stun enemy. NL Apply !M! thepirate:Ink to all OTHER enemies. NL thepirate:Predatory. NL Exhaust."
+    "NAME": "Кракен",
+    "DESCRIPTION": "thepirate:Оглушить врага. NL Накладывает !M! thepirate:Чернил на ОСТАЛЬНЫХ врагов. NL thepirate:Хищная. NL Сжигается."
   },
   "thePirate:ElectricEel": {
-    "NAME": "Electric Eel",
-    "DESCRIPTION": "Draw !SM! card and NL gain [E]. NL When you thepirate:Bury this, play it. NL thepirate:Predatory.",
-    "UPGRADE_DESCRIPTION": "Draw !SM! card and NL gain [E] [E]. NL When you thepirate:Bury this, play it. NL thepirate:Predatory."
+    "NAME": "Электрический угорь",
+    "DESCRIPTION": "Вы берёте !SM! карт. NL Даёт [E]. NL Когда вы thepirate:Закапываете эту карту, разыграйте её. NL thepirate:Хищная.",
+    "UPGRADE_DESCRIPTION": "Вы берёте !SM! карт. NL Даёт [E] [E]. NL Когда вы thepirate:Закапывайте эту карту, разыграйте её. NL thepirate:Хищная."
   },
   "thePirate:LowerDefenses": {
-    "NAME": "Lower Defenses",
-    "DESCRIPTION": "thepirate:Lure. NL Innate. Unplayable. NL On draw, gain !M! Frail, discard this, and draw a card."
+    "NAME": "Спустить щиты",
+    "DESCRIPTION": "thepirate:Приманка. NL Начальная. Неиграбельная. NL Когда вы берёте эту карту, накладывает !M! Хрупкости на вас и сбрасывается, а вы берёте карту."
   },
   "thePirate:WithdrawWeapons": {
-    "NAME": "Withdraw Weapons",
-    "DESCRIPTION": "thepirate:Lure. NL Innate. Unplayable. NL On draw, gain !M! Weak, discard this, and draw a card."
+    "NAME": "Убрать оружие",
+    "DESCRIPTION": "thepirate:Приманка. NL Начальная. Неиграбельная. NL Когда вы берёте эту карту, накладывает !M! Слабости на вас и сбрасывается, а вы берёте карту."
   },
   "thePirate:BatheInBlood": {
-    "NAME": "Bathe in Blood",
-    "DESCRIPTION": "thepirate:Lure. NL Innate. Unplayable. NL On draw, gain !M! Vulnerable, discard this, and draw a card."
+    "NAME": "Искупаться в крови",
+    "DESCRIPTION": "thepirate:Приманка. NL Начальная. Неиграбельная. NL Когда вы берёте эту карту, накладывает !M! Уязвимости на вас и сбрасывается, а вы берёте карту."
   },
   "thePirate:AncientMap": {
-    "NAME": "Ancient Map",
-    "DESCRIPTION": "Unplayable. NL When you thepirate:Bury this card, draw !M! cards.",
-    "EXTENDED_DESCRIPTION": ["This card is unplayable","",""]
+    "NAME": "Древняя карта",
+    "DESCRIPTION": "Неиграбельная. NL Когда вы thepirate:Закапываете эту карту, вы берёте !M! карты.",
+    "EXTENDED_DESCRIPTION": ["Эта карта неиграбельная","",""]
   },
   "thePirate:AncientJewel": {
-    "NAME": "Ancient Jewel",
-    "DESCRIPTION": "Unplayable. NL When you thepirate:Bury this card, gain !M! [E].",
-    "EXTENDED_DESCRIPTION": ["This card is unplayable","",""]
+    "NAME": "Древнее сокровище",
+    "DESCRIPTION": "Неиграбельная. NL Когда вы thepirate:Закапываете эту карту, даёт !M! [E].",
+    "EXTENDED_DESCRIPTION": ["Эта карта неиграбельная","",""]
   },
   "thePirate:Austerity": {
-    "NAME": "Austerity",
-    "DESCRIPTION": "Whenever you thepirate:Bury a card, draw !M! card."
+    "NAME": "Строгость",
+    "DESCRIPTION": "Когда вы thepirate:Закапываете карту, вы берёте !M! карту."
   },
   "thePirate:HardenedBrine": {
-    "NAME": "Hardened Brine",
-    "DESCRIPTION": "Whenever you use energy, gain 1 Block for each energy spent."
+    "NAME": "Маринование",
+    "DESCRIPTION": "Когда вы тратите [E] , даёт 1 Защиты за каждую потраченную."
   },
   "thePirate:VolatileInk": {
-    "NAME": "Volatile Ink",
-    "DESCRIPTION": "Gain thepirate:Volatile_Ink."
+    "NAME": "Летучие чернила",
+    "DESCRIPTION": "Даёт thepirate:Летучие_чернила."
   },
   "thePirate:StormSurge": {
-    "NAME": "Storm Surge",
-    "DESCRIPTION": "Whenever you use energy, gain 1 temporary Strength."
+    "NAME": "Штормовая волна",
+    "DESCRIPTION": "Когда вы тратите [E] , даёт 1 временную Силу."
   },
   "thePirate:TooMuchRum": {
-    "NAME": "Too Much Rum",
-    "DESCRIPTION": "When you thepirate:Bury a card, Exhaust it and gain !M! Block."
+    "NAME": "Слишком много рома",
+    "DESCRIPTION": "Когда вы thepirate:Закапываете карту, она Сжигается и даёт !M! Защиты."
   },
   "thePirate:Subdue": {
-    "NAME": "Subdue",
-    "DESCRIPTION": "Deal !D! damage. NL Deals additional damage equal to thepirate:Ink on enemy."
+    "NAME": "Покорение",
+    "DESCRIPTION": "Наносит !D! урона. NL Наносит дополнительный урон, равный числу thepirate:Чернил на враге."
   },
   "thePirate:ChemicalWarfare": {
-    "NAME": "Chemical Warfare",
-    "DESCRIPTION": "Deal !D! damage. NL Enemy takes 50% more damage from thepirate:Ink."
+    "NAME": "Химическое оружие",
+    "DESCRIPTION": "Наносит !D! урона. NL Враг получает на 50% больше урона от thepirate:Чернил."
   },
   "thePirate:FlexibleLimb": {
-    "NAME": "Flexible Limb",
-    "DESCRIPTION": "Deal !D! damage. NL If the enemy has thepirate:Ink, gain [E] and draw 1 card."
+    "NAME": "Гибкий сустав",
+    "DESCRIPTION": "Наносит !D! урона. NL Если на врага наложены thepirate:Чернила, даёт [E] и вы берёте 1 карту."
   },
   "thePirate:BeachBuddy": {
-    "NAME": "Beach Buddy",
-    "DESCRIPTION": "Deal !D! damage. NL Whenever you thepirate:Bury, return this from the discard pile to your Hand."
+    "NAME": "Пляжный товарищ",
+    "DESCRIPTION": "Наносит !D! урона. NL Когда вы thepirate:Закапываете, возвращается из стопки сброса в руку."
   },
   "thePirate:AncientAlliances": {
-    "NAME": "Ancient Alliances",
-    "DESCRIPTION": "thepirate:Mysterious. NL Deal !D! damage.",
-    "UPGRADE_DESCRIPTION": "thepirate:Mysterious. NL Deal !D! damage. NL Gain !M! [E]."
+    "NAME": "Древний союз",
+    "DESCRIPTION": "thepirate:Мистическая. NL Наносит !D! урона.",
+    "UPGRADE_DESCRIPTION": "thepirate:Мистическая. NL Наносит !D! урона. NL Даёт !M! [E]."
   },
   "thePirate:InkBlast": {
-    "NAME": "Ink Blast",
-    "DESCRIPTION": "Deal !D! damage and apply !M! thepirate:Ink."
+    "NAME": "Поток чернил",
+    "DESCRIPTION": "Наносит !D! урона и накладывает !M! thepirate:Чернил."
   },
   "thePirate:DarkExperiment": {
-    "NAME": "Dark Experiment",
-    "DESCRIPTION": "Deal !D! damage and apply !M! thepirate:Ink.  If Fatal, permanently increase thepirate:Ink applied by this card by !SM! . NL Exhaust."
+    "NAME": "Мрачный опыт",
+    "DESCRIPTION": "Наносит !D! урона и накладывает !M! thepirate:Чернил. Навсегда увеличивает эффект thepirate:Чернил этой карты на !SM!, если Казнит врага. NL Сжигается."
   },
   "thePirate:DownWithTheShip": {
-    "NAME": "Down with the Ship",
-    "DESCRIPTION": "Bury all but 1 card from your draw pile, then deal !D! damage for each card thepirate:Buried. NL Exhaust."
+    "NAME": "Тонем с кораблём",
+    "DESCRIPTION": "Вы thepirate:Закапываете все, кроме одной выбранной карты из стопки добора, затем нанесите !D! урона за каждую thepirate:Закопанную. NL Сжигается."
   },
   "thePirate:CursedBlade": {
-    "NAME": "Cursed Blade",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! thepirate:Corrupt_Artifact."
+    "NAME": "Проклятый клинок",
+    "DESCRIPTION": "Наносит !D! урона. NL Даёт !M! thepirate:Явление."
   },
   "thePirate:StrangeBlade": {
-    "NAME": "Strange Blade",
-    "DESCRIPTION": "thepirate:Mysterious. NL Deal !D! damage.",
-    "UPGRADE_DESCRIPTION": "thepirate:Mysterious. NL Deal !D! damage. NL Draw !M! cards."
+    "NAME": "Загадочный клинок",
+    "DESCRIPTION": "thepirate:Мистическая. NL Наносит !D! урона.",
+    "UPGRADE_DESCRIPTION": "thepirate:Мистическая. NL Наносит !D! урона. NL Вы берёте !M! карты."
   },
   "thePirate:DavyJonesLocker": {
-    "NAME": "Davy Jones' Locker",
-    "DESCRIPTION": "thepirate:Purge this and the next card you play.",
-    "UPGRADE_DESCRIPTION": "thepirate:Purge this and the next card you play. NL Gain a Davy Jones' Locker to your deck."
+    "NAME": "Рундук Дэви Джонса",
+    "DESCRIPTION": "Вы thepirate:Изгоняете эту карту и следующую разыгранную карту.",
+    "UPGRADE_DESCRIPTION": "Вы thepirate:Изгоняете эту карту и следующую разыгранную карту. NL Добавляет *Рундук *Дэви *Джонса в вашу колоду."
   },
   "thePirate:SorcererAttack": {
-    "NAME": "Sorcerer Attack",
-    "DESCRIPTION": "Deal !D! damage. NL Remove all Artifact and Apply !M! thepirate:Corrupt_Artifact. NL Exhaust."
+    "NAME": "Атака чародея",
+    "DESCRIPTION": "Наносит !D! урона. NL Снимает весь Артефакт с цели и накладывает !M! thepirate:Явление. NL Сжигается."
   },
   "thePirate:CausticInk": {
-    "NAME": "Caustic Ink",
-    "DESCRIPTION": "Enemy loses Block, thepirate:Artifacts, and 2 Strength. NL Apply thepirate:Ink equal to Block lost. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain NL Enemy loses Block, thepirate:Artifacts, and 2 Strength. NL Apply thepirate:Ink equal to Block lost. NL Exhaust."
+    "NAME": "Едкие чернила",
+    "DESCRIPTION": "Враг теряет всю Защиту, весь Артефакт и 2 Силы. NL Накладывает thepirate:Чернила, равные снятой Защите. NL Сжигается.",
+    "UPGRADE_DESCRIPTION": "Оставляется. NL Враг теряет всю Защиту, весь Артефакт и 2 Силы. NL Накладывает thepirate:Чернила, равные снятой Защите. NL Сжигается."
   },
   "thePirate:BeachCrew": {
-    "NAME": "Beach Crew",
-    "DESCRIPTION": "At the start of your turn, you may thepirate:Bury a card."
+    "NAME": "Пляжная команда",
+    "DESCRIPTION": "Вы thepirate:Закапываете карту в начале каждого вашего хода."
   },
   "thePirate:FireAtWill": {
-    "NAME": "Fire At Will",
-    "DESCRIPTION": "The next Cannonball you play, and The first Cannonball you play each turn costs 0."
+    "NAME": "Огонь по желанию",
+    "DESCRIPTION": "Следующее разыгранное Ядро и каждое первое Ядро вы разыгрываете в каждом своём следующем ходу стоят 0."
   },
   "thePirate:Saboteur": {
-    "NAME": "Saboteur",
-    "DESCRIPTION": "Gain !B! Block. NL The next time enemy would gain Block, instead it doesn't.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL The next time ALL enemies would gain Block, instead they don't."
+    "NAME": "Диверсант",
+    "DESCRIPTION": "Даёт !B! Защиты. NL В следующий раз враг не получит Защиту от намерения",
+    "UPGRADE_DESCRIPTION": "Даёт !B! Защиты. NL В следующий раз ВСЕ враги не получат Защиту от намерения."
   },
   "thePirate:Ransom": {
-    "NAME": "Ransom",
-    "DESCRIPTION": "thepirate:Bury a card.  Gain energy equal to its cost"
+    "NAME": "Выкуп",
+    "DESCRIPTION": "Вы thepirate:Закапываете карту. Получите [E] , равную её цене."
   },
   "thePirate:Tropomyosin": {
-    "NAME": "Tropomyosin",
-    "DESCRIPTION": "Enemy loses !M! Strength and gains !SM! thepirate:Ink. NL Apply thepirate:Volatile_Ink to enemy for 1 turn. NL Exhaust."
+    "NAME": "Тропомиозин",
+    "DESCRIPTION": "Враг теряет !M! Силы и накладывает !SM! thepirate:Чернил. NL Накладывает thepirate:Летучие_чернила на 1 ход. NL Сжигается."
   },
   "thePirate:GrapeShot": {
-    "NAME": "Grape Shot",
-    "DESCRIPTION": "Deal !D! damage to a random enemy. NL thepirate:Storm. NL Exhaust.",
-    "EXTENDED_DESCRIPTION": ["Deal !D! damage to a random enemy. NL thepirate:Storm ( !STORM! ). NL Exhaust."]
+    "NAME": "Дрейфгагель",
+    "DESCRIPTION": "Наносит !D! урона случ. врагу. NL thepirate:Шторм. NL Сжигается.",
+    "EXTENDED_DESCRIPTION": ["Наносит !D! урона случ. врагу. NL thepirate:Шторм ( !STORM! ). NL Сжигается."]
   },
   "thePirate:MomentousAttack": {
-    "NAME": "Momentous Attack",
-    "DESCRIPTION": "Deal !D! damage. NL Deals !M! additional damage for each energy spent this turn."
+    "NAME": "Моментальная атака",
+    "DESCRIPTION": "Наносит !D! урона. NL Наносит !M! дополнительного урона за каждую потраченную в этом ходу [E]."
   },
   "thePirate:PirateForm": {
-    "NAME": "Pirate Form",
-    "DESCRIPTION": "Ethereal. NL At the start of your turn, thepirate:Bury and then thepirate:Dig.",
-    "UPGRADE_DESCRIPTION": "At the start of your turn, thepirate:Bury and then thepirate:Dig."
+    "NAME": "Облик пирата",
+    "DESCRIPTION": "Эфирная. NL Вы thepirate:Закапываете карту и thepirate:Выкапываете карту в начале каждого вашего хода.",
+    "UPGRADE_DESCRIPTION": "Вы thepirate:Закапываете карту и thepirate:Выкапываете карту в начале каждого вашего хода."
   },
   "thePirate:Overexert": {
-    "NAME": "Overexert",
-    "DESCRIPTION": "Deal !D! damage.  Permanently replace this card with a Retreat. NL thepirate:Purge.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage.  Permanently replace this card with a [#76ec00]Retreat+[]. NL thepirate:Purge."
+    "NAME": "Перенапряжение",
+    "DESCRIPTION": "Наносит !D! урона. Заменяет эту карту везде, где можно на *Отступление. NL thepirate:Изгоняется.",
+    "UPGRADE_DESCRIPTION": "Наносит !D! урона. Заменяет эту карту везде, где можно на *Отступление+. NL thepirate:Изгоняется."
   },
   "thePirate:Retreat": {
-    "NAME": "Retreat",
-    "DESCRIPTION": "Gain !M! Vulnerable. NL Permanently replace this card with an Overexert. NL When you thepirate:Bury this, play it. NL thepirate:Purge.",
-    "UPGRADE_DESCRIPTION": "Gain !M! Vulnerable. NL Permanently replace this card with an [#76ec00]Overexert+[]. NL When you thepirate:Bury this, play it. NL thepirate:Purge."
+    "NAME": "Отступление",
+    "DESCRIPTION": "Накладывает на вас !M! Уязвимости. NL Заменяет эту карту везде, где можно на *Перенапряжение. NL Когда вы thepirate:Закапываете эту карту, разыграйте её. NL thepirate:Изгоняется.",
+    "UPGRADE_DESCRIPTION": "Накладывает на вас !M! Уязвимости. NL Заменяет эту карту везде, где можно на *Перенапряжение+. NL Когда вы thepirate:Закапываете эту карту, разыграйте её. NL thepirate:Изгоняется."
   },
   "thePirate:InkShot": {
-    "NAME": "Ink Shot",
-    "DESCRIPTION": "Deal !D! damage and apply !M! thepirate:Ink to ALL enemies. NL Exhaust."
+    "NAME": "Шар чернил",
+    "DESCRIPTION": "Наносит !D! урона и накладывает !M! thepirate:Чернил на ВСЕХ врагов. NL Сжигается."
   },
   "thePirate:Mercenaries": {
-    "NAME": "Mercenaries",
-    "DESCRIPTION": "Ethereal. NL Deal !D! damage.  The first time you play this each combat, lose !M! gold."
+    "NAME": "Наёмники",
+    "DESCRIPTION": "Эфирная. NL Наносит !D! урона. Когда вы разыгрываете эту карту впервые в бою, вы теряете !M! золота."
   },
   "thePirate:Menace": {
-    "NAME": "Menace",
-    "DESCRIPTION": "Double all debuffs on enemy. NL Exhaust."
+    "NAME": "Угроза",
+    "DESCRIPTION": "Удваивает все отриц. эффекты на враге. NL Сжигается."
   },
   "thePirate:HeadToShore": {
-    "NAME": "Head to Shore",
-    "DESCRIPTION": "Discard a card.  NL At the start of your next turn, thepirate:Dig.",
-    "UPGRADE_DESCRIPTION": "Draw a card and Discard a card.  NL At the start of your next turn, thepirate:Dig."
+    "NAME": "К берегу!",
+    "DESCRIPTION": "Вы сбрасываете карту. NL Вы thepirate:Выкапываете карту в начале вашего следующего хода.",
+    "UPGRADE_DESCRIPTION": "Вы берёте карту и сбрасываете карту. NL Вы thepirate:Выкапываете карту в начале вашего следующего хода."
   },
   "thePirate:Dig": {
-    "NAME": "Dig",
-    "DESCRIPTION": "thepirate:Dig.",
-    "UPGRADE_DESCRIPTION": "thepirate:Dig. NL Draw !SM! card."
+    "NAME": "Раскопки",
+    "DESCRIPTION": "Вы thepirate:Выкапываете карту.",
+    "UPGRADE_DESCRIPTION": "Вы thepirate:Выкапываете карту. NL Вы берёте !SM! карту."
   },
   "thePirate:TrustyShovel": {
-    "NAME": "Trusty Shovel",
-    "DESCRIPTION": "Deal !D! damage.  NL thepirate:Bury !M! card."
+    "NAME": "Надёжная лопата",
+    "DESCRIPTION": "Наносит !D! урона.  NL Вы thepirate:Закапываете !M! карт."
   },
   "thePirate:ShotsInTheDark": {
-    "NAME": "Shots in the Dark",
-    "DESCRIPTION": "Deal !D! damage to a random enemy !M! times.  NL If this kills an enemy, play this card again."
+    "NAME": "Выстрел в темноте",
+    "DESCRIPTION": "Наносит !D! урона случайному врагу !M! раз. NL Если враг погибает, разыграйте эту карту снова."
   },
   "thePirate:HeatedShot": {
-    "NAME": "Heated Shot",
-    "DESCRIPTION": "Deal !D! damage to the leftmost enemy. NL If this kills an enemy, play this card again. NL Exhaust."
+    "NAME": "Нагретое ядро",
+    "DESCRIPTION": "Наносит !D! урона самому левому врагу. NL Если враг погибает, разыграйте эту карту снова. NL Сжигается."
   },
   "thePirate:CaptainsQuarters": {
-    "NAME": "Captain's Quarters",
-    "DESCRIPTION": "This Turn, your next Attack or Skill is played twice.  NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "This Turn, your next Attack or Skill is played twice."
+    "NAME": "Каюта капитана",
+    "DESCRIPTION": "В следующий раз, когда вы разыгрываете Атаку или Навык в этом ходу, разыграете их дважды. NL Сжигается.",
+    "UPGRADE_DESCRIPTION": "В следующий раз, когда вы разыгрываете Атаку или Навык в этом ходу, разыграете их дважды."
   },
   "thePirate:MakeshiftSpear": {
-    "NAME": "Makeshift Spear",
-    "DESCRIPTION": "Deal !D! damage to all enemies. NL When this card is Upgraded, remove it from your deck instead.",
-    "UPGRADE_DESCRIPTION": "When Upgraded, immediately remove this card from your deck."
+    "NAME": "Самодельное копьё",
+    "DESCRIPTION": "Наносит !D! урона ВСЕМ врагам. NL Если эта карта *Улучшается, то она удаляется из вашей колоды.",
+    "UPGRADE_DESCRIPTION": "Если эта карта *Улучшается, то она удаляется из вашей колоды."
   },
   "thePirate:SwabTheDeck": {
-    "NAME": "Swab The Deck",
-    "DESCRIPTION": "Gain !B! Block.  If this is the first card you played this turn gain !M! additional Block."
+    "NAME": "Надраить палубу",
+    "DESCRIPTION": "Даёт !B! Защиты. Если это первая разыгранная карта в ходу, даёт !M! дополнительной Защиты."
   },
   "thePirate:Reload": {
-    "NAME": "Reload",
-    "DESCRIPTION": "Gain !B! Block. NL Return a Cannon or a Cannonball from your Exhaust pile to your hand.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Gain !B! Block. NL Return a Cannon or a Cannonball from your Exhaust pile to your hand."
+    "NAME": "Перезарядка",
+    "DESCRIPTION": "Даёт !B! Защиты. NL Верните карту *Пушка или Ядро из Стопки *Сожжённых карт в вашу руку.",
+    "UPGRADE_DESCRIPTION": "Оставляется. NL Даёт !B! Защиты. NL Верните карту *Пушка или Ядро из Стопки *Сожжённых карт в вашу руку."
   },
   "thePirate:Defend": {
-    "NAME": "Defend",
-    "DESCRIPTION": "Gain !B! Block."
+    "NAME": "Оборона",
+    "DESCRIPTION": "Даёт !B! Защиты."
   },
   "thePirate:Bury": {
-    "NAME": "Bury",
-    "DESCRIPTION": "thepirate:Bury !M! card. NL Draw !SM! card.",
-    "UPGRADE_DESCRIPTION": "thepirate:Bury !M! card. NL Draw !SM! cards."
+    "NAME": "Погребение",
+    "DESCRIPTION": "Вы thepirate:Закапываете !M! карту. NL Вы берёте !SM! карт.",
+    "UPGRADE_DESCRIPTION": "Вы thepirate:Закапываете !M! карту. NL Вы берёте !SM! карт."
   },
   "thePirate:GiantBeak": {
-    "NAME": "Giant Beak",
-    "DESCRIPTION": "Apply !M! Vulnerable, then deal !D! damage.",
-    "EXTENDED_DESCRIPTION": ["Tip", "Giant Beak applies #yVulnerable before dealing damage.  Hover over enemy to see the calculated damage that will be applied after #yVulnerable."]
+    "NAME": "Огромный клюв",
+    "DESCRIPTION": "Накладывает !M! Уязвимости, затем наносит !D! урона.",
+    "EXTENDED_DESCRIPTION": ["Подсказка", "*Огромный *Клюв накладывает #yУязвимость раньше нанесения урона. Наведите мышку на врага, чтобы увидеть рассчитанный урон после наложения #yУязвимости."]
   },
   "thePirate:Cutlass": {
-    "NAME": "Cutlass",
-    "DESCRIPTION": "Deal !D! damage.  NL Put this card on top of your draw pile and reduce it's damage by !M!."
+    "NAME": "Кортик",
+    "DESCRIPTION": "Наносит !D! урона. NL Положите эту карту на верх стопки добора, её урон уменьшается на !M!."
   },
   "thePirate:Cannon": {
-    "NAME": "Cannon",
-    "DESCRIPTION": "Retain. Exhaust. NL While this is in your hand, Retain 1 Cannonball this turn."
+    "NAME": "Пушка",
+    "DESCRIPTION": "Оставляется. Сжигается. NL Если эта карта в руке, 1 Ядро Оставляется в конце вашего хода."
   },
   "thePirate:RoundShot": {
-    "NAME": "Round Shot",
-    "DESCRIPTION": "Deal !D! damage. NL Exhaust"
+    "NAME": "Каменное ядро",
+    "DESCRIPTION": "Наносит !D! урона. NL Сжигается."
   },
   "thePirate:Strike": {
-    "NAME": "Strike",
-    "DESCRIPTION": "Deal !D! damage."
+    "NAME": "Удар",
+    "DESCRIPTION": "Наносит !D! урона."
   },
   "thePirate:Parry": {
-    "NAME": "Parry",
-    "DESCRIPTION": "Gain !B! Block. NL Gain [E]."
+    "NAME": "Парирование",
+    "DESCRIPTION": "Даёт !B! Защиты. NL Даёт [E]."
   },
   "thePirate:Riposte": {
-    "NAME": "Riposte",
-    "DESCRIPTION": "Deal !D! damage. NL Gain [E]."
+    "NAME": "Быстрый укол",
+    "DESCRIPTION": "Наносит !D! урона. NL Даёт [E]."
   }
 }
