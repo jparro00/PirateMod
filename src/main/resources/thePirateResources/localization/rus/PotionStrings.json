@@ -1,10 +1,10 @@
 {
         "thePirate:IslandPotion": {
                 "NAME": "Островное Пойло",
-                "DESCRIPTIONS": ["#yЗакопайте и #yВыкопайте."]
+                "DESCRIPTIONS": ["Вы #yЗакапываете карту и #yВыкапываете карту."]
         },
         "thePirate:InkPotion": {
                 "NAME": "Банка Чернил",
-                "DESCRIPTIONS": ["Накладывает "," #yЧернил."]
+                "DESCRIPTIONS": ["Накладывает #b"," #yЧернил."]
         }
 }
