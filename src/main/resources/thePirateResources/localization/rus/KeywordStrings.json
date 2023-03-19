@@ -1,110 +1,110 @@
 [
   {
-    "PROPER_NAME": "Volatile Ink",
+    "PROPER_NAME": "Летучие Чернила",
     "NAMES": [
-      "volatile ink",
-      "volatile_ink",
-      "volatilenk"
+      "летучие чернила",
+      "летучие_чернила",
+      "летучиечернила"
     ],
-    "DESCRIPTION": "#yInk is removed from enemies at the end of turn instead of during damage (benefits multi-attacks)."
+    "DESCRIPTION": "#yЧернила с врагов снимаются в конце их хода, а не после первой произведённой атаки."
   },
   {
-    "PROPER_NAME": "Artifacts",
+    "PROPER_NAME": "Оглушить",
     "NAMES": [
-      "artifacts"
+      "оглушить",
+      "оглушён"
     ],
-    "DESCRIPTION": "Negates the next debuff."
+    "DESCRIPTION": "Оглушённые враги пропускают свой ход."
   },
   {
-    "PROPER_NAME": "Stun",
+    "PROPER_NAME": "Шторм",
     "NAMES": [
-      "stun",
-      "Stun",
-      "stunned",
-      "Stunned"
+      "шторм"
     ],
-    "DESCRIPTION": "Stunned enemies skip their turn."
+    "DESCRIPTION": "Разыграйте копии этой карты, чьё количество равно числу уже разыгранных в этот ход карт (разыгрываемые копии не могут нанести вам урон)."
   },
   {
-    "PROPER_NAME": "Storm",
+    "PROPER_NAME": "Кровотечение",
     "NAMES": [
-      "storm"
+      "кровотечение",
+      "кровь"
     ],
-    "DESCRIPTION": "Play a copy of this card for each previous card played this turn (you can't take damage while playing copies)."
+    "DESCRIPTION": "Потеряйте ОЗ, равное половине #yКровотечения (округляется вверх) и потеряйте столько же #yКровотечения в конце вашего хода."
   },
   {
-    "PROPER_NAME": "Bleeding",
+    "PROPER_NAME": "Хищная",
     "NAMES": [
-      "bleeding",
-      "bleed"
+      "хищная",
+      "хищник"
     ],
-    "DESCRIPTION": "At the end of your turn, lose HP equal to half your #yBleeding (round up), and then reduce your #yBleeding by that amount."
+    "DESCRIPTION": "Если ваша колода содержит соответствующую #yПриманку, всегда появляется в карточной награде за бой с не-боссом, имеющей как минимум одну #yредкую карту. Не может быть получена иначе. NL Когда добавляется в колоду, соответствующая #yПриманка удаляется."
   },
   {
-    "PROPER_NAME": "Predatory",
+    "PROPER_NAME": "Приманка",
     "NAMES": [
-      "predatory",
-      "predator"
+      "приманка",
+      "приманить",
+      "приманывает"
     ],
-    "DESCRIPTION": "If your deck contains the associated #yLure card, always spawns in non-boss card rewards that have at least 1 #yrare. Cannot spawn through any other method. NL When added to your deck, the corresponding #yLure is removed."
-  },
-  {
-    "PROPER_NAME": "Lure",
-    "NAMES": [
-      "lure",
-      "lured",
-      "lures"
-    ],
-    "DESCRIPTION": "While this is in your deck, it's associated #yPredator card will always spawn in non-boss card rewards that have at least 1 #yrare. NL When the corresponding #yPredator card is added to your deck, remove this from your deck. NL Can only spawn from combat card rewards."
+    "DESCRIPTION": "Пока эта карта в колоде, соответствующая карта #yХищника будет появляться в карточной награде за бой с не-боссом, имеющей как минимум одну #yредкую карту. NL Когда соответствующая карта #yХищника добавляется в колоду, эта карта изгоняется. NL Может быть получена только как награда за бой с не-боссом."
 
   },
   {
-    "PROPER_NAME": "Mysterious",
+    "PROPER_NAME": "Мистическая",
     "NAMES": [
-      "mysterious"
+      "мистическая"
     ],
-    "DESCRIPTION": "This card cannot be upgraded outside of combat."
+    "DESCRIPTION": "Эта карта не может быть #yУлучшена вне битвы."
   },
   {
-    "PROPER_NAME": "Purge",
+    "PROPER_NAME": "Изгнать",
     "NAMES": [
-      "purge",
-      "purged"
+      "изгоняете",
+      "изгоняется"
     ],
-    "DESCRIPTION": "Permanently remove this card from your deck."
+    "DESCRIPTION": "Навсегда удаляет эту карту из колоды."
   },
   {
-    "PROPER_NAME": "Corrupt Artifact",
+    "PROPER_NAME": "Явление",
     "NAMES": [
-      "corrupt artifact",
-      "corrupt_artifact",
-      "corruptartifact"
+      "явление"
     ],
-    "DESCRIPTION": "Prevents the next buff that would be applied to target."
+    "DESCRIPTION": "Отменяет следующий полож. эффект."
   },
   {
-    "PROPER_NAME": "Dig",
+    "PROPER_NAME": "Выкопать",
     "NAMES": [
-      "dig",
-      "dug"
+      "выкопать",
+      "выкопанная",
+      "выкопанной",
+      "выкопайте",
+      "выкапываете",
+      "dig"
     ],
-    "DESCRIPTION": "Return a card from your discard pile to your hand and upgrade it."
+    "DESCRIPTION": "Положите карту из стопки сброса в руку и #yУлучшьте её."
   },
   {
-    "PROPER_NAME": "Bury",
+    "PROPER_NAME": "Закопать",
     "NAMES": [
-      "bury",
-      "buries",
-      "buried"
+      "закапывается",
+      "закопать",
+      "закопанную",
+      "закапывание",
+      "закопайте",
+      "закапываете",
+      "закопана",
+      "bury"
     ],
-    "DESCRIPTION": "Select a card from your draw pile and discard it."
+    "DESCRIPTION": "Возьмите карту из стопки добора и сбросьте её."
   },
   {
-    "PROPER_NAME": "Ink",
+    "PROPER_NAME": "Чернила",
     "NAMES": [
       "ink",
-      "inked"
+      "чернила",
+      "чернил",
+      "чернилам"
     ],
-    "DESCRIPTION": "The next time this enemy would deal damage, prevent damage equal to the ink value, deal that much damage to the enemy, and then remove that much ink."
+    "DESCRIPTION": "В следующий раз при нанесении урона по вам, цель вместо этого нанесёт урон себе, равный количеству #yЧернил, затем потеряет столько же #yЧернил."
   }
 ]
