@@ -36,8 +36,7 @@
     },
     "thePirate:PinDown": {
         "NAME": "Inmovilizar",
-        "DESCRIPTION": "Aplica !M! Débil. NL Baraja una *Pala *Hoja a tu pila de extracción.",
-        "UPGRADE_DESCRIPTION": ""
+        "DESCRIPTION": "Aplica !M! Débil. NL Baraja una *Pala *Hoja a tu pila de extracción."
     },
     "thePirate:ShovelBlade": {
         "NAME": "Pala Hoja",
@@ -54,8 +53,7 @@
     },
     "thePirate:Sandblast": {
         "NAME": "Patear Arena",
-        "DESCRIPTION": "Haz !D! de daño. NL Aplica !M! Débil y Vulnerable. NL Cuesta 1 [E] menos por cada carta thepirate:Enterrada este turno.",
-        "UPGRADE_DESCRIPTION": ""
+        "DESCRIPTION": "Haz !D! de daño. NL Aplica !M! Débil y Vulnerable. NL Cuesta 1 [E] menos por cada carta thepirate:Enterrada este turno."
     },
     "thePirate:SeaTurtles": {
         "NAME": "Tortugas Marinas",
@@ -82,7 +80,7 @@
     "thePirate:DarkOffering": {
         "NAME": "Oferta Oscura",
         "DESCRIPTION": "thepirate:Entierra hasta X cartas y aplica !M!X thepirate:Tinta a TODOS los enemigos. NL Agota.",
-        "UPGRADE_DESCRIPTION": "thepirate:Entierra hasta X+1 cartas y aplica !M!X+1 thepirate:Tinta a TODOS los enemigos. NL Agota."
+        "UPGRADE_DESCRIPTION": "thepirate:Entierra hasta X+1 cartas y aplica !M! (X+1) thepirate:Tinta a TODOS los enemigos. NL Agota."
     },
     "thePirate:TimeWarp": {
         "NAME": "Distorsión Temporal",
