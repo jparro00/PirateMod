@@ -1,9 +1,9 @@
 {
     "thePirate:PirateTutorials": {
         "TEXT": [
-            "El Abisal usa un #yCannon para hacer que su siguiente ataque #yCannonball cueste 0, o para #yRetener tanto el #yCannon como el #yCannonball.",
-            "Su reliquia inicial, la #yBiblia del #yArmero, te permite elegir comenzar a usar el #yCannon en cualquier momento. Si pospones esta decisión hasta un #yAct posterior, obtendrás beneficios adicionales por usar el #yCannon, como aplicar #yVulnerable a los enemigos o ganar #yStrength.",
-            "Hacer clic derecho en la reliquia inicial de la #yBiblia del #yArmero en cualquier momento de la partida la reemplazará permanentemente con la reliquia correspondiente del #yTrinket del #yCannon y pondrá el #yCannon en tu mano."
+            "El Abisal usa un #yCañon para hacer que su siguiente ataque de #yBala #yde #yCañon cueste 0, o para #yRetiene los dos del #yCañon y la #yBala #yde #yCañon.",
+            "Su reliquia inicial, la #yBiblia #ydel #yArmero, te permite elegir comenzar a usar el #yCañon en cualquier momento. Si pospones esta decisión hasta un #yActo posterior, obtendrás beneficios adicionales por usar el #yCañon, como aplicar #yVulnerable a los enemigos o ganar #yFuerza.",
+            "Hacer clic derecho en la reliquia inicial de la #yBiblia #ydel #yArmero en cualquier momento de la partida la reemplazará permanentemente con la reliquia correspondiente del #yCañones #yAccesorios y pondrá el #yCañon en tu mano."
         ],
         "LABEL": [
             "Siguiente",
