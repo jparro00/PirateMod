@@ -1,0 +1,10 @@
+{
+    "thePirate:IslandPotion": {
+        "NAME": "Poción de la Isla",
+        "DESCRIPTIONS": ["#yEntierra, y luego #yExcava."]
+    },
+    "thePirate:InkPotion": {
+        "NAME": "Poción de Tinta",
+        "DESCRIPTIONS": ["Aplica ", " #yTinta al enemigo objetivo."]
+    }
+}

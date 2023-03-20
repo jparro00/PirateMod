@@ -674,7 +674,7 @@ public class PirateMod implements
         return false;
     }
     static {
-        SupportedLanguages = new Settings.GameLanguage[]{Settings.GameLanguage.ENG, Settings.GameLanguage.RUS};
-        SupportedLanguagesStrings = new String[]{"English", "Russian"};
+        SupportedLanguages = new Settings.GameLanguage[]{Settings.GameLanguage.ENG, Settings.GameLanguage.RUS, Settings.GameLanguage.SPA};
+        SupportedLanguagesStrings = new String[]{"English", "Russian", "Spanish"};
     }
 }

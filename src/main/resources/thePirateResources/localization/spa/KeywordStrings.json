@@ -1,0 +1,112 @@
+[{
+        "PROPER_NAME": "Tinta volátil",
+        "NAMES": [
+            "tinta volátil",
+            "tinta_volátil",
+            "volatilenk"
+        ],
+        "DESCRIPTION": "El #yInk se elimina de los enemigos al final del turno en lugar de durante el daño (beneficia los ataques múltiples)."
+    },
+    {
+        "PROPER_NAME": "Artefactos",
+        "NAMES": [
+            "artefactos"
+        ],
+        "DESCRIPTION": "Anula el siguiente debuff."
+    },
+    {
+        "PROPER_NAME": "Aturdir",
+        "NAMES": [
+            "aturde",
+            "aturdir",
+            "Aturdir",
+            "aturdido",
+            "Aturdido"
+        ],
+        "DESCRIPTION": "Los enemigos aturdidos se saltan su turno."
+    },
+    {
+        "PROPER_NAME": "Tormenta",
+        "NAMES": [
+            "tormenta"
+        ],
+        "DESCRIPTION": "Juega una copia de esta carta por cada carta previa jugada este turno (no puedes recibir daño mientras juegas copias)."
+    },
+    {
+        "PROPER_NAME": "Sangrado",
+        "NAMES": [
+            "sangrado",
+            "sangrar"
+        ],
+        "DESCRIPTION": "Al final de tu turno, pierde HP igual a la mitad de tu #yBleeding (redondea hacia arriba), y luego reduce tu #yBleeding por esa cantidad."
+    },
+    {
+        "PROPER_NAME": "Predador",
+        "NAMES": [
+            "predador",
+            "depredador"
+        ],
+        "DESCRIPTION": "Si tu mazo contiene la carta #yLure asociada, siempre aparece en las recompensas de cartas no jefe que tienen al menos 1 #yrare. No puede aparecer de ninguna otra manera. NL Cuando se agrega a tu mazo, se elimina la #yLure correspondiente."
+    },
+    {
+        "PROPER_NAME": "Señuelo",
+        "NAMES": [
+            "señuelo"
+        ],
+        "DESCRIPTION": "Mientras esté en tu mazo, su carta #yPredator asociada siempre aparecerá en recompensas de cartas que no sean de jefe y tengan al menos 1 #yrare. NL Cuando la carta #yPredator correspondiente se agrega a tu mazo, esta se elimina de tu mazo. NL Solo se puede obtener de recompensas de cartas de combate."
+    },
+    {
+        "PROPER_NAME": "Misterioso",
+        "NAMES": [
+            "misterioso"
+        ],
+        "DESCRIPTION": "Esta carta no se puede mejorar fuera de combate."
+    },
+    {
+        "PROPER_NAME": "Purga",
+        "NAMES": [
+            "purga",
+            "purificado"
+        ],
+        "DESCRIPTION": "Elimina permanentemente esta carta de tu mazo."
+    },
+    {
+        "PROPER_NAME": "Artefacto Corrompido",
+        "NAMES": [
+            "artefacto corrompido",
+            "artefacto_corrompido",
+            "artefactocorrompido"
+        ],
+        "DESCRIPTION": "Impide que se aplique el siguiente aumento de potencia al objetivo."
+    },
+    {
+        "PROPER_NAME": "Excavar",
+        "NAMES": [
+            "dig",
+            "excavar",
+            "excavado"
+        ],
+        "DESCRIPTION": "Regresa una carta de tu pila de descarte a tu mano y mejórala."
+    },
+    {
+        "PROPER_NAME": "Enterrar",
+        "NAMES": [
+            "bury",
+            "entierra",
+            "enterrar",
+            "entierre",
+            "entierros",
+            "enterrado"
+        ],
+        "DESCRIPTION": "Selecciona una carta de tu pila de robo y descártala."
+    },
+    {
+        "PROPER_NAME": "Tinta",
+        "NAMES": [
+            "ink",
+            "tinta",
+            "entintado"
+        ],
+        "DESCRIPTION": "La próxima vez que este enemigo infligiría daño, evita el daño igual al valor de tinta, inflige ese mismo daño al enemigo y luego elimina la misma cantidad de tinta."
+    }
+]

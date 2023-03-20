@@ -1,0 +1,46 @@
+{
+    "thePirate:DigAction": {
+        "TEXT": [
+            "Elige una carta para mejorar y poner en tu mano.",
+            "Elige hasta ",
+            " cartas para mejorar y poner en tu mano."
+        ]
+    },
+    "thePirate:DownWithTheShipAction": {
+        "TEXT": [
+            "Selecciona una carta para poner en la parte superior de tu mazo y enterrar el resto."
+        ]
+    },
+    "thePirate:Options": {
+        "TEXT": [
+            "Saltar tutoriales"
+        ]
+    },
+    "thePirate:CardDescriptors": {
+        "TEXT": [
+            "Cañón",
+            "Bala de cañón",
+            "Cebo",
+            "Depredador"
+        ]
+    },
+    "thePirate:PirateBayAction": {
+        "TEXT": [
+            "Elige una carta para copiar y poner en tu pila de descarte.",
+            "Elige ",
+            " cartas para copiar y poner en tu pila de descarte."
+        ]
+    },
+    "thePirate:BuryAction": {
+        "TEXT": [
+            "Elige una carta para poner en tu pila de descarte.",
+            "Elige ",
+            " cartas para poner en tu pila de descarte."
+        ]
+    },
+    "thePirate:CannotPlay": {
+        "TEXT": [
+            "Esta carta no se puede jugar."
+        ]
+    }
+}
