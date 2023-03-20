@@ -83,6 +83,7 @@
         "PROPER_NAME": "Excavar",
         "NAMES": [
             "dig",
+            "excava",
             "excavar",
             "excavado"
         ],
@@ -93,6 +94,7 @@
         "NAMES": [
             "bury",
             "entierra",
+            "entierres",
             "enterrar",
             "entierre",
             "entierros",
