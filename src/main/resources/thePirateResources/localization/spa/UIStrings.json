@@ -8,7 +8,7 @@
     },
     "thePirate:DownWithTheShipAction": {
         "TEXT": [
-            "Selecciona una carta para poner en la parte superior de tu mazo y enterrar el resto."
+            "Selecciona una carta para poner en la parte superior de tu pila de extracción, y entierra el resto."
         ]
     },
     "thePirate:Options": {
@@ -19,9 +19,9 @@
     "thePirate:CardDescriptors": {
         "TEXT": [
             "Cañón",
-            "Bala de cañón",
-            "Cebo",
-            "Depredador"
+            "Bala de Cañón",
+            "Señuelo",
+            "Predador"
         ]
     },
     "thePirate:PirateBayAction": {
