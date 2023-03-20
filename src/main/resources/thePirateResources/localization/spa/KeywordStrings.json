@@ -1,18 +1,18 @@
 [{
-        "PROPER_NAME": "Tinta volátil",
+        "PROPER_NAME": "Tinta Volátil",
         "NAMES": [
             "tinta volátil",
             "tinta_volátil",
             "volatilenk"
         ],
-        "DESCRIPTION": "El #yInk se elimina de los enemigos al final del turno en lugar de durante el daño (beneficia los ataques múltiples)."
+        "DESCRIPTION": "El #yTinta se elimina de los enemigos al final del turno en lugar de durante el daño (beneficia los ataques múltiples)."
     },
     {
         "PROPER_NAME": "Artefactos",
         "NAMES": [
             "artefactos"
         ],
-        "DESCRIPTION": "Anula el siguiente debuff."
+        "DESCRIPTION": "Niega el siguiente perjuicio."
     },
     {
         "PROPER_NAME": "Aturdir",
@@ -38,7 +38,7 @@
             "sangrado",
             "sangrar"
         ],
-        "DESCRIPTION": "Al final de tu turno, pierde HP igual a la mitad de tu #yBleeding (redondea hacia arriba), y luego reduce tu #yBleeding por esa cantidad."
+        "DESCRIPTION": "Al final de tu turno, pierde PV igual a la mitad de tu #ySangrado (redondea hacia arriba), y luego reduce tu #ySangrado por esa cantidad."
     },
     {
         "PROPER_NAME": "Predador",
@@ -46,14 +46,14 @@
             "predador",
             "depredador"
         ],
-        "DESCRIPTION": "Si tu mazo contiene la carta #yLure asociada, siempre aparece en las recompensas de cartas no jefe que tienen al menos 1 #yrare. No puede aparecer de ninguna otra manera. NL Cuando se agrega a tu mazo, se elimina la #yLure correspondiente."
+        "DESCRIPTION": "Si tu mazo contiene la carta #ySeñuelo asociada, siempre aparece en las recompensas de cartas no jefe que tienen al menos 1 carta #yrara. No puede aparecer de ninguna otra manera. NL Cuando se agrega a tu mazo, se elimina la #ySeñuelo correspondiente."
     },
     {
         "PROPER_NAME": "Señuelo",
         "NAMES": [
             "señuelo"
         ],
-        "DESCRIPTION": "Mientras esté en tu mazo, su carta #yPredator asociada siempre aparecerá en recompensas de cartas que no sean de jefe y tengan al menos 1 #yrare. NL Cuando la carta #yPredator correspondiente se agrega a tu mazo, esta se elimina de tu mazo. NL Solo se puede obtener de recompensas de cartas de combate."
+        "DESCRIPTION": "Mientras esté en tu mazo, su carta #yPredador asociada siempre aparecerá en recompensas de cartas que no sean de jefe y tengan al menos 1 carta #yrara. NL Cuando la carta #yPredador correspondiente se agrega a tu mazo, esta se elimina de tu mazo. NL Solo se puede obtener de recompensas de cartas de combate."
     },
     {
         "PROPER_NAME": "Misterioso",
@@ -77,13 +77,14 @@
             "artefacto_corrompido",
             "artefactocorrompido"
         ],
-        "DESCRIPTION": "Impide que se aplique el siguiente aumento de potencia al objetivo."
+        "DESCRIPTION": "Niega el siguiente aumento de potencia al objetivo."
     },
     {
         "PROPER_NAME": "Excavar",
         "NAMES": [
             "dig",
             "excava",
+            "excaves",
             "excavar",
             "excavado"
         ],
@@ -94,13 +95,16 @@
         "NAMES": [
             "bury",
             "entierra",
+            "entierrala",
+            "entierralo",
             "entierres",
             "enterrar",
             "entierre",
             "entierros",
-            "enterrado"
+            "enterrado",
+            "enterrada"
         ],
-        "DESCRIPTION": "Selecciona una carta de tu pila de robo y descártala."
+        "DESCRIPTION": "Selecciona una carta de tu pila de extracción y descártala."
     },
     {
         "PROPER_NAME": "Tinta",
