@@ -91,28 +91,28 @@
         "NAME": "Accesorio de Cañón Negro",
         "FLAVOR": "",
         "DESCRIPTIONS": [
-            "Al comienzo del combate, agrega un Cañón a tu mano. NL #yCannon #ygana: NL La siguiente Bala de cañón que juegues este turno cuesta #b0."
+            "Al comienzo del combate, agrega un Cañón a tu mano. NL #yCañón #ygana: NL La siguiente Bala de Cañón que juegues este turno cuesta #b0."
         ]
     },
     "thePirate:SilverCannon": {
         "NAME": "Accesorio de Cañón Plateado",
         "FLAVOR": "",
         "DESCRIPTIONS": [
-            "Al inicio del combate, agrega un cañón a tu mano. NL #yCañón #ygana: NL El siguiente Proyectil de cañón que juegues este turno cuesta #b0. NL Aplica #yVulnerable a TODOS los enemigos."
+            "Al inicio del combate, agrega un cañón a tu mano. NL #yCañón #ygana: NL La siguiente Bala de Cañón que juegues este turno cuesta #b0. NL Aplica #yVulnerable a TODOS los enemigos."
         ]
     },
     "thePirate:GoldCannon": {
         "NAME": "Accesorio de Cañón Dorado",
         "FLAVOR": "",
         "DESCRIPTIONS": [
-            "Al inicio del combate, agrega un cañón a tu mano. NL #yCañón #ygana: NL El siguiente Proyectil de cañón que juegues este turno cuesta #b0. NL Aplica #yVulnerable a TODOS los enemigos. NL Gana #b2 de #yFuerza."
+            "Al inicio del combate, agrega un cañón a tu mano. NL #yCañón #ygana: NL La siguiente Bala de Cañón que juegues este turno cuesta #b0. NL Aplica #yVulnerable a TODOS los enemigos. NL Gana #b2 de #yFuerza."
         ]
     },
     "thePirate:PlatinumCannon": {
         "NAME": "Accesorio de Cañón de Platino",
         "FLAVOR": "",
         "DESCRIPTIONS": [
-            "Al inicio del combate, agrega un cañón a tu mano. NL #yCañón #ygana: NL El siguiente Proyectil de cañón que juegues este turno cuesta #b0. NL Aplica #yVulnerable y #yDébil a TODOS los enemigos. NL Gana #b2 de #yFuerza. NL Todos los enemigos pierden #b2 #yFuerza."
+            "Al inicio del combate, agrega un cañón a tu mano. NL #yCañón #ygana: NL La siguiente Bala de Cañón que juegues este turno cuesta #b0. NL Aplica #yVulnerable y #yDébil a TODOS los enemigos. NL Gana #b2 de #yFuerza. NL Todos los enemigos pierden #b2 #yFuerza."
         ]
     },
     "thePirate:BottledVoid": {
