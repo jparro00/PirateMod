@@ -7,14 +7,14 @@
         ]
     },
     "thePirate:WoodenCompass": {
-        "NAME": "Brújula de madera",
+        "NAME": "Brújula de Madera",
         "FLAVOR": "",
         "DESCRIPTIONS": [
             "Cada vez que #ythepirate:entierres una carta, inflige #b5 de daño a un enemigo al azar."
         ]
     },
     "thePirate:MoneyBag": {
-        "NAME": "Bolsa de dinero",
+        "NAME": "Bolsa de Dinero",
         "FLAVOR": "",
         "DESCRIPTIONS": [
             "Cuando gastas #yoro en tiendas, agrégalo aquí. Cuando pierdes #yoro, primero pierde de aquí en lugar de tus reservas."
@@ -24,35 +24,35 @@
         "NAME": "Cañón Experimental",
         "FLAVOR": "",
         "DESCRIPTIONS": [
-            "Reemplaza tu #yReliquia de #yCañón (o el #yBiblia del #yArmero). NL Al inicio del combate, añade un Cañón a tu mano. NL #yCañón #ygana: NL La próxima Bala de Cañón que juegues este turno cuesta #b0 y se juega dos veces."
+            "Reemplaza tu #yReliquia de #yCañón (o el #yBiblia #ydel #yArmero). NL Al inicio del combate, añade un Cañón a tu mano. NL #yCañón #ygana: NL La próxima Bala de Cañón que juegues este turno cuesta #b0 y se juega dos veces."
         ]
     },
     "thePirate:NavigationDevice": {
-        "NAME": "Dispositivo de navegación",
+        "NAME": "Dispositivo de Navegación",
         "FLAVOR": "",
         "DESCRIPTIONS": [
-            "Al inicio de tu segundo turno, #ythepirate:desentierra."
+            "Al inicio de tu segundo turno, #ythepirate:Excava."
         ]
     },
     "thePirate:WritingReed": {
-        "NAME": "Pluma de escribir",
+        "NAME": "Caña de Escribir",
         "FLAVOR": "",
         "DESCRIPTIONS": [
             "Cada vez que aplicas #ythepirate:Tinta, aplica #b1 #ythepirate:Tinta adicional."
         ]
     },
     "thePirate:WoodenLeg": {
-        "NAME": "Pata de madera",
+        "NAME": "Pata de Palo",
         "FLAVOR": "",
         "DESCRIPTIONS": [
-            "Al inicio de la batalla, #ythepirate:enterra hasta #b3 cartas."
+            "Al comienzo de cada combate, #ythepirate:entierra hasta #b3 cartas."
         ]
     },
     "thePirate:Motivation": {
         "NAME": "Motivación",
         "FLAVOR": "",
         "DESCRIPTIONS": [
-            "La primera vez que #ythepirate:Entierres cada turno, obtén [E]."
+            "La primera vez que #ythepirate:Entierres cada turno, obtén [E] ."
         ]
     },
     "thePirate:ExoticDish": {
@@ -74,7 +74,7 @@
         "NAME": "Cofre Avaro",
         "FLAVOR": "",
         "DESCRIPTIONS": [
-            "Al comienzo de la batalla, obtén #b1 #yFuerza por cada #b100 #yoro que tengas."
+            "Al comienzo de cada combate, gana #b1 de #yFuerza por cada #b100 #yoro que tengas."
         ]
     },
     "thePirate:GunsmithsBible": {
@@ -84,7 +84,7 @@
             "Haz clic derecho para reemplazar permanentemente esto con un #yReliquia #yde #yCañón #yAccesorio, según tu #yAct actual.",
             "Esperar hasta Actos posteriores otorga Cañones de Accesorio de reliquias progresivamente más fuertes.",
             "Reliquias de Cañones Accesorios:",
-            "#yCannon gana (acumulativo): NL #yNegro #yCannon #y(Acto #y1): NL El siguiente Bala de cañón que juegues este turno cuesta #b0. NL #yPlata #yCannon #y(Acto #y2): NL ...y NL Aplica #yVulnerable a TODOS los enemigos. NL #yOro #yCannon #y(Acto #y3): NL ...y NL Obtén #b2 #yFuerza. NL #yPlatino #yCannon #y(Acto #y4): NL ...y NL #yDébil TODOS los enemigos. NL Todos los enemigos pierden #b2 #yFuerza."
+            "#yCannon gana (acumulativo): NL #yNegro #yCañón #y(Acto #y1): NL El siguiente Bala de cañón que juegues este turno cuesta #b0. NL #yPlata #yCañón #y(Acto #y2): NL ...y NL Aplica #yVulnerable a TODOS los enemigos. NL #yOro #yCañón #y(Acto #y3): NL ...y NL Obtén #b2 de #yFuerza. NL #yPlatino #yCañón #y(Acto #y4): NL ...y NL #yDébil TODOS los enemigos. NL Todos los enemigos pierden #b2 de #yFuerza."
         ]
     },
     "thePirate:BlackCannon": {
@@ -105,24 +105,23 @@
         "NAME": "Accesorio de Cañón Dorado",
         "FLAVOR": "",
         "DESCRIPTIONS": [
-            "Al inicio del combate, agrega un cañón a tu mano. NL #yCañón #ygana: NL El siguiente Proyectil de cañón que juegues este turno cuesta #b0. NL Aplica #yVulnerable a TODOS los enemigos. NL Ganas #b2 #yFuerza."
+            "Al inicio del combate, agrega un cañón a tu mano. NL #yCañón #ygana: NL El siguiente Proyectil de cañón que juegues este turno cuesta #b0. NL Aplica #yVulnerable a TODOS los enemigos. NL Gana #b2 de #yFuerza."
         ]
     },
     "thePirate:PlatinumCannon": {
         "NAME": "Accesorio de Cañón de Platino",
         "FLAVOR": "",
         "DESCRIPTIONS": [
-            "Al inicio del combate, agrega un cañón a tu mano. NL #yCañón #ygana: NL El siguiente Proyectil de cañón que juegues este turno cuesta #b0. NL Aplica #yVulnerable y #yDébil a TODOS los enemigos. NL Ganas #b2 #yFuerza. NL Todos los enemigos pierden #b2 #yFuerza."
+            "Al inicio del combate, agrega un cañón a tu mano. NL #yCañón #ygana: NL El siguiente Proyectil de cañón que juegues este turno cuesta #b0. NL Aplica #yVulnerable y #yDébil a TODOS los enemigos. NL Gana #b2 de #yFuerza. NL Todos los enemigos pierden #b2 #yFuerza."
         ]
     },
     "thePirate:BottledVoid": {
-        "NAME": "Vacío embotellado",
+        "NAME": "Vacío Embotellado",
         "FLAVOR": "¿Qué es esto?",
         "DESCRIPTIONS": [
-            "Elige una carta. No puedes robar la carta elegida en tu mano inicial al inicio de la batalla.",
+            "Al recoher, escoge una carta. No puedes robar la carta elegida en tu mano inicial al inicio de combate.",
             "No puedes robar ",
-            " en tu mano inicial al inicio de la batalla.",
-            "Selecciona una carta para embotellar durante "
+            "Escoge una carta para Vacío Embotellado"
         ]
     }
 }
