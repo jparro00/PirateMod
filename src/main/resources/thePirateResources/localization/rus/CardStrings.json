@@ -27,7 +27,7 @@
   },
   "thePirate:GeneticSplice": {
     "NAME": "Сращивание генов",
-    "DESCRIPTION": "Снимите thepirate:Чернила с врага. NL Даёт 1 Ловкости за каждые !M! снятых thepirate:Чернил. NL Даёт !B! Защиты. NL Сжигается."
+    "DESCRIPTION": "Снимите thepirate:Чернила с врага. NL Даёт 1 Ловкости за каждые снятые !M! thepirate:Чернил. NL Даёт !B! Защиты. NL Сжигается."
   },
   "thePirate:ScoutAhead": {
     "NAME": "Разведка",
@@ -35,7 +35,7 @@
     "UPGRADE_DESCRIPTION": "Вы thepirate:Выкапываете до X+1 карт в начале следующего хода. NL Сжигается."
   },
   "thePirate:PinDown": {
-    "NAME": "Придавить",
+    "NAME": "Обозначить место",
     "DESCRIPTION": "Накладывает !M! Слабости. NL Добавляет *Лезвие *лопаты в стопку добора."
   },
   "thePirate:ShovelBlade": {
@@ -78,9 +78,9 @@
     "DESCRIPTION": "Даёт !B! Защиты. NL При следующей потере золота, получите золото, равное потерянному."
   },
   "thePirate:DarkOffering": {
-    "NAME": "Тёмный обмен",
-    "DESCRIPTION": "Вы thepirate:Закапываете до X карт. Накладывает !M!X thepirate:Чернил на ВСЕХ врагов. NL Сжигается.",
-    "UPGRADE_DESCRIPTION": "Вы thepirate:Закапываете до X+1 карт. Накладывает !M!(X+1) thepirate:Чернил на ВСЕХ врагов. NL Сжигается."
+    "NAME": "Подношение океану",
+    "DESCRIPTION": "Вы thepirate:Закапываете до X карт. NL Накладывает !M!X thepirate:Чернил на ВСЕХ врагов. NL Сжигается.",
+    "UPGRADE_DESCRIPTION": "Вы thepirate:Закапываете до X+1 карт. NL Накладывает !M!(X+1) thepirate:Чернил на ВСЕХ врагов. NL Сжигается."
   },
   "thePirate:TimeWarp": {
     "NAME": "Искривление времени",
@@ -113,13 +113,13 @@
     "EXTENDED_DESCRIPTION": ["Неиграбельная, пока не *Улучшена.", "."," ( !SM! )."]
   },
   "thePirate:AttendToCache": {
-    "NAME": "Слежка за тайником",
+    "NAME": "Охота за сокровищем",
     "DESCRIPTION": "Вы thepirate:Закапываете карту и thepirate:Выкапываете карту. NL Сжигается.",
-    "UPGRADE_DESCRIPTION": "Вы thepirate:Закапываете карту и thepirate:Выкапываете !M! карт. NL Сжигается."
+    "UPGRADE_DESCRIPTION": "Вы thepirate:Закапываете карту и thepirate:Выкапываете !M! карты. NL Сжигается."
   },
   "thePirate:RetreatToShore": {
     "NAME": "Сход на берег",
-    "DESCRIPTION": "Даёт !B! Защиты. NL Вы thepirate:Закапываете !M! карт."
+    "DESCRIPTION": "Даёт !B! Защиты. NL Вы thepirate:Закапываете !M! карты."
   },
   "thePirate:BraceForImpact": {
     "NAME": "Неизбежный бой",
@@ -131,7 +131,7 @@
   },
   "thePirate:Kraken": {
     "NAME": "Кракен",
-    "DESCRIPTION": "thepirate:Оглушить врага. NL Накладывает !M! thepirate:Чернил на ОСТАЛЬНЫХ врагов. NL thepirate:Хищная. NL Сжигается."
+    "DESCRIPTION": "thepirate:Оглушить одного врага. NL Накладывает !M! thepirate:Чернил на ОСТАЛЬНЫХ врагов. NL thepirate:Хищная. NL Сжигается."
   },
   "thePirate:ElectricEel": {
     "NAME": "Электрический угорь",
@@ -165,8 +165,8 @@
     "DESCRIPTION": "Когда вы thepirate:Закапываете карту, вы берёте !M! карту."
   },
   "thePirate:HardenedBrine": {
-    "NAME": "Маринование",
-    "DESCRIPTION": "Когда вы тратите [E] , даёт 1 Защиты за каждую потраченную."
+    "NAME": "Омывание скал",
+    "DESCRIPTION": "Когда вы тратите [E] , даёт 1 Защиты за каждую потраченную [E]."
   },
   "thePirate:VolatileInk": {
     "NAME": "Летучие чернила",
@@ -182,7 +182,7 @@
   },
   "thePirate:Subdue": {
     "NAME": "Покорение",
-    "DESCRIPTION": "Наносит !D! урона. NL Наносит дополнительный урон, равный числу thepirate:Чернил на враге."
+    "DESCRIPTION": "Наносит !D! урона. NL Наносит дополнительный урон, равный количеству thepirate:Чернил на враге."
   },
   "thePirate:ChemicalWarfare": {
     "NAME": "Химическое оружие",
@@ -215,7 +215,7 @@
   },
   "thePirate:CursedBlade": {
     "NAME": "Проклятый клинок",
-    "DESCRIPTION": "Наносит !D! урона. NL Даёт !M! thepirate:Явление."
+    "DESCRIPTION": "Наносит !D! урона. NL Накладывает на вас !M! thepirate:Явление."
   },
   "thePirate:StrangeBlade": {
     "NAME": "Загадочный клинок",
@@ -229,7 +229,7 @@
   },
   "thePirate:SorcererAttack": {
     "NAME": "Атака чародея",
-    "DESCRIPTION": "Наносит !D! урона. NL Снимает весь Артефакт с цели и накладывает !M! thepirate:Явление. NL Сжигается."
+    "DESCRIPTION": "Наносит !D! урона. NL Снимает весь Артефакт с врага и накладывает на него !M! thepirate:Явление. NL Сжигается."
   },
   "thePirate:CausticInk": {
     "NAME": "Едкие чернила",
@@ -246,8 +246,8 @@
   },
   "thePirate:Saboteur": {
     "NAME": "Диверсант",
-    "DESCRIPTION": "Даёт !B! Защиты. NL Враг не получит Защиту в следующий раз, когда получает её.",
-    "UPGRADE_DESCRIPTION": "Даёт !B! Защиты. NL ВСЕ враги не получат Защиту в следующий раз, когда получают её."
+    "DESCRIPTION": "Даёт !B! Защиты. NL Враг не получит Защиту в следующий раз, когда должен будет получить её.",
+    "UPGRADE_DESCRIPTION": "Даёт !B! Защиты. NL ВСЕ враги не получат Защиту в следующий раз, когда должны будут получить её."
   },
   "thePirate:Ransom": {
     "NAME": "Выкуп",
@@ -255,7 +255,7 @@
   },
   "thePirate:Tropomyosin": {
     "NAME": "Тропомиозин",
-    "DESCRIPTION": "Враг теряет !M! Силы и накладывает !SM! thepirate:Чернил. NL Накладывает thepirate:Летучие_чернила на 1 ход. NL Сжигается."
+    "DESCRIPTION": "Враг теряет !M! Силы. Накладывает на врага !SM! thepirate:Чернил и, на один ход, 1 thepirate:Летучие_чернила. NL Сжигается."
   },
   "thePirate:GrapeShot": {
     "NAME": "Дрейфгагель",
@@ -322,8 +322,8 @@
   },
   "thePirate:MakeshiftSpear": {
     "NAME": "Самодельное копьё",
-    "DESCRIPTION": "Наносит !D! урона ВСЕМ врагам. NL Если эта карта *Улучшается, то она удаляется из вашей колоды.",
-    "UPGRADE_DESCRIPTION": "Если эта карта *Улучшается, то она удаляется из вашей колоды."
+    "DESCRIPTION": "Наносит !D! урона ВСЕМ врагам. NL Если эта карта *Улучшается, то она thepirate:Изгоняется.",
+    "UPGRADE_DESCRIPTION": "Если эта карта *Улучшается, то она thepirate:Изгоняется."
   },
   "thePirate:SwabTheDeck": {
     "NAME": "Надраить палубу",
@@ -340,13 +340,13 @@
   },
   "thePirate:Bury": {
     "NAME": "Погребение",
-    "DESCRIPTION": "Вы thepirate:Закапываете !M! карту. NL Вы берёте !SM! карт.",
-    "UPGRADE_DESCRIPTION": "Вы thepirate:Закапываете !M! карту. NL Вы берёте !SM! карт."
+    "DESCRIPTION": "Вы thepirate:Закапываете !M! карту. NL Вы берёте !SM! карту.",
+    "UPGRADE_DESCRIPTION": "Вы thepirate:Закапываете !M! карту. NL Вы берёте !SM! карты."
   },
   "thePirate:GiantBeak": {
     "NAME": "Огромный клюв",
     "DESCRIPTION": "Накладывает !M! Уязвимости, затем наносит !D! урона.",
-    "EXTENDED_DESCRIPTION": ["Подсказка", "*Огромный *Клюв накладывает #yУязвимость раньше нанесения урона. Наведите мышку на врага, чтобы увидеть рассчитанный урон после наложения #yУязвимости."]
+    "EXTENDED_DESCRIPTION": ["Подсказка", "#yОгромный #yКлюв накладывает #yУязвимость раньше нанесения урона. Наведите мышку на врага, чтобы увидеть рассчитанный урон после наложения #yУязвимости."]
   },
   "thePirate:Cutlass": {
     "NAME": "Кортик",
