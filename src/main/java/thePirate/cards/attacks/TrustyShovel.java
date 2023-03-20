@@ -66,7 +66,7 @@ public class TrustyShovel extends AbstractDynamicCard {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
             upgradeMagicNumber(UPGRADE_CARDS_TO_BURY);
-            initializeDescription();
+            upgradeDescription();
         }
     }
 }
