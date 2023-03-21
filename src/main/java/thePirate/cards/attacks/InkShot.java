@@ -57,8 +57,10 @@ public class InkShot extends AbstractCannonBallCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
 
-        this.addToBot(new PirateSFXAction("CANNON_FIRE"));
-        this.addToBot(new PirateSFXAction("INK_SPLAT_CANNON"));
+        if (!PirateMod.disableCannonSFX.toggle.enabled){
+            this.addToBot(new PirateSFXAction("CANNON_FIRE"));
+            this.addToBot(new PirateSFXAction("INK_SPLAT_CANNON"));
+        }
         for(AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters){
             this.addToBot(new ApplyPowerAction(mo, p, new InkPower(mo, p, magicNumber), magicNumber));
         }

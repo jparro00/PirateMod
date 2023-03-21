@@ -121,8 +121,7 @@
     "DESCRIPTIONS": [
       "Choose a card. You cannot draw the chosen card in your opening hand at the start of battle.",
       "You cannot draw ",
-      " in your opening hand at the start of battle.",
-      "Select a card to bottle for "
+      "Choose a card for Bottled Void"
     ]
   }
 }

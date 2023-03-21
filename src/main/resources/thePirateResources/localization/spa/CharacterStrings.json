@@ -1,0 +1,13 @@
+{
+    "thePirate:PirateCharacter": {
+        "NAMES": [
+            "El Abisal",
+            "el Abisal"
+        ],
+        "TEXT": [
+            "Un hechicero nacido del mar que llega con la marea. NL Aniquila a sus enemigos con su versátil arsenal de cañonazos.",
+            "NL Haces que el corazón se hunda.",
+            "Mientras navegas por una calle sin iluminación, te encuentras con varias figuras encapuchadas en medio de un oscuro ritual. A medida que te acercas, se vuelven hacia ti en siniesta unión. El más alto de ellos muestra sus colmillos y extiende una larga mano pálida hacia ti. NL ~\"Únete~ ~a~ ~nosotros,~ ~El~ ~de~ ~tentáculos,` ~y~ ~siente~ ~el~ ~calor~ ~de~ ~la~ ~Espiga.\"~"
+        ]
+    }
+}

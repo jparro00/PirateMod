@@ -51,7 +51,9 @@ public class Saboteur extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new PirateSFXAction("MONKEY_2"));
+        if (!PirateMod.disableMonkeySFX.toggle.enabled){
+            addToBot(new PirateSFXAction("MONKEY_2"));
+        }
         addToBot(new GainBlockAction(p, block));
         if(target == CardTarget.ALL_ENEMY){
             Iterator iter = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();

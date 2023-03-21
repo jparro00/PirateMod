@@ -1,0 +1,214 @@
+{
+    "VelvetChoker": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Obtén [E] y reinicia el contador de este objeto a #b0."
+    },
+    "SneckoEye": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Roba #b2 cartas. Si no estás #yConfundido, obtén #yConfundido."
+    },
+    "BagOfPreparation": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Roba #b2 cartas."
+    },
+    "BronzeScales": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Obtén #b3 #yEspinas."
+    },
+    "BloodVial": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Obtén #b2 HP."
+    },
+    "BagOfMarbles": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Aplica #yVulnerable a TODOS los enemigos."
+    },
+    "Vajra": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Obtén #b1 #yFuerza."
+    },
+    "Anchor": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Obtén #b10 #yBloqueo."
+    },
+    "HappyFlower": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Incrementa este contador en #b1."
+    },
+    "OddlySmoothStone": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Obtén #b1 #yDestreza."
+    },
+    "MercuryHourglass": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Inflige #b3 de daño a TODOS los enemigos."
+    },
+    "HornCleat": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Reinicia el contador de este objeto a #b1 (si ya se ha utilizado, reactiva el efecto)."
+    },
+    "DuVuDoll": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Obtén #b1 #yFuerza por cada #rMaldición en tu Mazo."
+    },
+    "FossilizedHelix": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Obtén #b1 carga de #yBuffer."
+    },
+    "Girya": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Obtén #b1 #yFuerza por cada vez que hayas #yLevantado pesas."
+    },
+    "IncenseBurner": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Aumenta este contador en #b1."
+    },
+    "Pocketwatch": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Reinicia el contador de este objeto a #b1."
+    },
+    "CaptainsWheel": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Reinicia el contador de este objeto a #b1 (si ya se usó, reactivarlo)"
+    },
+    "GamblingChip": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Descarta cualquier cantidad de cartas, luego roba esa misma cantidad de cartas."
+    },
+    "ThreadAndNeedle": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Obtén #b4 #yArmadura #yPlateada."
+    },
+    "ClockworkSouvenir": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Obtén #b1 #yArtefacto."
+    },
+    "Toolbox": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Elige #b1 de #b3 cartas aleatorias Incoloras y agrega la carta elegida a tu mano."
+    },
+    "Sling": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Si esta es una pelea de Élite, obtén #b2 #yFuerza."
+    },
+    "Akabeko": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "El próximo #yAtaque que juegues en esta pelea inflige #b8 puntos de daño adicionales."
+    },
+    "CentennialPuzzle": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "La próxima vez que pierdas puntos de vida en esta pelea, roba #b3 cartas."
+    },
+    "Pantograph": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Si esta es una pelea contra un Jefe, cura #b25 puntos de vida."
+    },
+    "CoffeeDripper": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Obtén [E]."
+    },
+    "SlaversCollar": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Obtén [E]."
+    },
+    "RunicDome": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Obtén [E]."
+    },
+    "FusionHammer": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Obtén [E]."
+    },
+    "PhilosopherStone": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Obtén [E] ."
+    },
+    "BustedCrown": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Obtén [E] ."
+    },
+    "Ectoplasm": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Obtén [E] ."
+    },
+    "Sozu": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Obtén [E] ."
+    },
+    "CursedKey": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Obtén [E] ."
+    },
+    "Lantern": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Obtén [E] ."
+    },
+    "AncientTeaSet": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Obtén [E] [E] ."
+    },
+    "CultistMask": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Este turno, te sientes más comunicativo."
+    },
+    "Enchiridion": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Agrega una carta de #yPoder al azar a tu mano. Cuesta #b0 este turno."
+    },
+    "MutagenicStrength": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Obtén #b3 #yFuerza."
+    },
+    "Necronomicon": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "La próxima #yAtaque que juegues este turno que cueste #b2 o más se juega dos veces."
+    },
+    "RedMask": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Aplica #yDébil a TODOS los enemigos."
+    },
+    "WarpedTongs": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Mejora una carta al azar en tu mano."
+    },
+    "BlackCannon": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Agrega un #yCañón a tu mano."
+    },
+    "SilverCannon": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Agrega un #yCañón a tu mano."
+    },
+    "GoldCannon": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Agrega un #yCañón a tu mano."
+    },
+    "PlatinumCannon": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Agrega un #yCañón a tu mano."
+    },
+    "Motivation": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "La próxima vez que #yentierres una carta en este turno, gana [E]."
+    },
+    "GreedyChest": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Gana #b1 #yFuerza por cada #b100 #yoros que tengas."
+    },
+    "ExperimentalCannon": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Añade un #yCañón a tu mano."
+    },
+    "ExoticDish": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Aplica #b5 #yTinta a TODOS los enemigos."
+    },
+    "NavigationDevice": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "Restablece el contador de este objeto a #b1 (si ya ha sido utilizado, reactivarlo)"
+    },
+    "WoodenLeg": {
+        "NAME": "Efecto del Toque de Difuntos:",
+        "DESCRIPTION": "#yEntierra #b3 cartas."
+    }
+}

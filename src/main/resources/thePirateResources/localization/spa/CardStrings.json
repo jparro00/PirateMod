@@ -1,0 +1,376 @@
+{
+    "thePirate:Retaliation": {
+        "NAME": "Represalias",
+        "DESCRIPTION": "Si el enemigo tiene la intención de atacar, haz daño igual a la intención del enemigo.",
+        "EXTENDED_DESCRIPTION": ["Si el enemigo tiene la intención de atacar, haz daño igual a la intención del enemigo (daño !D! X !M! ).", "Si el enemigo tiene la intención de atacar, haz daño igual a la intención del enemigo (daño !D! ).", "Consejo", "Represalias inflige daño igual a la intención por encima del enemigo objetivo, independientemente de los potenciadores o debilitadores que tenga el jugador en ese momento."]
+    },
+    "thePirate:GhostOfBlackbeard": {
+        "NAME": "Fantasma de Barbanegra",
+        "DESCRIPTION": "Haz !D! de daño. NL Cuesta 1 [E] más por cada carta thepirate:Enterrada en este combate."
+    },
+    "thePirate:BoardingParty": {
+        "NAME": "Abordaje",
+        "DESCRIPTION": "Haz !D! de daño. NL thepirate:Entierra todas las cartas que no sean de Ataque en tu pila de extracción."
+    },
+    "thePirate:DeathKnell": {
+        "NAME": "Toque de Difuntos",
+        "DESCRIPTION": "Activa los efectos de inicio de combate y los efectos de inicio de turno de la reliquia objetivo. NL Agota.",
+        "EXTENDED_DESCRIPTION": ["Consejo", "Funciona con reliquias que hacen cosas al comienzo del combate (por ejemplo, reiniciar contadores, aplicar potenciadores/debilitadores) y/o al comienzo del turno (por ejemplo, infligir daño a los enemigos, incrementar contadores)."]
+    },
+    "thePirate:UnstableFormula": {
+        "NAME": "Fórmula Inestable",
+        "DESCRIPTION": "Al comienzo del turno, Aplica thepirate:Tinta a TODOS los enemigos igual a su actual cantidad de thepirate:Tinta."
+    },
+    "thePirate:Jettison": {
+        "NAME": "Arrojar al Mar",
+        "DESCRIPTION": "thepirate:Entierra !M! cartas. NL Gana Fuerza temporal igual a sus costos, y !SM! Fuerza por cada carta Injugable thepirate:Enterrada."
+    },
+    "thePirate:GeneticSplice": {
+        "NAME": "Empalme Genético",
+        "DESCRIPTION": "Elimina toda la thepirate:Tinta del enemigo. NL Gana 1 Destreza por cada !M! thepirate:Tinta eliminada. NL Gana !B! de Bloqueo. NL Agota."
+    },
+    "thePirate:ScoutAhead": {
+        "NAME": "Exploración",
+        "DESCRIPTION": "El próximo turno, thepirate:Excava X veces. NL Agota.",
+        "UPGRADE_DESCRIPTION": "El próximo turno, thepirate:Excava X+1 veces. NL Agota."
+    },
+    "thePirate:PinDown": {
+        "NAME": "Inmovilizar",
+        "DESCRIPTION": "Aplica !M! Débil. NL Baraja una *Pala *Hoja a tu pila de extracción."
+    },
+    "thePirate:ShovelBlade": {
+        "NAME": "Pala Hoja",
+        "DESCRIPTION": "Retiene. NL thepirate:Excava. NL Agota.",
+        "UPGRADE_DESCRIPTION": "Retiene. NL thepirate:Excava dos veces. NL Agota."
+    },
+    "thePirate:EvasiveManeuver": {
+        "NAME": "Maniobra Evasiva",
+        "DESCRIPTION": "Aplica !M! thepirate:Tinta."
+    },
+    "thePirate:ChainShot": {
+        "NAME": "Tiro Encadenado",
+        "DESCRIPTION": "Haz !D! de daño. NL El enemigo pierde !M! de Fuerza este turno. NL Agota."
+    },
+    "thePirate:Sandblast": {
+        "NAME": "Patear Arena",
+        "DESCRIPTION": "Haz !D! de daño. NL Aplica !M! Débil y Vulnerable. NL Cuesta 1 [E] menos por cada carta thepirate:Enterrada este turno."
+    },
+    "thePirate:SeaTurtles": {
+        "NAME": "Tortugas Marinas",
+        "DESCRIPTION": "Haz !D! de daño. NL Cuando thepirate:Entierres esto, thepirate:Entierra una copia. Cuando thepirate:excaves esto, pon una copia en la pila de extraccion. NL Agota."
+    },
+    "thePirate:Cyclone": {
+        "NAME": "Ciclón",
+        "DESCRIPTION": "Gana !B! de Bloqueo. NL thepirate:Tormenta. NL Agota.",
+        "EXTENDED_DESCRIPTION": ["Gana !B! de Bloqueo. NL thepirate:Tormenta ( !STORM! ). NL Agota."]
+    },
+    "thePirate:Headbutt": {
+        "NAME": "Cabezazo",
+        "DESCRIPTION": "Haz !D! de daño. NL Coloca una carta de la pila de descarte al tope de la pila de extracción."
+    },
+    "thePirate:BolsterCrew": {
+        "NAME": "Reclutar Tripulación",
+        "DESCRIPTION": "thepirate:Misterioso. NL Gana !M! Fuerza. NL La primera vez que juegues esto en cada combate, pierde !SM! oro.",
+        "UPGRADE_DESCRIPTION": "thepirate:Misterioso. NL Gana !M! Fuerza."
+    },
+    "thePirate:ThiefsAccomplice": {
+        "NAME": "Cómplice del Ladrón",
+        "DESCRIPTION": "Gana !B! de Bloqueo. NL La próxima vez que pierdas oro, obtén esa misma cantidad de oro."
+    },
+    "thePirate:DarkOffering": {
+        "NAME": "Oferta Oscura",
+        "DESCRIPTION": "thepirate:Entierra hasta X cartas y aplica !M!X thepirate:Tinta a TODOS los enemigos. NL Agota.",
+        "UPGRADE_DESCRIPTION": "thepirate:Entierra hasta X+1 cartas y aplica !M! (X+1) thepirate:Tinta a TODOS los enemigos. NL Agota."
+    },
+    "thePirate:TimeWarp": {
+        "NAME": "Distorsión Temporal",
+        "DESCRIPTION": "Al comienzo del turno, devuelve a tu mano la primera carta que jugaste en el turno anterior que no sea Agotada. NL Gana [E] igual a su costo.",
+        "EXTENDED_DESCRIPTION": ["Consejo", "No se pueden devolver poderes jugados a tu mano. NL No se acumula."]
+    },
+    "thePirate:RedShirt": {
+        "NAME": "Camisa Roja",
+        "DESCRIPTION": "Cuando pierdas PV en este turno, en su lugar recibe la misma cantidad de thepirate:Sangrado. NL Agota."
+    },
+    "thePirate:CephalopodForm": {
+        "NAME": "Forma de Cefalópodo",
+        "DESCRIPTION": "Etérea. NL Cada vez que juegues una carta, aplica !M! thepirate:Tinta a TODOS los enemigos.",
+        "UPGRADE_DESCRIPTION": "Cada vez que juegues una carta, aplica !M! thepirate:Tinta a TODOS los enemigos."
+    },
+    "thePirate:HatchPlot": {
+        "NAME": "Trama de Incubación",
+        "DESCRIPTION": "Juega una carta de tu pila de descarte (no puedes elegir Trama de incubación). NL Agota.",
+        "UPGRADE_DESCRIPTION": "Juega una carta de tu pila de descarte (no puedes elegir Trama de incubación).",
+        "EXTENDED_DESCRIPTION": ["Selecciona una carta para jugar desde tu pila de descarte"]
+    },
+    "thePirate:PirateBay": {
+        "NAME": "Bahía Pirata",
+        "DESCRIPTION": "Gana !B! de Bloqueo. NL Crea una copia de una carta en tu pila de extracción, luego thepirate:Entierrala. NL Agota."
+    },
+    "thePirate:DarkPlans": {
+        "NAME": "Planes Oscuros",
+        "DESCRIPTION": "Injugable. thepirate:Misterioso. NL Aplica !M! thepirate:Tinta a TODOS los enemigos por cada vez que esto fue thepirate:Enterrado",
+        "UPGRADE_DESCRIPTION": "thepirate:Misterioso. NL Aplica !M! thepirate:Tinta a TODOS los enemigos por cada vez que esto fue thepirate:Enterrado",
+        "EXTENDED_DESCRIPTION": ["No se puede jugar.", ".", " ( !SM! )."]
+    },
+    "thePirate:AttendToCache": {
+        "NAME": "Atender el Escondite",
+        "DESCRIPTION": "thepirate:Entierra una carta, luego thepirate:Excava. NL Agota.",
+        "UPGRADE_DESCRIPTION": "thepirate:Entierra una carta, luego thepirate:Excava !M! veces. NL Agota."
+    },
+    "thePirate:RetreatToShore": {
+        "NAME": "Retirarse a la Costa",
+        "DESCRIPTION": "Gana !B! de Bloqueo. NL thepirate:Entierra !M! cartas."
+    },
+    "thePirate:BraceForImpact": {
+        "NAME": "Prepararse para el Impacto",
+        "DESCRIPTION": "En el próximo turno, gana !B! de Bloqueo."
+    },
+    "thePirate:AncientCrab": {
+        "NAME": "Cangrejo Antiguo",
+        "DESCRIPTION": "Haz !D! de daño. NL Cuando esta carta se thepirate:entierre, regresala a tu mano y luego thepirate:Excava. NL thepirate:Depredador."
+    },
+    "thePirate:Kraken": {
+        "NAME": "Kraken",
+        "DESCRIPTION": "thepirate:Aturde al enemigo. NL Aplica !M! thepirate:Tinta a todos los demás enemigos. NL thepirate:Depredador. NL Agota."
+    },
+    "thePirate:ElectricEel": {
+        "NAME": "Anguila Eléctrica",
+        "DESCRIPTION": "Roba !SM! carta y NL gana [E]. NL Cuando thepirate:Entierres esto, juégala. NL thepirate:Depredador.",
+        "UPGRADE_DESCRIPTION": "Roba !SM! carta y NL gana [E] [E]. NL Cuando thepirate:Entierres esto, juégala. NL thepirate:Depredador."
+    },
+    "thePirate:LowerDefenses": {
+        "NAME": "Bajar las Defensas",
+        "DESCRIPTION": "thepirate:Señuelo. NL Innata. Injugable. NL Al robarla, obtén !M! Frágil, descarta esto y roba una carta."
+    },
+    "thePirate:WithdrawWeapons": {
+        "NAME": "Retirar las Armas",
+        "DESCRIPTION": "thepirate:Señuelo. NL Innata. Injugable. NL Al robarla, obtén !M! Débil, descarta esto y roba una carta."
+    },
+    "thePirate:BatheInBlood": {
+        "NAME": "Bañarse en Sangre",
+        "DESCRIPTION": "thepirate:Señuelo. NL Innata. Injugable. NL Al robarla, obtén !M! Vulnerable, descarta esto y roba una carta."
+    },
+    "thePirate:AncientMap": {
+        "NAME": "Mapa Antiguo",
+        "DESCRIPTION": "Injugable. NL Cuando thepirate:entierres esta carta, roba !M! cartas.",
+        "EXTENDED_DESCRIPTION": ["Esta carta no se puede jugar", "", ""]
+    },
+    "thePirate:AncientJewel": {
+        "NAME": "Joya Antigua",
+        "DESCRIPTION": "Injugable. NL Cuando thepirate:Entierres esta carta, gana !M! [E].",
+        "EXTENDED_DESCRIPTION": ["Esta carta no se puede jugar", "", ""]
+    },
+    "thePirate:Austerity": {
+        "NAME": "Austeridad",
+        "DESCRIPTION": "Cada vez que thepirate:entierres una carta, roba !M! carta."
+    },
+    "thePirate:HardenedBrine": {
+        "NAME": "Sal Endurecida",
+        "DESCRIPTION": "Cada vez que uses energía, gana 1 de Bloqueo por cada energía usada."
+    },
+    "thePirate:VolatileInk": {
+        "NAME": "Tinta Volátil",
+        "DESCRIPTION": "Obtén thepirate:Tinta_Volátil."
+    },
+    "thePirate:StormSurge": {
+        "NAME": "Oleada de Tormenta",
+        "DESCRIPTION": "Cada vez que uses energía, gana 1 Fuerza temporal por cada energía usada."
+    },
+    "thePirate:TooMuchRum": {
+        "NAME": "Demasiado Ron",
+        "DESCRIPTION": "Cuando thepirate:Entierres una carta, Agotala y gana !M! Bloqueo."
+    },
+    "thePirate:Subdue": {
+        "NAME": "Someter",
+        "DESCRIPTION": "Haz !D! de daño. NL Haz un daño adicional igual a thepirate:Tinta enemigo."
+    },
+    "thePirate:ChemicalWarfare": {
+        "NAME": "Guerra Química",
+        "DESCRIPTION": "Haz !D! de daño. NL El enemigo recibe un 50% más de daño de thepirate:Ink."
+    },
+    "thePirate:FlexibleLimb": {
+        "NAME": "Miembro Flexible",
+        "DESCRIPTION": "Haz !D! de daño. NL Si el enemigo tiene thepirate:Tinta, gana [E] y roba 1 carta."
+    },
+    "thePirate:BeachBuddy": {
+        "NAME": "Compañero de Playa",
+        "DESCRIPTION": "Haz !D! de daño. NL Cada vez que thepirate:entierres una carta, devuelve esto desde la pila de descarte a tu Mano."
+    },
+    "thePirate:AncientAlliances": {
+        "NAME": "Alianzas Antiguas",
+        "DESCRIPTION": "thepirate:Misterioso. NL Haz !D! de daño.",
+        "UPGRADE_DESCRIPTION": "thepirate:Misterioso. NL Haz !D! de daño. NL Gana !M! [E]."
+    },
+    "thePirate:InkBlast": {
+        "NAME": "Explosión de Tinta",
+        "DESCRIPTION": "Haz !D! de daño y aplica !M! thepirate:Ink."
+    },
+    "thePirate:DarkExperiment": {
+        "NAME": "Experimento Oscuro",
+        "DESCRIPTION": "Haz !D! de daño y aplica !M! thepirate:Tinta. Si es Fatal, incrementa permanentemente la cantidad de thepirate:Tinta aplicado por esta carta en !SM!. NL Agota."
+    },
+    "thePirate:DownWithTheShip": {
+        "NAME": "Hundirse con el Barco",
+        "DESCRIPTION": "thepirate:Entierra todas las cartas excepto una de tu pila de extracción y haz !D! de daño por cada carta thepirate:Enterrada. NL Agota."
+    },
+    "thePirate:CursedBlade": {
+        "NAME": "Espada Maldita",
+        "DESCRIPTION": "Haz !D! de daño. NL Obtén !M! thepirate:Artefacto_Corrompido."
+    },
+    "thePirate:StrangeBlade": {
+        "NAME": "Espada Extraña",
+        "DESCRIPTION": "thepirate:Misterioso. NL Haz !D! de daño.",
+        "UPGRADE_DESCRIPTION": "thepirate:Misterioso. NL Haz !D! de daño. NL Roba !M! cartas."
+    },
+    "thePirate:DavyJonesLocker": {
+        "NAME": "Cassillero de Davy Jones",
+        "DESCRIPTION": "thepirate:Purga esto y la próxima carta que juegues.",
+        "UPGRADE_DESCRIPTION": "thepirate:Purga esto y la próxima carta que juegues. NL Obtén una Cassillero de Davy Jones en tu mazo."
+    },
+    "thePirate:SorcererAttack": {
+        "NAME": "Ataque de Hechicero",
+        "DESCRIPTION": "Haz !D! de daño. NL Elimina todos los thepirate:Artefactos y aplica !M! thepirate:Artefacto_Corrompido. NL Agota."
+    },
+    "thePirate:CausticInk": {
+        "NAME": "Tinta Cáustica",
+        "DESCRIPTION": "El enemigo pierde Bloqueo, thepirate:Artefactos, y 2 de Fuerza. NL Aplica thepirate:Tinta igual al Bloqueo perdido. NL Agota.",
+        "UPGRADE_DESCRIPTION": "Retiene NL El enemigo pierde Bloqueo, thepirate:Artefactos, y 2 de Fuerza. NL Aplica thepirate:Tinta igual al Bloqueo perdido. NL Agota."
+    },
+    "thePirate:BeachCrew": {
+        "NAME": "Tripulación de Playa",
+        "DESCRIPTION": "Al comienzo de tu turno, puedes thepirate:Enterrar una carta."
+    },
+    "thePirate:FireAtWill": {
+        "NAME": "Fuego a Voluntad",
+        "DESCRIPTION": "El siguiente Bala de cañón que juegues, y La primera Bala de cañón que juegues cada turno cuesta 0."
+    },
+    "thePirate:Saboteur": {
+        "NAME": "Saboteador",
+        "DESCRIPTION": "Gana !B! de Bloqueo. NL La próxima vez que el enemigo gane bloqueo, en su lugar no lo hace.",
+        "UPGRADE_DESCRIPTION": "Ganancia !B! Bloquear. NL La próxima vez que TODOS los enemigos ganarían Block, en cambio no lo hacen."
+    },
+    "thePirate:Ransom": {
+        "NAME": "Rescate",
+        "DESCRIPTION": "thepirate:Entierra una carta. Gana energía igual a su costo"
+    },
+    "thePirate:Tropomyosin": {
+        "NAME": "Tropomiosina",
+        "DESCRIPTION": "El enemigo pierde !M! de Fuerza y gana !SM! thepirate:Tinta. NL Aplica thepirate:Tinta_Volátil al enemigo durante 1 turno. NL Agota."
+    },
+    "thePirate:GrapeShot": {
+        "NAME": "Tiro de Metralla",
+        "DESCRIPTION": "Haz !D! de daño a un enemigo al azar. NL thepirate:Tormenta. NL Agota.",
+        "EXTENDED_DESCRIPTION": ["Haz !D! de daño a un enemigo al azar. NL thepirate:Tormenta ( !STORM! ). NL Agota."]
+    },
+    "thePirate:MomentousAttack": {
+        "NAME": "Ataque Trascendental",
+        "DESCRIPTION": "Haz !D! de daño. NL Haz !M! de daño adicional por cada energía gastada este turno."
+    },
+    "thePirate:PirateForm": {
+        "NAME": "Forma de Pirata",
+        "DESCRIPTION": "Etéreo. NL Al inicio de tu turno, thepirate:Entierra y luego thepirate:Excava.",
+        "UPGRADE_DESCRIPTION": "Al inicio de tu turno, thepirate:Entierra y luego thepirate:Excava."
+    },
+    "thePirate:Overexert": {
+        "NAME": "Sobreexertar",
+        "DESCRIPTION": "Haz !D! de daño. Reemplaza permanentemente esta carta con un Retirada. NL thepirate:Purga.",
+        "UPGRADE_DESCRIPTION": "Haz !D! de daño. Reemplaza permanentemente esta carta con un [#76ec00]Retirada+[]. NL thepirate:Purga."
+    },
+    "thePirate:Retreat": {
+        "NAME": "Retirada",
+        "DESCRIPTION": "Gana !M! Vulnerable. NL Reemplaza permanentemente esta carta con un Sobreexertar. NL Cuando entierres esto, juégalo. NL thepirate:Purga.",
+        "UPGRADE_DESCRIPTION": "Gana !M! Vulnerable. NL Reemplaza permanentemente esta carta con un [#76ec00]Sobreexertar+[]. NL Cuando entierres esto, juégalo. NL thepirate:Purga."
+    },
+    "thePirate:InkShot": {
+        "NAME": "Tiro de Tinta",
+        "DESCRIPTION": "Haz !D! de daño y aplica !M! thepirate:Tinta a TODOS los enemigos. NL Agota."
+    },
+    "thePirate:Mercenaries": {
+        "NAME": "Mercenarios",
+        "DESCRIPTION": "Etérea. NL Haz !D! de daño. La primera vez que juegues esto en cada combate, pierde !M! oro."
+    },
+    "thePirate:Menace": {
+        "NAME": "Amenaza",
+        "DESCRIPTION": "Duplica todos los perjuicios en el enemigo. NL Agota."
+    },
+    "thePirate:HeadToShore": {
+        "NAME": "Dirígete a la Costa",
+        "DESCRIPTION": "Descarta una carta. NL Al comienzo de tu próximo turno, thepirate:Excava.",
+        "UPGRADE_DESCRIPTION": "Roba una carta y descarta una carta. NL Al comienzo de tu próximo turno, thepirate:Excava."
+    },
+    "thePirate:Dig": {
+        "NAME": "Excavar",
+        "DESCRIPTION": "thepirate:Excava.",
+        "UPGRADE_DESCRIPTION": "thepirate:Excava. NL Roba !SM! carta."
+    },
+    "thePirate:TrustyShovel": {
+        "NAME": "Pala Confiable",
+        "DESCRIPTION": "Haz !D! de daño. NL thepirate:Entierra !M! carta.",
+        "UPGRADE_DESCRIPTION": "Haz !D! de daño. NL thepirate:Entierra !M! cartas."
+    },
+    "thePirate:ShotsInTheDark": {
+        "NAME": "Disparos a Ciegas",
+        "DESCRIPTION": "Haz !D! de daño a un enemigo al azar !M! veces. NL Si esto mata a un enemigo, juega esta carta de nuevo."
+    },
+    "thePirate:HeatedShot": {
+        "NAME": "Tiro Caliente",
+        "DESCRIPTION": "Haz !D! de daño al enemigo más a la izquierda. NL Si esto mata a un enemigo, juega esta carta de nuevo. NL Agota."
+    },
+    "thePirate:CaptainsQuarters": {
+        "NAME": "Cuarto del Capitán",
+        "DESCRIPTION": "Este turno, tu próximo ataque o habilidad se juega dos veces. NL Agota.",
+        "UPGRADE_DESCRIPTION": "Este turno, tu próximo ataque o habilidad se juega dos veces."
+    },
+    "thePirate:MakeshiftSpear": {
+        "NAME": "Lanza Improvisada",
+        "DESCRIPTION": "Haz !D! de daño a TODOS los enemigos. NL Cuando esta carta se mejora, retírala de tu mazo en lugar de mejorarse.",
+        "UPGRADE_DESCRIPTION": "Cuando se mejora, retira inmediatamente esta carta de tu mazo."
+    },
+    "thePirate:SwabTheDeck": {
+        "NAME": "Limpiar la Cubierta",
+        "DESCRIPTION": "Gana !B! de Bloqueo. Si esta es la primera carta que jugaste este turno, gana !M! de Bloqueo adicional."
+    },
+    "thePirate:Reload": {
+        "NAME": "Recargar",
+        "DESCRIPTION": "Gana !B! de Bloqueo. NL Devuelve un Cañón o una Bala de cañón agotada a tu mano.",
+        "UPGRADE_DESCRIPTION": "Retiene. NL Gana !B! de Bloqueo. NL Devuelve un Cañón o una Bala de cañón agotada a tu mano."
+    },
+    "thePirate:Defend": {
+        "NAME": "Defender",
+        "DESCRIPTION": "Gana !B! de Bloqueo."
+    },
+    "thePirate:Bury": {
+        "NAME": "Enterrar",
+        "DESCRIPTION": "thepirate:Entierra !M! carta. NL Roba !SM! carta.",
+        "UPGRADE_DESCRIPTION": "thepirate:Entierra !M! carta. NL Roba !SM! cartas."
+    },
+    "thePirate:GiantBeak": {
+        "NAME": "Pico Gigante",
+        "DESCRIPTION": "Aplica !M! Vulnerable, luego haz !D! de daño.",
+        "EXTENDED_DESCRIPTION": ["Tip", "Pico gigante aplica #yVulnerable antes de infligir daño. Pasa el cursor sobre el enemigo para ver el daño calculado que se aplicará después de #yVulnerable."]
+    },
+    "thePirate:Cutlass": {
+        "NAME": "Cimitarra",
+        "DESCRIPTION": "Haz !D! de daño. NL Pon esta carta al tope de la pila de extracción y reduce su daño en !M!."
+    },
+    "thePirate:Cannon": {
+        "NAME": "Cañón",
+        "DESCRIPTION": "Retiene. Agota. NL Mientras esta carta esté en tu mano, retén 1 bala de cañón este turno."
+    },
+    "thePirate:RoundShot": {
+        "NAME": "Tiro Redondo",
+        "DESCRIPTION": "Haz !D! de daño. NL Agota."
+    },
+    "thePirate:Strike": {
+        "NAME": "Golpe",
+        "DESCRIPTION": "Haz !D! de daño."
+    },
+    "thePirate:Parry": {
+        "NAME": "Parar",
+        "DESCRIPTION": "Gana !B! Bloqueo. NL Gana [E]."
+    },
+    "thePirate:Riposte": {
+        "NAME": "Ripostar",
+        "DESCRIPTION": "Haz !D! de daño. NL Gana [E]."
+    }
+}

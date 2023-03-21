@@ -1,0 +1,114 @@
+{
+    "thePirate:TropomyosinPower": {
+        "NAME": "Tropomiosina",
+        "DESCRIPTIONS": ["#yLa Tinta se remueve de los enemigos al final del turno."]
+    },
+    "thePirate:RetainCannonballPower": {
+        "NAME": "Retener Bala de Cañón",
+        "DESCRIPTIONS": ["Elegir ", "una Bala de Cañón para Retener.", " Balas de Cañón para Retener."]
+    },
+    "thePirate:UnstableFormulaPower": {
+        "NAME": "Fórmula Inestable",
+        "DESCRIPTIONS": ["Al comienzo del turno, aplica #yTinta a TODOS los enemigos igual a ", " su #yTinta actual.", "X su #yTinta actual."]
+    },
+    "thePirate:ScoutAheadPower": {
+        "NAME": "Exploración",
+        "DESCRIPTIONS": ["Al comienzo del próximo turno, #yCavar hasta #b", " vez.", " veces."]
+    },
+    "thePirate:PlayCannonballTwicePower": {
+        "NAME": "Jugar Bala de Cañón Doble",
+        "DESCRIPTIONS": ["La próxima #b", " Bala de Cañón que juegues se jugará dos veces.", " Balas de Cañón que juegues se jugarán dos veces."]
+    },
+    "thePirate:ThiefsAccomplicePower": {
+        "NAME": "Cómplice del Ladrón",
+        "DESCRIPTIONS": ["La próxima #b", " vez que perderías #yoro, gana esa cantidad de #yoro.", " veces que perderías #yoro, gana esa cantidad de #yoro."]
+    },
+    "thePirate:TimeWarpPower": {
+        "NAME": "Distorsión Temporal",
+        "DESCRIPTIONS": ["Al comienzo del turno, la primera carta no exhausta que jugaste en el turno anterior regresa a tu mano. Ganas [E] igual a su costo."]
+    },
+    "thePirate:RedShirtPower": {
+        "NAME": "Camisa Roja",
+        "DESCRIPTIONS": ["La próxima vez que pierdas PV, en su lugar recibe la misma cantidad de #ySangrado."]
+    },
+    "thePirate:BleedingPower": {
+        "NAME": "Sangrado",
+        "DESCRIPTIONS": ["Al final de tu turno, pierde PV igual a la mitad de tu #ySangrado (redondeando hacia arriba), y luego reduce tu #ySangrado por esa cantidad."]
+    },
+    "thePirate:CephalopodFormPower": {
+        "NAME": "Forma de Cefalópodo",
+        "DESCRIPTIONS": ["Cuando juegas una carta, aplica #b", " #yTinta a todos los enemigos.", " #yTinta a todos los enemigos."]
+    },
+    "thePirate:GainBlockNextTurnPower": {
+        "NAME": "Ganar Bloqueo el Próximo Turno",
+        "DESCRIPTIONS": ["El próximo turno, gana #b", " #yBloqueo.", " #yBloqueo."]
+    },
+    "thePirate:ElectricEelPower": {
+        "NAME": "Anguila Eléctrica",
+        "DESCRIPTIONS": ["La primera vez que robes una carta cada turno, gana #b", " [E] .", " [E] ."]
+    },
+    "thePirate:AusterityPower": {
+        "NAME": "Austeridad",
+        "DESCRIPTIONS": ["Cada vez que entierres una carta, roba #b", " carta.", " cartas."]
+    },
+    "thePirate:HardenedBrinePower": {
+        "NAME": "Agua Salada Endurecida",
+        "DESCRIPTIONS": ["Cada vez que uses energía, gana #b", " de #yBloqueo por cada energía usada.", " de #yBloqueo por cada energía usada."]
+    },
+    "thePirate:VolatileInkPower": {
+        "NAME": "Tinta Volátil",
+        "DESCRIPTIONS": ["La tinta se elimina de los enemigos al final del turno en lugar de durante el daño."]
+    },
+    "thePirate:StormSurgePower": {
+        "NAME": "Oleada de Tormenta",
+        "DESCRIPTIONS": ["Cada vez que uses energía, gana #b", " de #yFuerza temporal.", " de #yFuerza temporal."]
+    },
+    "thePirate:TooMuchRumPower": {
+        "NAME": "Demasiado Ron",
+        "DESCRIPTIONS": ["Cada vez que #yEntierres una carta, #yAgotala y gana #b", " de #yBloqueo.", " #yBloqueo."]
+    },
+    "thePirate:ChemicalWarfarePower": {
+        "NAME": "Guerra Química",
+        "DESCRIPTIONS": ["El enemigo recibe un 50% más de daño por #yTinta."]
+    },
+    "thePirate:DavyJonesLockerPower": {
+        "NAME": "Cassillero de Davy Jones",
+        "DESCRIPTIONS": ["#yPurga la siguiente #b", " carta que juegues.", " cartas que juegues."]
+    },
+    "thePirate:CorruptArtifactPower": {
+        "NAME": "Artefacto Corrompido",
+        "DESCRIPTIONS": ["Niega el siguiente #b", " aumento de potencia.", " aumentos de potencia."]
+    },
+    "thePirate:InkPower": {
+        "NAME": "Tinta",
+        "DESCRIPTIONS": ["La próxima vez que este enemigo haga daño, previene el daño igual al valor de #yTinta, haz ese daño al enemigo y luego elimina esa cantidad de #yTinta."]
+    },
+    "thePirate:StartTurnBuryPower": {
+        "NAME": "Tripulación de Playa",
+        "DESCRIPTIONS": ["Al inicio del turno, #yEntierre #b", " carta.", " cartas."]
+    },
+    "thePirate:FireAtWillPower": {
+        "NAME": "Fuego a Voluntad",
+        "DESCRIPTIONS": ["Al inicio del turno, el primer Bala de Cañon #b", " que juegues cuesta #b0.", "Al inicio del turno, los primeros #b", " Balas de Cañon que juegues cuestan #b0."]
+    },
+    "thePirate:PirateFormPower": {
+        "NAME": "Forma Pirata",
+        "DESCRIPTIONS": ["Al inicio del turno, #yEnterrar y luego #yExcavar ", "", ""]
+    },
+    "thePirate:SabateurPower": {
+        "NAME": "Sabotaje",
+        "DESCRIPTIONS": ["La próxima #b", " vez que este enemigo gane #yBloqueo, en cambio no lo hace.", " veces que este enemigo gane #yBloqueo, en cambio no lo hace."]
+    },
+    "thePirate:StartTurnDigPower": {
+        "NAME": "Excavar",
+        "DESCRIPTIONS": ["Al inicio del próximo turno, #yExcava hasta #b", " vez.", " veces."]
+    },
+    "thePirate:CaptainsQuartersPower": {
+        "NAME": "Cuarto del Capitán",
+        "DESCRIPTIONS": ["La próxima #b", " vez que juegues una carta de Ataque o Habilidad este turno, se juega dos veces.", " veces que juegues una carta de Ataque o Habilidad este turno, se juega dos veces."]
+    },
+    "thePirate:FreeCannonballPower": {
+        "NAME": "Bala de Cañon Gratis",
+        "DESCRIPTIONS": ["El próximo #b", " Bala de Cañon que juegues este turno cuesta 0.", " Balas de Cañon que juegues este turno cuestan 0."]
+    }
+}

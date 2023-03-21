@@ -57,7 +57,9 @@ public class ThiefsAccomplicePower extends AbstractPower implements CloneablePow
             int thisGold = gold;
             addToTop(new GainGoldAction(gold));
             addToTop(new ReducePowerAction(owner, owner, POWER_ID,1));
-            addToTop(new PirateSFXAction("MONKEY_1"));
+            if (!PirateMod.disableMonkeySFX.toggle.enabled){
+                addToTop(new PirateSFXAction("MONKEY_1"));
+            }
 
             Hitbox goldHb = AbstractDungeon.topPanel.goldHb;
             addToBot(new AbstractGameAction() {

@@ -305,7 +305,8 @@
   },
   "thePirate:TrustyShovel": {
     "NAME": "Trusty Shovel",
-    "DESCRIPTION": "Deal !D! damage.  NL thepirate:Bury !M! card."
+    "DESCRIPTION": "Deal !D! damage.  NL thepirate:Bury !M! card.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage.  NL thepirate:Bury !M! cards."
   },
   "thePirate:ShotsInTheDark": {
     "NAME": "Shots in the Dark",

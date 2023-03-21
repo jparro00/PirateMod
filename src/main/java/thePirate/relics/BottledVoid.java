@@ -94,7 +94,7 @@ public class BottledVoid extends CustomRelic implements CustomBottleRelic, Custo
         AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.INCOMPLETE;
         // 4. Set the room to INCOMPLETE - don't allow us to use the map, etc.
         CardGroup group = CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck); // 5. Get a card group of all currently unbottled cards
-        AbstractDungeon.gridSelectScreen.open(group, 1, DESCRIPTIONS[3] + name + DESCRIPTIONS[2], false, false, false, false);
+        AbstractDungeon.gridSelectScreen.open(group, 1, DESCRIPTIONS[2], false, false, false, false);
         // 6. Open the grid selection screen with the cards from the CardGroup we specified above. The description reads "Select a card to bottle for" + (relic name) + "."
     }
 
