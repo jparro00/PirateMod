@@ -67,12 +67,15 @@ public class HeatedShot extends AbstractCannonBallCard {
         }
 
         if (target != null && !target.isDeadOrEscaped()){
-            this.addToBot(new PirateSFXAction("CANNON_HIT_SHIP"));
+            if (!PirateMod.disableCannonSFX.toggle.enabled){
+                this.addToBot(new PirateSFXAction("CANNON_HIT_SHIP"));
+                this.addToBot(new HeatedShotAction(target, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE, this));
+            }else {
+                this.addToBot(new HeatedShotAction(target, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY, this));
+            }
             this.addToBot(new VFXAction(p, new FireballEffect(AbstractDungeon.player.hb.x,AbstractDungeon.player.hb.y,target.hb.x,target.hb.y), 0.01F));
             AbstractDungeon.effectsQueue.add(new GhostlyFireEffect(target.hb_x, target.hb_y));
         }
-        //this.addToBot(new DamageAction(target, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        this.addToBot(new HeatedShotAction(target, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE, this));
 
     }
 

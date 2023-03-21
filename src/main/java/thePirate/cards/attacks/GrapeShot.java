@@ -48,7 +48,9 @@ public class GrapeShot extends AbstractCannonBallCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractMonster target = AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng);
-        this.addToBot(new PirateSFXAction("CANNON_FIRE"));
+        if (!PirateMod.disableCannonSFX.toggle.enabled){
+            this.addToBot(new PirateSFXAction("CANNON_FIRE"));
+        }
         this.addToBot(new DamageAction(target, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT, true));
         storm(p,m);
     }

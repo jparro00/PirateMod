@@ -51,9 +51,10 @@ public class ChainShot extends AbstractCannonBallCard{
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new PirateSFXAction("CANNON_FIRE"));
-        PirateSFXAction pirateSFXAction = new PirateSFXAction("CHAINS");
-        addToBot(new PirateSFXAction("CHAINS"));
+        if (!PirateMod.disableCannonSFX.toggle.enabled){
+            addToBot(new PirateSFXAction("CANNON_FIRE"));
+            addToBot(new PirateSFXAction("CHAINS"));
+        }
         VerticalImpactEffect verticalImpactEffect = new VerticalImpactEffect(m.hb.x,m.hb.y);
         verticalImpactEffect.duration = .45f;
         addToBot(new VFXAction(p, verticalImpactEffect, 0.1F));

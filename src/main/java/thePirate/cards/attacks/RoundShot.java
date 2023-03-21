@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.VerticalImpactEffect;
 import thePirate.PirateMod;
@@ -54,12 +53,15 @@ public class RoundShot extends AbstractCannonBallCard{
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        this.addToBot(new PirateSFXAction("CANNON_FIRE"));
+        if (!PirateMod.disableCannonSFX.toggle.enabled){
+            this.addToBot(new PirateSFXAction("CANNON_FIRE"));
+            addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
+        }else {
+            addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        }
         VerticalImpactEffect verticalImpactEffect = new VerticalImpactEffect(m.hb.x,m.hb.y);
         verticalImpactEffect.duration = .45f;
         this.addToBot(new VFXAction(p, verticalImpactEffect, 0.1F));
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
     }
 
 

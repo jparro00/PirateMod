@@ -113,7 +113,7 @@ public class InkPower extends AbstractPower implements CloneablePowerInterface, 
     @Override
     public void renderIcons(SpriteBatch sb, float x, float y, Color c) {
         super.renderIcons(sb, x, y, c);
-        if (!AbstractDungeon.player.hasRelic(RunicDome.ID)){
+        if (!AbstractDungeon.player.hasRelic(RunicDome.ID) && !PirateMod.hideInkIntent.toggle.enabled){
             renderInkIntent(sb);
         }
     }

@@ -96,9 +96,19 @@ public class PirateMod implements
 
     // Mod-settings settings. This is if you want an on/off savable button
     public static Properties theDefaultDefaultSettings = new Properties();
-    public static final String ENABLE_PLACEHOLDER_SETTINGS = "enablePlaceholder";
-    public static boolean enablePlaceholder = true; // The boolean we'll be setting on/off (true/false)
+    public static final String SKIP_TUTORIALS_SETTING = "enablePlaceholder";
+    public static final String HIDE_INK_INTENT_SETTING = "hideInkIntent";
+    public static final String DISABLE_MONKEY_SFX_SETTING = "disableMonkeySFX";
+    public static final String DISABLE_CANNON_SFX_SETTING = "disableCannonSFX";
+
+    public static Boolean skipTutorialsPlaceholder = true; // The boolean we'll be setting on/off (true/false)
+    public static Boolean hideInkIntentPlaceholder = false;
+    public static Boolean disableMonkeySFXPlaceholder = false;
+    public static Boolean disableCannonSFXPlaceholder = false;
     public static ModLabeledToggleButton skipTutorials;
+    public static ModLabeledToggleButton hideInkIntent;
+    public static ModLabeledToggleButton disableMonkeySFX;
+    public static ModLabeledToggleButton disableCannonSFX;
 
     //This is for the in-game mod settings panel.
     private static final String MODNAME = "Pirate Mod";
@@ -274,12 +284,19 @@ public class PirateMod implements
         logger.info("Adding mod settings");
         // This loads the mod settings.
         // The actual mod Button is added below in receivePostInitialize()
-        theDefaultDefaultSettings.setProperty(ENABLE_PLACEHOLDER_SETTINGS, "FALSE"); // This is the default setting. It's actually set...
+        theDefaultDefaultSettings.setProperty(SKIP_TUTORIALS_SETTING, "FALSE"); // This is the default setting. It's actually set...
+        theDefaultDefaultSettings.setProperty(HIDE_INK_INTENT_SETTING, "FALSE");
+        theDefaultDefaultSettings.setProperty(DISABLE_MONKEY_SFX_SETTING, "FALSE");
+        theDefaultDefaultSettings.setProperty(DISABLE_CANNON_SFX_SETTING, "FALSE");
         try {
-            SpireConfig config = new SpireConfig("defaultMod", "theDefaultConfig", theDefaultDefaultSettings); // ...right here
+            SpireConfig config = new SpireConfig(getModID(), getModID() + "Config", theDefaultDefaultSettings); // ...right here
             // the "fileName" parameter is the name of the file MTS will create where it will save our setting.
             config.load(); // Load the setting and set the boolean to equal it
-            enablePlaceholder = config.getBool(ENABLE_PLACEHOLDER_SETTINGS);
+            skipTutorialsPlaceholder = config.getBool(SKIP_TUTORIALS_SETTING);
+            hideInkIntentPlaceholder = config.getBool(HIDE_INK_INTENT_SETTING);
+            disableMonkeySFXPlaceholder = config.getBool(DISABLE_MONKEY_SFX_SETTING);
+            disableCannonSFXPlaceholder = config.getBool(DISABLE_CANNON_SFX_SETTING);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -397,8 +414,7 @@ public class PirateMod implements
     }
     
     // =============== /LOAD THE CHARACTER/ =================
-    
-    
+
     // =============== POST-INITIALIZE =================
     @Override
     public void receivePostInitialize() {
@@ -409,26 +425,79 @@ public class PirateMod implements
         
         // Create the Mod Menu
         ModPanel settingsPanel = new ModPanel();
-        
-            skipTutorials = new ModLabeledToggleButton("Skip Tutorials",
-                350.0f, 700.0f, Settings.CREAM_COLOR, FontHelper.charDescFont, // Position (trial and error it), color, font
-                enablePlaceholder, // Boolean it uses
+
+        skipTutorials = new ModLabeledToggleButton("Skip Tutorials",
+            350.0f, 700.0f, Settings.CREAM_COLOR, FontHelper.charDescFont, // Position (trial and error it), color, font
+                skipTutorialsPlaceholder, // Boolean it uses
                 settingsPanel, // The mod panel in which this button will be in
                 (label) -> {}, // thing??????? idk
                 (button) -> { // The actual button:
             
-            enablePlaceholder = button.enabled; // The boolean true/false will be whether the button is enabled or not
-            try {
-                // And based on that boolean, set the settings and save them
-                SpireConfig config = new SpireConfig("defaultMod", "theDefaultConfig", theDefaultDefaultSettings);
-                config.setBool(ENABLE_PLACEHOLDER_SETTINGS, enablePlaceholder);
-                config.save();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+                    skipTutorialsPlaceholder = button.enabled; // The boolean true/false will be whether the button is enabled or not
+                    try {
+                        // And based on that boolean, set the settings and save them
+                        SpireConfig config = new SpireConfig(getModID(), getModID() + "Config", theDefaultDefaultSettings);
+                        config.setBool(SKIP_TUTORIALS_SETTING, skipTutorialsPlaceholder);
+                        config.save();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
         });
-        
+
+        hideInkIntent = new ModLabeledToggleButton("Hide Ink Intent",
+                350.0f * (1), 750.0f - (2 * 50), Settings.CREAM_COLOR, FontHelper.charDescFont, // Position (trial and error it), color, font
+                hideInkIntentPlaceholder, // Boolean it uses
+                settingsPanel, // The mod panel in which this button will be in
+                (label) -> {}, // thing??????? idk
+                (button) -> { // The actual button:
+                    hideInkIntentPlaceholder = button.enabled; // The boolean true/false will be whether the button is enabled or not
+                    try {
+                        // And based on that boolean, set the settings and save them
+                        SpireConfig config = new SpireConfig(getModID(), getModID() + "Config", theDefaultDefaultSettings);
+                        config.setBool(HIDE_INK_INTENT_SETTING, hideInkIntentPlaceholder);
+                        config.save();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                });
+        disableMonkeySFX = new ModLabeledToggleButton("Disable Monkey SFX",
+                350.0f * (1), 750.0f - (3 * 50), Settings.CREAM_COLOR, FontHelper.charDescFont, // Position (trial and error it), color, font
+                disableMonkeySFXPlaceholder, // Boolean it uses
+                settingsPanel, // The mod panel in which this button will be in
+                (label) -> {}, // thing??????? idk
+                (button) -> { // The actual button:
+                    disableMonkeySFXPlaceholder = button.enabled; // The boolean true/false will be whether the button is enabled or not
+                    try {
+                        // And based on that boolean, set the settings and save them
+                        SpireConfig config = new SpireConfig(getModID(), getModID() + "Config", theDefaultDefaultSettings);
+                        config.setBool(DISABLE_MONKEY_SFX_SETTING, disableMonkeySFXPlaceholder);
+                        config.save();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                });
+        disableCannonSFX = new ModLabeledToggleButton("Disable Cannonball SFX",
+                350.0f * (1), 750.0f - (4 * 50), Settings.CREAM_COLOR, FontHelper.charDescFont, // Position (trial and error it), color, font
+                disableCannonSFXPlaceholder, // Boolean it uses
+                settingsPanel, // The mod panel in which this button will be in
+                (label) -> {}, // thing??????? idk
+                (button) -> { // The actual button:
+                    disableCannonSFXPlaceholder = button.enabled; // The boolean true/false will be whether the button is enabled or not
+                    try {
+                        // And based on that boolean, set the settings and save them
+                        SpireConfig config = new SpireConfig(getModID(), getModID() + "Config", theDefaultDefaultSettings);
+                        config.setBool(DISABLE_CANNON_SFX_SETTING, disableCannonSFXPlaceholder);
+                        config.save();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                });
+
         settingsPanel.addUIElement(skipTutorials); // Add the button to the settings panel. Button is a go.
+        settingsPanel.addUIElement(hideInkIntent);
+        settingsPanel.addUIElement(disableMonkeySFX); // Add the button to the settings panel. Button is a go.
+        settingsPanel.addUIElement(disableCannonSFX); // Add the button to the settings panel. Button is a go.
+
         sound = new PirateSoundMaster();
         
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
