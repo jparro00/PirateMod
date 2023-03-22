@@ -79,9 +79,13 @@ public class CorruptArtifactPower extends AbstractPower implements CloneablePowe
         return new CorruptArtifactPower(owner, source, amount);
     }
 
+    public static boolean ignorePower(AbstractPower power){
+        return power instanceof BackAttackPower ||
+                power instanceof ModeShiftPower;
+    }
     @Override
     public boolean onReceivePower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if(PowerType.BUFF.equals(power.type) && !(power instanceof InvisiblePower) && !(power instanceof BackAttackPower)){
+        if(PowerType.BUFF.equals(power.type) && !(power instanceof InvisiblePower) && !ignorePower(power)){
             onSpecificTrigger();
             outer: if (power instanceof StrengthPower){
                 Iterator<AbstractGameAction> iterator = AbstractDungeon.actionManager.actions.iterator();
