@@ -727,7 +727,7 @@ public class PirateMod implements
 
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
-        if (!skipTutorials.toggle.enabled){
+        if (!skipTutorials.toggle.enabled && AbstractDungeon.player.chosenClass.equals(ThePirate.Enums.THE_PIRATE)){
             AbstractDungeon.ftue = new PirateTutorial(Settings.language);
             skipTutorials.toggle.toggle();
 
