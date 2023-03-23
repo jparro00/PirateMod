@@ -131,11 +131,9 @@ public class BottledVoid extends CustomRelic implements CustomBottleRelic, Custo
 
     @Override
     public void atBattleStartPreDraw() {
-        PirateMod.logger.info("enter atBattleStartPreDraw()");
         Iterator<AbstractCard> iterator = AbstractDungeon.player.drawPile.group.iterator();
         while (iterator.hasNext()){
             AbstractCard c = iterator.next();
-            PirateMod.logger.info("c.cardID: " + c.cardID);
             if (c.uuid.equals(card.uuid)){
                 AbstractDungeon.player.limbo.addToTop(c);
                 iterator.remove();
@@ -151,7 +149,6 @@ public class BottledVoid extends CustomRelic implements CustomBottleRelic, Custo
 
     @Override
     public void atBattleStart() {
-        PirateMod.logger.info("enter atBattleStart()");
 
             addToBot(new AbstractGameAction() {
                 @Override
@@ -159,11 +156,9 @@ public class BottledVoid extends CustomRelic implements CustomBottleRelic, Custo
                     addToBot(new AbstractGameAction() {
                         @Override
                         public void update() {
-                            PirateMod.logger.info("enter update()");
                             Iterator<AbstractCard> iterator = AbstractDungeon.player.limbo.group.iterator();
                             while (iterator.hasNext()){
                                 AbstractCard c = iterator.next();
-                                PirateMod.logger.info("c.cardID: " + c.cardID);
                                 if (c.uuid.equals(card.uuid)){
                                     AbstractDungeon.player.drawPile.addToRandomSpot(c);
                                     iterator.remove();
