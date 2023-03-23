@@ -100,15 +100,18 @@ public class PirateMod implements
     public static final String HIDE_INK_INTENT_SETTING = "hideInkIntent";
     public static final String DISABLE_MONKEY_SFX_SETTING = "disableMonkeySFX";
     public static final String DISABLE_CANNON_SFX_SETTING = "disableCannonSFX";
+    public static final String DISABLE_TIME_WARP_REMINDER_SETTING = "disableTimeWarpReminder";
 
     public static Boolean skipTutorialsPlaceholder = true; // The boolean we'll be setting on/off (true/false)
     public static Boolean hideInkIntentPlaceholder = false;
     public static Boolean disableMonkeySFXPlaceholder = false;
     public static Boolean disableCannonSFXPlaceholder = false;
+    public static Boolean disableTimeWarpReminderPlaceholder = false;
     public static ModLabeledToggleButton skipTutorials;
     public static ModLabeledToggleButton hideInkIntent;
     public static ModLabeledToggleButton disableMonkeySFX;
     public static ModLabeledToggleButton disableCannonSFX;
+    public static ModLabeledToggleButton disableTimeWarpReminder;
 
     //This is for the in-game mod settings panel.
     private static final String MODNAME = "Pirate Mod";
@@ -492,11 +495,28 @@ public class PirateMod implements
                         e.printStackTrace();
                     }
                 });
+        disableTimeWarpReminder = new ModLabeledToggleButton("Disable Time Warp Reminder",
+                350.0f * (1), 750.0f - (5 * 50), Settings.CREAM_COLOR, FontHelper.charDescFont, // Position (trial and error it), color, font
+                disableTimeWarpReminderPlaceholder, // Boolean it uses
+                settingsPanel, // The mod panel in which this button will be in
+                (label) -> {}, // thing??????? idk
+                (button) -> { // The actual button:
+                    disableTimeWarpReminderPlaceholder = button.enabled; // The boolean true/false will be whether the button is enabled or not
+                    try {
+                        // And based on that boolean, set the settings and save them
+                        SpireConfig config = new SpireConfig(getModID(), getModID() + "Config", theDefaultDefaultSettings);
+                        config.setBool(DISABLE_TIME_WARP_REMINDER_SETTING, disableTimeWarpReminderPlaceholder);
+                        config.save();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                });
 
         settingsPanel.addUIElement(skipTutorials); // Add the button to the settings panel. Button is a go.
         settingsPanel.addUIElement(hideInkIntent);
         settingsPanel.addUIElement(disableMonkeySFX); // Add the button to the settings panel. Button is a go.
         settingsPanel.addUIElement(disableCannonSFX); // Add the button to the settings panel. Button is a go.
+        settingsPanel.addUIElement(disableTimeWarpReminder); // Add the button to the settings panel. Button is a go.
 
         sound = new PirateSoundMaster();
         
