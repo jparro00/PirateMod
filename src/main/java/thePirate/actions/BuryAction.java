@@ -18,8 +18,10 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.FrozenEye;
 import com.megacrit.cardcrawl.screens.select.GridCardSelectScreen;
 import com.megacrit.cardcrawl.ui.buttons.PeekButton;
+import thePirate.PirateMod;
 import thePirate.cards.attacks.BeachBuddy;
 import thePirate.patches.actions.CardCounterPatches;
 import thePirate.powers.OnBury;
@@ -124,21 +126,35 @@ public class BuryAction extends AbstractGameAction {
 
                     while(var6.hasNext()) {
                         c = (AbstractCard)var6.next();
-                        temp.addToTop(c);
+                        temp.addToBottom(c);
                     }
 
-                    temp.sortAlphabetically(true);
+                    if (!player.hasRelic(FrozenEye.ID)){
+                        temp.sortAlphabetically(true);
+                    }
                     temp.sortByRarityPlusStatusCardType(false);
+
+                    //set text for Frozen Eye
+                    String text;
+                    if (this.numberOfCards == 1){
+                        text = TEXT[0];
+                    }else {
+                        text = TEXT[1] + numberOfCards + TEXT[2];
+                    }
+                    if (player.hasRelic(FrozenEye.ID)){
+                        text += " NL " + TEXT[3];
+                    }
+
                     if (this.numberOfCards == 1) {
                         if (this.optional) {
-                            AbstractDungeon.gridSelectScreen.open(temp, this.numberOfCards, true, TEXT[0]);
+                            AbstractDungeon.gridSelectScreen.open(temp, this.numberOfCards, true, text);
                         } else {
-                            AbstractDungeon.gridSelectScreen.open(temp, this.numberOfCards, TEXT[0], false);
+                            AbstractDungeon.gridSelectScreen.open(temp, this.numberOfCards, text, false);
                         }
                     } else if (this.optional) {
-                        AbstractDungeon.gridSelectScreen.open(temp, this.numberOfCards, true, TEXT[1] + this.numberOfCards + TEXT[2]);
+                        AbstractDungeon.gridSelectScreen.open(temp, this.numberOfCards, true, text);
                     } else {
-                        AbstractDungeon.gridSelectScreen.open(temp, this.numberOfCards, TEXT[1] + this.numberOfCards + TEXT[2], false);
+                        AbstractDungeon.gridSelectScreen.open(temp, this.numberOfCards, text, false);
                     }
 
                     this.tickDuration();
@@ -229,8 +245,21 @@ public class BuryAction extends AbstractGameAction {
             if (!PeekButton.isPeeking && isBury){
                 Color color = sb.getColor();
                 sb.setColor(Color.WHITE);
-                float derp = Interpolation.swingOut.apply(1.0F, 1.1F, MathUtils.cosDeg((float)(System.currentTimeMillis() / 4L % 360L)) / 12.0F);
+                float derp = 1;
+                if (!PirateMod.disableDigBuryPulse.toggle.enabled){
+                    derp = Interpolation.swingOut.apply(1.0F, 1.1F, MathUtils.cosDeg((float)(System.currentTimeMillis() / 4L % 360L)) / 12.0F);
+                }
                 sb.draw(buryLabel, (32 * Settings.scale), (float) Settings.HEIGHT / 2.0F + (64 * Settings.scale), 0F, 0F, 256.0F, 256.0F, Settings.scale * derp, Settings.scale * derp, 0.0F, 0, 0, 256, 256, false, false);
+
+                if (AbstractDungeon.player != null && AbstractDungeon.player.hasRelic(FrozenEye.ID)){
+                    Texture texture = AbstractDungeon.player.getRelic(FrozenEye.ID).img;
+                    sb.setColor(Color.WHITE);
+                    sb.draw(texture, (128 * Settings.scale), (float) Settings.HEIGHT / 2.0F + (64 * Settings.scale), 0F, 0F, 256.0F, 256.0F, Settings.scale * derp, Settings.scale * derp, 0.0F, 0, 0, 256, 256, false, false);
+
+                }
+
+
+
                 sb.setColor(color);
             }
         }

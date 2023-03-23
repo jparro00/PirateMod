@@ -101,17 +101,20 @@ public class PirateMod implements
     public static final String DISABLE_MONKEY_SFX_SETTING = "disableMonkeySFX";
     public static final String DISABLE_CANNON_SFX_SETTING = "disableCannonSFX";
     public static final String DISABLE_TIME_WARP_REMINDER_SETTING = "disableTimeWarpReminder";
+    public static final String DISABLE_DIG_BURY_PULSE_SETTING = "disableDigBuryPulse";
 
     public static Boolean skipTutorialsPlaceholder = true; // The boolean we'll be setting on/off (true/false)
     public static Boolean hideInkIntentPlaceholder = false;
     public static Boolean disableMonkeySFXPlaceholder = false;
     public static Boolean disableCannonSFXPlaceholder = false;
     public static Boolean disableTimeWarpReminderPlaceholder = false;
+    public static Boolean disableDigBuryPulsePlaceholder = false;
     public static ModLabeledToggleButton skipTutorials;
     public static ModLabeledToggleButton hideInkIntent;
     public static ModLabeledToggleButton disableMonkeySFX;
     public static ModLabeledToggleButton disableCannonSFX;
     public static ModLabeledToggleButton disableTimeWarpReminder;
+    public static ModLabeledToggleButton disableDigBuryPulse;
 
     //This is for the in-game mod settings panel.
     private static final String MODNAME = "Pirate Mod";
@@ -511,12 +514,29 @@ public class PirateMod implements
                         e.printStackTrace();
                     }
                 });
+        disableDigBuryPulse = new ModLabeledToggleButton("Disable Dig/Bury Screen Icon Pulsing",
+                350.0f * (1), 750.0f - (6 * 50), Settings.CREAM_COLOR, FontHelper.charDescFont, // Position (trial and error it), color, font
+                disableDigBuryPulsePlaceholder, // Boolean it uses
+                settingsPanel, // The mod panel in which this button will be in
+                (label) -> {}, // thing??????? idk
+                (button) -> { // The actual button:
+                    disableDigBuryPulsePlaceholder = button.enabled; // The boolean true/false will be whether the button is enabled or not
+                    try {
+                        // And based on that boolean, set the settings and save them
+                        SpireConfig config = new SpireConfig(getModID(), getModID() + "Config", theDefaultDefaultSettings);
+                        config.setBool(DISABLE_DIG_BURY_PULSE_SETTING, disableDigBuryPulsePlaceholder);
+                        config.save();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                });
 
         settingsPanel.addUIElement(skipTutorials); // Add the button to the settings panel. Button is a go.
         settingsPanel.addUIElement(hideInkIntent);
-        settingsPanel.addUIElement(disableMonkeySFX); // Add the button to the settings panel. Button is a go.
-        settingsPanel.addUIElement(disableCannonSFX); // Add the button to the settings panel. Button is a go.
-        settingsPanel.addUIElement(disableTimeWarpReminder); // Add the button to the settings panel. Button is a go.
+        settingsPanel.addUIElement(disableMonkeySFX);
+        settingsPanel.addUIElement(disableCannonSFX);
+        settingsPanel.addUIElement(disableTimeWarpReminder);
+        settingsPanel.addUIElement(disableDigBuryPulse);
 
         sound = new PirateSoundMaster();
         
