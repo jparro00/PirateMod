@@ -119,9 +119,9 @@
     "NAME": "Bottled Void",
     "FLAVOR": "What is this?",
     "DESCRIPTIONS": [
-      "Choose a card. You cannot draw the chosen card in your opening hand at the start of battle.",
+      "Choose a card. You cannot draw the chosen card in your opening hand at the start of combat.",
       "You cannot draw ",
-      "Choose a card for Bottled Void"
+      "in your opening hand at the start of combat."
     ]
   }
 }
