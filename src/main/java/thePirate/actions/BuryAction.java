@@ -134,24 +134,20 @@ public class BuryAction extends AbstractGameAction {
                     }
                     temp.sortByRarityPlusStatusCardType(false);
 
-                    //set text for Frozen Eye
+                    //set text (with case for Frozen Eye)
                     String text;
                     if (this.numberOfCards == 1){
                         text = TEXT[0];
                     }else {
                         text = TEXT[1] + numberOfCards + TEXT[2];
                     }
+/*
                     if (player.hasRelic(FrozenEye.ID)){
                         text += " NL " + TEXT[3];
                     }
+*/
 
-                    if (this.numberOfCards == 1) {
-                        if (this.optional) {
-                            AbstractDungeon.gridSelectScreen.open(temp, this.numberOfCards, true, text);
-                        } else {
-                            AbstractDungeon.gridSelectScreen.open(temp, this.numberOfCards, text, false);
-                        }
-                    } else if (this.optional) {
+                    if (this.optional) {
                         AbstractDungeon.gridSelectScreen.open(temp, this.numberOfCards, true, text);
                     } else {
                         AbstractDungeon.gridSelectScreen.open(temp, this.numberOfCards, text, false);
