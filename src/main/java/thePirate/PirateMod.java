@@ -17,6 +17,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
@@ -765,6 +766,11 @@ public class PirateMod implements
         return getModID() + ":" + idText;
     }
 
+    public static boolean isInCombat(){
+
+        return CardCrawlGame.isInARun() && AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT;
+
+    }
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
         if (!skipTutorials.toggle.enabled && AbstractDungeon.player.chosenClass.equals(ThePirate.Enums.THE_PIRATE)){
