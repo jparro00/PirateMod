@@ -45,7 +45,8 @@
         "NAME": "Pata de Palo",
         "FLAVOR": "",
         "DESCRIPTIONS": [
-            "Al comienzo de cada combate, #ythepirate:entierra hasta #b3 cartas."
+            "Al comienzo de cada combate, #ythepirate:entierra hasta #b3 cartas. NL NL #yConsejo: NL En cualquier momento durante el combate, haz clic derecho en esta reliquia para guardar hasta cartas #b3 para preseleccionarlas al comienzo del combate.",
+            "Choose up to 3 cards to be preselected for burying at the beginning of combat (your choice can be changed at any time)"
         ]
     },
     "thePirate:Motivation": {
