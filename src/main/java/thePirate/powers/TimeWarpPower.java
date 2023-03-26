@@ -3,6 +3,7 @@ package thePirate.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -63,14 +64,12 @@ public class TimeWarpPower extends AbstractPower implements CloneablePowerInterf
     @Override
     public void atStartOfTurn() {
         if(firstCard != null){
-            PirateMod.logger.info("lastCard.cardID: " + firstCard.cardID);
             AbstractPlayer p = AbstractDungeon.player;
             boolean foundCard = false;
             for (AbstractCard card : p.discardPile.group){
                 if (card.uuid.equals(firstCard.uuid)){
                     foundCard = true;
                     firstCard = card;
-                    PirateMod.logger.info("discard contains card");
                     addToTop(new DiscardToHandAction(firstCard));
                     break;
                 }
@@ -80,7 +79,6 @@ public class TimeWarpPower extends AbstractPower implements CloneablePowerInterf
                     if (card.uuid.equals(firstCard.uuid)){
                         foundCard = true;
                         firstCard = card;
-                        PirateMod.logger.info("draw contains card");
                         addToTop(new MoveCardAction(p.drawPile, p.hand, firstCard));
                         break;
                     }
@@ -93,10 +91,17 @@ public class TimeWarpPower extends AbstractPower implements CloneablePowerInterf
                     addToBot(new GainEnergyAction(firstCard.costForTurn));
                 }
             }
-            firstCard = null;
-            lastCardXCost = 0;
+            addToBot(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    firstCard = null;
+                    lastCardXCost = 0;
+                    isDone = true;
+                }
+            });
         }
     }
+
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
