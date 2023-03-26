@@ -173,7 +173,7 @@ public class BuryAction extends AbstractGameAction {
                         for (AbstractCard card : combatPreselectedCards){
                             card.beginGlowing();
                             Color originalGlowColor = card.glowColor;
-                            addToBot(new AbstractGameAction() {
+                            addToTop(new AbstractGameAction() {
                                 @Override
                                 public void update() {
                                     card.glowColor = originalGlowColor;
