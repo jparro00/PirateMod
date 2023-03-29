@@ -20,6 +20,8 @@ import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.rooms.ShopRoom;
+import com.megacrit.cardcrawl.shop.ShopScreen;
 import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.cards.targeting.RelicTargeting;
@@ -222,6 +224,26 @@ public class DeathKnell extends AbstractDynamicCard {
                         inPlay = true;
                         break;
                     }
+                }
+                if(!inPlay){
+                    for (AbstractCard card : AbstractDungeon.player.masterDeck.group){
+                        if (card instanceof DeathKnell){
+                            inPlay = true;
+                            break;
+                        }
+                    }
+                }
+                if (!inPlay && AbstractDungeon.getCurrRoom() instanceof ShopRoom){
+                    ShopScreen shopScreen = AbstractDungeon.shopScreen;
+                    if (shopScreen != null && shopScreen.coloredCards != null){
+                        for (AbstractCard card : shopScreen.coloredCards){
+                            if (card instanceof DeathKnell){
+                                inPlay = true;
+                                break;
+                            }
+                        }
+                    }
+
                 }
             }
 
