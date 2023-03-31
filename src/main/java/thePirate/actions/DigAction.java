@@ -78,6 +78,10 @@ public class DigAction extends AbstractGameAction {
         }else {
             text = TEXT[0];
         }
+        if (numberOfCards <= 0){
+            isDone = true;
+            return;
+        }
 
         addToTop(new SelectCardsAction(player.discardPile.group, numberOfCards,text, optional, new Predicate<AbstractCard>() {
             @Override
