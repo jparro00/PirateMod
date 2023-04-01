@@ -37,9 +37,6 @@ public class FreeCannonballPower extends AbstractPower {
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
         updateDescription();
-        PirateMod.logger.info("name: " + name);
-        PirateMod.logger.info("ID: " + ID);
-        PirateMod.logger.info("description: " + description);
     }
 
     @Override
@@ -52,7 +49,7 @@ public class FreeCannonballPower extends AbstractPower {
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card instanceof AbstractCannonBallCard && !((AbstractCannonBallCard) card).stormPending && this.amount > 0) {
+        if (card instanceof AbstractCannonBallCard && !((AbstractCannonBallCard) card).stormPending && !card.purgeOnUse && this.amount > 0) {
             this.flash();
             --this.amount;
             if (this.amount == 0) {

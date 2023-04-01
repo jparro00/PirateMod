@@ -1,6 +1,14 @@
 package thePirate.cards;
 
+import basemod.ReflectionHacks;
 import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.SpawnModificationCard;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.utility.ShowCardAndPoofAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -65,13 +73,15 @@ public abstract class AbstractDynamicCard extends AbstractDefaultCard implements
             int cardsPlayedThisTurn = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
             cardsPlayedThisTurn += AbstractDungeon.actionManager.cardQueue.size() - 1;
             for (int i = 0; i < cardsPlayedThisTurn - 1; i++){
-                AbstractDynamicCard tmp = (AbstractDynamicCard)this.makeSameInstanceOf();
+//                AbstractDynamicCard tmp = (AbstractDynamicCard)this.makeSameInstanceOf();
+                AbstractDynamicCard tmp = (AbstractDynamicCard)this.makeStatEquivalentCopy();
                 tmp.exhaust = false;
                 tmp.stormPending = true;
-                tmp.current_x = ((AbstractCard)this).current_x;
-                tmp.current_y = ((AbstractCard)this).current_y;
-                tmp.target_x = (float) Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
+//                AbstractDungeon.player.limbo.addToBottom(tmp);
+                tmp.target_x = (float)Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
                 tmp.target_y = (float)Settings.HEIGHT / 2.0F;
+                tmp.current_x = tmp.target_x;
+                tmp.current_y = tmp.target_y;
                 tmp.applyPowers();
                 tmp.purgeOnUse = true;
                 AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, m, ((AbstractCard)this).energyOnUse, true, true), false);
@@ -178,4 +188,53 @@ public abstract class AbstractDynamicCard extends AbstractDefaultCard implements
         return card;
     }
 
+    @SpirePatch2(clz = ShowCardAndPoofAction.class, method = "update")
+    public static class StormEffectPatch{
+        @SpirePrefixPatch
+        public static SpireReturn<Void> removeEffectForStorm(ShowCardAndPoofAction __instance) {
+            if (ReflectionHacks.getPrivate(__instance, ShowCardAndPoofAction.class,"card") instanceof AbstractDynamicCard) {
+                AbstractDynamicCard c = ReflectionHacks.getPrivate(__instance, ShowCardAndPoofAction.class,"card");
+                if (c.storm && c.stormPending){
+                    __instance.isDone = true;
+                    if (AbstractDungeon.player.limbo.contains(c)) {
+                        AbstractDungeon.player.limbo.removeCard(c);
+                    }
+                    return SpireReturn.Return();
+                }
+            }
+            return SpireReturn.Continue();
+        }
+    }
+
+    @SpirePatch2(clz = ApplyPowerAction.class, method = "update")
+    public static class StormApplyPowerPatch{
+
+        @SpirePrefixPatch
+        public static void StormSpeed(ApplyPowerAction __instance) {
+            if (AbstractDungeon.actionManager.cardQueue != null && AbstractDungeon.actionManager.cardQueue.size() > 0){
+                if (AbstractDungeon.actionManager.cardQueue.get(0).card instanceof AbstractDynamicCard) {
+                    if (((AbstractDynamicCard) AbstractDungeon.actionManager.cardQueue.get(0).card).storm) {
+                        ReflectionHacks.setPrivate(__instance, ApplyPowerAction.class, "startingDuration", 0.01f);
+                        if ((float) ReflectionHacks.getPrivate(__instance, AbstractGameAction.class, "duration") > 0.01f) {
+                            ReflectionHacks.setPrivate(__instance, AbstractGameAction.class, "duration", 0.01f);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @SpirePatch2(clz = GainBlockAction.class, method = "update")
+    public static class StormGainBlockPatch{
+
+        @SpirePrefixPatch
+        public static void StormSpeed(GainBlockAction __instance) {
+            if (AbstractDungeon.actionManager.cardQueue != null && AbstractDungeon.actionManager.cardQueue.size() > 0){
+                if (AbstractDungeon.actionManager.cardQueue.get(0).card instanceof AbstractDynamicCard) {
+                    if (((AbstractDynamicCard) AbstractDungeon.actionManager.cardQueue.get(0).card).storm) {
+                        __instance.isDone = true;
+                    }
+                }
+            }
+        }
+    }
 }

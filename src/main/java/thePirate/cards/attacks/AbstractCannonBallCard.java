@@ -28,7 +28,7 @@ public abstract class AbstractCannonBallCard extends AbstractDynamicCard {
     @Override
     public boolean freeToPlay() {
 
-        if (this.freeToPlayOnce) {
+        if (super.freeToPlay()) {
             return true;
         } else {
             return AbstractDungeon.player != null && AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && AbstractDungeon.player.hasPower(FreeCannonballPower.POWER_ID);
