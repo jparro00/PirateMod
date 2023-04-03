@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import thePirate.PirateMod;
 import thePirate.util.TextureLoader;
@@ -107,6 +108,9 @@ public class Coral extends CustomRelic {
         cards = new ArrayList<>();
         CardLibrary.addPurpleCards(cards);
         tmp.group.addAll(getCards(cards));
+        for (AbstractCard card : tmp.group){
+            UnlockTracker.markCardAsSeen(card.cardID);
+        }
 
         if (tmp.group.isEmpty()) {
             this.cardsSelected = true;
