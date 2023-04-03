@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePirate.PirateMod;
+import thePirate.actions.BuryAction;
 import thePirate.actions.DigAction;
 import thePirate.cards.lures.AbstractLure;
 import thePirate.cards.lures.WithdrawWeapons;
@@ -74,6 +75,13 @@ public class AncientCrab extends AbstractPredator implements OnBury {
         if(this.equals(card)){
             addToTop(new DigAction(1,false));
             addToTop(new DiscardToHandAction(this));
+            addToTop(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    BuryAction.BuryIconPatch.isBury = false;
+                    isDone = true;
+                }
+            });
         }
 
     }
