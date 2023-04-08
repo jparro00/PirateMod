@@ -8,6 +8,9 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.FrozenEgg2;
+import com.megacrit.cardcrawl.relics.MoltenEgg2;
+import com.megacrit.cardcrawl.relics.ToxicEgg2;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import thePirate.PirateMod;
@@ -80,11 +83,41 @@ public class Coral extends CustomRelic {
         return returnCards;
     }
 
+    public static void doEggUpgrades(List<AbstractCard> cards){
+
+        String MOLTEN_EGG_ID = MoltenEgg2.ID;
+        String TOXIC_EGG_ID = ToxicEgg2.ID;
+        String FROZEN_EGG_ID = FrozenEgg2.ID;
+
+        for (AbstractCard card : cards){
+            AbstractCard.CardType type = card.type;
+            switch (type){
+                case ATTACK:
+                    if (card.canUpgrade() && AbstractDungeon.player.hasRelic(MOLTEN_EGG_ID)){
+                        card.upgrade();
+                    }
+                    break;
+                case SKILL:
+                    if (card.canUpgrade() && AbstractDungeon.player.hasRelic(TOXIC_EGG_ID)){
+                        card.upgrade();
+                    }
+                    break;
+                case POWER:
+                    if (card.canUpgrade() && AbstractDungeon.player.hasRelic(FROZEN_EGG_ID)){
+                        card.upgrade();
+                    }
+                    break;
+            }
+        }
+
+
+    }
     public static List<AbstractCard> getCards(List<AbstractCard> cardPool){
         List<AbstractCard> returnCards = new ArrayList<>();
         returnCards.addAll(getRandomCards(cardPool, AbstractCard.CardType.ATTACK, 2));
         returnCards.addAll(getRandomCards(cardPool, AbstractCard.CardType.SKILL, 2));
         returnCards.addAll(getRandomCards(cardPool, AbstractCard.CardType.POWER, 1));
+        doEggUpgrades(returnCards);
         return returnCards;
     }
 
