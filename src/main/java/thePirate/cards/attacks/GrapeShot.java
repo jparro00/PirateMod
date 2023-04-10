@@ -1,13 +1,13 @@
 package thePirate.cards.attacks;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePirate.PirateMod;
 import thePirate.actions.PirateSFXAction;
+import thePirate.actions.StormDamageAction;
 import thePirate.characters.ThePirate;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
@@ -51,7 +51,7 @@ public class GrapeShot extends AbstractCannonBallCard {
         if (!PirateMod.disableCannonSFX.toggle.enabled){
             this.addToBot(new PirateSFXAction("CANNON_FIRE"));
         }
-        this.addToBot(new DamageAction(target, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT, true));
+        this.addToBot(new StormDamageAction(target, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT, true));
         storm(p,m);
     }
 

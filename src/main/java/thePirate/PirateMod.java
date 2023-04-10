@@ -17,12 +17,14 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
@@ -46,6 +48,8 @@ import thePirate.variables.StormVariable;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 //TODO: DON'T MASS RENAME/REFACTOR
@@ -100,16 +104,25 @@ public class PirateMod implements
     public static final String HIDE_INK_INTENT_SETTING = "hideInkIntent";
     public static final String DISABLE_MONKEY_SFX_SETTING = "disableMonkeySFX";
     public static final String DISABLE_CANNON_SFX_SETTING = "disableCannonSFX";
+    public static final String DISABLE_TIME_WARP_REMINDER_SETTING = "disableTimeWarpReminder";
+    public static final String DISABLE_DIG_BURY_PULSE_SETTING = "disableDigBuryPulse";
 
     public static Boolean skipTutorialsPlaceholder = true; // The boolean we'll be setting on/off (true/false)
     public static Boolean hideInkIntentPlaceholder = false;
     public static Boolean disableMonkeySFXPlaceholder = false;
     public static Boolean disableCannonSFXPlaceholder = false;
+    public static Boolean disableTimeWarpReminderPlaceholder = false;
+    public static Boolean disableDigBuryPulsePlaceholder = false;
     public static ModLabeledToggleButton skipTutorials;
     public static ModLabeledToggleButton hideInkIntent;
     public static ModLabeledToggleButton disableMonkeySFX;
     public static ModLabeledToggleButton disableCannonSFX;
+    public static ModLabeledToggleButton disableTimeWarpReminder;
+    public static ModLabeledToggleButton disableDigBuryPulse;
 
+
+    public static List<AbstractDynamicPotion> customPotions;
+    public static List<AbstractRelic> customRelics;
     //This is for the in-game mod settings panel.
     private static final String MODNAME = "Pirate Mod";
     private static final String AUTHOR = "Ithilian"; // And pretty soon - You!
@@ -288,6 +301,8 @@ public class PirateMod implements
         theDefaultDefaultSettings.setProperty(HIDE_INK_INTENT_SETTING, "FALSE");
         theDefaultDefaultSettings.setProperty(DISABLE_MONKEY_SFX_SETTING, "FALSE");
         theDefaultDefaultSettings.setProperty(DISABLE_CANNON_SFX_SETTING, "FALSE");
+        theDefaultDefaultSettings.setProperty(DISABLE_TIME_WARP_REMINDER_SETTING, "FALSE");
+        theDefaultDefaultSettings.setProperty(DISABLE_DIG_BURY_PULSE_SETTING, "FALSE");
         try {
             SpireConfig config = new SpireConfig(getModID(), getModID() + "Config", theDefaultDefaultSettings); // ...right here
             // the "fileName" parameter is the name of the file MTS will create where it will save our setting.
@@ -296,7 +311,8 @@ public class PirateMod implements
             hideInkIntentPlaceholder = config.getBool(HIDE_INK_INTENT_SETTING);
             disableMonkeySFXPlaceholder = config.getBool(DISABLE_MONKEY_SFX_SETTING);
             disableCannonSFXPlaceholder = config.getBool(DISABLE_CANNON_SFX_SETTING);
-
+            disableTimeWarpReminderPlaceholder = config.getBool(DISABLE_TIME_WARP_REMINDER_SETTING);
+            disableDigBuryPulsePlaceholder = config.getBool(DISABLE_DIG_BURY_PULSE_SETTING);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -492,11 +508,45 @@ public class PirateMod implements
                         e.printStackTrace();
                     }
                 });
+        disableTimeWarpReminder = new ModLabeledToggleButton("Disable Time Warp Reminder",
+                350.0f * (1), 750.0f - (5 * 50), Settings.CREAM_COLOR, FontHelper.charDescFont, // Position (trial and error it), color, font
+                disableTimeWarpReminderPlaceholder, // Boolean it uses
+                settingsPanel, // The mod panel in which this button will be in
+                (label) -> {}, // thing??????? idk
+                (button) -> { // The actual button:
+                    disableTimeWarpReminderPlaceholder = button.enabled; // The boolean true/false will be whether the button is enabled or not
+                    try {
+                        // And based on that boolean, set the settings and save them
+                        SpireConfig config = new SpireConfig(getModID(), getModID() + "Config", theDefaultDefaultSettings);
+                        config.setBool(DISABLE_TIME_WARP_REMINDER_SETTING, disableTimeWarpReminderPlaceholder);
+                        config.save();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                });
+        disableDigBuryPulse = new ModLabeledToggleButton("Disable Dig/Bury Screen Icon Pulsing",
+                350.0f * (1), 750.0f - (6 * 50), Settings.CREAM_COLOR, FontHelper.charDescFont, // Position (trial and error it), color, font
+                disableDigBuryPulsePlaceholder, // Boolean it uses
+                settingsPanel, // The mod panel in which this button will be in
+                (label) -> {}, // thing??????? idk
+                (button) -> { // The actual button:
+                    disableDigBuryPulsePlaceholder = button.enabled; // The boolean true/false will be whether the button is enabled or not
+                    try {
+                        // And based on that boolean, set the settings and save them
+                        SpireConfig config = new SpireConfig(getModID(), getModID() + "Config", theDefaultDefaultSettings);
+                        config.setBool(DISABLE_DIG_BURY_PULSE_SETTING, disableDigBuryPulsePlaceholder);
+                        config.save();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                });
 
         settingsPanel.addUIElement(skipTutorials); // Add the button to the settings panel. Button is a go.
         settingsPanel.addUIElement(hideInkIntent);
-        settingsPanel.addUIElement(disableMonkeySFX); // Add the button to the settings panel. Button is a go.
-        settingsPanel.addUIElement(disableCannonSFX); // Add the button to the settings panel. Button is a go.
+        settingsPanel.addUIElement(disableMonkeySFX);
+        settingsPanel.addUIElement(disableCannonSFX);
+        settingsPanel.addUIElement(disableTimeWarpReminder);
+        settingsPanel.addUIElement(disableDigBuryPulse);
 
         sound = new PirateSoundMaster();
         
@@ -547,9 +597,14 @@ public class PirateMod implements
         // just remove the player class at the end (in this case the "TheDefaultEnum.THE_DEFAULT".
         // Remember, you can press ctrl+P inside parentheses like addPotions)
 //        BaseMod.addPotion(PlaceholderPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, PlaceholderPotion.POTION_ID, ThePirate.Enums.THE_PIRATE);
-        addPiratePotion(new InkPotion());
-        addPiratePotion(new IslandPotion());
+        customPotions = new ArrayList<>();
 
+        customPotions.add(new InkPotion());
+        customPotions.add(new IslandPotion());
+
+        for (AbstractDynamicPotion potion : customPotions) {
+            addPiratePotion(potion);
+        }
         logger.info("Done editing potions");
     }
     
@@ -570,24 +625,28 @@ public class PirateMod implements
         // in order to automatically differentiate which pool to add the relic too.
 
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
-        BaseMod.addRelicToCustomPool(new BlackCannon(), ThePirate.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new SilverCannon(), ThePirate.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new GoldCannon(), ThePirate.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new PlatinumCannon(), ThePirate.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new GunsmithsBible(), ThePirate.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new GreedyChest(), ThePirate.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new Coral(), ThePirate.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new ExoticDish(), ThePirate.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new Motivation(), ThePirate.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new WoodenLeg(), ThePirate.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new WritingReed(), ThePirate.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new BottledVoid(), ThePirate.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new NavigationDevice(), ThePirate.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new ExperimentalCannon(), ThePirate.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new MoneyBag(), ThePirate.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new WoodenCompass(), ThePirate.Enums.COLOR_GRAY);
-//        BaseMod.addRelicToCustomPool(new ButtonRelic(), ThePirate.Enums.COLOR_GRAY);
+        customRelics = new ArrayList<>();
 
+        customRelics.add(new BlackCannon());
+        customRelics.add(new SilverCannon());
+        customRelics.add(new GoldCannon());
+        customRelics.add(new PlatinumCannon());
+        customRelics.add(new GunsmithsBible());
+        customRelics.add(new GreedyChest());
+        customRelics.add(new Coral());
+        customRelics.add(new ExoticDish());
+        customRelics.add(new Motivation());
+        customRelics.add(new WoodenLeg());
+        customRelics.add(new WritingReed());
+        customRelics.add(new BottledVoid());
+        customRelics.add(new NavigationDevice());
+        customRelics.add(new ExperimentalCannon());
+        customRelics.add(new MoneyBag());
+        customRelics.add(new WoodenCompass());
+
+        for (AbstractRelic relic : customRelics) {
+            BaseMod.addRelicToCustomPool(relic, ThePirate.Enums.COLOR_GRAY);
+        }
         // This adds a relic to the Shared pool. Every character can find this relic.
 //        BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
         
@@ -725,9 +784,14 @@ public class PirateMod implements
         return getModID() + ":" + idText;
     }
 
+    public static boolean isInCombat(){
+
+        return AbstractDungeon.player != null && CardCrawlGame.isInARun() && AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT;
+
+    }
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
-        if (!skipTutorials.toggle.enabled){
+        if (!skipTutorials.toggle.enabled && AbstractDungeon.player.chosenClass.equals(ThePirate.Enums.THE_PIRATE)){
             AbstractDungeon.ftue = new PirateTutorial(Settings.language);
             skipTutorials.toggle.toggle();
 

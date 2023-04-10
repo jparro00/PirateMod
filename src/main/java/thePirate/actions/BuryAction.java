@@ -1,13 +1,14 @@
 package thePirate.actions;
 
 
+import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.MathUtils;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
+import com.evacipated.cardcrawl.modthespire.lib.*;
+import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -18,8 +19,12 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.FrozenEye;
 import com.megacrit.cardcrawl.screens.select.GridCardSelectScreen;
 import com.megacrit.cardcrawl.ui.buttons.PeekButton;
+import javassist.CannotCompileException;
+import javassist.CtBehavior;
+import thePirate.PirateMod;
 import thePirate.cards.attacks.BeachBuddy;
 import thePirate.patches.actions.CardCounterPatches;
 import thePirate.powers.OnBury;
@@ -38,18 +43,24 @@ public class BuryAction extends AbstractGameAction {
     private AbstractPlayer player;
     private int numberOfCards;
     private boolean optional;
+    public List<AbstractCard> preselectedCards;
 
     private static final Texture buryLabel= TextureLoader.getTexture(makeScreenPath("bury_screen_icon.png"));
 
     public List<AbstractCard> cardsSelected;
 
     public BuryAction(int numberOfCards, boolean optional) {
+        this(numberOfCards,optional, new ArrayList<AbstractCard>());
+    }
+    public BuryAction(int numberOfCards, boolean optional, List<AbstractCard> preselectedCards) {
         this.actionType = ActionType.CARD_MANIPULATION;
         this.duration = this.startDuration = Settings.ACTION_DUR_FAST;
         this.player = AbstractDungeon.player;
         this.numberOfCards = numberOfCards;
         this.optional = optional;
         this.cardsSelected = new ArrayList<>();
+        this.preselectedCards = preselectedCards;
+
     }
 
     //sepcial constructor for removing specific cards without a selection
@@ -60,7 +71,7 @@ public class BuryAction extends AbstractGameAction {
         this.numberOfCards = 0;
         this.optional = false;
         this.cardsSelected = cardsSelected;
-
+        this.preselectedCards = new ArrayList<>();
     }
 
     public BuryAction(AbstractCard card){
@@ -124,21 +135,61 @@ public class BuryAction extends AbstractGameAction {
 
                     while(var6.hasNext()) {
                         c = (AbstractCard)var6.next();
-                        temp.addToTop(c);
+                        temp.addToBottom(c);
                     }
 
-                    temp.sortAlphabetically(true);
+                    if (!player.hasRelic(FrozenEye.ID)){
+                        temp.sortAlphabetically(true);
+                    }
                     temp.sortByRarityPlusStatusCardType(false);
-                    if (this.numberOfCards == 1) {
-                        if (this.optional) {
-                            AbstractDungeon.gridSelectScreen.open(temp, this.numberOfCards, true, TEXT[0]);
-                        } else {
-                            AbstractDungeon.gridSelectScreen.open(temp, this.numberOfCards, TEXT[0], false);
+
+                    //set text (with case for Frozen Eye)
+                    String text;
+                    if (this.numberOfCards == 1){
+                        text = TEXT[0];
+                    }else {
+                        text = TEXT[1] + numberOfCards + TEXT[2];
+                    }
+/*
+                    if (player.hasRelic(FrozenEye.ID)){
+                        text += " NL " + TEXT[3];
+                    }
+*/
+
+                    if (this.optional) {
+                        AbstractDungeon.gridSelectScreen.open(temp, this.numberOfCards, true, text);
+
+                        //only add cards that are in the players draw pile
+                        List<AbstractCard> combatPreselectedCards = new ArrayList<>();
+                        for (AbstractCard preselectedCard : preselectedCards){
+                            for (AbstractCard drawCard : player.drawPile.group){
+                                if (preselectedCard.uuid.equals(drawCard.uuid)){
+                                    combatPreselectedCards.add(drawCard);
+                                }
+                            }
+
                         }
-                    } else if (this.optional) {
-                        AbstractDungeon.gridSelectScreen.open(temp, this.numberOfCards, true, TEXT[1] + this.numberOfCards + TEXT[2]);
+                        //add the cards and make them glow
+                        for (AbstractCard card : combatPreselectedCards){
+                            card.beginGlowing();
+                            Color originalGlowColor = card.glowColor;
+                            addToTop(new AbstractGameAction() {
+                                @Override
+                                public void update() {
+                                    card.glowColor = originalGlowColor;
+                                    isDone = true;
+                                }
+                            });
+                            card.glowColor = Color.YELLOW;
+                            AbstractDungeon.gridSelectScreen.selectedCards.add(card);
+                        }
+                        if (combatPreselectedCards.size() > 0){
+                            ReflectionHacks.setPrivate(AbstractDungeon.gridSelectScreen, GridCardSelectScreen.class,"cardSelectAmount",combatPreselectedCards.size());
+                        }
+
+                        //TODO: not sure how this would work for nonOptional bury screens...
                     } else {
-                        AbstractDungeon.gridSelectScreen.open(temp, this.numberOfCards, TEXT[1] + this.numberOfCards + TEXT[2], false);
+                    AbstractDungeon.gridSelectScreen.open(temp, this.numberOfCards, text, false);
                     }
 
                     this.tickDuration();
@@ -229,10 +280,53 @@ public class BuryAction extends AbstractGameAction {
             if (!PeekButton.isPeeking && isBury){
                 Color color = sb.getColor();
                 sb.setColor(Color.WHITE);
-                float derp = Interpolation.swingOut.apply(1.0F, 1.1F, MathUtils.cosDeg((float)(System.currentTimeMillis() / 4L % 360L)) / 12.0F);
+                float derp = 1;
+                if (!PirateMod.disableDigBuryPulse.toggle.enabled){
+                    derp = Interpolation.swingOut.apply(1.0F, 1.1F, MathUtils.cosDeg((float)(System.currentTimeMillis() / 4L % 360L)) / 12.0F);
+                }
                 sb.draw(buryLabel, (32 * Settings.scale), (float) Settings.HEIGHT / 2.0F + (64 * Settings.scale), 0F, 0F, 256.0F, 256.0F, Settings.scale * derp, Settings.scale * derp, 0.0F, 0, 0, 256, 256, false, false);
+
+                if (AbstractDungeon.player != null && AbstractDungeon.player.hasRelic(FrozenEye.ID)){
+                    Texture texture = AbstractDungeon.player.getRelic(FrozenEye.ID).img;
+                    sb.setColor(Color.WHITE);
+                    sb.draw(texture, (128 * Settings.scale), (float) Settings.HEIGHT / 2.0F + (64 * Settings.scale), 0F, 0F, 256.0F, 256.0F, Settings.scale * derp, Settings.scale * derp, 0.0F, 0, 0, 256, 256, false, false);
+
+                }
+
+
+
                 sb.setColor(color);
             }
         }
+    }
+    @SpirePatch2(clz = GridCardSelectScreen.class, method = "update")
+    public static class BuryPreSelectedCardsPatch {
+
+        @SpireInsertPatch(
+                locator=Locator.class
+        )
+        public static SpireReturn<Void> Insert(GridCardSelectScreen __instance){
+            if(BuryIconPatch.isBury){
+                int numCards = ReflectionHacks.getPrivate(__instance, GridCardSelectScreen.class,"numCards");
+                int cardSelectAmount = ReflectionHacks.getPrivate(__instance,GridCardSelectScreen.class,"cardSelectAmount");
+                if (cardSelectAmount > numCards){
+                    ReflectionHacks.setPrivate(__instance,GridCardSelectScreen.class,"cardSelectAmount", cardSelectAmount - 1);
+                    AbstractCard card = __instance.selectedCards.get(0);
+                    card.stopGlowing();
+                    __instance.selectedCards.remove(0);
+                    return SpireReturn.Return();
+                }
+            }
+            return SpireReturn.Continue();
+        }
+        public static class Locator extends SpireInsertLocator {
+            @Override
+            public int[] Locate(CtBehavior ctMethodToPatch) throws PatchingException, CannotCompileException {
+                Matcher finalMatcher = new Matcher.FieldAccessMatcher(GridCardSelectScreen.class, "numCards");
+                return LineFinder.findInOrder(ctMethodToPatch, new ArrayList<Matcher>(), finalMatcher);
+            }
+        }
+
+
     }
 }

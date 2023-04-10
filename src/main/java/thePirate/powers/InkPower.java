@@ -137,6 +137,9 @@ public class InkPower extends AbstractPower implements CloneablePowerInterface, 
                     else {
                         blockedDmg = dmg;
                     }
+                    if (owner.hasPower(ChemicalWarfarePower.POWER_ID)){
+                        blockedDmg *= ChemicalWarfarePower.DAMAGE_MODIFIER;
+                    }
                     blockedDmg *= intentMultiDmg;
 
                     passThroughDmg = (dmg - amount) * intentMultiDmg;
@@ -151,6 +154,9 @@ public class InkPower extends AbstractPower implements CloneablePowerInterface, 
                     }
                     else {
                         blockedDmg = dmg;
+                    }
+                    if (owner.hasPower(ChemicalWarfarePower.POWER_ID)){
+                        blockedDmg *= ChemicalWarfarePower.DAMAGE_MODIFIER;
                     }
                 }
 
@@ -168,7 +174,11 @@ public class InkPower extends AbstractPower implements CloneablePowerInterface, 
                 else {
                     blockedDmg = dmg;
                 }
+                if (owner.hasPower(ChemicalWarfarePower.POWER_ID)){
+                    blockedDmg *= ChemicalWarfarePower.DAMAGE_MODIFIER;
+                }
             }
+
 
             bobEffect.update();
             sb.draw(purpleArrow, m.intentHb.cX - (128 * Settings.scale), m.intentHb.cY - (64 * Settings.scale) + bobEffect.y, 0F, 0F, 128.0F, 128.0F, Settings.scale, Settings.scale, 0, 0, 0, 128, 128, false, false);

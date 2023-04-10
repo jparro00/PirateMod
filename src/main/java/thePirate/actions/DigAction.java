@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.screens.select.GridCardSelectScreen;
 import com.megacrit.cardcrawl.ui.buttons.PeekButton;
+import thePirate.PirateMod;
 import thePirate.cards.OnDig;
 import thePirate.util.TextureLoader;
 
@@ -77,6 +78,10 @@ public class DigAction extends AbstractGameAction {
         }else {
             text = TEXT[0];
         }
+        if (numberOfCards <= 0){
+            isDone = true;
+            return;
+        }
 
         addToTop(new SelectCardsAction(player.discardPile.group, numberOfCards,text, optional, new Predicate<AbstractCard>() {
             @Override
@@ -129,7 +134,10 @@ public class DigAction extends AbstractGameAction {
             if (!PeekButton.isPeeking && isDig){
                 Color color = sb.getColor();
                 sb.setColor(Color.WHITE);
-                float derp = Interpolation.swingOut.apply(1.0F, 1.1F, MathUtils.cosDeg((float)(System.currentTimeMillis() / 4L % 360L)) / 12.0F);
+                float derp = 1;
+                if (!PirateMod.disableDigBuryPulse.toggle.enabled){
+                    derp = Interpolation.swingOut.apply(1.0F, 1.1F, MathUtils.cosDeg((float)(System.currentTimeMillis() / 4L % 360L)) / 12.0F);
+                }
                 sb.draw(digLabel, (float)Settings.WIDTH - (32 * Settings.scale) - (256 * Settings.scale), (float) Settings.HEIGHT / 2.0F + (32 * Settings.scale), 0F, 0F, 256.0F, 256.0F, Settings.scale * derp, Settings.scale * derp, 0.0F, 0, 0, 256, 256, false, false);
                 sb.setColor(color);
             }

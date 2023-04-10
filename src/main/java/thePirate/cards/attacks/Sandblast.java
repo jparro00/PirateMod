@@ -105,7 +105,7 @@ public class Sandblast extends AbstractDynamicCard implements OnBury, OnShuffle 
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
-                setCostForTurn(thisCard.costForTurn - cards.size());
+                setCostForTurn(thisCard.cost - CardCounterPatches.cardsBuriedThisTurn);
                 if (thisCard.costForTurn < 0){
                     thisCard.costForTurn = 0;
                 }

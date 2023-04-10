@@ -54,6 +54,7 @@ public class Cyclone extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p,block));
+//        addToBot(new StormGainBlockAction(p,block));
         storm(p,m);
     }
 
