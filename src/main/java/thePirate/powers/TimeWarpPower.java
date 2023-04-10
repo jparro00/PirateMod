@@ -53,7 +53,7 @@ public class TimeWarpPower extends AbstractPower implements CloneablePowerInterf
 
     @Override
     public void onUseCard(final AbstractCard card, final UseCardAction action) {
-        if (firstCard == null && !card.exhaust){
+        if (firstCard == null && !card.exhaust && !AbstractCard.CardType.POWER.equals(card.type)){
             firstCard = card;
             if (card.costForTurn == -1) {
                 lastCardXCost = EnergyPanel.getCurrentEnergy();
