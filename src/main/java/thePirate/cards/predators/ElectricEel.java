@@ -26,8 +26,8 @@ public class ElectricEel extends AbstractPredator implements OnBury {
     private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;
 
-    private static final int COST = 0;
-    private static final int UPGRADED_COST = 0;
+    private static final int COST = 1;
+    private static final int UPGRADED_COST = 2;
     private static final int MAGIC = 1;
     private static final int UPGRADED_MAGIC = 1;
     public static final int SECOND_MAGIC = 1;

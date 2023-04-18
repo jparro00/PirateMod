@@ -215,7 +215,7 @@
   },
   "thePirate:CursedBlade": {
     "NAME": "Cursed Blade",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! thepirate:Corrupt_Artifact."
+    "DESCRIPTION": "Deal !D! damage. NL The first time you play this each combat, Gain !M! thepirate:Corrupt_Artifact."
   },
   "thePirate:StrangeBlade": {
     "NAME": "Strange Blade",
@@ -351,7 +351,7 @@
   },
   "thePirate:Cutlass": {
     "NAME": "Cutlass",
-    "DESCRIPTION": "Deal !D! damage.  NL Put this card on top of your draw pile and reduce it's damage by !M!."
+    "DESCRIPTION": "Deal !D! damage.  NL Put this card on top of your draw pile and reduce it's damage by !M!. NL Exhaustive !stslib:ex!."
   },
   "thePirate:Cannon": {
     "NAME": "Cannon",

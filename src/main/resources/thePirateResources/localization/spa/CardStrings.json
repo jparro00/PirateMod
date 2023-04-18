@@ -215,7 +215,7 @@
     },
     "thePirate:CursedBlade": {
         "NAME": "Espada Maldita",
-        "DESCRIPTION": "Haz !D! de daño. NL Obtén !M! thepirate:Artefacto_Corrompido."
+        "DESCRIPTION": "Haz !D! de daño. NL La primera vez que juegues esto en cada combate, obtén !M! thepirate:Artefacto_Corrompido."
     },
     "thePirate:StrangeBlade": {
         "NAME": "Espada Extraña",
@@ -351,7 +351,7 @@
     },
     "thePirate:Cutlass": {
         "NAME": "Cimitarra",
-        "DESCRIPTION": "Haz !D! de daño. NL Pon esta carta al tope de la pila de extracción y reduce su daño en !M!."
+        "DESCRIPTION": "Haz !D! de daño. NL Pon esta carta al tope de la pila de extracción y reduce su daño en !M!. Exhaustivo !stslib:ex!."
     },
     "thePirate:Cannon": {
         "NAME": "Cañón",

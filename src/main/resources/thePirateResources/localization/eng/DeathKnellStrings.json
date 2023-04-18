@@ -157,7 +157,7 @@
 	},
 	"MutagenicStrength": {
 		"NAME": "Death Knell Effect:",
-		"DESCRIPTION": "Gain #b3 #yStrength."
+		"DESCRIPTION": "Gain #b3 temporary #yStrength."
 	},
 	"Necronomicon": {
 		"NAME": "Death Knell Effect:",

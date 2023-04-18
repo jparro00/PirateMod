@@ -3,6 +3,7 @@ package thePirate.cards.attacks;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -29,6 +30,8 @@ public class CursedBlade extends AbstractDynamicCard {
     private static final int UPGRADED_DMG = 5;
     public static final int MAGIC = 1;
 
+    public boolean usedThisCombat;
+
     // /STAT DECLARATION/
 
     // TEXT DECLARATION
@@ -48,7 +51,10 @@ public class CursedBlade extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-        this.addToBot(new ApplyPowerAction(p,p,new CorruptArtifactPower(p,p,magicNumber),magicNumber));
+        if (!usedThisCombat && !upgraded){
+            this.addToBot(new ApplyPowerAction(p,p,new CorruptArtifactPower(p,p,magicNumber),magicNumber));
+        }
+        usedThisCombat = true;
     }
 
 
@@ -63,5 +69,12 @@ public class CursedBlade extends AbstractDynamicCard {
                 upgradeBaseCost(UPGRADED_COST);
             upgradeDescription();
         }
+    }
+
+    @Override
+    public AbstractCard makeStatEquivalentCopy() {
+        CursedBlade cursedBlade = (CursedBlade) super.makeStatEquivalentCopy();
+        cursedBlade.usedThisCombat = this.usedThisCombat;
+        return cursedBlade;
     }
 }

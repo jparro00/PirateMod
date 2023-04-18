@@ -1,6 +1,8 @@
 package thePirate.cards.attacks;
 
 import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.SpawnModificationCard;
+import com.evacipated.cardcrawl.modthespire.lib.*;
+import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -12,9 +14,13 @@ import com.megacrit.cardcrawl.events.AbstractEvent;
 import com.megacrit.cardcrawl.events.exordium.ShiningLight;
 import com.megacrit.cardcrawl.events.shrines.Designer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.relics.MoltenEgg2;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
+import javassist.CannotCompileException;
+import javassist.CtBehavior;
 import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.cards.Makeshift;
@@ -137,5 +143,32 @@ public class MakeshiftSpear extends AbstractDynamicCard implements Makeshift, Sp
     @Override
     public void setQueuedForPurge(boolean queuedForPurge) {
         this.queuedForPurge = queuedForPurge;
+    }
+
+    @SpirePatch2(clz = AbstractDungeon.class, method = "transformCard", paramtypez = { AbstractCard.class, boolean.class, Random.class})
+    public static class PreventUpgradeTransformPatch {
+
+        @SpireInsertPatch(
+                locator=Locator.class,
+                localvars={"transformedCard"}
+        )
+        public static SpireReturn<Void> Insert(AbstractCard c, boolean autoUpgrade, Random rng, @ByRef AbstractCard[] transformedCard){
+            if (transformedCard[0] instanceof MakeshiftSpear && (autoUpgrade || AbstractDungeon.player.hasRelic(MoltenEgg2.ID))){
+                AbstractCard newTransformedCard = transformedCard[0];
+                do {
+                    transformedCard[0] = AbstractDungeon.returnTrulyRandomCardFromAvailable(c, rng).makeCopy();
+                } while ((transformedCard[0] instanceof MakeshiftSpear));
+                AbstractDungeon.transformedCard = transformedCard[0];
+            }
+
+            return SpireReturn.Continue();
+        }
+        public static class Locator extends SpireInsertLocator {
+            @Override
+            public int[] Locate(CtBehavior ctMethodToPatch) throws PatchingException, CannotCompileException {
+                Matcher finalMatcher = new Matcher.MethodCallMatcher(UnlockTracker.class, "markCardAsSeen");
+                return LineFinder.findInOrder(ctMethodToPatch, new ArrayList<Matcher>(), finalMatcher);
+            }
+        }
     }
 }

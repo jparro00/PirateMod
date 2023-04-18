@@ -157,7 +157,7 @@
 	},
 	"MutagenicStrength": {
 		"NAME": "Эффект Звона Колоколов:",
-		"DESCRIPTION": "Даёт #b3 #yСилы."
+		"DESCRIPTION": "Даёт #b3 временную #yСилы."
 	},
 	"Necronomicon": {
 		"NAME": "Эффект Звона Колоколов:",
