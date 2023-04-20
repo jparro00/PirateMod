@@ -244,7 +244,9 @@ public abstract class AbstractDynamicCard extends AbstractDefaultCard implements
     @SpirePatch2(clz = Boot.class, method = "onAttackToChangeDamage")
     public static class BootAttackPatch{
 
-        @SpirePrefixPatch
+        @SpireInsertPatch(
+                locator=Locator.class
+        )
         public static SpireReturn<Integer> StormSpeed(Boot __instance, DamageInfo info, int damageAmount) {
             if (AbstractDungeon.actionManager.cardQueue != null && AbstractDungeon.actionManager.cardQueue.size() > 0){
                 if (AbstractDungeon.actionManager.cardQueue.get(0).card instanceof AbstractDynamicCard) {
