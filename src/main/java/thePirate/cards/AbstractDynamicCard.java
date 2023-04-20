@@ -2,22 +2,25 @@ package thePirate.cards;
 
 import basemod.ReflectionHacks;
 import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.SpawnModificationCard;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
+import com.evacipated.cardcrawl.modthespire.lib.*;
+import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.utility.ShowCardAndPoofAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardQueueItem;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.relics.Boot;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
+import javassist.CannotCompileException;
+import javassist.CtBehavior;
 import thePirate.actions.PurgeRemovablesAction;
 import thePirate.cards.lures.AbstractLure;
 import thePirate.cards.predators.AbstractPredator;
@@ -235,6 +238,29 @@ public abstract class AbstractDynamicCard extends AbstractDefaultCard implements
                         __instance.isDone = true;
                     }
                 }
+            }
+        }
+    }
+    @SpirePatch2(clz = Boot.class, method = "onAttackToChangeDamage")
+    public static class BootAttackPatch{
+
+        @SpirePrefixPatch
+        public static SpireReturn<Integer> StormSpeed(Boot __instance, DamageInfo info, int damageAmount) {
+            if (AbstractDungeon.actionManager.cardQueue != null && AbstractDungeon.actionManager.cardQueue.size() > 0){
+                if (AbstractDungeon.actionManager.cardQueue.get(0).card instanceof AbstractDynamicCard) {
+                    if (((AbstractDynamicCard) AbstractDungeon.actionManager.cardQueue.get(0).card).storm) {
+                        return SpireReturn.Return(5);
+                    }
+                }
+            }
+            return SpireReturn.Continue();
+        }
+
+        public static class Locator extends SpireInsertLocator {
+            @Override
+            public int[] Locate(CtBehavior ctMethodToPatch) throws PatchingException, CannotCompileException {
+                Matcher finalMatcher = new Matcher.MethodCallMatcher(Boot.class, "addToBot");
+                return LineFinder.findInOrder(ctMethodToPatch, new ArrayList<Matcher>(), finalMatcher);
             }
         }
     }
