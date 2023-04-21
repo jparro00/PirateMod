@@ -21,6 +21,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.IntangiblePower;
 import com.megacrit.cardcrawl.relics.RunicDome;
 import com.megacrit.cardcrawl.vfx.BobEffect;
 import thePirate.PirateMod;
@@ -118,72 +119,82 @@ public class InkPower extends AbstractPower implements CloneablePowerInterface, 
         }
     }
 
+    public static void main(String[] args) {
+        int amount = 10;
+        int intentDmg = 7;
+        int reflectedDmg = (int)(Math.ceil((double)amount / intentDmg));
+        System.out.println(reflectedDmg);
+    }
+
     public void renderInkIntent(SpriteBatch sb){
-        sb.setColor(Color.WHITE);
         AbstractMonster m = (AbstractMonster)owner;
-        int intentDmg = (Integer)ReflectionHacks.getPrivate(m,AbstractMonster.class,"intentDmg");
-        Color color = ReflectionHacks.getPrivate(m,AbstractMonster.class,"intentColor");
-        sb.setColor(color);
         if (m.getIntentBaseDmg() > 0 && !m.isDeadOrEscaped()){
-            int blockedDmg;
+            Color color = ReflectionHacks.getPrivate(m,AbstractMonster.class,"intentColor");
+            sb.setColor(color);
+
+            boolean hasVolatileInk = m.hasPower(TropomyosinPower.POWER_ID) || AbstractDungeon.player.hasPower(VolatileInkPower.POWER_ID);
+            boolean hasChemicalWarfare = owner.hasPower(ChemicalWarfarePower.POWER_ID);
+
             int passThroughDmg;
-            int dmg = intentDmg;
-            if (m.hasPower(TropomyosinPower.POWER_ID) || AbstractDungeon.player.hasPower(VolatileInkPower.POWER_ID)){
-                if ((Boolean)ReflectionHacks.getPrivate(m,AbstractMonster.class,"isMultiDmg")){
-                    int intentMultiDmg = (Integer)ReflectionHacks.getPrivate(m,AbstractMonster.class,"intentMultiAmt");
-                    if (dmg >= amount){
-                        blockedDmg = amount;
-                    }
-                    else {
-                        blockedDmg = dmg;
-                    }
-                    if (owner.hasPower(ChemicalWarfarePower.POWER_ID)){
-                        blockedDmg *= ChemicalWarfarePower.DAMAGE_MODIFIER;
-                    }
-                    blockedDmg *= intentMultiDmg;
+            int reflectedDmg;
 
-                    passThroughDmg = (dmg - amount) * intentMultiDmg;
-                    if (passThroughDmg < 0)
-                        passThroughDmg = 0;
-                }else {
-                    passThroughDmg = dmg - amount;
-                    if (passThroughDmg < 0)
-                        passThroughDmg = 0;
-                    if (dmg >= amount){
-                        blockedDmg = amount;
-                    }
-                    else {
-                        blockedDmg = dmg;
-                    }
-                    if (owner.hasPower(ChemicalWarfarePower.POWER_ID)){
-                        blockedDmg *= ChemicalWarfarePower.DAMAGE_MODIFIER;
-                    }
-                }
+            int intentDmg = (Integer)ReflectionHacks.getPrivate(m,AbstractMonster.class,"intentDmg");
+            int intentMultiDmg = 1;
+            if ((Boolean)ReflectionHacks.getPrivate(m,AbstractMonster.class,"isMultiDmg")) {
+                intentMultiDmg = (Integer) ReflectionHacks.getPrivate(m, AbstractMonster.class, "intentMultiAmt");
+            }
+            int intentTotalDmg = intentDmg * intentMultiDmg;
 
-            }else{
-                if ((Boolean)ReflectionHacks.getPrivate(m,AbstractMonster.class,"isMultiDmg")){
-                    int intentMultiDmg = (Integer)ReflectionHacks.getPrivate(m,AbstractMonster.class,"intentMultiAmt");
-                    dmg = intentMultiDmg * intentDmg;
-                }
-                passThroughDmg = dmg - amount;
-                if (passThroughDmg < 0)
-                    passThroughDmg = 0;
-                if (dmg >= amount){
-                    blockedDmg = amount;
-                }
-                else {
-                    blockedDmg = dmg;
-                }
-                if (owner.hasPower(ChemicalWarfarePower.POWER_ID)){
-                    blockedDmg *= ChemicalWarfarePower.DAMAGE_MODIFIER;
+            //calculate passThroughDmg
+            if (hasVolatileInk && intentMultiDmg > 1) {
+                passThroughDmg = intentDmg - amount;
+                passThroughDmg *= intentMultiDmg;
+            }else {
+                passThroughDmg = intentTotalDmg - amount;
+            }
+            passThroughDmg = passThroughDmg < 0 ? 0 : passThroughDmg;
+
+            //calculate reflectedDmg
+            if(m.hasPower(IntangiblePower.POWER_ID)){
+                if (hasVolatileInk && intentMultiDmg > 1){
+                    reflectedDmg = 1 * intentMultiDmg;
+                }else if (intentMultiDmg > 1) {
+                    int maxAmount = amount > intentTotalDmg ? intentTotalDmg : amount;
+                    reflectedDmg = (int) (Math.ceil((double) maxAmount / intentDmg));
+                } else {
+                    reflectedDmg = 1;
                 }
             }
+            else if (hasVolatileInk && intentMultiDmg > 1){
+                reflectedDmg = amount >= intentDmg ? intentDmg : amount;
+                if (hasChemicalWarfare)
+                    reflectedDmg *= ChemicalWarfarePower.DAMAGE_MODIFIER;
+                reflectedDmg = m.hasPower(IntangiblePower.POWER_ID) ? 1 : reflectedDmg;
+                reflectedDmg *= intentMultiDmg;
+            }else if (intentTotalDmg > 1 && hasChemicalWarfare && amount > intentDmg){
+                int maxAmount = amount > intentTotalDmg ? intentTotalDmg : amount;
+                int baseDamage = intentDmg;
+                baseDamage *= ChemicalWarfarePower.DAMAGE_MODIFIER;
+                baseDamage = m.hasPower(IntangiblePower.POWER_ID) ? 1 : baseDamage;
+                baseDamage *= maxAmount / intentDmg;
+                int remainderDamage = (maxAmount / intentDmg) >= 1 ? maxAmount % intentDmg: 0;
+                remainderDamage *= ChemicalWarfarePower.DAMAGE_MODIFIER;
+                remainderDamage = m.hasPower(IntangiblePower.POWER_ID) ? 1 : remainderDamage;
 
+                reflectedDmg = baseDamage + remainderDamage;
+
+            }
+            else {
+                reflectedDmg = amount >= intentTotalDmg ? intentTotalDmg : amount;
+                if (hasChemicalWarfare)
+                    reflectedDmg *= ChemicalWarfarePower.DAMAGE_MODIFIER;
+                reflectedDmg = m.hasPower(IntangiblePower.POWER_ID) ? 1 : reflectedDmg;
+            }
 
             bobEffect.update();
             sb.draw(purpleArrow, m.intentHb.cX - (128 * Settings.scale), m.intentHb.cY - (64 * Settings.scale) + bobEffect.y, 0F, 0F, 128.0F, 128.0F, Settings.scale, Settings.scale, 0, 0, 0, 128, 128, false, false);
             FontHelper.renderFontLeftTopAligned(sb, FontHelper.topPanelInfoFont, Integer.toString(passThroughDmg),m.intentHb.cX - (30.0F+64) * Settings.scale, m.intentHb.cY + bobEffect.y - 12.0F * Settings.scale, color);
-            FontHelper.renderFontLeftTopAligned(sb, FontHelper.topPanelInfoFont, Integer.toString(blockedDmg),m.intentHb.cX - (48) * Settings.scale, m.intentHb.cY + bobEffect.y + 30.0F * Settings.scale, color);
+            FontHelper.renderFontLeftTopAligned(sb, FontHelper.topPanelInfoFont, Integer.toString(reflectedDmg),m.intentHb.cX - (48) * Settings.scale, m.intentHb.cY + bobEffect.y + 30.0F * Settings.scale, color);
         }
     }
 
