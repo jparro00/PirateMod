@@ -51,7 +51,7 @@ public class CursedBlade extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-        if (!usedThisCombat && !upgraded){
+        if (!usedThisCombat){
             this.addToBot(new ApplyPowerAction(p,p,new CorruptArtifactPower(p,p,magicNumber),magicNumber));
         }
         usedThisCombat = true;
