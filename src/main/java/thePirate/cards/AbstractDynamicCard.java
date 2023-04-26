@@ -76,11 +76,9 @@ public abstract class AbstractDynamicCard extends AbstractDefaultCard implements
             int cardsPlayedThisTurn = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
             cardsPlayedThisTurn += AbstractDungeon.actionManager.cardQueue.size() - 1;
             for (int i = 0; i < cardsPlayedThisTurn - 1; i++){
-//                AbstractDynamicCard tmp = (AbstractDynamicCard)this.makeSameInstanceOf();
                 AbstractDynamicCard tmp = (AbstractDynamicCard)this.makeStatEquivalentCopy();
                 tmp.exhaust = false;
                 tmp.stormPending = true;
-//                AbstractDungeon.player.limbo.addToBottom(tmp);
                 tmp.target_x = (float)Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
                 tmp.target_y = (float)Settings.HEIGHT / 2.0F;
                 tmp.current_x = tmp.target_x;

@@ -1,7 +1,6 @@
 package thePirate.cards.attacks;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePirate.PirateMod;
@@ -47,7 +46,7 @@ public class ShotsInTheDark extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for(int i = 0; i < this.magicNumber; ++i) {
-            this.addToBot(new ShotsInTheDarkAction(new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT, this));
+            this.addToBot(new ShotsInTheDarkAction(AbstractGameAction.AttackEffect.BLUNT_LIGHT, this));
         }
     }
 

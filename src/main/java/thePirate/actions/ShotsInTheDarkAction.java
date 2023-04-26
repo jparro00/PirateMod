@@ -13,8 +13,8 @@ public class ShotsInTheDarkAction extends AbstractGameAction {
     private DamageInfo info;
     private ShotsInTheDark card;
 
-    public ShotsInTheDarkAction(DamageInfo info, AbstractGameAction.AttackEffect effect, ShotsInTheDark card) {
-        this.info = info;
+    public ShotsInTheDarkAction(AbstractGameAction.AttackEffect effect, ShotsInTheDark card) {
+        this.info = new DamageInfo(AbstractDungeon.player, card.damage, card.damageTypeForTurn);
         this.setValues(target, info);
         this.actionType = ActionType.DAMAGE;
         this.attackEffect = effect;
@@ -26,6 +26,8 @@ public class ShotsInTheDarkAction extends AbstractGameAction {
     public void update() {
 
         this.target = AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng);
+        card.calculateCardDamage((AbstractMonster)target);
+        info = new DamageInfo(AbstractDungeon.player, card.damage, card.damageTypeForTurn);
         if (this.duration == 0.1F && this.target != null) {
             if(!this.target.isDying){
                 AbstractDungeon.effectList.add(new FlashAtkImgEffect(this.target.hb.cX, this.target.hb.cY, this.attackEffect));
