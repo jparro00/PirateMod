@@ -58,7 +58,7 @@ public class BolsterCrew extends AbstractDynamicCard implements Mysterious {
 
     @Override
     public boolean canUpgrade() {
-        return Mysterious.canUpgrade();
+        return super.canUpgrade() && Mysterious.canUpgrade();
     }
 
     // Upgraded stats.

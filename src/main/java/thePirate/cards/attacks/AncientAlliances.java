@@ -43,7 +43,7 @@ public class AncientAlliances extends AbstractDynamicCard implements Mysterious 
     }
 
     public boolean canUpgrade() {
-        return Mysterious.canUpgrade();
+        return super.canUpgrade() && Mysterious.canUpgrade();
     }
 
     // Actions the card should do.

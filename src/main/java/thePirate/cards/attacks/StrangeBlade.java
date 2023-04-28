@@ -54,7 +54,7 @@ public class StrangeBlade extends AbstractDynamicCard implements Mysterious{
     }
 
     public boolean canUpgrade() {
-        return Mysterious.canUpgrade();
+        return super.canUpgrade() && Mysterious.canUpgrade();
     }
 
     // Upgraded stats.
