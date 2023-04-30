@@ -106,6 +106,7 @@ public class PirateMod implements
     public static final String DISABLE_CANNON_SFX_SETTING = "disableCannonSFX";
     public static final String DISABLE_TIME_WARP_REMINDER_SETTING = "disableTimeWarpReminder";
     public static final String DISABLE_DIG_BURY_PULSE_SETTING = "disableDigBuryPulse";
+    public static final String DISABLE_GOLD_SPEND_REMINDER_SETTING = "disableGoldSpendReminder";
 
     public static Boolean skipTutorialsPlaceholder = true; // The boolean we'll be setting on/off (true/false)
     public static Boolean hideInkIntentPlaceholder = false;
@@ -113,12 +114,14 @@ public class PirateMod implements
     public static Boolean disableCannonSFXPlaceholder = false;
     public static Boolean disableTimeWarpReminderPlaceholder = false;
     public static Boolean disableDigBuryPulsePlaceholder = false;
+    public static Boolean disableGoldSpendReminderPlaceholder = false;
     public static ModLabeledToggleButton skipTutorials;
     public static ModLabeledToggleButton hideInkIntent;
     public static ModLabeledToggleButton disableMonkeySFX;
     public static ModLabeledToggleButton disableCannonSFX;
     public static ModLabeledToggleButton disableTimeWarpReminder;
     public static ModLabeledToggleButton disableDigBuryPulse;
+    public static ModLabeledToggleButton disableGoldSpendReminder;
 
 
     public static List<AbstractDynamicPotion> customPotions;
@@ -169,6 +172,8 @@ public class PirateMod implements
     public static TextureAtlas.AtlasRegion FRAME_LARGE_SKILL_REGION;// = cardUiAtlas.findRegion("1024_predator_skill_frame");
     public static TextureAtlas.AtlasRegion FRAME_SMALL_POWER_REGION;// = cardUiAtlas.findRegion("512_predator_power_frame");
     public static TextureAtlas.AtlasRegion FRAME_LARGE_POWER_REGION;// = cardUiAtlas.findRegion("1024_predator_power_frame");
+    public static TextureAtlas.AtlasRegion GOLD_GREEN_REGION;
+    public static TextureAtlas.AtlasRegion GOLD_RED_REGION;
     public static TextureAtlas cardUiAtlas;
 
     // Character assets
@@ -303,6 +308,7 @@ public class PirateMod implements
         theDefaultDefaultSettings.setProperty(DISABLE_CANNON_SFX_SETTING, "FALSE");
         theDefaultDefaultSettings.setProperty(DISABLE_TIME_WARP_REMINDER_SETTING, "FALSE");
         theDefaultDefaultSettings.setProperty(DISABLE_DIG_BURY_PULSE_SETTING, "FALSE");
+        theDefaultDefaultSettings.setProperty(DISABLE_GOLD_SPEND_REMINDER_SETTING, "FALSE");
         try {
             SpireConfig config = new SpireConfig(getModID(), getModID() + "Config", theDefaultDefaultSettings); // ...right here
             // the "fileName" parameter is the name of the file MTS will create where it will save our setting.
@@ -313,6 +319,7 @@ public class PirateMod implements
             disableCannonSFXPlaceholder = config.getBool(DISABLE_CANNON_SFX_SETTING);
             disableTimeWarpReminderPlaceholder = config.getBool(DISABLE_TIME_WARP_REMINDER_SETTING);
             disableDigBuryPulsePlaceholder = config.getBool(DISABLE_DIG_BURY_PULSE_SETTING);
+            disableGoldSpendReminderPlaceholder = config.getBool(DISABLE_GOLD_SPEND_REMINDER_SETTING);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -375,7 +382,23 @@ public class PirateMod implements
         FRAME_LARGE_SKILL_REGION = cardUiAtlas.findRegion("1024_predator_skill_frame");
         FRAME_SMALL_POWER_REGION = cardUiAtlas.findRegion("512_predator_power_frame");
         FRAME_LARGE_POWER_REGION = cardUiAtlas.findRegion("1024_predator_power_frame");
+        Texture goldGreen = TextureLoader.getTexture(
+                PirateMod.getModID() + "Resources/images/cards/icons/" + "goldSpend_green.png"
+        );
+        GOLD_GREEN_REGION = new TextureAtlas.AtlasRegion(goldGreen, 0, 0, goldGreen.getWidth(), goldGreen.getHeight());
+        GOLD_GREEN_REGION.originalHeight = 512;
+        GOLD_GREEN_REGION.originalWidth = 512;
+        GOLD_GREEN_REGION.offsetX = 87;
+        GOLD_GREEN_REGION.offsetY = 332;
 
+        Texture goldRed =  TextureLoader.getTexture(
+                PirateMod.getModID() + "Resources/images/cards/icons/" + "goldSpend_red.png"
+        );
+        GOLD_RED_REGION = new TextureAtlas.AtlasRegion(goldRed, 0, 0, goldRed.getWidth(), goldRed.getHeight());
+        GOLD_RED_REGION.originalHeight = 512;
+        GOLD_RED_REGION.originalWidth = 512;
+        GOLD_RED_REGION.offsetX = 87;
+        GOLD_RED_REGION.offsetY = 332;
     }
 
     public static void setCustomCardBorder(CustomCard card){
@@ -540,6 +563,22 @@ public class PirateMod implements
                         e.printStackTrace();
                     }
                 });
+        disableGoldSpendReminder = new ModLabeledToggleButton("Disable Gold Spend Reminder (e.g., Bolster Crew)",
+                350.0f * (1), 750.0f - (7 * 50), Settings.CREAM_COLOR, FontHelper.charDescFont, // Position (trial and error it), color, font
+                disableGoldSpendReminderPlaceholder, // Boolean it uses
+                settingsPanel, // The mod panel in which this button will be in
+                (label) -> {}, // thing??????? idk
+                (button) -> { // The actual button:
+                    disableGoldSpendReminderPlaceholder = button.enabled; // The boolean true/false will be whether the button is enabled or not
+                    try {
+                        // And based on that boolean, set the settings and save them
+                        SpireConfig config = new SpireConfig(getModID(), getModID() + "Config", theDefaultDefaultSettings);
+                        config.setBool(DISABLE_GOLD_SPEND_REMINDER_SETTING, disableGoldSpendReminderPlaceholder);
+                        config.save();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                });
 
         settingsPanel.addUIElement(skipTutorials); // Add the button to the settings panel. Button is a go.
         settingsPanel.addUIElement(hideInkIntent);
@@ -547,6 +586,7 @@ public class PirateMod implements
         settingsPanel.addUIElement(disableCannonSFX);
         settingsPanel.addUIElement(disableTimeWarpReminder);
         settingsPanel.addUIElement(disableDigBuryPulse);
+        settingsPanel.addUIElement(disableGoldSpendReminder);
 
         sound = new PirateSoundMaster();
         

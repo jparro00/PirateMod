@@ -1,6 +1,10 @@
 package thePirate.cards;
 
 import basemod.ReflectionHacks;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.SpawnModificationCard;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
@@ -18,9 +22,11 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.Boot;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
+import thePirate.PirateMod;
 import thePirate.actions.PurgeRemovablesAction;
 import thePirate.cards.lures.AbstractLure;
 import thePirate.cards.predators.AbstractPredator;
@@ -28,6 +34,8 @@ import thePirate.cards.predators.AbstractPredator;
 import java.util.ArrayList;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
+import static thePirate.PirateMod.GOLD_GREEN_REGION;
+import static thePirate.PirateMod.GOLD_RED_REGION;
 
 public abstract class AbstractDynamicCard extends AbstractDefaultCard implements SpawnModificationCard {
 
@@ -190,6 +198,29 @@ public abstract class AbstractDynamicCard extends AbstractDefaultCard implements
         return card;
     }
 
+    public void renderGreenGold(SpriteBatch sb, float x, float y){
+
+        if (!PirateMod.disableGoldSpendReminder.toggle.enabled && AbstractDungeon.player != null &&AbstractDungeon.getCurrMapNode() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !(AbstractDungeon.isScreenUp && (!AbstractDungeon.screen.equals(AbstractDungeon.CurrentScreen.GAME_DECK_VIEW) && !AbstractDungeon.screen.equals(AbstractDungeon.CurrentScreen.DISCARD_VIEW) && !AbstractDungeon.screen.equals(AbstractDungeon.CurrentScreen.HAND_SELECT)))) {
+            sb.setColor(Color.WHITE);
+            renderHelper(sb, GOLD_GREEN_REGION, x, y);
+        }
+    }
+    public void renderRedGold(SpriteBatch sb, float x, float y){
+        if (!PirateMod.disableGoldSpendReminder.toggle.enabled && AbstractDungeon.player != null &&AbstractDungeon.getCurrMapNode() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !(AbstractDungeon.isScreenUp && (!AbstractDungeon.screen.equals(AbstractDungeon.CurrentScreen.GAME_DECK_VIEW) && !AbstractDungeon.screen.equals(AbstractDungeon.CurrentScreen.DISCARD_VIEW) && !AbstractDungeon.screen.equals(AbstractDungeon.CurrentScreen.HAND_SELECT)))) {
+            sb.setColor(Color.WHITE);
+            renderHelper(sb, GOLD_RED_REGION, x, y);
+
+            sb.setBlendFunction(770, 1);
+            sb.setColor(new Color(1.0F, 1.0F, 1.0F, ((MathUtils.cosDeg((float) (System.currentTimeMillis() / 5L % 360L)) + 1.25F) / 2F) / 3.0F));
+            renderHelper(sb, GOLD_RED_REGION, x, y);
+            sb.setBlendFunction(770, 771);
+            sb.setColor(Color.WHITE);
+        }
+
+    }
+    private void renderHelper(SpriteBatch sb, TextureAtlas.AtlasRegion img, float drawX, float drawY) {
+        sb.draw(img, drawX + img.offsetX - (float)img.originalWidth / 2.0F, drawY + img.offsetY - (float)img.originalHeight / 2.0F, (float)img.originalWidth / 2.0F - img.offsetX, (float)img.originalHeight / 2.0F - img.offsetY, (float)img.packedWidth, (float)img.packedHeight, this.drawScale * Settings.scale, this.drawScale * Settings.scale, this.angle);
+    }
     @SpirePatch2(clz = ShowCardAndPoofAction.class, method = "update")
     public static class StormEffectPatch{
         @SpirePrefixPatch

@@ -1,5 +1,6 @@
 package thePirate.cards.attacks;
 
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -22,8 +23,6 @@ public class Mercenaries extends AbstractDynamicCard {
 
     public static final String ID = PirateMod.makeID(Mercenaries.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
     public static final String IMG = makeCardPath("Mercenaries.png");
-    // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
-
 
     // /TEXT DECLARATION/
 
@@ -65,6 +64,21 @@ public class Mercenaries extends AbstractDynamicCard {
         usedThisCombat = true;
     }
 
+    @Override
+    public void render(SpriteBatch sb) {
+        super.render(sb);
+        renderGoldIcon(sb);
+    }
+
+    public void renderGoldIcon(SpriteBatch sb){
+
+        if (usedThisCombat){
+            renderGreenGold(sb, current_x, current_y);
+        }else {
+            renderRedGold(sb, current_x, current_y);
+        }
+
+    }
 
     // Upgraded stats.
     @Override
