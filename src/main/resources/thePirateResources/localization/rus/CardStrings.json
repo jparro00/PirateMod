@@ -323,7 +323,8 @@
   "thePirate:MakeshiftSpear": {
     "NAME": "Самодельное копьё",
     "DESCRIPTION": "Наносит !D! урона ВСЕМ врагам. NL Если эта карта *Улучшается, то она thepirate:Изгоняется.",
-    "UPGRADE_DESCRIPTION": "Если эта карта *Улучшается, то она thepirate:Изгоняется."
+    "UPGRADE_DESCRIPTION": "Если эта карта *Улучшается, то она thepirate:Изгоняется.",
+    "EXTENDED_DESCRIPTION": ["Подсказка", "#yСамодельное #yкопьё не может быть выбрано целью случайных улучшений."]
   },
   "thePirate:SwabTheDeck": {
     "NAME": "Надраить палубу",
