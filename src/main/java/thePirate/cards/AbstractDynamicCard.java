@@ -200,13 +200,13 @@ public abstract class AbstractDynamicCard extends AbstractDefaultCard implements
 
     public void renderGreenGold(SpriteBatch sb, float x, float y){
 
-        if (!PirateMod.disableGoldSpendReminder.toggle.enabled && AbstractDungeon.player != null &&AbstractDungeon.getCurrMapNode() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !(AbstractDungeon.isScreenUp && (!AbstractDungeon.screen.equals(AbstractDungeon.CurrentScreen.GAME_DECK_VIEW) && !AbstractDungeon.screen.equals(AbstractDungeon.CurrentScreen.DISCARD_VIEW) && !AbstractDungeon.screen.equals(AbstractDungeon.CurrentScreen.HAND_SELECT)))) {
+        if (!PirateMod.disableGoldSpendReminder.toggle.enabled && AbstractDungeon.player != null &&AbstractDungeon.getCurrMapNode() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !(AbstractDungeon.isScreenUp && (!AbstractDungeon.screen.equals(AbstractDungeon.CurrentScreen.GAME_DECK_VIEW) && !AbstractDungeon.screen.equals(AbstractDungeon.CurrentScreen.DISCARD_VIEW) && !AbstractDungeon.screen.equals(AbstractDungeon.CurrentScreen.HAND_SELECT) && !AbstractDungeon.screen.equals(AbstractDungeon.CurrentScreen.GRID)))) {
             sb.setColor(Color.WHITE);
             renderHelper(sb, GOLD_GREEN_REGION, x, y);
         }
     }
     public void renderRedGold(SpriteBatch sb, float x, float y){
-        if (!PirateMod.disableGoldSpendReminder.toggle.enabled && AbstractDungeon.player != null &&AbstractDungeon.getCurrMapNode() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !(AbstractDungeon.isScreenUp && (!AbstractDungeon.screen.equals(AbstractDungeon.CurrentScreen.GAME_DECK_VIEW) && !AbstractDungeon.screen.equals(AbstractDungeon.CurrentScreen.DISCARD_VIEW) && !AbstractDungeon.screen.equals(AbstractDungeon.CurrentScreen.HAND_SELECT)))) {
+        if (!PirateMod.disableGoldSpendReminder.toggle.enabled && AbstractDungeon.player != null &&AbstractDungeon.getCurrMapNode() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !(AbstractDungeon.isScreenUp && (!AbstractDungeon.screen.equals(AbstractDungeon.CurrentScreen.GAME_DECK_VIEW) && !AbstractDungeon.screen.equals(AbstractDungeon.CurrentScreen.DISCARD_VIEW) && !AbstractDungeon.screen.equals(AbstractDungeon.CurrentScreen.HAND_SELECT) && !AbstractDungeon.screen.equals(AbstractDungeon.CurrentScreen.GRID)))) {
             sb.setColor(Color.WHITE);
             renderHelper(sb, GOLD_RED_REGION, x, y);
 
@@ -218,7 +218,7 @@ public abstract class AbstractDynamicCard extends AbstractDefaultCard implements
         }
 
     }
-    private void renderHelper(SpriteBatch sb, TextureAtlas.AtlasRegion img, float drawX, float drawY) {
+    public void renderHelper(SpriteBatch sb, TextureAtlas.AtlasRegion img, float drawX, float drawY) {
         sb.draw(img, drawX + img.offsetX - (float)img.originalWidth / 2.0F, drawY + img.offsetY - (float)img.originalHeight / 2.0F, (float)img.originalWidth / 2.0F - img.offsetX, (float)img.originalHeight / 2.0F - img.offsetY, (float)img.packedWidth, (float)img.packedHeight, this.drawScale * Settings.scale, this.drawScale * Settings.scale, this.angle);
     }
     @SpirePatch2(clz = ShowCardAndPoofAction.class, method = "update")
