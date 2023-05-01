@@ -23,7 +23,7 @@
   },
   "thePirate:Jettison": {
     "NAME": "Jettison",
-    "DESCRIPTION": "thepirate:Bury !M! cards. NL Gain temporary Strength equal to their cost, and !SM! Strength for each non-playable card thepirate:Buried."
+    "DESCRIPTION": "thepirate:Bury !M! cards. NL Gain temporary Strength equal to their cost, and !SM! Strength for each Unplayable card thepirate:Buried."
   },
   "thePirate:GeneticSplice": {
     "NAME": "Genetic Splice",
