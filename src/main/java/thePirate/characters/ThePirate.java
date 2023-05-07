@@ -359,9 +359,6 @@ public class ThePirate extends CustomPlayer {
 
             while(var2.hasNext()) {
                 r = (AbstractRelic)var2.next();
-                if (r instanceof BetterOnUseGold){
-                    ((BetterOnUseGold) r).onLoseGold(goldAmount);
-                }
                 if (r instanceof MoneyBag){
                     int counter = r.counter;
                     if (goldAmount <= counter){
@@ -369,6 +366,9 @@ public class ThePirate extends CustomPlayer {
                     }else{
                         goldAmount -= counter;
                     }
+                }
+                if (r instanceof BetterOnUseGold){
+                    ((BetterOnUseGold) r).onLoseGold(goldAmount);
                 }
             }
             if (powers != null){
