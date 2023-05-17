@@ -1,0 +1,10 @@
+{
+        "thePirate:IslandPotion": {
+                "NAME": "岛屿药水",
+                "DESCRIPTIONS": ["#y埋藏，然后 #y挖掘 。"]
+        },
+        "thePirate:InkPotion": {
+                "NAME": "墨汁",
+                "DESCRIPTIONS": ["给予 "," 层 #y墨汁 。"]
+        }
+}

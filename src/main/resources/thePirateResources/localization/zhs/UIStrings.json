@@ -1,0 +1,46 @@
+{
+  "thePirate:DigAction": {
+    "TEXT": [
+      "选择一张牌返回手牌并升级。",
+      "选择至多 ",
+      " 张牌返回手牌并升级。"
+    ]
+  },
+  "thePirate:DownWithTheShipAction": {
+    "TEXT": [
+      "选择一张牌置于抽牌堆顶部并埋藏其他牌。"
+    ]
+  },
+  "thePirate:Options": {
+    "TEXT": [
+      "跳过教程"
+    ]
+  },
+  "thePirate:CardDescriptors": {
+    "TEXT": [
+      "火炮",
+      "炮弹",
+      "诱饵",
+      "入侵"
+    ]
+  },
+  "thePirate:PirateBayAction": {
+    "TEXT": [
+      "选择将一张牌的复制品加入弃牌堆。",
+      "选择将 ",
+      " 张牌的复制品加入弃牌堆。"
+    ]
+  },
+  "thePirate:BuryAction": {
+    "TEXT": [
+      "选择一张牌放入弃牌堆。",
+      "选择 ",
+      " 张牌放入弃牌堆。"
+    ]
+  },
+  "thePirate:CannotPlay": {
+    "TEXT": [
+      "我不能打出这张牌。"
+    ]
+  }
+}
