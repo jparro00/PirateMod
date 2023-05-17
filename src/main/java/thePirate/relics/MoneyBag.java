@@ -57,10 +57,12 @@ public class MoneyBag extends CustomRelic implements BetterOnUseGold{
 
     @Override
     public void onLoseGold(int gold) {
+        if (gold > 0 && counter > 0){
+            flash();
+        }
         counter -= gold;
         if (counter < 0)
             counter = 0;
-        flash();
 
     }
 

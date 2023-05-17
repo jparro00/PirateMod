@@ -359,11 +359,11 @@ public class ThePirate extends CustomPlayer {
 
             while(var2.hasNext()) {
                 r = (AbstractRelic)var2.next();
+                int counter = r.counter;
                 if (r instanceof BetterOnUseGold){
                     ((BetterOnUseGold) r).onLoseGold(goldAmount);
                 }
                 if (r instanceof MoneyBag){
-                    int counter = r.counter;
                     if (goldAmount <= counter){
                         goldAmount = 0;
                     }else{
