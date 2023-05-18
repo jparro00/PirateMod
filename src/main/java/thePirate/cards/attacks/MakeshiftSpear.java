@@ -1,27 +1,42 @@
 package thePirate.cards.attacks;
 
+import basemod.helpers.TooltipInfo;
 import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.SpawnModificationCard;
+import com.evacipated.cardcrawl.modthespire.lib.*;
+import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.UpgradeRandomCardAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
+import com.megacrit.cardcrawl.actions.watcher.LessonLearnedAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractEvent;
 import com.megacrit.cardcrawl.events.exordium.ShiningLight;
 import com.megacrit.cardcrawl.events.shrines.Designer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.relics.MoltenEgg2;
+import com.megacrit.cardcrawl.relics.TinyHouse;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
+import javassist.CannotCompileException;
+import javassist.CtBehavior;
 import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.cards.Makeshift;
 import thePirate.characters.ThePirate;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
 
+import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static thePirate.PirateMod.makeCardPath;
 
 public class MakeshiftSpear extends AbstractDynamicCard implements Makeshift, SpawnModificationCard {
@@ -96,26 +111,21 @@ public class MakeshiftSpear extends AbstractDynamicCard implements Makeshift, Sp
         AbstractDungeon.player.masterDeck.removeCard(this);
     }
 
-/*
-    @Override
-    public void update() {
-        super.update();
-
-        AbstractPlayer p = AbstractDungeon.player;
-        if (p != null && this.upgraded && (p.masterDeck.contains(this) ||
-                p.hand.contains(this) || p.discardPile.contains(this) || p.drawPile.contains(this) || p.exhaustPile.contains(this))){
-            this.setPurge(true);
-            this.addToBot(new PurgeRemovablesAction(this, true, true));
-        }
-    }
-*/
-
     // Upgraded stats.
     @Override
     public void upgrade() {
         setPurge(true);
         upgradeName();
         upgradeDescription();
+    }
+
+    @Override
+    public List<TooltipInfo> getCustomTooltips() {
+        List<TooltipInfo> toolTips = new ArrayList<>();
+        String title = languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0];
+        String desc = languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[1];
+        toolTips.add(new TooltipInfo(title, desc));
+        return toolTips;
     }
 
     @Override
@@ -137,5 +147,107 @@ public class MakeshiftSpear extends AbstractDynamicCard implements Makeshift, Sp
     @Override
     public void setQueuedForPurge(boolean queuedForPurge) {
         this.queuedForPurge = queuedForPurge;
+    }
+
+    @SpirePatch2(clz = AbstractDungeon.class, method = "transformCard", paramtypez = { AbstractCard.class, boolean.class, Random.class})
+    public static class PreventUpgradeTransformPatch {
+
+        @SpireInsertPatch(
+                locator=Locator.class,
+                localvars={"transformedCard"}
+        )
+        public static SpireReturn<Void> Insert(AbstractCard c, boolean autoUpgrade, Random rng, @ByRef AbstractCard[] transformedCard){
+            if (transformedCard[0] instanceof MakeshiftSpear && (autoUpgrade || AbstractDungeon.player.hasRelic(MoltenEgg2.ID))){
+                AbstractCard newTransformedCard = transformedCard[0];
+                do {
+                    transformedCard[0] = AbstractDungeon.returnTrulyRandomCardFromAvailable(c, rng).makeCopy();
+                } while ((transformedCard[0] instanceof MakeshiftSpear));
+                AbstractDungeon.transformedCard = transformedCard[0];
+            }
+
+            return SpireReturn.Continue();
+        }
+        public static class Locator extends SpireInsertLocator {
+            @Override
+            public int[] Locate(CtBehavior ctMethodToPatch) throws PatchingException, CannotCompileException {
+                Matcher finalMatcher = new Matcher.MethodCallMatcher(UnlockTracker.class, "markCardAsSeen");
+                return LineFinder.findInOrder(ctMethodToPatch, new ArrayList<Matcher>(), finalMatcher);
+            }
+        }
+    }
+
+    @SpirePatch2(clz = UpgradeRandomCardAction.class, method = "update")
+    public static class PreventRandomUpgrade {
+
+        @SpireInsertPatch(
+                locator=Locator.class,
+                localvars={"upgradeable"}
+        )
+        public static void Insert(UpgradeRandomCardAction __instance, @ByRef CardGroup[] upgradeable){
+            Iterator<AbstractCard> iterator = upgradeable[0].group.iterator();
+            while (iterator.hasNext()){
+                AbstractCard card = iterator.next();
+                if (card instanceof Makeshift){
+                    iterator.remove();
+                }
+            }
+        }
+        public static class Locator extends SpireInsertLocator {
+            @Override
+            public int[] Locate(CtBehavior ctMethodToPatch) throws PatchingException, CannotCompileException {
+                Matcher finalMatcher = new Matcher.MethodCallMatcher(CardGroup.class, "size");
+                return LineFinder.findInOrder(ctMethodToPatch, new ArrayList<Matcher>(), finalMatcher);
+            }
+        }
+    }
+
+    @SpirePatch2(clz = LessonLearnedAction.class, method = "update")
+    public static class PreventLessonsLearnedUpgrade {
+
+        @SpireInsertPatch(
+                locator=Locator.class,
+                localvars={"possibleCards"}
+        )
+        public static void Insert(LessonLearnedAction __instance, @ByRef ArrayList<AbstractCard>[] possibleCards){
+            Iterator<AbstractCard> iterator = possibleCards[0].iterator();
+            while (iterator.hasNext()){
+                AbstractCard card = iterator.next();
+                if (card instanceof Makeshift){
+                    iterator.remove();
+                }
+            }
+        }
+        public static class Locator extends SpireInsertLocator {
+            @Override
+            public int[] Locate(CtBehavior ctMethodToPatch) throws PatchingException, CannotCompileException {
+                Matcher finalMatcher = new Matcher.MethodCallMatcher(ArrayList.class, "isEmpty");
+                return LineFinder.findInOrder(ctMethodToPatch, new ArrayList<Matcher>(), finalMatcher);
+            }
+        }
+    }
+
+    @SpirePatch2(clz = TinyHouse.class, method = "onEquip")
+    public static class PreventTinyHouseUpgrade {
+
+        @SpireInsertPatch(
+                locator=Locator.class,
+                localvars={"upgradableCards"}
+        )
+        public static void Insert(TinyHouse __instance, @ByRef ArrayList<AbstractCard>[] upgradableCards){
+            Iterator<AbstractCard> iterator = upgradableCards[0].iterator();
+            while (iterator.hasNext()){
+                AbstractCard card = iterator.next();
+                if (card instanceof Makeshift){
+                    iterator.remove();
+                }
+            }
+        }
+        public static class Locator extends SpireInsertLocator {
+            @Override
+            public int[] Locate(CtBehavior ctMethodToPatch) throws PatchingException, CannotCompileException {
+                Matcher finalMatcher = new Matcher.MethodCallMatcher(Collections.class, "shuffle");
+                return LineFinder.findInOrder(ctMethodToPatch, new ArrayList<Matcher>(), finalMatcher);
+            }
+        }
     }
 }

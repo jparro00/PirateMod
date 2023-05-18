@@ -42,8 +42,8 @@ public class FireAtWill extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new FireAtWillPower(p, p, magicNumber),magicNumber));
         addToBot(new ApplyPowerAction(p,p,new FreeCannonballPower(1), 1));
+        addToBot(new ApplyPowerAction(p, p, new FireAtWillPower(p, p, magicNumber),magicNumber));
 
     }
 

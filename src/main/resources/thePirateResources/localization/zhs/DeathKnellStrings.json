@@ -1,0 +1,214 @@
+{
+	"VelvetChoker": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "获得 [E] 并重置计数为 #b0。"
+	},
+	"SneckoEye": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "抽 #b2 张牌。 If 如果你没有 #y混乱 ，获得 #y混乱 。"
+	},
+	"BagOfPreparation": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "抽 #b2 张牌。"
+	},
+	"BronzeScales": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "获得 #b3 层 #y荆棘 。"
+	},
+	"BloodVial": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "回复 #b2 点生命。"
+	},
+	"BagOfMarbles": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "给予所有敌人 #y易伤 。"
+	},
+	"Vajra": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "获得 #b1 点 #y力量 。"
+	},
+	"Anchor": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "获得 #b10 点 #y格挡 。"
+	},
+	"HappyFlower": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "提高 #b1 层计数。"
+	},
+	"OddlySmoothStone": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "获得 #b1 点 #y敏捷 。"
+	},
+	"MercuryHourglass": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "对所有敌人造成 #b3 点伤害。"
+	},
+	"HornCleat": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "重置计数到 #b1 。（如果这件遗物已经耗尽，重新激活）"
+	},
+	"DuVuDoll": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "牌组中每有一张 #y诅咒 牌，获得 #b1 点 #y力量 。"
+	},
+	"FossilizedHelix": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "获得 #b1 层 #y缓冲 。"
+	},
+	"Girya": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "每 #y举重 过一次，获得 #b1 点 #y力量 。"
+	},
+	"IncenseBurner": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "提高 #b1 点计数。"
+	},
+	"Pocketwatch": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "重置计数到 #b1 。"
+	},
+	"CaptainsWheel": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "重置计数到 #b1 。（如果这件遗物已经耗尽，重新激活）"
+	},
+	"GamblingChip": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "丢弃任意手牌。 NL 抽等量手牌。"
+	},
+	"ThreadAndNeedle": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "获得 #b4 层 #y多层护甲 。"
+	},
+	"ClockworkSouvenir": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "获得 #b1 层 #y人工制品 。"
+	},
+	"Toolbox": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "从 #b3 张无色牌中选择 #b1 张加入你的手牌。"
+	},
+	"Sling": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "精英战斗时，获得 #b2 点 #y力量 。"
+	},
+	"Akabeko": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "本场战斗你的下一张 #y攻击牌 将额外造成 #b8 点伤害。"
+	},
+	"CentennialPuzzle": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "本场战斗下次你失去生命时，抽 #b3 张牌。"
+	},
+	"Pantograph": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "Boss战斗时，回复 #b25 点生命。"
+	},
+	"CoffeeDripper": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "获得 [E] 。"
+	},
+	"SlaversCollar": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "获得 [E] 。"
+	},
+	"RunicDome": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "获得 [E] 。"
+	},
+	"FusionHammer": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "获得 [E] 。"
+	},
+	"PhilosopherStone": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "获得 [E] 。"
+	},
+	"BustedCrown": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "获得 [E] 。"
+	},
+	"Ectoplasm": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "获得 [E] 。"
+	},
+	"Sozu": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "获得 [E] 。"
+	},
+	"CursedKey": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "获得 [E] 。"
+	},
+	"Lantern": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "获得 [E] 。"
+	},
+	"AncientTeaSet": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "获得 [E] [E] 。"
+	},
+	"CultistMask": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "本回合你有开腔的欲望。"
+	},
+	"Enchiridion": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "将随机一张 #y能力牌 加入手牌。 NL 它的耗能本回合为 #b0 。"
+	},
+	"MutagenicStrength": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "获得 #b3 点 #y临时力量 。"
+	},
+	"Necronomicon": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "本回合你打出的下一张 #y攻击牌 耗能提高 #b2 并打出两次。"
+	},
+	"RedMask": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "给予所有敌人 #y虚弱 。"
+	},
+	"WarpedTongs": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "随机 #y升级 一张手牌。"
+	},
+	"BlackCannon": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "将 #y火炮 加入手牌。"
+	},
+	"SilverCannon": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "将 #y火炮 加入手牌。"
+	},
+	"GoldCannon": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "将 #y火炮 加入手牌。"
+	},
+	"PlatinumCannon": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "将 #y火炮 加入手牌。"
+	},
+	"Motivation": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "本回合你下次 #y埋藏 时，获得 [E] 。"
+	},
+	"GreedyChest": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "你每有 #b100 金币，获得 #b1 点 #y力量 。"
+	},
+	"ExperimentalCannon": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "将 #y火炮 加入手牌。"
+	},
+	"ExoticDish": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "给予所有敌人 #b5 层 #y墨汁 。"
+	},
+	"NavigationDevice": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "重置计数到 #b1 。（如果这件遗物已经耗尽，重新激活）"
+	},
+	"WoodenLeg": {
+		"NAME": "丧钟效果：",
+		"DESCRIPTION": "#y埋藏 #b3 张牌。"
+	}
+}

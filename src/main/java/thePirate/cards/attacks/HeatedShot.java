@@ -67,6 +67,7 @@ public class HeatedShot extends AbstractCannonBallCard {
         }
 
         if (target != null && !target.isDeadOrEscaped()){
+            calculateCardDamage(target);
             if (!PirateMod.disableCannonSFX.toggle.enabled){
                 this.addToBot(new PirateSFXAction("CANNON_HIT_SHIP"));
                 this.addToBot(new HeatedShotAction(target, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE, this));

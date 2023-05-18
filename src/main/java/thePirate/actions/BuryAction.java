@@ -140,8 +140,8 @@ public class BuryAction extends AbstractGameAction {
 
                     if (!player.hasRelic(FrozenEye.ID)){
                         temp.sortAlphabetically(true);
+                        temp.sortByRarityPlusStatusCardType(false);
                     }
-                    temp.sortByRarityPlusStatusCardType(false);
 
                     //set text (with case for Frozen Eye)
                     String text;

@@ -1,5 +1,6 @@
 package thePirate.cards.skills;
 
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -57,8 +58,25 @@ public class BolsterCrew extends AbstractDynamicCard implements Mysterious {
     }
 
     @Override
+    public void render(SpriteBatch sb) {
+        super.render(sb);
+        if (!upgraded){
+            renderGoldIcon(sb);
+        }
+    }
+
+    public void renderGoldIcon(SpriteBatch sb){
+
+        if (usedThisCombat){
+            renderGreenGold(sb, current_x, current_y);
+        }else {
+            renderRedGold(sb, current_x, current_y);
+        }
+
+    }
+    @Override
     public boolean canUpgrade() {
-        return Mysterious.canUpgrade();
+        return super.canUpgrade() && Mysterious.canUpgrade();
     }
 
     // Upgraded stats.

@@ -1,0 +1,128 @@
+{
+  "thePirate:Button": {
+    "NAME": "按钮",
+    "FLAVOR": "点我！~",
+    "DESCRIPTIONS": [
+      "开发者专用，别拿。"
+    ]
+  },
+  "thePirate:WoodenCompass": {
+    "NAME": "木制指南针",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "每当你 #y埋藏 一张牌时，对随机一名敌人造成 #b5 点伤害。"
+    ]
+  },
+  "thePirate:MoneyBag": {
+    "NAME": "钱袋",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "每当你在商店消费 #y金币 时，将他们存到这里。 NL 每当你失去 #y金币 时，优先失去这些存起来的 #y金币 。"
+    ]
+  },
+  "thePirate:ExperimentalCannon": {
+    "NAME": "试验火炮",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "#r替换火炮遗物或 #y枪炮要领 。 NL 每场战斗开始时，将一张 #y火炮 牌加入手牌。NL 这张牌获得：下一张炮弹牌耗能为 #b0 并打出两次。"
+    ]
+  },
+  "thePirate:NavigationDevice": {
+    "NAME": "导航设备",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "你的第二回合开始时， #y挖掘 。"
+    ]
+  },
+  "thePirate:WritingReed": {
+    "NAME": "书写芦苇",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "每当你给予 #y墨汁 时，额外给予一层。"
+    ]
+  },
+  "thePirate:WoodenLeg": {
+    "NAME": "木腿",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "每场战斗开始时，选择 #y埋藏 #b3 张牌。 NL NL #y提示： NL 你随时可以右键这个遗物定义三张快捷 #y埋藏 选牌。",
+      "选择至多三张牌以便开局时快速选择这张牌 #y埋藏 。"
+    ]
+  },
+  "thePirate:Motivation": {
+    "NAME": "动力",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "每回合首次 #y埋藏 时，获得 [E] 。"
+    ]
+  },
+  "thePirate:ExoticDish": {
+    "NAME": "外国菜",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "每场战斗开始时，给予所有敌人 #b5 层 #y墨汁 。"
+    ]
+  },
+  "thePirate:Coral": {
+    "NAME": "珊瑚",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "拾起时，从原版角色的 #b20 张牌中选择 #b1 张牌加入牌组。",
+      "选择一张牌加入牌组。"
+    ]
+  },
+  "thePirate:GreedyChest": {
+    "NAME": "贪婪宝箱",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "每场战斗开始时，你每有 #b100 #y金币 获得 #b1 点 #y力量 。"
+    ]
+  },
+  "thePirate:GunsmithsBible": {
+    "NAME": "枪炮要领",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "右键点击基于你当前阶段将这个遗物永久替换为 #y火炮挂饰 遗物",
+      "等待越久获得的火炮挂饰遗物就越强。",
+      "火炮挂饰：",
+      "#y火炮 获得： NL #y黑色火炮（一层）:  NL 下一张你打出的火炮牌耗能变为 #b0 。 NL #y银色火炮（二层）： NL 并给予所有敌人 #y易伤 。 NL #y金色火炮（三层）： NL 并获得 #b2 点 #y力量 。 NL #y白金火炮（四层）： NL 并给予所有敌人 #y虚弱 。 NL 所有敌人失去 #b2 点 #y力量 。"
+    ]
+  },
+  "thePirate:BlackCannon": {
+    "NAME": "黑色火炮挂饰",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "每场战斗开始时，将一张 #y火炮 加入手牌。 NL 这张牌获得：下一张炮弹牌耗能为 #b0 。"
+    ]
+  },
+  "thePirate:SilverCannon": {
+    "NAME": "银色火炮挂饰",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "每场战斗开始时，将一张 #y火炮 加入手牌。 NL 这张牌获得：下一张炮弹牌耗能为 #b0 。 NL 给予所有敌人 #y易伤 。"
+    ]
+  },
+  "thePirate:GoldCannon": {
+    "NAME": "金色火炮挂饰",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "每场战斗开始时，将一张 #y火炮 加入手牌。 NL 这张牌获得：下一张炮弹牌耗能为 #b0 。 NL 给予所有敌人 #y易伤 。 NL 获得 #b2 点 #y力量 。"
+    ]
+  },
+  "thePirate:PlatinumCannon": {
+    "NAME": "白金火炮挂饰",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "每场战斗开始时，将一张 #y火炮 加入手牌。 NL 这张牌获得：下一张炮弹牌耗能为 #b0 。 NL 给予所有敌人 #y易伤 和 #y虚弱 。 NL 获得 #b2 点 #y力量 。 NL 所有敌人失去 #b2 点 #y力量 。"
+    ]
+  },
+  "thePirate:BottledVoid": {
+    "NAME": "瓶装虚空",
+    "FLAVOR": "这是什么？",
+    "DESCRIPTIONS": [
+      "选择一张牌。 NL 这张牌在你的每场战斗开始时不会被抽到。",
+      "你的每场战斗开始时不会抽到 ",
+      " 。"
+    ]
+  }
+}

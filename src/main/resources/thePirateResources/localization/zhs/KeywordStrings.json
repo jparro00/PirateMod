@@ -1,0 +1,107 @@
+[
+  {
+    "PROPER_NAME": "油墨",
+    "NAMES": [
+      "油墨",
+      "volatile ink"
+    ],
+    "DESCRIPTION": "#y墨汁 将在敌人回合结束时移除而不是其造成伤害时减少。"
+  },
+  {
+    "PROPER_NAME": "人工制品",
+    "NAMES": [
+      "人工制品",
+      "artifacts"
+    ],
+    "DESCRIPTION": "阻挡下一次的负面效果。"
+  },
+  {
+    "PROPER_NAME": "击晕",
+    "NAMES": [
+      "击晕",
+      "stun"
+    ],
+    "DESCRIPTION": "被击晕的敌人将跳过他们的回合。"
+  },
+  {
+    "PROPER_NAME": "风暴",
+    "NAMES": [
+      "风暴",
+      "storm"
+    ],
+    "DESCRIPTION": "本回合你每打出过一张牌，打出本牌的复制。（打出这些牌的时候不会受到伤害）"
+  },
+  {
+    "PROPER_NAME": "流血",
+    "NAMES": [
+      "流血",
+      "bleeding"
+    ],
+    "DESCRIPTION": "在你的回合结束时，失去 #y流血 一半的生命（向上取整），然后失去等量的 #y流血 。"
+  },
+  {
+    "PROPER_NAME": "入侵",
+    "NAMES": [
+      "入侵",
+      "predatory"
+    ],
+    "DESCRIPTION": "如果你的牌组中有 #y诱饵 牌，于 #y诱饵 牌相关的 #y入侵 牌将会在非首领卡牌奖励时出现，且至少有一张 #y稀有 牌。 NL 不会在其他的地方出现。 NL 当 #y入侵 牌加入牌组时，移除相关的 #y诱饵 牌。"
+  },
+  {
+    "PROPER_NAME": "诱饵",
+    "NAMES": [
+      "诱饵",
+      "lure"
+    ],
+    "DESCRIPTION": "仅能在战斗奖励中获得。 NL 当你的牌组中有 #y诱饵 牌时，相关的 #y入侵 牌将会在非首领卡牌奖励时出现，且至少有一张 #y稀有 牌。 NL 当相关 #y侵略 牌加入卡组时，移除这张 #y诱饵 。"
+
+  },
+  {
+    "PROPER_NAME": "神秘",
+    "NAMES": [
+      "神秘",
+      "mysterious"
+    ],
+    "DESCRIPTION": "在战斗外不能被升级。"
+  },
+  {
+    "PROPER_NAME": "抹除",
+    "NAMES": [
+      "抹除",
+      "purge"
+    ],
+    "DESCRIPTION": "永久从你的牌组中移除这张牌。"
+  },
+  {
+    "PROPER_NAME": "腐化造物",
+    "NAMES": [
+      "腐化造物",
+      "corrupt artifact"
+    ],
+    "DESCRIPTION": "阻挡下次目标获得的增益效果。"
+  },
+  {
+    "PROPER_NAME": "挖掘",
+    "NAMES": [
+      "dig",
+      "挖掘"
+    ],
+    "DESCRIPTION": "将一张牌从你的弃牌堆返回你的手牌并将其升级。"
+  },
+  {
+    "PROPER_NAME": "埋藏",
+    "NAMES": [
+      "bury",
+      "埋藏"
+    ],
+    "DESCRIPTION": "从抽牌堆选择一张牌并丢弃。"
+  },
+  {
+    "PROPER_NAME": "墨汁",
+    "NAMES": [
+      "ink",
+      "墨汁"
+    ],
+    "DESCRIPTION": "在下次这名敌人将要造成伤害时，失去等量的层数阻止伤害并对其造成等量伤害。"
+  }
+]

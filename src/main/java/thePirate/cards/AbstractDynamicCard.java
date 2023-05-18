@@ -1,23 +1,32 @@
 package thePirate.cards;
 
 import basemod.ReflectionHacks;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.SpawnModificationCard;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
+import com.evacipated.cardcrawl.modthespire.lib.*;
+import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.utility.ShowCardAndPoofAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardQueueItem;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.relics.Boot;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
+import javassist.CannotCompileException;
+import javassist.CtBehavior;
+import thePirate.PirateMod;
 import thePirate.actions.PurgeRemovablesAction;
 import thePirate.cards.lures.AbstractLure;
 import thePirate.cards.predators.AbstractPredator;
@@ -25,6 +34,8 @@ import thePirate.cards.predators.AbstractPredator;
 import java.util.ArrayList;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
+import static thePirate.PirateMod.GOLD_GREEN_REGION;
+import static thePirate.PirateMod.GOLD_RED_REGION;
 
 public abstract class AbstractDynamicCard extends AbstractDefaultCard implements SpawnModificationCard {
 
@@ -73,11 +84,9 @@ public abstract class AbstractDynamicCard extends AbstractDefaultCard implements
             int cardsPlayedThisTurn = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
             cardsPlayedThisTurn += AbstractDungeon.actionManager.cardQueue.size() - 1;
             for (int i = 0; i < cardsPlayedThisTurn - 1; i++){
-//                AbstractDynamicCard tmp = (AbstractDynamicCard)this.makeSameInstanceOf();
                 AbstractDynamicCard tmp = (AbstractDynamicCard)this.makeStatEquivalentCopy();
                 tmp.exhaust = false;
                 tmp.stormPending = true;
-//                AbstractDungeon.player.limbo.addToBottom(tmp);
                 tmp.target_x = (float)Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
                 tmp.target_y = (float)Settings.HEIGHT / 2.0F;
                 tmp.current_x = tmp.target_x;
@@ -189,6 +198,29 @@ public abstract class AbstractDynamicCard extends AbstractDefaultCard implements
         return card;
     }
 
+    public void renderGreenGold(SpriteBatch sb, float x, float y){
+
+        if (!PirateMod.disableGoldSpendReminder.toggle.enabled && AbstractDungeon.player != null &&AbstractDungeon.getCurrMapNode() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !(AbstractDungeon.isScreenUp && (!AbstractDungeon.screen.equals(AbstractDungeon.CurrentScreen.GAME_DECK_VIEW) && !AbstractDungeon.screen.equals(AbstractDungeon.CurrentScreen.DISCARD_VIEW) && !AbstractDungeon.screen.equals(AbstractDungeon.CurrentScreen.HAND_SELECT) && !AbstractDungeon.screen.equals(AbstractDungeon.CurrentScreen.GRID)))) {
+            sb.setColor(Color.WHITE);
+            renderHelper(sb, GOLD_GREEN_REGION, x, y);
+        }
+    }
+    public void renderRedGold(SpriteBatch sb, float x, float y){
+        if (!PirateMod.disableGoldSpendReminder.toggle.enabled && AbstractDungeon.player != null &&AbstractDungeon.getCurrMapNode() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !(AbstractDungeon.isScreenUp && (!AbstractDungeon.screen.equals(AbstractDungeon.CurrentScreen.GAME_DECK_VIEW) && !AbstractDungeon.screen.equals(AbstractDungeon.CurrentScreen.DISCARD_VIEW) && !AbstractDungeon.screen.equals(AbstractDungeon.CurrentScreen.HAND_SELECT) && !AbstractDungeon.screen.equals(AbstractDungeon.CurrentScreen.GRID)))) {
+            sb.setColor(Color.WHITE);
+            renderHelper(sb, GOLD_RED_REGION, x, y);
+
+            sb.setBlendFunction(770, 1);
+            sb.setColor(new Color(1.0F, 1.0F, 1.0F, ((MathUtils.cosDeg((float) (System.currentTimeMillis() / 5L % 360L)) + 1.25F) / 2F) / 3.0F));
+            renderHelper(sb, GOLD_RED_REGION, x, y);
+            sb.setBlendFunction(770, 771);
+            sb.setColor(Color.WHITE);
+        }
+
+    }
+    public void renderHelper(SpriteBatch sb, TextureAtlas.AtlasRegion img, float drawX, float drawY) {
+        sb.draw(img, drawX + img.offsetX - (float)img.originalWidth / 2.0F, drawY + img.offsetY - (float)img.originalHeight / 2.0F, (float)img.originalWidth / 2.0F - img.offsetX, (float)img.originalHeight / 2.0F - img.offsetY, (float)img.packedWidth, (float)img.packedHeight, this.drawScale * Settings.scale, this.drawScale * Settings.scale, this.angle);
+    }
     @SpirePatch2(clz = ShowCardAndPoofAction.class, method = "update")
     public static class StormEffectPatch{
         @SpirePrefixPatch
@@ -235,6 +267,31 @@ public abstract class AbstractDynamicCard extends AbstractDefaultCard implements
                         __instance.isDone = true;
                     }
                 }
+            }
+        }
+    }
+    @SpirePatch2(clz = Boot.class, method = "onAttackToChangeDamage")
+    public static class BootAttackPatch{
+
+        @SpireInsertPatch(
+                locator=Locator.class
+        )
+        public static SpireReturn<Integer> StormSpeed(Boot __instance, DamageInfo info, int damageAmount) {
+            if (AbstractDungeon.actionManager.cardQueue != null && AbstractDungeon.actionManager.cardQueue.size() > 0){
+                if (AbstractDungeon.actionManager.cardQueue.get(0).card instanceof AbstractDynamicCard) {
+                    if (((AbstractDynamicCard) AbstractDungeon.actionManager.cardQueue.get(0).card).storm) {
+                        return SpireReturn.Return(5);
+                    }
+                }
+            }
+            return SpireReturn.Continue();
+        }
+
+        public static class Locator extends SpireInsertLocator {
+            @Override
+            public int[] Locate(CtBehavior ctMethodToPatch) throws PatchingException, CannotCompileException {
+                Matcher finalMatcher = new Matcher.MethodCallMatcher(Boot.class, "addToBot");
+                return LineFinder.findInOrder(ctMethodToPatch, new ArrayList<Matcher>(), finalMatcher);
             }
         }
     }

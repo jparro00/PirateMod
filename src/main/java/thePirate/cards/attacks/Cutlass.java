@@ -1,5 +1,6 @@
 package thePirate.cards.attacks;
 
+import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ModifyDamageAction;
@@ -37,12 +38,14 @@ public class Cutlass extends AbstractDynamicCard {
     private static final int COST = 0;
     private static final int UPGRADED_COST = 0;
 
-    private static final int DAMAGE = 7;
+    private static final int DAMAGE = 8;
 
     private static final int UPGRADE_PLUS_DMG = 1;
 
     private static final int BASE_DAMAGE_DEBUF = 2;
     public static final int UPGRADE_DAMAGE_DEBUF = -1;
+    public static final int EXAUSTIVE = 3;
+    public static final int UPGRADE_EXHAUSTIVE = 0;
 
     // /STAT DECLARATION/
 
@@ -51,6 +54,8 @@ public class Cutlass extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = damage = DAMAGE;
         magicNumber = baseMagicNumber = BASE_DAMAGE_DEBUF;
+        ExhaustiveVariable.setBaseValue(this, 3);
+
     }
 
 
@@ -68,8 +73,13 @@ public class Cutlass extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeMagicNumber(UPGRADE_DAMAGE_DEBUF);
+            if (UPGRADE_PLUS_DMG > 0)
+                upgradeDamage(UPGRADE_PLUS_DMG);
+            if (UPGRADE_DAMAGE_DEBUF != BASE_DAMAGE_DEBUF)
+                upgradeMagicNumber(UPGRADE_DAMAGE_DEBUF);
+            if (UPGRADE_EXHAUSTIVE > 0){
+                ExhaustiveVariable.upgrade(this, UPGRADE_EXHAUSTIVE);
+            }
             initializeDescription();
         }
     }
