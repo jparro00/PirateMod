@@ -21,7 +21,7 @@
         },
         "thePirate:ThiefsAccomplicePower": {
                 "NAME": "盗贼同谋",
-                "DESCRIPTIONS": ["下 #b", " 次你将失去#y金币时，获得等量 #y金币 。"," 次你将失去#y金币时，获得等量 #y金币 。"]
+                "DESCRIPTIONS": ["下 #b", " 次你将失去 #y金币 时，获得等量 #y金币 。"," 次你将失去#y金币时，获得等量 #y金币 。"]
         },
         "thePirate:TimeWarpPower": {
                 "NAME": "时间扭曲",
@@ -57,7 +57,7 @@
         },
         "thePirate:VolatileInkPower": {
                 "NAME": "油墨",
-                "DESCRIPTIONS": ["#y墨汁 只在回合结束是被移除。"]
+                "DESCRIPTIONS": ["#y墨汁 只在敌人回合结束时被移除。"]
         },
         "thePirate:StormSurgePower": {
                 "NAME": "风暴潮",
