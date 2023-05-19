@@ -186,7 +186,7 @@
   },
   "thePirate:ChemicalWarfare": {
     "NAME": "化学战",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 额外造成敌人 thepirate:墨汁 层数一半的伤害。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 其受到的 thepirate:墨汁 伤害提高50%。"
   },
   "thePirate:FlexibleLimb": {
     "NAME": "灵活的肢体",
@@ -255,7 +255,7 @@
   },
   "thePirate:Tropomyosin": {
     "NAME": "脱力",
-    "DESCRIPTION": "敌人失去 !M! 点 力量 并给予 !SM! 层 thepirate:墨汁 。 NL 给予1层 thepirate:油墨 。 NL 消耗 。"
+    "DESCRIPTION": "敌人失去 !M! 点 力量 。 NL 给予 !SM! 层 thepirate:墨汁 。 NL 给予持续1回合的 thepirate:油墨 。 NL 消耗 。"
   },
   "thePirate:GrapeShot": {
     "NAME": "霰弹",

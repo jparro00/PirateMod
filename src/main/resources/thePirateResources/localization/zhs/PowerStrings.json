@@ -69,7 +69,7 @@
         },
         "thePirate:ChemicalWarfarePower": {
                 "NAME": "化学战",
-                "DESCRIPTIONS": ["有 #y墨汁 的敌人额外受到 #b50% 的伤害。"]
+                "DESCRIPTIONS": ["其受到的 #y墨汁 伤害提高 #b50% 。"]
         },
         "thePirate:DavyJonesLockerPower": {
                 "NAME": "沉海秘宝",
