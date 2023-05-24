@@ -1,12 +1,12 @@
 {
   "thePirate:Retaliation": {
     "NAME": "反击",
-    "DESCRIPTION": "如果敌人的意图是攻击，造成攻击意图的伤害。",
-    "EXTENDED_DESCRIPTION": ["如果敌人的意图是攻击，造成攻击意图（ !D! 点 !M! 次）的伤害。","如果敌人的意图是攻击，造成攻击意图（ !D! ）的伤害。","提示","反击为固定伤害。"]
+    "DESCRIPTION": "如果敌人的意图是攻击，造成等于攻击意图的伤害。",
+    "EXTENDED_DESCRIPTION": ["如果敌人的意图是攻击，造成等于攻击意图的伤害（ !D! 点 !M! 次）。","如果敌人的意图是攻击，造成等于攻击意图的伤害（ !D! 点）。","提示","反击为固定伤害。"]
   },
   "thePirate:GhostOfBlackbeard": {
     "NAME": "黑胡子鬼魂",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 本场战斗每 thepirate:埋藏 一张牌，这张牌的耗能提高 [E] 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 本场战斗每 thepirate:埋藏 过一张牌，这张牌的耗能就提高1 [E] 。"
   },
   "thePirate:BoardingParty": {
     "NAME": "强登",
@@ -14,34 +14,34 @@
   },
   "thePirate:DeathKnell": {
     "NAME": "丧钟",
-    "DESCRIPTION": "直接触发一件遗物的回合开始能触发具体效果。 NL 消耗 。",
-    "EXTENDED_DESCRIPTION": ["提示", "这个触发是直接将遗物的回合计数跳满然后触发效果。"]
+    "DESCRIPTION": "触发一件遗物的战斗开始时或回合开始时效果。 NL 消耗 。",
+    "EXTENDED_DESCRIPTION": ["提示", "悬停在遗物图标上以查看其丧钟效果。"]
   },
   "thePirate:UnstableFormula": {
     "NAME": "不稳定配方",
-    "DESCRIPTION": "每回合开始时，给予所有敌人其拥有 thepirate:墨汁 层数的 thepirate:墨汁 。"
+    "DESCRIPTION": "每回合开始时，给予所有敌人等于其 thepirate:墨汁 层数的 thepirate:墨汁 。"
   },
   "thePirate:Jettison": {
     "NAME": "抛弃",
-    "DESCRIPTION": "thepirate:埋藏 !M! 张牌。 NL 获得这些牌耗能的 *临时 力量 。 NL 每有一张 不能被打出 的牌，获得 !SM! 点 力量 。"
+    "DESCRIPTION": "thepirate:埋藏 至多 !M! 张牌。 NL 获得等于这些牌总耗能的 *临时 力量 。 NL 其中每有一张 不能被打出 的牌，获得 !SM! 点 力量 。"
   },
   "thePirate:GeneticSplice": {
     "NAME": "遗传拼接",
-    "DESCRIPTION": "移除敌人的 thepirate:墨汁 。 NL 每失去 !M! 层 thepirate:墨汁 ，获得1点 敏捷 。 NL 获得 !B! 点 格挡 。 NL 消耗 。"
+    "DESCRIPTION": "完全移除敌人的 thepirate:墨汁 。 NL 每移除 !M! 层 thepirate:墨汁 ，获得1点 敏捷 。 NL 获得 !B! 点 格挡 。 NL 消耗 。"
   },
   "thePirate:ScoutAhead": {
     "NAME": "侦查",
-    "DESCRIPTION": "下回合 thepirate:挖掘 X。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "下回合 thepirate:挖掘 X+1。 NL 消耗 。"
+    "DESCRIPTION": "下回合 thepirate:挖掘 至多X次。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "下回合 thepirate:挖掘 至多X+1次。 NL 消耗 。"
   },
   "thePirate:PinDown": {
     "NAME": "确定",
-    "DESCRIPTION": "给予 !M! 层 虚弱 。 NL 将 *铲子 加入你的抽牌堆。"
+    "DESCRIPTION": "给予 !M! 层 虚弱 。 NL 将一张 *铲子 加入你的抽牌堆。"
   },
   "thePirate:ShovelBlade": {
     "NAME": "铲子",
-    "DESCRIPTION": "保留 。 NL thepirate:挖掘 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "保留 。 NL thepirate:挖掘 两次。 NL 消耗 。"
+    "DESCRIPTION": "保留 。 NL thepirate:挖掘 至多一次。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL thepirate:挖掘 至多两次。 NL 消耗 。"
   },
   "thePirate:EvasiveManeuver": {
     "NAME": "规避机动",
@@ -49,20 +49,20 @@
   },
   "thePirate:ChainShot": {
     "NAME": "链锁弹",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 其本回合失去 !M! 点 力量 。 NL 消耗 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 敌人本回合失去 !M! 点 力量 。 NL 消耗 。"
   },
   "thePirate:Sandblast": {
     "NAME": "喷砂",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 虚弱 和 易伤 。 NL 本回合每 thepirate:埋藏 一张牌，这张牌的耗能降低 [E] 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 虚弱 和 易伤 。 NL 本回合每 thepirate:埋藏 过一张牌，这张牌的耗能就降低1 [E] 。"
   },
   "thePirate:SeaTurtles": {
     "NAME": "海龟",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL thepirate:埋藏 这张牌时，将 thepirate:埋藏 这张牌的复制。 NL thepirate:挖掘 这张牌时，将复制这张牌到抽牌堆。 NL 消耗 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL thepirate:埋藏 这张牌时， thepirate:埋藏 一份这张牌的复制品。 NL thepirate:挖掘 这张牌时，将一份这张牌的复制品放入抽牌堆。 NL 消耗 。"
   },
   "thePirate:Cyclone": {
     "NAME": "飓风",
     "DESCRIPTION": "获得 !B! 点 格挡 。 NL thepirate:风暴 。 NL 消耗 。",
-    "EXTENDED_DESCRIPTION": ["获得 !B! 点 格挡 。 NL thepirate:风暴 （ !STORM! ）。 NL 消耗 。"]
+    "EXTENDED_DESCRIPTION": ["获得 !B! 点 格挡 （ !STORM! 次）。 NL thepirate:风暴 。 NL 消耗 。"]
   },
   "thePirate:Headbutt": {
     "NAME": "头槌",
@@ -75,21 +75,21 @@
   },
   "thePirate:ThiefsAccomplice": {
     "NAME": "盗贼同谋",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 下一次你失去金币时，获得等量金币。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 下一次你实际失去金币时，获得等量金币。"
   },
   "thePirate:DarkOffering": {
     "NAME": "黑暗祭品",
-    "DESCRIPTION": "至多 thepirate:埋藏 X张牌并给予所有敌人 !M!X 层 thepirate:墨汁 。 消耗 。",
-    "UPGRADE_DESCRIPTION": "至多 thepirate:埋藏 X+1张牌并给予所有敌人 !M!X+1 层 thepirate:墨汁 。 消耗 。"
+    "DESCRIPTION": "thepirate:埋藏 至多X张牌并给予所有敌人 !M!X 层 thepirate:墨汁 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "thepirate:埋藏 至多X+1张牌并给予所有敌人 !M!X+2 层 thepirate:墨汁 。 NL 消耗 。"
   },
   "thePirate:TimeWarp": {
     "NAME": "时间扭曲",
-    "DESCRIPTION": "每回合开始时，将上回合第一张打出的非 消耗 牌返回你的手牌。 NL 获得其耗能等量的 [E] 。",
+    "DESCRIPTION": "每回合开始时，将上回合打出的第一张非 消耗 牌返回你的手牌。 NL 获得等于其耗能的 [E] 。",
     "EXTENDED_DESCRIPTION": ["提示", "不能返回能力牌。 NL 也不能叠加。"]
   },
   "thePirate:RedShirt": {
     "NAME": "红色衬衫",
-    "DESCRIPTION": "每当你本回合失去生命时，转为获得等量的 thepirate:流血 。 消耗 。"
+    "DESCRIPTION": "每当你本回合失去生命时，转为获得等量的 thepirate:流血 。 NL 消耗 。"
   },
   "thePirate:CephalopodForm": {
     "NAME": "章鱼形态",
@@ -98,28 +98,28 @@
   },
   "thePirate:HatchPlot": {
     "NAME": "谋划",
-    "DESCRIPTION": "打出弃牌堆中的一张牌。（不能选同名牌） NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "打出弃牌堆中的一张牌。（不能选同名牌）",
+    "DESCRIPTION": "打出弃牌堆中的一张牌（不能选同名牌）。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "打出弃牌堆中的一张牌（不能选同名牌）。",
     "EXTENDED_DESCRIPTION": ["选择弃牌堆中的一张牌打出。"]
   },
   "thePirate:PirateBay": {
     "NAME": "海盗湾",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 复制一张牌到抽牌堆并 thepirate:埋藏 。 消耗 。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 将抽牌堆中的一张牌复制一张并 thepirate:埋藏 。 消耗 。"
   },
   "thePirate:DarkPlans": {
     "NAME": "地下计划",
-    "DESCRIPTION": "不能被打出 。 thepirate:神秘 。 NL 每当这张牌被 thepirate:埋藏 时，给予所有敌人 !M! 层 thepirate:墨汁 。",
-    "UPGRADE_DESCRIPTION": "thepirate:神秘 。 NL 每当这张牌被 thepirate:埋藏 时，给予所有敌人 !M! 层 thepirate:墨汁 。",
-    "EXTENDED_DESCRIPTION": ["升级后才能打出。", "","（ !SM! ）。"]
+    "DESCRIPTION": "不能被打出 。 NL thepirate:神秘 。 NL 这张牌在本场战斗中每被 thepirate:埋藏 过一次，就给予所有敌人 M 层 thepirate:墨汁 一次。",
+    "UPGRADE_DESCRIPTION": "thepirate:神秘 。 NL 这张牌在本场战斗中每被 thepirate:埋藏 过一次，就给予所有敌人 M 层 thepirate:墨汁 一次。",
+    "EXTENDED_DESCRIPTION": ["升级后才能打出。", "","（ !SM! 次。）"]
   },
   "thePirate:AttendToCache": {
     "NAME": "寻宝精神",
-    "DESCRIPTION": "thepirate:埋藏 一张牌，然后 thepirate:挖掘 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "thepirate:埋藏 一张牌，然后 thepirate:挖掘 !M! 次。 NL 消耗 。"
+    "DESCRIPTION": "thepirate:埋藏 至多一张牌，然后 thepirate:挖掘 至多一次。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "thepirate:埋藏 至多一张牌，然后 thepirate:挖掘 至多 !M! 次。 NL 消耗 。"
   },
   "thePirate:RetreatToShore": {
     "NAME": "回港",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL thepirate:埋藏 !M! 张牌。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL thepirate:埋藏 至多 !M! 张牌。"
   },
   "thePirate:BraceForImpact": {
     "NAME": "冲击支撑",
@@ -127,11 +127,11 @@
   },
   "thePirate:AncientCrab": {
     "NAME": "先古螃蟹",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 被 thepirate:埋藏 时，返回手牌并 thepirate:挖掘 。 thepirate:入侵 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 被 thepirate:埋藏 时，返回手牌并 thepirate:挖掘 。 NL thepirate:入侵 。"
   },
   "thePirate:Kraken": {
-    "NAME": "卡兰娜",
-    "DESCRIPTION": "thepirate:击晕 敌人。 NL 给予所有敌人 !M! 层 thepirate:墨汁 。 NL thepirate:入侵 。 消耗 。"
+    "NAME": "克拉肯",
+    "DESCRIPTION": "thepirate:击晕 敌人。 NL 给予其他所有敌人 !M! 层 thepirate:墨汁 。 NL 消耗 。 NL thepirate:入侵 。"
   },
   "thePirate:ElectricEel": {
     "NAME": "电鳗",
@@ -162,7 +162,7 @@
   },
   "thePirate:Austerity": {
     "NAME": "紧缩",
-    "DESCRIPTION": "每当你 thepirate:埋藏 一张牌时，抽 !M! 张牌。"
+    "DESCRIPTION": "你每 thepirate:埋藏 一张牌，抽 !M! 张牌。"
   },
   "thePirate:HardenedBrine": {
     "NAME": "硬化盐水",
@@ -178,7 +178,7 @@
   },
   "thePirate:TooMuchRum": {
     "NAME": "朗姆酒与死亡",
-    "DESCRIPTION": "每当你 thepirate:埋藏 一张牌时， 消耗 这张牌并获得 !M! 点 格挡 。"
+    "DESCRIPTION": "每当你 thepirate:埋藏 一张牌时，将其 消耗 并获得 !M! 点 格挡 。"
   },
   "thePirate:Subdue": {
     "NAME": "制伏",
@@ -186,7 +186,7 @@
   },
   "thePirate:ChemicalWarfare": {
     "NAME": "化学战",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 额外造成敌人 thepirate:墨汁 层数一半的伤害。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 敌人受到的 thepirate:墨汁 伤害提高50%。"
   },
   "thePirate:FlexibleLimb": {
     "NAME": "灵活的肢体",
@@ -194,7 +194,7 @@
   },
   "thePirate:BeachBuddy": {
     "NAME": "海滩伙伴",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 每当你 thepirate:埋藏 时，将这张牌从弃牌堆返回你的手牌。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 每当你 thepirate:埋藏 牌时，将这张牌从弃牌堆返回你的手牌。"
   },
   "thePirate:AncientAlliances": {
     "NAME": "古久联盟",
@@ -211,7 +211,7 @@
   },
   "thePirate:DownWithTheShip": {
     "NAME": "破釜沉舟",
-    "DESCRIPTION": "thepirate:埋藏 所有牌但留一张牌在抽牌堆。 NL 每 thepirate:埋藏 一张牌，造成 !D! 点伤害。 NL 消耗 。"
+    "DESCRIPTION": "thepirate:埋藏 抽牌堆中除一张牌外的所有牌。 NL 每 thepirate:埋藏 一张牌，造成一次 !D! 点伤害。 NL 消耗 。"
   },
   "thePirate:CursedBlade": {
     "NAME": "诅咒之刃",
@@ -225,65 +225,65 @@
   "thePirate:DavyJonesLocker": {
     "NAME": "沉海秘宝",
     "DESCRIPTION": "thepirate:抹除 你打出的下一张牌。",
-    "UPGRADE_DESCRIPTION": "thepirate:抹除 你打出的下一张牌。 NL 将 *沉海秘宝 加入你的牌组。"
+    "UPGRADE_DESCRIPTION": "thepirate:抹除 你打出的下一张牌。 NL 将一张 *沉海秘宝 加入你的牌组。"
   },
   "thePirate:SorcererAttack": {
     "NAME": "巫师攻击",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 移除 thepirate:人工制品 并给予 !M! 层 thepirate:腐化造物 。 NL 消耗 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 完全移除 thepirate:人工制品 并给予 !M! 层 thepirate:腐化造物 。 NL 消耗 。"
   },
   "thePirate:CausticInk": {
     "NAME": "腐蚀墨汁",
-    "DESCRIPTION": "移除敌人的 格挡 和 thepirate:人工制品 。 NL 敌人失去2点 力量 。 NL 给予失去 格挡 层数的 thepirate:墨汁 。 消耗 。",
-    "UPGRADE_DESCRIPTION": "保留 。 NL 移除敌人的 格挡 和 thepirate:人工制品 。 NL 敌人失去2点 力量 。 NL 给予失去 格挡 层数的 thepirate:墨汁 。 消耗 。"
+    "DESCRIPTION": "完全移除敌人的 格挡 和 thepirate:人工制品 。 NL 敌人失去2点 力量 。 NL 给予移除 格挡 层数的 thepirate:墨汁 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 完全移除敌人的 格挡 和 thepirate:人工制品 。 NL 敌人失去2点 力量 。 NL 给予移除 格挡 层数的 thepirate:墨汁 。 NL 消耗 。"
   },
   "thePirate:BeachCrew": {
     "NAME": "岸上机组",
-    "DESCRIPTION": "每回合开始时，能 thepirate:埋藏 一张牌。"
+    "DESCRIPTION": "每回合开始时， thepirate:埋藏 至多一张牌。"
   },
   "thePirate:FireAtWill": {
     "NAME": "随意开火",
-    "DESCRIPTION": "下一张和每回合开始的炮弹牌的耗能为0。"
+    "DESCRIPTION": "下一张和每回合打出的第一张炮弹牌的耗能为0。"
   },
   "thePirate:Saboteur": {
     "NAME": "破坏者",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 下次敌人将获得 格挡 时，不会获得 格挡 。",
-    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 下次所有敌人将获得 格挡 时，不会获得 格挡 。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 敌人下次将获得 格挡 时，阻止它。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 所有敌人下次将获得 格挡 时，阻止它。"
   },
   "thePirate:Ransom": {
     "NAME": "赎金",
-    "DESCRIPTION": "thepirate:埋藏 一张牌。 NL 获得其耗能的 [E] 。"
+    "DESCRIPTION": "thepirate:埋藏 一张牌。 NL 获得等于其耗能的 [E] 。"
   },
   "thePirate:Tropomyosin": {
     "NAME": "脱力",
-    "DESCRIPTION": "敌人失去 !M! 点 力量 并给予 !SM! 层 thepirate:墨汁 。 NL 给予1层 thepirate:油墨 。 NL 消耗 。"
+    "DESCRIPTION": "敌人失去 !M! 点 力量 。 NL 给予 !SM! 层 thepirate:墨汁 。 NL 给予持续一回合的 thepirate:油墨 。 NL 消耗 。"
   },
   "thePirate:GrapeShot": {
     "NAME": "霰弹",
-    "DESCRIPTION": "对随机一名敌人造成 !D! 点伤害。 NL thepirate:风暴 。 消耗 。",
-    "EXTENDED_DESCRIPTION": ["对随机一名敌人造成 !D! 点伤害（ !STORM! 次）。 NL thepirate:风暴 。 消耗 。"]
+    "DESCRIPTION": "随机对敌人造成 !D! 点伤害。 NL thepirate:风暴 。 NL 消耗 。",
+    "EXTENDED_DESCRIPTION": ["随机对敌人造成 !D! 点伤害（ !STORM! 次）。 NL thepirate:风暴 。 NL 消耗 。"]
   },
   "thePirate:MomentousAttack": {
     "NAME": "强力攻击",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 额外造成本回合使用过能量的 !M! 倍伤害。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 额外造成本回合使用过能量 !M! 倍的伤害。"
   },
   "thePirate:PirateForm": {
     "NAME": "海盗形态",
-    "DESCRIPTION": "虚无 。 NL 每回合开始时， thepirate:埋藏 并 thepirate:挖掘 。",
-    "UPGRADE_DESCRIPTION": "每回合开始时， thepirate:埋藏 并 thepirate:挖掘 。"
+    "DESCRIPTION": "虚无 。 NL 每回合开始时， thepirate:埋藏 一张牌并 thepirate:挖掘 。",
+    "UPGRADE_DESCRIPTION": "每回合开始时， thepirate:埋藏 一张牌并 thepirate:挖掘 。"
   },
   "thePirate:Overexert": {
     "NAME": "用力过猛",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 永久将这张牌替换为 *后撤 。 NL thepirate:抹除 。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 永久将这张牌替换为 *后撤+ 。 NL thepirate:抹除 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 将这张牌永久替换为 *后撤 。 NL thepirate:抹除 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 将这张牌永久替换为 *后撤+ 。 NL thepirate:抹除 。"
   },
   "thePirate:Retreat": {
     "NAME": "后撤",
-    "DESCRIPTION": "获得 !M! 层 易伤 。 NL 永久替换为 *用力过猛 。 NL 被 thepirate:埋藏 时，打出这张牌。 NL thepirate:抹除 。",
-    "UPGRADE_DESCRIPTION": "获得 !M! 层 易伤 。 NL 永久替换为 *用力过猛+ 。 NL 被 thepirate:埋藏 时，打出这张牌。 NL thepirate:抹除 。"
+    "DESCRIPTION": "获得 !M! 层 易伤 。 NL 将这张牌永久替换为 *用力过猛 。 NL 被 thepirate:埋藏 时，打出这张牌。 NL thepirate:抹除 。",
+    "UPGRADE_DESCRIPTION": "获得 !M! 层 易伤 。 NL 将这张牌永久替换为 *用力过猛+ 。 NL 被 thepirate:埋藏 时，打出这张牌。 NL thepirate:抹除 。"
   },
   "thePirate:InkShot": {
     "NAME": "墨汁射击",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 给予所有敌人 !M! 层 thepirate:墨汁 。 消耗 。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 给予所有敌人 !M! 层 thepirate:墨汁 。 NL 消耗 。"
   },
   "thePirate:Mercenaries": {
     "NAME": "雇佣军",
@@ -291,12 +291,12 @@
   },
   "thePirate:Menace": {
     "NAME": "威吓",
-    "DESCRIPTION": "翻倍敌人的负面效果。 NL 消耗 。"
+    "DESCRIPTION": "翻倍敌人的所有负面效果。 NL 消耗 。"
   },
   "thePirate:HeadToShore": {
     "NAME": "前往海岸",
-    "DESCRIPTION": "丢弃一张牌。 NL 下回合开始时， thepirate:挖掘 。",
-    "UPGRADE_DESCRIPTION": "抽一张牌 。 NL 丢弃一张牌。 NL 下回合开始时， thepirate:挖掘 。"
+    "DESCRIPTION": "丢弃一张牌。 NL 下回合开始时， thepirate:挖掘 至多一次。",
+    "UPGRADE_DESCRIPTION": "抽一张牌 。 NL 丢弃一张牌。 NL 下回合开始时， thepirate:挖掘 至多一次。"
   },
   "thePirate:Dig": {
     "NAME": "挖掘",
@@ -305,16 +305,16 @@
   },
   "thePirate:TrustyShovel": {
     "NAME": "可靠铁锹",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL thepirate:埋藏 !M! 张牌。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL thepirate:埋藏 !M! 张牌。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL thepirate:埋藏 至多 !M! 张牌。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL thepirate:埋藏 至多 !M! 张牌。"
   },
   "thePirate:ShotsInTheDark": {
     "NAME": "暗处射击",
-    "DESCRIPTION": "对随机敌人造成 !D! 伤害 !M! 次。 NL 击杀时，再打出这张牌。"
+    "DESCRIPTION": "随机对敌人造成 !D! 点伤害 !M! 次。 NL 击杀时，再次打出这张牌。"
   },
   "thePirate:HeatedShot": {
     "NAME": "加热射击",
-    "DESCRIPTION": "对最左侧的敌人造成 !D! 点伤害。 NL 击杀时，再打出这张牌。 NL 消耗 。"
+    "DESCRIPTION": "对最左侧的敌人造成 !D! 点伤害。 NL 击杀时，再次打出这张牌。 NL 消耗 。"
   },
   "thePirate:CaptainsQuarters": {
     "NAME": "上尉宿舍",
@@ -323,13 +323,13 @@
   },
   "thePirate:MakeshiftSpear": {
     "NAME": "简易长矛",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 这张牌被 升级 时将从你的牌组中移除。",
-    "UPGRADE_DESCRIPTION": "被 升级 时将从你的牌组中移除。",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 这张牌被 升级 时，将其从你的牌组中移除。",
+    "UPGRADE_DESCRIPTION": "被 升级 时，将其从你的牌组中移除。",
     "EXTENDED_DESCRIPTION": ["提示", "这张牌不会被随机升级随机到。"]
   },
   "thePirate:SwabTheDeck": {
     "NAME": "清洗甲板",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 在回合开始后打出的第一张打出时，额外获得 !M! 点 格挡 。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 如果这张牌是本回合打出的第一张牌，额外获得 !M! 点 格挡 。"
   },
   "thePirate:Reload": {
     "NAME": "装填",
@@ -342,8 +342,8 @@
   },
   "thePirate:Bury": {
     "NAME": "埋藏",
-    "DESCRIPTION": "thepirate:埋藏 !M! 张牌。 NL 抽 !SM! 张牌。",
-    "UPGRADE_DESCRIPTION": "thepirate:埋藏 !M! 张牌。 NL 抽 !SM! 张牌。"
+    "DESCRIPTION": "thepirate:埋藏 至多 !M! 张牌。 NL 抽 !SM! 张牌。",
+    "UPGRADE_DESCRIPTION": "thepirate:埋藏 至多 !M! 张牌。 NL 抽 !SM! 张牌。"
   },
   "thePirate:GiantBeak": {
     "NAME": "巨大鸟喙",
