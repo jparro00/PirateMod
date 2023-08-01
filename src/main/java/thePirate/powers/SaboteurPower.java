@@ -6,13 +6,14 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.blockmods.AbstractBlockModifier;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnCreateBlockInstancePower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.utility.LoseBlockAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.BarricadePower;
 import thePirate.PirateMod;
 import thePirate.util.TextureLoader;
 
@@ -86,12 +87,12 @@ public class SaboteurPower extends AbstractPower implements CloneablePowerInterf
                     @Override
                     public void update() {
                         int blockToRemove = owner.currentBlock;
-                        if (appliedThisTurn){
+                        if (appliedThisTurn && owner.hasPower(BarricadePower.POWER_ID)){
                             blockToRemove -= monsterInitialBlock;
                         }
                         if(blockToRemove > 0){
-                            this.addToBot(new LoseBlockAction(owner, AbstractDungeon.player, owner.currentBlock));
-                            this.addToBot(new RemoveSpecificPowerAction(owner, owner, powerId));
+                            this.addToBot(new LoseBlockAction(owner, AbstractDungeon.player, blockToRemove));
+                            this.addToBot(new ReducePowerAction(owner, owner, powerId, 1));
                         }
                         isDone = true;
                     }
