@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.curses.AscendersBane;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -49,7 +50,9 @@ public class DavyJonesLockerPower extends AbstractPower implements CloneablePowe
     @Override
     public void onUseCard(final AbstractCard card, final UseCardAction action) {
 
-        this.addToTop(new PurgeRemovablesAction(card, true));
+        if (!AscendersBane.ID.equals(card.cardID)){
+            this.addToTop(new PurgeRemovablesAction(card, true));
+        }
 
         if (this.amount <= 0) {
             this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, ID));

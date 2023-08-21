@@ -45,7 +45,6 @@ public class GreedyChest extends CustomRelic {
             public void update() {
                 if (!isActive && gold > 100) {
                     flash();
-                    pulse = true;
                     AbstractDungeon.player.addPower(new StrengthPower(AbstractDungeon.player, gold/100));
                     this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, GreedyChest.this));
                     isActive = true;
@@ -58,7 +57,6 @@ public class GreedyChest extends CustomRelic {
     }
 
     public void onVictory() {
-        this.pulse = false;
         this.isActive = false;
     }
 

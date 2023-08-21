@@ -57,6 +57,7 @@ public class DeathKnell extends AbstractDynamicCard {
     public DeathKnell() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         exhaust = true;
+        tags.add(CardTags.HEALING);
     }
 
     @Override
