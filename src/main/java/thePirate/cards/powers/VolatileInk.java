@@ -2,6 +2,7 @@ package thePirate.cards.powers;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
@@ -42,7 +43,9 @@ public class VolatileInk extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(m,p,new InkPower(m,p,magicNumber),magicNumber));
+        for( AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters){
+            this.addToBot(new ApplyPowerAction(mo, p, new InkPower(mo, p, magicNumber), magicNumber));
+        }
         addToBot(new ApplyPowerAction(p,p,new VolatileInkPower(1),0));
     }
 
