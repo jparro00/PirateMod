@@ -30,13 +30,14 @@ public class MoneyBag extends CustomRelic implements BetterOnUseGold{
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath(MoneyBag.class.getSimpleName() + ".png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath(MoneyBag.class.getSimpleName() + ".png"));
+    public static final int STARTING_COUNTER = 50;
 
     public boolean isActive;
 
 
     public MoneyBag(){
         super(ID, IMG,OUTLINE,RelicTier.COMMON, LandingSound.CLINK);
-        this.counter = 0;
+        this.counter = STARTING_COUNTER;
     }
 
     @Override

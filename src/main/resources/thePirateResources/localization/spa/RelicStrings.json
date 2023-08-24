@@ -17,7 +17,7 @@
         "NAME": "Bolsa de Dinero",
         "FLAVOR": "",
         "DESCRIPTIONS": [
-            "Cuando gastas #yoro en tiendas, agrégalo aquí. Cuando pierdes #yoro, primero pierde de aquí en lugar de tus reservas."
+            "Cuando gastas #yoro en tiendas, agrégalo aquí. Cuando pierdes #yoro, primero pierde de aquí en lugar de tus reservas. NL NL Al recogerlo, agrega #b50 de #yoro a la Bolsa de Dinero."
         ]
     },
     "thePirate:ExperimentalCannon": {

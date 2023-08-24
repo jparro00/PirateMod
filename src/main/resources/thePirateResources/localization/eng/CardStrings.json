@@ -170,7 +170,7 @@
   },
   "thePirate:VolatileInk": {
     "NAME": "Volatile Ink",
-    "DESCRIPTION": "Gain thepirate:Volatile_Ink."
+    "DESCRIPTION": "Apply !M! Ink. NL Gain thepirate:Volatile_Ink."
   },
   "thePirate:StormSurge": {
     "NAME": "Storm Surge",
