@@ -34,7 +34,7 @@ public class WoodenCompass extends CustomRelic implements OnBury {
 
 
     public WoodenCompass(){
-        super(ID, IMG,OUTLINE, RelicTier.UNCOMMON, LandingSound.FLAT);
+        super(ID, IMG,OUTLINE, RelicTier.RARE, LandingSound.FLAT);
     }
 
     // Description

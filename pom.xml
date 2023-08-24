@@ -90,6 +90,31 @@
                             <target>
                                 <!-- This moves your mod into a common folder where all mods you make can go. -->
                                 <copy file="target/${project.artifactId}.jar" tofile="${Steam.path}/common/SlayTheSpire/mods/${project.artifactId}.jar"/>
+                                <copy file="target/${project.artifactId}.jar" tofile="${Steam.path}/common/SlayTheSpire/TheAbyssal/content/${project.artifactId}.jar"/>
+                                <!-- Open Abyssal mod folder in Windows Explorer -->
+                                <exec executable="explorer">
+                                    <arg value="C:\Program Files (x86)\Steam\steamapps\common\SlayTheSpire\TheAbyssal"/>
+                                </exec>
+                                <!-- Generate Git log to a text file -->
+                                <exec executable="cmd">
+                                    <arg value="/c"/>
+                                    <arg value="cd &quot;C:\Users\jparr\Documents\STS Mods\ThePirate\ThePirate\thePirate&quot; &amp;&amp; git log > &quot;C:\Program Files (x86)\Steam\steamapps\common\SlayTheSpire\TheAbyssal\gitlog.txt&quot;"/>
+                                </exec>
+
+                                <!-- Find and Replace all instances of "    " in gitlog.txt -->
+                                <exec executable="powershell">
+                                    <arg value="-Command"/>
+                                    <arg value="(Get-Content 'C:\Program Files (x86)\Steam\steamapps\common\SlayTheSpire\TheAbyssal\gitlog.txt') -replace '    ', '' | Set-Content 'C:\Program Files (x86)\Steam\steamapps\common\SlayTheSpire\TheAbyssal\gitlog.txt'"/>
+                                </exec>
+
+
+                                <!-- Open the generated Git log text file -->
+                                <exec executable="cmd">
+                                    <arg value="/c"/>
+                                    <arg value="start"/>
+                                    <arg value="&quot;&quot;"/>
+                                    <arg value="&quot;C:\Program Files (x86)\Steam\steamapps\common\SlayTheSpire\TheAbyssal\gitlog.txt&quot;"/>
+                                </exec>
                             </target>
                         </configuration>
                         <goals>

@@ -170,7 +170,7 @@
   },
   "thePirate:VolatileInk": {
     "NAME": "Летучие чернила",
-    "DESCRIPTION": "Даёт thepirate:Летучие_чернила."
+    "DESCRIPTION": "Накладывает !M! thepirate:Чернил на ВСЕХ врагов. NL Даёт thepirate:Летучие_чернила."
   },
   "thePirate:StormSurge": {
     "NAME": "Штормовая волна",
