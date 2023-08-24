@@ -17,7 +17,7 @@
     "NAME": "Money Bag",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "When you spend #ygold at shops, add it here.  When you lose #ygold, lose it from here first instead. NL NL Upon pickup, add #b50 #yGold to Money Bag."
+      "When you spend #ygold at shops, add it here.  When you lose #ygold, lose it from here first instead. NL NL Upon pickup, add #b50 #ygold to Money Bag."
     ]
   },
   "thePirate:ExperimentalCannon": {
