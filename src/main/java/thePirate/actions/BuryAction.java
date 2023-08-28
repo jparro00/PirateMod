@@ -49,6 +49,8 @@ public class BuryAction extends AbstractGameAction {
 
     public List<AbstractCard> cardsSelected;
 
+    public ArrayList<Integer> costOfBuriedCards;
+
     public BuryAction(int numberOfCards, boolean optional) {
         this(numberOfCards,optional, new ArrayList<AbstractCard>());
     }
@@ -60,6 +62,7 @@ public class BuryAction extends AbstractGameAction {
         this.optional = optional;
         this.cardsSelected = new ArrayList<>();
         this.preselectedCards = preselectedCards;
+        this.costOfBuriedCards = new ArrayList<>();
 
     }
 
@@ -72,6 +75,7 @@ public class BuryAction extends AbstractGameAction {
         this.optional = false;
         this.cardsSelected = cardsSelected;
         this.preselectedCards = new ArrayList<>();
+        this.costOfBuriedCards = new ArrayList<>();
     }
 
     public BuryAction(AbstractCard card){
@@ -220,6 +224,7 @@ public class BuryAction extends AbstractGameAction {
 
             //run onBury for each card buried
             for (AbstractCard card : cardsSelected){
+                costOfBuriedCards.add(card.costForTurn);
                 for (AbstractCard c : player.discardPile.group){
                     if (c instanceof OnBury){
                         ((OnBury)c).onBury(card);

@@ -2,7 +2,6 @@ package thePirate.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import java.util.List;
@@ -33,12 +32,12 @@ public class GainEnergyFromBuryAction extends AbstractGameAction {
             this.addToBot(new GainEnergyFromBuryAction(amount, true, buryAction));
         }else {
             int energyToGain = 0;
-            List<AbstractCard> cards = buryAction.cardsSelected;
-            for (AbstractCard card : cards){
-                if (card.costForTurn == -1) {
+            List<Integer> cardCosts = buryAction.costOfBuriedCards;
+            for (Integer cardCost: cardCosts){
+                if (cardCost == -1) {
                     this.addToTop(new GainEnergyAction(EnergyPanel.getCurrentEnergy()));
-                } else if (card.costForTurn > 0) {
-                    this.addToTop(new GainEnergyAction(card.costForTurn));
+                } else if (cardCost > 0) {
+                    this.addToTop(new GainEnergyAction(cardCost));
                 }
             }
 

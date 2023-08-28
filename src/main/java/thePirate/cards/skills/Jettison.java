@@ -2,7 +2,6 @@ package thePirate.cards.skills;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
@@ -54,13 +53,13 @@ public class Jettison extends AbstractDynamicCard {
             @Override
             public void update() {
                 int tmpStrengthGain = 0;
-                for (AbstractCard card : buryAction.cardsSelected){
-                    if (card.cost == -2){
+                for (int cardCost : buryAction.costOfBuriedCards){
+                    if (cardCost == -2){
                         addToBot(new ApplyPowerAction(p,p,new StrengthPower(p,secondMagic), secondMagic));
-                    }else if (card.cost == -1){
+                    }else if (cardCost == -1){
                         tmpStrengthGain += EnergyPanel.totalCount;
                     }else {
-                        tmpStrengthGain += card.cost;
+                        tmpStrengthGain += cardCost;
                     }
                 }
                 if (tmpStrengthGain > 0){
