@@ -117,6 +117,7 @@ public class MakeshiftSpear extends AbstractDynamicCard implements Makeshift, Sp
         setPurge(true);
         upgradeName();
         upgradeDescription();
+        update();
     }
 
     @Override

@@ -72,6 +72,7 @@ public abstract class AbstractDynamicCard extends AbstractDefaultCard implements
         return player != null &&
             (
                 player.hand.contains(this) ||
+                player.drawPile.contains(this) ||
                 player.discardPile.contains(this) ||
                 player.exhaustPile.contains(this) ||
                 player.limbo.contains(this)
