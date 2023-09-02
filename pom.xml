@@ -139,7 +139,7 @@
                             <workingDirectory>${mod.dir}</workingDirectory>
                             <arguments>
                                 <argument>/c</argument>
-                                <argument>${mod.dir}\extract_bug_lines.bat</argument>
+                                <argument>${git.dir}\extract_bug_lines.bat</argument>
                                 <argument>${last.commit.hash}</argument>
                             </arguments>
                         </configuration>
@@ -185,7 +185,7 @@
                                 <property name="balance_lines" value="${balanceLines}" />
                                 <property name="localization_lines" value="${localizationLines}" />
                                 <property name="uiqol_lines" value="${uiqolLines}" />
-                                <loadfile property="configJsonContent" srcFile="${mod.dir}/config.json"/>
+                                <loadfile property="configJsonContent" srcFile="${git.dir}/config.json"/>
 
 
                                 <!-- Add major/minor/patch info -->
@@ -258,10 +258,14 @@
                                 <if>
                                     <equals arg1="${versionChange}" arg2="true"/>
                                     <then>
-                                        <replaceregexp file="${mod.dir}/config.json"
+                                        <replaceregexp file="${git.dir}/config.json"
                                                        match="(&quot;changeNote&quot;:\s*&quot;)((?:\\.|[^&quot;\\])*)(&quot;)"
                                                        replace="\1${change.note}\3"
                                                        flags="g"/>
+
+                                        <copy file="${git.dir}/DeployToSteam.bat" tofile="${mod.dir}/DeployToSteam.bat"/>
+                                        <copy file="${git.dir}/config.json" tofile="${mod.dir}/config.json"/>
+
                                         <!-- Open Abyssal mod folder in Windows Explorer -->
                                         <exec executable="explorer">
                                             <arg value="${mod.dir}"/>
