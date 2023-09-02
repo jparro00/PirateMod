@@ -6,7 +6,7 @@
     <groupId>piratemod</groupId>
     <artifactId>PirateMod</artifactId> <!--Keep a note of this one: this is the ID used in the "auto add cards" method-->
     <name>The Abyssal</name>
-    <version>1.12.2</version>
+    <version>12.1.2</version>
     <description>Adds The Abyssal as a new playable character.</description>
 
     <distributionManagement>
@@ -27,6 +27,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!--CHANGE THIS TO YOUR STEAM INSTALLATION-->
         <Steam.path>C:\Program Files (x86)\Steam\steamapps</Steam.path>
+        <mod.dir>C:\Program Files (x86)\Steam\steamapps\common\SlayTheSpire\TheAbyssal</mod.dir>
+        <last.commit.hash>e7958bf860dc67403378778d68509b94e2cb899f</last.commit.hash>
+        <git.dir>C:\Users\jparr\Documents\STS Mods\ThePirate\ThePirate\thePirate</git.dir>
     </properties>
 
     <dependencies>
@@ -89,32 +92,253 @@
                         <configuration>
                             <target>
                                 <!-- This moves your mod into a common folder where all mods you make can go. -->
+                                <echo>before</echo>
                                 <copy file="target/${project.artifactId}.jar" tofile="${Steam.path}/common/SlayTheSpire/mods/${project.artifactId}.jar"/>
-                                <copy file="target/${project.artifactId}.jar" tofile="${Steam.path}/common/SlayTheSpire/TheAbyssal/content/${project.artifactId}.jar"/>
+                                <echo>after</echo>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.8</version>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <configuration>
+                            <target>
+                                <!-- This moves your mod into a common folder where all mods you make can go. -->
+                                <copy file="target/${project.artifactId}.jar" tofile="${Steam.path}/common/SlayTheSpire/mods/${project.artifactId}.jar"/>
+                                <copy file="target/${project.artifactId}.jar" tofile="${mod.dir}/content/${project.artifactId}.jar"/>
+
+
                                 <!-- Open Abyssal mod folder in Windows Explorer -->
                                 <exec executable="explorer">
-                                    <arg value="C:\Program Files (x86)\Steam\steamapps\common\SlayTheSpire\TheAbyssal"/>
+                                    <arg value="${mod.dir}"/>
                                 </exec>
+
+
                                 <!-- Generate Git log to a text file -->
                                 <exec executable="cmd">
                                     <arg value="/c"/>
-                                    <arg value="cd &quot;C:\Users\jparr\Documents\STS Mods\ThePirate\ThePirate\thePirate&quot; &amp;&amp; git log > &quot;C:\Program Files (x86)\Steam\steamapps\common\SlayTheSpire\TheAbyssal\gitlog.txt&quot;"/>
+                                    <arg value="cd &quot;${git.dir}&quot; &amp;&amp; git log > &quot;${mod.dir}\gitlog.txt&quot;"/>
                                 </exec>
 
                                 <!-- Find and Replace all instances of "    " in gitlog.txt -->
                                 <exec executable="powershell">
                                     <arg value="-Command"/>
-                                    <arg value="(Get-Content 'C:\Program Files (x86)\Steam\steamapps\common\SlayTheSpire\TheAbyssal\gitlog.txt') -replace '    ', '' | Set-Content 'C:\Program Files (x86)\Steam\steamapps\common\SlayTheSpire\TheAbyssal\gitlog.txt'"/>
+                                    <arg value="(Get-Content '${mod.dir}\gitlog.txt') -replace '    ', '' | Set-Content '${mod.dir}\gitlog.txt'"/>
                                 </exec>
 
+<!--
 
-                                <!-- Open the generated Git log text file -->
+                                &lt;!&ndash; Open the generated Git log text file &ndash;&gt;
                                 <exec executable="cmd">
                                     <arg value="/c"/>
                                     <arg value="start"/>
                                     <arg value="&quot;&quot;"/>
-                                    <arg value="&quot;C:\Program Files (x86)\Steam\steamapps\common\SlayTheSpire\TheAbyssal\gitlog.txt&quot;"/>
+                                    <arg value="&quot;${mod.dir}\gitlog.txt&quot;"/>
                                 </exec>
+-->
+
+<!--
+                                &lt;!&ndash; Find and Replace version placeholder in f1 &ndash;&gt;
+                                <exec executable="powershell">
+                                    <arg value="-Command"/>
+                                    <arg value="(Get-Content '${mod.dir}\config.json') -replace 'v[0-9]+\.[0-9]+\.[0-9]+', 'v${project.version}' | Set-Content '${mod.dir}\config.json'"/>
+                                </exec>
+
+                                &lt;!&ndash; Update whether this is patch/minor/major &ndash;&gt;
+                                <exec executable="powershell">
+                                    <arg value="-Command"/>
+                                    <arg value="(Get-Content '${mod.dir}\config.json') -replace '(\[h1\])(Patch|Minor Release|Major Release)( v[0-9]+\.[0-9]+\.[0-9]+)', '$1Patch$3' | Set-Content '${mod.dir}\config.json'"/>
+                                </exec>
+                                <exec executable="powershell">
+                                    <arg value="-Command"/>
+                                    <arg value="(Get-Content '${mod.dir}\config.json') -replace '(\[h1\])(Patch|Minor Release|Major Release)( v[0-9]+\.[0-9]+\.0)', '$1Minor Release$3' | Set-Content '${mod.dir}\config.json'"/>
+                                </exec>
+                                <exec executable="powershell">
+                                    <arg value="-Command"/>
+                                    <arg value="(Get-Content '${mod.dir}\config.json') -replace '(\[h1\])(Patch|Minor Release|Major Release)( v[0-9]+\.0\.0)', '$1Major Release$3' | Set-Content '${mod.dir}\config.json'"/>
+                                </exec>
+-->
+
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.6.0</version>
+                <executions>
+                    <execution>
+                        <id>my-execution</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>cmd</executable>
+                            <workingDirectory>${mod.dir}</workingDirectory>
+                            <arguments>
+                                <argument>/c</argument>
+                                <argument>${mod.dir}\extract_bug_lines.bat</argument>
+                                <argument>${last.commit.hash}</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>properties-maven-plugin</artifactId>
+                <version>1.0.0</version>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>read-project-properties</goal>
+                        </goals>
+                        <configuration>
+                            <files>
+                                <file>${mod.dir}/bug_lines.properties</file>
+                            </files>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>3.0.0</version> <!-- use an appropriate version -->
+                <executions>
+                    <execution>
+                        <phase>deploy</phase> <!-- choose an appropriate phase -->
+                        <configuration>
+                            <target name="checkVersion">
+                                <echo>Starting checkVersion</echo>
+                                <!-- Pass Maven properties to Ant properties -->
+                                <property name="version" value="${version}" />
+                                <property name="bug_lines" value="${bugLines}" />
+                                <property name="balance_lines" value="${balanceLines}" />
+                                <property name="localization_lines" value="${localizationLines}" />
+                                <property name="uiqol_lines" value="${uiqolLines}" />
+
+                                <!-- Check if 'version' is in config.json -->
+                                <script language="javascript"> <![CDATA[
+                                    importClass(java.io.FileReader);
+                                    importClass(java.io.BufferedReader);
+
+                                    var filePath = project.getProperty("mod.dir") + "/config.json";
+                                    var reader = new BufferedReader(new FileReader(filePath));
+                                    var content = "";
+                                    var line;
+                                    while ((line = reader.readLine()) !== null) {
+                                        content += line;
+                                    }
+                                    reader.close();
+
+                                    var config = JSON.parse(content);
+                                    var proceed = (typeof config.version === 'undefined');
+                                    System.setProperty("shouldProceed", proceed);
+                                ]]> </script>
+
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>3.0.0</version> <!-- use an appropriate version -->
+                <executions>
+                    <execution>
+                        <phase>deploy</phase> <!-- choose an appropriate phase -->
+                        <configuration>
+                            <target name="updateConfigJson" >
+                                <echo>Starting updateConfigJson</echo>
+                                <!-- Pass Maven properties to Ant properties -->
+                                <property name="version" value="${project.version}" />
+                                <property name="bug_lines" value="${bugLines}" />
+                                <property name="balance_lines" value="${balanceLines}" />
+                                <property name="localization_lines" value="${localizationLines}" />
+                                <property name="uiqol_lines" value="${uiqolLines}" />
+                                <!-- Insert your Ant logic here, as given in the previous example -->
+
+                                <!-- Add major/minor/patch info -->
+                                <script language="javascript"> <![CDATA[
+                                  var version = project.getProperty("version");
+                                  var note = "";
+                                  if (/^\d+\.0\.0$/.test(version)) {
+                                    note = "[h1]Major Release " + "v" + version + "[/h1]";
+                                  } else if (/^\d+\.\d+\.0$/.test(version)) {
+                                    note = "[h1]Minor Release " + "v" + version + "[/h1]";
+                                  } else if (/^\d+\.\d+\.\d+$/.test(version)) {
+                                    note = "[h1]Patch " + "v" + version + "[/h1]";
+                                  }
+                                  note = note + "\n\n";
+                                  project.setProperty("change.note", note);
+
+                                //<!-- Add bug_lines if they exist -->
+                                  var lines = project.getProperty("bug_lines");
+                                  var header = "Bug Fixes";
+                                  var note = project.getProperty("change.note");
+                                  if (lines != null && lines != "") {
+                                    note += "[h2]" + header + ":[/h2]\n" + lines + "\n";
+                                  }
+                                  project.setProperty("change.note", note);
+
+                                //<!-- Add Balance_lines if they exist -->
+                                  var lines = project.getProperty("balance_lines");
+                                  var header = "Balance Changes";
+                                  var note = project.getProperty("change.note");
+                                  if (lines != null && lines != "") {
+                                    note += "[h2]" + header + ":[/h2]\n" + lines + "\n";
+                                  }
+                                  project.setProperty("change.note", note);
+
+                                //<!-- Add localization_lines if they exist -->
+                                  var lines = project.getProperty("localization_lines");
+                                  var header = "Localization";
+                                  var note = project.getProperty("change.note");
+                                  if (lines != null && lines != "") {
+                                    note += "[h2]" + header + ":[/h2]\n" + lines + "\n";
+                                  }
+                                  project.setProperty("change.note", note);
+
+                                //<!-- Add uiqol_lines if they exist -->
+                                  var lines = project.getProperty("uiqol_lines");
+                                  var header = "UI/QoL Enhancements";
+                                  var note = project.getProperty("change.note");
+                                  if (lines != null && lines != "") {
+                                    note += "[h2]" + header + ":[/h2]\n" + lines + "\n";
+                                  }
+                                  project.setProperty("change.note", note);
+                                ]]></script>
+
+                                <!-- Print the final change.note -->
+                                <echo>print change not</echo>
+<!--
+                                <echo>${change.note}</echo>
+-->
+                                <echo>printed change not</echo>
+                                <replaceregexp file="${mod.dir}/config.json"
+                                               match="(&quot;changeNote&quot;:\s*&quot;)((?:\\.|[^&quot;\\])*)(&quot;)"
+                                               replace="\1${change.note}\3"
+                                               flags="g"/>
+                                <echo>print again</echo>
                             </target>
                         </configuration>
                         <goals>
