@@ -95,27 +95,6 @@
                 <version>1.8</version>
                 <executions>
                     <execution>
-                        <phase>package</phase>
-                        <configuration>
-                            <target>
-                                <!-- This moves your mod into a common folder where all mods you make can go. -->
-                                <echo>before</echo>
-                                <copy file="target/${project.artifactId}.jar" tofile="${Steam.path}/common/SlayTheSpire/mods/${project.artifactId}.jar"/>
-                                <echo>after</echo>
-                            </target>
-                        </configuration>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-antrun-plugin</artifactId>
-                <version>1.8</version>
-                <executions>
-                    <execution>
                         <phase>install</phase>
                         <configuration>
                             <target>
