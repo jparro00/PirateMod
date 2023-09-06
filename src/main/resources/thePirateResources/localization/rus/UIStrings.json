@@ -42,5 +42,10 @@
     "TEXT": [
       "Эта карта Неиграбельная."
     ]
+  },
+  "thePirate:SteamButton": {
+    "TEXT": [
+      "Like Us On Steam "
+    ]
   }
 }

@@ -42,5 +42,10 @@
         "TEXT": [
             "Esta carta no se puede jugar."
         ]
+    },
+    "thePirate:SteamButton": {
+        "TEXT": [
+            "Like Us On Steam "
+        ]
     }
 }

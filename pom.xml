@@ -6,7 +6,7 @@
     <groupId>piratemod</groupId>
     <artifactId>PirateMod</artifactId> <!--Keep a note of this one: this is the ID used in the "auto add cards" method-->
     <name>The Abyssal</name>
-    <version>1.12.3</version>
+    <version>1.13.0</version>
     <description>Adds The Abyssal as a new playable character.</description>
 
     <distributionManagement>
@@ -26,11 +26,10 @@
         <ModTheSpire.version>3.8.0</ModTheSpire.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.dependency.ant-contrib.ant-contrib.jar.path>${settings.localRepository}/ant-contrib/ant-contrib/1.0b3/ant-contrib-1.0b3.jar</maven.dependency.ant-contrib.ant-contrib.jar.path>
-        <!--CHANGE THIS TO YOUR STEAM INSTALLATION-->
         <Steam.path>C:\Program Files (x86)\Steam\steamapps</Steam.path>
         <mod.dir>C:\Program Files (x86)\Steam\steamapps\common\SlayTheSpire\TheAbyssal</mod.dir>
-        <last.commit.hash>e39185f31bcb556430cb4b6fabe1b22dbfe56b8e</last.commit.hash>
         <git.dir>C:\Users\jparr\Documents\STS Mods\ThePirate\ThePirate\thePirate</git.dir>
+        <last.commit.hash>9f3cebe000d5e003b1e0ebf0caff9f1b417340ac</last.commit.hash>
     </properties>
 
     <dependencies>
@@ -79,6 +78,25 @@
     <build>
         <finalName>${project.artifactId}</finalName>
         <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>properties-maven-plugin</artifactId>
+                <version>1.0.0</version>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <id>read-properties</id>
+                        <goals>
+                            <goal>read-project-properties</goal>
+                        </goals>
+                        <configuration>
+                            <files>
+                                <file>${git.dir}/properties.xml</file>
+                            </files>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -142,24 +160,6 @@
                                 <argument>${git.dir}\extract_bug_lines.bat</argument>
                                 <argument>${last.commit.hash}</argument>
                             </arguments>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>properties-maven-plugin</artifactId>
-                <version>1.0.0</version>
-                <executions>
-                    <execution>
-                        <phase>install</phase>
-                        <goals>
-                            <goal>read-project-properties</goal>
-                        </goals>
-                        <configuration>
-                            <files>
-                                <file>${mod.dir}/bug_lines.properties</file>
-                            </files>
                         </configuration>
                     </execution>
                 </executions>

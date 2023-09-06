@@ -42,5 +42,10 @@
     "TEXT": [
       "我不能打出这张牌。"
     ]
+  },
+  "thePirate:SteamButton": {
+    "TEXT": [
+      "Like On Steam "
+    ]
   }
 }

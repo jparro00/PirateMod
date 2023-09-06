@@ -30,6 +30,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thePirate.audio.PirateSoundMaster;
+import thePirate.buttons.SteamButton;
 import thePirate.cards.AbstractDefaultCard;
 import thePirate.cards.lures.AbstractLure;
 import thePirate.cards.predators.AbstractPredator;
@@ -177,6 +178,9 @@ public class PirateMod implements
     public static TextureAtlas.AtlasRegion FRAME_LARGE_POWER_REGION;// = cardUiAtlas.findRegion("1024_predator_power_frame");
     public static TextureAtlas.AtlasRegion GOLD_GREEN_REGION;
     public static TextureAtlas.AtlasRegion GOLD_RED_REGION;
+    public static TextureAtlas.AtlasRegion STEAM_ANIMATION_1_REGION;
+    public static TextureAtlas.AtlasRegion STEAM_ANIMATION_2_REGION;
+    public static TextureAtlas.AtlasRegion STEAM_ANIMATION_3_REGION;
     public static TextureAtlas cardUiAtlas;
 
     // Character assets
@@ -195,7 +199,9 @@ public class PirateMod implements
     public static final String THE_DEFAULT_SKELETON_JSON = "thePirateResources/images/char/defaultCharacter/skeleton.json";
     
     // =============== MAKE IMAGE PATHS =================
-    
+
+    public static SteamButton steamButton;
+
     public static String makeCardPath(String resourcePath) {
         return getModID() + "Resources/images/cards/" + resourcePath;
     }
@@ -404,6 +410,16 @@ public class PirateMod implements
         GOLD_RED_REGION.originalWidth = 512;
         GOLD_RED_REGION.offsetX = 87;
         GOLD_RED_REGION.offsetY = 332;
+
+
+        Texture steamAnimation1 = ImageMaster.loadImage(PirateMod.getModID()+"Resources/images/charSelect/steamLike/like_default.png");
+        STEAM_ANIMATION_1_REGION = new TextureAtlas.AtlasRegion(steamAnimation1, 0,0,steamAnimation1.getWidth(), steamAnimation1.getHeight());
+        Texture steamAnimation2 = ImageMaster.loadImage(PirateMod.getModID()+"Resources/images/charSelect/steamLike/like_highlight.png");
+        STEAM_ANIMATION_2_REGION = new TextureAtlas.AtlasRegion(steamAnimation2, 0,0,steamAnimation2.getWidth(), steamAnimation2.getHeight());
+        Texture steamAnimation3 = ImageMaster.loadImage(PirateMod.getModID()+"Resources/images/charSelect/steamLike/like_green.png");
+        STEAM_ANIMATION_3_REGION = new TextureAtlas.AtlasRegion(steamAnimation3, 0,0,steamAnimation3.getWidth(), steamAnimation3.getHeight());
+
+
     }
 
     public static void setCustomCardBorder(CustomCard card){
