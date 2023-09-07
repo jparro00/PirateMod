@@ -60,6 +60,7 @@ public class CharacterSelectScreenSteamButton {
                     PirateMod.steamButton.hide();
                     if (option.selected && ABYSSAL.equals(option.name)){
                         PirateMod.steamButton.show();
+                        break;
                     }
                 }
             }

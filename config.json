@@ -3,10 +3,10 @@
   "title": "",
   "description": "",
   "visibility": "public",
-  "changeNote": "[h1]Patch v1.12.3[/h1]
+  "changeNote": "[h1]Minor Release v1.13.0[/h1]
 
-[h2]Bug Fixes:[/h2]
-Bug: fixed Pirate Bay to allow randomly generating in combat to be consistent with base game (e.g., Nightmare, Dual Wield)
+[h2]UI/QoL Enhancements:[/h2]
+UI: added like button on character selection page that takes you to the steam workshop page
  
 ",
   "tags": ["Character", "Relics", "Cards", "Potions", "English", "Russian", "Spanish - Spain", "Simplified Chinese"]
