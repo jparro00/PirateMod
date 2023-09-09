@@ -3,10 +3,10 @@
   "title": "",
   "description": "",
   "visibility": "public",
-  "changeNote": "[h1]Minor Release v1.13.0[/h1]
+  "changeNote": "[h1]Patch v1.13.1[/h1]
 
-[h2]UI/QoL Enhancements:[/h2]
-UI: added like button on character selection page that takes you to the steam workshop page
+[h2]Bug Fixes:[/h2]
+Bug: fixed Steam like button not showing up with multiple modded characters
  
 ",
   "tags": ["Character", "Relics", "Cards", "Potions", "English", "Russian", "Spanish - Spain", "Simplified Chinese"]
