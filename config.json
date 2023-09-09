@@ -3,10 +3,10 @@
   "title": "",
   "description": "",
   "visibility": "public",
-  "changeNote": "[h1]Patch v1.13.1[/h1]
+  "changeNote": "[h1]Patch v1.13.2[/h1]
 
 [h2]Bug Fixes:[/h2]
-Bug: fixed Steam like button not showing up with multiple modded characters
+Bug: fixed missing translations for steam button
  
 ",
   "tags": ["Character", "Relics", "Cards", "Potions", "English", "Russian", "Spanish - Spain", "Simplified Chinese"]
