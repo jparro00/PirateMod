@@ -1,7 +1,7 @@
 {
         "thePirate:IslandPotion": {
                 "NAME": "Island Potion",
-                "DESCRIPTIONS": ["#yBury, and then #yDig."]
+                "DESCRIPTIONS": ["#yBury, and then #yDig.", "#yBury #b2 cards, and then #yDig #b2 cards."]
         },
         "thePirate:InkPotion": {
                 "NAME": "Ink Potion",

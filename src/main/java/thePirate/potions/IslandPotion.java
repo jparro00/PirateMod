@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
+import com.megacrit.cardcrawl.relics.SacredBark;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import thePirate.PirateMod;
 import thePirate.actions.BuryAction;
@@ -33,7 +34,7 @@ public class IslandPotion extends AbstractDynamicPotion{
         potency = getPotency();
         
         // Initialize the Description
-        description = DESCRIPTIONS[0];
+        description = getDescription();
         
        // Do you throw this potion at an enemy or do you just consume it.
         isThrown = false;
@@ -63,10 +64,9 @@ public class IslandPotion extends AbstractDynamicPotion{
     @Override
     public void use(AbstractCreature target) {
         target = AbstractDungeon.player;
-        // If you are in combat, gain strength and the "lose strength at the end of your turn" power, equal to the potency of this potion.
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-            addToBot(new BuryAction(1, false));
-            addToBot(new DigAction(1,false));
+            addToBot(new BuryAction(potency, true));
+            addToBot(new DigAction(potency,true));
         }
     }
     
@@ -77,8 +77,16 @@ public class IslandPotion extends AbstractDynamicPotion{
 
     // This is your potency.
     @Override
-    public int getPotency(final int potency) {
+    public int getPotency(int ascensionLevel) {
         return 1;
+    }
+
+    public String getDescription(){
+        if(AbstractDungeon.player != null && AbstractDungeon.player.hasRelic(SacredBark.ID)) {
+            return DESCRIPTIONS[1];
+        }else {
+            return DESCRIPTIONS[0];
+        }
     }
 
     public void upgradePotion()

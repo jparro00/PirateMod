@@ -75,7 +75,7 @@
   },
   "thePirate:ThiefsAccomplice": {
     "NAME": "Thief's Accomplice",
-    "DESCRIPTION": "Gain !B! Block. NL The next time you lose gold, gain that much gold."
+    "DESCRIPTION": "Gain !B! Block. NL The next time you lose gold this combat, gain that much gold."
   },
   "thePirate:DarkOffering": {
     "NAME": "Dark Offering",
@@ -174,7 +174,7 @@
   },
   "thePirate:StormSurge": {
     "NAME": "Storm Surge",
-    "DESCRIPTION": "Whenever you use energy, gain 1 temporary Strength."
+    "DESCRIPTION": "Whenever you use energy, gain 1 temporary Strength for each energy spent."
   },
   "thePirate:TooMuchRum": {
     "NAME": "Too Much Rum",

@@ -1,7 +1,7 @@
 {
         "thePirate:IslandPotion": {
                 "NAME": "岛屿药水",
-                "DESCRIPTIONS": ["#y埋藏 一张牌，然后 #y挖掘 。"]
+                "DESCRIPTIONS": ["#y埋藏 一张牌，然后 #y挖掘 。", "#y埋 #b2 张牌，然后挖 #b2 张牌 。"]
         },
         "thePirate:InkPotion": {
                 "NAME": "墨汁",

@@ -61,7 +61,7 @@
         },
         "thePirate:StormSurgePower": {
                 "NAME": "Storm Surge",
-                "DESCRIPTIONS": ["Whenever you use energy, gain #b", " temporary #yStrength."," temporary #yStrength."]
+                "DESCRIPTIONS": ["Whenever you use energy, gain #b", " temporary #yStrength for each energy spent."," temporary #yStrength for each energy spent."]
         },
         "thePirate:TooMuchRumPower": {
                 "NAME": "Too Much Rum",

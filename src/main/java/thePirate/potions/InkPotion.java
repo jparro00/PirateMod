@@ -74,7 +74,7 @@ public class InkPotion extends AbstractDynamicPotion{
 
     // This is your potency.
     @Override
-    public int getPotency(final int potency) {
+    public int getPotency(int ascensionLevel) {
         return INK;
     }
 
