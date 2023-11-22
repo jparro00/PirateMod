@@ -162,7 +162,7 @@
   },
   "thePirate:Austerity": {
     "NAME": "紧缩",
-    "DESCRIPTION": "你每 thepirate:埋藏 一张牌，抽 !M! 张牌。"
+    "DESCRIPTION": "你每 thepirate:埋藏 一张或多张牌时，抽 !M! 张牌。"
   },
   "thePirate:HardenedBrine": {
     "NAME": "硬化盐水",

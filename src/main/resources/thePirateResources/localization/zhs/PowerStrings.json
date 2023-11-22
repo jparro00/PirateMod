@@ -49,7 +49,7 @@
         },
         "thePirate:AusterityPower": {
                 "NAME": "紧缩",
-                "DESCRIPTIONS": ["每当你 #y埋藏 一张牌时，抽 #b", " 张牌。","  张牌。"]
+                "DESCRIPTIONS": ["你每 #y埋藏 一张或多张牌时，抽 #b", " 张牌。","  张牌。"]
         },
         "thePirate:HardenedBrinePower": {
                 "NAME": "硬化盐水",

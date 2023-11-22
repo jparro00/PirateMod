@@ -49,7 +49,7 @@
         },
         "thePirate:AusterityPower": {
                 "NAME": "Austerity",
-                "DESCRIPTIONS": ["Whenever you #yBury a card, draw #b", " card."," cards."]
+                "DESCRIPTIONS": ["Whenever you #yBury #b1 or more cards, draw #b", " card."," cards."]
         },
         "thePirate:HardenedBrinePower": {
                 "NAME": "Hardened Brine",

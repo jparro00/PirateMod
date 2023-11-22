@@ -49,7 +49,7 @@
     },
     "thePirate:AusterityPower": {
         "NAME": "Austeridad",
-        "DESCRIPTIONS": ["Cada vez que entierres una carta, roba #b", " carta.", " cartas."]
+        "DESCRIPTIONS": ["Cada vez que entierres una o más cartas, roba #b", " carta.", " cartas."]
     },
     "thePirate:HardenedBrinePower": {
         "NAME": "Agua Salada Endurecida",

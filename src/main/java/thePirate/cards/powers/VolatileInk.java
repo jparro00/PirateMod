@@ -24,7 +24,7 @@ public class VolatileInk extends AbstractDynamicCard {
 
     private static final int COST = 1;
     private static final int UPGRADED_COST = 0;
-    private static final int MAGIC = 5;
+    private static final int MAGIC = 3;
     private static final int UPGRADED_MAGIC = 0;
 
     // /STAT DECLARATION/

@@ -83,12 +83,11 @@ public class AusterityPower extends AbstractPower implements CloneablePowerInter
 
     @Override
     public void onBury(AbstractCard card) {
-        addToBot(new DrawCardAction(amount));
 
     }
 
     @Override
     public void onBuryCards(List<AbstractCard> cards) {
-
+        addToBot(new DrawCardAction(amount));
     }
 }

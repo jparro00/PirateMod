@@ -49,7 +49,7 @@
         },
         "thePirate:AusterityPower": {
                 "NAME": "Строгость",
-                "DESCRIPTIONS": ["Когда вы #yЗакапываете карту, вы берёте #b", " карту."," карты."]
+                "DESCRIPTIONS": ["Когда вы #yЗакапываете #b1 или более карт, вы берёте #b", " карту."," карты."]
         },
         "thePirate:HardenedBrinePower": {
                 "NAME": "Омывание скал",

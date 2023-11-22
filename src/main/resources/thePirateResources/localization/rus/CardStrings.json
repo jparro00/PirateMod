@@ -162,7 +162,7 @@
   },
   "thePirate:Austerity": {
     "NAME": "Строгость",
-    "DESCRIPTION": "Когда вы thepirate:Закапываете карту, вы берёте !M! карту."
+    "DESCRIPTION": "Когда вы thepirate:Закапываете 1 или более карт, вы берёте !M! карту."
   },
   "thePirate:HardenedBrine": {
     "NAME": "Омывание скал",

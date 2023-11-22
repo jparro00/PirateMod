@@ -28,7 +28,7 @@ public class DarkPlans extends AbstractDynamicCard implements Mysterious, OnBury
 
     private static final int COST = -2;
     private static final int UPGRADED_COST = 0;
-    private static final int MAGIC = 10;
+    private static final int MAGIC = 7;
     private static final int UPGRADED_MAGIC = 0;
     private static final int SECOND_MAGIC = 0;
     private static final int UPGRADED_SECOND_MAGIC = 1;
@@ -45,6 +45,7 @@ public class DarkPlans extends AbstractDynamicCard implements Mysterious, OnBury
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
         secondMagic = baseSecondMagic = SECOND_MAGIC;
+        rawDescription = rawDescription + EXTENDED_DESCRIPTION[1];
     }
 
     public void triggerOnGlowCheck() {

@@ -162,7 +162,7 @@
     },
     "thePirate:Austerity": {
         "NAME": "Austeridad",
-        "DESCRIPTION": "Cada vez que thepirate:entierres una carta, roba !M! carta."
+        "DESCRIPTION": "Cada vez que thepirate:entierres una o más cartas, roba !M! carta."
     },
     "thePirate:HardenedBrine": {
         "NAME": "Sal Endurecida",

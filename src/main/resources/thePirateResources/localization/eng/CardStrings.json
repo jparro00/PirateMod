@@ -162,7 +162,7 @@
   },
   "thePirate:Austerity": {
     "NAME": "Austerity",
-    "DESCRIPTION": "Whenever you thepirate:Bury a card, draw !M! card."
+    "DESCRIPTION": "Whenever you thepirate:Bury 1 or more cards, draw !M! card."
   },
   "thePirate:HardenedBrine": {
     "NAME": "Hardened Brine",
@@ -251,7 +251,7 @@
   },
   "thePirate:Ransom": {
     "NAME": "Ransom",
-    "DESCRIPTION": "thepirate:Bury a card.  Gain energy equal to its cost"
+    "DESCRIPTION": "thepirate:Bury a card.  Gain energy equal to its cost."
   },
   "thePirate:Tropomyosin": {
     "NAME": "Tropomyosin",
@@ -360,7 +360,7 @@
   },
   "thePirate:RoundShot": {
     "NAME": "Round Shot",
-    "DESCRIPTION": "Deal !D! damage. NL Exhaust"
+    "DESCRIPTION": "Deal !D! damage. NL Exhaust."
   },
   "thePirate:Strike": {
     "NAME": "Strike",
