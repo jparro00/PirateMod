@@ -160,6 +160,7 @@ public class BottledVoid extends CustomRelic implements CustomBottleRelic, Custo
                             while (iterator.hasNext()){
                                 AbstractCard c = iterator.next();
                                 if (c.uuid.equals(card.uuid)){
+                                    c.unfadeOut();
                                     AbstractDungeon.player.drawPile.addToRandomSpot(c);
                                     iterator.remove();
                                 }
