@@ -19,6 +19,7 @@ public class Kraken extends AbstractPredator{
     // STAT DECLARATION
 
     private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
+    private static final CardTarget HC_TARGET = CardTarget.ALL_ENEMY;  //   since they don't change much.
     private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;
 
@@ -43,6 +44,8 @@ public class Kraken extends AbstractPredator{
         super(ID, IMG, COST, TYPE, COLOR, TARGET, showPreview, isHardcore());
         magicNumber = baseMagicNumber = MAGIC;
         secondMagic = baseSecondMagic = SECOND_MAGIC;
+        if (hardcore)
+            this.target = HC_TARGET;
         exhaust = true;
     }
 

@@ -59,16 +59,21 @@ public class Cyclone extends AbstractDynamicCard {
 
     @Override
     public void applyPowersToBlock() {
-        AbstractPower dexterity = AbstractDungeon.player.getPower(DexterityPower.POWER_ID);
-        int originalDexterity = 0;
-        if (dexterity != null) {
-            originalDexterity = dexterity.amount;
-            dexterity.amount = 0;
+        if (hardcore){
+            AbstractPower dexterity = AbstractDungeon.player.getPower(DexterityPower.POWER_ID);
+            int originalDexterity = 0;
+            if (dexterity != null) {
+                originalDexterity = dexterity.amount;
+                dexterity.amount = 0;
+            }
+            super.applyPowersToBlock();
+            if (dexterity != null) {
+                dexterity.amount = originalDexterity;
+            }
+        }else {
+            super.applyPowersToBlock();
         }
-        super.applyPowersToBlock();
-        if (dexterity != null) {
-            dexterity.amount = originalDexterity;
-        }
+
     }
 
     // Actions the card should do.
