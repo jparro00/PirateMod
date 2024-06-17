@@ -64,6 +64,11 @@
         "DESCRIPTION": "Gana !B! de Bloqueo. NL thepirate:Tormenta. NL Agota.",
         "EXTENDED_DESCRIPTION": ["Gana !B! de Bloqueo. NL thepirate:Tormenta ( !STORM! ). NL Agota."]
     },
+    "thePirate:Cyclone_HC": {
+        "NAME": "Ciclón",
+        "DESCRIPTION": "thepirate:Inerte. NL Gana !B! de Bloqueo. NL thepirate:Tormenta. NL Agota.",
+        "EXTENDED_DESCRIPTION": ["Gana !B! de Bloqueo. NL thepirate:Tormenta ( !STORM! ). NL Agota."]
+    },
     "thePirate:Headbutt": {
         "NAME": "Cabezazo",
         "DESCRIPTION": "Haz !D! de daño. NL Coloca una carta de la pila de descarte al tope de la pila de extracción."
@@ -132,6 +137,10 @@
     "thePirate:Kraken": {
         "NAME": "Kraken",
         "DESCRIPTION": "thepirate:Aturde al enemigo. NL Aplica !M! thepirate:Tinta a todos los demás enemigos. NL thepirate:Depredador. NL Agota."
+    },
+    "thePirate:Kraken_HC": {
+        "NAME": "Kraken",
+        "DESCRIPTION": "Aplica !M! thepirate:Tinta a TODOS los enemigos. NL thepirate:Depredador. NL Agota."
     },
     "thePirate:ElectricEel": {
         "NAME": "Anguila Eléctrica",
@@ -213,6 +222,10 @@
         "NAME": "Hundirse con el Barco",
         "DESCRIPTION": "thepirate:Entierra todas las cartas excepto una de tu pila de extracción y haz !D! de daño por cada carta thepirate:Enterrada. NL Agota."
     },
+    "thePirate:DownWithTheShip_HC": {
+        "NAME": "Hundirse con el Barco",
+        "DESCRIPTION": "thepirate:Inerte. NL thepirate:Entierra todas las cartas excepto una de tu pila de extracción y haz !D! de daño por cada carta thepirate:Enterrada. NL Agota."
+    },
     "thePirate:CursedBlade": {
         "NAME": "Espada Maldita",
         "DESCRIPTION": "Haz !D! de daño. NL La primera vez que juegues esto en cada combate, obtén !M! thepirate:Artefacto_Corrompido."
@@ -261,6 +274,11 @@
         "NAME": "Tiro de Metralla",
         "DESCRIPTION": "Haz !D! de daño a un enemigo al azar. NL thepirate:Tormenta. NL Agota.",
         "EXTENDED_DESCRIPTION": ["Haz !D! de daño a un enemigo al azar. NL thepirate:Tormenta ( !STORM! ). NL Agota."]
+    },
+    "thePirate:GrapeShot_HC": {
+        "NAME": "Tiro de Metralla",
+        "DESCRIPTION": "thepirate:Inerte. NL Haz !D! de daño a un enemigo al azar. NL thepirate:Tormenta. NL Agota.",
+        "EXTENDED_DESCRIPTION": ["thepirate:Inerte. NL Haz !D! de daño a un enemigo al azar. NL thepirate:Tormenta ( !STORM! ). NL Agota."]
     },
     "thePirate:MomentousAttack": {
         "NAME": "Ataque Trascendental",

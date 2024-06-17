@@ -64,6 +64,11 @@
     "DESCRIPTION": "Даёт !B! Защиты. NL thepirate:Шторм. NL Сжигается.",
     "EXTENDED_DESCRIPTION": ["Даёт !B! Защиты. NL thepirate:Шторм ( !STORM! ). NL Сжигается."]
   },
+  "thePirate:Cyclone_HC": {
+    "NAME": "Циклон",
+    "DESCRIPTION": "thepirate:Инертный. NL Даёт !B! Защиты. NL thepirate:Шторм. NL Сжигается.",
+    "EXTENDED_DESCRIPTION": ["thepirate:Инертный. NL Даёт !B! Защиты. NL thepirate:Шторм ( !STORM! ). NL Сжигается."]
+  },
   "thePirate:Headbutt": {
     "NAME": "Таран",
     "DESCRIPTION": "Наносит !D! урона. NL Вы кладёте карту из стопки сброса на верх стопки добора."
@@ -132,6 +137,10 @@
   "thePirate:Kraken": {
     "NAME": "Кракен",
     "DESCRIPTION": "thepirate:Оглушить одного врага. NL Накладывает !M! thepirate:Чернил на ОСТАЛЬНЫХ врагов. NL thepirate:Хищная. NL Сжигается."
+  },
+  "thePirate:Kraken_HC": {
+    "NAME": "Кракен",
+    "DESCRIPTION": "Накладывает !M! thepirate:Чернил на ВСЕХ врагов. NL thepirate:Хищная. NL Сжигается."
   },
   "thePirate:ElectricEel": {
     "NAME": "Электрический угорь",
@@ -213,6 +222,10 @@
     "NAME": "Тонем с кораблём",
     "DESCRIPTION": "Вы thepirate:Закапываете все, кроме одной выбранной карты из стопки добора, затем нанесите !D! урона за каждую thepirate:Закопанную. NL Сжигается."
   },
+  "thePirate:DownWithTheShip_HC": {
+    "NAME": "Тонем с кораблём",
+    "DESCRIPTION": "thepirate:Инертный. NL Вы thepirate:Закапываете все, кроме одной выбранной карты из стопки добора, затем нанесите !D! урона за каждую thepirate:Закопанную. NL Сжигается."
+  },
   "thePirate:CursedBlade": {
     "NAME": "Проклятый клинок",
     "DESCRIPTION": "Наносит !D! урона. NL Когда вы разыгрываете эту карту впервые в бою, Накладывает на вас !M! thepirate:Явление."
@@ -261,6 +274,11 @@
     "NAME": "Дрейфгагель",
     "DESCRIPTION": "Наносит !D! урона случ. врагу. NL thepirate:Шторм. NL Сжигается.",
     "EXTENDED_DESCRIPTION": ["Наносит !D! урона случ. врагу. NL thepirate:Шторм ( !STORM! ). NL Сжигается."]
+  },
+  "thePirate:GrapeShot_HC": {
+    "NAME": "Дрейфгагель",
+    "DESCRIPTION": "thepirate:Инертный. NL Наносит !D! урона случ. врагу. NL thepirate:Шторм. NL Сжигается.",
+    "EXTENDED_DESCRIPTION": ["thepirate:Инертный. NL Наносит !D! урона случ. врагу. NL thepirate:Шторм ( !STORM! ). NL Сжигается."]
   },
   "thePirate:MomentousAttack": {
     "NAME": "Моментальная атака",
