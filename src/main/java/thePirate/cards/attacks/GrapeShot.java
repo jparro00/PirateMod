@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import thePirate.PirateMod;
 import thePirate.actions.PirateSFXAction;
 import thePirate.actions.StormDamageAction;
@@ -36,7 +37,7 @@ public class GrapeShot extends AbstractCannonBallCard {
     // /TEXT DECLARATION/
 
     public GrapeShot() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET, PirateMod.isHardcore());
         baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = 0;
         storm = true;
@@ -58,13 +59,49 @@ public class GrapeShot extends AbstractCannonBallCard {
 
     @Override
     public void applyPowers() {
-        super.applyPowers();
-        if(AbstractDungeon.actionManager.cardsPlayedThisTurn.size() > 0){
-            rawDescription = languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0];
-        }else {
-            rawDescription = languagePack.getCardStrings(ID).DESCRIPTION;
+        if (!hardcore){
+            super.applyPowers();
+            if(AbstractDungeon.actionManager.cardsPlayedThisTurn.size() > 0){
+                rawDescription = languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0];
+            }else {
+                rawDescription = languagePack.getCardStrings(ID).DESCRIPTION;
+            }
+        }else{
+            AbstractPower strength = AbstractDungeon.player.getPower("Strength");
+            int originalStrength = 0;
+            if (strength != null) {
+                originalStrength = strength.amount;
+                strength.amount = 0;
+            }
+            super.applyPowers();
+            if (strength != null) {
+                strength.amount = originalStrength;
+            }
+            if(AbstractDungeon.actionManager.cardsPlayedThisTurn.size() > 0){
+                rawDescription = languagePack.getCardStrings(ID+"_HC").EXTENDED_DESCRIPTION[0];
+            }else {
+                rawDescription = languagePack.getCardStrings(ID+"_HC").DESCRIPTION;
+            }
         }
         initializeDescription();
+    }
+
+    public void calculateCardDamage(AbstractMonster mo) {
+        if (!hardcore){
+            super.calculateCardDamage(mo);
+        }else{
+            AbstractPower strength = AbstractDungeon.player.getPower("Strength");
+            int originalStrength = 0;
+            if (strength != null) {
+                originalStrength = strength.amount;
+                strength.amount = 0;
+            }
+
+            super.calculateCardDamage(mo);
+            if (strength != null) {
+                strength.amount = originalStrength;
+            }
+        }
     }
 
     // Upgraded stats.

@@ -8,6 +8,7 @@ import thePirate.actions.PirateBayAction;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.characters.ThePirate;
 
+import static thePirate.PirateMod.isHardcore;
 import static thePirate.PirateMod.makeCardPath;
 
 public class PirateBay extends AbstractDynamicCard {
@@ -25,6 +26,7 @@ public class PirateBay extends AbstractDynamicCard {
     private static final int UPGRADED_MAGIC = 0;
     private static final int BLOCK = 7;
     private static final int UPGRADED_BLOCK = 3;
+    public static final int HC_BLOCK = 4;
 
     // /STAT DECLARATION/
 
@@ -34,9 +36,11 @@ public class PirateBay extends AbstractDynamicCard {
     // /TEXT DECLARATION/
 
     public PirateBay() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET, isHardcore());
         magicNumber = baseMagicNumber = MAGIC;
         block = baseBlock = BLOCK;
+        if (hardcore)
+            block = baseBlock = HC_BLOCK;
         exhaust = true;
     }
 

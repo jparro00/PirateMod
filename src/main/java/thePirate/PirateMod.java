@@ -21,6 +21,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
@@ -48,6 +49,7 @@ import thePirate.variables.StormVariable;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.reflect.Constructor;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
@@ -109,6 +111,7 @@ public class PirateMod implements
     public static final String DISABLE_DIG_BURY_PULSE_SETTING = "disableDigBuryPulse";
     public static final String DISABLE_GOLD_SPEND_REMINDER_SETTING = "disableGoldSpendReminder";
     public static final String DISABLE_CURSED_BLADE_REMINDER_SETTING = "disableCursedBladeReminder";
+    public static final String HARDCORE_MODE_SETTING= "hardCoreMode";
 
     public static Boolean skipTutorialsPlaceholder = true; // The boolean we'll be setting on/off (true/false)
     public static Boolean hideInkIntentPlaceholder = false;
@@ -118,6 +121,7 @@ public class PirateMod implements
     public static Boolean disableDigBuryPulsePlaceholder = false;
     public static Boolean disableGoldSpendReminderPlaceholder = false;
     public static Boolean disableCursedBladeReminderPlaceholder = false;
+    public static Boolean hardcoreModePlaceholder = false;
     public static ModLabeledToggleButton skipTutorials;
     public static ModLabeledToggleButton hideInkIntent;
     public static ModLabeledToggleButton disableMonkeySFX;
@@ -126,6 +130,7 @@ public class PirateMod implements
     public static ModLabeledToggleButton disableDigBuryPulse;
     public static ModLabeledToggleButton disableGoldSpendReminder;
     public static ModLabeledToggleButton disableCursedBladeReminder;
+    public static ModLabeledToggleButton hardcoreMode;
 
 
     public static List<AbstractDynamicPotion> customPotions;
@@ -319,6 +324,7 @@ public class PirateMod implements
         theDefaultDefaultSettings.setProperty(DISABLE_DIG_BURY_PULSE_SETTING, "FALSE");
         theDefaultDefaultSettings.setProperty(DISABLE_GOLD_SPEND_REMINDER_SETTING, "FALSE");
         theDefaultDefaultSettings.setProperty(DISABLE_CURSED_BLADE_REMINDER_SETTING, "FALSE");
+        theDefaultDefaultSettings.setProperty(HARDCORE_MODE_SETTING, "FALSE");
         try {
             SpireConfig config = new SpireConfig(getModID(), getModID() + "Config", theDefaultDefaultSettings); // ...right here
             // the "fileName" parameter is the name of the file MTS will create where it will save our setting.
@@ -331,6 +337,7 @@ public class PirateMod implements
             disableDigBuryPulsePlaceholder = config.getBool(DISABLE_DIG_BURY_PULSE_SETTING);
             disableGoldSpendReminderPlaceholder = config.getBool(DISABLE_GOLD_SPEND_REMINDER_SETTING);
             disableCursedBladeReminderPlaceholder = config.getBool(DISABLE_CURSED_BLADE_REMINDER_SETTING);
+            hardcoreModePlaceholder = config.getBool(HARDCORE_MODE_SETTING);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -616,6 +623,22 @@ public class PirateMod implements
                         e.printStackTrace();
                     }
                 });
+        hardcoreMode = new ModLabeledToggleButton("Hardcore Mode (requires restart)",
+                350.0f * (1), 750.0f - (9 * 50), Settings.CREAM_COLOR, FontHelper.charDescFont, // Position (trial and error it), color, font
+                hardcoreModePlaceholder, // Boolean it uses
+                settingsPanel, // The mod panel in which this button will be in
+                (label) -> {}, // thing??????? idk
+                (button) -> { // The actual button:
+                    hardcoreModePlaceholder = button.enabled; // The boolean true/false will be whether the button is enabled or not
+                    try {
+                        // And based on that boolean, set the settings and save them
+                        SpireConfig config = new SpireConfig(getModID(), getModID() + "Config", theDefaultDefaultSettings);
+                        config.setBool(HARDCORE_MODE_SETTING, hardcoreModePlaceholder);
+                        config.save();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                });
 
         settingsPanel.addUIElement(skipTutorials); // Add the button to the settings panel. Button is a go.
         settingsPanel.addUIElement(hideInkIntent);
@@ -625,6 +648,9 @@ public class PirateMod implements
         settingsPanel.addUIElement(disableDigBuryPulse);
         settingsPanel.addUIElement(disableGoldSpendReminder);
         settingsPanel.addUIElement(disableCursedBladeReminder);
+        settingsPanel.addUIElement(hardcoreMode);
+        updateCompendiumPostSettings();
+
 
         sound = new PirateSoundMaster();
         
@@ -884,6 +910,35 @@ public class PirateMod implements
         }
         return false;
     }
+    public static boolean isHardcore(){
+        if (hardcoreMode != null){
+            return hardcoreMode.toggle.enabled;
+        }else {
+            return false;
+        }
+    }
+
+    public static void updateCompendiumPostSettings() {
+        logger.info("entering updateCompendiumPostSettings");
+
+        CardLibrary.getAllCards().iterator();
+        for (AbstractCard card : CardLibrary.getAllCards()){
+            if (card instanceof thePirate.cards.AbstractDynamicCard) {
+                logger.info("reloading card: " + card.cardID);
+                try {
+                    Class<?> cardClass = card.getClass();
+                    Constructor<?> constructor = cardClass.getConstructor();
+                    CardLibrary.add((AbstractCard) constructor.newInstance());
+                } catch (Exception e) {
+                    PirateMod.logger.error("could not reload card: " + card.cardID);
+                    PirateMod.logger.error(e);
+                }
+            }
+        }
+        logger.info("exiting updateCompendiumPostSettings");
+
+    }
+
     static {
         SupportedLanguages = new Settings.GameLanguage[]{Settings.GameLanguage.ENG, Settings.GameLanguage.RUS, Settings.GameLanguage.SPA, Settings.GameLanguage.ZHS};
         SupportedLanguagesStrings = new String[]{"English", "Russian", "Spanish", "Simplified Chinese"};

@@ -19,14 +19,17 @@ public abstract class AbstractPredator extends AbstractDynamicCard implements On
 
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(PirateMod.makeID("CardDescriptors"));
     public boolean showPreview;
-    public AbstractPredator(String id, String img, int cost, CardType type, CardColor color, CardTarget target, boolean showPreview) {
-        super(id, img, cost, type, color, CardRarity.SPECIAL, target);
+    public AbstractPredator(String id, String img, int cost, CardType type, CardColor color, CardTarget target, boolean showPreview, boolean hardcore) {
+        super(id, img, cost, type, color, CardRarity.SPECIAL, target, hardcore);
         this.showPreview = showPreview;
         if(showPreview){
             cardsToPreview = getLure();
         }
         tags.add(CardTags.HEALING);
         PirateMod.setCustomCardBorder(this);
+    }
+    public AbstractPredator(String id, String img, int cost, CardType type, CardColor color, CardTarget target, boolean showPreview) {
+        this(id, img, cost, type, color, target, false, false);
     }
     @Override
     public List<String> getCardDescriptors() {

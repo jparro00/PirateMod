@@ -8,6 +8,7 @@ import thePirate.cards.AbstractDynamicCard;
 import thePirate.characters.ThePirate;
 import thePirate.powers.UnstableFormulaPower;
 
+import static thePirate.PirateMod.isHardcore;
 import static thePirate.PirateMod.makeCardPath;
 
 public class UnstableFormula extends AbstractDynamicCard {
@@ -22,6 +23,8 @@ public class UnstableFormula extends AbstractDynamicCard {
 
     private static final int COST = 1;
     private static final int UPGRADED_COST = 0;
+    public static final int HC_COST = 2;
+    public static final int HC_UPGRADED_COST = 1;
     private static final int MAGIC = 1;
     private static final int UPGRADED_MAGIC = 0;
 
@@ -33,7 +36,9 @@ public class UnstableFormula extends AbstractDynamicCard {
     // /TEXT DECLARATION/
 
     public UnstableFormula() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET, isHardcore());
+        if (hardcore)
+            this.cost = this.costForTurn = HC_COST;
         magicNumber = baseMagicNumber = MAGIC;
     }
 
@@ -52,8 +57,13 @@ public class UnstableFormula extends AbstractDynamicCard {
             upgradeName();
             if (UPGRADED_MAGIC > 0)
                 upgradeMagicNumber(UPGRADED_MAGIC);
-            if (UPGRADED_COST != COST)
-                upgradeBaseCost(UPGRADED_COST);
+            if(hardcore){
+                if (HC_UPGRADED_COST != HC_COST)
+                    upgradeBaseCost(HC_UPGRADED_COST);
+            }else{
+                if (UPGRADED_COST != COST)
+                    upgradeBaseCost(UPGRADED_COST);
+            }
             upgradeDescription();
         }
     }

@@ -64,6 +64,11 @@
     "DESCRIPTION": "Gain !B! Block. NL thepirate:Storm. NL Exhaust.",
     "EXTENDED_DESCRIPTION": ["Gain !B! Block. NL thepirate:Storm ( !STORM! ). NL Exhaust."]
   },
+  "thePirate:Cyclone_HC": {
+    "NAME": "Cyclone",
+    "DESCRIPTION": "thepirate:Inert. NL Gain !B! Block. NL thepirate:Storm. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": ["thepirate:Inert. NL Gain !B! Block. NL thepirate:Storm ( !STORM! ). NL Exhaust."]
+  },
   "thePirate:Headbutt": {
     "NAME": "Headbutt",
     "DESCRIPTION": "Deal !D! damage. NL Put a card from your discard pile on top of your draw pile."
@@ -132,6 +137,10 @@
   "thePirate:Kraken": {
     "NAME": "Kraken",
     "DESCRIPTION": "thepirate:Stun enemy. NL Apply !M! thepirate:Ink to all OTHER enemies. NL thepirate:Predatory. NL Exhaust."
+  },
+  "thePirate:Kraken_HC": {
+    "NAME": "Kraken",
+    "DESCRIPTION": "Apply !M! thepirate:Ink to ALL enemies. NL thepirate:Predatory. NL Exhaust."
   },
   "thePirate:ElectricEel": {
     "NAME": "Electric Eel",
@@ -211,7 +220,11 @@
   },
   "thePirate:DownWithTheShip": {
     "NAME": "Down with the Ship",
-    "DESCRIPTION": "Bury all but 1 card from your draw pile, then deal !D! damage for each card thepirate:Buried. NL Exhaust."
+    "DESCRIPTION": "thepirate:Bury all but 1 card from your draw pile, then deal !D! damage for each card thepirate:Buried. NL Exhaust."
+  },
+  "thePirate:DownWithTheShip_HC": {
+    "NAME": "Down with the Ship",
+    "DESCRIPTION": "thepirate:Inert. NL thepirate:Bury all but 1 card from your draw pile, then deal !D! damage for each card thepirate:Buried. NL Exhaust."
   },
   "thePirate:CursedBlade": {
     "NAME": "Cursed Blade",
@@ -261,6 +274,11 @@
     "NAME": "Grape Shot",
     "DESCRIPTION": "Deal !D! damage to a random enemy. NL thepirate:Storm. NL Exhaust.",
     "EXTENDED_DESCRIPTION": ["Deal !D! damage to a random enemy. NL thepirate:Storm ( !STORM! ). NL Exhaust."]
+  },
+  "thePirate:GrapeShot_HC": {
+    "NAME": "Grape Shot",
+    "DESCRIPTION": "thepirate:Inert. NL Deal !D! damage to a random enemy. NL thepirate:Storm. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": ["thepirate:Inert. NL Deal !D! damage to a random enemy. NL thepirate:Storm ( !STORM! ). NL Exhaust."]
   },
   "thePirate:MomentousAttack": {
     "NAME": "Momentous Attack",

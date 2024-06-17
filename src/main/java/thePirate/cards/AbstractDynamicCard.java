@@ -2,6 +2,7 @@ package thePirate.cards;
 
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.MathUtils;
@@ -20,6 +21,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.Boot;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
@@ -30,8 +32,10 @@ import thePirate.PirateMod;
 import thePirate.actions.PurgeRemovablesAction;
 import thePirate.cards.lures.AbstractLure;
 import thePirate.cards.predators.AbstractPredator;
+import thePirate.util.TextureLoader;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static thePirate.PirateMod.GOLD_GREEN_REGION;
@@ -47,6 +51,11 @@ public abstract class AbstractDynamicCard extends AbstractDefaultCard implements
     // Abstract Dynamic Card builds up on Abstract Default Card even more and makes it so that you don't need to add
     // the NAME and the DESCRIPTION into your card - it'll get it automatically. Of course, this functionality could have easily
     // Been added to the default card rather than creating a new Dynamic one, but was done so to deliberately.
+    public static final String HARDCORE_TEXTURE_PATH = "thePirateResources/images/ui/hardcore.png";
+    private static final Texture hardcoreIconTexture = TextureLoader.getTexture(HARDCORE_TEXTURE_PATH);
+    public static final TextureAtlas.AtlasRegion HARDCORE_ICON = new TextureAtlas.AtlasRegion(hardcoreIconTexture, 0,0, hardcoreIconTexture.getWidth(), hardcoreIconTexture.getHeight());
+    public boolean hardcore;
+
     private CardStrings cardStrings;
     public String upgradedDescription;
     public boolean stormPending;
@@ -60,10 +69,56 @@ public abstract class AbstractDynamicCard extends AbstractDefaultCard implements
                                final CardRarity rarity,
                                final CardTarget target) {
 
-        super(id, languagePack.getCardStrings(id).NAME, img, cost, languagePack.getCardStrings(id).DESCRIPTION, type, color, rarity, target);
-        cardStrings = CardCrawlGame.languagePack.getCardStrings(id);
-        upgradedDescription = cardStrings.UPGRADE_DESCRIPTION;
+        this(id,img,cost,type,color,rarity, target, false);
+    }
 
+    public AbstractDynamicCard(final String id,
+                               final String img,
+                               final int cost,
+                               final CardType type,
+                               final CardColor color,
+                               final CardRarity rarity,
+                               final CardTarget target,
+                               boolean hardcore) {
+
+        super(id, languagePack.getCardStrings(id).NAME, img, cost, languagePack.getCardStrings(id).DESCRIPTION, type, color, rarity, target);
+        this.hardcore = hardcore;
+        if(this.hardcore && hasHardcoreCardStrings(id)){
+            cardStrings = CardCrawlGame.languagePack.getCardStrings(id + "_HC");
+            upgradedDescription = cardStrings.UPGRADE_DESCRIPTION;
+            rawDescription = languagePack.getCardStrings(id+"_HC").DESCRIPTION;
+            initializeDescription();
+        }else{
+            cardStrings = CardCrawlGame.languagePack.getCardStrings(id);
+            upgradedDescription = cardStrings.UPGRADE_DESCRIPTION;
+
+        }
+
+    }
+
+    private boolean hasHardcoreCardStrings(String ID) {
+        Map<String, CardStrings> cards = ReflectionHacks.getPrivateStatic(LocalizedStrings.class, "cards");
+        return cards.containsKey(ID + "_HC");
+    }
+
+    @Override
+    public void render(SpriteBatch sb) {
+        super.render(sb);
+        if (hardcore){
+            renderHardcore(sb);
+        }
+    }
+
+    public void renderHardcore(SpriteBatch sb){
+
+        sb.setColor(Color.WHITE);
+        renderHelper(sb, HARDCORE_ICON, current_x, current_y);
+
+//        sb.setBlendFunction(770, 1);
+//            sb.setColor(new Color(1.0F, 1.0F, 1.0F, ((MathUtils.cosDeg((float) (System.currentTimeMillis() / 5L % 360L)) + 1.25F) / 2F) / 3.0F));
+        renderHelper(sb, HARDCORE_ICON, current_x, current_y);
+//        sb.setBlendFunction(770, 771);
+        sb.setColor(Color.WHITE);
 
     }
 
@@ -295,5 +350,11 @@ public abstract class AbstractDynamicCard extends AbstractDefaultCard implements
                 return LineFinder.findInOrder(ctMethodToPatch, new ArrayList<Matcher>(), finalMatcher);
             }
         }
+    }
+    static {
+        HARDCORE_ICON.originalHeight = 512;
+        HARDCORE_ICON.originalWidth = 512;
+        HARDCORE_ICON.offsetX = 102;
+        HARDCORE_ICON.offsetY = 50;
     }
 }

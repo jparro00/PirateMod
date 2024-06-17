@@ -14,6 +14,7 @@ import thePirate.characters.ThePirate;
 
 import java.util.function.Predicate;
 
+import static thePirate.PirateMod.isHardcore;
 import static thePirate.PirateMod.makeCardPath;
 
 public class Reload extends AbstractDynamicCard {
@@ -40,13 +41,16 @@ public class Reload extends AbstractDynamicCard {
     private static final int UPGRADED_COST = 1;
     public static final int BLOCK = 6;
     public static final int UPGRADED_BLOCK = 2;
+    public static final int HC_BLOCK = 5;
 
     // /STAT DECLARATION/
 
 
     public Reload() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET,isHardcore());
         block = baseBlock = BLOCK;
+        if (hardcore)
+            block = baseBlock = HC_BLOCK;
     }
 
 
@@ -70,8 +74,10 @@ public class Reload extends AbstractDynamicCard {
         if (!upgraded) {
             selfRetain = true;
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
-            upgradeBlock(UPGRADED_BLOCK);
+            if (UPGRADED_COST != COST)
+                upgradeBaseCost(UPGRADED_COST);
+            if (UPGRADED_BLOCK > 0)
+                upgradeBlock(UPGRADED_BLOCK);
             upgradeDescription();
         }
     }

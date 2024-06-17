@@ -8,6 +8,7 @@ import thePirate.actions.BuryAction;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.characters.ThePirate;
 
+import static thePirate.PirateMod.isHardcore;
 import static thePirate.PirateMod.makeCardPath;
 
 public class RetreatToShore extends AbstractDynamicCard {
@@ -25,6 +26,7 @@ public class RetreatToShore extends AbstractDynamicCard {
     private static final int UPGRADED_MAGIC = 0;
     private static final int BLOCK = 6;
     private static final int UPGRADED_BLOCK= 3;
+    public static final int HC_BLOCK = 5;
 
     // /STAT DECLARATION/
 
@@ -34,9 +36,12 @@ public class RetreatToShore extends AbstractDynamicCard {
     // /TEXT DECLARATION/
 
     public RetreatToShore() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET,isHardcore());
         magicNumber = baseMagicNumber = MAGIC;
         block = baseBlock = BLOCK;
+        if (hardcore)
+            block = baseBlock = HC_BLOCK;
+
     }
 
 

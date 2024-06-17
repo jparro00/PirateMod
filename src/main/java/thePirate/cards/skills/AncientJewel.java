@@ -13,6 +13,7 @@ import thePirate.powers.OnBury;
 
 import java.util.List;
 
+import static thePirate.PirateMod.isHardcore;
 import static thePirate.PirateMod.makeCardPath;
 
 public class AncientJewel extends AbstractDynamicCard implements OnBury {
@@ -28,8 +29,7 @@ public class AncientJewel extends AbstractDynamicCard implements OnBury {
     private static final int COST = -2;
     private static final int MAGIC = 2;
     private static final int UPGRADED_MAGIC = 1;
-    private static final int SECOND_MAGIC = 0;
-    private static final int UPGRADED_SECOND_MAGIC = 0;
+    public static final int HC_MAGIC = 1;
 
     // /STAT DECLARATION/
 
@@ -41,9 +41,11 @@ public class AncientJewel extends AbstractDynamicCard implements OnBury {
     // /TEXT DECLARATION/
 
     public AncientJewel() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET, isHardcore());
         magicNumber = baseMagicNumber = MAGIC;
-        secondMagic = baseSecondMagic = SECOND_MAGIC;
+        if(hardcore){
+            magicNumber = baseMagicNumber = HC_MAGIC;
+        }
     }
 
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
@@ -64,8 +66,6 @@ public class AncientJewel extends AbstractDynamicCard implements OnBury {
             upgradeName();
             if (UPGRADED_MAGIC > 0)
                 upgradeMagicNumber(UPGRADED_MAGIC);
-            if (UPGRADED_SECOND_MAGIC > 0)
-                upgradeSecondMagic(UPGRADED_SECOND_MAGIC);
             upgradeDescription();
         }
     }

@@ -57,7 +57,8 @@ public class CaptainsQuarters extends AbstractDynamicCard {
         if (!upgraded) {
             exhaust = false;
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
+            if (UPGRADED_COST != COST)
+                upgradeBaseCost(UPGRADED_COST);
             upgradeDescription();
         }
     }

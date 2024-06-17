@@ -15,7 +15,10 @@ public abstract class AbstractCannonBallCard extends AbstractDynamicCard {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(PirateMod.makeID("CardDescriptors"));
 
     public AbstractCannonBallCard(String id, String img, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target) {
-        super(id, img, cost, type, color, rarity, target);
+        this(id, img, cost, type, color, rarity, target, false);
+    }
+    public AbstractCannonBallCard(String id, String img, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean hardcore) {
+        super(id, img, cost, type, color, rarity, target, hardcore);
     }
 
     @Override

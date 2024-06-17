@@ -11,8 +11,7 @@ import thePirate.cards.lures.BatheInBlood;
 import thePirate.characters.ThePirate;
 import thePirate.powers.InkPower;
 
-import java.util.Iterator;
-
+import static thePirate.PirateMod.isHardcore;
 import static thePirate.PirateMod.makeCardPath;
 
 public class Kraken extends AbstractPredator{
@@ -41,7 +40,7 @@ public class Kraken extends AbstractPredator{
         this(true);
     }
     public Kraken(boolean showPreview) {
-        super(ID, IMG, COST, TYPE, COLOR, TARGET, showPreview);
+        super(ID, IMG, COST, TYPE, COLOR, TARGET, showPreview, isHardcore());
         magicNumber = baseMagicNumber = MAGIC;
         secondMagic = baseSecondMagic = SECOND_MAGIC;
         exhaust = true;
@@ -53,10 +52,18 @@ public class Kraken extends AbstractPredator{
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new StunMonsterAction(m,p, secondMagic));
-        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters){
-            if (!mo.isDeadOrEscaped() && !mo.equals(m)) {
-                this.addToBot(new ApplyPowerAction(mo,p,new InkPower(mo,p,magicNumber),magicNumber));
+        if (!hardcore){
+            addToBot(new StunMonsterAction(m,p, secondMagic));
+            for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters){
+                if (!mo.isDeadOrEscaped() && !mo.equals(m)) {
+                    this.addToBot(new ApplyPowerAction(mo,p,new InkPower(mo,p,magicNumber),magicNumber));
+                }
+            }
+        }else {
+            for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters){
+                if (!mo.isDeadOrEscaped()) {
+                    this.addToBot(new ApplyPowerAction(mo,p,new InkPower(mo,p,magicNumber),magicNumber));
+                }
             }
         }
     }

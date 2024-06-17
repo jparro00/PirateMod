@@ -106,5 +106,12 @@
       "inked"
     ],
     "DESCRIPTION": "The next time this enemy would deal damage, prevent damage equal to the ink value, deal that much damage to the enemy, and then remove that much ink."
+  },
+  {
+    "PROPER_NAME": "Inert",
+    "NAMES": [
+      "inert"
+    ],
+    "DESCRIPTION": "This card is not affected by Strength or Dexterity."
   }
 ]

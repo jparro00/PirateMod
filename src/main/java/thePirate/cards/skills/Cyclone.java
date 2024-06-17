@@ -4,11 +4,14 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.DexterityPower;
 import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.characters.ThePirate;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
+import static thePirate.PirateMod.isHardcore;
 import static thePirate.PirateMod.makeCardPath;
 
 public class Cyclone extends AbstractDynamicCard {
@@ -33,21 +36,39 @@ public class Cyclone extends AbstractDynamicCard {
     // /TEXT DECLARATION/
 
     public Cyclone() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET, isHardcore());
         block = baseBlock = BLOCK;
         exhaust = true;
         storm = true;
     }
 
+
     @Override
     public void applyPowers() {
         super.applyPowers();
+        String id = ID;
+        if (hardcore)
+            id = ID + "_HC";
         if(AbstractDungeon.actionManager.cardsPlayedThisTurn.size() > 0){
-            rawDescription = languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0];
+            rawDescription = languagePack.getCardStrings(id).EXTENDED_DESCRIPTION[0];
         }else {
-            rawDescription = languagePack.getCardStrings(ID).DESCRIPTION;
+            rawDescription = languagePack.getCardStrings(id).DESCRIPTION;
         }
         initializeDescription();
+    }
+
+    @Override
+    public void applyPowersToBlock() {
+        AbstractPower dexterity = AbstractDungeon.player.getPower(DexterityPower.POWER_ID);
+        int originalDexterity = 0;
+        if (dexterity != null) {
+            originalDexterity = dexterity.amount;
+            dexterity.amount = 0;
+        }
+        super.applyPowersToBlock();
+        if (dexterity != null) {
+            dexterity.amount = originalDexterity;
+        }
     }
 
     // Actions the card should do.

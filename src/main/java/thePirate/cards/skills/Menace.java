@@ -8,6 +8,7 @@ import thePirate.actions.PirateSFXAction;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.characters.ThePirate;
 
+import static thePirate.PirateMod.isHardcore;
 import static thePirate.PirateMod.makeCardPath;
 
 public class Menace extends AbstractDynamicCard {
@@ -33,11 +34,16 @@ public class Menace extends AbstractDynamicCard {
     private static final int COST = 1;
     private static final int UPGRADED_COST = 0;
 
+    public static final int HC_COST = 2;
+
+    public static final int HC_UPGRADED_COST = 1;
     // /STAT DECLARATION/
 
 
     public Menace() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET, isHardcore());
+        if (hardcore)
+            this.cost = this.costForTurn = HC_COST;
         exhaust = true;
     }
 
@@ -57,7 +63,11 @@ public class Menace extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
+            if (hardcore){
+                upgradeBaseCost(HC_UPGRADED_COST);
+            }else {
+                upgradeBaseCost(UPGRADED_COST);
+            }
             initializeDescription();
         }
     }

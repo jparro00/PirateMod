@@ -32,6 +32,7 @@ public class ChainShot extends AbstractCannonBallCard{
     private static final int UPGRADED_DMG = 4;
     public static final int MAGIC = 4;
     public static final int UPGRADED_MAGIC = 2;
+    public static final int HC_MAGIC = 2;
 
     // /STAT DECLARATION/
 
@@ -41,9 +42,12 @@ public class ChainShot extends AbstractCannonBallCard{
     // /TEXT DECLARATION/
 
     public ChainShot() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET,PirateMod.isHardcore());
         baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = MAGIC;
+        if (hardcore){
+            magicNumber = baseMagicNumber = HC_MAGIC;
+        }
         exhaust = true;
     }
 
