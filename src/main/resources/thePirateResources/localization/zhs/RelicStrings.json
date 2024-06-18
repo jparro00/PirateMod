@@ -56,6 +56,14 @@
       "选择至多三张牌以便开局时快速选择这张牌 #y埋藏 。"
     ]
   },
+  "thePirate:WoodenLeg_HC": {
+    "NAME": "木腿",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "每场战斗开始时，选择并 #y埋藏 至多 #b1 张牌。 NL NL #y提示： NL 你随时可以右键这个遗物定义一张快捷 #y埋藏 选牌。",
+      "选择至多一张牌以便开局时快速选择这张牌 #y埋藏 。"
+    ]
+  },
   "thePirate:Motivation": {
     "NAME": "动力",
     "FLAVOR": "",
