@@ -35,7 +35,7 @@ public abstract class AbstractPirateRelic extends CustomRelic {
             if (getUpdatedDescription() != ""){
                 this.description = getUpdatedDescription();
             }else{
-                this.description = CardCrawlGame.languagePack.getRelicStrings(id + "_HC").DESCRIPTIONS[0];
+                this.description = getDefaultHardcoreDescription();
             }
             this.tips.clear();
             this.tips.add(new PowerTip(this.name, this.description));
@@ -81,6 +81,17 @@ public abstract class AbstractPirateRelic extends CustomRelic {
 //        sb.setBlendFunction(770, 771);
         sb.setColor(Color.WHITE);
 
+    }
+
+
+    public String getDefaultHardcoreDescription() {
+        String description = "";
+        if (hardcore && hasHardcoreRelicStrings(this.relicId)){
+            description = CardCrawlGame.languagePack.getRelicStrings(relicId + "_HC").DESCRIPTIONS[0];
+        }else {
+            description = CardCrawlGame.languagePack.getRelicStrings(relicId).DESCRIPTIONS[0];
+        }
+        return description;
     }
 
     static {

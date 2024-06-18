@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePirate.PirateMod;
@@ -73,13 +72,7 @@ public class ExperimentalCannon extends AbstractCannonRelic {
     // Description
     @Override
     public String getUpdatedDescription() {
-        String description = "";
-        if (hardcore){
-            description = CardCrawlGame.languagePack.getRelicStrings(ID + "_HC").DESCRIPTIONS[0];
-        }else {
-            description = CardCrawlGame.languagePack.getRelicStrings(ID).DESCRIPTIONS[0];
-        }
-        return description;
+        return getDefaultHardcoreDescription();
     }
 
 }
