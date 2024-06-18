@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePirate.PirateMod;
@@ -15,8 +16,7 @@ import thePirate.util.TextureLoader;
 import java.util.ArrayList;
 import java.util.List;
 
-import static thePirate.PirateMod.makeRelicOutlinePath;
-import static thePirate.PirateMod.makeRelicPath;
+import static thePirate.PirateMod.*;
 
 public class ExperimentalCannon extends AbstractCannonRelic {
 
@@ -34,7 +34,7 @@ public class ExperimentalCannon extends AbstractCannonRelic {
     public static final int FREE_CANNONBALL = 1;
 
     public ExperimentalCannon() {
-        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.HEAVY);
+        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.HEAVY, isHardcore());
     }
 
     @Override
@@ -58,7 +58,9 @@ public class ExperimentalCannon extends AbstractCannonRelic {
     public List<AbstractGameAction> onUseCannon(AbstractPlayer p, AbstractMonster m) {
         List<AbstractGameAction> actions = new ArrayList<>();
         actions.add(new ApplyPowerAction(p,p, new PlayCannonballTwicePower(1),1));
-        actions.add(new ApplyPowerAction(p,p, new FreeCannonballPower(FREE_CANNONBALL),FREE_CANNONBALL));
+        if (!isHardcore()){
+            actions.add(new ApplyPowerAction(p,p, new FreeCannonballPower(FREE_CANNONBALL),FREE_CANNONBALL));
+        }
         flash();
         return actions;
     }
@@ -71,7 +73,13 @@ public class ExperimentalCannon extends AbstractCannonRelic {
     // Description
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        String description = "";
+        if (hardcore){
+            description = CardCrawlGame.languagePack.getRelicStrings(ID + "_HC").DESCRIPTIONS[0];
+        }else {
+            description = CardCrawlGame.languagePack.getRelicStrings(ID).DESCRIPTIONS[0];
+        }
+        return description;
     }
 
 }

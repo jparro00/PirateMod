@@ -27,6 +27,13 @@
             "Reemplaza tu #yReliquia de #yCañón (o el #yBiblia #ydel #yArmero). NL Al inicio del combate, añade un Cañón a tu mano. NL #yCañón #ygana: NL La próxima Bala de Cañón que juegues este turno cuesta #b0 y se juega dos veces."
         ]
     },
+    "thePirate:ExperimentalCannon_HC": {
+        "NAME": "Cañón Experimental",
+        "FLAVOR": "",
+        "DESCRIPTIONS": [
+            "Reemplaza tu #yReliquia de #yCañón (o el #yBiblia #ydel #yArmero). NL Al inicio del combate, añade un Cañón a tu mano. NL #yCañón #ygana: NL La próxima Bala de Cañón que juegues este turno se juega dos veces."
+        ]
+    },
     "thePirate:NavigationDevice": {
         "NAME": "Dispositivo de Navegación",
         "FLAVOR": "",

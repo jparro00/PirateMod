@@ -27,6 +27,13 @@
       "替换 #y火炮挂饰 或 #y枪炮要领 。 NL 每场战斗开始时，将一张 #y火炮 牌加入手牌。 NL #y火炮 获得：下一张炮弹牌耗能为 #b0 并打出两次。"
     ]
   },
+  "thePirate:ExperimentalCannon_HC": {
+    "NAME": "试验火炮",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "替换 #y火炮挂饰 或 #y枪炮要领 。 NL 每场战斗开始时，将一张 #y火炮 牌加入手牌。 NL #y火炮 获得：下一张炮弹牌打出两次。"
+    ]
+  },
   "thePirate:NavigationDevice": {
     "NAME": "导航设备",
     "FLAVOR": "",

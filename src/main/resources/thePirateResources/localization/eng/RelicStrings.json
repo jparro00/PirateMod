@@ -27,6 +27,13 @@
       "Replaces your #yCannon #yrelic (or #yGunsmith's #yBible ). NL At the start of combat, add a Cannon to your hand. NL #yCannon #ygains: NL The next Cannonball you play this turn costs #b0 and is played twice."
     ]
   },
+  "thePirate:ExperimentalCannon_HC": {
+    "NAME": "Experimental Cannon",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "Replaces your #yCannon #yrelic (or #yGunsmith's #yBible ). NL At the start of combat, add a Cannon to your hand. NL #yCannon #ygains: NL The next Cannonball you play this turn is played twice."
+    ]
+  },
   "thePirate:NavigationDevice": {
     "NAME": "Navigation Device",
     "FLAVOR": "",

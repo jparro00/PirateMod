@@ -1,6 +1,5 @@
 package thePirate.relics;
 
-import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -14,13 +13,16 @@ import thePirate.cards.Cannon;
 
 import java.util.List;
 
-public abstract class AbstractCannonRelic extends CustomRelic {
+public abstract class AbstractCannonRelic extends AbstractPirateRelic {
 
     public AbstractCannonRelic(String id, Texture img, Texture outline ) {
         this(id, img,outline,RelicTier.SPECIAL,LandingSound.HEAVY);
     }
     public AbstractCannonRelic(String id, Texture img,Texture outline ,RelicTier tier, LandingSound landingSound ) {
-        super(id, img,outline,tier,landingSound);
+        this(id, img,outline,tier,landingSound, false);
+    }
+    public AbstractCannonRelic(String id, Texture img,Texture outline ,RelicTier tier, LandingSound landingSound, boolean hardcore) {
+        super(id, img,outline,tier,landingSound,hardcore);
     }
 
 
