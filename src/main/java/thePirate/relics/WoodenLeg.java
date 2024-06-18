@@ -1,13 +1,13 @@
 package thePirate.relics;
 
 import basemod.ReflectionHacks;
-import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsAction;
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.screens.DungeonMapScreen;
@@ -21,10 +21,9 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 
-import static thePirate.PirateMod.makeRelicOutlinePath;
-import static thePirate.PirateMod.makeRelicPath;
+import static thePirate.PirateMod.*;
 
-public class WoodenLeg extends CustomRelic implements ClickableRelic {
+public class WoodenLeg extends AbstractPirateRelic implements ClickableRelic {
 
     /*
      * https://github.com/daviscook477/BaseMod/wiki/Custom-Relics
@@ -38,25 +37,27 @@ public class WoodenLeg extends CustomRelic implements ClickableRelic {
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath(WoodenLeg.class.getSimpleName() + ".png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath(WoodenLeg.class.getSimpleName() + ".png"));
     private boolean cardsSelected = true;
+    public int cardsToBury;
     public static final int CARDS_TO_BURY = 3;
+    public static final int HC_CARDS_TO_BURY = 1;
     public List<AbstractCard> preselectedCards;
     public static final Color BLUE_BORDER_GLOW_COLOR = ReflectionHacks.getPrivateStatic(AbstractCard.class,"BLUE_BORDER_GLOW_COLOR");
 
 
-    public WoodenLeg(String setId, String imgName, RelicTier tier, LandingSound sfx) {
-        super(setId, imgName, tier, sfx);
-        this.preselectedCards = new ArrayList<>();
-    }
-
     public WoodenLeg(){
-        super(ID, IMG,OUTLINE, RelicTier.RARE, LandingSound.FLAT);
+        super(ID, IMG,OUTLINE, RelicTier.RARE, LandingSound.FLAT, isHardcore());
         this.preselectedCards = new ArrayList<>();
+        if (hardcore){
+            this.cardsToBury = HC_CARDS_TO_BURY;
+        }else{
+            this.cardsToBury = CARDS_TO_BURY;
+        }
     }
 
     @Override
     public void update() {
         super.update();
-        if (!this.cardsSelected && (AbstractDungeon.gridSelectScreen.selectedCards.size() == CARDS_TO_BURY || (!AbstractDungeon.CurrentScreen.GRID.equals(AbstractDungeon.screen) && AbstractDungeon.gridSelectScreen.selectedCards.size() > 0 && AbstractDungeon.gridSelectScreen.selectedCards.size() < CARDS_TO_BURY))) {
+        if (!this.cardsSelected && (AbstractDungeon.gridSelectScreen.selectedCards.size() == cardsToBury || (!AbstractDungeon.CurrentScreen.GRID.equals(AbstractDungeon.screen) && AbstractDungeon.gridSelectScreen.selectedCards.size() > 0 && AbstractDungeon.gridSelectScreen.selectedCards.size() < cardsToBury))) {
             cardsSelected = true;
             this.preselectedCards = new ArrayList<>(AbstractDungeon.gridSelectScreen.selectedCards);
             for (AbstractCard card : preselectedCards){
@@ -77,14 +78,21 @@ public class WoodenLeg extends CustomRelic implements ClickableRelic {
 
     @Override
     public void atBattleStartPreDraw() {
-        addToBot(new BuryAction(CARDS_TO_BURY, true, preselectedCards));
+        addToBot(new BuryAction(cardsToBury, true, preselectedCards));
         flash();
     }
 
     // Description
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return getDefaultHardcoreDescription();
+    }
+    public String getClickableHelpText(){
+        if (hardcore)
+            description = CardCrawlGame.languagePack.getRelicStrings(relicId + "_HC").DESCRIPTIONS[1];
+        else
+            description = CardCrawlGame.languagePack.getRelicStrings(relicId).DESCRIPTIONS[1];
+        return description;
     }
 
     @Override
@@ -104,7 +112,7 @@ public class WoodenLeg extends CustomRelic implements ClickableRelic {
         if(PirateMod.isInCombat() && !AbstractDungeon.isScreenUp && AbstractDungeon.previousScreen == null){
             preselectedCards = new ArrayList<>();
             WoodenLeg thisRelic = this;
-            addToTop(new SelectCardsAction(AbstractDungeon.player.masterDeck.group, CARDS_TO_BURY, DESCRIPTIONS[1], true, new Predicate<AbstractCard>() {
+            addToTop(new SelectCardsAction(AbstractDungeon.player.masterDeck.group, cardsToBury, getClickableHelpText(), true, new Predicate<AbstractCard>() {
 
                 @Override
                 public boolean test(AbstractCard abstractCard) {
@@ -135,7 +143,7 @@ public class WoodenLeg extends CustomRelic implements ClickableRelic {
                 this.cardsSelected = true;
             } else {
                 if (!AbstractDungeon.isScreenUp) {
-                    AbstractDungeon.gridSelectScreen.open(tmp, CARDS_TO_BURY, true, DESCRIPTIONS[1]);
+                    AbstractDungeon.gridSelectScreen.open(tmp, cardsToBury, true, getClickableHelpText());
                 } else if (AbstractDungeon.screen != null){// AbstractDungeon.CurrentScreen.MAP.equals(AbstractDungeon.screen) || AbstractDungeon.CurrentScreen.MASTER_DECK_VIEW.equals(AbstractDungeon.screen)){
                     switch (AbstractDungeon.screen){
                         case MAP:
@@ -146,7 +154,7 @@ public class WoodenLeg extends CustomRelic implements ClickableRelic {
                         case CARD_REWARD:
                             AbstractDungeon.dynamicBanner.hide();
                             AbstractDungeon.previousScreen = AbstractDungeon.screen;
-                            AbstractDungeon.gridSelectScreen.open(tmp, CARDS_TO_BURY, true, DESCRIPTIONS[1]);
+                            AbstractDungeon.gridSelectScreen.open(tmp, cardsToBury, true, getClickableHelpText());
                             break;
                         default:
                             break;

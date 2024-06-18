@@ -53,7 +53,15 @@
         "FLAVOR": "",
         "DESCRIPTIONS": [
             "Al comienzo de cada combate, #ythepirate:entierra hasta #b3 cartas. NL NL #yConsejo: NL En cualquier momento, haz clic derecho en esta reliquia para guardar hasta cartas #b3 para preseleccionarlas al comienzo del combate.",
-            "Choose up to 3 cards to be preselected for burying at the beginning of combat (your choice can be changed at any time)"
+            "Elige hasta 3 cartas para ser preseleccionadas para enterrar al comienzo del combate (tu elección puede ser cambiada en cualquier momento)."
+        ]
+    },
+    "thePirate:WoodenLeg_HC": {
+        "NAME": "Pata de Palo",
+        "FLAVOR": "",
+        "DESCRIPTIONS": [
+            "Al comienzo de cada combate, #ythepirate:entierra hasta #b1 carta. NL NL #yConsejo: NL En cualquier momento, haz clic derecho en esta reliquia para guardar hasta carta #b1 para preseleccionarlas al comienzo del combate.",
+            "Elige hasta 1 carta para ser preseleccionada para enterrar al comienzo del combate (tu elección puede ser cambiada en cualquier momento)."
         ]
     },
     "thePirate:Motivation": {

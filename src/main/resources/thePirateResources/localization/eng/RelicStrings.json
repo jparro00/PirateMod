@@ -56,6 +56,14 @@
       "Choose up to 3 cards to be preselected for burying at the beginning of combat (your choice can be changed at any time)"
     ]
   },
+  "thePirate:WoodenLeg_HC": {
+    "NAME": "Wooden Leg",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "At the start of battle, #ythepirate:Bury up to #b1 card. NL NL #yTip: NL At anytime, you may right click this relic to save 1 card to be preselected at the beginning of combat.",
+      "Choose up to 1 card to be preselected for burying at the beginning of combat (your choice can be changed at any time)"
+    ]
+  },
   "thePirate:Motivation": {
     "NAME": "Motivation",
     "FLAVOR": "",
