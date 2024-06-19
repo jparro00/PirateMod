@@ -65,6 +65,14 @@ public abstract class AbstractPirateRelic extends CustomRelic {
         }
     }
 
+    @Override
+    public void renderWithoutAmount(SpriteBatch sb, Color c) {
+        super.renderWithoutAmount(sb, c);
+        if (hardcore){
+            renderHardcore(sb);
+        }
+    }
+
     public void renderHelper(SpriteBatch sb, TextureAtlas.AtlasRegion img, float drawX, float drawY) {
         float hardcoreIconScale = 0.25F;
         sb.draw(img, drawX + img.offsetX - (float)img.originalWidth / 2.0F, drawY + img.offsetY - (float)img.originalHeight / 2.0F, (float)img.originalWidth / 2.0F - img.offsetX, (float)img.originalHeight / 2.0F - img.offsetY, (float)img.packedWidth, (float)img.packedHeight, this.scale * hardcoreIconScale * Settings.scale, this.scale * hardcoreIconScale * Settings.scale,0);

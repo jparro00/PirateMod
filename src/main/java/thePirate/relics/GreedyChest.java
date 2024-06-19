@@ -82,16 +82,24 @@ public class GreedyChest extends AbstractPirateRelic {
     }
     @Override
     public void onGainGold() {
+        super.onEquip();
         calculateCounter();
     }
 
     @Override
     public void onLoseGold() {
+        super.onEquip();
         calculateCounter();
     }
 
     @Override
     public void onSpendGold() {
+        super.onEquip();
+        calculateCounter();
+    }
+    @Override
+    public void onEquip(){
+        super.onEquip();
         calculateCounter();
     }
 }
