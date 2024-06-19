@@ -13,6 +13,13 @@
       "Whenever you #ythepirate:Bury a card, deal #b5 damage to a random enemy."
     ]
   },
+  "thePirate:WoodenCompass_HC": {
+    "NAME": "Wooden Compass",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "Whenever you #ythepirate:Bury a card, deal #b3 damage to a random enemy."
+    ]
+  },
   "thePirate:MoneyBag": {
     "NAME": "Money Bag",
     "FLAVOR": "",

@@ -14,8 +14,7 @@ import thePirate.util.TextureLoader;
 
 import java.util.List;
 
-import static thePirate.PirateMod.makeRelicOutlinePath;
-import static thePirate.PirateMod.makeRelicPath;
+import static thePirate.PirateMod.*;
 
 public class WoodenCompass extends AbstractPirateRelic implements OnBury {
 
@@ -25,16 +24,22 @@ public class WoodenCompass extends AbstractPirateRelic implements OnBury {
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath(WoodenCompass.class.getSimpleName() + ".png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath(WoodenCompass.class.getSimpleName() + ".png"));
     public static final int DAMAGE = 5;
+    public static final int HC_DAMAGE = 3;
+    public int damage;
 
 
     public WoodenCompass(){
-        super(ID, IMG,OUTLINE, RelicTier.RARE, LandingSound.FLAT);
+        super(ID, IMG,OUTLINE, RelicTier.RARE, LandingSound.FLAT, isHardcore());
+        if (hardcore)
+            this.damage = HC_DAMAGE;
+        else
+            this.damage = DAMAGE;
     }
 
     // Description
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return getDefaultHardcoreDescription();
     }
 
     @Override
@@ -53,7 +58,7 @@ public class WoodenCompass extends AbstractPirateRelic implements OnBury {
 //        CardCrawlGame.sound.play("TINGSHA");
         addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         for (int i = 0; i < cards.size(); i++){
-            addToBot(new DamageRandomEnemyAction(new DamageInfo(AbstractDungeon.player, DAMAGE, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
+            addToBot(new DamageRandomEnemyAction(new DamageInfo(AbstractDungeon.player, damage, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
         }
     }
 }

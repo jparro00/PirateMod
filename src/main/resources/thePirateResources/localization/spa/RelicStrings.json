@@ -13,6 +13,13 @@
             "Cada vez que #ythepirate:entierres una carta, inflige #b5 de daño a un enemigo al azar."
         ]
     },
+    "thePirate:WoodenCompass_HC": {
+        "NAME": "Brújula de Madera",
+        "FLAVOR": "",
+        "DESCRIPTIONS": [
+            "Cada vez que #ythepirate:entierres una carta, inflige #b3 de daño a un enemigo al azar."
+        ]
+    },
     "thePirate:MoneyBag": {
         "NAME": "Bolsa de Dinero",
         "FLAVOR": "",

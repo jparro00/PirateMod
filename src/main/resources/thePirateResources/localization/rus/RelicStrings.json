@@ -13,6 +13,13 @@
       "Когда вы #ythepirate:Закапываете карту, наносит #b5 урона случ. врагу."
     ]
   },
+  "thePirate:WoodenCompass_HC": {
+    "NAME": "Деревянный компас",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "Когда вы #ythepirate:Закапываете карту, наносит #b3 урона случ. врагу."
+    ]
+  },
   "thePirate:MoneyBag": {
     "NAME": "Мешок денег",
     "FLAVOR": "",
