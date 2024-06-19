@@ -100,6 +100,13 @@
       "每场战斗开始时，你每有 #b100 #y金币 就获得 #b1 点 #y力量 。"
     ]
   },
+  "thePirate:GreedyChest_HC": {
+    "NAME": "贪婪宝箱",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "每场战斗开始时，你每有 #b100 #y金币 就获得 #b1 点 #y力量 ，最多获得 #b3 点 #y力量 。"
+    ]
+  },
   "thePirate:GunsmithsBible": {
     "NAME": "枪炮要领",
     "FLAVOR": "",
