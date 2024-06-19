@@ -63,7 +63,7 @@ public class GreedyChest extends AbstractPirateRelic {
     // Description
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return getDefaultHardcoreDescription();
     }
 
     @Override
