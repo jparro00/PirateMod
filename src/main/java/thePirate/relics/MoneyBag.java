@@ -1,6 +1,5 @@
 package thePirate.relics;
 
-import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
@@ -17,7 +16,7 @@ import thePirate.util.TextureLoader;
 import static thePirate.PirateMod.makeRelicOutlinePath;
 import static thePirate.PirateMod.makeRelicPath;
 
-public class MoneyBag extends CustomRelic implements BetterOnUseGold{
+public class MoneyBag extends AbstractPirateRelic implements BetterOnUseGold{
 
     /*
      * https://github.com/daviscook477/BaseMod/wiki/Custom-Relics

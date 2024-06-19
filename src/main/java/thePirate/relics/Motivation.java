@@ -1,6 +1,5 @@
 package thePirate.relics;
 
-import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -14,7 +13,7 @@ import java.util.List;
 import static thePirate.PirateMod.makeRelicOutlinePath;
 import static thePirate.PirateMod.makeRelicPath;
 
-public class Motivation extends CustomRelic implements OnBury {
+public class Motivation extends AbstractPirateRelic implements OnBury {
 
     /*
      * https://github.com/daviscook477/BaseMod/wiki/Custom-Relics
@@ -30,11 +29,6 @@ public class Motivation extends CustomRelic implements OnBury {
     private boolean cardsSelected = true;
     public int cardsBurried;
 
-
-    public Motivation(String setId, String imgName, RelicTier tier, LandingSound sfx) {
-        super(setId, imgName, tier, sfx);
-        cardsBurried = 0;
-    }
 
     @Override
     public void atTurnStart() {

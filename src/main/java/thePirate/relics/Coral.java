@@ -1,6 +1,5 @@
 package thePirate.relics;
 
-import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -23,7 +22,7 @@ import java.util.List;
 import static thePirate.PirateMod.makeRelicOutlinePath;
 import static thePirate.PirateMod.makeRelicPath;
 
-public class Coral extends CustomRelic {
+public class Coral extends AbstractPirateRelic {
 
     /*
      * https://github.com/daviscook477/BaseMod/wiki/Custom-Relics
@@ -39,10 +38,6 @@ public class Coral extends CustomRelic {
     private boolean cardsSelected = true;
 
     public boolean isActive;
-
-    public Coral(String setId, String imgName, RelicTier tier, LandingSound sfx) {
-        super(setId, imgName, tier, sfx);
-    }
 
     public Coral(){
         super(ID, IMG,OUTLINE, RelicTier.UNCOMMON, LandingSound.FLAT);

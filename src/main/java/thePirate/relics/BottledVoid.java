@@ -1,7 +1,6 @@
 package thePirate.relics;
 
 import basemod.abstracts.CustomBottleRelic;
-import basemod.abstracts.CustomRelic;
 import basemod.abstracts.CustomSavable;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -21,7 +20,7 @@ import java.util.function.Predicate;
 import static thePirate.PirateMod.makeRelicOutlinePath;
 import static thePirate.PirateMod.makeRelicPath;
 
-public class BottledVoid extends CustomRelic implements CustomBottleRelic, CustomSavable<Integer> {
+public class BottledVoid extends AbstractPirateRelic implements CustomBottleRelic, CustomSavable<Integer> {
     // This file will show you how to use 2 things - (Mostly) The Custom Bottle Relic and the Custom Savable - they go hand in hand.
 
     /*

@@ -1,6 +1,5 @@
 package thePirate.relics;
 
-import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -14,7 +13,7 @@ import thePirate.util.TextureLoader;
 import static thePirate.PirateMod.makeRelicOutlinePath;
 import static thePirate.PirateMod.makeRelicPath;
 
-public class ExoticDish extends CustomRelic {
+public class ExoticDish extends AbstractPirateRelic {
 
     /*
      * https://github.com/daviscook477/BaseMod/wiki/Custom-Relics
@@ -30,10 +29,6 @@ public class ExoticDish extends CustomRelic {
     public static final int INK = 5;
 
     public boolean isActive;
-
-    public ExoticDish(String setId, String imgName, RelicTier tier, LandingSound sfx) {
-        super(setId, imgName, tier, sfx);
-    }
 
     public ExoticDish(){
         super(ID, IMG,OUTLINE,RelicTier.UNCOMMON, LandingSound.FLAT);

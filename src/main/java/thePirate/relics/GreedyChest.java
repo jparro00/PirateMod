@@ -1,6 +1,5 @@
 package thePirate.relics;
 
-import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
@@ -13,7 +12,7 @@ import thePirate.util.TextureLoader;
 import static thePirate.PirateMod.makeRelicOutlinePath;
 import static thePirate.PirateMod.makeRelicPath;
 
-public class GreedyChest extends CustomRelic {
+public class GreedyChest extends AbstractPirateRelic {
 
     /*
      * https://github.com/daviscook477/BaseMod/wiki/Custom-Relics
@@ -28,10 +27,6 @@ public class GreedyChest extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath(GreedyChest.class.getSimpleName() + ".png"));
 
     public boolean isActive;
-
-    public GreedyChest(String setId, String imgName, RelicTier tier, LandingSound sfx) {
-        super(setId, imgName, tier, sfx);
-    }
 
     public GreedyChest(){
         super(ID, IMG,OUTLINE,RelicTier.RARE, LandingSound.CLINK);

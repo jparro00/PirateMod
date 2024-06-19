@@ -1,6 +1,5 @@
 package thePirate.relics;
 
-import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.relics.OnApplyPowerRelic;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -13,7 +12,7 @@ import thePirate.util.TextureLoader;
 import static thePirate.PirateMod.makeRelicOutlinePath;
 import static thePirate.PirateMod.makeRelicPath;
 
-public class WritingReed extends CustomRelic implements OnApplyPowerRelic {
+public class WritingReed extends AbstractPirateRelic implements OnApplyPowerRelic {
 
     /*
      * https://github.com/daviscook477/BaseMod/wiki/Custom-Relics
@@ -28,11 +27,6 @@ public class WritingReed extends CustomRelic implements OnApplyPowerRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath(WritingReed.class.getSimpleName() + ".png"));
     public static final int EXTRA_INK = 1;
 
-
-    public WritingReed(String setId, String imgName, RelicTier tier, LandingSound sfx) {
-        super(setId, imgName, tier, sfx);
-
-    }
 
     public WritingReed(){
         super(ID, IMG,OUTLINE, RelicTier.COMMON, LandingSound.FLAT);

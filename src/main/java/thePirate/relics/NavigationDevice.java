@@ -1,6 +1,5 @@
 package thePirate.relics;
 
-import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -12,7 +11,7 @@ import thePirate.util.TextureLoader;
 import static thePirate.PirateMod.makeRelicOutlinePath;
 import static thePirate.PirateMod.makeRelicPath;
 
-public class NavigationDevice extends CustomRelic {
+public class NavigationDevice extends AbstractPirateRelic {
 
     /*
      * https://github.com/daviscook477/BaseMod/wiki/Custom-Relics
@@ -28,10 +27,6 @@ public class NavigationDevice extends CustomRelic {
 
     public boolean isActive;
     public boolean battleStart;
-
-    public NavigationDevice(String setId, String imgName, RelicTier tier, LandingSound sfx) {
-        super(setId, imgName, tier, sfx);
-    }
 
     public NavigationDevice(){
         super(ID, IMG,OUTLINE,RelicTier.UNCOMMON, LandingSound.CLINK);

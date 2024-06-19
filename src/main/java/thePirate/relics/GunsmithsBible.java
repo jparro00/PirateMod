@@ -1,6 +1,5 @@
 package thePirate.relics;
 
-import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -11,7 +10,7 @@ import thePirate.util.TextureLoader;
 import static thePirate.PirateMod.makeRelicOutlinePath;
 import static thePirate.PirateMod.makeRelicPath;
 
-public class GunsmithsBible extends CustomRelic implements ClickableRelic { // You must implement things you want to use from StSlib
+public class GunsmithsBible extends AbstractPirateRelic implements ClickableRelic { // You must implement things you want to use from StSlib
 
     // ID, images, text.
     public static final String ID = PirateMod.makeID(GunsmithsBible.class.getSimpleName());
