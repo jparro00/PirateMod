@@ -7,7 +7,6 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
@@ -74,8 +73,8 @@ public abstract class AbstractPirateRelic extends CustomRelic {
     }
 
     public void renderHelper(SpriteBatch sb, TextureAtlas.AtlasRegion img, float drawX, float drawY) {
-        float hardcoreIconScale = 0.25F;
-        sb.draw(img, drawX + img.offsetX - (float)img.originalWidth / 2.0F, drawY + img.offsetY - (float)img.originalHeight / 2.0F, (float)img.originalWidth / 2.0F - img.offsetX, (float)img.originalHeight / 2.0F - img.offsetY, (float)img.packedWidth, (float)img.packedHeight, this.scale * hardcoreIconScale * Settings.scale, this.scale * hardcoreIconScale * Settings.scale,0);
+        float hardcoreIconScale = 0.5F;
+        sb.draw(img, drawX + img.offsetX - (float)img.originalWidth / 2.0F, drawY + img.offsetY - (float)img.originalHeight / 2.0F, (float)img.originalWidth / 2.0F - img.offsetX, (float)img.originalHeight / 2.0F - img.offsetY, (float)img.packedWidth, (float)img.packedHeight, this.scale * hardcoreIconScale, this.scale * hardcoreIconScale ,0);
     }
 
     public void renderHardcore(SpriteBatch sb){
@@ -83,10 +82,7 @@ public abstract class AbstractPirateRelic extends CustomRelic {
         sb.setColor(Color.WHITE);
         renderHelper(sb, HARDCORE_ICON, currentX, currentY);
 
-//        sb.setBlendFunction(770, 1);
-//            sb.setColor(new Color(1.0F, 1.0F, 1.0F, ((MathUtils.cosDeg((float) (System.currentTimeMillis() / 5L % 360L)) + 1.25F) / 2F) / 3.0F));
         renderHelper(sb, HARDCORE_ICON, currentX, currentY);
-//        sb.setBlendFunction(770, 771);
         sb.setColor(Color.WHITE);
 
     }
