@@ -100,7 +100,8 @@ public class InkPower extends AbstractPower implements CloneablePowerInterface, 
             }
 
             if (damageBack > 0)
-                this.addToTop(new DamageAction(info.owner, new DamageInfo(AbstractDungeon.player, damageBack, DamageInfo.DamageType.THORNS)));
+                if (AbstractDungeon.player.equals(source))
+                    this.addToTop(new DamageAction(info.owner, new DamageInfo(AbstractDungeon.player, damageBack, DamageInfo.DamageType.THORNS)));
 
             if(tmpAmount != originalAmount && !AbstractDungeon.player.hasPower(VolatileInkPower.POWER_ID) && !owner.hasPower(TropomyosinPower.POWER_ID)){
                 this.addToTop(new ReducePowerAction(info.owner, info.owner, this.ID, originalAmount - tmpAmount));
