@@ -1,32 +1,36 @@
 package thePirate.patches.powers;
 
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import basemod.ReflectionHacks;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import spireTogether.actions.ApplyPowerWithoutModificationAction;
+import thePirate.PirateMod;
+import thePirate.powers.InkPower;
 
-@SpirePatch(
-        clz = ApplyPowerAction.class,
-        method = "update"
+@SpirePatch2(
+        clz = ApplyPowerWithoutModificationAction.class,
+        method = "update",
+        requiredModId = "spireTogether"
         )
 public class ApplyPowerActionPatch {
 
-/*
-    //Patching ApplyPowerAction to account for CorruptArtifact
-    public SpireReturn<Void> Prefix(ApplyPowerAction _instance, float ___duration, float ___startingDuration, AbstractPower ___powerToApply){
+    //Patching ApplyPowerAction for hardcore mode to prevent ink from applying for all players
+    @SpirePrefixPatch
+    public static SpireReturn<Void> Prefix(ApplyPowerWithoutModificationAction __instance){
 
-        if (_instance.target != null && !_instance.target.isDeadOrEscaped()) {
-            if (___duration == ___startingDuration) {
-                if (_instance.target.hasPower(CorruptArtifactPower.POWER_ID) && ___powerToApply.type == AbstractPower.PowerType.BUFF) {
-                    AbstractDungeon.actionManager.addToTop(new TextAboveCreatureAction(_instance.target, _instance.TEXT[0]));
-                    ___duration -= Gdx.graphics.getDeltaTime();
-                    CardCrawlGame.sound.play("NULLIFY_SFX");
-                    _instance.target.getPower(CorruptArtifactPower.POWER_ID).flashWithoutSound();
-                    _instance.target.getPower(CorruptArtifactPower.POWER_ID).onSpecificTrigger();
-                    return SpireReturn.Return();
+        if (__instance.target != null && !__instance.target.isDeadOrEscaped()) {
+                if (PirateMod.isHardcore()){
+                    AbstractPower power = ReflectionHacks.getPrivate(__instance, ApplyPowerWithoutModificationAction.class, "powerToApply");
+                        if (power.ID.equals(InkPower.POWER_ID) && !AbstractDungeon.player.equals(__instance.source)){
+                                __instance.isDone = true;
+                                return SpireReturn.Return();
+                        }
                 }
-            }
         }
         return SpireReturn.Continue();
     }
-*/
 
 }

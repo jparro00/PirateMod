@@ -124,7 +124,6 @@ public class InkPower extends AbstractPower implements CloneablePowerInterface, 
         int amount = 10;
         int intentDmg = 7;
         int reflectedDmg = (int)(Math.ceil((double)amount / intentDmg));
-        System.out.println(reflectedDmg);
     }
 
     public void renderInkIntent(SpriteBatch sb){
