@@ -57,6 +57,14 @@ public abstract class AbstractPirateRelic extends CustomRelic {
     }
 
     @Override
+    public void render(SpriteBatch sb) {
+        super.render(sb);
+        if (hardcore){
+            renderHardcore(sb);
+        }
+    }
+
+    @Override
     public void renderInTopPanel(SpriteBatch sb) {
         super.renderInTopPanel(sb);
         if (hardcore){
