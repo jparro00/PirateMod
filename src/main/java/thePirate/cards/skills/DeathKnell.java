@@ -192,6 +192,31 @@ public class DeathKnell extends AbstractDynamicCard {
 
     }
 
+    public void triggerOnGlowCheck() {
+        this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        if (canUse(AbstractDungeon.player, null) && secondMagic > 0) {
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+        }
+    }
+
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+
+        boolean canUse = super.canUse(p, m);
+        if (!canUse) {
+            return false;
+        } else {
+            for (AbstractRelic relic : AbstractDungeon.player.relics){
+                if (RelicTargeting.canTarget(relic)){
+                    return canUse;
+                }
+            }
+            //TODO: localize this message
+//            this.cantUseMessage = "No targetable relic.";
+//            this.cantUseMessage = languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0];
+            return false;
+        }
+    }
 
     // Upgraded stats.
     @Override

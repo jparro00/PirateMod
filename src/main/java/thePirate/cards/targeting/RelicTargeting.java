@@ -1,15 +1,24 @@
 package thePirate.cards.targeting;
 
+import basemod.ReflectionHacks;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.mod.stslib.cards.targeting.TargetingHandler;
 import com.evacipated.cardcrawl.mod.stslib.patches.CustomTargeting;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
+import com.megacrit.cardcrawl.helpers.input.InputActionSet;
 import com.megacrit.cardcrawl.relics.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class RelicTargeting extends TargetingHandler<AbstractRelic> {
     @SpireEnum
@@ -35,6 +44,58 @@ public class RelicTargeting extends TargetingHandler<AbstractRelic> {
             if (relic.hb.hovered && canTarget(relic)) {
                 hovered = relic;
                 break;
+            }
+        }
+    }
+
+    @Override
+    public void updateKeyboardTarget() {
+        updateHovered();
+        List<AbstractRelic> sortedRelics = new ArrayList<AbstractRelic>(AbstractDungeon.player.relics);
+        sortedRelics.removeIf(relic -> !canTarget(relic));
+        AbstractRelic newTarget = null;
+        if (!sortedRelics.isEmpty()){
+
+            int directionIndex = 0;
+            if (InputActionSet.left.isJustPressed() || CInputActionSet.left.isJustPressed() || CInputActionSet.altLeft.isJustPressed()
+//                || InputActionSet.up.isJustPressed() || CInputActionSet.up.isJustPressed() || CInputActionSet.altUp.isJustPressed()
+//                || InputActionSet.down.isJustPressed() || CInputActionSet.down.isJustPressed() || CInputActionSet.altDown.isJustPressed()
+            ) {
+                --directionIndex;
+            }
+
+            if (InputActionSet.right.isJustPressed() || CInputActionSet.right.isJustPressed() || CInputActionSet.altRight.isJustPressed()) {
+                ++directionIndex;
+            }
+
+            if (directionIndex != 0) {
+                if (this.hovered == null) {
+                    newTarget = (AbstractRelic)sortedRelics.get(0);
+                    this.hovered = newTarget;
+                } else if (this.hovered instanceof AbstractRelic) {
+                    int currentTargetIndex = sortedRelics.indexOf(this.hovered);
+                    int newTargetIndex = currentTargetIndex + directionIndex;
+                    if (newTargetIndex == -1) {
+                        newTarget = sortedRelics.get(sortedRelics.size() - 1);
+                    } else {
+                        newTargetIndex = (newTargetIndex + sortedRelics.size()) % sortedRelics.size();
+                        newTarget = (AbstractRelic)sortedRelics.get(newTargetIndex);
+                    }
+                }
+            }else{
+                if (this.hovered == null){
+                    newTarget = sortedRelics.get(0);
+                    this.hovered = newTarget;
+                }
+            }
+
+            if (newTarget != null) {
+                Hitbox target = ((AbstractRelic)newTarget).hb;
+                Gdx.input.setCursorPosition((int)target.cX, Settings.HEIGHT - (int)target.cY);
+                this.hovered = (AbstractRelic) newTarget;
+                ReflectionHacks.setPrivate(AbstractDungeon.player, AbstractPlayer.class, "isUsingClickDragControl", true);
+                ReflectionHacks.setPrivate(AbstractDungeon.player, AbstractPlayer.class, "skipMouseModeOnce", true);
+                AbstractDungeon.player.isDraggingCard = true;
             }
         }
     }
