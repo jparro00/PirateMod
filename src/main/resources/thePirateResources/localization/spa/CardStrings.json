@@ -43,6 +43,11 @@
         "DESCRIPTION": "Retiene. NL thepirate:Excava. NL Agota.",
         "UPGRADE_DESCRIPTION": "Retiene. NL thepirate:Excava dos veces. NL Agota."
     },
+    "thePirate:ShovelBlade_HC": {
+        "NAME": "Pala Hoja",
+        "DESCRIPTION": "thepirate:Excava. NL Agota.",
+        "UPGRADE_DESCRIPTION": "thepirate:Excava dos veces. NL Agota."
+    },
     "thePirate:EvasiveManeuver": {
         "NAME": "Maniobra Evasiva",
         "DESCRIPTION": "Aplica !M! thepirate:Tinta."

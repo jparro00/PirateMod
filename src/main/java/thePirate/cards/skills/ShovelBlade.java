@@ -7,6 +7,7 @@ import thePirate.actions.DigAction;
 import thePirate.cards.AbstractDynamicCard;
 import thePirate.characters.ThePirate;
 
+import static thePirate.PirateMod.isHardcore;
 import static thePirate.PirateMod.makeCardPath;
 
 public class ShovelBlade extends AbstractDynamicCard {
@@ -33,10 +34,11 @@ public class ShovelBlade extends AbstractDynamicCard {
     // /TEXT DECLARATION/
 
     public ShovelBlade() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET, isHardcore());
         magicNumber = baseMagicNumber = MAGIC;
         secondMagic = baseSecondMagic = SECOND_MAGIC;
-        selfRetain = true;
+        if (!hardcore)
+            selfRetain = true;
         exhaust = true;
     }
 

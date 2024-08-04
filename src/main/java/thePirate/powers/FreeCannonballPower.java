@@ -3,8 +3,10 @@ package thePirate.powers;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.blue.AllForOne;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -55,6 +57,12 @@ public class FreeCannonballPower extends AbstractPower {
             if (this.amount == 0) {
                 this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, FreeCannonballPower.POWER_ID));
             }
+        } else if (card.cardID.equals(AllForOne.ID)) {
+            for (AbstractCard c : AbstractDungeon.player.discardPile.group)
+                if (c instanceof AbstractCannonBallCard){
+                    addToBot(new DiscardToHandAction(c));
+                }
+
         }
     }
 

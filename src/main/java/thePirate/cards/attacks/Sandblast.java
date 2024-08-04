@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import thePirate.PirateMod;
 import thePirate.cards.AbstractDynamicCard;
-import thePirate.cards.OnShuffle;
 import thePirate.characters.ThePirate;
 import thePirate.patches.actions.CardCounterPatches;
 import thePirate.powers.OnBury;
@@ -20,7 +19,7 @@ import java.util.List;
 
 import static thePirate.PirateMod.makeCardPath;
 
-public class Sandblast extends AbstractDynamicCard implements OnBury, OnShuffle {
+public class Sandblast extends AbstractDynamicCard implements OnBury{
 
     // STAT DECLARATION
 
@@ -37,6 +36,7 @@ public class Sandblast extends AbstractDynamicCard implements OnBury, OnShuffle 
 
     public static final int MAGIC = 2;
     public static final int UPGRADED_MAGIC = 1;
+    private int originalCost;
 
 
     // /STAT DECLARATION/
@@ -50,12 +50,14 @@ public class Sandblast extends AbstractDynamicCard implements OnBury, OnShuffle 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = MAGIC;
+        originalCost = cost;
         setCostForTurn(cost - CardCounterPatches.cardsBuriedThisTurn);
     }
 
     public void atTurnStart() {
         this.resetAttributes();
         this.applyPowers();
+        updateCost(originalCost - cost);
     }
 
     // Actions the card should do.
@@ -74,8 +76,10 @@ public class Sandblast extends AbstractDynamicCard implements OnBury, OnShuffle 
             upgradeName();
             if (UPGRADED_DMG > 0)
                 upgradeDamage(UPGRADED_DMG);
-            if (UPGRADED_COST != COST)
+            if (UPGRADED_COST != COST){
                 upgradeBaseCost(UPGRADED_COST);
+                originalCost = cost;
+            }
             if (UPGRADED_MAGIC != 0){
                 upgradeMagicNumber(UPGRADED_MAGIC);
             }
@@ -89,49 +93,15 @@ public class Sandblast extends AbstractDynamicCard implements OnBury, OnShuffle 
     }
 
     @Override
-    public void onMoveToDiscard() {
-        setCostForTurn(cost - CardCounterPatches.cardsBuriedThisTurn);
-    }
-    @Override
-    public void triggerWhenDrawn() {
-        super.triggerWhenDrawn();
-        setCostForTurn(cost - CardCounterPatches.cardsBuriedThisTurn);
-    }
-
-
-    @Override
     public void onBuryCards(List<AbstractCard> cards) {
         AbstractCard thisCard = this;
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
-                setCostForTurn(thisCard.cost - CardCounterPatches.cardsBuriedThisTurn);
-                if (thisCard.costForTurn < 0){
-                    thisCard.costForTurn = 0;
-                }
+                updateCost(- cards.size());
                 isDone = true;
             }
         });
     }
 
-/*
-    @Override
-    public void applyPowers() {
-        setCostForTurn(cost - CardCounterPatches.cardsBuriedThisTurn);
-        super.applyPowers();
-    }
-*/
-
-    @Override
-    public void onShuffle() {
-        AbstractCard thisCard = this;
-        addToBot(new AbstractGameAction() {
-            @Override
-            public void update() {
-                setCostForTurn(thisCard.cost - CardCounterPatches.cardsBuriedThisTurn);
-                isDone = true;
-            }
-        });
-
-    }
 }

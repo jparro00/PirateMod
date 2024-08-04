@@ -43,6 +43,11 @@
     "DESCRIPTION": "Retain. NL thepirate:Dig. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Retain. NL thepirate:Dig twice. NL Exhaust."
   },
+  "thePirate:ShovelBlade_HC": {
+    "NAME": "Shovel Blade",
+    "DESCRIPTION": "thepirate:Dig. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "thepirate:Dig twice. NL Exhaust."
+  },
   "thePirate:EvasiveManeuver": {
     "NAME": "Evasive Maneuver",
     "DESCRIPTION": "Apply !M! thepirate:Ink."

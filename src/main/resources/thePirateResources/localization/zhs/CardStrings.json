@@ -43,6 +43,11 @@
     "DESCRIPTION": "保留 。 NL thepirate:挖掘 至多一次。 NL 消耗 。",
     "UPGRADE_DESCRIPTION": "保留 。 NL thepirate:挖掘 至多两次。 NL 消耗 。"
   },
+  "thePirate:ShovelBlade_HC": {
+    "NAME": "铲子",
+    "DESCRIPTION": "thepirate:挖掘 至多一次。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "thepirate:挖掘 至多两次。 NL 消耗 。"
+  },
   "thePirate:EvasiveManeuver": {
     "NAME": "规避机动",
     "DESCRIPTION": "给予 !M! 层 thepirate:墨汁 。"

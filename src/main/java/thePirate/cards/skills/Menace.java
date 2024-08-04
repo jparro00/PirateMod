@@ -27,6 +27,7 @@ public class Menace extends AbstractDynamicCard {
     // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON; //  Up to you, I like auto-complete on these
+    public static final CardRarity HC_Rarity = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
     private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = ThePirate.Enums.COLOR_GRAY;
@@ -42,8 +43,10 @@ public class Menace extends AbstractDynamicCard {
 
     public Menace() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET, isHardcore());
-        if (hardcore)
+        if (hardcore){
             this.cost = this.costForTurn = HC_COST;
+            this.rarity = HC_Rarity;
+        }
         exhaust = true;
     }
 

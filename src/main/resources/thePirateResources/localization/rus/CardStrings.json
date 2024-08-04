@@ -43,6 +43,11 @@
     "DESCRIPTION": "Оставляется. NL Вы thepirate:Выкапываете 1 карту. NL Сжигается.",
     "UPGRADE_DESCRIPTION": "Оставляется. NL Вы thepirate:Выкапываете 2 карты. NL Сжигается."
   },
+  "thePirate:ShovelBlade_HC": {
+    "NAME": "Лезвие лопаты",
+    "DESCRIPTION": "Вы thepirate:Выкапываете 1 карту. NL Сжигается.",
+    "UPGRADE_DESCRIPTION": "Вы thepirate:Выкапываете 2 карты. NL Сжигается."
+  },
   "thePirate:EvasiveManeuver": {
     "NAME": "Манёвр уклонения",
     "DESCRIPTION": "Накладывает !M! thepirate:Чернил."
