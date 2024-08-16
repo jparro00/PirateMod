@@ -105,7 +105,8 @@
       "ink",
       "inked"
     ],
-    "DESCRIPTION": "The next time this enemy would deal damage, prevent damage equal to the ink value, deal that much damage to the enemy, and then remove that much ink."
+    "DESCRIPTION": "The next time this enemy would deal damage, prevent damage equal to the ink value, deal that much damage to the enemy, and then remove that much ink.",
+    "DESCRIPTION_HC": "The next time this enemy would deal damage, prevent damage equal to the ink value, deal that much damage to the enemy, and then remove that much ink. NL NL #rHardcore #rMode: NL At the end of turn, remove half of any remaining #yInk."
   },
   {
     "PROPER_NAME": "Inert",

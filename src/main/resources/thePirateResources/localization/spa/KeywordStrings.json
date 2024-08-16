@@ -113,7 +113,8 @@
             "tinta",
             "entintado"
         ],
-        "DESCRIPTION": "La próxima vez que este enemigo infligiría daño, evita el daño igual al valor de tinta, inflige ese mismo daño al enemigo y luego elimina la misma cantidad de tinta."
+        "DESCRIPTION": "La próxima vez que este enemigo infligiría daño, evita el daño igual al valor de #yTinta, inflige ese mismo daño al enemigo y luego elimina la misma cantidad de #yTinta.",
+        "DESCRIPTION_HC": "La próxima vez que este enemigo infligiría daño, evita el daño igual al valor de #yTinta, inflige ese mismo daño al enemigo y luego elimina la misma cantidad de #yTinta. NL NL #rModo #rDuro: NL Al final del turno, elimina la mitad del #yTinta restante."
     },
     {
         "PROPER_NAME": "Inerte",

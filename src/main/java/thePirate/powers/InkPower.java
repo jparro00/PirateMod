@@ -27,6 +27,7 @@ import com.megacrit.cardcrawl.vfx.BobEffect;
 import thePirate.PirateMod;
 import thePirate.util.TextureLoader;
 
+import static thePirate.PirateMod.isHardcore;
 import static thePirate.PirateMod.makePowerPath;
 
 
@@ -216,19 +217,24 @@ public class InkPower extends AbstractPower implements CloneablePowerInterface, 
     //onApplyPower is "When the owner applies a power to something else (only used by Sadistic Nature)."
     //onReceivePowerPower from StSlib is "When any (including this) power is applied to the owner."
 
-
     @Override
     public void atEndOfTurn(boolean isPlayer) {
         if(AbstractDungeon.player.hasPower(VolatileInkPower.POWER_ID) || owner.hasPower(TropomyosinPower.POWER_ID)){
             this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
         }
-
+        else if (isHardcore()){
+            this.addToBot(new ReducePowerAction(owner, owner, this.ID, amount/2));
+        }
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0];
+        if (isHardcore()){
+            description = DESCRIPTIONS[1];
+        }else {
+            description = DESCRIPTIONS[0];
+        }
     }
 
     @Override

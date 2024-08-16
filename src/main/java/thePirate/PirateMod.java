@@ -11,7 +11,6 @@ import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.mod.stslib.patches.CustomTargeting;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
@@ -867,12 +866,15 @@ public class PirateMod implements
         String lang = this.getLangString();
         Gson gson = new Gson();
         String json = Gdx.files.internal(assetPath("localization/" + lang + "/KeywordStrings.json")).readString(String.valueOf(StandardCharsets.UTF_8));
-        com.evacipated.cardcrawl.mod.stslib.Keyword[] keywords = gson.fromJson(json, com.evacipated.cardcrawl.mod.stslib.Keyword[].class);
+        PirateKeyword[] keywords = gson.fromJson(json, PirateKeyword[].class);
         
         if (keywords != null) {
-            for (Keyword keyword : keywords) {
-                BaseMod.addKeyword(getModID().toLowerCase(), keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
-                //  getModID().toLowerCase() makes your keyword mod specific (it won't show up in other cards that use that word)
+            for (PirateKeyword keyword : keywords) {
+                if (isHardcore() && keyword.DESCRIPTION_HC != null){
+                    BaseMod.addKeyword(getModID().toLowerCase(), keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION_HC);
+                }else {
+                    BaseMod.addKeyword(getModID().toLowerCase(), keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
+                }
             }
         }
     }
@@ -915,7 +917,7 @@ public class PirateMod implements
         }
     }
 
-    public static void updateCompendiumPostSettings() {
+    public void updateCompendiumPostSettings() {
         logger.info("entering updateCompendiumPostSettings");
 
         CardLibrary.getAllCards().iterator();
@@ -933,6 +935,7 @@ public class PirateMod implements
             }
         }
 
+        receiveEditKeywords();
         RelicLibrary.resetForReload();
         RelicLibrary.initialize();
         logger.info("exiting updateCompendiumPostSettings");

@@ -81,7 +81,7 @@
     },
     "thePirate:InkPower": {
         "NAME": "Tinta",
-        "DESCRIPTIONS": ["La próxima vez que este enemigo haga daño, previene el daño igual al valor de #yTinta, haz ese daño al enemigo y luego elimina esa cantidad de #yTinta."]
+        "DESCRIPTIONS": ["La próxima vez que este enemigo haga daño, previene el daño igual al valor de #yTinta, haz ese daño al enemigo y luego elimina esa cantidad de #yTinta.", "La próxima vez que este enemigo haga daño, previene el daño igual al valor de #yTinta, haz ese daño al enemigo y luego elimina esa cantidad de #yTinta. NL NL #rModo #rDuro: NL Al final del turno, elimina la mitad del #yTinta restante."]
     },
     "thePirate:StartTurnBuryPower": {
         "NAME": "Tripulación de Playa",
