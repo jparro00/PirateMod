@@ -317,7 +317,7 @@ public class ThePirate extends CustomPlayer {
     @Override
     public List<CutscenePanel> getCutscenePanels() {
         List<CutscenePanel> panels = new ArrayList();
-        panels.add(new CutscenePanel(PirateMod.getModID() + "Resources/images/scenes/pirate1.png", "BLUNT_HEAVY"));
+        panels.add(new CutscenePanel(PirateMod.getModID() + "Resources/images/scenes/pirate1.png", PirateMod.makeID("CANNON_HIT_SHIP")));
         panels.add(new CutscenePanel(PirateMod.getModID() + "Resources/images/scenes/pirate2.png"));
         panels.add(new CutscenePanel(PirateMod.getModID() + "Resources/images/scenes/pirate3.png"));
         return panels;

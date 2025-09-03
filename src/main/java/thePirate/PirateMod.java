@@ -88,6 +88,7 @@ public class PirateMod implements
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
         PostInitializeSubscriber,
+        AddAudioSubscriber,
         OnStartBattleSubscriber{
     // Make sure to implement the subscribers *you* are using (read basemod wiki). Editing cards? EditCardsSubscriber.
     // Making relics? EditRelicsSubscriber. etc., etc., for a full list and how to make your own, visit the basemod wiki.
@@ -940,6 +941,11 @@ public class PirateMod implements
         RelicLibrary.initialize();
         logger.info("exiting updateCompendiumPostSettings");
 
+    }
+
+    public void receiveAddAudio() {
+        String sfxDir = PirateMod.getModID() + "Resources/audio/sound/";
+        BaseMod.addAudio(makeID("CANNON_HIT_SHIP"), sfxDir + "cannon_hit_ship_short.ogg");
     }
 
     static {
