@@ -6,7 +6,7 @@
     <groupId>piratemod</groupId>
     <artifactId>PirateMod</artifactId> <!--Keep a note of this one: this is the ID used in the "auto add cards" method-->
     <name>The Abyssal</name>
-    <version>1.17.2</version>
+    <version>1.17.4</version>
     <description>Adds The Abyssal as a new playable character.</description>
 
     <distributionManagement>
@@ -29,7 +29,7 @@
         <Steam.path>C:\Program Files (x86)\Steam\steamapps</Steam.path>
         <mod.dir>C:\Program Files (x86)\Steam\steamapps\common\SlayTheSpire\TheAbyssal</mod.dir>
         <git.dir>C:\Users\jparr\Documents\STS Mods\ThePirate\ThePirate\thePirate</git.dir>
-        <last.commit.hash>b594ee2c7e7851c695ee16b51db8ec58e6056d4c</last.commit.hash>
+        <last.commit.hash>b3a617a2448e6e694c033664e7e9d1524f5120f5</last.commit.hash>
     </properties>
 
     <dependencies>
